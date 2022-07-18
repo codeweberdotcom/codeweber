@@ -85,7 +85,7 @@ function js (done) {
     .pipe(development(sourcemaps.init()))
     .pipe(rollup({
       plugins: [
-        babel({ babelHelpers: 'bundled' }),
+        babel({ babelHelpers: 'bundled', compact: true }),
         commonjs(),
         nodeResolve()
       ]

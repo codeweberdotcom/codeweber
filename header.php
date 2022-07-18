@@ -12,17 +12,8 @@
 <body <?php body_class(); ?>> 
 <?php wp_body_open(); ?>
 
-<div id="site-wrapper" class="d-flex flex-column min-vh-100">
-
-	<header id="header-wrapper" class="sticky-top bg-dark">
-
+<div id="content-wrapper" class="content-wrapper">
 		<?php
 
 		// get_template_part('templates/header/header', 'topbar');
-		get_template_part( 'templates/header/header', 'simple' );
-
-		?>
-
-	</header> <!-- #header-wrapper -->
-
-	<div id="page-wrapper" class="flex-grow-1">
+		get_template_part( 'templates/header/header', 'sandbox' ); ?>
