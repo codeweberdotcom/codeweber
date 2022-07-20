@@ -27,8 +27,8 @@ var path = {
     php: '../dist/php/'
   },
   src: {
-    html: ['**/*.html', '!partials/**/*.html', '!/php/**/*.html'],
-    partials: 'src/partials/',
+    html: ['*.html', '!partials/*.html', '!/php/*.html'],
+    partials: 'partials/',
     js: 'js/',
     vendorjs: 'js/vendor/*.*',
     themejs: 'js/theme.js',
@@ -381,6 +381,7 @@ gulp.task('cache:clear', function () {
 gulp.task('build:dev',
     gulp.series('clean:dev',
       gulp.parallel(
+      'html:dev',
       'css:dev',
       'fontcss:dev',
       'colorcss:dev',
@@ -398,6 +399,7 @@ gulp.task('build:dev',
 gulp.task('build:dist',
     gulp.series('clean:dist',
       gulp.parallel(
+      'html:dist',
       'css:dist',
       'fontcss:dist',
       'colorcss:dist',

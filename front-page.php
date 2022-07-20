@@ -13,7 +13,7 @@
           <!-- /column -->
           <div class="col-lg-5 offset-lg-1 mb-n18" data-cues="slideInDown">
             <div class="position-relative">
-              <a href="<?php echo get_template_directory_uri(); ?>/dist/media/movie.mp4" class="btn btn-circle btn-primary btn-play ripple mx-auto mb-6 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox><i class="icn-caret-right"></i></a>
+              <a href="<?php echo get_template_directory_uri(); ?>/dist/media/movie.mp4" class="btn btn-circle btn-primary btn-play ripple mx-auto mb-6 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox><i class="uil uil-caret-right"></i></a>
               <figure class="rounded shadow-lg"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/about13.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/about13@2x.jpg 2x" alt=""></figure>
             </div>
             <!-- /div -->

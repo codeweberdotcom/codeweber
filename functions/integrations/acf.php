@@ -16,234 +16,10 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 
 if ( class_exists( 'ACF' ) ) {
 
-	function brk_acf_contacts() {
-
-		acf_add_local_field_group(
-			array(
-
-				'key' => 'group_theme_contacts',
-				'title' => __( 'Contacts', 'bricks' ),
-				'fields' => array(
-					array(
-						'key' => 'field_6013f4fcd2434',
-						'label' => __( 'Contacts', 'bricks' ),
-						'name' => 'contacts',
-						'type' => 'group',
-						'instructions' => __( 'Displayed in the site footer', 'bricks' ),
-						'layout' => 'block',
-						'sub_fields' => array(
-							array(
-								'key' => 'field_6013f5efd2435',
-								'label' => __( 'Company', 'bricks' ),
-								'name' => 'company',
-								'type' => 'text',
-								'instructions' => __( 'Example: Full Company Name', 'bricks' ),
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_6013f61bd2436',
-								'label' => __( 'Address - Line 1', 'bricks' ),
-								'name' => 'address_1',
-								'type' => 'text',
-								'instructions' => __( 'Example: Street, Number', 'bricks' ),
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_6013f74fd2437',
-								'label' => __( 'Address - Line 2', 'bricks' ),
-								'name' => 'address_2',
-								'type' => 'text',
-								'instructions' => __( 'Example => Postal Code, City, State', 'bricks' ),
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_6013fcab912d8',
-								'label' => __( 'Map URL', 'bricks' ),
-								'name' => 'map_url',
-								'type' => 'url',
-								'instructions' => __( 'Example: https://goo.gl/maps/sNAFh8SNCLH5cYyL7 for Google Maps', 'bricks' ),
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_6013fcf2912d9',
-								'label' => __( 'Phone number', 'bricks' ),
-								'name' => 'phone',
-								'type' => 'text',
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_6013fd0b912da',
-								'label' => __( 'E-mail address', 'bricks' ),
-								'name' => 'email',
-								'type' => 'email',
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_6013fd34912db',
-								'label' => __( 'ID Number', 'bricks' ),
-								'name' => 'id_number',
-								'type' => 'text',
-								'instructions' => __( 'Example: Social Security Number, Fiscal Code, etc.', 'bricks' ),
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_6013fd4b912dc',
-								'label' => __( 'VAT Number', 'bricks' ),
-								'name' => 'vat_number',
-								'type' => 'text',
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-						),
-					),
-				),
-				'location' => array(
-					array(
-						array(
-							'param' => 'options_page',
-							'operator' => '==',
-							'value' => 'acf-options',
-						),
-					),
-				),
-				'menu_order' => 0,
-				'position' => 'normal',
-				'style' => 'seamless',
-				'label_placement' => 'top',
-				'instruction_placement' => 'label',
-				'hide_on_screen' => '',
-				'active' => true,
-				'description' => '',
-			)
-		);
-
-	}
-	add_action( 'acf/init', 'brk_acf_contacts' );
-
-}
-
-if ( class_exists( 'ACF' ) ) {
-
-	function brk_acf_social() {
-
-		acf_add_local_field_group(
-			array(
-
-				'key' => 'group_theme_social',
-				'title' => __( 'Social profiles', 'bricks' ),
-				'fields' => array(
-					array(
-						'key' => 'field_601400d769ba3',
-						'label' => __( 'Social profiles', 'bricks' ),
-						'name' => 'social',
-						'type' => 'group',
-						'instructions' => __( 'Full social profile addresses. Not all fields are required, only filled fields will be displayed on the site as icons', 'bricks' ),
-						'layout' => 'block',
-						'sub_fields' => array(
-							array(
-								'key' => 'field_601400d769ba7',
-								'label' => 'Facebook',
-								'name' => 'facebook',
-								'type' => 'url',
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_601401b269bac',
-								'label' => 'Twitter',
-								'name' => 'twitter',
-								'type' => 'url',
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_601401e469bad',
-								'label' => 'LinkedIn',
-								'name' => 'linkedin',
-								'type' => 'url',
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_601401f569bae',
-								'label' => 'Instagram',
-								'name' => 'instagram',
-								'type' => 'url',
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_6014026069baf',
-								'label' => 'Pinterest',
-								'name' => 'pinterest',
-								'type' => 'url',
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-							array(
-								'key' => 'field_6014026f69bb0',
-								'label' => 'YouTube',
-								'name' => 'youtube',
-								'type' => 'url',
-								'wrapper' => array(
-									'width' => '33',
-								),
-							),
-						),
-					),
-				),
-				'location' => array(
-					array(
-						array(
-							'param' => 'options_page',
-							'operator' => '==',
-							'value' => 'acf-options',
-						),
-					),
-				),
-				'menu_order' => 1,
-				'position' => 'normal',
-				'style' => 'seamless',
-				'label_placement' => 'top',
-				'instruction_placement' => 'label',
-				'hide_on_screen' => '',
-				'active' => true,
-				'description' => '',
-			)
-		);
-
-	}
-	add_action( 'acf/init', 'brk_acf_social' );
-
-}
-
-if ( class_exists( 'ACF' ) ) {
-
 	function brk_acf_meta() {
 
 		acf_add_local_field_group(
 			array(
-
 				'key' => 'group_theme_meta',
 				'title' => __( 'Meta', 'bricks' ),
 				'fields' => array(
@@ -314,34 +90,137 @@ function brk_socialicons() {
 	$brk_socialnetworks = array(
 		'facebook' => array(
 			'social-name'   => 'Facebook',
-			'icon-style'    => 'fa-brands',
-			'icon-name'     => 'fa-facebook-f',
+			'icon-style'    => 'uil',
+			'icon-name'     => 'uil-facebook-f',
 		),
 		'twitter' => array(
 			'social-name'   => 'Twitter',
-			'icon-style'    => 'fa-brands',
-			'icon-name'     => 'fa-twitter',
+			'icon-style'    => 'uil',
+			'icon-name'     => 'uil-twitter',
 		),
 		'linkedin' => array(
 			'social-name'   => 'LinkedIn',
-			'icon-style'    => 'fa-brands',
-			'icon-name'     => 'fa-linkedin-in',
+			'icon-style'    => 'uil',
+			'icon-name'     => 'uil-linkedin',
 		),
 		'instagram' => array(
 			'social-name'   => 'Instagram',
-			'icon-style'    => 'fa-brands',
-			'icon-name'     => 'fa-instagram',
+			'icon-style'    => 'uil',
+			'icon-name'     => 'uil-instagram',
 		),
-		'pinterest' => array(
-			'social-name'   => 'Pinterest',
-			'icon-style'    => 'fa-brands',
-			'icon-name'     => 'fa-pinterest-p',
+	
+		'whatsapp' => array(
+			'social-name'   => 'Whatsapp',
+			'icon-style'    => 'uil',
+			'icon-name'     => 'uil-whatsapp',
 		),
+		'telegram' => array(
+			'social-name'   => 'Telegram',
+			'icon-style'    => 'uil',
+			'icon-name'     => 'uil-telegram',
+		),
+		'github' => array(
+			'social-name'   => 'Github',
+			'icon-style'    => 'uil',
+			'icon-name'     => 'uil-github',
+		),
+	
 		'youtube' => array(
 			'social-name'   => 'YouTube',
-			'icon-style'    => 'fa-brands',
-			'icon-name'     => 'fa-youtube',
+			'icon-style'    => 'uil',
+			'icon-name'     => 'uil-youtube',
 		),
 	);
 	return $brk_socialnetworks;
 }
+
+// --- Phone 1 ---
+
+function brk_phone_one() {
+if(get_field( 'phone', 'option' )){ 
+$phone_acf_1 = get_field( 'phone', 'option' );	
+$brk_phone_one = '<a href="tel:'.$phone_acf_1.'>">'.$phone_acf_1.'</a><br />';
+};
+return $brk_phone_one;
+};
+
+// --- Phone 2 ---
+
+function brk_phone_two() {
+	if(get_field( 'phone_1', 'option' )){ 
+	$phone_acf_2 = get_field( 'phone_1', 'option' );	
+	$brk_phone_two = '<a href="tel:'.$phone_acf_2.'>">'.$phone_acf_2.'</a><br />';
+	};
+	return $brk_phone_two;
+	};
+
+
+// --- E-Mail 1 ---
+
+function brk_email() {
+	if(get_field( 'email', 'option' )){ 
+	$email_acf = get_field( 'email', 'option' );	
+	$brk_email = '<a href="mailto:'.$email_acf.'>">'.$email_acf.'</a><br />';
+	};
+	return $brk_email;
+	};
+
+// --- Address ---
+
+function brk_adress() {
+	$adress_1 = get_field( 'address_1', 'option' ); 
+	$adress_2 = get_field( 'address_2', 'option' ); 
+
+	if($adress_1 && $adress_2):
+	$brk_adress = $adress_1 .' '. $adress_2;	
+	else :
+	$brk_adress = 'Moonshine St. 14/05 Light City, London, United Kingdom';
+	endif;
+	return $brk_adress;
+	};
+
+	
+// --- Logo Header Dark ---
+
+function brk_logo_header_dark() {
+
+	$logo_header_dark = get_field( 'logo_dark', 'option' );
+	$logo_header_light = get_field( 'logo_light', 'option' );
+	if ( $logo_header_dark && $logo_header_light ) : 
+	$brk_logo_header_dark ='<a href="/"><img class="logo-dark" src="'.$logo_header_dark.'" />
+	                        <img class="logo-light" src="'.$logo_header_light.'" /></a>';
+	else :
+	$brk_logo_header_dark ='<a href="/"><img class="logo-dark" src="./dist/img/logo-dark.png" srcset="./assets/img/logo-dark@2x.png 2x" alt="" />
+		                    <img class="logo-light" src="./dist/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" /></a>'; 		
+	endif; 
+	return $brk_logo_header_dark;
+	};
+
+// --- Logo Footer Dark ---
+
+function brk_logo_footer_dark() {
+
+	$logo_footer_dark = get_field( 'logo_dark', 'option' );
+	if ( $logo_footer_dark) : 
+	$brk_logo_footer_dark ='<img class="mb-4" src="'.$logo_footer_dark.'" />';
+	else :
+	$brk_logo_footer_dark ='<img class="mb-4" src="./dist/img/logo-dark.png" srcset="./assets/img/logo-dark@2x.png 2x" alt="" />'; 		
+	endif; 
+	return $brk_logo_footer_dark;
+	};
+
+
+// --- Logo Footer Light ---
+
+function brk_logo_footer_light() {
+	$logo_footer_light = get_field( 'logo_light', 'option' );
+	if ( $logo_footer_light) : 
+	$brk_logo_footer_light ='<img class="mb-4" src="'.$logo_footer_light.'" />';
+	else :
+	$brk_logo_footer_light ='<img class="mb-4" src="./dist/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />'; 		
+	endif; 
+	return $brk_logo_footer_light;
+	};
+
+
+
