@@ -160,7 +160,7 @@ function brk_phone_two() {
 function brk_email() {
 	if(get_field( 'email', 'option' )){ 
 	$email_acf = get_field( 'email', 'option' );	
-	$brk_email = '<a href="mailto:'.$email_acf.'>">'.$email_acf.'</a><br />';
+	$brk_email = $email_acf;
 	};
 	return $brk_email;
 	};
@@ -180,46 +180,29 @@ function brk_adress() {
 	};
 
 	
-// --- Logo Header Dark ---
+// --- Logo Dark Link ---
 
-function brk_logo_header_dark() {
-
-	$logo_header_dark = get_field( 'logo_dark', 'option' );
-	$logo_header_light = get_field( 'logo_light', 'option' );
-	if ( $logo_header_dark && $logo_header_light ) : 
-	$brk_logo_header_dark ='<a href="/"><img class="logo-dark" src="'.$logo_header_dark.'" />
-	                        <img class="logo-light" src="'.$logo_header_light.'" /></a>';
+function brk_logo_dark_link() {
+	$logo_header_dark = get_field( 'logo_dark', 'option' );	
+	if ( $logo_header_dark ) : 
+	$brk_logo_header_dark = $logo_header_dark;
 	else :
-	$brk_logo_header_dark ='<a href="/"><img class="logo-dark" src="./dist/img/logo-dark.png" srcset="./assets/img/logo-dark@2x.png 2x" alt="" />
-		                    <img class="logo-light" src="./dist/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" /></a>'; 		
+	$brk_logo_header_dark ='./dist/img/logo-dark.png'; 		
 	endif; 
 	return $brk_logo_header_dark;
 	};
 
-// --- Logo Footer Dark ---
 
-function brk_logo_footer_dark() {
+// --- Logo Light Link ---
 
-	$logo_footer_dark = get_field( 'logo_dark', 'option' );
-	if ( $logo_footer_dark) : 
-	$brk_logo_footer_dark ='<img class="mb-4" src="'.$logo_footer_dark.'" />';
+function brk_logo_light_link() {
+	$logo_light = get_field( 'logo_light', 'option' );
+	if ( $logo_light) : 
+	$brk_logo_light = $logo_light;
 	else :
-	$brk_logo_footer_dark ='<img class="mb-4" src="./dist/img/logo-dark.png" srcset="./assets/img/logo-dark@2x.png 2x" alt="" />'; 		
+	$brk_logo_light ='./dist/img/logo-light.png'; 		
 	endif; 
-	return $brk_logo_footer_dark;
-	};
-
-
-// --- Logo Footer Light ---
-
-function brk_logo_footer_light() {
-	$logo_footer_light = get_field( 'logo_light', 'option' );
-	if ( $logo_footer_light) : 
-	$brk_logo_footer_light ='<img class="mb-4" src="'.$logo_footer_light.'" />';
-	else :
-	$brk_logo_footer_light ='<img class="mb-4" src="./dist/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />'; 		
-	endif; 
-	return $brk_logo_footer_light;
+	return $brk_logo_light;
 	};
 
 

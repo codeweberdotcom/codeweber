@@ -1,8 +1,11 @@
 <header class="wrapper bg-dark">
       <nav class="navbar navbar-expand-lg center-nav transparent navbar-dark">
         <div class="container flex-lg-row flex-nowrap align-items-center">
-          <div class="navbar-brand w-100">           
-            <?php echo brk_logo_header_dark(); ?>
+          <div class="navbar-brand w-100">  
+          <a href="/">
+              <img class="logo-dark" src="<?php echo brk_logo_dark_link(); ?>" srcset="<?php echo brk_logo_dark_link(); ?>" alt="" />
+              <img class="logo-light" src="<?php echo brk_logo_light_link(); ?>" srcset="<?php echo brk_logo_light_link(); ?>" alt="" />
+            </a>
           </div>
           <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">

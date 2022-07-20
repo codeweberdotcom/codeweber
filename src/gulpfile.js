@@ -390,6 +390,7 @@ gulp.task('build:dev',
       'themejs:dev',
       'fonts:dev',
       'media:dev',     
+      'php:dev',
       'image:dev'
       )
     )
@@ -408,6 +409,7 @@ gulp.task('build:dist',
       'themejs:dist',
       'fonts:dist',
       'media:dist',
+      'php:dist',
       'image:dist'
       )
     )
