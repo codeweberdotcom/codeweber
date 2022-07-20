@@ -379,7 +379,7 @@ gulp.task('cache:clear', function () {
 
 // Assembly Dev
 gulp.task('build:dev',
-    gulp.series('clean:dev',
+    gulp.series(
       gulp.parallel(
       'html:dev',
       'css:dev',
@@ -397,7 +397,7 @@ gulp.task('build:dev',
 
 // Assembly Dist
 gulp.task('build:dist',
-    gulp.series('clean:dist',
+    gulp.series(
       gulp.parallel(
       'html:dist',
       'css:dist',
