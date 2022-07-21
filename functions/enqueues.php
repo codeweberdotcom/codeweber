@@ -28,8 +28,20 @@ if ( ! function_exists( 'brk_styles_scripts' ) ) {
 
 	}
 }
-
 add_action( 'wp_enqueue_scripts', 'brk_styles_scripts' );
+
+
+
+// --- Unicons ACF admin styles ---
+
+if ( ! function_exists( 'brk_styles_scripts_admin' ) ) {
+	function brk_styles_scripts_admin() {
+		$theme_version = wp_get_theme()->get( 'Version' );
+		// --- Unicons admin acf ---
+		// wp_enqueue_style( 'theme-styles1', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all' );
+	}
+}
+add_action( 'admin_enqueue_scripts', 'brk_styles_scripts_admin' );
 
 
 // Disable this action if not loading Google Fonts from their external server
