@@ -2,7 +2,7 @@
 wp_nav_menu(
           array(
               'theme_location'    => 'header',
-              'depth'             => 3,
+              'depth'             => 2,
               'container'         => '',
               'container_class'   => '',
               'container_id'      => '',

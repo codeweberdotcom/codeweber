@@ -18,6 +18,12 @@ if ( ! function_exists( 'brk_styles_scripts' ) ) {
 		wp_enqueue_style( 'color-styles', get_template_directory_uri() . '/dist/css/colors/navy.css', false, $theme_version, 'all' );
 
 
+		// --- Custom CSS ---
+
+		wp_enqueue_style( 'root-styles', get_template_directory_uri() . '/style.css', false, $theme_version, 'all' );
+
+
+
 		// --- JS ---
 
 		wp_enqueue_script( 'plugins-scripts', get_template_directory_uri() . '/dist/js/plugins.min.js', false, $theme_version, true );
