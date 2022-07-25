@@ -1,8 +1,10 @@
 	</div> <!-- #content-wrapper -->
 
   <?php
-		// get_template_part( 'templates/footer/footer', 'columns' );
-		get_template_part( 'templates/footer/footer', 'sandbox-3' );
+  // get_template_part( 'templates/footer/footer', 'columns' );
+  get_template_part("templates/footer/footer", "sandbox-3");
+  
+
 	?>
 
   <div class="progress-wrap">

@@ -2,10 +2,12 @@
        <nav class="navbar navbar-expand-lg center-logo transparent position-absolute navbar-dark">
           <div class="container justify-content-between align-items-center">
              <div class="d-flex flex-row w-100 justify-content-between align-items-center d-lg-none">
-                <div class="navbar-brand"><a href="./index.html">
-                      <img class="logo-dark" src="./assets/img/logo-purple.png" srcset="./assets/img/logo-purple@2x.png 2x" alt="" />
-                      <img class="logo-light" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />
-                   </a></div>
+                <div class="navbar-brand">
+                   <a href="/">
+                      <img class="logo-dark" src="<?php echo brk_logo_dark_link(); ?>" srcset="<?php echo brk_logo_dark_link(); ?>" alt="" />
+                      <img class="logo-light" src="<?php echo brk_logo_light_link(); ?>" srcset="<?php echo brk_logo_light_link(); ?>" alt="" />
+                   </a>
+                </div>
                 <div class="navbar-other ms-auto">
                    <ul class="navbar-nav flex-row align-items-center">
                       <li class="nav-item d-lg-none">
@@ -20,9 +22,10 @@
              <div class="navbar-collapse-wrapper d-flex flex-row align-items-center w-100">
                 <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                    <div class="offcanvas-header mx-lg-auto order-0 order-lg-1 d-lg-flex px-lg-15">
-                      <a href="./index.html" class="transition-none d-none d-lg-flex"><img class="logo-dark" src="./assets/img/logo-purple.png" srcset="./assets/img/logo-purple@2x.png 2x" alt="" />
-                         <img class="logo-light" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" /></a>
-                      <h3 class="text-white fs-30 mb-0 d-lg-none">Sandbox</h3>
+                      <a href="/" class="transition-none d-none d-lg-flex">
+                        <img class="logo-dark" src="<?php echo brk_logo_dark_link(); ?>" srcset="<?php echo brk_logo_dark_link(); ?>" alt="" />
+                        <img class="logo-light" src="<?php echo brk_logo_light_link(); ?>" srcset="<?php echo brk_logo_light_link(); ?>" alt="" /></a>
+                      <h3 class="text-white fs-30 mb-0 d-lg-none"><?php echo get_bloginfo('name'); ?></h3>
                       <button type="button" class="btn-close btn-close-white d-lg-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                    </div>
                    <div class="w-100 order-1 order-lg-0 d-lg-flex offcanvas-body">
@@ -418,14 +421,14 @@
                    <div class="offcanvas-body d-lg-none order-4 mt-auto">
                       <div class="offcanvas-footer">
                          <div>
-                            <a href="mailto:first.last@email.com" class="link-inverse">info@email.com</a>
-                            <br /> 00 (123) 456 78 90 <br />
+                            <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
+                            <br />
+                            <?php echo brk_phone_one(); ?><br />
+                            <?php echo brk_phone_two(); ?><br />
                             <nav class="nav social social-white mt-4">
-                               <a href="#"><i class="uil uil-twitter"></i></a>
-                               <a href="#"><i class="uil uil-facebook-f"></i></a>
-                               <a href="#"><i class="uil uil-dribbble"></i></a>
-                               <a href="#"><i class="uil uil-instagram"></i></a>
-                               <a href="#"><i class="uil uil-youtube"></i></a>
+                               <?php if (class_exists('ACF')) {
+                                    get_template_part('templates/components/socialicons', '');
+                                 }; ?>
                             </nav>
                             <!-- /.social -->
                          </div>
