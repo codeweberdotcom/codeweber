@@ -8,25 +8,28 @@
  * y_crop_position > top center bottom
  */
 
-if ( ! function_exists( 'brk_image_settings' ) ) {
-	function brk_image_settings() {
-		add_image_size( 'brk_big', 1400, 800, true );
-		add_image_size( 'brk_square', 400, 400, true );
-		add_image_size( 'brk_single', 800, 500, true );
+if (!function_exists('brk_image_settings')) {
+	function brk_image_settings()
+	{
+		add_image_size('brk_big', 1400, 800, true);
+		add_image_size('brk_square', 400, 400, true);
+		add_image_size('brk_single', 800, 500, true);
 
-		add_image_size( 'sandbox_hero_3', 590, 650, true );
-		add_image_size( 'sandbox_hero_2', 625, 598, true );
-		add_image_size( 'sandbox_hero_4', 901, 358, true );
-		add_image_size( 'sandbox_hero_8', 388, 510, true );
+		add_image_size('sandbox_hero_3', 590, 650, true);
+		add_image_size('sandbox_hero_11', 575, 550, true);
+		add_image_size('sandbox_hero_2', 625, 598, true);
+		add_image_size('sandbox_hero_4', 901, 358, true);
+		add_image_size('sandbox_hero_8', 388, 510, true);
+		add_image_size('sandbox_hero_1', 800, 538, true);
 		// remove_image_size('large');
 		// remove_image_size('thumbnail');
 		// remove_image_size('medium');
 		// remove_image_size('medium_large');
-		remove_image_size( '1536x1536' );
-		remove_image_size( '2048x2048' );
+		remove_image_size('1536x1536');
+		remove_image_size('2048x2048');
 	}
 }
-add_action( 'after_setup_theme', 'brk_image_settings' );
+add_action('after_setup_theme', 'brk_image_settings');
 
 
 // --- Set image compression value ---

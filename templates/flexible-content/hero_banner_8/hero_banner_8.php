@@ -77,7 +77,8 @@ endif;
 // --- Image ---
 $image = get_sub_field( 'image_image' ); 
 	if ( $image ) : 
-        $imageurl = esc_url( $image['sizes']['sandbox_hero_8'] );
+        $size = 'sandbox_hero_8';
+        $imageurl = esc_url( $image['sizes'][$size] );
         $imagealt = esc_attr( $image['alt'] );
     endif;
 
