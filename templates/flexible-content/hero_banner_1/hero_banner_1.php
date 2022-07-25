@@ -6,7 +6,7 @@ $imageurl = $root_theme . '/dist/img/illustrations/i2.png';
 $typewriter = 'customer satisfaction,business needs,creative ideas';
 $glightbox = '';
 $button_link = "#";
-$backgroundcolor = 'primary';
+$backgroundcolor = 'dark';
 $textcolor = 'white';
 $forms = array();
 
@@ -79,7 +79,7 @@ endif;
       <!-- /column -->
       <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start">
         <h1 class="display-1 mb-5 mx-md-n5 mx-lg-0 text-<?php echo $textcolor; ?>"><?php esc_html_e($title, 'codeweber'); ?></h1>
-        <p class="lead fs-lg mb-7"><?php echo $paragraph; ?></p>
+        <p class="lead fs-lg mb-7 text-<?php echo $textcolor; ?>"><?php echo $paragraph; ?></p>
 
         <!--  buttons group -->
         <div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
