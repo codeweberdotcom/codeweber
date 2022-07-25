@@ -8,6 +8,7 @@ $button_link = "#";
 $backgroundcolor = 'dark';
 $textcolor = 'white';
 $forms = array();
+$typewriter = 'customer satisfaction,business needs,creative ideas';
 
 
 $post_id = get_the_ID();
@@ -31,15 +32,16 @@ if (get_sub_field('dark_or_white_light_or_dark') == 1) :
 endif;
 
 // --- Typewriter ---
-if (have_rows('typewriter_effect_text_typewriter_effect_text')) :
+if (have_rows('typewriter_effect_text')) :
   $typewriterarray = array();
-  while (have_rows('typewriter_effect_text_typewriter_effect_text')) : the_row();
+  while (have_rows('typewriter_effect_text')) : the_row();
     array_push($typewriterarray, get_sub_field('text'));
   endwhile;
   $typewriter = implode(", ", $typewriterarray);
-else :
-  $typewriter = 'customer satisfaction,business needs,creative ideas';
-endif; ?>
+endif;
+
+?>
+
 
 
 <section id="<?php echo $section_id; ?>" class="wrapper bg-<?php echo $backgroundcolor; ?> angled lower-start">

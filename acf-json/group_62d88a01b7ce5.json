@@ -3,70 +3,11 @@
     "title": "Template fields",
     "fields": [
         {
-            "key": "field_62d88a70234a0",
-            "label": "Title",
-            "name": "title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33.33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_62d936ac2f4ec",
-            "label": "Typewriter effect text",
-            "name": "typewriter_effect_text",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33.33",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 2,
-            "max": 5,
-            "layout": "table",
-            "button_label": "Add Row Text",
-            "sub_fields": [
-                {
-                    "key": "field_62d9370c2f4ed",
-                    "label": "Text",
-                    "name": "text",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
-        },
-        {
             "key": "field_62d93856d15e2",
             "label": "Light or Dark?",
             "name": "light_or_dark",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Светлая или Темная тема",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -81,11 +22,11 @@
             "ui_off_text": "Dark"
         },
         {
-            "key": "field_62d88a8b234a1",
-            "label": "SubTitle",
-            "name": "subtitle",
+            "key": "field_62d88a70234a0",
+            "label": "Title",
+            "name": "title",
             "type": "text",
-            "instructions": "",
+            "instructions": "Заголовок блока",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -117,6 +58,65 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_62d936ac2f4ec",
+            "label": "Typewriter effect text",
+            "name": "typewriter_effect_text",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 5,
+            "layout": "table",
+            "button_label": "Add Row Text",
+            "sub_fields": [
+                {
+                    "key": "field_62d9370c2f4ed",
+                    "label": "Text",
+                    "name": "text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
+        },
+        {
+            "key": "field_62d88a8b234a1",
+            "label": "SubTitle",
+            "name": "subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_62d88b01234a4",
@@ -2227,5 +2227,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1658676196
+    "modified": 1658744797
 }
