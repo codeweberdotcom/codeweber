@@ -59,19 +59,11 @@
                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                    <h2 class="mb-3 text-start"><?php esc_html_e('Welcome Back', 'codeweber'); ?></h2>
                    <p class="lead mb-6 text-start"><?php esc_html_e('Fill your email and password to sign in.', 'codeweber'); ?></p>
-                   <form class="text-start mb-3">
-                      <div class="form-floating mb-4">
-                         <input type="email" class="form-control" placeholder="Email" id="loginEmail">
-                         <label for="loginEmail"><?php esc_html_e('Email', 'codeweber'); ?></label>
-                      </div>
-                      <div class="form-floating password-field mb-4">
-                         <input type="password" class="form-control" placeholder="Password" id="loginPassword">
-                         <span class="password-toggle"><i class="uil uil-eye"></i></span>
-                         <label for="loginPassword"><?php esc_html_e('Password', 'codeweber'); ?></label>
-                      </div>
-                      <a class="btn btn-primary rounded-pill btn-login w-100 mb-2"><?php esc_html_e('Sign In', 'codeweber'); ?></a>
-                   </form>
-                   <!-- /form -->
+
+
+                   <?php wp_login_form_brk(); ?>
+
+
                    <p class="mb-1"><a href="#" class="hover"><?php esc_html_e('Forgot Password?', 'codeweber'); ?></a></p>
                    <p class="mb-0"><?php esc_html_e("Don't have an account?", 'codeweber'); ?> <a href="#" data-bs-target="#modal-signup" data-bs-toggle="modal" data-bs-dismiss="modal" class="hover"><?php esc_html_e('Sign up', 'codeweber'); ?></a></p>
                    <div class="divider-icon my-4">or</div>

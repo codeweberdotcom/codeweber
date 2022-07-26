@@ -28,9 +28,26 @@ if (get_sub_field('dark_or_white_light_or_dark') == 1) :
   $backgroundcolor = 'light';
   $textcolor = 'dark';
 endif;
+
+// Create id attribute allowing for custom "anchor" value.
+$id = 'fexible-block-' . $block['id'];
+if (!empty($block['anchor'])) {
+  $id = $block['anchor'];
+};
+
+// Create class attribute allowing for custom "className" and "align" values.
+$classes = 'block-fexible-block';
+if (!empty($block['className'])) {
+  $classes .= ' ' . $block['className'];
+};
+
+if (!empty($block['align'])) {
+  $classes .= ' align' . $block['align'];
+};
+
 ?>
 
-<section id="<?php echo $section_id; ?>" class="wrapper bg-<?php echo $backgroundcolor; ?>">
+<section id="<?php echo esc_attr($id) . $section_id; ?>" class="<?php echo esc_attr($classes); ?> wrapper bg-<?php echo $backgroundcolor; ?>">
   <div class="container pt-10 pt-md-14 pb-8 text-center">
     <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
       <div class="col-lg-7">

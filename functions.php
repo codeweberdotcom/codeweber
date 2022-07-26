@@ -16,7 +16,7 @@ require_once get_template_directory() . '/functions/sidebars.php'; // --- Regist
 
 require_once get_template_directory() . '/functions/lib/class-wp-bootstrap-navwalker.php'; // --- Nav Walker ---
 
-foreach ( glob( get_template_directory() . '/functions/cpt/*.php' ) as $cpt ) {
+foreach (glob(get_template_directory() . '/functions/cpt/*.php') as $cpt) {
 	require_once $cpt;
 }; // --- Register Custom Post Types & Taxonomies ---
 
@@ -31,3 +31,24 @@ require_once get_template_directory() . '/functions/integrations/cf7.php'; // --
 require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup ---
 
 require_once get_template_directory() . '/functions/custom.php'; // --- Custom user functions ---
+
+
+// --- ACF Flexible Block
+
+add_action('acf/init', 'my_acf_blocks_init');
+function my_acf_blocks_init()
+{
+
+	// Check function exists.
+	if (function_exists('acf_register_block_type')) {
+
+		// Register a testimonial block.
+		acf_register_block_type(array(
+			'name'              => 'fexible-block',
+			'title'             => __('Flexible Block'),
+			'description'       => __('A custom flexible block.'),
+			'render_template'   => 'templates/flexible-content/flexible-block.php',
+			'category'          => 'formatting',
+		));
+	}
+}
