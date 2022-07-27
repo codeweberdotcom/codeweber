@@ -35,20 +35,29 @@ require_once get_template_directory() . '/functions/custom.php'; // --- Custom u
 // --- New Gutenberg Layout---
 
 
-function example_block_category($categories, $post)
-{
-	return array_merge(
-		$categories,
-		array(
-			array(
-				'slug' => 'codeweber',
-				'title' => 'Codeweber blocks',
-			),
-		)
-	);
-}
-add_filter('block_categories', 'example_block_category', 10, 2);
 
+
+
+function checkCategoryOrder($categories)
+{
+	//custom category array
+	$temp = array(
+		'slug'  => 'codeweber',
+		'title' => 'Codeweber Blocks'
+	);
+	//new categories array and adding new custom category at first location
+	$newCategories = array();
+	$newCategories[0] = $temp;
+
+	//appending original categories in the new array
+	foreach ($categories as $category) {
+		$newCategories[] = $category;
+	}
+
+	//return new categories
+	return $newCategories;
+}
+add_filter('block_categories_all', 'checkCategoryOrder', 99, 1);
 
 // --- ACF Flexible Block
 
@@ -82,6 +91,26 @@ function my_acf_blocks_init()
 				'title'             => __('Features'),
 				'description'       => __('Features.'),
 				'render_template'   => 'templates/flexible-content/features.php',
+				'enqueue_style' => get_template_directory_uri() . '/templates/flexible-content/flexible-block.css',
+				'category'          => 'codeweber',
+				'mode'					=> 'auto',
+				'align'           => 'full',
+				'supports'        => array(
+					'align'        => array('full'),
+					'align'        => true,
+				),
+				'mode' => 'preview',
+
+			)
+
+		);
+
+		acf_register_block_type(
+			array(
+				'name'              => 'facts',
+				'title'             => __('Facts'),
+				'description'       => __('Facts.'),
+				'render_template'   => 'templates/flexible-content/facts.php',
 				'enqueue_style' => get_template_directory_uri() . '/templates/flexible-content/flexible-block.css',
 				'category'          => 'codeweber',
 				'mode'					=> 'auto',

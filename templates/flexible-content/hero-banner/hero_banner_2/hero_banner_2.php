@@ -1,15 +1,16 @@
 <?php
 $root_theme = get_template_directory_uri();
-$title = 'Sandbox focuses on';
-$paragraph = 'We carefully consider our solutions to support each and every stage of your growth.';
+$title = 'Grow Your Business with Our Solutions.';
+$paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
 $imageurl = $root_theme . '/dist/img/photos/about7.jpg';
+$videourl = $root_theme . '/dist/media/movie.mp4';
 $typewriter = 'customer satisfaction,business needs,creative ideas';
 $glightbox = '';
 $button_link = "#";
 $backgroundcolor = 'dark';
 $textcolor = 'white';
+$typewriter = 'customer satisfaction,business needs,creative ideas';
 $forms = array();
-
 
 $post_id = get_the_ID();
 $section_id = $post_id . '_' . get_row_index();
@@ -31,7 +32,14 @@ if (get_sub_field('dark_or_white_light_or_dark') == 1) :
   $textcolor = 'dark';
 endif;
 
-
+// --- Typewriter ---
+if (have_rows('typewriter_effect_text')) :
+  $typewriterarray = array();
+  while (have_rows('typewriter_effect_text')) : the_row();
+    array_push($typewriterarray, get_sub_field('text'));
+  endwhile;
+  $typewriter = implode(", ", $typewriterarray);
+endif;
 
 // Create id attribute allowing for custom "anchor" value.
 $id = 'fexible-block-' . $block['id'];
@@ -48,9 +56,10 @@ if (!empty($block['className'])) {
 if (!empty($block['align'])) {
   $classes .= ' align' . $block['align'];
 };
+
 ?>
 
-<section id="<?php echo esc_attr($id) . $section_id; ?>" class="<?php echo esc_attr($classes); ?> wrapper bg-<?php echo $backgroundcolor; ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?> wrapper bg-<?php echo $backgroundcolor; ?>">
   <div class="container pt-8 pt-md-14">
     <div class="row gx-lg-0 gx-xl-8 gy-10 gy-md-13 gy-lg-0 mb-7 mb-md-10 mb-lg-16 align-items-center">
       <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-1 position-relative order-lg-2" data-cue="zoomIn">

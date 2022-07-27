@@ -86,7 +86,7 @@ function brk_jquery_footer()
 {
 	$theme_version = wp_get_theme()->get('Version');
 	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', includes_url('/js/jquery/jquery.js'), false, $theme_version, true);
+	// wp_enqueue_script('jquery', includes_url('/js/jquery/jquery.js'), false, $theme_version, true);
 }
 
 

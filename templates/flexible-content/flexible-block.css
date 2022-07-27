@@ -3,6 +3,11 @@
   opacity: 1 !important;
 }
 
+[data-cue="zoomIn"],
+[data-cues="zoomIn"] > * {
+  opacity: 1 !important;
+}
+
 html :where(.wp-block) {
   max-width: 95%;
   margin-top: 28px;

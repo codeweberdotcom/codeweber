@@ -3,11 +3,13 @@ $root_theme = get_template_directory_uri();
 $title = 'Grow Your Business with Our Solutions.';
 $paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
 $imageurl = $root_theme . '/dist/img/illustrations/i2.png';
+$videourl = $root_theme . '/dist/media/movie.mp4';
 $typewriter = 'customer satisfaction,business needs,creative ideas';
 $glightbox = '';
 $button_link = "#";
 $backgroundcolor = 'dark';
 $textcolor = 'white';
+$typewriter = 'customer satisfaction,business needs,creative ideas';
 $forms = array();
 
 $post_id = get_the_ID();
@@ -47,7 +49,7 @@ if (!empty($block['align'])) {
 
 ?>
 
-<section id="<?php echo esc_attr($id) . $section_id; ?>" class="<?php echo esc_attr($classes); ?> wrapper bg-<?php echo $backgroundcolor; ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?> wrapper bg-<?php echo $backgroundcolor; ?>">
   <div class="container pt-10 pt-md-14 pb-8 text-center">
     <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
       <div class="col-lg-7">
