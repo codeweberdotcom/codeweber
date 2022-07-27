@@ -98,8 +98,9 @@ if (!empty($block['align'])) {
         <h1 class="display-1 mb-5 mx-md-n5 mx-lg-0 text-<?php echo $textcolor; ?>"><?php esc_html_e($title, 'codeweber'); ?></h1>
         <p class="lead fs-lg mb-7 text-<?php echo $textcolor; ?>"><?php echo $paragraph; ?></p>
 
+
         <!--  buttons group -->
-        <div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
+        <div class="d-flex justify-content-center flex-wrap justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
           <!--  buttons start -->
           <?php if (have_rows('button_repeater')) : ?>
             <?php $i = 0; ?>
@@ -126,16 +127,20 @@ if (!empty($block['align'])) {
                   <!--  buttons style end-->
 
                   <?php $text_on_button = get_sub_field('text_on_button'); ?>
+
                   <?php $select_type = get_sub_field('select_type'); ?>
+
                   <?php if ($select_type == 'Page or Post') : ?>
+
                     <?php $button_link = get_sub_field('button_link'); ?>
                     <?php if ($button_link) : ?>
                       <?php $post = $button_link; ?>
                       <?php setup_postdata($post); ?>
                       <?php $button_link = get_permalink(); ?>
-                      <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded-pill me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
+                      <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded-pill me-2 mb-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
                       <?php wp_reset_postdata(); ?>
                     <?php endif; ?>
+
                   <?php elseif ($select_type == 'Taxonomy') : ?>
                     <?php $taxonomy = get_sub_field('taxonomy'); ?>
                     <?php if ($taxonomy) : ?>

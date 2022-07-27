@@ -1,0 +1,10 @@
+[data-cue="slideInDown"],
+[data-cues="slideInDown"] > * {
+  opacity: 1 !important;
+}
+
+html :where(.wp-block) {
+  max-width: 95%;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}

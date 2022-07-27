@@ -1,11 +1,11 @@
 {
-    "key": "group_62d891d97da97",
-    "title": "Hero banner",
+    "key": "group_62e0f1e58fd83",
+    "title": "Features",
     "fields": [
         {
-            "key": "field_62d891e5fdc12",
-            "label": "Hero banner",
-            "name": "hero_banner",
+            "key": "field_62e0f1e59391e",
+            "label": "Features",
+            "name": "features",
             "type": "flexible_content",
             "instructions": "",
             "required": 0,
@@ -18,12 +18,12 @@
             "layouts": {
                 "layout_62e04baec6043": {
                     "key": "layout_62e04baec6043",
-                    "name": "hero_banner_1",
-                    "label": "Hero banner_1",
+                    "name": "features_1",
+                    "label": "Features 1",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62e04baec6044",
+                            "key": "field_62e0f1e597729",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
                             "type": "clone",
@@ -44,7 +44,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62e04baec6045",
+                            "key": "field_62e0f1e59b308",
                             "label": "Title",
                             "name": "title",
                             "type": "clone",
@@ -65,7 +65,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62e04baec6046",
+                            "key": "field_62e0f1e59ef96",
                             "label": "Paragraph",
                             "name": "paragraph",
                             "type": "clone",
@@ -86,7 +86,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62e04baec6047",
+                            "key": "field_62e0f1e5a2a01",
                             "label": "Gallery",
                             "name": "gallery",
                             "type": "clone",
@@ -107,7 +107,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62e04baec6048",
+                            "key": "field_62e0f1e5a65ea",
                             "label": "Buttons",
                             "name": "buttons",
                             "type": "clone",
@@ -133,12 +133,12 @@
                 },
                 "layout_62ddd081b56cd": {
                     "key": "layout_62ddd081b56cd",
-                    "name": "hero_banner_2",
-                    "label": "Hero banner_2",
+                    "name": "features_2",
+                    "label": "Features 2",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62ddd081b56ce",
+                            "key": "field_62e0f1e5aa093",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
                             "type": "clone",
@@ -159,7 +159,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62ddd081b56cf",
+                            "key": "field_62e0f1e5adce6",
                             "label": "Title",
                             "name": "title",
                             "type": "clone",
@@ -180,7 +180,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62ddd081b56d0",
+                            "key": "field_62e0f1e5b17c4",
                             "label": "Paragraph",
                             "name": "paragraph",
                             "type": "clone",
@@ -201,7 +201,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62ddd081b56d1",
+                            "key": "field_62e0f1e5b537d",
                             "label": "Gallery",
                             "name": "gallery",
                             "type": "clone",
@@ -222,7 +222,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62ddd081b56d2",
+                            "key": "field_62e0f1e5b9001",
                             "label": "Buttons",
                             "name": "buttons",
                             "type": "clone",
@@ -248,12 +248,12 @@
                 },
                 "layout_62d8920c97748": {
                     "key": "layout_62d8920c97748",
-                    "name": "hero_banner_3",
-                    "label": "Hero banner_3",
+                    "name": "features_3",
+                    "label": "Features 3",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62d95add52581",
+                            "key": "field_62e0f1e5bcaf5",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
                             "type": "clone",
@@ -274,7 +274,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d93075252bf",
+                            "key": "field_62e0f1e5c05d6",
                             "label": "Title",
                             "name": "title",
                             "type": "clone",
@@ -295,7 +295,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d930cc252c0",
+                            "key": "field_62e0f1e5c4079",
                             "label": "Paragraph",
                             "name": "paragraph",
                             "type": "clone",
@@ -316,7 +316,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d937a18d319",
+                            "key": "field_62e0f1e5c7a49",
                             "label": "Typewriter effect text",
                             "name": "typewriter_effect_text",
                             "type": "clone",
@@ -337,7 +337,7 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_62ddadbfcfb66",
+                            "key": "field_62e0f1e5cb51a",
                             "label": "Gallery",
                             "name": "gallery",
                             "type": "clone",
@@ -358,7 +358,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62ddadd7cfb67",
+                            "key": "field_62e0f1e5cefc7",
                             "label": "Buttons",
                             "name": "buttons",
                             "type": "clone",
@@ -384,12 +384,12 @@
                 },
                 "layout_62d9c5d5aadda": {
                     "key": "layout_62d9c5d5aadda",
-                    "name": "hero_banner_4",
-                    "label": "Hero banner_4",
+                    "name": "features_4",
+                    "label": "Features 4",
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_62d9c5d5aaddb",
+                            "key": "field_62e0f1e5d2ae0",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
                             "type": "clone",
@@ -410,7 +410,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d9c5d5aaddc",
+                            "key": "field_62e0f1e5d6588",
                             "label": "Title",
                             "name": "title",
                             "type": "clone",
@@ -431,7 +431,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d9c5d5aaddd",
+                            "key": "field_62e0f1e5d9ff3",
                             "label": "Paragraph",
                             "name": "paragraph",
                             "type": "clone",
@@ -452,7 +452,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62ddc4ad52961",
+                            "key": "field_62e0f1e5ddb2d",
                             "label": "Image",
                             "name": "image",
                             "type": "clone",
@@ -473,7 +473,7 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_62ddc1af95f0d",
+                            "key": "field_62e0f1e5e14a7",
                             "label": "Buttons",
                             "name": "buttons",
                             "type": "clone",
@@ -499,12 +499,12 @@
                 },
                 "layout_62d9cc515fd90": {
                     "key": "layout_62d9cc515fd90",
-                    "name": "hero_banner_8",
-                    "label": "Hero banner_8",
+                    "name": "features_5",
+                    "label": "Features 5",
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_62d9cc515fd91",
+                            "key": "field_62e0f1e5e4f67",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
                             "type": "clone",
@@ -525,7 +525,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d9cc515fd92",
+                            "key": "field_62e0f1e5e892e",
                             "label": "Title",
                             "name": "title",
                             "type": "clone",
@@ -546,7 +546,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d9cc515fd93",
+                            "key": "field_62e0f1e5ec34f",
                             "label": "Paragraph",
                             "name": "paragraph",
                             "type": "clone",
@@ -567,7 +567,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d9cc515fd94",
+                            "key": "field_62e0f1e5efdd7",
                             "label": "Image",
                             "name": "image",
                             "type": "clone",
@@ -588,7 +588,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d9d0571e0f3",
+                            "key": "field_62e0f1e5f3972",
                             "label": "Label on banner",
                             "name": "label_on_banner",
                             "type": "clone",
@@ -609,7 +609,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d9cc515fd95",
+                            "key": "field_62e0f1e603391",
                             "label": "Button",
                             "name": "button",
                             "type": "clone",
@@ -630,7 +630,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62d9cc515fd96",
+                            "key": "field_62e0f1e606e59",
                             "label": "Button 2",
                             "name": "button_2",
                             "type": "clone",
@@ -656,12 +656,12 @@
                 },
                 "layout_62da9ae0c77be": {
                     "key": "layout_62da9ae0c77be",
-                    "name": "hero_banner_11",
-                    "label": "Hero banner_11",
+                    "name": "features_6",
+                    "label": "Features 6",
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_62da9ae0c77bf",
+                            "key": "field_62e0f1e60a79c",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
                             "type": "clone",
@@ -682,7 +682,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62da9ae0c77c0",
+                            "key": "field_62e0f1e60e1b1",
                             "label": "Title",
                             "name": "title",
                             "type": "clone",
@@ -703,7 +703,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62da9ae0c77c1",
+                            "key": "field_62e0f1e611d0b",
                             "label": "Paragraph",
                             "name": "paragraph",
                             "type": "clone",
@@ -724,7 +724,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62da9ae0c77c4",
+                            "key": "field_62e0f1e6157c9",
                             "label": "Button",
                             "name": "button",
                             "type": "clone",
@@ -745,7 +745,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62da9ae0c77c5",
+                            "key": "field_62e0f1e61940f",
                             "label": "Button 2",
                             "name": "button_2",
                             "type": "clone",
@@ -766,7 +766,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62db0991dc9dd",
+                            "key": "field_62e0f1e61cdb1",
                             "label": "Gallery",
                             "name": "gallery",
                             "type": "clone",
@@ -787,7 +787,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62db0a54eb7a2",
+                            "key": "field_62e0f1e6209c2",
                             "label": "Background",
                             "name": "background",
                             "type": "image",
@@ -816,12 +816,12 @@
                 },
                 "layout_62db1c200c899": {
                     "key": "layout_62db1c200c899",
-                    "name": "hero_banner_15",
-                    "label": "Hero banner_15",
+                    "name": "features_7",
+                    "label": "Features 7",
                     "display": "row",
                     "sub_fields": [
                         {
-                            "key": "field_62db1c200c89a",
+                            "key": "field_62e0f1e624496",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
                             "type": "clone",
@@ -842,7 +842,7 @@
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62db1ca60c8a1",
+                            "key": "field_62e0f1e627f65",
                             "label": "Hero Slider",
                             "name": "hero_slider",
                             "type": "clone",
@@ -877,7 +877,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/hero-banner"
+                "value": "acf\/features"
             }
         ]
     ],
@@ -892,5 +892,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1658909148
+    "modified": 1658909469
 }

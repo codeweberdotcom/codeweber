@@ -32,6 +32,23 @@ require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup
 
 require_once get_template_directory() . '/functions/custom.php'; // --- Custom user functions ---
 
+// --- New Gutenberg Layout---
+
+
+function example_block_category($categories, $post)
+{
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'codeweber',
+				'title' => 'Codeweber blocks',
+			),
+		)
+	);
+}
+add_filter('block_categories', 'example_block_category', 10, 2);
+
 
 // --- ACF Flexible Block
 
@@ -42,13 +59,41 @@ function my_acf_blocks_init()
 	// Check function exists.
 	if (function_exists('acf_register_block_type')) {
 
-		// Register a testimonial block.
+		// Register a hero_banner block.
 		acf_register_block_type(array(
-			'name'              => 'fexible-block',
-			'title'             => __('Flexible Block'),
+			'name'              => 'hero_banner',
+			'title'             => __('Hero banner'),
 			'description'       => __('A custom flexible block.'),
-			'render_template'   => 'templates/flexible-content/flexible-block.php',
-			'category'          => 'formatting',
+			'render_template'   => 'templates/flexible-content/hero_banner.php',
+			'enqueue_style' => get_template_directory_uri() . '/templates/flexible-content/flexible-block.css',
+			'category'          => 'codeweber',
+			'align'           => 'full',
+			'supports'        => array(
+				'align'        => array('full'),
+				'align'        => true,
+			),
+			'mode' => 'preview',
+
 		));
+
+		acf_register_block_type(
+			array(
+				'name'              => 'features',
+				'title'             => __('Features'),
+				'description'       => __('Features.'),
+				'render_template'   => 'templates/flexible-content/features.php',
+				'enqueue_style' => get_template_directory_uri() . '/templates/flexible-content/flexible-block.css',
+				'category'          => 'codeweber',
+				'mode'					=> 'auto',
+				'align'           => 'full',
+				'supports'        => array(
+					'align'        => array('full'),
+					'align'        => true,
+				),
+				'mode' => 'preview',
+
+			)
+
+		);
 	}
 }
