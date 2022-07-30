@@ -24,19 +24,20 @@ require_once get_template_directory() . '/functions/global.php'; // --- Various 
 
 require_once get_template_directory() . '/functions/integrations/acf.php'; // --- ACF integration ---
 
+require_once get_template_directory() . '/functions/integrations/acf-icon/acf-icon-picker.php'; // --- ACF integration ---
+
 require_once get_template_directory() . '/functions/integrations/cf7.php'; // --- Contact Form 7 integration ---
 
 // require_once get_template_directory() . '/functions/searchfilter.php'; // --- Search results filter ---
 
-require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup ---
+// require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup ---
 
 require_once get_template_directory() . '/functions/custom.php'; // --- Custom user functions ---
 
+
+
+
 // --- New Gutenberg Layout---
-
-
-
-
 
 function checkCategoryOrder($categories)
 {
@@ -53,14 +54,16 @@ function checkCategoryOrder($categories)
 	foreach ($categories as $category) {
 		$newCategories[] = $category;
 	}
-
 	//return new categories
 	return $newCategories;
 }
 add_filter('block_categories_all', 'checkCategoryOrder', 99, 1);
 
-// --- ACF Flexible Block
 
+
+
+
+// --- ACF Flexible Block
 add_action('acf/init', 'my_acf_blocks_init');
 function my_acf_blocks_init()
 {
