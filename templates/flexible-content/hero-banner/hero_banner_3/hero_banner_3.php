@@ -2,7 +2,7 @@
 $root_theme = get_template_directory_uri();
 $title = 'Grow Your Business with Our Solutions.';
 $paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
-$imageurl = $root_theme . '/dist/img/illustrations/i2.png';
+$imageurl = $root_theme . '/dist/img/photos/about13.jpg';
 $videourl = $root_theme . '/dist/media/movie.mp4';
 $typewriter = 'customer satisfaction,business needs,creative ideas';
 $glightbox = '';
@@ -59,12 +59,6 @@ if (!empty($block['align'])) {
 
 ?>
 
-
-<?php $json = file_get_contents('http://codeweber.test/wp-json/wp/v2/users'); ?>
-
-<?php $obj = json_decode($json); ?>
-
-<?php var_dump($obj); ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?> wrapper bg-<?php echo $backgroundcolor; ?> angled lower-start">
   <div class="container pt-7 pt-md-11 pb-8">
@@ -135,16 +129,18 @@ if (!empty($block['align'])) {
                     <?php elseif ($select_type == 'Contact Form') : ?>
                       <?php $contact_form = get_sub_field('contact_form'); ?>
                       <?php if ($contact_form) : ?>
-
                         <?php $data_modal = 'data-bs-toggle="modal"'; ?>
-
-                        <?php $data_modal_id = 'data-bs-target="#form-' . $contact_form . '"'; ?>
-
+                        <?php $data_modal_id = 'data-bs-target="#modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '"'; ?>
                         <span><a href="#" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-
-
-                        <?php $form = do_shortcode('[contact-form-7 id="368"]'); ?>
-
+                        <?php $form = '<div class="modal fade" id="modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '" tabindex="-1">
+                       <div class="modal-dialog modal-dialog-centered modal-sm">
+                       <div class="modal-content text-center">
+                      <div class="modal-body">
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'; ?>
+                        <?php $id = $contact_form; ?>
+                        <?php $form .= do_shortcode("[contact-form-7 id='{$id}']"); ?>
+                        <?php $form .= '</div></div></div></div>'; ?>
+                        <?php $forms[$i] = $form; ?>
                       <?php endif; ?>
                     <?php elseif ($select_type == 'Html') : ?>
                       <?php $html = get_sub_field('html'); ?>
@@ -222,7 +218,11 @@ if (!empty($block['align'])) {
       <!-- /column -->
     </div>
     <!-- /.row -->
-
+    <!--  generate forms start -->
+    <?php foreach ($forms as $item) {
+      echo $item;
+    } ?>
+    <!--  generate forms end -->
   </div>
   <!-- /.container -->
 </section>

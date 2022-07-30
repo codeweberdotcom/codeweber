@@ -31,6 +31,7 @@ if (get_sub_field('dark_or_white_light_or_dark') == 1) :
   $textcolor = 'dark';
 endif;
 
+
 // Create id attribute allowing for custom "anchor" value.
 $id = 'fexible-block-' . $block['id'];
 if (!empty($block['anchor'])) {
@@ -48,6 +49,7 @@ if (!empty($block['align'])) {
 };
 
 ?>
+
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?> wrapper bg-<?php echo $backgroundcolor; ?>">
   <div class="container pt-10 pt-md-14 pb-8 text-center">

@@ -16,7 +16,7 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('brk_single', 800, 500, true);
 		add_image_size('brk_post_sm', 140, 140, true);
 
-		
+
 
 		add_image_size('sandbox_hero_3', 590, 650, true);
 		add_image_size('sandbox_hero_11', 575, 550, true);
@@ -24,6 +24,11 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('sandbox_hero_4', 901, 358, true);
 		add_image_size('sandbox_hero_8', 388, 510, true);
 		add_image_size('sandbox_hero_1', 800, 538, true);
+		add_image_size('sandbox_hero_5', 1000, 625, true);
+		add_image_size('sandbox_hero_14', 1200, 650, true);
+		
+
+
 		// remove_image_size('large');
 		// remove_image_size('thumbnail');
 		// remove_image_size('medium');

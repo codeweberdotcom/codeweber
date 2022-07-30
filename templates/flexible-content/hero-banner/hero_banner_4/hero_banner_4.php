@@ -1,15 +1,16 @@
 <?php
 $root_theme = get_template_directory_uri();
-$title = 'Sandbox focuses on';
-$paragraph = 'We carefully consider our solutions to support each and every stage of your growth.';
-$imageurl = $root_theme . '/dist/img/photos/about7.jpg';
+$title = 'Grow Your Business with Our Solutions.';
+$paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
+$imageurl = $root_theme . '/dist/img/photos/about16.jpg';
+$videourl = $root_theme . '/dist/media/movie.mp4';
 $typewriter = 'customer satisfaction,business needs,creative ideas';
 $glightbox = '';
 $button_link = "#";
 $backgroundcolor = 'dark';
 $textcolor = 'white';
+$typewriter = 'customer satisfaction,business needs,creative ideas';
 $forms = array();
-
 
 $post_id = get_the_ID();
 $section_id = $post_id . '_' . get_row_index();
@@ -30,16 +31,45 @@ if (get_sub_field('dark_or_white_light_or_dark') == 1) :
   $backgroundcolor = 'light';
   $textcolor = 'dark';
 endif;
+
+// --- Typewriter ---
+if (have_rows('typewriter_effect_text')) :
+  $typewriterarray = array();
+  while (have_rows('typewriter_effect_text')) : the_row();
+    array_push($typewriterarray, get_sub_field('text'));
+  endwhile;
+  $typewriter = implode(", ", $typewriterarray);
+endif;
+
+// --- Image ---
+$image = get_sub_field('image');
+if ($image) :
+  $imageurl = esc_url($image['url']);
+endif;
+
+// Create id attribute allowing for custom "anchor" value.
+$id = 'fexible-block-' . $block['id'];
+if (!empty($block['anchor'])) {
+  $id = $block['anchor'];
+};
+
+// Create class attribute allowing for custom "className" and "align" values.
+$classes = 'block-fexible-block';
+if (!empty($block['className'])) {
+  $classes .= ' ' . $block['className'];
+};
+
+if (!empty($block['align'])) {
+  $classes .= ' align' . $block['align'];
+};
+
 ?>
-
-
-<section id="<?php echo $section_id; ?>" class="wrapper bg-<?php echo $backgroundcolor; ?> position-relative min-vh-70 d-lg-flex align-items-center">
-
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?> wrapper bg-<?php echo $backgroundcolor; ?> position-relative min-vh-70 d-lg-flex align-items-center">
   <?php $image = get_sub_field('image'); ?>
   <?php if ($image) : ?>
-    <div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50" data-image-src="<?php echo esc_url($image['url']); ?>"></div>
+    <div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50" data-cues="slideInDown" data-image-src="<?php echo esc_url($image['url']); ?>"></div>
   <?php else : ?>
-    <div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50" data-image-src="<?php echo $imageurl; ?>"></div>
+    <div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50" data-cues="slideInDown" data-image-src="<?php echo $imageurl; ?>"></div>
   <?php endif; ?>
 
   <!--/column -->
@@ -85,32 +115,32 @@ endif;
                         <?php $post = $button_link; ?>
                         <?php setup_postdata($post); ?>
                         <?php $button_link = get_permalink(); ?>
-                        <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded-pill me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
+                        <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
                         <?php wp_reset_postdata(); ?>
                       <?php endif; ?>
                     <?php elseif ($select_type == 'Taxonomy') : ?>
                       <?php $taxonomy = get_sub_field('taxonomy'); ?>
                       <?php if ($taxonomy) : ?>
                         <?php $button_link = get_term_link($taxonomy->term_id); ?>
-                        <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded-pill me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
+                        <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
                       <?php endif; ?>
                     <?php elseif ($select_type == 'URL') : ?>
                       <?php $url = get_sub_field('url'); ?>
                       <?php $button_link = $url; ?>
-                      <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded-pill me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
+                      <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
                     <?php elseif ($select_type == 'Video URL') : ?>
                       <?php $video_url = get_sub_field('video_url'); ?>
                       <?php if ($video_url) : ?>
                         <?php $glightbox = 'data-glightbox=""'; ?>
                       <?php endif; ?>
                       <?php $button_link = $video_url; ?>
-                      <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded-pill me-2" <?php echo $glightbox; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
+                      <span><a href="<?php echo $button_link; ?>" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded me-2" <?php echo $glightbox; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
                     <?php elseif ($select_type == 'Contact Form') : ?>
                       <?php $contact_form = get_sub_field('contact_form'); ?>
                       <?php if ($contact_form) : ?>
                         <?php $data_modal = 'data-bs-toggle="modal"'; ?>
                         <?php $data_modal_id = 'data-bs-target="#modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '"'; ?>
-                        <span><a href="#" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded-pill-pill me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
+                        <span><a href="#" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded-pill me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
                         <?php $form = '<div class="modal fade" id="modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '" tabindex="-1">
                        <div class="modal-dialog modal-dialog-centered modal-sm">
                        <div class="modal-content text-center">
@@ -123,9 +153,10 @@ endif;
                       <?php endif; ?>
                     <?php elseif ($select_type == 'Html') : ?>
                       <?php $html = get_sub_field('html'); ?>
-                      <?php $data_modal_id = 'data-bs-target="#modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '"'; ?>
-                      <span><a href="#" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded-pill-pill me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-                      <?php $form = '<div class="modal fade" id="modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '" tabindex="-1">
+                      <?php $data_modal = 'data-bs-toggle="modal"'; ?>
+                      <?php $data_modal_id = 'data-bs-target="#test386'; ?>
+                      <span><a href="#" class="btn btn-lg btn<?php echo $button_class; ?> btn-icon btn-icon-start rounded me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
+                      <?php $form = '<div class="modal fade" id="test386" tabindex="-1">
                        <div class="modal-dialog modal-dialog-centered modal-sm">
                        <div class="modal-content text-center">
                       <div class="modal-body">
@@ -139,8 +170,7 @@ endif;
                 <?php endif; ?>
               <?php endwhile; ?>
             <?php else : ?>
-              <span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span>
-              <span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Contact Us</a></span>
+              <span><a class="btn btn-lg btn-primary rounded">Get Started</a></span>
             <?php endif; ?>
             <!--  buttons end -->
           </div>

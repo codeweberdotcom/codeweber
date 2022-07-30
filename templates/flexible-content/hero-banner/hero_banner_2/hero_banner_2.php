@@ -11,7 +11,6 @@ $backgroundcolor = 'dark';
 $textcolor = 'white';
 $typewriter = 'customer satisfaction,business needs,creative ideas';
 $forms = array();
-
 $post_id = get_the_ID();
 $section_id = $post_id . '_' . get_row_index();
 
@@ -118,7 +117,6 @@ if (!empty($block['align'])) {
               <?php if (have_rows('button_button')) : ?>
                 <?php while (have_rows('button_button')) : the_row(); ?>
                   <?php $style_button = get_sub_field('outline') ?>
-                  <!--  buttons style -->
                   <?php if (get_sub_field('outline') == 1) : ?>
                     <?php $class_style = '-outline' ?>
                   <?php else : ?>
@@ -134,7 +132,6 @@ if (!empty($block['align'])) {
                   <?php endif; ?>
                   <?php $button_class = $class_style . $color_button; ?>
                   <?php $select_icon = get_sub_field('icon'); ?>
-                  <!--  buttons style end-->
 
                   <?php $text_on_button = get_sub_field('text_on_button'); ?>
                   <?php $select_type = get_sub_field('select_type'); ?>
@@ -205,7 +202,6 @@ if (!empty($block['align'])) {
           <!--  buttons end -->
         </div>
         <!--  buttons group -->
-
       </div>
       <!--  generate forms start -->
       <?php foreach ($forms as $item) {
