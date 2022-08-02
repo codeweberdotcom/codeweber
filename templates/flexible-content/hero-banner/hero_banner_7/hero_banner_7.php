@@ -87,8 +87,8 @@ if (!empty($block['align'])) {
          $data_group = 'join',
          $data_delay = '900',
          $default_button = '<div class="d-flex justify-content-center" data-cues="slideInDown" data-group="join" data-delay="900">
-      <span><a class="btn btn-lg btn-primary rounded-pill mx-1">See Projects</a></span>
-      <span><a class="btn btn-lg btn-outline-primary rounded-pill mx-1">Contact Us</a></span>
+      <span><a class="btn btn-lg btn-primary rounded mx-1">See Projects</a></span>
+      <span><a class="btn btn-lg btn-outline-primary rounded mx-1">Contact Us</a></span>
     </div>'
       ); ?>
       <!--/buttons group -->
