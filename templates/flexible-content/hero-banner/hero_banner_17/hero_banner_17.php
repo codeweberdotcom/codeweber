@@ -1,8 +1,8 @@
 <?php
 $root_theme = get_template_directory_uri();
-$title = 'Get all of your steps, exercise, sleep and meds in one place.';
-$paragraph = 'Sandbox is now available to download from both the App Store and Google Play Store.';
-$imageurl = $root_theme . '/dist/img/photos/devices.png';
+$title = 'We bring rapid solutions for your business.';
+$paragraph = 'Hello! This is Sandbox';
+$imageurl = $root_theme . '/dist/img/photos/bg11.jpg';
 $videourl = $root_theme . '/dist/media/movie.mp4';
 $typewriter = 'customer satisfaction,business needs,creative ideas';
 $glightbox = '';
@@ -28,7 +28,7 @@ endif;
 
 // --- Theme ---
 if (get_sub_field('dark_or_white_light_or_dark') == 1) :
-   $backgroundcolor = 'soft-primary';
+   $backgroundcolor = 'gradient-primary';
    $textcolor = 'dark';
 endif;
 
@@ -65,34 +65,33 @@ if (!empty($block['align'])) {
 
 ?>
 
-
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($classes); ?> wrapper bg-<?php echo $backgroundcolor; ?>">
-   <div class="container pt-5 pb-15 py-lg-17 py-xl-19 pb-xl-20 position-relative">
-      <img class="position-lg-absolute col-12 col-lg-10 col-xl-11 col-xxl-10 px-lg-5 px-xl-0 ms-n5 ms-sm-n8 ms-md-n10 ms-lg-0 mb-md-4 mb-lg-0" src="<?php echo $imageurl; ?>" srcset="<?php echo $imageurl; ?>" data-cue="fadeIn" alt="" style="top: -1%; left: -21%;" />
-      <div class="row gx-0 align-items-center">
-         <div class="col-md-10 offset-md-1 col-lg-5 offset-lg-7 offset-xxl-6 ps-xxl-12 mt-md-n9 text-center text-lg-start" data-cues="slideInDown" data-group="page-title" data-delay="600">
-            <h1 class="display-2 mb-4 mx-sm-n2 mx-md-0 text-<?php echo $textcolor; ?>"><?php echo $title; ?></h1>
-            <p class="lead fs-lg mb-7 px-md-10 px-lg-0 text-<?php echo $textcolor; ?>"><?php echo $paragraph; ?></p>
+<section class="wrapper bg-gray">
+   <div class="container pt-12 pt-md-16 text-center">
+      <div class="row">
+         <div class="col-lg-8 col-xxl-7 mx-auto text-center" data-cues="slideInDown" data-group="page-title" data-delay="600">
+            <div class="fs-16 text-uppercase ls-xl text-dark mb-4"><?php echo $paragraph; ?></div>
+            <h1 class="display-1 fs-58 mb-7"><?php echo $title; ?></h1>
             <!--  buttons group -->
             <?php buttons(
-               $form_button = 'rounded',
-               $button_size = NULL,
-               $class_button_wraper = 'd-flex justify-content-center justify-content-lg-start',
+               $form_button = 'rounded-pill',
+               $button_size = 'btn-lg',
+               $class_button_wraper = 'd-flex justify-content-center',
                $gradient = NULL,
                $data_cues = 'slideInDown',
                $data_group = 'page-title-buttons',
                $data_delay = '900',
-               $default_button = '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
-          <span><a class="btn btn-primary btn-icon btn-icon-start rounded me-2"><i class="uil uil-apple"></i> App Store</a></span>
-          <span><a class="btn btn-green btn-icon btn-icon-start rounded"><i class="uil uil-google-play"></i> Google Play</a></span>
-        </div>'
-            ); ?>
+               $default_button = '<div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
+               <span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span>
+               <span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Contact Us</a></span>
+            </div>'
+            ) ?>
             <!--/buttons group -->
          </div>
-         <!-- /column -->
+         <!--/column -->
       </div>
       <!-- /.row -->
    </div>
    <!-- /.container -->
+   <figure class="position-absoute" style="bottom: 0; left: 0; z-index: 2;"><img src="<?php echo $imageurl; ?>" alt="" /></figure>
 </section>
 <!-- /section -->

@@ -108,8 +108,6 @@ if (!empty($block['align'])) {
                       <h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s"><?php echo $title; ?></h2>
                       <p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s"><?php echo $paragraph; ?></p>
 
-
-
                       <!--  buttons group -->
                       <div class="d-flex <?php echo $button_wrapper_class; ?> flex-wrap animate__animated animate__slideInUp animate__delay-3s" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
                         <!--  buttons start -->
@@ -295,9 +293,3 @@ if (!empty($block['align'])) {
   <!-- /.swiper -->
 </div>
 <!-- /.swiper-container -->
-
-<!--  generate forms start -->
-<?php foreach ($forms as $item) {
-  echo $item;
-} ?>
-<!--  generate forms end -->

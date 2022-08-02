@@ -14,6 +14,7 @@ $typewriter = 'customer satisfaction,business needs,creative ideas';
 $forms = array();
 $text_link = 'Learn More';
 $link_url = '#';
+$color_link = 'text-primary';
 $post_id = get_the_ID();
 $section_id = $post_id . '_' . get_row_index();
 
@@ -63,8 +64,13 @@ if (have_rows('link_text')) :
          $link_url = get_permalink();
          wp_reset_postdata();
       endif;
+      if (get_sub_field('color_link')) {
+         $color_link = 'text-' . get_sub_field('color_link');
+      }
    endwhile;
 endif;
+
+
 
 
 
@@ -96,7 +102,7 @@ if (!empty($block['align'])) {
          <!-- /column -->
          <div class="col-lg-6">
             <p class="lead fs-25 my-3 text-<?php echo $textcolor; ?>"><?php echo $paragraph; ?></p>
-            <a href="<?php echo $link_url; ?>" class="more hover"><?php echo $text_link; ?></a>
+            <a href="<?php echo $link_url; ?>" class="more hover <?php echo $color_link; ?>"><?php echo $text_link; ?></a>
          </div>
          <!-- /column -->
       </div>
@@ -104,56 +110,25 @@ if (!empty($block['align'])) {
       <div class="position-relative">
          <div class="shape bg-dot primary rellax w-17 h-21" data-rellax-speed="1" style="top: -2.5rem; right: -2.7rem;"></div>
 
-         <?php if (have_rows('gallery')) : ?>
-            <div class="swiper-container dots-over shadow-lg rounded mb-md-n20" data-margin="5" data-nav="true" data-dots="true">
-               <div class="swiper">
-                  <div class="swiper-wrapper">
+         <!-- swiper gallery -->
+         <?php swiper_gallery(
+            $image_size = 'sandbox_hero_14',
+            $class_swiper = 'swiper-container dots-over rounded mb-md-n20',
+            $data_nav = "true",
+            $data_dots = "true",
+            $data_margin = "5",
+            $data_autoplay = "false",
+            $data_autoplaytime = "3000",
+            $data_items_lg = "1",
+            $data_items_md = "1",
+            $data_items_xs = "1",
+            $default_img = '<figure class="rounded mb-md-n20"><img src="' . get_template_directory_uri() . '/dist/img/photos/about18.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about18@2x.jpg 2x" alt="" /></figure>'
+         );
+         ?>
+         <!--/swiper gallery -->
 
-                     <!-- swiper-items -->
-
-                     <?php while (have_rows('gallery')) : the_row();
-                        $video_or_photo = get_sub_field('photo_or_video');
-                        if ($video_or_photo === 'Photo') :
-                           $image = get_sub_field('photo');
-                           $size = 'sandbox_hero_14';
-                           if ($image) :
-                              $imageurl = esc_url($image['sizes'][$size]);
-                              $imagealt = esc_attr($image['alt']); ?>
-                              <div class="swiper-slide"><img src="<?php echo $imageurl; ?>" srcset="<?php echo $imageurl; ?>" class="rounded" alt="<?php echo $imagealt; ?>" /></div>
-                           <?php endif;
-                        elseif ($video_or_photo === 'Video') :
-                           $videourl =  get_sub_field('video');
-                           $poster_for_video = get_sub_field('poster_for_video');
-                           if ($poster_for_video) :
-                              $size = 'sandbox_hero_14';
-                              $video_poster_url = esc_url($poster_for_video['sizes'][$size]);
-                              $video_poster_alt = esc_attr($poster_for_video['alt']);
-                           endif; ?>
-                           <div class="swiper-slide"><a href="<?php echo $videourl; ?>" class="btn btn-circle btn-light btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox data-gallery="hero"><i class="icn-caret-right text-dark"></i></a><img src="<?php echo $video_poster_url; ?>" srcset="<?php echo $video_poster_url; ?>" class="rounded" alt="<?php echo $video_poster_alt; ?>" /></div>
-                     <?php endif;
-                     endwhile;
-                  else : ?>
-                     <figure class="rounded mb-md-n20"><img src="<?php echo $imageurl; ?>" srcset="<?php echo $imageurl; ?>" alt="" /></figure>
-
-                     <!--/.swiper-items -->
-
-                  </div>
-                  <!--/.swiper-wrapper -->
-               </div>
-               <!--/.swiper -->
-            </div>
-            <!-- /.swiper-container -->
-         <?php endif; ?>
       </div>
    </div>
    <!-- /.container -->
-
-   <!--  generate forms start -->
-   <?php foreach ($forms as $item) {
-      echo $item;
-   } ?>
-   <!--  generate forms end -->
-
-
 </section>
 <!-- /section -->
