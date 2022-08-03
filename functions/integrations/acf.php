@@ -354,6 +354,9 @@ function buttons($form_button = 'rounded', $button_size = NULL, $class_button_wr
 					<?php if (have_rows('button_button')) : ?>
 						<?php while (have_rows('button_button')) : the_row(); ?>
 							<?php $style_button = get_sub_field('outline') ?>
+
+
+
 							<!--  buttons style -->
 							<?php if (get_sub_field('outline') == 1) : ?>
 								<?php $class_style = '-outline' ?>
@@ -377,6 +380,8 @@ function buttons($form_button = 'rounded', $button_size = NULL, $class_button_wr
 								<?php $gradient = 'btn-gradient gradient-' . get_sub_field('gradient'); ?>
 							<?php endif; ?>
 							<?php $select_icon = get_sub_field('icon'); ?>
+
+
 							<!--  buttons style end-->
 							<?php $text_on_button = get_sub_field('text_on_button'); ?>
 							<?php $select_type = get_sub_field('select_type'); ?>
@@ -409,32 +414,12 @@ function buttons($form_button = 'rounded', $button_size = NULL, $class_button_wr
 							<?php elseif ($select_type == 'Contact Form') : ?>
 								<?php $contact_form = get_sub_field('contact_form'); ?>
 								<?php if ($contact_form) : ?>
-									<?php $data_modal = 'data-bs-toggle="modal"'; ?>
-									<?php $data_modal_id = 'data-bs-target="#modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '"'; ?>
-									<span><a href="#" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?> me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-									<?php $form = '<div class="modal fade" id="modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '" tabindex="-1">
-                       <div class="modal-dialog modal-dialog-centered modal-sm">
-                       <div class="modal-content text-center">
-                      <div class="modal-body">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'; ?>
-									<?php $id = $contact_form; ?>
-									<?php $form .= do_shortcode("[contact-form-7 id='{$id}']"); ?>
-									<?php $form .= '</div></div></div></div>'; ?>
-									<?php $forms[$i] = $form; ?>
+
+									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#form-<?php echo $contact_form; ?>"> Launch demo modal
+									</button>
+
+
 								<?php endif; ?>
-							<?php elseif ($select_type == 'Html') : ?>
-								<?php $html = get_sub_field('html'); ?>
-								<?php $data_modal = 'data-bs-toggle="modal"'; ?>
-								<?php $data_modal_id = 'data-bs-target="#test386'; ?>
-								<span><a href="#" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?> me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-								<?php $form = '<div class="modal fade" id="test386" tabindex="-1">
-                       <div class="modal-dialog modal-dialog-centered modal-sm">
-                       <div class="modal-content text-center">
-                      <div class="modal-body">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'; ?>
-								<?php $form .= $html; ?>
-								<?php $form .= '</div></div></div></div>'; ?>
-								<?php $forms[$i] = $form; ?>
 							<?php endif; ?>
 						<?php endwhile; ?>
 						<?php $i++; ?>
@@ -442,13 +427,6 @@ function buttons($form_button = 'rounded', $button_size = NULL, $class_button_wr
 				<?php endwhile; ?>
 				<!--  buttons end -->
 			</div>
-			<!--  generate forms start -->
-			<?php if ($forms) { ?>
-			<?php foreach ($forms as $item) {
-					echo $item;
-				}
-			} ?>
-			<!--  generate forms end -->
 		<?php else : ?>
 			<?php echo $default_button; ?>
 		<?php endif; ?>

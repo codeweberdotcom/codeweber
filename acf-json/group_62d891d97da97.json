@@ -23,6 +23,27 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_62ea2ba86c51d",
+                            "label": "Icon select",
+                            "name": "icon_select",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62ea2abc04411"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_62e04baec6044",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
@@ -2488,5 +2509,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1659303392
+    "modified": 1659513798
 }

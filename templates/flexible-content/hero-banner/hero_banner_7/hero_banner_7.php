@@ -77,6 +77,7 @@ if (!empty($block['align'])) {
          <!-- /column -->
       </div>
       <!-- /.row -->
+
       <!--  buttons group -->
       <?php buttons(
          $form_button = 'rounded-pill mx-1',
@@ -92,6 +93,7 @@ if (!empty($block['align'])) {
     </div>'
       ); ?>
       <!--/buttons group -->
+
       <!-- /div -->
       <div class="row mt-12" data-cue="fadeIn" data-delay="1600">
          <div class="col-lg-8 mx-auto">
