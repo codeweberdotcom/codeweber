@@ -16,8 +16,6 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('brk_single', 800, 500, true);
 		add_image_size('brk_post_sm', 140, 140, true);
 
-
-
 		add_image_size('sandbox_hero_3', 590, 650, true);
 		add_image_size('sandbox_hero_11', 575, 550, true);
 		add_image_size('sandbox_hero_2', 625, 598, true);

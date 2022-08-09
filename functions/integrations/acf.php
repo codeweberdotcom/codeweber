@@ -216,270 +216,32 @@ function brk_logo_light_link()
 };
 
 
-//* --- ---
-
-class Buttons
+//* --- Swiper Gallery Class ACF---
+class SwiperSlider
 {
-	public $form_button;
-	public $button_size;
-	public $class_button_wraper;
-	public $gradient;
-	public $default_button;
-	public $data_cues;
-	public $show_button;
+	public $root_theme = '';
+	public $default_imageurl = '/dist/img/photos/about7.jpg';
 
-	//* Function Show Buttons *//
-	public function buttons()
-	{
-		if (have_rows('button_repeater')) : ?>
-			<?php $i = 0; ?>
-			<?php $form = ''; ?>
-			<div class="<?php echo $class_button_wraper; ?>" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
-				<!--  buttons start -->
-				<?php while (have_rows('button_repeater')) : the_row(); ?>
-					<?php if (have_rows('button_button')) : ?>
-						<?php while (have_rows('button_button')) : the_row(); ?>
-							<?php $style_button = get_sub_field('outline') ?>
-							<!--  buttons style -->
-							<?php if (get_sub_field('outline') == 1) : ?>
-								<?php $class_style = '-outline' ?>
-							<?php else : ?>
-								<?php $class_style = ''; ?>
-							<?php endif; ?>
-							<?php $color_button = get_sub_field('dark_white_primary'); ?>
-							<?php if ($color_button == 'dark') : ?>
-								<?php $color_button = '-dark'; ?>
-								<?php $button_class = 'btn' . $class_style . $color_button; ?>
-							<?php elseif ($color_button == 'white') : ?>
-								<?php $color_button = '-white'; ?>
-								<?php $button_class = 'btn' . $class_style . $color_button; ?>
-							<?php elseif ($color_button == 'primary') : ?>
-								<?php $color_button = '-primary'; ?>
-								<?php $button_class = 'btn' . $class_style . $color_button; ?>
-							<?php elseif ($color_button == 'custom') : ?>
-								<?php $color_button = '-' . get_sub_field('custom_button_color'); ?>
-								<?php $button_class = 'btn' . $class_style . $color_button; ?>
-							<?php elseif (get_sub_field('gradient')) : ?>
-								<?php $gradient = 'btn-gradient gradient-' . get_sub_field('gradient'); ?>
-							<?php endif; ?>
-							<?php $select_icon = get_sub_field('icon'); ?>
-							<!--  buttons style end-->
-							<?php $text_on_button = get_sub_field('text_on_button'); ?>
-							<?php $select_type = get_sub_field('select_type'); ?>
-							<?php if ($select_type == 'Page or Post') : ?>
-								<?php $button_link = get_sub_field('button_link'); ?>
-								<?php if ($button_link) : ?>
-									<?php $post = $button_link; ?>
-									<?php setup_postdata($post); ?>
-									<?php $button_link = get_permalink(); ?>
-									<span><a href="<?php echo $button_link; ?>" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?>  me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-									<?php wp_reset_postdata(); ?>
-								<?php endif; ?>
-							<?php elseif ($select_type == 'Taxonomy') : ?>
-								<?php $taxonomy = get_sub_field('taxonomy'); ?>
-								<?php if ($taxonomy) : ?>
-									<?php $button_link = get_term_link($taxonomy->term_id); ?>
-									<span><a href="<?php echo $button_link; ?>" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?>  me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-								<?php endif; ?>
-							<?php elseif ($select_type == 'URL') : ?>
-								<?php $url = get_sub_field('url'); ?>
-								<?php $button_link = $url; ?>
-								<span><a href="<?php echo $button_link; ?>" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?>  me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-							<?php elseif ($select_type == 'Video URL') : ?>
-								<?php $video_url = get_sub_field('video_url'); ?>
-								<?php if ($video_url) : ?>
-									<?php $glightbox = 'data-glightbox=""'; ?>
-								<?php endif; ?>
-								<?php $button_link = $video_url; ?>
-								<span><a href="<?php echo $button_link; ?>" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?>  me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-							<?php elseif ($select_type == 'Contact Form') : ?>
-								<?php $contact_form = get_sub_field('contact_form'); ?>
-								<?php if ($contact_form) : ?>
-									<?php $data_modal = 'data-bs-toggle="modal"'; ?>
-									<?php $data_modal_id = 'data-bs-target="#modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '"'; ?>
-									<span><a href="#" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?> me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-									<?php $form = '<div class="modal fade" id="modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '" tabindex="-1">
-                       <div class="modal-dialog modal-dialog-centered modal-sm">
-                       <div class="modal-content text-center">
-                      <div class="modal-body">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'; ?>
-									<?php $id = $contact_form; ?>
-									<?php $form .= do_shortcode("[contact-form-7 id='{$id}']"); ?>
-									<?php $form .= '</div></div></div></div>'; ?>
-									<?php $forms[$i] = $form; ?>
-								<?php endif; ?>
-							<?php elseif ($select_type == 'Html') : ?>
-								<?php $html = get_sub_field('html'); ?>
-								<?php $data_modal = 'data-bs-toggle="modal"'; ?>
-								<?php $data_modal_id = 'data-bs-target="#test386'; ?>
-								<span><a href="#" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?> me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-								<?php $form = '<div class="modal fade" id="test386" tabindex="-1">
-                       <div class="modal-dialog modal-dialog-centered modal-sm">
-                       <div class="modal-content text-center">
-                      <div class="modal-body">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'; ?>
-								<?php $form .= $html; ?>
-								<?php $form .= '</div></div></div></div>'; ?>
-								<?php $forms[$i] = $form; ?>
-							<?php endif; ?>
-						<?php endwhile; ?>
-						<?php $i++; ?>
-					<?php endif; ?>
-				<?php endwhile; ?>
-				<!--  buttons end -->
-			<?php endif; ?>
-			</div>
+	public $class_swiper = 'swiper-container dots-over shadow-lg';
+	public $data_nav = 'data-nav="true"';
+	public $data_dots = 'data-dots="true"';
+	public $data_margin = 'data-margin="5"';
+	public $image_size = 'sandbox_hero_3';
+	public $data_items_lg = 'data-items-lg="1"';
+	public $data_items_md = 'data-items-md="1"';
+	public $data_items_xs = 'data-items-xs="1"';
+	public $data_autoplay = 'data-autoplay="false"';
+	public $data_autoplaytime = 'data-autoplaytime="5000"';
+	public $data_effect = 'data-effect="slide"';
+	public $default_media = '';
 
-		<?php }
-
-	//* Function forms *//
-
-
-}
-
-
-// --- Buttons Generate Functions ---
-/*
-/* buttons($form_button = 'rounded', $button_size = 'btn-lg', $class_button_wraper = NULL, $gradient = NULL)
-*/
-function buttons($form_button = 'rounded', $button_size = NULL, $class_button_wraper = 'd-flex', $gradient = NULL, $data_cues = 'slideInDown',  $data_group = 'page-title-buttons', $data_delay = '900', $default_button = NULL)
-{ ?>
-		<!--  buttons group -->
-		<?php if (have_rows('button_repeater')) : ?>
-			<?php $i = 0; ?>
-			<?php $form = ''; ?>
-			<div class="<?php echo $class_button_wraper; ?>" data-cues="<?php echo $data_cues; ?>" data-group="<?php echo $data_group; ?>" data-delay="<?php echo $data_delay ?>">
-				<!--  buttons start -->
-				<?php while (have_rows('button_repeater')) : the_row(); ?>
-					<?php if (have_rows('button_button')) : ?>
-						<?php while (have_rows('button_button')) : the_row(); ?>
-							<?php $style_button = get_sub_field('outline') ?>
-							<!--  buttons style -->
-							<?php if (get_sub_field('outline') == 1) : ?>
-								<?php $class_style = '-outline' ?>
-							<?php else : ?>
-								<?php $class_style = ''; ?>
-							<?php endif; ?>
-							<?php $color_button = get_sub_field('dark_white_primary'); ?>
-							<?php if ($color_button == 'dark') : ?>
-								<?php $color_button = '-dark'; ?>
-								<?php $button_class = 'btn' . $class_style . $color_button; ?>
-							<?php elseif ($color_button == 'white') : ?>
-								<?php $color_button = '-white'; ?>
-								<?php $button_class = 'btn' . $class_style . $color_button; ?>
-							<?php elseif ($color_button == 'primary') : ?>
-								<?php $color_button = '-primary'; ?>
-								<?php $button_class = 'btn' . $class_style . $color_button; ?>
-							<?php elseif ($color_button == 'custom') : ?>
-								<?php $color_button = '-' . get_sub_field('custom_button_color'); ?>
-								<?php $button_class = 'btn' . $class_style . $color_button; ?>
-							<?php elseif (get_sub_field('gradient')) : ?>
-								<?php $gradient = 'btn-gradient gradient-' . get_sub_field('gradient'); ?>
-							<?php endif; ?>
-							<?php $select_icon = get_sub_field('icon'); ?>
-							<!--  buttons style end-->
-							<?php $text_on_button = get_sub_field('text_on_button'); ?>
-							<?php $select_type = get_sub_field('select_type'); ?>
-							<?php if ($select_type == 'Page or Post') : ?>
-								<?php $button_link = get_sub_field('button_link'); ?>
-								<?php if ($button_link) : ?>
-									<?php $post = $button_link; ?>
-									<?php setup_postdata($post); ?>
-									<?php $button_link = get_permalink(); ?>
-									<span><a href="<?php echo $button_link; ?>" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?>  me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-									<?php wp_reset_postdata(); ?>
-								<?php endif; ?>
-							<?php elseif ($select_type == 'Taxonomy') : ?>
-								<?php $taxonomy = get_sub_field('taxonomy'); ?>
-								<?php if ($taxonomy) : ?>
-									<?php $button_link = get_term_link($taxonomy->term_id); ?>
-									<span><a href="<?php echo $button_link; ?>" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?>  me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-								<?php endif; ?>
-							<?php elseif ($select_type == 'URL') : ?>
-								<?php $url = get_sub_field('url'); ?>
-								<?php $button_link = $url; ?>
-								<span><a href="<?php echo $button_link; ?>" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?>  me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-							<?php elseif ($select_type == 'Video URL') : ?>
-								<?php $video_url = get_sub_field('video_url'); ?>
-								<?php if ($video_url) : ?>
-									<?php $glightbox = 'data-glightbox=""'; ?>
-								<?php endif; ?>
-								<?php $button_link = $video_url; ?>
-								<span><a href="<?php echo $button_link; ?>" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?>  me-2"><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-							<?php elseif ($select_type == 'Contact Form') : ?>
-								<?php $contact_form = get_sub_field('contact_form'); ?>
-								<?php if ($contact_form) : ?>
-									<?php $data_modal = 'data-bs-toggle="modal"'; ?>
-									<?php $data_modal_id = 'data-bs-target="#modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '"'; ?>
-									<span><a href="#" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?> me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-									<?php $form = '<div class="modal fade" id="modal-form-' . $contact_form . '-' . $section_id . '-' . $i . '" tabindex="-1">
-                       <div class="modal-dialog modal-dialog-centered modal-sm">
-                       <div class="modal-content text-center">
-                      <div class="modal-body">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'; ?>
-									<?php $id = $contact_form; ?>
-									<?php $form .= do_shortcode("[contact-form-7 id='{$id}']"); ?>
-									<?php $form .= '</div></div></div></div>'; ?>
-									<?php $forms[$i] = $form; ?>
-								<?php endif; ?>
-							<?php elseif ($select_type == 'Html') : ?>
-								<?php $html = get_sub_field('html'); ?>
-								<?php $data_modal = 'data-bs-toggle="modal"'; ?>
-								<?php $data_modal_id = 'data-bs-target="#test386'; ?>
-								<span><a href="#" class="btn <?php echo $button_size; ?> <?php echo $button_class; ?> btn-icon btn-icon-start <?php echo $gradient; ?> <?php echo $form_button; ?> me-2" <?php echo $data_modal; ?> <?php echo $data_modal_id; ?>><?php echo $select_icon; ?><?php echo $text_on_button; ?></a></span>
-								<?php $form = '<div class="modal fade" id="test386" tabindex="-1">
-                       <div class="modal-dialog modal-dialog-centered modal-sm">
-                       <div class="modal-content text-center">
-                      <div class="modal-body">
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>'; ?>
-								<?php $form .= $html; ?>
-								<?php $form .= '</div></div></div></div>'; ?>
-								<?php $forms[$i] = $form; ?>
-							<?php endif; ?>
-						<?php endwhile; ?>
-						<?php $i++; ?>
-					<?php endif; ?>
-				<?php endwhile; ?>
-				<!--  buttons end -->
-			</div>
-			<!--  generate forms start -->
-			<?php if ($forms) { ?>
-			<?php foreach ($forms as $item) {
-					echo $item;
-				}
-			} ?>
-			<!--  generate forms end -->
-		<?php else : ?>
-			<?php echo $default_button; ?>
-		<?php endif; ?>
-		<!--  buttons group -->
-	<?php };
-
-
-
-// --- Swiper Generate Gallery ---
-/*
-/* 
-*/
-
-
-function swiper_gallery($image_size = 'large', $class_swiper = 'swiper-container dots-over', $data_nav = "true", $data_dots = "true", $data_margin = "5",  $data_autoplay = "false", $data_autoplaytime = "5000", $data_items_lg = "1", $data_items_md = "1", $data_items_xs = "1", $default_img = NULL)
-{ ?>
-		<?php
-		$data_args = 'data-nav=' . $data_nav . ' ';
-		$data_args .= 'data-dots=' . $data_dots . ' ';
-		$data_args .= 'data-margin=' . $data_margin . ' ';
-		$data_args .= 'data-items-lg=' . $data_items_lg . ' ';
-		$data_args .= 'data-items-md=' . $data_items_md . ' ';
-		$data_args .= 'data-items-xs=' . $data_items_xs . ' ';
-		if ($data_autoplay == 'true') {
-			$data_args .= 'data-autoplay=' . $data_autoplay . ' ';
-			$data_args .= 'data-autoplaytime=' . $data_autoplaytime . ' ';
-		}; ?>
-
+	public function GetSwiper()
+	{ ?>
 		<!-- swiper-container -->
+		<?php
+		$data_args = $this->data_nav . ' ' . $this->data_dots . ' ' . $this->data_margin . ' ' . $this->data_effect . ' ' . $this->data_autoplay . ' ' . $this->data_autoplaytime . ' ' . $this->data_items_lg . ' ' . $this->data_items_md . ' ' . $this->data_items_xs; ?>
 		<?php if (have_rows('gallery')) : ?>
-			<div class="<?php echo $class_swiper; ?>" <?php echo $data_args; ?>>
+			<div class="<?php echo $this->class_swiper; ?>" <?php echo $data_args; ?>>
 				<div class="swiper">
 					<div class="swiper-wrapper">
 						<?php while (have_rows('gallery')) : the_row(); ?>
@@ -487,7 +249,7 @@ function swiper_gallery($image_size = 'large', $class_swiper = 'swiper-container
 							<?php $video_or_photo = get_sub_field('photo_or_video');
 							if ($video_or_photo === 'Photo') :
 								$image = get_sub_field('photo');
-								$size = $image_size;
+								$size = $this->image_size;
 								if ($image) :
 									$imageurl = esc_url($image['sizes'][$size]);
 									$imagealt = esc_attr($image['alt']); ?>
@@ -497,7 +259,7 @@ function swiper_gallery($image_size = 'large', $class_swiper = 'swiper-container
 								$videourl =  get_sub_field('video');
 								$poster_for_video = get_sub_field('poster_for_video');
 								if ($poster_for_video) :
-									$size = $image_size;
+									$size = $this->image_size;
 									$video_poster_url = esc_url($poster_for_video['sizes'][$size]);
 									$video_poster_alt = esc_attr($poster_for_video['alt']);
 								endif; ?>
@@ -511,7 +273,864 @@ function swiper_gallery($image_size = 'large', $class_swiper = 'swiper-container
 				<!--/.swiper -->
 			</div>
 			<!-- /.swiper-container -->
+			<?php else :
+			echo $this->default_media;
+		endif;
+	}
+};
+
+
+//* --- Settings Class ACF---
+
+class Settings
+{
+	public $root_theme = '';
+	public $title = "Grow Your Business with Our Solutions.";
+	public $subtitle = "Hello! This is Sandbox.";
+	public $paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
+	public $imageurl = '/dist/img/photos/about18.jpg';
+	public $video_url = '/dist/media/movie.mp4';
+	public $backgroundurl = '/dist/img/photos/bg4.jpg';
+	public $typewriter = 'customer satisfaction,business needs,creative ideas';
+	public $backgroundcolor = 'dark';
+	public $backgroundcolor_light = 0;
+	public $textcolor = 'white';
+
+	public function GetDataACF()
+	{
+		if (get_sub_field('title')) :
+			$this->title = get_sub_field('title');
+		endif;
+
+		if (get_sub_field('subtitle')) :
+			$this->subtitle = get_sub_field('subtitle');
+		endif;
+
+		if ($this->backgroundurl) :
+			$this->backgroundurl = $this->root_theme . $this->backgroundurl;
+		endif;
+
+		if (get_sub_field('paragraph')) :
+			$this->paragraph = get_sub_field('paragraph');
+		endif;
+
+		if (get_sub_field('dark_or_white_light_or_dark') == 0) :
+			$this->backgroundcolor = $this->backgroundcolor;
+			$this->textcolor = 'light';
+		elseif (get_sub_field('dark_or_white_light_or_dark') == 1) :
+			if ($this->backgroundcolor_light == 0) :
+				$this->backgroundcolor = $this->backgroundcolor_light;
+				$this->textcolor = 'dark';
+			else :
+				$this->backgroundcolor = $this->backgroundcolor;
+				$this->textcolor = 'light';
+			endif;
+		endif;
+
+		/* --- Typewriter --- */
+		if (have_rows('typewriter_effect_text')) :
+			$typewriterarray = array();
+			while (have_rows('typewriter_effect_text')) : the_row();
+				array_push($typewriterarray, get_sub_field('text'));
+			endwhile;
+			$this->typewriter = implode(", ", $typewriterarray);
+		endif;
+
+		$background = get_sub_field('background');
+		if ($background) :
+			$this->backgroundurl = esc_url($background['url']);
+		endif;
+
+		$video_url = get_sub_field('video');
+		if ($video_url) :
+			$this->video_url = $video_url;
+		endif;
+	}
+};
+
+
+
+//* --- Images Class ACF---
+
+class Images
+{
+	public $root_theme = '';
+	public $image_1 = '';
+	public $image_2 = '';
+	public $image_3 = '';
+	public $image_4 = '';
+	public $image_5 = '';
+	public $image_6 = '';
+	public $image_7 = '';
+	public $image_size = 'large';
+
+	public function GetImage()
+	{
+		$image = get_sub_field('image_1');
+		if ($image) :
+			$size = $this->image_size;
+			$imageurl = esc_url($image['sizes'][$size]);
+			$imagealt = esc_attr($image['alt']);
+			$this->image_1 = $imageurl;
+		endif;
+
+		$image = get_sub_field('image_2');
+		if ($image) :
+			$size = $this->image_size;
+			$imageurl = esc_url($image['sizes'][$size]);
+			$imagealt = esc_attr($image['alt']);
+			$this->image_2 = $imageurl;
+		endif;
+
+		$image = get_sub_field('image_3');
+		if ($image) :
+			$size = $this->image_size;
+			$imageurl = esc_url($image['sizes'][$size]);
+			$imagealt = esc_attr($image['alt']);
+			$this->image_3 = $imageurl;
+		endif;
+
+		$image = get_sub_field('image_4');
+		if ($image) :
+			$size = $this->image_size;
+			$imageurl = esc_url($image['sizes'][$size]);
+			$imagealt = esc_attr($image['alt']);
+			$this->image_4 = $imageurl;
+		endif;
+
+
+		$image = get_sub_field('image_5');
+		if ($image) :
+			$size = $this->image_size;
+			$imageurl = esc_url($image['sizes'][$size]);
+			$imagealt = esc_attr($image['alt']);
+			$this->image_5 = $imageurl;
+		endif;
+
+		$image = get_sub_field('image_6');
+		if ($image) :
+			$size = $this->image_size;
+			$imageurl = esc_url($image['sizes'][$size]);
+			$imagealt = esc_attr($image['alt']);
+			$this->image_6 = $imageurl;
+			echo $imageurl;
+		endif;
+	}
+}
+
+//* --- Label Class ACF---
+
+class LabelIcons
+{
+	public $root_theme = '';
+	public $title = "25000+";
+	public $paragraph = 'Happy Clients';
+	public $icon = '<div class="icon btn btn-circle btn-md btn-soft-primary disabled mx-auto me-3"> <i class="uil uil-users-alt"></i></div>';
+	public $color_icon = 'primary';
+	public $default_card_body = '';
+
+	public function GetLabel()
+	{
+		if (have_rows('label_on_banner')) :
+			while (have_rows('label_on_banner')) : the_row();
+				if (get_sub_field('label_title')) {
+					$this->title = get_sub_field('label_title');
+				}
+				if (get_sub_field('label_text')) {
+					$this->paragraph = get_sub_field('label_text');
+				}
+
+				// Select Color 
+				$icon_color = new Color();
+				$icon_color->ColorIcon();
+				$this->color_icon = $icon_color->color_icon;
+
+				if (have_rows('type_icons')) :
+					while (have_rows('type_icons')) : the_row();
+						$icon_type = get_sub_field('select_type_icons');
+						if ($icon_type == 'Unicons') :
+							$unicons = get_sub_field('icon');
+							if ($unicons) {
+								$this->icon = '<div class="icon btn btn-circle btn-md btn-' . $this->color_icon . ' disabled mx-auto me-3">' . get_sub_field('icon') . '</div>';
+							};
+						else :
+							$svg_icons = get_sub_field('icon_lineal_svg');
+							if ($svg_icons) {
+								$this->icon = '
+								<img src="' . $this->root_theme . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg" class="svg-inject icon-svg icon-svg-sm text-' . $this->color_icon . ' mx-auto me-3" alt=""/>
+								';
+							};
+						endif; ?>
+						<div class="card-body py-4 px-5">
+							<div class="d-flex flex-row align-items-center">
+								<div>
+									<?php echo $this->icon; ?>
+								</div>
+								<div>
+									<h3 class="counter mb-0 text-nowrap"><?php echo $this->title; ?></h3>
+									<p class="fs-14 lh-sm mb-0 text-nowrap"><?php echo $this->paragraph; ?></p>
+								</div>
+							</div>
+						</div>
+						<!--/.card-body -->
+					<?php
+					endwhile;
+				endif;
+			endwhile;
+		endif;
+	}
+};
+
+
+//* --- Buttons Group Class ACF---
+
+class Buttons
+{
+	public $form_button = NULL;
+	public $button_outline = NULL;
+	public $button_size = NULL;
+	public $button_link = "#";
+	public $gradient = NULL;
+	public $ghligthbox = NULL;
+	public $count = NULL;
+	public $class_button_wrapper = "d-flex justify-content-start flex-wrap";
+	public $default_button;
+	public $data_cues = "slideInDown";
+	public $data_group = "page-title-buttons";
+	public $data_delay = "900";
+	public $animate_swiper = 'false';
+	public $animate_swiper_class = NULL;
+
+
+	//* Function Data Buttons *//
+	public function showbuttons()
+	{
+		/* Count row buttons*/
+		$count = 0;
+		$repeater = get_sub_field('button_repeater');
+		if (is_array($repeater)) {
+			$this->count = count($repeater);
+		}
+
+		if (have_rows('button_repeater')) :
+
+			/* Animate swiper */
+			if ($this->animate_swiper == 'true') :
+				$class_button_swiper_animate = 'animate__animated animate__slideInUp animate__delay-3s';
+				$this->data_cues = NULL;
+				$this->data_group = NULL;
+				$this->data_delay = NULL;
+			elseif ($this->animate_swiper == 'false') :
+				$class_button_swiper_animate = NULL;
+			endif;
+
+
+			if ($this->count > 1) :
+				echo "<div class='{$this->class_button_wrapper}' data-cues='{$this->data_cues}' data-group='{$this->data_group}' data-delay='{$this->data_delay}'>";
+			endif;
+
+			while (have_rows('button_repeater')) : the_row();
+				if (have_rows('button_button')) :
+					while (have_rows('button_button')) : the_row();
+
+						/* link */
+						$ghligthbox = NULL;
+						if (get_sub_field('select_type') == 'Page or Post') :
+							$button_link = get_sub_field('button_link');
+							if ($button_link) :
+								$button_link = get_permalink($button_link);
+							endif;
+						elseif (get_sub_field('select_type') == 'Taxonomy') :
+							$taxonomy = get_sub_field('taxonomy');
+							if ($taxonomy) :
+								$button_link = esc_url(get_term_link($taxonomy));
+							endif;
+						elseif (get_sub_field('select_type') == 'URL') :
+							$button_link = get_sub_field('url');
+						elseif (get_sub_field('select_type') == 'Video URL') :
+							$button_link = get_sub_field('video_url');
+							$ghligthbox = 'data-glightbox';
+						elseif (get_sub_field('select_type') == 'Form') :
+							$contact_form = get_sub_field('contact_form');
+							if ($contact_form) :
+								$cf7_id = $contact_form;
+								$button_bs_target = "#form-{$cf7_id}";
+							endif;
+						else :
+							$button_link = $this->button_link;
+						endif;
+
+						/* outline */
+						if (get_sub_field('outline_btn') == 1) :
+							$outline_class = "-outline";
+						else :
+							$outline_class = NULL;
+						endif;
+
+						/* color button class */
+						$color_button = get_sub_field('select_type_color');
+						if ($color_button == 'Solid') :
+							$color_btn = '-' . get_sub_field('theme_btn_solid_color');
+						elseif ($color_button == 'Soft') :
+							$color_btn = '-' . get_sub_field('theme_btn_soft_color');
+						elseif ($color_button == 'Gradient') :
+							$color_btn = '-gradient ' . get_sub_field('gradient_btn');
+						endif;
+						$color_button = 'btn' . $outline_class . $color_btn;
+
+						/* add icon classes */
+						if (get_sub_field('icon')) :
+							$icon_class = 'btn-icon btn-icon-start';
+							$icon_font = get_sub_field('icon');
+						else :
+							$icon_class = NULL;
+							$icon_font = NULL;
+						endif;
+
+						/* text button */
+						$text_button = get_sub_field('text_on_btn');
+
+						/* button size */
+						$button_size = $this->button_size;
+
+						/* button form */
+						$form_button = $this->form_button;
+
+						/* button type */
+						$button_type = get_sub_field('button_type');
+						if ($button_type == 'Expand') :
+							$button_type = ' btn-expand';
+							$icon_font = '<i class="uil uil-arrow-right"></i>';
+							$form_button = 'rounded-pill';
+						elseif ($button_type == 'Play') :
+							$button_type = ' btn-circle btn-play ripple';
+							$icon_font = '<i class="icn-caret-right"></i>';
+						elseif ($button_type == 'Default') :
+							$button_type = NULL;
+						endif;
+
+
+
+						/* Show buttons */
+						if (get_sub_field('select_type') == 'Form') :
+							if (get_sub_field('button_type') == 'Expand') :
+								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font . '<span>' . $text_button . '</span></button></span>';
+							elseif (get_sub_field('button_type') == 'Play') :
+								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font .  '</button></span>';
+							else :
+								$button = '<span' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '"><span>' . $icon_font  . $text_button . '</span></button></span>';
+							endif;
+						else :
+							if (get_sub_field('button_type') == 'Expand') :
+								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $form_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font . '<span>' . $text_button . '</span></a></span>';
+							elseif (get_sub_field('button_type') == 'Play') :
+								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font .  '</a></span>';
+							else :
+								$button = '<span ' . $this->animate_swiper_class . '"><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '><span>' . $icon_font  . $text_button . '</span></a></span>';
+							endif;
+						endif;
+						echo $button;
+					endwhile;
+				endif;
+			endwhile;
+			if ($this->count > 1) :
+				echo '</div>';
+			endif;
+		else :
+			echo $this->default_button;
+		endif;
+	}
+}
+
+
+
+//* --- Color Class ACF---
+
+class Color
+{
+	public $color_icon = NULL;
+	public function ColorIcon()
+	{
+		$type_color = get_sub_field('select_type_color');
+		if ($type_color == 'Solid') :
+			$this->color_icon = get_sub_field('theme_btn_solid_color');
+		elseif ($type_color == 'Soft') :
+			$this->color_icon = get_sub_field('theme_btn_soft_color');
+		elseif ($type_color == 'Gradient') :
+			$this->color_icon = get_sub_field('gradient_btn') . ' gradient';
+		endif;
+	}
+}
+
+
+//* --- Links Class ACF---
+
+class Links
+{
+	public $linkurl = '#';
+	public $linktext = 'Learn More';
+	public $linkcolor = 'text-primary';
+	public $linkstyle = 'hover';
+	public $linktype = 'more';
+
+	public function Link()
+	{
+		if (have_rows('link_text')) :
+			while (have_rows('link_text')) : the_row();
+				if (get_sub_field('text_link')) :
+					$this->linktext = get_sub_field('text_link');
+				endif;
+				if (get_sub_field('style_link') == 'hover') :
+					$this->linkstyle = 'hover';
+				elseif (get_sub_field('style_link') == 'hover-2') :
+					$this->linkstyle = 'hover-2';
+				elseif (get_sub_field('style_link') == 'hover-3') :
+					$this->linkstyle = 'hover-3';
+				endif;
+				if (get_sub_field('theme_btn_solid_color')) :
+					$this->linkcolor = get_sub_field('theme_btn_solid_color');
+				endif;
+				if (get_sub_field('type_link') == 'link-body') :
+					$this->linktype = 'link-body';
+				elseif (get_sub_field('type_link') == 'default') :
+					$this->linktype = NULL;
+				elseif (get_sub_field('type_link') == 'more') :
+					$this->linktype = 'more';
+				endif;
+				$link = get_sub_field('link');
+				if ($link) :
+					$this->linkurl = esc_url($link);
+				endif;
+				echo '<a href="' . $this->linkurl . '" class="' . $this->linkstyle . ' ' . $this->linktype . ' link-' . $this->linkcolor . '">' . $this->linktext . '</a>';
+			endwhile;
+		endif;
+	}
+}
+
+
+/* Add Hero Slider */
+
+class HeroSlider
+{
+	public $root_theme = NULL;
+	public $default_slides = NULL;
+
+	public function heroslideritems()
+	{
+		if (have_rows('hero_slider_hero_slider')) :
+			while (have_rows('hero_slider_hero_slider')) : the_row();
+
+				/*/* Add buttons */
+				$button = new Buttons();
+				$button->form_button = "rounded-pill";
+				$button->button_size = 'btn-lg';
+				$button->animate_swiper = 'true';
+				$button->default_button = '<div class="animate__animated animate__slideInUp animate__delay-3s"><a href="#" class="btn btn-lg btn-outline-white rounded-pill">Contact Us</a></div>';
+
+				/*Slide item */
+				/* --- */
+				$position_text = get_sub_field('position_text');
+				$button->class_button_wrapper = 'd-flex justify-content-' . $position_text . ' flex-wrap';
+				$title = get_sub_field('title');
+				$paragraph = get_sub_field('paragraph');
+				$button->animate_swiper_class = 'class="animate__animated animate__slideInUp animate__delay-3s"';
+
+				/* --- */
+				$position_text = get_sub_field('position_text');
+				if ($position_text == 'start') :
+					$position_text = 'col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start';
+					$button_wrapper_class = 'justify-content-start';
+				elseif ($position_text == 'end') :
+					$position_text = 'col-md-10 offset-md-1 col-lg-7 offset-lg-5 col-xl-6 offset-xl-6 col-xxl-5 offset-xxl-6 text-center text-lg-start justify-content-center align-self-center align-items-start';
+					$button_wrapper_class = 'justify-content-start';
+				elseif ($position_text == 'center') :
+					$position_text = 'col-md-11 col-lg-8 col-xl-7 col-xxl-6 mx-auto text-center justify-content-center align-self-center';
+					$button_wrapper_class = 'justify-content-center';
+				endif;
+
+				$textcolor = 'white';
+				/* Dark or white */
+				if (get_sub_field('light_or_dark') == 0) :
+					$textcolor = 'white';
+				elseif (get_sub_field('light_or_dark') == 1) :
+					$textcolor = 'dark';
+				endif;
+
+				/* --- */
+				$photo = get_sub_field('photo');
+				if ($photo) :
+					$size = 'sandbox_hero_14';
+					$image_url = esc_url($photo['sizes'][$size]); ?>
+					<div class="swiper-slide h-100 bg-overlay bg-overlay-400 bg-dark" style="background-image:url(<?php echo $image_url; ?>);">
+						<div class="container h-100">
+							<div class="row h-100">
+								<div class="<?php echo $position_text; ?>">
+									<h2 class="display-1 fs-56 mb-4 text-<?php echo $textcolor; ?> animate__animated animate__slideInDown animate__delay-1s"><?php echo $title; ?></h2>
+									<p class="lead fs-23 lh-sm mb-7 text-<?php echo $textcolor; ?> animate__animated animate__slideInRight animate__delay-2s"><?php echo $paragraph; ?></p>
+									<!--  buttons group -->
+									<?php $button->showbuttons(); ?>
+									<!--/buttons group -->
+								</div>
+								<!--/column -->
+							</div>
+							<!--/.row -->
+						</div>
+						<!--/.container -->
+					</div>
+					<!--/.swiper-slide -->
+				<?php endif; ?>
+			<?php endwhile; ?>
 		<?php else : ?>
-			<?php echo $default_img; ?>
+			<div class="swiper-slide h-100 bg-overlay bg-overlay-400 bg-dark" style="background-image:url(<?php echo $this->root_theme; ?>/dist/img/photos/bg7.jpg);">
+				<div class="container h-100">
+					<div class="row h-100">
+						<div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start">
+							<h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">We bring solutions to make life easier.</h2>
+							<p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">We are a creative company that focuses on long term relationships with customers.</p>
+							<div class="animate__animated animate__slideInUp animate__delay-3s"><a href="#" class="btn btn-lg btn-outline-white rounded-pill">Read More</a></div>
+						</div>
+						<!--/column -->
+					</div>
+					<!--/.row -->
+				</div>
+				<!--/.container -->
+			</div>
+			<!--/.swiper-slide -->
+
+			<div class="swiper-slide h-100 bg-overlay bg-overlay-400 bg-dark" style="background-image:url(<?php echo $this->root_theme; ?>/dist/img/photos/bg8.jpg);">
+				<div class="container h-100">
+					<div class="row h-100">
+						<div class="col-md-11 col-lg-8 col-xl-7 col-xxl-6 mx-auto text-center justify-content-center align-self-center">
+							<h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">We are trusted by over a million customers.</h2>
+							<p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">Here a few reasons why our customers choose us.</p>
+							<div class="animate__animated animate__slideInUp animate__delay-3s"><a href="<?php echo $this->root_theme; ?>/dist/media/movie.mp4" class="btn btn-circle btn-white btn-play ripple mx-auto mb-5" data-glightbox><i class="icn-caret-right"></i></a></div>
+						</div>
+						<!--/column -->
+					</div>
+					<!--/.row -->
+				</div>
+				<!--/.container -->
+			</div>
+			<!--/.swiper-slide -->
+
+			<div class="swiper-slide h-100 bg-overlay bg-overlay-400 bg-dark" style="background-image:url(<?php echo $this->root_theme; ?>/dist/img/photos/bg9.jpg);">
+				<div class="container h-100">
+					<div class="row h-100">
+						<div class="col-md-10 offset-md-1 col-lg-7 offset-lg-5 col-xl-6 offset-xl-6 col-xxl-5 offset-xxl-6 text-center text-lg-start justify-content-center align-self-center align-items-start">
+							<h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">Just sit and relax.</h2>
+							<p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">We make sure your spending is stress free so that you can have the perfect control.</p>
+							<div class="animate__animated animate__slideInUp animate__delay-3s"><a href="#" class="btn btn-lg btn-outline-white rounded-pill">Contact Us</a></div>
+						</div>
+						<!--/column -->
+					</div>
+					<!--/.row -->
+				</div>
+				<!--/.container -->
+			</div>
+			<!--/.swiper-slide -->
 		<?php endif; ?>
-	<?php  }
+		<?php	}
+
+	/**/
+
+	public function heroslideritems1()
+	{
+		if (have_rows('hero_slider_hero_slider')) :
+			while (have_rows('hero_slider_hero_slider')) : the_row();
+
+				/*/* Add buttons */
+				$button = new Buttons();
+				$button->form_button = "rounded";
+				$button->button_size = 'btn-lg';
+				$button->animate_swiper = 'true';
+				$button->default_button = '<div class="animate__animated animate__slideInUp animate__delay-3s"><a href="#" class="btn btn-lg btn-outline-white rounded-pill">Contact Us</a></div>';
+
+				/*Slide item */
+				/* --- */
+				$position_text = get_sub_field('position_text');
+				$button->class_button_wrapper = 'd-flex justify-content-center justify-content-lg-start start flex-wrap';
+				$title = get_sub_field('title');
+				$paragraph = get_sub_field('paragraph');
+				$button->animate_swiper_class = 'class="animate__animated animate__slideInUp animate__delay-3s"';
+
+				/* --- */
+				$position_text = get_sub_field('position_text');
+				if ($position_text == 'start') :
+					$position_text = 'col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start';
+					$button_wrapper_class = 'justify-content-start';
+				elseif ($position_text == 'end') :
+					$position_text = 'col-md-10 offset-md-1 col-lg-7 offset-lg-5 col-xl-6 offset-xl-6 col-xxl-5 offset-xxl-6 text-center text-lg-start justify-content-center align-self-center align-items-start';
+					$button_wrapper_class = 'justify-content-start';
+				elseif ($position_text == 'center') :
+					$position_text = 'col-md-11 col-lg-8 col-xl-7 col-xxl-6 mx-auto text-center justify-content-center align-self-center';
+					$button_wrapper_class = 'justify-content-start';
+				endif;
+
+				$textcolor = 'white';
+				/* Dark or white */
+				if (get_sub_field('light_or_dark') == 0) :
+					$textcolor = 'white';
+				elseif (get_sub_field('light_or_dark') == 1) :
+					$textcolor = 'dark';
+				endif;
+
+
+				/* --- */
+				$photo = get_sub_field('photo');
+				if ($photo) :
+					$size = 'sandbox_hero_14';
+					$image_url = esc_url($photo['sizes'][$size]); ?>
+					<div class="swiper-slide h-100 " ;">
+						<section class="wrapper bg-light position-relative min-vh-70 d-lg-flex align-items-center">
+							<div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50 animate__animated animate__slideInUp animate__delay-1s" data-image-src="<?php echo $image_url; ?>">
+							</div>
+							<!--/column -->
+							<div class="container">
+								<div class="row">
+									<div class="col-lg-6">
+										<div class="mt-10 mt-md-11 mt-lg-n10 px-5 px-md-11 ps-lg-0 pe-lg-13 text-center text-lg-start">
+											<h1 class="display-1 mb-5 animate__animated animate__slideInDown animate__delay-1s"><?php echo $title; ?></h1>
+											<p class="lead fs-25 lh-sm mb-7 pe-md-10 animate__animated animate__slideInRight animate__delay-2s"><?php echo $paragraph; ?></p>
+											<!--  buttons group -->
+											<?php $button->showbuttons(); ?>
+											<!--/buttons group -->
+										</div>
+										<!--/div -->
+									</div>
+									<!--/column -->
+								</div>
+								<!--/.row -->
+							</div>
+							<!-- /.container -->
+						</section>
+						<!-- /section -->
+						<!--/.container -->
+					</div>
+					<!--/.swiper-slide -->
+				<?php endif; ?>
+			<?php endwhile; ?>
+		<?php else : ?>
+
+			<div class="swiper-slide h-100 " ;">
+				<section class="wrapper bg-light position-relative min-vh-70 d-lg-flex align-items-center">
+					<div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50 animate__animated animate__slideInUp animate__delay-1s" data-image-src="<?php echo $this->root_theme; ?>/dist/img/photos/about16.jpg">
+					</div>
+					<!--/column -->
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="mt-10 mt-md-11 mt-lg-n10 px-5 px-md-11 ps-lg-0 pe-lg-13 text-center text-lg-start">
+									<h1 class="display-1 mb-5 animate__animated animate__slideInDown animate__delay-1s">Just sit & relax while we take care of your business needs.</h1>
+									<p class="lead fs-25 lh-sm mb-7 pe-md-10 animate__animated animate__slideInRight animate__delay-2s">We make your spending stress-free for you to have the perfect control.</p>
+									<div class="d-flex justify-content-center justify-content-lg-start animate__animated animate__slideInUp animate__delay-3s">
+										<span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span>
+										<span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Contact Us</a></span>
+									</div>
+								</div>
+								<!--/div -->
+							</div>
+							<!--/column -->
+						</div>
+						<!--/.row -->
+					</div>
+					<!-- /.container -->
+				</section>
+				<!-- /section -->
+				<!--/.container -->
+			</div>
+
+			<div class="swiper-slide h-100 " ;">
+				<section class="wrapper bg-light position-relative min-vh-70 d-lg-flex align-items-center">
+					<div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50 animate__animated animate__slideInUp animate__delay-1s" data-image-src="<?php echo $this->root_theme; ?>/dist/img/photos/about16.jpg">
+					</div>
+					<!--/column -->
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class="mt-10 mt-md-11 mt-lg-n10 px-5 px-md-11 ps-lg-0 pe-lg-13 text-center text-lg-start">
+									<h1 class="display-1 mb-5 animate__animated animate__slideInDown animate__delay-1s">Just sit & relax while we take care of your business needs.</h1>
+									<p class="lead fs-25 lh-sm mb-7 pe-md-10 animate__animated animate__slideInRight animate__delay-2s">We make your spending stress-free for you to have the perfect control.</p>
+									<div class="d-flex justify-content-center justify-content-lg-start animate__animated animate__slideInUp animate__delay-3s">
+										<span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span>
+										<span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Contact Us</a></span>
+									</div>
+								</div>
+								<!--/div -->
+							</div>
+							<!--/column -->
+						</div>
+						<!--/.row -->
+					</div>
+					<!-- /.container -->
+				</section>
+				<!-- /section -->
+				<!--/.container -->
+			</div>
+		<?php endif; ?>
+	<?php	}
+}
+
+
+
+
+//* --- Icons Class ACF---
+
+class Icons
+{
+	public $icon = NULL;
+	public $icon_url = NULL;
+	public function GetIcon()
+	{
+		if (have_rows('type_icons')) :
+			while (have_rows('type_icons')) : the_row();
+				$icon_type = get_sub_field('select_type_icons');
+				if ($icon_type == 'Unicons') :
+					$unicons = get_sub_field('icon');
+					if ($unicons) {
+						$this->icon = get_sub_field('icon');
+					};
+				elseif ($icon_type == 'SVG') :
+					$svg_icons = get_sub_field('icon_lineal_svg');
+					if ($svg_icons) {
+						$this->icon_url = get_template_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
+					};
+				endif;
+			endwhile;
+		endif;
+	}
+}
+
+//* --- Counters Class ACF---
+
+class Counter
+{
+	public $counters_default = NULL;
+	public $textcolor = 'light';
+
+	public function Counters()
+	{
+		if (have_rows('counters_block')) :
+			while (have_rows('counters_block')) : the_row();
+				if (have_rows('counter')) :
+					while (have_rows('counter')) : the_row();
+						echo '<div class="col-6 col-lg-3">
+                              <h3 class="counter counter-lg text-' . $this->textcolor . '">' . get_sub_field('number_counter') . '</h3>
+                              <p class="text-' . $this->textcolor . '">' . get_sub_field('text_counter') . '</p>
+                           </div>';
+					endwhile;
+				endif;
+			endwhile;
+		else :
+			echo $this->counters_default;
+		endif;
+	}
+}
+
+
+//* --- Features Class ACF---
+
+class Features
+{
+	public $root_theme = '';
+	public $title = '24/7 Support';
+	public $paragraph = 'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.';
+	public $link_url = "#";
+	public $link_text = "Learn more";
+	public $default_features = '';
+
+	//* Function Feutures_3 *//
+	public function Feutures_3()
+	{ ?>
+
+		<?php if (have_rows('features_block')) : ?>
+			<?php while (have_rows('features_block')) : the_row(); ?>
+				<?php if (have_rows('features_item')) : ?>
+					<?php while (have_rows('features_item')) : the_row(); ?>
+
+						<?php // Select Color 
+						$icon_color = new Color();
+						$icon_color->ColorIcon();
+						?>
+
+						<?php // Select Icon
+						$icon_type = new Icons();
+						$icon_type->GetIcon();
+						?>
+
+						<div class="col-md-6 col-xl-3">
+							<div class="card shadow-lg">
+								<div class="card-body">
+									<img src="<?php echo $icon_type->icon_url; ?>" class="svg-inject icon-svg icon-svg-md text-<?php echo $icon_color->color_icon; ?> mb-3" alt="" />
+									<h4><?php the_sub_field('title'); ?></h4>
+									<p class="mb-2"><?php the_sub_field('paragraph'); ?></p>
+
+									<?php // Add Link
+									$link = new Links();
+									$link->Link(); ?>
+
+								</div>
+								<!--/.card-body -->
+							</div>
+							<!--/.card -->
+						</div>
+						<!--/column -->
+			<?php endwhile;
+				endif;
+			endwhile;
+		else :
+			echo '<div class="col-md-6 col-xl-3">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/browser.svg" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
+            <h4>Content Marketing</h4>
+            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+            <a href="#" class="more hover link-yellow">Learn More</a>
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>
+      <!--/column -->
+      <div class="col-md-6 col-xl-3">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/chat-2.svg" class="svg-inject icon-svg icon-svg-md text-green mb-3" alt="" />
+            <h4>Social Engagement</h4>
+            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+            <a href="#" class="more hover link-green">Learn More</a>
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>
+      <!--/column -->
+      <div class="col-md-6 col-xl-3">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/id-card.svg" class="svg-inject icon-svg icon-svg-md text-orange mb-3" alt="" />
+            <h4>Identity & Branding</h4>
+            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+            <a href="#" class="more hover link-orange">Learn More</a>
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>
+      <!--/column -->
+      <div class="col-md-6 col-xl-3">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/gift.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="" />
+            <h4>Product Design</h4>
+            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+            <a href="#" class="more hover link-blue">Learn More</a>
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>';
+			?>
+		<?php endif; ?>
+<?php
+	}
+}
