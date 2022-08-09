@@ -240,5 +240,23 @@ function my_acf_blocks_init()
             )
 
         );
+        acf_register_block_type(
+            array(
+                'name'              => 'faq',
+                'title'             => __('Faq'),
+                'description'       => __('Faq.'),
+                'render_template'   => 'templates/flexible-content/faq.php',
+                'category'          => 'codeweber',
+                'mode'                    => 'auto',
+                'align'           => 'full',
+                'supports'        => array(
+                    'align'        => array('full'),
+                    'align'        => true,
+                ),
+                'mode' => 'preview',
+
+            )
+
+        );
     }
 }
