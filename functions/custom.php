@@ -152,3 +152,93 @@ function wp_login_form_brk($args = array())
         return $form;
     }
 }
+
+
+
+// --- New Gutenberg Layout---
+
+function checkCategoryOrder($categories)
+{
+    //custom category array
+    $temp = array(
+        'slug'  => 'codeweber',
+        'title' => 'Codeweber Blocks'
+    );
+    //new categories array and adding new custom category at first location
+    $newCategories = array();
+    $newCategories[0] = $temp;
+
+    //appending original categories in the new array
+    foreach ($categories as $category) {
+        $newCategories[] = $category;
+    }
+    //return new categories
+    return $newCategories;
+}
+add_filter('block_categories_all', 'checkCategoryOrder', 99, 1);
+
+
+
+// --- ACF Flexible Block
+add_action('acf/init', 'my_acf_blocks_init');
+function my_acf_blocks_init()
+{
+
+    // Check function exists.
+    if (function_exists('acf_register_block_type')) {
+
+        // Register a hero_banner block.
+        acf_register_block_type(array(
+            'name'              => 'hero_banner',
+            'title'             => __('Hero banner'),
+            'description'       => __('A custom flexible block.'),
+            'render_template'   => 'templates/flexible-content/hero_banner.php',
+            'category'          => 'codeweber',
+            'align'           => 'full',
+            'supports'        => array(
+                'align'        => array('full'),
+                'align'        => true,
+            ),
+            'mode' => 'preview',
+
+        ));
+
+        acf_register_block_type(
+            array(
+                'name'              => 'features',
+                'title'             => __('Features'),
+                'description'       => __('Features.'),
+                'render_template'   => 'templates/flexible-content/features.php',
+                'category'          => 'codeweber',
+                'mode'                    => 'auto',
+                'align'           => 'full',
+                'supports'        => array(
+                    'align'        => array('full'),
+                    'align'        => true,
+                ),
+                'mode' => 'preview',
+
+            )
+
+        );
+
+        acf_register_block_type(
+            array(
+                'name'              => 'facts',
+                'title'             => __('Facts'),
+                'description'       => __('Facts.'),
+                'render_template'   => 'templates/flexible-content/facts.php',
+                'category'          => 'codeweber',
+                'mode'                    => 'auto',
+                'align'           => 'full',
+                'supports'        => array(
+                    'align'        => array('full'),
+                    'align'        => true,
+                ),
+                'mode' => 'preview',
+
+            )
+
+        );
+    }
+}
