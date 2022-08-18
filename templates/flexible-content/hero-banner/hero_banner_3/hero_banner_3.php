@@ -12,6 +12,7 @@ $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = NULL;
 $settings->textcolor = 'white';
 
+$settings->section_id = esc_html($args['block_id']);
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -42,7 +43,7 @@ $swiper->default_media = '<a href="' . $settings->videourl . '" class="btn btn-c
 ?>
 
 
-<section id="section-<?php echo get_the_ID(); ?>-<?php echo get_row_index(); ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?> angled lower-start">
+<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?> angled lower-start">
   <div class="container pt-7 pt-md-11 pb-8">
     <div class="row gx-0 gy-10 align-items-center">
       <div class="col-lg-6" data-cues="slideInDown" data-group="page-title" data-delay="600">

@@ -1,7 +1,6 @@
 <?php
 $hero_banner = new HeroSlider;
 $hero_banner->root_theme = get_template_directory_uri();
-
 ?>
 
 <div id="<?php echo esc_attr($id); ?>" class="swiper-container swiper-hero dots-over " data-margin=" 0" data-autoplay="true" data-autoplaytime="5000" data-nav="true" data-dots="true" data-items="1">

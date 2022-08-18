@@ -11,7 +11,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 //$settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'white';
-
+$settings->section_id = esc_html($args['block_id']);
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -43,7 +43,7 @@ $swiper->data_autoplaytime = 'data-autoplaytime="3000"';
 $swiper->default_media = '<figure class="rounded"><img src="' . get_template_directory_uri() . '/dist/img/photos/about7.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about7@2x.jpg 2x" alt="" /></figure>';
 ?>
 
-<section id="section-<?php echo get_the_ID(); ?>-<?php echo get_row_index(); ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container pt-8 pt-md-14">
     <div class="row gx-lg-0 gx-xl-8 gy-10 gy-md-13 gy-lg-0 mb-7 mb-md-10 mb-lg-16 align-items-center">
       <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-1 position-relative order-lg-2" data-cue="zoomIn">

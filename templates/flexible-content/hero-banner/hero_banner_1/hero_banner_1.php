@@ -9,9 +9,10 @@ $settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/i2
 $settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4';
 $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
-$settings->backgroundcolor_light = NULL;
+$settings->backgroundcolor_light = 'light';
 $settings->textcolor = 'white';
 
+$settings->section_id = esc_html($args['block_id']);
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -41,7 +42,7 @@ $swiper->default_media = '<figure><img class="w-auto" src="' . get_template_dire
 ?>
 
 
-<section id="section-<?php echo get_the_ID(); ?>-<?php echo get_row_index(); ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container pt-10 pt-md-14 pb-8 text-center">
     <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
       <div class="col-lg-7">

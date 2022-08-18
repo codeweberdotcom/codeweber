@@ -12,6 +12,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas'; /
 $settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
 //$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
 $settings->textcolor = 'light'; // цвет текста темной темы
+$settings->section_id = esc_html($args['block_id']);
 $settings->GetDataACF(); // получаем занчения полей ACF
 
 /* Add buttons */
@@ -26,7 +27,7 @@ $button->default_button = '<div><a href="#" class="btn btn-lg btn-primary rounde
 
 ?>
 
-<section class="wrapper image-wrapper bg-cover bg-image bg-xs-none bg-gray" data-image-src="<?php echo $settings->backgroundurl; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="wrapper image-wrapper bg-cover bg-image bg-xs-none bg-gray" data-image-src="<?php echo $settings->backgroundurl; ?>">
   <div class="container pt-17 pb-15 py-sm-17 py-xxl-20">
     <div class="row">
       <div class="col-sm-6 col-xxl-5 text-center text-sm-start" data-cues="slideInDown" data-group="page-title" data-interval="-200" data-delay="500">

@@ -10,6 +10,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'white';
+$settings->section_id = esc_html($args['block_id']);
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -41,7 +42,7 @@ $image->GetImage();
 
 ?>
 
-<section id="section-<?php echo get_the_ID(); ?>-<?php echo get_row_index(); ?>" class="wrapper bg-light">
+<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-light">
   <div class="container">
     <div class="card  bg-<?php echo $settings->backgroundcolor; ?> rounded-4 mt-2 mb-13 mb-md-17">
       <div class="card-body p-md-10 py-xl-11 px-xl-15">

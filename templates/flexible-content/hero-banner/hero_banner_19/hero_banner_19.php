@@ -11,6 +11,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 // $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
+$settings->section_id = esc_html($args['block_id']);
 $settings->GetDataACF();
 
 /* Add buttons */

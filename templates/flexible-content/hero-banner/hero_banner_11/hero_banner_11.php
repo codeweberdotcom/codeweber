@@ -11,6 +11,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 // $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
+$settings->section_id = esc_html($args['block_id']);
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -54,7 +55,7 @@ $swiper->default_media = '<div class="swiper-container dots-over shadow-lg" data
 ?>
 
 
-<section id="section-<?php echo get_the_ID(); ?>-<?php echo get_row_index(); ?>" class="image-wrapper bg-image bg-overlay bg-overlay-400 bg-content text-<?php echo $settings->textcolor; ?>" data-image-src="<?php echo $settings->backgroundurl; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="image-wrapper bg-image bg-overlay bg-overlay-400 bg-content text-<?php echo $settings->textcolor; ?>" data-image-src="<?php echo $settings->backgroundurl; ?>">
   <div class="container pt-18 pb-16" style="z-index: 5; position:relative">
     <div class="row gx-0 gy-12 align-items-center">
       <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-6 content text-center text-lg-start" data-cues="slideInDown" data-group="page-title" data-delay="600">

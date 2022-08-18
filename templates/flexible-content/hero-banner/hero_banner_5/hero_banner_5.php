@@ -11,7 +11,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
-
+$settings->section_id = esc_html($args['block_id']);
 $settings->GetDataACF();
 
 /* Add Image*/
@@ -41,7 +41,7 @@ $button->default_button = '<div class="d-flex justify-content-center flex-wrap" 
 
 ?>
 
-<section id="section-<?php echo get_the_ID(); ?>-<?php echo get_row_index(); ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <div class="container pt-10 pb-15 pt-md-14 pb-md-20 text-center">
       <div class="row">
          <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown" data-group="page-title">
