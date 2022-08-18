@@ -1,15 +1,33 @@
-<section class="wrapper bg-light">
-   <div class="container py-14 py-md-16">
-      <div class="row gx-lg-8 gx-xl-12 gy-10">
-         <div class="col-lg-6">
-            <figure><img class="w-auto" src="./assets/img/illustrations/i5.png" srcset="./assets/img/illustrations/i5@2x.png 2x" alt="" /></figure>
-         </div>
-         <!--/column -->
-         <div class="col-lg-6">
-            <h2 class="display-4 mb-3">Common Questions</h2>
-            <p class="lead fs-lg mb-6 pe-xxl-10">If you don't see an <span class="underline">answer to your question</span>, you can send us an email from our contact form.</p>
-            <div class="accordion accordion-wrapper" id="accordionExample-2">
-               <div class="card plain accordion-item">
+<?php
+/* Add settings */
+$settings = new Settings();
+$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+$settings->title = 'Common Questions'; // демо заголовок
+$settings->paragraph = 'We are a creative company that focuses on long term relationships with customers.'; // демо параграф
+$settings->subtitle = 'If you don\'t see an answer to your question, you can send us an email from our contact form.'; // демо подзаголовок
+$settings->imageurl = get_template_directory_uri() . '/dist/img/photos/bg11.jpg'; // демо фото
+$settings->backgroundurl = $settings->root_theme . '/dist/img/photos/bg37.jpg';
+$settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4'; // демо видео
+$settings->typewriter = 'customer satisfaction,business needs,creative ideas'; // демо данные эффекта печатной машинки
+$settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
+//$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
+$settings->textcolor = 'light'; // цвет текста темной темы
+$settings->section_id = esc_html($args['block_id']); // присваиваем секции уникальный id
+$settings->GetDataACF(); // получаем занчения полей ACF
+
+
+/* Add Image*/
+$image = new Images;
+$image->root_theme = get_template_directory_uri();
+$image->image_1 = get_template_directory_uri() . '/dist/img/illustrations/i5.png';
+$image->image_size = 'sandbox_faq_1';
+$image->GetImage();
+
+
+/* Add FAQ */
+$faq_accordeon = new AccordeonS;
+$faq_accordeon->section_id = esc_html($args['block_id']); // присваиваем секции уникальный id
+$faq_accordeon->default_accordeon = '<div class="card plain accordion-item">
                   <div class="card-header" id="headingOne-2">
                      <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne-2" aria-expanded="true" aria-controls="collapseOne-2"> Can I cancel my subscription? </button>
                   </div>
@@ -50,7 +68,21 @@
                   </div>
                   <!--/.accordion-collapse -->
                </div>
-               <!--/.accordion-item -->
+               <!--/.accordion-item -->'
+?>
+
+<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-light">
+   <div class="container py-14 py-md-16">
+      <div class="row gx-lg-8 gx-xl-12 gy-10">
+         <div class="col-lg-6">
+            <figure><img class="w-auto" src="<?php echo $image->image_1; ?>" srcset="<?php echo $image->image_1; ?>" alt="" /></figure>
+         </div>
+         <!--/column -->
+         <div class="col-lg-6">
+            <h2 class="display-4 mb-3"><?php echo $settings->title; ?></h2>
+            <p class="lead fs-lg mb-6 pe-xxl-10"><?php echo $settings->subtitle; ?></p>
+            <div class="accordion accordion-wrapper" id="<?php echo $faq_accordeon->section_id; ?>">
+               <?php $faq_accordeon->accordeon(); ?>
             </div>
             <!--/.accordion -->
          </div>
