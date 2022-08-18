@@ -1,11 +1,11 @@
 {
     "key": "group_62fd844f4f6eb",
-    "title": "Аватар",
+    "title": "User",
     "fields": [
         {
             "key": "field_62fd845b9fbd8",
-            "label": "Аватар",
-            "name": "аватар",
+            "label": "Avatar",
+            "name": "avatar",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -25,6 +25,25 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_62fe1ab3d55d2",
+            "label": "Должность",
+            "name": "job_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -45,5 +64,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660781699
+    "modified": 1660820242
 }

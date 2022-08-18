@@ -1,9 +1,6 @@
 <?php
 global $post;
 ?>
-
-<script src="https://cdn.jsdelivr.net/npm/sharer.js@latest/sharer.min.js"></script>
-
 <div class="container py-14 py-md-16">
 	<div class="row gx-lg-8 gx-xl-12">
 		<div class="col-lg-8">
@@ -43,6 +40,11 @@ global $post;
 											<div class="dropdown-menu">
 												<button class="dropdown-item" data-sharer="twitter" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-twitter"></i>Twitter</button>
 												<button class="dropdown-item" data-sharer="vk" data-title="<?php the_title(); ?>" data-hashtag="hashtag" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-vk"></i>Вконтакте</button>
+												<button class="dropdown-item button" data-sharer="facebook" data-hashtag="" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-facebook"></i>Facebook</button>
+												<button class="dropdown-item button" data-sharer="email" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>" data-subject="Hey! Check out that URL" data-to="inf0@codeweber.com"><i class="uil uil-envelope-share"></i>Email</button>
+												<button class="dropdown-item button" data-sharer="whatsapp" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-whatsapp"></i>Whatsapp</button>
+												<button class="dropdown-item button" data-sharer="telegram" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-telegram"></i>Telegram</button>
+												<button class="dropdown-item button" data-sharer="skype" data-url="<?php echo get_permalink(); ?>" data-title="<?php the_title(); ?>"><i class="uil uil-skype"></i>Skype</button>
 											</div>
 											<!--/.dropdown-menu -->
 										</div>
@@ -61,11 +63,11 @@ global $post;
 										$user_id_prefixed = $user_acf_prefix . $user_id;
 										?>
 										<?php if (get_field('аватар', $user_id_prefixed)) : ?>
-											<figure class="user-avatar"><img class="rounded-circle" alt="" src="<?php the_field('аватар', $user_id_prefixed); ?>"></figure>
+											<figure class="user-avatar"><img class="rounded-circle" alt="" src="<?php the_field('avatar', $user_id_prefixed); ?>"></figure>
 										<?php endif ?>
 										<div>
 											<h6><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="link-dark"><?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></a></h6>
-											<span class="post-meta fs-15">Sales Manager</span>
+											<span class="post-meta fs-15"><?php the_field('job_title', $user_id_prefixed); ?></span>
 										</div>
 									</div>
 									<div class="mt-3 mt-md-0 ms-auto">
