@@ -11,9 +11,10 @@
 
 <body <?php body_class(); ?>>
 	<?php wp_body_open(); ?>
+	<?php sandbox_frame_open(); ?>
 
 	<div id="content-wrapper" class="content-wrapper">
 		<?php
 
 		// get_template_part('templates/header/header', 'topbar');
-		get_template_part('templates/header/header', 'sandbox-02'); ?>
+		get_template_part('templates/header/header', 'sandbox-08'); ?>

@@ -146,6 +146,7 @@ function brk_phone_one()
 	return $brk_phone_one;
 };
 
+
 // --- Phone 2 ---
 
 function brk_phone_two()
@@ -171,6 +172,7 @@ function brk_email()
 	endif;
 	return $brk_email;
 };
+
 
 // --- Address ---
 
@@ -215,8 +217,121 @@ function brk_logo_light_link()
 	return $brk_logo_light;
 };
 
+// --- Accordeon ---
+
+class AccordeonS
+{
+	public $type_accordeon = 'plane';
+	public $default_accordeon = NULL;
+	public $section_id = NULL;
+	public $section_id_2 = NULL;
+	public function accordeon()
+	{
+
+		if (have_rows('accordeon')) :
+			while (have_rows('accordeon')) : the_row();
+				$type_accordeon = get_sub_field('type_accordeon');
+				$style_accordeon = get_sub_field('style_accordeon');
+				if ($style_accordeon == 'border') :
+					$card_style_class = NULL;
+				elseif ($style_accordeon == 'plain') :
+					$card_style_class = 'plain';
+				endif;
+				if (have_rows('accordeon_repeater')) :
+					while (have_rows('accordeon_repeater')) : the_row();
+
+						$title = get_sub_field('title');
+						$paragraph = get_sub_field('paragraph');
+						$row_id = get_row_index();
+
+						if ($type_accordeon == 'Type_1' && $row_id == '1') :
+							$class_expand = 'true';
+							$button_accordeon_class = 'accordion-button';
+							$collapse_class = 'accordion-collapse collapse show ';
+						else :
+							$class_expand = 'false';
+							$button_accordeon_class = 'collapsed';
+							$collapse_class = 'collapse';
+						endif; ?>
+						<div class="card <?php echo $card_style_class; ?> accordion-item">
+							<div class="card-header" id="headingOne-<?php echo  $this->section_id . '-' . $row_id; ?>">
+								<button class="<?php echo $button_accordeon_class; ?>" data-bs-toggle="collapse" data-bs-target="#collapseOne-<?php echo $this->section_id . '-' . $row_id; ?>" aria-expanded="<?php echo $class_expand; ?>" aria-controls="collapseOne-<?php echo $this->section_id; ?>"> <?php echo $title; ?> </button>
+							</div>
+							<!--/.card-header -->
+							<div id="collapseOne-<?php echo $this->section_id . '-' . $row_id; ?>" class="<?php echo $collapse_class; ?>" aria-labelledby="headingOne-<?php echo $this->section_id; ?>" data-bs-parent="#<?php echo $this->section_id; ?>">
+								<div class="card-body">
+									<p><?php echo $paragraph; ?></p>
+								</div>
+								<!--/.card-body -->
+							</div>
+							<!--/.accordion-collapse -->
+						</div>
+						<!--/.accordion-item -->
+					<?php
+					endwhile;
+				else :
+					echo $this->default_accordeon;
+				endif;
+			endwhile;
+		endif;
+	}
+
+
+	public function accordeon1()
+	{
+		if (have_rows('accordeon_repeater_1_accordeon')) :
+			while (have_rows('accordeon_repeater_1_accordeon')) : the_row();
+				$type_accordeon = get_sub_field('type_accordeon');
+				$style_accordeon = get_sub_field('style_accordeon');
+				if ($style_accordeon == 'border') :
+					$card_style_class = NULL;
+				elseif ($style_accordeon == 'plain') :
+					$card_style_class = 'plain';
+				endif;
+				if (have_rows('accordeon_repeater')) :
+					while (have_rows('accordeon_repeater')) : the_row();
+
+						$title = get_sub_field('title');
+						$paragraph = get_sub_field('paragraph');
+						$row_id = get_row_index();
+
+						if ($type_accordeon == 'Type_1' && $row_id == '1') :
+							$class_expand = 'true';
+							$button_accordeon_class = 'accordion-button';
+							$collapse_class = 'accordion-collapse collapse show ';
+						else :
+							$class_expand = 'false';
+							$button_accordeon_class = 'collapsed';
+							$collapse_class = 'collapse';
+						endif; ?>
+
+						<div class="card <?php echo $card_style_class; ?> accordion-item">
+							<div class="card-header" id="headingOne-<?php echo  $this->section_id . '-' . $row_id; ?>">
+								<button class="<?php echo $button_accordeon_class; ?>" data-bs-toggle="collapse" data-bs-target="#collapseOne-<?php echo $this->section_id . '-' . $row_id; ?>" aria-expanded="<?php echo $class_expand; ?>" aria-controls="collapseOne-<?php echo $this->section_id; ?>"> <?php echo $title; ?> </button>
+							</div>
+							<!--/.card-header -->
+							<div id="collapseOne-<?php echo $this->section_id . '-' . $row_id; ?>" class="<?php echo $collapse_class; ?>" aria-labelledby="headingOne-<?php echo $this->section_id; ?>" data-bs-parent="#<?php echo $this->section_id_2; ?>">
+								<div class="card-body">
+									<p><?php echo $paragraph; ?></p>
+								</div>
+								<!--/.card-body -->
+							</div>
+							<!--/.accordion-collapse -->
+						</div>
+						<!--/.accordion-item -->
+		<?php
+					endwhile;
+				else :
+					echo $this->default_accordeon;
+				endif;
+			endwhile;
+		endif;
+	}
+}
+
 
 //* --- Swiper Gallery Class ACF---
+
 class SwiperSlider
 {
 	public $root_theme = '';
@@ -349,7 +464,6 @@ class Settings
 };
 
 
-
 //* --- Images Class ACF---
 
 class Images
@@ -418,6 +532,65 @@ class Images
 	}
 }
 
+
+//* --- Icons Class ACF---
+
+class Icons
+{
+	public $icon = NULL;
+	public $icon_url = NULL;
+	public $icon_type = 'Unicons';
+	public function GetIcon()
+	{
+		if (have_rows('type_icons')) :
+			while (have_rows('type_icons')) : the_row();
+				$this->icon_type = get_sub_field('select_type_icons');
+				$this->icon = get_sub_field('icon');
+				if (get_sub_field('icon_lineal_svg')) {
+					$this->icon_url = get_stylesheet_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
+				}
+			endwhile;
+		endif;
+	}
+}
+
+
+//* --- Color Class ACF---
+
+class Color
+{
+	public $color_icon = 'primary';
+	public function ColorIcon()
+	{
+		if (have_rows('type_color')) :
+			while (have_rows('type_color')) : the_row();
+				$type_color = get_sub_field('select_type_color');
+				if ($type_color == 'Solid') :
+					$this->color_icon = get_sub_field('theme_btn_solid_color');
+				elseif ($type_color == 'Soft') :
+					$this->color_icon = get_sub_field('theme_btn_soft_color');
+				elseif ($type_color == 'Gradient') :
+					$this->color_icon = get_sub_field('gradient_btn') . ' gradient';
+				endif;
+			endwhile;
+		endif;
+	}
+
+	public function ColorIcon1()
+	{
+		$type_color = get_sub_field('select_type_color');
+		if ($type_color == 'Solid') :
+			$this->color_icon = get_sub_field('theme_btn_solid_color');
+		elseif ($type_color == 'Soft') :
+			$this->color_icon = get_sub_field('theme_btn_soft_color');
+		elseif ($type_color == 'Gradient') :
+			$this->color_icon = get_sub_field('gradient_btn') . ' gradient';
+		endif;
+	}
+}
+
+
+
 //* --- Label Class ACF---
 
 class LabelIcons
@@ -426,10 +599,118 @@ class LabelIcons
 	public $title = "25000+";
 	public $paragraph = 'Happy Clients';
 	public $icon = '<div class="icon btn btn-circle btn-md btn-soft-primary disabled mx-auto me-3"> <i class="uil uil-users-alt"></i></div>';
+	public $icon_lg = '<div class="icon btn btn-circle btn-lg btn-soft-primary disabled mx-auto me-3"> <i class="uil uil-users-alt"></i></div>';
 	public $color_icon = 'primary';
 	public $default_card_body = '';
+	public $pattern = NULL;
+	public $icon_svg_classes = 'svg-inject icon-svg icon-svg-lg mx-auto me-4 mb-lg-3 mb-xl-0';
+	public $icon_classes = 'icon btn btn-circle btn-lg disabled mx-auto me-4 mb-lg-3 mb-xl-0';
+
 
 	public function GetLabel()
+	{
+		if (have_rows('label_on_banner')) :
+			while (have_rows('label_on_banner')) : the_row();
+
+				/*Settings */
+				if (get_sub_field('label_title')) {
+					$this->title = get_sub_field('label_title');
+				}
+				if (get_sub_field('label_text')) {
+					$this->paragraph = get_sub_field('label_text');
+				}
+
+				// Select Color 
+				$icon_color = new Color();
+				$icon_color->ColorIcon();
+
+				// Get icon
+				$icon = new Icons;
+				$icon->GetIcon();
+
+				if (have_rows('type_icons')) :
+					while (have_rows('type_icons')) : the_row();
+						if ($icon->icon_type == 'Unicons') :
+							$icon_block = '<div class="icon btn btn-circle btn-md btn-' . $icon_color->color_icon . ' disabled mx-auto me-3">' . get_sub_field('icon') . '</div>';
+						else :
+							$icon_block = '<img src="' . $this->root_theme . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg" class="svg-inject icon-svg icon-svg-sm text-' . $icon_color->color_icon . ' mx-auto me-3" alt=""/>
+								';
+						endif; ?>
+						<div class="card-body py-4 px-5">
+							<div class="d-flex flex-row align-items-center">
+								<div>
+									<?php echo $icon_block; ?>
+								</div>
+								<div>
+									<h3 class="counter mb-0 text-nowrap"><?php echo $this->title; ?></h3>
+									<p class="fs-14 lh-sm mb-0 text-nowrap"><?php echo $this->paragraph; ?></p>
+								</div>
+							</div>
+						</div>
+						<!--/.card-body -->
+					<?php
+					endwhile;
+				endif;
+			endwhile;
+		endif;
+	}
+
+
+	public function GetLabel_4()
+	{
+		if (have_rows('label_on_banner')) :
+			while (have_rows('label_on_banner')) : the_row();
+
+				if (get_sub_field('label_title')) {
+					$this->title = get_sub_field('label_title');
+				}
+				if (get_sub_field('label_text')) {
+					$this->paragraph = get_sub_field('label_text');
+				}
+
+				// Select Color 
+				$icon_color = new Color();
+				$icon_color->ColorIcon();
+
+				// Get icon
+				$icon = new Icons;
+				$icon->GetIcon();
+
+
+				if (have_rows('type_icons')) :
+					while (have_rows('type_icons')) : the_row();
+						if ($icon->icon_type == 'Unicons') :
+							$icon_block = '<div class="icon btn btn-circle btn-lg btn-' . $icon_color->color_icon . ' disabled mx-auto me-4 mb-lg-3 mb-xl-0">' . get_sub_field('icon') . '</div>';
+						else :
+							$icon_block = '<img src="' . $this->root_theme . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg" class="svg-inject icon-svg icon-svg-lg text-' . $icon_color->color_icon . ' me-4 mb-lg-3 mb-xl-0"/>';
+						endif; ?>
+
+
+						<div class="col-md-6 col-lg-4">
+							<div class="card">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+										<div>
+											<?php echo $icon_block; ?>
+										</div>
+										<div>
+											<h3 class="counter mb-1"><?php echo $this->title; ?></h3>
+											<p class="mb-0"><?php echo $this->paragraph; ?></p>
+										</div>
+									</div>
+								</div>
+								<!--/.card-body -->
+							</div>
+							<!--/.card -->
+						</div>
+						<!--/column -->
+					<?php
+					endwhile;
+				endif;
+			endwhile;
+		endif;
+	}
+	public function GetLabel_5()
 	{
 		if (have_rows('label_on_banner')) :
 			while (have_rows('label_on_banner')) : the_row();
@@ -443,37 +724,20 @@ class LabelIcons
 				// Select Color 
 				$icon_color = new Color();
 				$icon_color->ColorIcon();
-				$this->color_icon = $icon_color->color_icon;
+
+				// Get icon
+				$icon = new Icons;
+				$icon->GetIcon();
 
 				if (have_rows('type_icons')) :
 					while (have_rows('type_icons')) : the_row();
-						$icon_type = get_sub_field('select_type_icons');
-						if ($icon_type == 'Unicons') :
-							$unicons = get_sub_field('icon');
-							if ($unicons) {
-								$this->icon = '<div class="icon btn btn-circle btn-md btn-' . $this->color_icon . ' disabled mx-auto me-3">' . get_sub_field('icon') . '</div>';
-							};
+						if ($icon->icon_type == 'Unicons') :
+							$icon_block = '<div class="' . $this->icon_classes . ' btn-' . $icon_color->color_icon . '">' . get_sub_field('icon') . '</div>';
 						else :
-							$svg_icons = get_sub_field('icon_lineal_svg');
-							if ($svg_icons) {
-								$this->icon = '
-								<img src="' . $this->root_theme . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg" class="svg-inject icon-svg icon-svg-sm text-' . $this->color_icon . ' mx-auto me-3" alt=""/>
-								';
-							};
-						endif; ?>
-						<div class="card-body py-4 px-5">
-							<div class="d-flex flex-row align-items-center">
-								<div>
-									<?php echo $this->icon; ?>
-								</div>
-								<div>
-									<h3 class="counter mb-0 text-nowrap"><?php echo $this->title; ?></h3>
-									<p class="fs-14 lh-sm mb-0 text-nowrap"><?php echo $this->paragraph; ?></p>
-								</div>
-							</div>
-						</div>
-						<!--/.card-body -->
-					<?php
+							$icon_block = '<img src="' . $this->root_theme . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg" class="' . $this->icon_svg_classes . '    text-' . $icon_color->color_icon . '"/>';
+						endif;
+						$pattern = $this->pattern;
+						echo wp_sprintf($pattern, $this->title, $this->paragraph, $icon_block); //> На дереве сидят 5 обезьян
 					endwhile;
 				endif;
 			endwhile;
@@ -523,7 +787,6 @@ class Buttons
 			elseif ($this->animate_swiper == 'false') :
 				$class_button_swiper_animate = NULL;
 			endif;
-
 
 			if ($this->count > 1) :
 				echo "<div class='{$this->class_button_wrapper}' data-cues='{$this->data_cues}' data-group='{$this->data_group}' data-delay='{$this->data_delay}'>";
@@ -576,6 +839,7 @@ class Buttons
 						elseif ($color_button == 'Gradient') :
 							$color_btn = '-gradient ' . get_sub_field('gradient_btn');
 						endif;
+
 						$color_button = 'btn' . $outline_class . $color_btn;
 
 						/* add icon classes */
@@ -609,8 +873,6 @@ class Buttons
 							$button_type = NULL;
 						endif;
 
-
-
 						/* Show buttons */
 						if (get_sub_field('select_type') == 'Form') :
 							if (get_sub_field('button_type') == 'Expand') :
@@ -643,27 +905,7 @@ class Buttons
 }
 
 
-
-//* --- Color Class ACF---
-
-class Color
-{
-	public $color_icon = NULL;
-	public function ColorIcon()
-	{
-		$type_color = get_sub_field('select_type_color');
-		if ($type_color == 'Solid') :
-			$this->color_icon = get_sub_field('theme_btn_solid_color');
-		elseif ($type_color == 'Soft') :
-			$this->color_icon = get_sub_field('theme_btn_soft_color');
-		elseif ($type_color == 'Gradient') :
-			$this->color_icon = get_sub_field('gradient_btn') . ' gradient';
-		endif;
-	}
-}
-
-
-//* --- Links Class ACF---
+// --- Links Class ACF---
 
 class Links
 {
@@ -967,38 +1209,9 @@ class HeroSlider
 				<!--/.container -->
 			</div>
 		<?php endif; ?>
-	<?php	}
+		<?php	}
 }
 
-
-
-
-//* --- Icons Class ACF---
-
-class Icons
-{
-	public $icon = NULL;
-	public $icon_url = NULL;
-	public function GetIcon()
-	{
-		if (have_rows('type_icons')) :
-			while (have_rows('type_icons')) : the_row();
-				$icon_type = get_sub_field('select_type_icons');
-				if ($icon_type == 'Unicons') :
-					$unicons = get_sub_field('icon');
-					if ($unicons) {
-						$this->icon = get_sub_field('icon');
-					};
-				elseif ($icon_type == 'SVG') :
-					$svg_icons = get_sub_field('icon_lineal_svg');
-					if ($svg_icons) {
-						$this->icon_url = get_template_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
-					};
-				endif;
-			endwhile;
-		endif;
-	}
-}
 
 //* --- Counters Class ACF---
 
@@ -1006,7 +1219,6 @@ class Counter
 {
 	public $counters_default = NULL;
 	public $textcolor = 'light';
-
 	public function Counters()
 	{
 		if (have_rows('counters_block')) :
@@ -1022,6 +1234,142 @@ class Counter
 			endwhile;
 		else :
 			echo $this->counters_default;
+		endif;
+	}
+
+	public function Counters_1()
+	{
+		if (have_rows('counters_block')) :
+			while (have_rows('counters_block')) : the_row();
+				if (have_rows('counter')) :
+					while (have_rows('counter')) : the_row();
+						echo '<div class="col-md-4 text-center">
+                              <h3 class="counter counter-lg text-' . $this->textcolor . '">' . get_sub_field('number_counter') . '</h3>
+                              <p class="text-dark">' . get_sub_field('text_counter') . '</p>
+                           </div>';
+					endwhile;
+				endif;
+			endwhile;
+		else :
+			echo $this->counters_default;
+		endif;
+	}
+	public function Counters_2()
+	{
+		if (have_rows('counters_block')) :
+			while (have_rows('counters_block')) : the_row();
+				if (have_rows('counter')) :
+					while (have_rows('counter')) : the_row();
+						/**Color */
+						$color = new  Color;
+						$color->ColorIcon();
+						echo '<div class="col-md-6">
+                        <div class="progressbar semi-circle ' . $color->color_icon . '" data-value="' . get_sub_field('number_counter') . '"></div>
+                        <h4 class="mb-0">' . get_sub_field('text_counter') . '</h4>
+                        </div>
+                        <!-- /column -->';
+					endwhile;
+				endif;
+			endwhile;
+		else :
+			echo $this->counters_default;
+		endif;
+	}
+}
+
+/* FAQ Class ACF*/
+
+class FAQ
+{
+	public $root_theme = '';
+	public $col_faq = 'col-lg-6';
+	public $text_color = 'light';
+	public $default_template = NULL;
+	public $pattern = '<div class="col-md-6 col-lg-4">
+							<div class="card">
+								<div class="card-body">
+									<div class="d-flex flex-row align-items-center">
+										<div>
+										%3$s
+										</div>
+										<div>
+											<h3 class="counter mb-1">%1$s</h3>
+											<p class="mb-0">%2$s</p>
+										</div>
+									</div>
+								</div>
+								<!--/.card-body -->
+							</div>
+							<!--/.card -->
+						</div>
+						<!--/column -->';
+	public $icon_classes = 'icon btn btn-circle btn-lg btn-soft-red disabled mx-auto me-4 mb-lg-3 mb-xl-0';
+
+	//* Function FAQ5 *//
+	public function Faq5()
+	{
+		$array_bool =  is_array(get_sub_field('faq_repeater')) ? 'true' : 'false';
+		if ($array_bool == 'true') :
+			$count_row = count(get_sub_field('faq_repeater'));
+		elseif ($array_bool == 'false') :
+			$count_row = NULL;
+		endif;
+		if (!$count_row == NULL) :
+			if (have_rows('faq_repeater')) :
+				while (have_rows('faq_repeater')) : the_row();
+
+					/**Color */
+					$color = new  Color;
+					$color->ColorIcon();
+
+					/**Icons */
+					$icons = new Icons;
+					$icons->GetIcon();
+					$icons_url = $icons->icon_url;
+					$icon = $icons->icon;
+					$icon_type = $icons->icon_type;
+
+					/* Settings */
+					$this->title = get_sub_field('title');
+					$this->paragraph = get_sub_field('paragraph');
+
+					/* Content item */ ?>
+					<div class="<?php echo $this->col_faq; ?>">
+						<div class="d-flex flex-row">
+							<div>
+								<?php if ($icon_type == 'Unicons') : ?>
+									<span class="icon btn btn-sm btn-circle btn-<?php echo $color->color_icon; ?> disabled me-5"><?php echo $icon; ?></span>
+								<?php elseif ($icon_type == 'SVG') : ?>
+									<img src=" <?php echo $icons_url; ?>" class="svg-inject icon-svg icon-svg-md text-<?php echo $color->color_icon; ?> me-4" alt="" />
+								<?php endif; ?>
+							</div>
+							<div>
+								<h4 class="text-<?php echo $this->text_color; ?>"><?php the_sub_field('title'); ?></h4>
+								<p class="text-<?php echo $this->text_color; ?> mb-0"><?php the_sub_field('paragraph'); ?></p>
+							</div>
+						</div>
+					</div>
+					<!-- /column -->
+		<?php endwhile;
+			endif;
+		else :
+			echo $this->default_template;
+		endif;
+	}
+
+	public function Facts_3()
+	{
+		if (have_rows('facts_repeater')) :
+			while (have_rows('facts_repeater')) : the_row();
+				$label_icons = new LabelIcons;
+				$label_icons->pattern = $this->pattern;
+				$label_icons->icon_svg_classes = $this->icon_svg_classes;
+				$label_icons->icon_classes = $this->icon_classes;
+				$label_icons->root_theme = get_template_directory_uri();
+				echo $label_icons->GetLabel_5();
+			endwhile;
+		else :
+			echo $this->default_template;
 		endif;
 	}
 }
@@ -1053,17 +1401,21 @@ class Features
 						?>
 
 						<?php // Select Icon
-						$icon_type = new Icons();
-						$icon_type->GetIcon();
-						?>
+						$icon = new Icons();
+						$icon->GetIcon();
+
+						if ($icon->icon_type == 'Unicons') :
+							$icon_block = '<div class="icon btn btn-circle btn-lg btn-' . $icon_color->color_icon . ' disabled mb-3">' . $icon->icon . '</div>';
+						else :
+							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' mb-3"/>';
+						endif; ?>
 
 						<div class="col-md-6 col-xl-3">
 							<div class="card shadow-lg">
 								<div class="card-body">
-									<img src="<?php echo $icon_type->icon_url; ?>" class="svg-inject icon-svg icon-svg-md text-<?php echo $icon_color->color_icon; ?> mb-3" alt="" />
+									<?php echo $icon_block; ?>
 									<h4><?php the_sub_field('title'); ?></h4>
 									<p class="mb-2"><?php the_sub_field('paragraph'); ?></p>
-
 									<?php // Add Link
 									$link = new Links();
 									$link->Link(); ?>

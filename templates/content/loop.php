@@ -1,21 +1,50 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-5 border-bottom' ); ?>>
+<article id="post-<?php the_ID(); ?>" class="post">
+	<div class="card">
+		<figure class="card-img-top overlay overlay-1 hover-scale"><a href="<?php the_permalink(); ?>">
+				<?php
+				the_post_thumbnail(
+					'sandbox_hero_5',
+					array(
+						'class' => '',
+						'alt' => get_the_title(),
+					)
+				);
+				?><span class="bg"></span></a>
+			<figcaption>
+				<h5 class="from-top mb-0"><?php esc_html_e('Read More', 'codeweber'); ?></h5>
+			</figcaption>
+		</figure>
+		<div class="card-body">
+			<div class="post-header">
+				<div class="post-category text-line">
+					<a href="#" class="hover" rel="category"><?php the_category(', '); ?></a>
+				</div>
+				<!-- /.post-category -->
+				<h2 class="post-title mt-1 mb-0"><a class="link-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+			</div>
+			<!-- /.post-header -->
+			<div class=" post-content">
+				<p><?php the_excerpt(); ?></p>
+			</div>
+			<!-- /.post-content -->
+		</div>
+		<!--/.card-body -->
+		<div class="card-footer">
+			<?php
+			$user_id = get_current_user_id();;
+			$user_acf_prefix = 'user_';
+			$user_id_prefixed = $user_acf_prefix . $user_id;
+			?>
 
-	<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-
-	<p><?php the_time( get_option( 'date_format' ) ); ?> - <?php the_category( ', ' ); ?></p>
-
-	<a href="<?php the_permalink(); ?>">
-		<?php
-		the_post_thumbnail(
-			'brk_single',
-			array(
-				'class' => 'img-fluid mb-3',
-				'alt' => get_the_title(),
-			)
-		);
-		?>
-	</a>
-
-	<div><?php the_excerpt(); ?></div>
-
+			<ul class="post-meta d-flex mb-0">
+				<li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php the_time(get_option('date_format')); ?></span></li>
+				<li class="post-author"><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>"><i class="uil uil-user"></i><span><?php esc_html_e('By', 'codeweber'); ?> <?php the_author_meta('user_firstname'); ?></span></a></li>
+				<li class="post-comments"><a href="#"><i class="uil uil-comment"></i><span> <?php esc_html_e('Comments', 'codeweber'); ?></span></a></li>
+				<li class="post-likes ms-auto"><a href="#"><i class="uil uil-heart-alt"></i><?php echo get_comments_number(); ?></a></li>
+			</ul>
+			<!-- /.post-meta -->
+		</div>
+		<!-- /.card-footer -->
+	</div>
+	<!-- /.card -->
 </article> <!-- #post-<?php the_ID(); ?> -->
