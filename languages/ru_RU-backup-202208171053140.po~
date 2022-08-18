@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-18 00:25+0000\n"
+"PO-Revision-Date: 2022-08-17 10:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -25,18 +25,6 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "X-Loco-Version: 2.6.2; wp-6.0.1"
 
-#: comments.php:70
-msgid " to post a comment."
-msgstr ""
-
-#: comments.php:17
-msgid "% Comments."
-msgstr ""
-
-#: comments.php:44
-msgid "&larr; Older Comments"
-msgstr ""
-
 #. Description of the theme
 msgid "A modular WordPress theme powered by Bootstrap 5 and Gulp"
 msgstr "Модульный шаблон Wordpress на базе Bootstrap 5 и Gulp"
@@ -54,10 +42,6 @@ msgid ""
 "cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit "
 "amet risus."
 msgstr ""
-
-#: templates/content/single.php:73
-msgid "All Posts"
-msgstr "Все Статьи"
 
 #: templates/footer/footer-sandbox-1.php:15
 #: templates/footer/footer-sandbox-10.php:10
@@ -115,22 +99,6 @@ msgstr ""
 msgid "Codeweber"
 msgstr "Codeweber"
 
-#: comments.php:87
-msgid "Comment"
-msgstr ""
-
-#: comments.php:41
-msgid "Comment navigation"
-msgstr ""
-
-#: templates/content/loop.php:36
-msgid "Comments"
-msgstr "Комментарии"
-
-#: comments.php:112
-msgid "Comments are closed."
-msgstr ""
-
 #: templates/header/header-sandbox-05.php:108
 #: templates/header/header-sandbox-08.php:114
 #: templates/header/header-sandbox-09.php:114
@@ -175,10 +143,6 @@ msgstr ""
 #: templates/header/header-sandbox-09.php:63
 #: templates/header/header-sandbox-09.php:104
 msgid "Email"
-msgstr ""
-
-#: comments.php:82
-msgid "Email *"
 msgstr ""
 
 #: templates/footer/footer-sandbox-1.php:57
@@ -373,18 +337,6 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
-#: comments.php:74
-msgid "Log out"
-msgstr ""
-
-#: comments.php:70
-msgid "logged in"
-msgstr ""
-
-#: comments.php:74
-msgid "Logged in as "
-msgstr ""
-
 #: templates/footer/footer-sandbox-1.php:14
 #: templates/footer/footer-sandbox-10.php:9
 #: templates/footer/footer-sandbox-11.php:14
@@ -414,18 +366,10 @@ msgstr ""
 msgid "Made with"
 msgstr "Разработано"
 
-#: functions/sidebars.php:14 functions/sidebars.php:16
-msgid "Main Sidebar"
-msgstr ""
-
 #: templates/header/header-sandbox-05.php:94
 #: templates/header/header-sandbox-08.php:100
 #: templates/header/header-sandbox-09.php:100
 msgid "Name"
-msgstr ""
-
-#: comments.php:78
-msgid "Name *"
 msgstr ""
 
 #: templates/footer/footer-sandbox-15.php:23
@@ -439,18 +383,6 @@ msgstr ""
 
 #: templates/header/header-sandbox-06.php:5
 msgid "New version of our product is finally"
-msgstr ""
-
-#: comments.php:47
-msgid "Newer Comments &rarr;"
-msgstr ""
-
-#: comments.php:15
-msgid "No comments yet."
-msgstr ""
-
-#: comments.php:16
-msgid "One comment."
 msgstr ""
 
 #: templates/header/header-sandbox-05.php:114
@@ -500,13 +432,9 @@ msgstr ""
 msgid "Popular Posts"
 msgstr ""
 
-#: comments.php:91
-msgid "Post Comment"
-msgstr ""
-
 #: templates/content/loop.php:14
 msgid "Read More"
-msgstr "Читать далее"
+msgstr ""
 
 #: templates/header/header-sandbox-05.php:90
 #: templates/header/header-sandbox-08.php:96
@@ -514,7 +442,7 @@ msgstr "Читать далее"
 msgid "Registration takes less than a minute."
 msgstr ""
 
-#: functions/custom.php:187 functions/custom.php:198
+#: functions/custom.php:185 functions/custom.php:196
 msgid "Results for: "
 msgstr ""
 
@@ -634,12 +562,4 @@ msgstr ""
 #: templates/header/header-sandbox-08.php:58
 #: templates/header/header-sandbox-09.php:58
 msgid "Welcome Back"
-msgstr ""
-
-#: comments.php:70
-msgid "You must be "
-msgstr ""
-
-#: comments.php:63
-msgid "Your email address will not be published. Required fields are marked *."
 msgstr ""
