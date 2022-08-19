@@ -50,19 +50,17 @@ global $post;
 										</div>
 										<!--/.share-dropdown -->
 									</div>
-
 								</div>
 								<!-- /.post-footer -->
 								<hr>
 								<div class="author-info d-md-flex align-items-center mb-3">
 									<div class="d-flex align-items-center">
-
 										<?php
 										$user_id = get_current_user_id();;
 										$user_acf_prefix = 'user_';
 										$user_id_prefixed = $user_acf_prefix . $user_id;
 										?>
-										<?php if (get_field('аватар', $user_id_prefixed)) : ?>
+										<?php if (get_field('avatar', $user_id_prefixed)) : ?>
 											<figure class="user-avatar"><img class="rounded-circle" alt="" src="<?php the_field('avatar', $user_id_prefixed); ?>"></figure>
 										<?php endif ?>
 										<div>
@@ -83,13 +81,11 @@ global $post;
 						</div>
 						<!-- /.classic-view -->
 
-
 						<?php
 						if (comments_open() || get_comments_number()) {
 							comments_template();
 						}
 						?>
-
 
 					</div>
 					<!-- /.card-body -->
@@ -97,11 +93,8 @@ global $post;
 				<!-- /.card -->
 			</div>
 			<!-- /.blog -->
-
 		</div>
 		<!-- /column -->
-
-
 		<?php get_sidebar(); ?>
 		<!-- /column .sidebar -->
 	</div>

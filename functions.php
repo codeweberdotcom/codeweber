@@ -16,6 +16,16 @@ require_once get_template_directory() . '/functions/sidebars.php'; // --- Regist
 
 require_once get_template_directory() . '/functions/lib/class-wp-bootstrap-navwalker.php'; // --- Nav Walker ---
 
+
+
+
+require_once get_template_directory() . '/functions/lib/comments-helper.php'; // --- Comments Helper ---
+
+
+
+
+
+
 foreach (glob(get_template_directory() . '/functions/cpt/*.php') as $cpt) {
 	require_once $cpt;
 }; // --- Register Custom Post Types & Taxonomies ---
@@ -30,6 +40,6 @@ require_once get_template_directory() . '/functions/integrations/cf7.php'; // --
 
 // require_once get_template_directory() . '/functions/searchfilter.php'; // --- Search results filter ---
 
-// require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup ---
+require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup ---
 
 require_once get_template_directory() . '/functions/custom.php'; // --- Custom user functions ---
