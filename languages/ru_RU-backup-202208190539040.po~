@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-19 05:39+0000\n"
+"PO-Revision-Date: 2022-08-19 05:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -664,7 +664,7 @@ msgstr ""
 
 #: functions/lib/comments-helper.php:38
 msgid "Your comment is awaiting moderation."
-msgstr "Ваш комментарий ожидает модерации"
+msgstr ""
 
 #: comments.php:54
 msgid "Your email address will not be published. Required fields are marked *."

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-19 05:39+0000\n"
+"PO-Revision-Date: 2022-08-18 23:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -116,9 +116,8 @@ msgid "Codeweber"
 msgstr "Codeweber"
 
 #: comments.php:83
-#| msgid "Comment"
-msgid "Comment *"
-msgstr "Комментарий *"
+msgid "Comment"
+msgstr "Комментарий"
 
 #: comments.php:38
 msgid "Comment navigation"
@@ -388,7 +387,7 @@ msgstr "Вы авторизованы как "
 
 #: comments.php:71 comments.php:77 comments.php:84
 msgid "Looks good!"
-msgstr "Отлично!"
+msgstr ""
 
 #: templates/footer/footer-sandbox-1.php:14
 #: templates/footer/footer-sandbox-10.php:9
@@ -427,11 +426,11 @@ msgstr ""
 #: templates/header/header-sandbox-08.php:100
 #: templates/header/header-sandbox-09.php:100
 msgid "Name"
-msgstr "Ваше имя"
+msgstr ""
 
 #: comments.php:70
 msgid "Name *"
-msgstr "Ваше имя *"
+msgstr ""
 
 #: templates/footer/footer-sandbox-15.php:23
 #: templates/footer/footer-sandbox-17.php:15
@@ -503,7 +502,7 @@ msgstr ""
 
 #: comments.php:85
 msgid "Please enter your comment."
-msgstr "Введите ваш комментарий, пожалуйста."
+msgstr "Введите ваше комментарий, пожалуйста."
 
 #: comments.php:78
 #| msgid "Please enter your first E-Mail."
@@ -664,7 +663,7 @@ msgstr ""
 
 #: functions/lib/comments-helper.php:38
 msgid "Your comment is awaiting moderation."
-msgstr "Ваш комментарий ожидает модерации"
+msgstr ""
 
 #: comments.php:54
 msgid "Your email address will not be published. Required fields are marked *."

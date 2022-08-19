@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-17 12:42+0000\n"
+"PO-Revision-Date: 2022-08-18 23:24+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -25,6 +25,18 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "X-Loco-Version: 2.6.2; wp-6.0.1"
 
+#: comments.php:61
+msgid " to post a comment."
+msgstr ""
+
+#: comments.php:14
+msgid "% Comments."
+msgstr ""
+
+#: comments.php:41
+msgid "&larr; Older Comments"
+msgstr ""
+
 #. Description of the theme
 msgid "A modular WordPress theme powered by Bootstrap 5 and Gulp"
 msgstr "Модульный шаблон Wordpress на базе Bootstrap 5 и Gulp"
@@ -42,6 +54,10 @@ msgid ""
 "cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit "
 "amet risus."
 msgstr ""
+
+#: templates/content/single.php:72
+msgid "All Posts"
+msgstr "Все Статьи"
 
 #: templates/footer/footer-sandbox-1.php:15
 #: templates/footer/footer-sandbox-10.php:10
@@ -78,7 +94,7 @@ msgstr "Все права защищены"
 msgid "Already have an account?"
 msgstr ""
 
-#: templates/content/loop.php:35
+#: templates/content/loop.php:41
 msgid "By"
 msgstr "Автор"
 
@@ -99,9 +115,21 @@ msgstr ""
 msgid "Codeweber"
 msgstr "Codeweber"
 
-#: templates/content/loop.php:36
+#: comments.php:83
+msgid "Comment"
+msgstr "Комментарий"
+
+#: comments.php:38
+msgid "Comment navigation"
+msgstr ""
+
+#: templates/content/loop.php:42
 msgid "Comments"
 msgstr "Комментарии"
+
+#: comments.php:102
+msgid "Comments are closed."
+msgstr ""
 
 #: templates/header/header-sandbox-05.php:108
 #: templates/header/header-sandbox-08.php:114
@@ -147,6 +175,10 @@ msgstr ""
 #: templates/header/header-sandbox-09.php:63
 #: templates/header/header-sandbox-09.php:104
 msgid "Email"
+msgstr ""
+
+#: comments.php:76
+msgid "Email *"
 msgstr ""
 
 #: templates/footer/footer-sandbox-1.php:57
@@ -341,6 +373,22 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
+#: comments.php:66
+msgid "Log out"
+msgstr "Выйти"
+
+#: comments.php:61
+msgid "logged in"
+msgstr ""
+
+#: comments.php:66
+msgid "Logged in as "
+msgstr "Вы авторизованы как "
+
+#: comments.php:71 comments.php:77 comments.php:84
+msgid "Looks good!"
+msgstr ""
+
 #: templates/footer/footer-sandbox-1.php:14
 #: templates/footer/footer-sandbox-10.php:9
 #: templates/footer/footer-sandbox-11.php:14
@@ -370,10 +418,18 @@ msgstr ""
 msgid "Made with"
 msgstr "Разработано"
 
+#: functions/sidebars.php:14 functions/sidebars.php:16
+msgid "Main Sidebar"
+msgstr ""
+
 #: templates/header/header-sandbox-05.php:94
 #: templates/header/header-sandbox-08.php:100
 #: templates/header/header-sandbox-09.php:100
 msgid "Name"
+msgstr ""
+
+#: comments.php:70
+msgid "Name *"
 msgstr ""
 
 #: templates/footer/footer-sandbox-15.php:23
@@ -388,6 +444,18 @@ msgstr ""
 #: templates/header/header-sandbox-06.php:5
 msgid "New version of our product is finally"
 msgstr ""
+
+#: comments.php:44
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:12
+msgid "No comments yet."
+msgstr "Ваш комментарий может быть первым."
+
+#: comments.php:13
+msgid "One comment."
+msgstr "Один комменатрий"
 
 #: templates/header/header-sandbox-05.php:114
 #: templates/header/header-sandbox-08.php:75
@@ -432,9 +500,26 @@ msgstr "Библиотека шаблонов"
 msgid "Phone"
 msgstr ""
 
+#: comments.php:85
+msgid "Please enter your comment."
+msgstr "Введите ваш комментарий, пожалуйста."
+
+#: comments.php:78
+#| msgid "Please enter your first E-Mail."
+msgid "Please enter your E-Mail."
+msgstr "Введите ваш E-Mail, пожалуйста."
+
+#: comments.php:72
+msgid "Please enter your first name."
+msgstr "Введите ваше имя, пожалуйста."
+
 #: templates/footer/footer-sandbox-25.php:5
 msgid "Popular Posts"
 msgstr ""
+
+#: comments.php:89
+msgid "Post Comment"
+msgstr "Отправить комментарий"
 
 #: templates/content/loop.php:14
 msgid "Read More"
@@ -446,7 +531,7 @@ msgstr "Читать далее"
 msgid "Registration takes less than a minute."
 msgstr ""
 
-#: functions/custom.php:185 functions/custom.php:196
+#: functions/custom.php:187 functions/custom.php:198
 msgid "Results for: "
 msgstr ""
 
@@ -567,3 +652,21 @@ msgstr ""
 #: templates/header/header-sandbox-09.php:58
 msgid "Welcome Back"
 msgstr ""
+
+#: comments.php:53
+msgid "Would you like to share your thoughts?"
+msgstr "Не хотите ли поделиться своими мыслями?"
+
+#: comments.php:61
+msgid "You must be "
+msgstr ""
+
+#: functions/lib/comments-helper.php:38
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: comments.php:54
+msgid "Your email address will not be published. Required fields are marked *."
+msgstr ""
+"Ваш адрес электронной почты не будет опубликован. Обязательные поля отмечены "
+"*."
