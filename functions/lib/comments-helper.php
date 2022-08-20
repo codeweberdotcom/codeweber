@@ -27,8 +27,13 @@ if (!function_exists('better_comments')) :
             </div>
             <!-- /div -->
             <div class="mt-3 mt-md-0 ms-auto">
+
+
+
                <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'before' => '', 'max_depth' => $args['max_depth']))) ?>
-               <a href="" class="btn btn-soft-ash btn-sm rounded-pill btn-icon btn-icon-start mb-0"><i class="uil uil-comments"></i> Reply</a>
+
+
+               <a href="" class="btn btn-soft-ash btn-sm rounded-pill btn-icon btn-icon-start mb-0"><i class="uil uil-comments"></i> Ответить </a>
             </div>
             <!-- /div -->
          </div>

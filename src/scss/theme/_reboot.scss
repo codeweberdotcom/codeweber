@@ -36,9 +36,9 @@ a {
   &:focus {
     outline: 0;
   }
-  &[href^=tel] {
+  &[href^="tel"] {
     color: inherit;
-    text-decoration:inherit;
+    text-decoration: inherit;
   }
 }
 a.hover {
@@ -53,7 +53,7 @@ a.hover {
     pointer-events: none;
   }
   &::before {
-    content: '';
+    content: "";
     transform-origin: 100% 50%;
     transform: scale3d(0, 1, 1);
     transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
@@ -128,16 +128,14 @@ a.hover-3 {
     }
   }
 }
-@each $color,
-$value in $colors {
+@each $color, $value in $colors {
   a.hover-2.link-#{$color}:before {
     background: $value;
   }
 }
-@each $color,
-$value in $colors {
+@each $color, $value in $colors {
   a.hover-3.link-#{$color}:before {
-   background-color: tint-color($value, $bg-pale-level);
+    background-color: tint-color($value, $bg-pale-level);
   }
 }
 .text-reset a {
@@ -382,8 +380,7 @@ h6 {
     height: 0.05rem;
     background: $main-color;
   }
-  @each $color,
-  $value in $colors {
+  @each $color, $value in $colors {
     &.text-#{$color}:before {
       background-color: $value;
     }
@@ -413,8 +410,7 @@ h6 {
     margin-top: 0;
     @include transition($btn-transition);
   }
-  @each $color,
-  $value in $colors {
+  @each $color, $value in $colors {
     &.#{$color}:after {
       background: rgba($value, 0.12);
     }
@@ -438,15 +434,13 @@ h6 {
     margin-top: 0;
     @include transition($btn-transition);
   }
-  @each $color,
-  $value in $colors {
+  @each $color, $value in $colors {
     &.#{$color}:after {
       background: $value;
     }
   }
 }
-@each $gradient,
-$value in $gradients {
+@each $gradient, $value in $gradients {
   .underline-#{$gradient}:after {
     background: $value;
   }
@@ -457,15 +451,15 @@ $value in $gradients {
   &:after {
     content: "";
     position: absolute;
-    z-index:-1;
+    z-index: -1;
     display: block;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: bottom;
     left: 50%;
-    bottom: -.1em;
+    bottom: -0.1em;
     width: 110%;
-    height: .3em;
+    height: 0.3em;
     transform: translateX(-50%);
   }
   &.style-1:before,
@@ -492,8 +486,7 @@ $value in $gradients {
     width: 110%;
     height: 140%;
   }
-  @each $color,
-  $value in $colors {
+  @each $color, $value in $colors {
     &.style-1.#{$color}:before,
     &.style-1.#{$color}:after {
       border-color: $value;
@@ -502,8 +495,7 @@ $value in $gradients {
   &.style-2:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208.01 8.3'%3E%3Cpath fill='#{url-color($main-color)}' d='M64.42,2.42Q42.78,1.46,21.19,0c-2.8-.19-4.09.89-3.87,2L3.92,1.87c-5.13-.05-5.28,3.87-.12,3.92l60.49.55c46.63,2.08,93.34,2.51,139.81,1.27,5-.13,5.39-3.87.13-3.92Z'/%3E%3C/svg%3E");
   }
-  @each $color,
-  $value in $colors {
+  @each $color, $value in $colors {
     &.style-2.#{$color}:after {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 208.01 8.3'%3E%3Cpath fill='#{url-color($value)}' d='M64.42,2.42Q42.78,1.46,21.19,0c-2.8-.19-4.09.89-3.87,2L3.92,1.87c-5.13-.05-5.28,3.87-.12,3.92l60.49.55c46.63,2.08,93.34,2.51,139.81,1.27,5-.13,5.39-3.87.13-3.92Z'/%3E%3C/svg%3E");
     }
@@ -511,8 +503,7 @@ $value in $gradients {
   &.style-3:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 205 9.37'%3E%3Cpath fill='#{url-color($main-color)}' d='M202.47,9.37A1191.26,1191.26,0,0,0,1.79,7.48,1.67,1.67,0,0,1,0,5.92H0A1.76,1.76,0,0,1,1.63,4.21c67-5.71,133.83-5.43,200.8-.27A2.75,2.75,0,0,1,205,6.88h0A2.6,2.6,0,0,1,202.47,9.37Z'/%3E%3C/svg%3E");
   }
-  @each $color,
-  $value in $colors {
+  @each $color, $value in $colors {
     &.style-3.#{$color}:after {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 205 9.37'%3E%3Cpath fill='#{url-color($value)}' d='M202.47,9.37A1191.26,1191.26,0,0,0,1.79,7.48,1.67,1.67,0,0,1,0,5.92H0A1.76,1.76,0,0,1,1.63,4.21c67-5.71,133.83-5.43,200.8-.27A2.75,2.75,0,0,1,205,6.88h0A2.6,2.6,0,0,1,202.47,9.37Z'/%3E%3C/svg%3E");
     }
@@ -521,7 +512,7 @@ $value in $gradients {
 //----------------------------------------------------------//
 //	MARK
 //----------------------------------------------------------//
-.mark, 
+.mark,
 mark {
   color: inherit;
   border-radius: $border-radius;
@@ -624,13 +615,13 @@ figure img {
     -webkit-mask-size: auto auto;
   }
   &.mask-1 img {
-    mask-image: url(../../assets/img/svg/blob.svg);
+    mask-image: url(../../dist/img/svg/blob.svg);
   }
   &.mask-2 img {
-    mask-image: url(../../assets/img/svg/hex.svg);
+    mask-image: url(../../dist/img/svg/hex.svg);
   }
   &.mask-3 img {
-    mask-image: url(../../assets/img/svg/blob2.svg);
+    mask-image: url(../../dist/img/svg/blob2.svg);
   }
 }
 //----------------------------------------------------------//
@@ -752,8 +743,7 @@ figure img {
 //----------------------------------------------------------//
 //	BORDER COLOR
 //----------------------------------------------------------//
-@each $color,
-$value in $button-colors {
+@each $color, $value in $button-colors {
   .border-soft-#{$color} {
     border-color: tint-color($value, $border-soft-level) !important;
   }

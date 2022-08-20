@@ -180,29 +180,21 @@ add_filter('block_categories_all', 'checkCategoryOrder', 99, 1);
 // Page title Function
 function brk_page_title()
 {
-    if (!is_front_page() && !is_home()) :
-        if (is_home()) {
-            echo esc_html(get_the_title(get_option('page_for_posts', true)));
-        } elseif (is_search()) {
+    if (!is_front_page() || !is_home()) :
+        if (is_search()) :
             esc_html_e('Results for: ', 'codeweber');
             the_search_query();
-        } elseif (is_single() || is_shop() || is_page()) {
-            the_title();
-        } else {
+        elseif (is_tag() || is_category() || is_archive() || is_author()) :
             the_archive_title();
-        }
-    else :
-        if (is_home()) {
+        else :
             echo esc_html(get_the_title(get_option('page_for_posts', true)));
-        } elseif (is_search()) {
-            esc_html_e('Results for: ', 'codeweber');
-            the_search_query();
-        } else {
-            the_archive_title();
-        }
+        endif;
+    elseif (is_single() || is_shop() || is_page()) :
+        the_title();
+    elseif (is_front_page() || is_home()) :
+        echo esc_html(get_the_title(get_option('page_for_posts', true)));
     endif;
 }
-
 
 
 // Sandbox Frame Content Open Function 
