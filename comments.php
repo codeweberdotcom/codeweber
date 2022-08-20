@@ -1,105 +1,134 @@
-<?php if (post_password_required()) {
-	return;
-} ?>
-
-
-<hr>
-<div id="comments">
-
-	<h3 class="mb-6">
-		<?php
-		comments_number(
-			esc_html__('No comments yet.', 'codeweber'),
-			esc_html__('One comment.', 'codeweber'),
-			esc_html__('% Comments.', 'codeweber')
-		);
-		?>
-	</h3>
-
-
-	<ol id="singlecomments" class="commentlist">
-		<?php
-		wp_list_comments(array(
-			'style'      => 'ol',
-			'short_ping' => true,
-			'callback' => 'better_comments'
-
-		));
-		?>
-	</ol><!-- .comment-list -->
-
-
-
-
-
-	<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { ?>
-		<nav class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text section-heading">
-				<?php esc_html_e('Comment navigation', 'codeweber'); ?>
-			</h2>
-			<div class="nav-previous">
-				<?php previous_comments_link(esc_html__('&larr; Older Comments', 'codeweber')); ?>
-			</div>
-			<div class="nav-next">
-				<?php next_comments_link(esc_html__('Newer Comments &rarr;', 'codeweber')); ?>
-			</div>
-		</nav>
-	<?php
-	}
-	?>
-
-
-	<hr>
-	<h3 class="mb-3"><?php comment_form_title(esc_html_e('Would you like to share your thoughts?', 'codeweber'), 'Leave a Comment to %s'); ?></h3>
-	<p class="mb-7"><?php esc_html_e('Your email address will not be published. Required fields are marked *.', 'codeweber'); ?></p>
-
-	<div class="cancel-comment-reply">
-		<?php cancel_comment_reply_link(); ?>
-	</div>
-
-	<?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
-		<p><?php esc_html_e('You must be ', 'codeweber'); ?><a href="<?php echo wp_login_url(get_permalink()); ?>"><?php esc_html_e('logged in', 'codeweber'); ?></a> <?php esc_html_e(' to post a comment.', 'codeweber'); ?></p>
-	<?php else : ?>
-		<form role="form" class="comment-form needs-validation" action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform" novalidate>
-			<div class="messages"></div>
-			<?php if (is_user_logged_in()) : ?>
-				<p><?php esc_html_e('Logged in as ', 'codeweber'); ?><a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a> . <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account"><?php esc_html_e('Log out', 'codeweber'); ?></a></p>
-			<?php else : ?>
-				<div class="form-floating mb-4">
-					<input type="text" class="form-control" name="author" id="form_name" value="<?php echo esc_attr($comment_author); ?>" tabindex="1" placeholder="Name" <?php if ($req) echo "aria-required='true'"; ?> required />
-					<label for="author"><?php esc_html_e('Name *', 'codeweber'); ?></label>
-					<div class="valid-feedback"> <?php esc_html_e('Looks good!', 'codeweber'); ?> </div>
-					<div class="invalid-feedback"> <?php esc_html_e('Please enter your first name.', 'codeweber'); ?> </div>
-				</div> <!-- .form-group -->
-				<div class="form-floating mb-4">
-					<input id="form_email" type="email" class="form-control" name="email" value="<?php echo esc_attr($comment_author_email); ?>" tabindex="2" placeholder="jane.doe@example.com" <?php if ($req) echo "aria-required='true'"; ?> required />
-					<label for="form_email"><?php esc_html_e('Email *', 'codeweber'); ?></label>
-					<div class="valid-feedback"> <?php esc_html_e('Looks good!', 'codeweber'); ?> </div>
-					<div class="invalid-feedback"> <?php esc_html_e('Please enter your E-Mail.', 'codeweber'); ?> </div>
-				</div> <!-- .form-group -->
-			<?php endif; ?>
-			<div class="form-floating mb-4">
-				<textarea class="form-control input-lg" name="comment" id="comment" tabindex="4" placeholder="Type your comment here..." style="height: 150px" required></textarea>
-				<label for="comment"><?php esc_html_e('Comment *', 'codeweber'); ?></label>
-				<div class="valid-feedback"> <?php esc_html_e('Looks good!', 'codeweber'); ?> </div>
-				<div class="invalid-feedback"> <?php esc_html_e('Please enter your comment.', 'codeweber'); ?> </div>
-			</div> <!-- .form-group -->
-
-			<div class="form-floating mb-4">
-				<button type="submit" class="btn btn-primary rounded-pill mb-0"><?php esc_html_e('Post Comment', 'codeweber'); ?></button>
-				<?php comment_id_fields(); ?>
-			</div> <!-- .form-group -->
-			<?php do_action('comment_form', $post->ID); ?>
-		</form>
-	<?php endif; // If registration required and not logged in 
-	?>
-
-</div>
 <?php
 
-if (!comments_open() && get_comments_number()) {
+/**
+ * The template file for displaying the comments and comment form for the
+ * Twenty Twenty theme.
+ *
+ * @package WordPress
+ * @subpackage Twenty_Twenty
+ * @since Twenty Twenty 1.0
+ */
+
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+*/
+if (post_password_required()) {
+	return;
+}
+
+if ($comments) {
 ?>
-	<p class="no-comments"><?php esc_html_e('Comments are closed.', 'codeweber'); ?></p>
+
+	<div class="comments" id="comments">
+
+		<?php
+		$comments_number = absint(get_comments_number());
+		?>
+
+		<div class="comments-header section-inner small max-percentage">
+
+			<h2 class="comment-reply-title">
+				<?php
+				if (!have_comments()) {
+					_e('Leave a comment', 'codeweber');
+				} elseif (1 === $comments_number) {
+					/* translators: %s: Post title. */
+					printf(_x('One reply on &ldquo;%s&rdquo;', 'comments title', 'codeweber'), get_the_title());
+				} else {
+					printf(
+						/* translators: 1: Number of comments, 2: Post title. */
+						_nx(
+							'%1$s reply on &ldquo;%2$s&rdquo;',
+							'%1$s replies on &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'codeweber'
+						),
+						number_format_i18n($comments_number),
+						get_the_title()
+					);
+				}
+
+				?>
+			</h2><!-- .comments-title -->
+
+		</div><!-- .comments-header -->
+
+		<div class="comments-inner section-inner thin max-percentage">
+
+			<?php
+			wp_list_comments(
+				array(
+					'walker'      => new codeweber_Walker_Comment(),
+					'avatar_size' => 120,
+					'style'       => 'div',
+				)
+			);
+
+			$comment_pagination = paginate_comments_links(
+				array(
+					'echo'      => false,
+					'end_size'  => 0,
+					'mid_size'  => 0,
+					'next_text' => __('Newer Comments', 'codeweber') . ' <span aria-hidden="true">&rarr;</span>',
+					'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __('Older Comments', 'codeweber'),
+				)
+			);
+
+			if ($comment_pagination) {
+				$pagination_classes = '';
+
+				// If we're only showing the "Next" link, add a class indicating so.
+				if (false === strpos($comment_pagination, 'prev page-numbers')) {
+					$pagination_classes = ' only-next';
+				}
+			?>
+
+				<nav class="comments-pagination pagination<?php echo $pagination_classes; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- static output 
+																		?>" aria-label="<?php esc_attr_e('Comments', 'codeweber'); ?>">
+					<?php echo wp_kses_post($comment_pagination); ?>
+				</nav>
+
+			<?php
+			}
+			?>
+
+		</div><!-- .comments-inner -->
+
+	</div><!-- comments -->
+
+<?php
+}
+
+if (comments_open() || pings_open()) {
+
+	if ($comments) {
+		echo '<hr class="styled-separator is-style-wide" aria-hidden="true" />';
+	}
+
+	comment_form(
+		array(
+			'class_form'         => 'section-inner thin max-percentage',
+			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+			'title_reply_after'  => '</h2>',
+		)
+	);
+} elseif (is_single()) {
+
+	if ($comments) {
+		echo '<hr class="styled-separator is-style-wide" aria-hidden="true" />';
+	}
+
+?>
+
+	<div class="comment-respond" id="respond">
+
+		<p class="comments-closed"><?php _e('Comments are closed.', 'codeweber'); ?></p>
+
+	</div><!-- #respond -->
+
 <?php
 }
 ?>
