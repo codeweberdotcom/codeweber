@@ -12,13 +12,17 @@ function remove_footer_admin()
 {
     echo '<span id="footer-thankyou">Developed by <a href="http://codeweber.com" target="_blank">Codeweber</a></span>';
 }
-
 add_filter('admin_footer_text', 'remove_footer_admin');
 
+function wpb_comment_reply_text($link)
+{
+    $link = str_replace('Ответить', __('<i class="uil uil-comments"></i>Reply', 'codeweber'), $link);
+    return $link;
+}
+add_filter('comment_reply_link', 'wpb_comment_reply_text');
 
 
 // --- Var Dump ---
-
 function printr($data)
 {
     echo "<pre>";
@@ -27,9 +31,7 @@ function printr($data)
 }
 
 
-
 // --- Custom login form---
-
 function wp_login_form_brk($args = array())
 {
     $defaults = array(

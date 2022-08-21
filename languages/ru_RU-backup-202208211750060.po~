@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-19 05:38+0000\n"
+"PO-Revision-Date: 2022-08-21 15:22+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -25,17 +25,15 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "X-Loco-Version: 2.6.2; wp-6.0.1"
 
-#: comments.php:61
-msgid " to post a comment."
-msgstr ""
+#. 1: Comment date, 2: Comment time.
+#: functions/lib/comments-helper.php:42
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s в %2$s"
 
-#: comments.php:14
-msgid "% Comments."
-msgstr ""
-
-#: comments.php:41
-msgid "&larr; Older Comments"
-msgstr ""
+#: functions/custom.php:19
+msgid "<i class=\"uil uil-comments\"></i>Reply"
+msgstr "<i class=\"uil uil-comments\"></i>Ответить"
 
 #. Description of the theme
 msgid "A modular WordPress theme powered by Bootstrap 5 and Gulp"
@@ -102,6 +100,12 @@ msgstr "Автор"
 msgid "by over 5000+ clients. Join them now and grow your business."
 msgstr ""
 
+#: comments.php:142
+msgid "By using this comment form you agree with our Privacy Policy"
+msgstr ""
+"Используя эту форму для комментариев, вы соглашаетесь с нашей Политикой "
+"конфиденциальности"
+
 #: templates/footer/footer-sandbox-25.php:66
 msgid "Categories"
 msgstr ""
@@ -115,22 +119,36 @@ msgstr ""
 msgid "Codeweber"
 msgstr "Codeweber"
 
-#: comments.php:83
+#: comments.php:168
+#, fuzzy
 #| msgid "Comment"
 msgid "Comment *"
-msgstr "Комментарий *"
+msgstr "Комменатрий *"
 
-#: comments.php:38
-msgid "Comment navigation"
-msgstr ""
-
-#: templates/content/loop.php:42
+#: comments.php:75 templates/content/loop.php:42
 msgid "Comments"
 msgstr "Комментарии"
 
-#: comments.php:102
+#: comments.php:187
 msgid "Comments are closed."
 msgstr ""
+
+#. 1: Number of comments, 2: Post title.
+#: comments.php:30
+#, php-format
+msgctxt "comments title"
+msgid "%1$s reply on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s replies on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s Комментарий"
+msgstr[1] "%1$s Комментария"
+msgstr[2] "%1$s Комментариев"
+
+#. %s: Post title.
+#: comments.php:26
+#, php-format
+msgctxt "comments title"
+msgid "One reply on &ldquo;%s&rdquo;"
+msgstr "Один комментарий"
 
 #: templates/header/header-sandbox-05.php:108
 #: templates/header/header-sandbox-08.php:114
@@ -166,6 +184,10 @@ msgstr ""
 msgid "E-mail"
 msgstr ""
 
+#: functions/lib/comments-helper.php:55
+msgid "Edit"
+msgstr ""
+
 #: templates/footer/footer-sandbox-25.php:93
 msgid "Elsewhere"
 msgstr ""
@@ -178,7 +200,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: comments.php:76
+#: comments.php:153
 msgid "Email *"
 msgstr ""
 
@@ -361,6 +383,10 @@ msgstr ""
 msgid "Learn More"
 msgstr "Информация"
 
+#: comments.php:23
+msgid "Leave a comment"
+msgstr ""
+
 #: templates/footer/footer-sandbox-17.php:7
 #: templates/footer/footer-sandbox-4.php:11
 #: templates/footer/footer-sandbox-7.php:46
@@ -374,19 +400,7 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
-#: comments.php:66
-msgid "Log out"
-msgstr "Выйти"
-
-#: comments.php:61
-msgid "logged in"
-msgstr ""
-
-#: comments.php:66
-msgid "Logged in as "
-msgstr "Вы авторизованы как "
-
-#: comments.php:71 comments.php:77 comments.php:84
+#: comments.php:147 comments.php:154 comments.php:169
 msgid "Looks good!"
 msgstr "Отлично!"
 
@@ -429,7 +443,7 @@ msgstr ""
 msgid "Name"
 msgstr "Ваше имя"
 
-#: comments.php:70
+#: comments.php:146
 msgid "Name *"
 msgstr "Ваше имя *"
 
@@ -446,17 +460,13 @@ msgstr ""
 msgid "New version of our product is finally"
 msgstr ""
 
-#: comments.php:44
-msgid "Newer Comments &rarr;"
+#: comments.php:63
+msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:12
-msgid "No comments yet."
-msgstr "Ваш комментарий может быть первым."
-
-#: comments.php:13
-msgid "One comment."
-msgstr "Один комменатрий"
+#: comments.php:64
+msgid "Older Comments"
+msgstr ""
 
 #: templates/header/header-sandbox-05.php:114
 #: templates/header/header-sandbox-08.php:75
@@ -501,26 +511,21 @@ msgstr "Библиотека шаблонов"
 msgid "Phone"
 msgstr ""
 
-#: comments.php:85
+#: comments.php:170
 msgid "Please enter your comment."
 msgstr "Введите ваш комментарий, пожалуйста."
 
-#: comments.php:78
-#| msgid "Please enter your first E-Mail."
+#: comments.php:155
 msgid "Please enter your E-Mail."
 msgstr "Введите ваш E-Mail, пожалуйста."
 
-#: comments.php:72
+#: comments.php:148
 msgid "Please enter your first name."
 msgstr "Введите ваше имя, пожалуйста."
 
 #: templates/footer/footer-sandbox-25.php:5
 msgid "Popular Posts"
 msgstr ""
-
-#: comments.php:89
-msgid "Post Comment"
-msgstr "Отправить комментарий"
 
 #: templates/content/loop.php:14
 msgid "Read More"
@@ -532,7 +537,7 @@ msgstr "Читать далее"
 msgid "Registration takes less than a minute."
 msgstr ""
 
-#: functions/custom.php:187 functions/custom.php:198
+#: functions/custom.php:189 functions/custom.php:200
 msgid "Results for: "
 msgstr ""
 
@@ -547,6 +552,10 @@ msgstr ""
 msgid ""
 "Sandbox is a multipurpose HTML5 template with various layouts which will be "
 "a great solution for your business."
+msgstr ""
+
+#: functions/lib/comments-helper.php:32
+msgid "says:"
 msgstr ""
 
 #: templates/header/header-sandbox-08.php:40
@@ -580,6 +589,10 @@ msgstr ""
 #: templates/header/header-sandbox-09.php:95
 msgid "Sign up to"
 msgstr ""
+
+#: comments.php:159
+msgid "Submit"
+msgstr "Отправить комментарий"
 
 #: templates/footer/footer-sandbox-7.php:7
 msgid "Subscribe to our newsletter"
@@ -654,20 +667,10 @@ msgstr ""
 msgid "Welcome Back"
 msgstr ""
 
-#: comments.php:53
+#: comments.php:160
 msgid "Would you like to share your thoughts?"
-msgstr "Не хотите ли поделиться своими мыслями?"
+msgstr "Напишите ваш комментарий."
 
-#: comments.php:61
-msgid "You must be "
-msgstr ""
-
-#: functions/lib/comments-helper.php:38
+#: functions/lib/comments-helper.php:102
 msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: comments.php:54
-msgid "Your email address will not be published. Required fields are marked *."
-msgstr ""
-"Ваш адрес электронной почты не будет опубликован. Обязательные поля отмечены "
-"*."
+msgstr "Ваш комментарий ожидает модерации"
