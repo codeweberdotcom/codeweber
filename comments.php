@@ -9,32 +9,32 @@ if (post_password_required()) {
 if ($comments) {
 ?>
 	<hr>
-	<div class="comments" id="comments">
+	<div class="comments" id="comments" style="padding-top: 75px; margin-top: -75px;">
 		<?php
 		$comments_number = absint(get_comments_number());
 		?>
-		<h3 class="mb-6">
-			<?php
-			if (!have_comments()) {
-				_e('Leave a comment', 'codeweber');
-			} elseif (1 === $comments_number) {
-				/* translators: %s: Post title. */
-				printf(_x('One reply on &ldquo;%s&rdquo;', 'comments title', 'codeweber'), get_the_title());
-			} else {
-				printf(
-					/* translators: 1: Number of comments, 2: Post title. */
-					_nx(
-						'%1$s reply on &ldquo;%2$s&rdquo;',
-						'%1$s replies on &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments title',
-						'codeweber'
-					),
-					number_format_i18n($comments_number),
-					get_the_title()
-				);
-			}
-			?>
+		<h3 class=" mb-6">
+		<?php
+		if (!have_comments()) {
+			_e('Leave a comment', 'codeweber');
+		} elseif (1 === $comments_number) {
+			/* translators: %s: Post title. */
+			printf(_x('One reply on &ldquo;%s&rdquo;', 'comments title', 'codeweber'), get_the_title());
+		} else {
+			printf(
+				/* translators: 1: Number of comments, 2: Post title. */
+				_nx(
+					'%1$s reply on &ldquo;%2$s&rdquo;',
+					'%1$s replies on &ldquo;%2$s&rdquo;',
+					$comments_number,
+					'comments title',
+					'codeweber'
+				),
+				number_format_i18n($comments_number),
+				get_the_title()
+			);
+		}
+		?>
 		</h3><!-- .comments-title -->
 		<ol id="singlecomments" class="commentlist">
 			<?php

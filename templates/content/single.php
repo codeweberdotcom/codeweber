@@ -56,13 +56,15 @@ global $post;
 								<div class="author-info d-md-flex align-items-center mb-3">
 									<div class="d-flex align-items-center">
 										<?php
-										$user_id = get_current_user_id();;
+										$user_id = get_the_author_meta('ID');
 										$user_acf_prefix = 'user_';
 										$user_id_prefixed = $user_acf_prefix . $user_id;
-										?>
-										<?php if (get_field('avatar', $user_id_prefixed)) : ?>
-											<figure class="user-avatar"><img class="rounded-circle" alt="" src="<?php the_field('avatar', $user_id_prefixed); ?>"></figure>
-										<?php endif ?>
+										$avatar = get_field('avatar', $user_id_prefixed);
+										if ($avatar) : ?>
+											<figure class="user-avatar">
+												<img src="<?php echo esc_url($avatar['sizes']['brk_post_sm']); ?>" class='rounded-circle' alt="<?php echo esc_attr($avatar['alt']); ?>" />
+											</figure>
+										<?php endif; ?>
 										<div>
 											<h6><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="link-dark"><?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></a></h6>
 											<span class="post-meta fs-15"><?php the_field('job_title', $user_id_prefixed); ?></span>
