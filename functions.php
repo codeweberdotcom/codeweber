@@ -39,3 +39,7 @@ require_once get_template_directory() . '/functions/custom.php'; // --- Custom u
 
 require_once get_template_directory() . '/functions/lib/comments-helper.php'; // --- Comments Helper ---
 require_once get_template_directory() . '/functions/comments-reply.php'; // --- Comments Reply Functions ---
+
+// --- Add like dislike function ---// 
+
+require_once get_template_directory() . '/functions/lib/like_dislike.php'; // --- Comments Reply Functions ---
