@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-21 15:22+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2022-08-21 18:31+0000\n"
+"Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
@@ -186,7 +186,7 @@ msgstr ""
 
 #: functions/lib/comments-helper.php:55
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 #: templates/footer/footer-sandbox-25.php:93
 msgid "Elsewhere"
@@ -462,11 +462,11 @@ msgstr ""
 
 #: comments.php:63
 msgid "Newer Comments"
-msgstr ""
+msgstr "Новые комментарии"
 
 #: comments.php:64
 msgid "Older Comments"
-msgstr ""
+msgstr "Ранние коментарии"
 
 #: templates/header/header-sandbox-05.php:114
 #: templates/header/header-sandbox-08.php:75
