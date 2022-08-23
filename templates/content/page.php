@@ -6,6 +6,7 @@ global $post;
 		<div class="col-12">
 			<?php
 			the_content(); ?>
+
 		</div>
 	</div>
 </div> <!-- #post-<?php the_ID(); ?> -->
