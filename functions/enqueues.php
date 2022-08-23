@@ -12,7 +12,6 @@ if (!function_exists('brk_styles_scripts')) {
 		$theme_version = wp_get_theme()->get('Version');
 
 		// --- CSS ---
-
 		wp_enqueue_style('google-fonts', get_template_directory_uri() . '/dist/css/fonts/urbanist.css', false, $theme_version, 'all');
 		wp_enqueue_style('plugin-styles', get_template_directory_uri() . '/dist/css/plugins.min.css', false, $theme_version, 'all');
 		wp_enqueue_style('theme-styles', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all');
@@ -20,12 +19,11 @@ if (!function_exists('brk_styles_scripts')) {
 
 
 		// --- Custom CSS ---
-
 		wp_enqueue_style('root-styles', get_template_directory_uri() . '/style.css', false, $theme_version, 'all');
 
 		// --- JS ---
 
-		/* add comment reply script */
+		//* add comment reply script */
 		if (is_singular() and comments_open() and (get_option('thread_comments') == 1)) wp_enqueue_script('comment-reply');
 
 		/*add codeweber theme scripts */
@@ -45,19 +43,16 @@ if (!function_exists('brk_styles_scripts_admin')) {
 	function brk_styles_scripts_admin()
 	{
 		$theme_version = wp_get_theme()->get('Version');
-		// --- Unicons admin acf ---
-		// wp_enqueue_style( 'theme-styles1', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all' );
 
+		// --- Unicons admin acf ---
 		wp_enqueue_style('plugin-styles1', get_template_directory_uri() . '/dist/css/plugins.min.css', false, $theme_version, 'all');
-		//wp_enqueue_style('theme-styles1', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all');
+		wp_enqueue_style('theme-styles1', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all');
 
 
 		/* Gutenberg Admin Flexible Content CSS*/
-
 		wp_enqueue_style('gutenberg_admin_styles', get_template_directory_uri() . '/templates/flexible-content/flexible-block.css', false, $theme_version, 'all');
 
 		// --- JS ---
-
 		wp_enqueue_script('plugins-scripts2', get_template_directory_uri() . '/dist/js/plugins.min.js', false, $theme_version, true);
 		wp_enqueue_script('theme-scripts2', get_template_directory_uri() . '/dist/js/theme.min.js', false, $theme_version, true);
 	}

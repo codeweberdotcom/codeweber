@@ -14,27 +14,27 @@ if ($comments) {
 		$comments_number = absint(get_comments_number());
 		?>
 		<h3 class=" mb-6">
-		<?php
-		if (!have_comments()) {
-			_e('Leave a comment', 'codeweber');
-		} elseif (1 === $comments_number) {
-			/* translators: %s: Post title. */
-			printf(_x('One reply on &ldquo;%s&rdquo;', 'comments title', 'codeweber'), get_the_title());
-		} else {
-			printf(
-				/* translators: 1: Number of comments, 2: Post title. */
-				_nx(
-					'%1$s reply on &ldquo;%2$s&rdquo;',
-					'%1$s replies on &ldquo;%2$s&rdquo;',
-					$comments_number,
-					'comments title',
-					'codeweber'
-				),
-				number_format_i18n($comments_number),
-				get_the_title()
-			);
-		}
-		?>
+			<?php
+			if (!have_comments()) {
+				_e('Leave a comment', 'codeweber');
+			} elseif (1 === $comments_number) {
+				/* translators: %s: Post title. */
+				printf(_x('One reply on &ldquo;%s&rdquo;', 'comments title', 'codeweber'), get_the_title());
+			} else {
+				printf(
+					/* translators: 1: Number of comments, 2: Post title. */
+					_nx(
+						'%1$s reply on &ldquo;%2$s&rdquo;',
+						'%1$s replies on &ldquo;%2$s&rdquo;',
+						$comments_number,
+						'comments title',
+						'codeweber'
+					),
+					number_format_i18n($comments_number),
+					get_the_title()
+				);
+			}
+			?>
 		</h3><!-- .comments-title -->
 		<ol id="singlecomments" class="commentlist">
 			<?php
@@ -79,11 +79,7 @@ if ($comments) {
 <?php
 }
 
-
 if (comments_open() || pings_open()) {
-	if ($comments) {
-		echo '<hr/>';
-	}
 
 	/** Get commenter Info */
 	$commenter = wp_get_current_commenter();
@@ -154,7 +150,7 @@ if (comments_open() || pings_open()) {
 			'title_reply'        => __('Would you like to share your thoughts?', 'codeweber'),
 			'class_submit'       => 'btn btn-primary rounded-pill mb-0',
 			'class_form'         => 'comment-form needs-validation',
-			'title_reply_before' => '<h3 id="reply-title" class="mb-3 me-2">',
+			'title_reply_before' => '<hr><h3 id="reply-title" class="mb-3 me-2">',
 			'title_reply_after'  => '</h3>',
 
 			'comment_field' =>  '<div class="form-floating mb-4 comment-form-comment">
@@ -169,8 +165,7 @@ if (comments_open() || pings_open()) {
 <?php
 } elseif (is_single()) {
 	if ($comments) {
-		echo '
-		<hr class="styled-separator is-style-wide" aria-hidden="true" />';
+		echo '<hr class="styled-separator is-style-wide" aria-hidden="true" />';
 	}
 ?>
 	<div class="comment-respond" id="respond">

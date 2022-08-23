@@ -155,30 +155,6 @@ function wp_login_form_brk($args = array())
     }
 }
 
-
-
-// --- New Gutenberg Layout---
-function checkCategoryOrder($categories)
-{
-    //custom category array
-    $temp = array(
-        'slug'  => 'codeweber',
-        'title' => 'Codeweber Blocks'
-    );
-    //new categories array and adding new custom category at first location
-    $newCategories = array();
-    $newCategories[0] = $temp;
-    //appending original categories in the new array
-    foreach ($categories as $category) {
-        $newCategories[] = $category;
-    }
-    //return new categories
-    return $newCategories;
-}
-add_filter('block_categories_all', 'checkCategoryOrder', 99, 1);
-
-
-
 // Page title Function
 function brk_page_title()
 {
@@ -193,19 +169,67 @@ function brk_page_title()
         else :
             echo esc_html(get_the_title(get_option('page_for_posts', true)));
         endif;
-
     elseif (is_front_page() || is_home()) :
         echo esc_html(get_the_title(get_option('page_for_posts', true)));
     endif;
 }
 
+/** Comment reply link change class */
+function comment_reply_link_filter($content)
+{
+    return '<div class="yourclass">' . $content . '</div>';
+}
+add_filter('comment_reply_link', 'comment_reply_link_filter', 99);
 
+
+/** Function Recent Post Widget */
+function sandbox_recent_post()
+{
+    $result = wp_get_recent_posts([
+        'numberposts' => 3,
+        'offset' => 0,
+        'category' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'include' => '',
+        'exclude' => '',
+        'meta_key' => '',
+        'meta_value' => '',
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'suppress_filters' => true,
+    ], OBJECT); ?>
+    <ul class="image-list">
+        <?php
+        $i = 0;
+        foreach ($result as $post) {
+            setup_postdata($post);
+            $id = $post->ID;
+            $title = $post->post_title;
+        ?>
+            <li>
+                <figure class="rounded"><a href="<?php the_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
+                <div class="post-content">
+                    <h6 class="mb-2"> <a class="link-dark" href="<?php the_permalink($id); ?>"><?php echo $title; ?></a> </h6>
+                    <ul class="post-meta">
+                        <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d F Y', $post); ?></span></li>
+                    </ul>
+                    <!-- /.post-meta -->
+                </div>
+            </li>
+        <?php } ?>
+    </ul>
+    <?php wp_reset_postdata();
+    ?>
+    <!-- /.image-list -->
+<?php
+}
 
 // Sandbox Frame Content Open Function 
 function sandbox_frame_open()
 {
     if (get_field('content_frame', 'option') == 1) :
-        echo '<div class="page-frame bg-pale-primary">';
+        echo '<div class="page-frame bg-light">';
     else :
         return;
     endif;
@@ -220,120 +244,3 @@ function sandbox_frame_close()
         return;
     endif;
 };
-
-
-
-// --- ACF Flexible Block
-add_action('acf/init', 'my_acf_blocks_init');
-function my_acf_blocks_init()
-{
-
-    // Check function exists.
-    if (function_exists('acf_register_block_type')) {
-
-        // Register a hero_banner block.
-        acf_register_block_type(array(
-            'name'              => 'hero_banner',
-            'title'             => __('Hero banner'),
-            'description'       => __('A custom flexible block.'),
-            'render_template'   => 'templates/flexible-content/hero_banner.php',
-            'category'          => 'codeweber',
-            'align'           => 'full',
-            'supports'        => array(
-                'align'        => array('full'),
-                'align'        => true,
-            ),
-            'mode' => 'preview',
-
-        ));
-
-        acf_register_block_type(
-            array(
-                'name'              => 'features',
-                'title'             => __('Features'),
-                'description'       => __('Features.'),
-                'render_template'   => 'templates/flexible-content/features.php',
-                'category'          => 'codeweber',
-                'mode'                    => 'auto',
-                'align'           => 'full',
-                'supports'        => array(
-                    'align'        => array('full'),
-                    'align'        => true,
-                ),
-                'mode' => 'preview',
-            )
-        );
-
-        acf_register_block_type(
-            array(
-                'name'              => 'facts',
-                'title'             => __('Facts'),
-                'description'       => __('Facts.'),
-                'render_template'   => 'templates/flexible-content/facts.php',
-                'category'          => 'codeweber',
-                'mode'                    => 'auto',
-                'align'           => 'full',
-                'supports'        => array(
-                    'align'        => array('full'),
-                    'align'        => true,
-                ),
-                'mode' => 'preview',
-
-            )
-
-        );
-        acf_register_block_type(
-            array(
-                'name'              => 'faq',
-                'title'             => __('Faq'),
-                'description'       => __('Faq.'),
-                'render_template'   => 'templates/flexible-content/faq.php',
-                'category'          => 'codeweber',
-                'mode'                    => 'auto',
-                'align'           => 'full',
-                'supports'        => array(
-                    'align'        => array('full'),
-                    'align'        => true,
-                ),
-                'mode' => 'preview',
-
-            )
-
-        );
-        // Register a restricted block.
-        acf_register_block_type(array(
-            'name'                => 'restricted',
-            'title'                => 'Restricted',
-            'description'        => 'A restricted content block.',
-            'category'            => 'formatting',
-            'mode'                => 'preview',
-            'supports'            => array(
-                'align' => true,
-                'mode' => false,
-                'jsx' => true
-            ),
-            'render_template' => 'template-parts/flexible-content/block-restricted.php',
-        ));
-
-        // Register a section.
-        acf_register_block_type(
-            array(
-                'name'              => 'section',
-                'title'             => __('Section'),
-                'description'       => __('Section.'),
-                'render_template'   => 'templates/flexible-content/section.php',
-                'category'          => 'codeweber',
-                'mode'                    => 'auto',
-                'align'           => 'full',
-                'supports'        => array(
-                    'align'        => array('full'),
-                    'align'        => true,
-                    'jsx' => true,
-                ),
-                'mode' => 'preview',
-
-            )
-
-        );
-    }
-}

@@ -3,46 +3,10 @@
         <div class="row gy-6 gy-lg-0">
            <div class="col-md-4 col-lg-3">
               <h4 class="widget-title text-white mb-3"><?php esc_html_e('Popular Posts', 'codeweber'); ?></h4>
-
               <?php
-               $result = wp_get_recent_posts([
-                  'numberposts' => 3,
-                  'offset' => 0,
-                  'category' => 0,
-                  'orderby' => 'post_date',
-                  'order' => 'DESC',
-                  'include' => '',
-                  'exclude' => '',
-                  'meta_key' => '',
-                  'meta_value' => '',
-                  'post_type' => 'post',
-                  'post_status' => 'publish',
-                  'suppress_filters' => true,
-               ], OBJECT); ?>
-              <ul class="image-list">
-
-                 <?php
-                  $i = 0;
-                  foreach ($result as $post) {
-                     setup_postdata($post);
-                     // вывод 
-                  ?>
-                    <li>
-                       <figure class="rounded"><a href="./blog-post.html"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
-                       <div class="post-content">
-                          <h6 class="mb-2"> <a class="link-dark" href="<?php the_permalink(); ?>"><?php the_title(); ?></a> </h6>
-                          <ul class="post-meta">
-                             <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date(); ?></span></li>
-                          </ul>
-                          <!-- /.post-meta -->
-                       </div>
-                    </li>
-                 <?php } ?>
-              </ul>
-              <?php wp_reset_postdata();
+               sandbox_recent_post();
                ?>
-
-              <!-- /.image-list -->
+              <!-- /.recent-posts -->
            </div>
            <!-- /column -->
            <div class="col-md-4 col-lg-3">
@@ -57,14 +21,14 @@
                  <ul class="list-unstyled tag-list">
                     <?php foreach ($tags as $tag) {
                         $tag_link = get_tag_link($tag->term_id); ?>
-                       <li><a href="<?php echo $tag_link; ?>" title='<?php echo $tag->name; ?>' class="btn btn-soft-ash text-white  btn-sm rounded-pill <?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
+                       <li><a href="<?php echo $tag_link; ?>" title='<?php echo $tag->name; ?>' class="btn btn-soft-ash text-white  btn-sm rounded-pill"><?php echo $tag->name; ?></a></li>
                     <?php } ?>
                  </ul>
               </div>
               <!-- /.widget -->
               <div class="widget">
                  <h4 class="widget-title text-white mb-3"><?php esc_html_e('Categories', 'codeweber'); ?></h4>
-                 <ul class="unordered-list text-reset bullet-white ">
+                 <ul class="unordered-list text-reset bullet-white">
                     <?php
                      $categories = get_categories([
                         'number'       => 3,

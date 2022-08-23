@@ -16,9 +16,15 @@ require_once get_template_directory() . '/functions/sidebars.php'; // --- Regist
 
 require_once get_template_directory() . '/functions/lib/class-wp-bootstrap-navwalker.php'; // --- Nav Walker ---
 
+
+
+// --- Register Custom Post Types & Taxonomies ---
+
 foreach (glob(get_template_directory() . '/functions/cpt/*.php') as $cpt) {
+
 	require_once $cpt;
-}; // --- Register Custom Post Types & Taxonomies ---
+};
+
 
 require_once get_template_directory() . '/functions/global.php'; // --- Various global functions ---
 
@@ -35,6 +41,11 @@ require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup
 require_once get_template_directory() . '/functions/custom.php'; // --- Custom user functions ---
 
 
+/** ACF Gutenberg Blocks */
+
+require_once get_template_directory() . '/functions/integrations/acf-gutenberg-block/acf-gutenberg-block.php'; // --- Custom user functions ---
+
+
 // --- Add comment helper ---//
 
 require_once get_template_directory() . '/functions/lib/comments-helper.php'; // --- Comments Helper ---
@@ -42,4 +53,4 @@ require_once get_template_directory() . '/functions/comments-reply.php'; // --- 
 
 // --- Add like dislike function ---// 
 
-require_once get_template_directory() . '/functions/lib/like_dislike.php'; // --- Comments Reply Functions ---
+require_once get_template_directory() . '/functions/lib/like_dislike.php'; // --- Like Dislike Functions ---
