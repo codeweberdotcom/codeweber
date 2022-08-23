@@ -103,7 +103,6 @@ if (comments_open() || pings_open()) {
 		return $new_fields;
 	}
 
-
 	/** Disable Url comment field */
 	add_filter('comment_form_default_fields', 'website_remove');
 	function website_remove($fields)
@@ -121,7 +120,6 @@ if (comments_open() || pings_open()) {
 			$classes[] = 'wpse-comment-awaiting-moderation';
 		return $classes;
 	}
-
 
 	/** Change Comment form fields */
 	comment_form(

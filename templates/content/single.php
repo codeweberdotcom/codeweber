@@ -64,10 +64,25 @@ global $post;
 											<figure class="user-avatar">
 												<img src="<?php echo esc_url($avatar['sizes']['brk_post_sm']); ?>" class='rounded-circle' alt="<?php echo esc_attr($avatar['alt']); ?>" />
 											</figure>
+										<?php else : ?>
+											<figure class="user-avatar">
+												<?php
+
+												echo get_avatar(get_the_author_meta('user_email'), 32);
+
+												?>
+											</figure>
+
 										<?php endif; ?>
 										<div>
 											<h6><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="link-dark"><?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></a></h6>
-											<span class="post-meta fs-15"><?php the_field('job_title', $user_id_prefixed); ?></span>
+											<?php
+											$job_title = esc_html('Writer', 'codeweber');
+											if (get_field('job_title', $user_id_prefixed)) {
+												$job_title = get_field('job_title', $user_id_prefixed);
+											}
+											?>
+											<span class="post-meta fs-15"><?php echo $job_title; ?></span>
 										</div>
 									</div>
 									<div class="mt-3 mt-md-0 ms-auto">
