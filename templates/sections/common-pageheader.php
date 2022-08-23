@@ -1,6 +1,5 @@
 <?php
 $user_id = get_the_author_meta('ID');
-
 ?>
 <section class="wrapper bg-soft-primary">
 	<div class="container pt-10 pb-12 pt-md-14 pb-md-14 text-center">

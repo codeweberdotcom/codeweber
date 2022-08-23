@@ -82,9 +82,10 @@ global $post;
 							<!-- /.post -->
 						</div>
 						<!-- /.classic-view -->
-
 						<?php
-						if (comments_open() || get_comments_number()) {
+						if (comments_open() || get_comments_number()) { ?>
+							<hr />
+						<?php
 							comments_template();
 						}
 						?>

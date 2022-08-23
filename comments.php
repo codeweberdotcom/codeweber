@@ -8,12 +8,11 @@ if (post_password_required()) {
 }
 if ($comments) {
 ?>
-	<hr>
 	<div class="comments" id="comments" style="padding-top: 75px; margin-top: -75px;">
 		<?php
 		$comments_number = absint(get_comments_number());
 		?>
-		<h3 class=" mb-6">
+		<h3 class="mb-6">
 			<?php
 			if (!have_comments()) {
 				_e('Leave a comment', 'codeweber');
@@ -75,6 +74,7 @@ if ($comments) {
 			}
 			?>
 		</ol><!-- .comments-inner -->
+		<hr />
 	</div><!-- comments -->
 <?php
 }
@@ -150,7 +150,7 @@ if (comments_open() || pings_open()) {
 			'title_reply'        => __('Would you like to share your thoughts?', 'codeweber'),
 			'class_submit'       => 'btn btn-primary rounded-pill mb-0',
 			'class_form'         => 'comment-form needs-validation',
-			'title_reply_before' => '<hr><h3 id="reply-title" class="mb-3 me-2">',
+			'title_reply_before' => '<h3 id="reply-title" class="mb-3 me-2">',
 			'title_reply_after'  => '</h3>',
 
 			'comment_field' =>  '<div class="form-floating mb-4 comment-form-comment">
@@ -165,9 +165,10 @@ if (comments_open() || pings_open()) {
 <?php
 } elseif (is_single()) {
 	if ($comments) {
-		echo '<hr class="styled-separator is-style-wide" aria-hidden="true" />';
-	}
+		echo '<hr/>';
+	};
 ?>
+
 	<div class="comment-respond" id="respond">
 		<p class="comments-closed"><?php _e('Comments are closed.', 'codeweber'); ?></p>
 	</div><!-- #respond -->
