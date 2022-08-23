@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-21 21:52+0000\n"
+"PO-Revision-Date: 2022-08-22 17:32+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -74,7 +74,7 @@ msgstr "Все Статьи"
 #: templates/footer/footer-sandbox-22.php:19
 #: templates/footer/footer-sandbox-23.php:9
 #: templates/footer/footer-sandbox-24.php:51
-#: templates/footer/footer-sandbox-25.php:121
+#: templates/footer/footer-sandbox-25.php:85
 #: templates/footer/footer-sandbox-26.php:51
 #: templates/footer/footer-sandbox-27.php:16
 #: templates/footer/footer-sandbox-3.php:10
@@ -92,7 +92,7 @@ msgstr "Все права защищены"
 msgid "Already have an account?"
 msgstr ""
 
-#: templates/content/loop.php:43 templates/sections/common-pageheader.php:13
+#: templates/content/loop.php:44 templates/sections/common-pageheader.php:14
 msgid "By"
 msgstr "Автор"
 
@@ -106,7 +106,7 @@ msgstr ""
 "Используя эту форму для комментариев, вы соглашаетесь с нашей Политикой "
 "конфиденциальности"
 
-#: templates/footer/footer-sandbox-25.php:66
+#: templates/footer/footer-sandbox-25.php:30
 msgid "Categories"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr "Codeweber"
 msgid "Comment *"
 msgstr "Комменатрий *"
 
-#: templates/content/loop.php:44 templates/sections/common-pageheader.php:14
+#: templates/content/loop.php:45 templates/sections/common-pageheader.php:15
 msgid "Comments"
 msgstr "Комментарии"
 
@@ -188,7 +188,7 @@ msgstr ""
 msgid "Edit"
 msgstr "Редактировать"
 
-#: templates/footer/footer-sandbox-25.php:93
+#: templates/footer/footer-sandbox-25.php:57
 msgid "Elsewhere"
 msgstr ""
 
@@ -261,7 +261,7 @@ msgid "Free Trial"
 msgstr ""
 
 #: templates/footer/footer-sandbox-1.php:29
-#: templates/footer/footer-sandbox-25.php:85
+#: templates/footer/footer-sandbox-25.php:49
 #: templates/footer/footer-sandbox-3.php:24
 msgid "Get in Touch"
 msgstr ""
@@ -365,7 +365,7 @@ msgstr ""
 #: templates/footer/footer-sandbox-21.php:41
 #: templates/footer/footer-sandbox-22.php:44
 #: templates/footer/footer-sandbox-23.php:31
-#: templates/footer/footer-sandbox-25.php:106
+#: templates/footer/footer-sandbox-25.php:70
 #: templates/footer/footer-sandbox-27.php:41
 #: templates/footer/footer-sandbox-3.php:35
 #: templates/footer/footer-sandbox-5.php:35
@@ -400,9 +400,9 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
-#: templates/sections/common-pageheader.php:17
+#: templates/content/loop.php:51 templates/sections/common-pageheader.php:20
 msgid "Likes"
-msgstr "Likes"
+msgstr "Спасибо"
 
 #: comments.php:141 comments.php:148 comments.php:163
 msgid "Looks good!"
@@ -425,7 +425,7 @@ msgstr "Отлично!"
 #: templates/footer/footer-sandbox-22.php:18
 #: templates/footer/footer-sandbox-23.php:8
 #: templates/footer/footer-sandbox-24.php:50
-#: templates/footer/footer-sandbox-25.php:120
+#: templates/footer/footer-sandbox-25.php:84
 #: templates/footer/footer-sandbox-26.php:50
 #: templates/footer/footer-sandbox-27.php:15
 #: templates/footer/footer-sandbox-3.php:9
@@ -437,7 +437,7 @@ msgstr "Отлично!"
 msgid "Made with"
 msgstr "Разработано"
 
-#: functions/sidebars.php:14 functions/sidebars.php:16
+#: functions/sidebars.php:13 functions/sidebars.php:15
 msgid "Main Sidebar"
 msgstr ""
 
@@ -454,7 +454,7 @@ msgstr "Ваше имя *"
 #: templates/footer/footer-sandbox-15.php:23
 #: templates/footer/footer-sandbox-17.php:15
 #: templates/footer/footer-sandbox-23.php:23
-#: templates/footer/footer-sandbox-25.php:111
+#: templates/footer/footer-sandbox-25.php:75
 #: templates/footer/footer-sandbox-7.php:54
 #: templates/footer/footer-sandbox-8.php:15
 msgid "Need Help?"
@@ -527,13 +527,17 @@ msgstr ""
 msgid "Read More"
 msgstr "Читать далее"
 
+#: templates/flexible-content/widgets/widget_1/widget_1.php:17
+msgid "Recent Posts"
+msgstr "Свежие статьи"
+
 #: templates/header/header-sandbox-05.php:90
 #: templates/header/header-sandbox-08.php:96
 #: templates/header/header-sandbox-09.php:96
 msgid "Registration takes less than a minute."
 msgstr ""
 
-#: functions/custom.php:189
+#: functions/custom.php:165
 msgid "Results for: "
 msgstr ""
 
@@ -621,7 +625,7 @@ msgid ""
 "worry, we hate spam and we respect your privacy."
 msgstr ""
 
-#: templates/footer/footer-sandbox-25.php:50
+#: templates/footer/footer-sandbox-25.php:14
 msgid "Tags"
 msgstr ""
 
