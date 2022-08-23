@@ -88,7 +88,6 @@ global $post;
 							comments_template();
 						}
 						?>
-
 					</div>
 					<!-- /.card-body -->
 				</div>

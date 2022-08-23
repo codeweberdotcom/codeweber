@@ -161,6 +161,8 @@ function brk_page_title()
     if (!is_front_page() || !is_home()) :
         if (is_tag() || is_category() || is_archive() || is_author()) :
             the_archive_title();
+        elseif (is_page()) :
+            the_title();
         elseif (is_search()) :
             esc_html_e('Results for: ', 'codeweber');
             the_search_query();
