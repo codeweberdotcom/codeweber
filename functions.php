@@ -54,3 +54,12 @@ require_once get_template_directory() . '/functions/comments-reply.php'; // --- 
 // --- Add like dislike function ---// 
 
 require_once get_template_directory() . '/functions/lib/like_dislike.php'; // --- Like Dislike Functions ---
+
+
+if (!function_exists('get_field')) {
+	add_action('template_redirect', 'template_redirect_warning_missing_acf', 0);
+	function template_redirect_warning_missing_acf()
+	{
+		wp_die(sprintf('This theme can\'t work without ACF PRO plugin. <a href="%s">Please login to admin</a>, and activate it !', wp_login_url()));
+	}
+}
