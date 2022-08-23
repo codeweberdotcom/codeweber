@@ -179,7 +179,7 @@ function brk_page_title()
 /** Comment reply link change class */
 function comment_reply_link_filter($content)
 {
-    return '<div class="yourclass">' . $content . '</div>';
+    return '<div class="comment-header d-md-flex align-items-center">' . $content . '</div>';
 }
 add_filter('comment_reply_link', 'comment_reply_link_filter', 99);
 
