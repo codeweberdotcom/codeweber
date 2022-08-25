@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-22 18:16+0000\n"
+"PO-Revision-Date: 2022-08-22 19:08+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -92,6 +92,10 @@ msgstr "Все права защищены"
 msgid "Already have an account?"
 msgstr ""
 
+#: templates/flexible-content/widgets/widget_6/widget_6.php:14
+msgid "Archive"
+msgstr "Статьи по месяцам"
+
 #: templates/content/loop.php:44 templates/sections/common-pageheader.php:14
 msgid "By"
 msgstr "Автор"
@@ -107,6 +111,7 @@ msgstr ""
 "конфиденциальности"
 
 #: templates/footer/footer-sandbox-25.php:30
+#: templates/flexible-content/widgets/widget_4/widget_4.php:1
 msgid "Categories"
 msgstr "Категории"
 
@@ -131,7 +136,7 @@ msgstr "Комментарии"
 
 #: comments.php:177
 msgid "Comments are closed."
-msgstr ""
+msgstr "Комментирование закрыто."
 
 #. 1: Number of comments, 2: Post title.
 #: comments.php:26
@@ -626,8 +631,9 @@ msgid ""
 msgstr ""
 
 #: templates/footer/footer-sandbox-25.php:14
+#: templates/flexible-content/widgets/widget_5/widget_5.php:1
 msgid "Tags"
-msgstr ""
+msgstr "Метки"
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "trusted"

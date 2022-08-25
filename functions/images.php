@@ -29,6 +29,9 @@ if (!function_exists('brk_image_settings')) {
 
 		add_image_size('sandbox_faq_1', 800, 590, true);
 
+		add_image_size('sandbox_slider_1', 560, 350, true);
+		add_image_size('sandbox_slider_2', 460, 307, true);
+
 
 
 		// remove_image_size('large');

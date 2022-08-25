@@ -1,0 +1,80 @@
+<?php
+/* Add settings */
+$settings = new Settings();
+$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+$settings->title = __('You Might Also Like', 'codeweber'); // демо заголовок
+//$settings->paragraph = 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.'; // демо параграф
+//$settings->subtitle = 'We have considered our business solutions to support you on every stage of your growth.'; // демо подзаголовок
+// $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/bg11.jpg'; // демо фото
+// $settings->backgroundurl = $settings->root_theme . '/dist/img/photos/bg37.jpg';
+// $settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4'; // демо видео
+// $settings->typewriter = 'customer satisfaction,business needs,creative ideas'; // демо данные эффекта печатной машинки
+//$settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
+//$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
+//$settings->textcolor = 'light'; // цвет текста темной темы
+//$settings->section_id = esc_html($args['block_id']); // присваиваем секции уникальный id
+$settings->GetDataACF(); // получаем занчения полей ACF
+?>
+
+<?php
+$my_posts = new WP_Query;
+$myposts = $my_posts->query(array(
+   'post_type' => 'post',
+   'posts_per_page' => 2
+)); ?>
+<h3 class="mb-6"><?php echo $settings->title; ?></h3>
+<div class="swiper-container blog grid-view mb-16 swiper-container-0" data-margin="30" data-nav="false" data-dots="true" data-items-md="2" data-items-xs="1">
+   <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events">
+      <div class="swiper-wrapper" id="swiper-wrapper-b89a14f97e102ef7d" aria-live="off" style="cursor: grab; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+         <?php
+         // обрабатываем результат
+         foreach ($myposts as $post) { ?>
+            <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" style="width: 343.5px; margin-right: 30px;">
+               <article>
+                  <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="<?php the_permalink(); ?>">
+                        <?php
+                        the_post_thumbnail(
+                           'sandbox_slider_1',
+                           array(
+                              'class' => '',
+                              'alt' => get_the_title(),
+                           )
+                        );
+                        ?>
+                     </a>
+                     <figcaption>
+                        <h5 class="from-top mb-0"><?php esc_html_e('Read More', 'codeweber'); ?></h5>
+                     </figcaption>
+                  </figure>
+
+                  <div class="post-header">
+                     <div class="post-category text-line">
+                        <?php the_category(', '); ?>
+                     </div>
+                     <!-- /.post-category -->
+                     <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="<?php the_permalink(); ?>"><?php echo esc_html($post->post_title); ?></a></h2>
+                  </div>
+                  <!-- /.post-header -->
+                  <div class="post-footer">
+                     <ul class="post-meta mb-0">
+                        <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php the_time(get_option('date_format')); ?></span></li>
+                        <li class="post-comments"><a href="<?php echo get_post_permalink(); ?>/#comments"><i class="uil uil-comment"></i><?php echo $post->comment_count; ?></a></li>
+                     </ul>
+                     <!-- /.post-meta -->
+                  </div>
+                  <!-- /.post-footer -->
+               </article>
+               <!-- /article -->
+            </div>
+            <!--/.swiper-slide -->
+         <?php }
+         ?>
+      </div>
+      <!--/.swiper-wrapper -->
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+   </div>
+   <!-- /.swiper -->
+   <div class="swiper-controls">
+      <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
+   </div>
+</div>

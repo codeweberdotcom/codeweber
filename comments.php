@@ -45,7 +45,6 @@ if ($comments) {
 				)
 			);
 
-
 			/** Paginate change */
 			$pages = paginate_comments_links(array('echo' => false, 'type' => 'array', 'prev_text' => '<span aria-hidden="true"><i class="uil uil-arrow-left"></i></span>', 'next_text' => '<span aria-hidden="true"><i class="uil uil-arrow-right"></i></span>'));
 			if (is_array($pages)) {
@@ -166,7 +165,6 @@ if (comments_open() || pings_open()) {
 		echo '<hr/>';
 	};
 ?>
-
 	<div class="comment-respond" id="respond">
 		<p class="comments-closed"><?php _e('Comments are closed.', 'codeweber'); ?></p>
 	</div><!-- #respond -->

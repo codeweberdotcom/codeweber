@@ -67,17 +67,14 @@ global $post;
 										<?php else : ?>
 											<figure class="user-avatar">
 												<?php
-
 												echo get_avatar(get_the_author_meta('user_email'), 32);
-
 												?>
 											</figure>
-
 										<?php endif; ?>
 										<div>
 											<h6><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="link-dark"><?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></a></h6>
 											<?php
-											$job_title = esc_html('Writer', 'codeweber');
+											$job_title = __('Writer', 'codeweber');
 											if (get_field('job_title', $user_id_prefixed)) {
 												$job_title = get_field('job_title', $user_id_prefixed);
 											}
@@ -97,6 +94,8 @@ global $post;
 							<!-- /.post -->
 						</div>
 						<!-- /.classic-view -->
+						<hr />
+						<?php get_template_part("templates/flexible-content/sliders/slider_1/slider_1"); ?>
 						<?php
 						if (comments_open() || get_comments_number()) { ?>
 							<hr />

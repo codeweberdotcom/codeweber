@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-22 17:32+0000\n"
+"PO-Revision-Date: 2022-08-23 15:14+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -53,7 +53,7 @@ msgid ""
 "amet risus."
 msgstr ""
 
-#: templates/content/single.php:74
+#: templates/content/single.php:89
 msgid "All Posts"
 msgstr "Все Статьи"
 
@@ -92,7 +92,11 @@ msgstr "Все права защищены"
 msgid "Already have an account?"
 msgstr ""
 
-#: templates/content/loop.php:44 templates/sections/common-pageheader.php:14
+#: templates/flexible-content/widgets/widget_6/widget_6.php:14
+msgid "Archive"
+msgstr "Статьи по месяцам"
+
+#: templates/content/loop.php:44 templates/sections/common-pageheader.php:13
 msgid "By"
 msgstr "Автор"
 
@@ -100,15 +104,16 @@ msgstr "Автор"
 msgid "by over 5000+ clients. Join them now and grow your business."
 msgstr ""
 
-#: comments.php:136
+#: comments.php:130
 msgid "By using this comment form you agree with our Privacy Policy"
 msgstr ""
 "Используя эту форму для комментариев, вы соглашаетесь с нашей Политикой "
 "конфиденциальности"
 
 #: templates/footer/footer-sandbox-25.php:30
+#: templates/flexible-content/widgets/widget_4/widget_4.php:1
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
 #: templates/header/header-sandbox-12.php:101
 msgid "CFollow Us"
@@ -119,22 +124,22 @@ msgstr ""
 msgid "Codeweber"
 msgstr "Codeweber"
 
-#: comments.php:162
+#: comments.php:156
 #, fuzzy
 #| msgid "Comment"
 msgid "Comment *"
 msgstr "Комменатрий *"
 
-#: templates/content/loop.php:45 templates/sections/common-pageheader.php:15
+#: templates/content/loop.php:45 templates/sections/common-pageheader.php:14
 msgid "Comments"
 msgstr "Комментарии"
 
-#: comments.php:177
+#: comments.php:171
 msgid "Comments are closed."
-msgstr ""
+msgstr "Комментирование закрыто."
 
 #. 1: Number of comments, 2: Post title.
-#: comments.php:26
+#: comments.php:25
 #, php-format
 msgctxt "comments title"
 msgid "%1$s reply on &ldquo;%2$s&rdquo;"
@@ -144,7 +149,7 @@ msgstr[1] "%1$s Комментария"
 msgstr[2] "%1$s Комментариев"
 
 #. %s: Post title.
-#: comments.php:22
+#: comments.php:21
 #, php-format
 msgctxt "comments title"
 msgid "One reply on &ldquo;%s&rdquo;"
@@ -200,7 +205,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: comments.php:147
+#: comments.php:141
 msgid "Email *"
 msgstr ""
 
@@ -383,7 +388,7 @@ msgstr ""
 msgid "Learn More"
 msgstr "Информация"
 
-#: comments.php:19
+#: comments.php:18
 msgid "Leave a comment"
 msgstr ""
 
@@ -400,11 +405,11 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
-#: templates/content/loop.php:51 templates/sections/common-pageheader.php:20
+#: templates/content/loop.php:51 templates/sections/common-pageheader.php:19
 msgid "Likes"
 msgstr "Спасибо"
 
-#: comments.php:141 comments.php:148 comments.php:163
+#: comments.php:135 comments.php:142 comments.php:157
 msgid "Looks good!"
 msgstr "Отлично!"
 
@@ -447,7 +452,7 @@ msgstr ""
 msgid "Name"
 msgstr "Ваше имя"
 
-#: comments.php:140
+#: comments.php:134
 msgid "Name *"
 msgstr "Ваше имя *"
 
@@ -491,6 +496,10 @@ msgstr ""
 msgid "Our Newsletter"
 msgstr "Наши новости"
 
+#: functions/sidebars.php:25 functions/sidebars.php:27
+msgid "Page Sidebar"
+msgstr ""
+
 #: templates/header/header-sandbox-05.php:103
 #: templates/header/header-sandbox-08.php:68
 #: templates/header/header-sandbox-08.php:109
@@ -507,15 +516,15 @@ msgstr "Библиотека шаблонов"
 msgid "Phone"
 msgstr ""
 
-#: comments.php:164
+#: comments.php:158
 msgid "Please enter your comment."
 msgstr "Введите ваш комментарий, пожалуйста."
 
-#: comments.php:149
+#: comments.php:143
 msgid "Please enter your E-Mail."
 msgstr "Введите ваш E-Mail, пожалуйста."
 
-#: comments.php:142
+#: comments.php:136
 msgid "Please enter your first name."
 msgstr "Введите ваше имя, пожалуйста."
 
@@ -537,7 +546,7 @@ msgstr "Свежие статьи"
 msgid "Registration takes less than a minute."
 msgstr ""
 
-#: functions/custom.php:165
+#: functions/custom.php:167
 msgid "Results for: "
 msgstr ""
 
@@ -590,7 +599,7 @@ msgstr ""
 msgid "Sign up to"
 msgstr ""
 
-#: comments.php:153
+#: comments.php:147
 msgid "Submit"
 msgstr "Отправить комментарий"
 
@@ -626,8 +635,9 @@ msgid ""
 msgstr ""
 
 #: templates/footer/footer-sandbox-25.php:14
+#: templates/flexible-content/widgets/widget_5/widget_5.php:1
 msgid "Tags"
-msgstr ""
+msgstr "Метки"
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "trusted"
@@ -667,9 +677,13 @@ msgstr ""
 msgid "Welcome Back"
 msgstr ""
 
-#: comments.php:154
+#: comments.php:148
 msgid "Would you like to share your thoughts?"
 msgstr "Напишите ваш комментарий."
+
+#: templates/content/single.php:80
+msgid "Writer"
+msgstr "Писатель"
 
 #: functions/lib/comments-helper.php:97
 msgid "Your comment is awaiting moderation."

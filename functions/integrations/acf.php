@@ -1343,7 +1343,7 @@ class FAQ
 						</div>
 					</div>
 					<!-- /column -->
-		<?php endwhile;
+			<?php endwhile;
 			endif;
 		else :
 			echo $this->default_template;
@@ -1367,6 +1367,128 @@ class FAQ
 	}
 }
 
+
+class ImageCustomizable
+{
+	public $root_theme = NULL;
+	public $title = '';
+	public $description = '';
+	public $imagebig = '';
+	public $imagesmall = '';
+	public $imagelink = '#';
+	public $imagebigsize = 'sandbox_faq_1';
+	public $imagethumbsize = 'sandbox_slider_2';
+	public $imagelightbox = 'false';
+
+	public $imageeffectcursor = 'primary';
+
+	public $titleclass = 'from-top mb-1';
+	public $descriptionclass = 'from-bottom';
+
+	public $overlayclass = '';
+	public $hoverclass = '';
+	public $hovergradient = '';
+
+	public $imagealt = '';
+	function image()
+	{
+		if (have_rows('image_customizable')) : ?>
+			<?php
+			while (have_rows('image_customizable')) : the_row();
+
+				$this->title = get_sub_field('caption_image');
+				$this->description = get_sub_field('description_image');
+
+
+				if (get_sub_field('effect_overlay')) {
+					$this->overlayclass = get_sub_field('effect_overlay');
+				}
+				if (get_sub_field('effect_hover')) {
+					$this->hoverclass = get_sub_field('effect_hover');
+				}
+				if (get_sub_field('gradient')) {
+					$this->hovergradient = get_sub_field('gradient');
+				}
+
+				if (get_sub_field('cursor_effect')) {
+					$this->imageeffectcursor =  get_sub_field('cursor_effect');
+				}
+
+				if (get_sub_field('link')) {
+					$this->imagelink = get_sub_field('link');
+				}
+
+				if (get_sub_field('effect_overlay') == 'overlay overlay-1') {
+					$this->titleclass = 'from-top mb-0';
+				} elseif (get_sub_field('effect_overlay') == 'overlay overlay-2') {
+					$this->titleclass = 'from-top mb-1';
+					$this->descriptionclass = 'from-bottom';
+				} elseif (get_sub_field('effect_overlay') == 'overlay overlay-3') {
+					$this->titleclass = 'from-left mb-1';
+					$this->descriptionclass = 'from-left mb-0';
+				}
+
+				if (get_sub_field('image')) {
+					$image = get_sub_field('image');
+					$this->imagealt = $image['alt'];
+					$this->imagesmall = $image['sizes'][$this->imagethumbsize];
+					$this->imagebig = $image['sizes'][$this->imagebigsize];
+				}
+			?>
+
+				<?php if (get_sub_field('lightbox') == 1) : ?>
+
+
+					<div class="card-body">
+						<div class="row gy-6">
+							<div class="item col-md-6 col-lg-4">
+								<figure class="itooltip itooltip-dark hover-scale rounded" title="<h5 class=&quot;mb-1&quot;>Some Title</h5><p class=&quot;mb-0&quot;>Quam Sit Ornare</p>"><a href="#"> <img src="<?php echo $this->imagesmall; ?>" srcset="../../assets/img/photos/p1@2x.jpg 2x" alt=""></a></figure>
+							</div>
+							<!--/column -->
+							<div class="item col-md-6 col-lg-4">
+								<figure class="itooltip itooltip-light hover-scale rounded" title="<h5 class=&quot;mb-1&quot;>Some Title</h5><p class=&quot;mb-0&quot;>Quam Sit Ornare</p>"><a href="#"> <img src="<?php echo $this->imagesmall; ?>" srcset="../../assets/img/photos/p2@2x.jpg 2x" alt=""></a>
+								</figure>
+							</div>
+							<!--/column -->
+							<div class="item col-md-6 col-lg-4">
+								<figure class="itooltip itooltip-primary hover-scale rounded" title="<h5 class=&quot;mb-1&quot;>Some Title</h5><p class=&quot;mb-0&quot;>Quam Sit Ornare</p>"><a href="#"> <img src="<?php echo $this->imagesmall; ?>" srcset="../../assets/img/photos/p3@2x.jpg 2x" alt=""></a>
+								</figure>
+							</div>
+							<!--/column -->
+						</div>
+						<!--/.row -->
+					</div>
+
+
+
+
+				<?php echo 'true';
+				else : ?>
+					<div class="col-6">
+						<figure class="<?php echo $this->overlayclass; ?> <?php echo $this->hovergradient; ?> <?php echo $this->hoverclass; ?> rounded">
+							<a href="<?php echo $this->imagelink; ?>">
+								<img src="<?php echo $this->imagesmall; ?>" srcset="<?php echo $this->imagesmall; ?> 2x" alt="<?php echo $this->imagealt; ?>" />
+							</a>
+							<?php if (!$this->title == '') { ?>
+								<figcaption>
+									<h5 class="<?php echo $this->titleclass; ?>"><?php echo $this->title; ?></h5>
+									<?php if (get_sub_field('effect_overlay') == 'overlay overlay-2' || get_sub_field('effect_overlay') == 'overlay overlay-3') { ?>
+										<p class="<?php echo $this->descriptionclass; ?>"><?php echo $this->description; ?></p>
+									<?php } ?>
+								</figcaption>
+							<?php } ?>
+
+					</div> <?php
+							endif; ?>
+				</div>
+				<!--/column -->
+
+			<?php endwhile; ?>
+
+		<?php
+		endif;
+	}
+}
 
 //* --- Features Class ACF---
 
@@ -1403,7 +1525,7 @@ class Features
 							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' mb-3"/>';
 						endif; ?>
 
-						<div class="col-md-6 col-xl-3">
+						<div class=" col-md-6 col-xl-3">
 							<div class="card shadow-lg">
 								<div class="card-body">
 									<?php echo $icon_block; ?>

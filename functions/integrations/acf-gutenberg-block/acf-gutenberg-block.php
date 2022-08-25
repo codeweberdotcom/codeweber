@@ -1,6 +1,5 @@
 <?php
-
-// --- New Gutenberg Layout---
+// --- New Gutenberg Block Layout Codeweber---
 function checkCategoryOrder($categories)
 {
    //custom category array
@@ -21,8 +20,6 @@ function checkCategoryOrder($categories)
 add_filter('block_categories_all', 'checkCategoryOrder', 99, 1);
 
 
-
-
 // --- ACF Flexible Block
 add_action('acf/init', 'my_acf_blocks_init');
 function my_acf_blocks_init()
@@ -35,8 +32,24 @@ function my_acf_blocks_init()
       acf_register_block_type(array(
          'name'              => 'hero_banner',
          'title'             => __('Hero banner'),
-         'description'       => __('A custom flexible block.'),
+         'description'       => __('Hero banner flexible block.'),
          'render_template'   => 'templates/flexible-content/hero_banner.php',
+         'category'          => 'codeweber',
+         'align'           => 'full',
+         'supports'        => array(
+            'align'        => array('full'),
+            'align'        => true,
+         ),
+         'mode' => 'preview',
+
+      ));
+
+      // Register a slider block.
+      acf_register_block_type(array(
+         'name'              => 'sliders',
+         'title'             => __('Slider'),
+         'description'       => __('Slider block flexible block.'),
+         'render_template'   => 'templates/flexible-content/sliders.php',
          'category'          => 'codeweber',
          'align'           => 'full',
          'supports'        => array(
@@ -50,7 +63,7 @@ function my_acf_blocks_init()
       acf_register_block_type(array(
          'name'              => 'widgets',
          'title'             => __('Widgets'),
-         'description'       => __('Blocks for Widgets'),
+         'description'       => __('Widgets flexible block.'),
          'render_template'   => 'templates/flexible-content/widgets.php',
          'category'          => 'codeweber',
          'align'           => 'full',
