@@ -17,4 +17,4 @@
 		<?php
 
 		// get_template_part('templates/header/header', 'topbar');
-		get_template_part('templates/header/header', 'sandbox-07'); ?>
+		get_template_part('templates/header/header', 'sandbox-06'); ?>
