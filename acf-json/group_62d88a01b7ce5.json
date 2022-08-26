@@ -41,6 +41,107 @@
             "maxlength": ""
         },
         {
+            "key": "field_6308a6fa1dd03",
+            "label": "Responsive setttings",
+            "name": "responsive_setttings",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6308a5ec3c70a",
+                    "label": "Mobile sm",
+                    "name": "mobile_sm",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "col-12": "col-12",
+                        "col-6": "col-6",
+                        "col-4": "col-4",
+                        "col-3": "col-3"
+                    },
+                    "default_value": false,
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "label",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6308a6023c70b",
+                    "label": "Tablet md",
+                    "name": "tablet_md",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "col-md-12": "col-md-12",
+                        "col-md-6": "col-md-6",
+                        "col-md-4": "col-md-4",
+                        "col-md-3": "col-md-3",
+                        "col-md-2": "col-md-2"
+                    },
+                    "default_value": false,
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "label",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6308a62d3c70c",
+                    "label": "Desktop lg",
+                    "name": "desktop_lg",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "col-lg-12": "col-lg-12",
+                        "col-lg-6": "col-lg-6",
+                        "col-lg-4": "col-lg-4",
+                        "col-lg-3": "col-lg-3",
+                        "col-lg-2": "col-lg-2",
+                        "col-lg-1": "col-lg-1"
+                    },
+                    "default_value": false,
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "label",
+                    "ajax": 0,
+                    "placeholder": ""
+                }
+            ]
+        },
+        {
             "key": "field_62d88a8b234a1",
             "label": "SubTitle",
             "name": "subtitle",
@@ -3941,7 +4042,15 @@
                     "type": "image",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6307d2770c458",
+                                "operator": "!=",
+                                "value": "youtube"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -3976,48 +4085,39 @@
                     "endpoint": 0
                 },
                 {
-                    "key": "field_6305434916dc3",
-                    "label": "Lightbox",
-                    "name": "lightbox",
-                    "type": "true_false",
+                    "key": "field_6307d2770c458",
+                    "label": "Link type",
+                    "name": "link_type",
+                    "type": "radio",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_6306aa055afc8",
-                    "label": "Type",
-                    "name": "type",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_62d93856d15e2",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
                     "choices": {
+                        "none": "none",
                         "image": "image",
-                        "video": "video"
+                        "video": "video",
+                        "link": "link",
+                        "youtube": "youtube"
                     },
-                    "default_value": false,
                     "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
+                    "other_choice": 0,
+                    "default_value": "",
+                    "layout": "horizontal",
                     "return_format": "value",
-                    "ajax": 0,
-                    "placeholder": ""
+                    "save_other_choice": 0
                 },
                 {
                     "key": "field_630687bee8406",
@@ -4026,7 +4126,46 @@
                     "type": "url",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6307d2770c458",
+                                "operator": "==",
+                                "value": "link"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6307d485a0ea1",
+                    "label": "Link Video",
+                    "name": "link_video",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6307d2770c458",
+                                "operator": "==",
+                                "value": "video"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6307d2770c458",
+                                "operator": "==",
+                                "value": "youtube"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -4057,12 +4196,18 @@
                         "id": ""
                     },
                     "choices": {
-                        "Cursor dark": "Cursor dark",
-                        "Cursor light": "Cursor light",
-                        "Cursor primary": "Cursor primary"
+                        "cursor-light": "cursor-light",
+                        "cursor-dark": "cursor-dark",
+                        "cursor-primary": "cursor-primary",
+                        "itooltip itooltip-light": "itooltip itooltip-light",
+                        "itooltip itooltip-dark": "itooltip itooltip-dark",
+                        "itooltip itooltip-primary": "itooltip itooltip-primary",
+                        "overlay overlay-1": "overlay overlay-1",
+                        "overlay overlay-2": "overlay overlay-2",
+                        "overlay overlay-3": "overlay overlay-3"
                     },
                     "default_value": false,
-                    "allow_null": 0,
+                    "allow_null": 1,
                     "multiple": 0,
                     "ui": 1,
                     "ajax": 0,
@@ -4070,39 +4215,48 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_630543c616dc5",
-                    "label": "Style image",
-                    "name": "",
-                    "type": "accordion",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "open": 0,
-                    "multi_expand": 0,
-                    "endpoint": 0
-                },
-                {
-                    "key": "field_630543e016dc6",
-                    "label": "Effect overlay",
-                    "name": "effect_overlay",
+                    "key": "field_63068b79ef135",
+                    "label": "Gradient",
+                    "name": "gradient",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_630544fa16dc8",
+                                "operator": "==",
+                                "value": "overlay overlay-1"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_630544fa16dc8",
+                                "operator": "==",
+                                "value": "overlay overlay-2"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_630544fa16dc8",
+                                "operator": "==",
+                                "value": "overlay overlay-3"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
                     "choices": {
-                        "overlay overlay-1": "overlay overlay-1",
-                        "overlay overlay-2": "overlay overlay-2",
-                        "overlay overlay-3": "overlay overlay-3"
+                        "overlay-gradient-1": "overlay-gradient-1",
+                        "overlay-gradient-2": "overlay-gradient-2",
+                        "overlay-gradient-3": "overlay-gradient-3",
+                        "overlay-gradient-4": "overlay-gradient-4",
+                        "overlay-gradient-5": "overlay-gradient-5",
+                        "overlay-gradient-6": "overlay-gradient-6",
+                        "overlay-gradient-7": "overlay-gradient-7"
                     },
                     "default_value": false,
                     "allow_null": 1,
@@ -4131,36 +4285,6 @@
                     },
                     "default_value": false,
                     "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 1,
-                    "ajax": 0,
-                    "return_format": "value",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_63068b79ef135",
-                    "label": "Gradient",
-                    "name": "gradient",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "overlay-gradient-1": "overlay-gradient-1",
-                        "overlay-gradient-2": "overlay-gradient-2",
-                        "overlay-gradient-3": "overlay-gradient-3",
-                        "overlay-gradient-4": "overlay-gradient-4",
-                        "overlay-gradient-5": "overlay-gradient-5",
-                        "overlay-gradient-6": "overlay-gradient-6",
-                        "overlay-gradient-7": "overlay-gradient-7"
-                    },
-                    "default_value": false,
-                    "allow_null": 1,
                     "multiple": 0,
                     "ui": 1,
                     "ajax": 0,
@@ -4243,5 +4367,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661381217
+    "modified": 1661516480
 }

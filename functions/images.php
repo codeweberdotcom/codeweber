@@ -32,6 +32,8 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('sandbox_slider_1', 560, 350, true);
 		add_image_size('sandbox_slider_2', 460, 307, true);
 
+		add_image_size('sandbox_youtube_mq', 480, 360, true);
+
 
 
 		// remove_image_size('large');

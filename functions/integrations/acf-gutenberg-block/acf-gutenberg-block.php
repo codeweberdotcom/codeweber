@@ -44,6 +44,22 @@ function my_acf_blocks_init()
 
       ));
 
+      // Register a hero_banner block.
+      acf_register_block_type(array(
+         'name'              => 'grid',
+         'title'             => __('Grid block'),
+         'description'       => __('Grid block flexible block.'),
+         'render_template'   => 'templates/flexible-content/grid.php',
+         'category'          => 'codeweber',
+         'align'           => 'full',
+         'supports'        => array(
+            'align'        => array('full'),
+            'align'        => true,
+         ),
+         'mode' => 'preview',
+
+      ));
+
       // Register a slider block.
       acf_register_block_type(array(
          'name'              => 'sliders',
