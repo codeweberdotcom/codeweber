@@ -12,6 +12,7 @@ $settings->paragraph = 'Fusce dapibus, tellus ac cursus commodo, tortor mauris c
 //$settings->backgroundcolor_light = 'light';
 //$settings->textcolor = 'white';
 //$settings->section_id = esc_html($args['block_id']);
+$settings->section_classes = esc_html($args['block_class']);
 $settings->GetDataACF();
 ?>
 

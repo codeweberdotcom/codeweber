@@ -3195,6 +3195,25 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_6309363db802d",
+                    "label": "Paragraph",
+                    "name": "paragraph_counter",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
                     "key": "field_62fc170efdb0f",
                     "label": "Color",
                     "name": "color",
@@ -4367,5 +4386,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661516480
+    "modified": 1661548489
 }

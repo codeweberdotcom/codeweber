@@ -32,7 +32,7 @@ if (!empty($block['align'])) {
       <?php $layout = get_row_layout(); ?>
       <?php $block_id = esc_attr($id); ?>
       <?php $layout_path = 'templates/flexible-content/grids/' . $layout . '/' . $layout; ?>
-      <?php get_template_part($layout_path, '', array($layout, 'block_id' => $block_id)); ?>
+      <?php get_template_part($layout_path, '', array($layout, 'block_id' => $block_id, 'block_class' => $classes)); ?>
    <?php endwhile; ?>
 <?php else : ?>
    <h1>Grid</h1>

@@ -131,79 +131,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_62fc11b4d6cc2": {
-                    "key": "layout_62fc11b4d6cc2",
-                    "name": "facts_7",
-                    "label": "Facts 7",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_62fc11b4d6cc3",
-                            "label": "Title",
-                            "name": "title",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33.33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d88a70234a0"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        },
-                        {
-                            "key": "field_62fc11b4d6cc5",
-                            "label": "Subtitle",
-                            "name": "subtitle",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d88a8b234a1"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_62fc133e9a4e7",
-                            "label": "Counters",
-                            "name": "counters",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62ef78daed3e6"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_62ddd081b56cd": {
                     "key": "layout_62ddd081b56cd",
                     "name": "facts_2",
@@ -273,58 +200,6 @@
                             "sub_fields": [
                                 {
                                     "key": "field_62f56ea44b535",
-                                    "label": "Counters",
-                                    "name": "label_on_banner",
-                                    "type": "clone",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "clone": [
-                                        "field_62ecc3db503f7"
-                                    ],
-                                    "display": "seamless",
-                                    "layout": "block",
-                                    "prefix_label": 0,
-                                    "prefix_name": 0
-                                }
-                            ]
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_62fc0de942914": {
-                    "key": "layout_62fc0de942914",
-                    "name": "facts_6",
-                    "label": "Facts 6",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_62fc0de942917",
-                            "label": "Facts repeater",
-                            "name": "facts_repeater",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "table",
-                            "button_label": "",
-                            "sub_fields": [
-                                {
-                                    "key": "field_62fc0de942918",
                                     "label": "Counters",
                                     "name": "label_on_banner",
                                     "type": "clone",
@@ -527,17 +402,17 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_62e0fb23d0eed": {
-                    "key": "layout_62e0fb23d0eed",
-                    "name": "facts_8",
-                    "label": "Facts 8",
-                    "display": "row",
+                "layout_62fc0de942914": {
+                    "key": "layout_62fc0de942914",
+                    "name": "facts_6",
+                    "label": "Facts 6",
+                    "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62e0fb23d0eee",
-                            "label": "Dark or White?",
-                            "name": "dark_or_white",
-                            "type": "clone",
+                            "key": "field_62fc0de942917",
+                            "label": "Facts repeater",
+                            "name": "facts_repeater",
+                            "type": "repeater",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -546,18 +421,70 @@
                                 "class": "",
                                 "id": ""
                             },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_62fc0de942918",
+                                    "label": "Counters",
+                                    "name": "label_on_banner",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_62ecc3db503f7"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_62fc11b4d6cc2": {
+                    "key": "layout_62fc11b4d6cc2",
+                    "name": "facts_7",
+                    "label": "Facts 7",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_62fc11b4d6cc3",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33.33",
+                                "class": "",
+                                "id": ""
+                            },
                             "clone": [
-                                "field_62d93856d15e2"
+                                "field_62d88a70234a0"
                             ],
                             "display": "seamless",
-                            "layout": "",
+                            "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 1
                         },
                         {
-                            "key": "field_62e0fb23d0eef",
-                            "label": "Hero Slider",
-                            "name": "hero_slider",
+                            "key": "field_62fc11b4d6cc5",
+                            "label": "Subtitle",
+                            "name": "subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -568,12 +495,106 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62db1ae6e9a40"
+                                "field_62d88a8b234a1"
                             ],
                             "display": "seamless",
-                            "layout": "",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_62fc133e9a4e7",
+                            "label": "Counters",
+                            "name": "counters",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62ef78daed3e6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_6309369a21420": {
+                    "key": "layout_6309369a21420",
+                    "name": "facts_8",
+                    "label": "Facts 8",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6309369a21421",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33.33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62d88a70234a0"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 1
+                        },
+                        {
+                            "key": "field_6309369a21422",
+                            "label": "Subtitle",
+                            "name": "subtitle",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62d88a8b234a1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6309369a21423",
+                            "label": "Counters",
+                            "name": "counters",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62ef78daed3e6"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -657,5 +678,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660687222
+    "modified": 1661548193
 }

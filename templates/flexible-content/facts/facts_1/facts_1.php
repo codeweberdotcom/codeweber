@@ -120,7 +120,7 @@ $facts->default_template = '<div class="item col-md-6">
 ?>
 
 
-<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-light">
+<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-light">
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-0 gy-10 align-items-center">
          <div class="col-lg-6 order-lg-2 offset-lg-1 grid">
