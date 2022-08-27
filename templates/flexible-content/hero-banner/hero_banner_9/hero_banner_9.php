@@ -13,6 +13,7 @@ $settings->backgroundcolor = 'dark';
 $settings->textcolor = 'white';
 
 $settings->section_id = esc_html($args['block_id']);
+$settings->section_classes = esc_html($args['block_class']);
 $settings->GetDataACF();
 
 
@@ -43,7 +44,7 @@ $button->default_button = '<div class="d-flex justify-content-center flex-wrap j
             </div>';
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <div class="container pt-10 pb-12 pt-md-14 pb-md-17">
       <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
          <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 mt-lg-n2 text-center text-lg-start order-2 order-lg-0" data-cues="slideInDown" data-group="page-title" data-delay="600">

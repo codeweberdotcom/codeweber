@@ -13,6 +13,7 @@ $settings->backgroundcolor_light = 'light';
 $settings->textcolor = 'white';
 
 $settings->section_id = esc_html($args['block_id']);
+$settings->section_classes = esc_html($args['block_class']);
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -42,7 +43,7 @@ $swiper->default_media = '<figure><img class="w-auto" src="' . get_template_dire
 ?>
 
 
-<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container pt-10 pt-md-14 pb-8 text-center">
     <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
       <div class="col-lg-7">

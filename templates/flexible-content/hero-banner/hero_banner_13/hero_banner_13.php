@@ -12,6 +12,7 @@ $settings->backgroundcolor = $settings->root_theme . '/dist/img/photos/bg2.jpg';
 // $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
 $settings->section_id = esc_html($args['block_id']);
+$settings->section_classes = esc_html($args['block_class']);
 $settings->GetDataACF();
 
 
@@ -48,7 +49,7 @@ $counters->counters_default = '<div class="col-6 col-lg-3"><h3 class="counter co
 ?>
 
 
-<section id="<?php echo $settings->section_id; ?>" class="wrapper image-wrapper bg-image bg-overlay bg-overlay-300 text-<?php echo $settings->textcolor; ?>" data-image-src="<?php echo $settings->backgroundurl; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper image-wrapper bg-image bg-overlay bg-overlay-300 text-<?php echo $settings->textcolor; ?>" data-image-src="<?php echo $settings->backgroundurl; ?>">
    <div class="container pt-17 pb-19 pt-md-19 pb-md-20 text-center">
       <div class="row mb-11">
          <div class="col-md-9 col-lg-7 col-xxl-6 mx-auto" data-cues="zoomIn" data-group="page-title" data-interval="-200">

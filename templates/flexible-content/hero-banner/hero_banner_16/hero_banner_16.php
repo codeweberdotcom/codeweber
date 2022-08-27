@@ -13,6 +13,7 @@ $settings->backgroundcolor = 'dark'; // цвет бэкгрануда темно
 $settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
 $settings->textcolor = 'light'; // цвет текста темной темы
 $settings->section_id = esc_html($args['block_id']);
+$settings->section_classes = esc_html($args['block_class']);
 $settings->GetDataACF(); // получаем занчения полей ACF
 
 /* Add buttons */
@@ -42,7 +43,7 @@ $image->image_size = 'sandbox_hero_11';
 $image->GetImage();
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container pt-12 pt-md-14 pb-14 pb-md-16">
     <div class="row gy-10 gy-md-13 gy-lg-0 align-items-center">
       <div class="col-md-8 col-lg-5 d-flex position-relative mx-auto" data-cues="slideInDown" data-group="header">

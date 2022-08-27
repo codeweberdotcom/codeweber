@@ -25,6 +25,7 @@ if (!empty($block['className'])) {
 if (!empty($block['align'])) {
    $classes .= ' align' . $block['align'];
 }
+
 ?>
 
 <?php if (have_rows('hero_banner')) : ?>
@@ -32,7 +33,7 @@ if (!empty($block['align'])) {
       <?php $layout = get_row_layout(); ?>
       <?php $block_id = esc_attr($id); ?>
       <?php $layout_path = 'templates/flexible-content/hero-banner/' . $layout . '/' . $layout; ?>
-      <?php get_template_part($layout_path, '', array($layout, 'block_id' => $block_id)); ?>
+      <?php get_template_part($layout_path, '', array($layout, 'block_id' => $block_id, 'block_class' => $classes)); ?>
    <?php endwhile; ?>
 <?php else : ?>
    <h1>Hero banner</h1>

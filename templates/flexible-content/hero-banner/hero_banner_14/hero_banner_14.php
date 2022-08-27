@@ -12,6 +12,7 @@ $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
 $settings->section_id = esc_html($args['block_id']);
+$settings->section_classes = esc_html($args['block_class']);
 $settings->GetDataACF();
 
 /* Add swiper */
@@ -34,7 +35,7 @@ $swiper->default_media = '<figure class="rounded mb-md-n20"><img src="' . $swipe
 $link = new Links();
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <div class="container pt-10 pt-md-14 pb-14 pb-md-0">
       <div class="row gx-md-8 gx-lg-12 gy-3 gy-lg-0 mb-13">
          <div class="col-lg-6">

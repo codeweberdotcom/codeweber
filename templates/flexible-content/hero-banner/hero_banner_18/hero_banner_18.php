@@ -29,6 +29,7 @@ $settings->backgroundcolor = 'dark'; // цвет бэкгрануда темно
 //$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
 $settings->textcolor = 'light'; // цвет текста темной темы
 $settings->section_id = esc_html($args['block_id']);
+$settings->section_classes = esc_html($args['block_class']);
 $settings->GetDataACF(); // получаем занчения полей ACF
 
 /* Add buttons */
@@ -60,7 +61,7 @@ $swiper->default_media = '<img class="img-fluid mb-n18" src="' . $swiper->root_t
 ?>
 
 
-<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container-card">
     <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-light-500 mt-2 mb-5" data-image-src="<?php echo $settings->backgroundurl; ?>">
       <div class="card-body py-14 px-0">

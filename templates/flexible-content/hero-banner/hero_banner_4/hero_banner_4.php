@@ -12,6 +12,7 @@ $settings->backgroundcolor_light = NULL;
 $settings->textcolor = 'white';
 
 $settings->section_id = esc_html($args['block_id']);
+$settings->section_classes = esc_html($args['block_class']);
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -37,7 +38,7 @@ $image->GetImage();
 ?>
 
 
-<section id="<?php echo $settings->section_id; ?>" class="wrapper bg-<?php echo $settings->backgroundcolor; ?> position-relative min-vh-70 d-lg-flex align-items-center">
+<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?> position-relative min-vh-70 d-lg-flex align-items-center">
 
   <div class="rounded-4-lg-start col-lg-6 order-lg-2 position-lg-absolute top-0 end-0 image-wrapper bg-image bg-cover h-100 min-vh-50" data-cues="slideInDown" data-image-src="<?php echo $image->image_1; ?>"></div>
 
