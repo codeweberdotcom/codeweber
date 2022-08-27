@@ -59,9 +59,72 @@ $features->title = '24/7 Support';
 $features->paragraph = 'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.';
 $features->link_url = "#";
 $features->link_text = "Learn more";
-$features->default_features = '';
+$features->pattern = '<div class="col-md-6 col-xl-3">
+        <div class="card shadow-lg">
+          <div class="card-body">
+             %3$s
+            <h4>%1$s</h4>
+            <p class="mb-2">%2$s</p>
+            %4$s
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>
+      <!--/column -->';
+$features->default_features = '<div class="col-md-6 col-xl-3">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <img src="' . get_template_directory_uri() . '/dist/img/icons/solid/edit.svg" class="svg-inject icon-svg icon-svg-sm solid-mono text-fuchsia mb-3" alt="" />
+            <h4>Content Marketing</h4>
+            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+            <a href="#" class="more hover link-fuchsia">Learn More</a>
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>
+      <!--/column -->
+      <div class="col-md-6 col-xl-3">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <img src="' . get_template_directory_uri() . '/dist/img/icons/solid/team.svg" class="svg-inject icon-svg icon-svg-sm solid-mono text-violet mb-3" alt="" />
+            <h4>Social Engagement</h4>
+            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+            <a href="#" class="more hover link-violet">Learn More</a>
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>
+      <!--/column -->
+      <div class="col-md-6 col-xl-3">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <img src="' . get_template_directory_uri() . '/dist/img/icons/solid/lamp.svg" class="svg-inject icon-svg icon-svg-sm solid-mono text-orange mb-3" alt="" />
+            <h4>Identity & Branding</h4>
+            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+            <a href="#" class="more hover link-orange">Learn More</a>
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>
+      <!--/column -->
+      <div class="col-md-6 col-xl-3">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <img src="' . get_template_directory_uri() . '/dist/img/icons/solid/delivery-box.svg" class="svg-inject icon-svg icon-svg-sm solid-mono text-green mb-3" alt="" />
+            <h4>Product Design</h4>
+            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+            <a href="#" class="more hover link-green">Learn More</a>
+          </div>
+          <!--/.card-body -->
+        </div>
+        <!--/.card -->
+      </div>
+      <!--/column -->';
 ?>
-
 <section class="wrapper bg-light">
   <div class="container pb-15 pb-md-17">
     <div class="row gx-md-5 gy-5 mt-n19">

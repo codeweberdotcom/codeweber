@@ -1,7 +1,6 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-
 $settings->root_theme = get_template_directory_uri();
 $settings->title = "Grow Your Business with Our Solutions.";
 $settings->paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';

@@ -70,12 +70,12 @@ $faq->default_template = '<div class="col-lg-6">
 ?>
 
 <section class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
-   <div class="container py-14 py-md-16">
-      <div class="row gx-md-8 gx-xl-12 gy-10">
-         <?php echo $faq->Faq5(); ?>
-      </div>
-      <!-- /.row -->
-   </div>
-   <!-- /.container -->
+  <div class="container py-14 py-md-16">
+    <div class="row gx-md-8 gx-xl-12 gy-10">
+      <?php echo $faq->Faq5(); ?>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
 </section>
 <!-- /section -->

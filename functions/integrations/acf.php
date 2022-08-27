@@ -936,7 +936,46 @@ class Links
 				if ($link) :
 					$this->linkurl = esc_url($link);
 				endif;
-				echo '<a href="' . $this->linkurl . '" class="' . $this->linkstyle . ' ' . $this->linktype . ' link-' . $this->linkcolor . '">' . $this->linktext . '</a>';
+				$link_s = '<a href="' . $this->linkurl . '" class="' . $this->linkstyle . ' ' . $this->linktype . ' link-' . $this->linkcolor . '">' . $this->linktext . '</a>';
+			endwhile;
+		endif;
+		return $link_s;
+	}
+}
+
+/** List */
+
+class ListUnicon
+{
+	public $paragraph = 'Aenean quam ornare curabitur blandit consectetur.';
+	public $icon = '<i class="uil uil-check"></i>';
+	public $color_icon = '-soft-leaf';
+	public $default_list = '';
+
+	public function listunicons()
+	{
+		$responsive = new ResponsiveCol;
+
+		if (have_rows('list_icon')) :
+			while (have_rows('list_icon')) : the_row();
+
+				/**Color */
+				$color = new  Color;
+				$color->ColorIcon();
+
+				if (have_rows('list')) :
+					?>
+					<ul class="icon-list bullet-bg bullet-<?php echo $color->color_icon; ?> mb-0 row gy-3">
+						<?php while (have_rows('list')) : the_row();
+							get_sub_field('icon') != NULL ? $icon = get_sub_field('icon') : $icon = '<i class="uil uil-check"></i>';
+						?>
+							<li class="col-xl-6"><span><?php echo $icon; ?></span><span><?php the_sub_field('paragraph'); ?></span></li>
+						<?php endwhile; ?>
+					</ul>
+					<!--/row -->
+				<?php else :
+					echo $this->default_list; ?>
+				<?php endif;
 			endwhile;
 		endif;
 	}
@@ -944,7 +983,6 @@ class Links
 
 
 /* Add Hero Slider */
-
 class HeroSlider
 {
 	public $root_theme = NULL;
@@ -1205,7 +1243,6 @@ class HeroSlider
 		<?php	}
 }
 
-
 //* --- Counters Class ACF---
 
 class Counter
@@ -1393,7 +1430,10 @@ class ResponsiveCol
 {
 	public $col_sm = 'col-12';
 	public $col_md = 'col-md-6';
-	public $col_lg = 'col-lg-6';
+	public $col_lg = 'col-lg-4';
+	public $col_xl = 'col-lg-3';
+	public $col_xxl = 'col-lg-3';
+
 	public function responsives()
 	{
 		if (have_rows('responsive_setttings')) :
@@ -1555,11 +1595,11 @@ class Features
 	public $link_url = "#";
 	public $link_text = "Learn more";
 	public $default_features = '';
+	public $pattern = NULL;
 
 	//* Function Feutures_3 *//
 	public function Feutures_3()
 	{ ?>
-
 		<?php if (have_rows('features_block')) : ?>
 			<?php while (have_rows('features_block')) : the_row(); ?>
 				<?php if (have_rows('features_item')) : ?>
@@ -1580,77 +1620,18 @@ class Features
 							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' mb-3"/>';
 						endif; ?>
 
-						<div class=" col-md-6 col-xl-3">
-							<div class="card shadow-lg">
-								<div class="card-body">
-									<?php echo $icon_block; ?>
-									<h4><?php the_sub_field('title'); ?></h4>
-									<p class="mb-2"><?php the_sub_field('paragraph'); ?></p>
-									<?php // Add Link
-									$link = new Links();
-									$link->Link(); ?>
+						<?php
+						$link = new Links();
+						$link_s = $link->Link();
+						$pattern = $this->pattern;
+						echo wp_sprintf($pattern, $this->title, $this->paragraph, $icon_block, $link_s); //> На дереве сидят 5 обезьян
+						?>
 
-								</div>
-								<!--/.card-body -->
-							</div>
-							<!--/.card -->
-						</div>
-						<!--/column -->
 			<?php endwhile;
 				endif;
 			endwhile;
 		else :
-			echo '<div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
-          <div class="card-body">
-            <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/browser.svg" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
-            <h4>Content Marketing</h4>
-            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-            <a href="#" class="more hover link-yellow">Learn More</a>
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
-      </div>
-      <!--/column -->
-      <div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
-          <div class="card-body">
-            <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/chat-2.svg" class="svg-inject icon-svg icon-svg-md text-green mb-3" alt="" />
-            <h4>Social Engagement</h4>
-            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-            <a href="#" class="more hover link-green">Learn More</a>
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
-      </div>
-      <!--/column -->
-      <div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
-          <div class="card-body">
-            <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/id-card.svg" class="svg-inject icon-svg icon-svg-md text-orange mb-3" alt="" />
-            <h4>Identity & Branding</h4>
-            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-            <a href="#" class="more hover link-orange">Learn More</a>
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
-      </div>
-      <!--/column -->
-      <div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
-          <div class="card-body">
-            <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/gift.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="" />
-            <h4>Product Design</h4>
-            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-            <a href="#" class="more hover link-blue">Learn More</a>
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
-      </div>';
+			echo $this->default_features;
 			?>
 		<?php endif; ?>
 <?php
