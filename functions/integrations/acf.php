@@ -416,7 +416,10 @@ class Settings
 	public function __construct()
 	{
 		$this->root_theme = get_template_directory_uri();
+	}
 
+	public function GetDataACF()
+	{
 		if (get_sub_field('title')) :
 			$this->title = get_sub_field('title');
 		endif;
@@ -428,10 +431,6 @@ class Settings
 		if (get_sub_field('paragraph')) :
 			$this->paragraph = get_sub_field('paragraph');
 		endif;
-	}
-
-	public function GetDataACF()
-	{
 
 		if (get_sub_field('dark_or_white_light_or_dark') == 0) :
 			$this->backgroundcolor = $this->backgroundcolor;
