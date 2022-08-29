@@ -10,11 +10,58 @@ $settings->subtitle = "What We Do?";
 $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'light';
 $settings->textcolor = 'white';
-
 $settings->GetDataACF();
 
 
+/* Add Features */
+$features = new Features();
+$features->root_theme = get_template_directory_uri();
+$features->title = '24/7 Support';
+$features->paragraph = 'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.';
+$features->link_url = "#";
+$features->link_text = "Learn More";
+$features->iconsize = 'btn-lg';
+$features->iconform = 'btn-block';
+$features->linkcolor = 'primary';
+$features->iconpaddingclass = 'pe-none mb-5';
+$features->pattern = '
+           <div class="col-md-6 col-lg-3">
+           %3$s
+           <h4 class="text-' . $settings->textcolor . '">%1$s</h4>
+           <p class="text-' . $settings->textcolor . 'mb-3">%2$s</p>
+           %4$s
+           </div>
+           <!--/column -->';
+$features->default_features = '<div class="col-md-6 col-lg-3">
+          <div class="icon btn btn-block btn-lg btn-soft-yellow pe-none mb-5"> <i class="uil uil-phone-volume"></i> </div>
+          <h4>24/7 Support</h4>
+          <p class="mb-3">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.</p>
+          <a href="#" class="more hover link-yellow">Learn More</a>
+          </div>
+          <!--/column -->
+          <div class="col-md-6 col-lg-3">
+          <div class="icon btn btn-block btn-lg btn-soft-red pe-none mb-5"> <i class="uil uil-shield-exclamation"></i> </div>
+          <h4>Secure Payments</h4>
+          <p class="mb-3">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.</p>
+          <a href="#" class="more hover link-red">Learn More</a>
+          </div>
+          <!--/column -->
+          <div class="col-md-6 col-lg-3">
+          <div class="icon btn btn-block btn-lg btn-soft-leaf pe-none mb-5"> <i class="uil uil-laptop-cloud"></i> </div>
+          <h4>Daily Updates</h4>
+          <p class="mb-3">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.</p>
+          <a href="#" class="more hover link-leaf">Learn More</a>
+          </div>
+          <!--/column -->
+          <div class="col-md-6 col-lg-3">
+          <div class="icon btn btn-block btn-lg btn-soft-blue pe-none mb-5"> <i class="uil uil-chart-line"></i> </div>
+          <h4>Market Research</h4>
+          <p class="mb-3">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.</p>
+          <a href="#" class="more hover link-blue">Learn More</a>
+          </div>
+          <!--/column -->';
 ?>
+
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <div class="container py-14 py-md-16">
       <div class="row">
@@ -26,34 +73,7 @@ $settings->GetDataACF();
       </div>
       <!-- /.row -->
       <div class="row gx-md-8 gy-8">
-         <div class="col-md-6 col-lg-3">
-            <div class="icon btn btn-block btn-lg btn-soft-yellow disabled mb-5"> <i class="uil uil-phone-volume"></i> </div>
-            <h4 class="text-<?php echo $settings->textcolor; ?>">24/7 Support</h4>
-            <p class="mb-3 text-<?php echo $settings->textcolor; ?>">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.</p>
-            <a href="#" class="more hover link-yellow">Learn More</a>
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-3">
-            <div class="icon btn btn-block btn-lg btn-soft-red disabled mb-5"> <i class="uil uil-shield-exclamation"></i> </div>
-            <h4>Secure Payments</h4>
-            <p class="mb-3">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.</p>
-            <a href="#" class="more hover link-red">Learn More</a>
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-3">
-            <div class="icon btn btn-block btn-lg btn-soft-leaf disabled mb-5"> <i class="uil uil-laptop-cloud"></i> </div>
-            <h4>Daily Updates</h4>
-            <p class="mb-3">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.</p>
-            <a href="#" class="more hover link-leaf">Learn More</a>
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-3">
-            <div class="icon btn btn-block btn-lg btn-soft-blue disabled mb-5"> <i class="uil uil-chart-line"></i> </div>
-            <h4>Market Research</h4>
-            <p class="mb-3">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.</p>
-            <a href="#" class="more hover link-blue">Learn More</a>
-         </div>
-         <!--/column -->
+         <?php echo $features->Feutures(); ?>
       </div>
       <!--/.row -->
    </div>
