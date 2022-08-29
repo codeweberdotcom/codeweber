@@ -1,19 +1,20 @@
 <?php
 
-function cptui_register_my_taxes_service_category() {
+function cptui_register_my_taxes_service_category()
+{
 
 	/**
 	 * Taxonomy: Service Categories.
 	 */
 
 	$labels = [
-		"name" => __( "Service Categories", "zinoviev-school" ),
-		"singular_name" => __( "Service Category", "zinoviev-school" ),
+		"name" => __("Service Categories", "codeweber"),
+		"singular_name" => __("Service Category", "codeweber"),
 	];
 
-	
+
 	$args = [
-		"label" => __( "Service Categories", "zinoviev-school" ),
+		"label" => __("Service Categories", "codeweber"),
 		"labels" => $labels,
 		"public" => true,
 		"publicly_queryable" => true,
@@ -22,7 +23,7 @@ function cptui_register_my_taxes_service_category() {
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"query_var" => true,
-		"rewrite" => [ 'slug' => 'service_category', 'with_front' => true, ],
+		"rewrite" => ['slug' => 'service_category', 'with_front' => true,],
 		"show_admin_column" => false,
 		"show_in_rest" => true,
 		"show_tagcloud" => false,
@@ -32,27 +33,28 @@ function cptui_register_my_taxes_service_category() {
 		"sort" => false,
 		"show_in_graphql" => false,
 	];
-	register_taxonomy( "service_category", [ "services" ], $args );
+	register_taxonomy("service_category", ["services"], $args);
 }
-add_action( 'init', 'cptui_register_my_taxes_service_category' );
+add_action('init', 'cptui_register_my_taxes_service_category');
 
 
-/**/ 
+/**/
 
-function cptui_register_my_taxes_types_of_services() {
+function cptui_register_my_taxes_types_of_services()
+{
 
 	/**
 	 * Taxonomy: Types.
 	 */
 
 	$labels = [
-		"name" => __( "Types", "zinoviev-school" ),
-		"singular_name" => __( "Type", "zinoviev-school" ),
+		"name" => __("Types", "codeweber"),
+		"singular_name" => __("Type", "codeweber"),
 	];
 
-	
+
 	$args = [
-		"label" => __( "Types", "zinoviev-school" ),
+		"label" => __("Types", "codeweber"),
 		"labels" => $labels,
 		"public" => true,
 		"publicly_queryable" => true,
@@ -61,7 +63,7 @@ function cptui_register_my_taxes_types_of_services() {
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"query_var" => true,
-		"rewrite" => [ 'slug' => 'types_of_services', 'with_front' => true, ],
+		"rewrite" => ['slug' => 'types_of_services', 'with_front' => true,],
 		"show_admin_column" => false,
 		"show_in_rest" => true,
 		"show_tagcloud" => false,
@@ -71,6 +73,6 @@ function cptui_register_my_taxes_types_of_services() {
 		"sort" => false,
 		"show_in_graphql" => false,
 	];
-	register_taxonomy( "types_of_services", [ "services" ], $args );
+	register_taxonomy("types_of_services", ["services"], $args);
 }
-add_action( 'init', 'cptui_register_my_taxes_types_of_services' );
+add_action('init', 'cptui_register_my_taxes_types_of_services');

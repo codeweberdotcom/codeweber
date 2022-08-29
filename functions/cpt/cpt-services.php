@@ -8,12 +8,12 @@ function cptui_register_my_cpts_services()
 	 */
 
 	$labels = [
-		"name" => __("Services", "zinoviev-school"),
-		"singular_name" => __("Service", "zinoviev-school"),
+		"name" => __("Services", "codeweber"),
+		"singular_name" => __("Service", "codeweber"),
 	];
 
 	$args = [
-		"label" => __("Services", "zinoviev-school"),
+		"label" => __("Services", "codeweber"),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
