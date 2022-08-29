@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+// адрес корня темы , обязательная переменная для демо
 $settings->title = 'Pricing FAQ'; // демо заголовок
 $settings->paragraph = 'If you don\'t see an answer to your question, you can send us an email from our contact form.'; // демо параграф
 $settings->subtitle = 'FAQ'; // демо подзаголовок
@@ -79,7 +79,7 @@ $faq_accordeon->default_accordeon = '<div class="card accordion-item">
 
 /* Add FAQ */
 $faq_accordeon1 = new AccordeonS;
-$faq_accordeon1->section_id_2 = esc_html($args['block_id']) . '-2'; // присваиваем секции уникальный id
+$faq_accordeon1->section_id = esc_html($args['block_id']) . '-2'; // присваиваем секции уникальный id
 $faq_accordeon1->default_accordeon = '<div class="card accordion-item">
                   <div class="card-header" id="accordion-heading-1-1">
                      <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-1" aria-expanded="false" aria-controls="accordion-collapse-1-1">Can I cancel my subscription?</button>
@@ -139,7 +139,7 @@ $faq_accordeon1->default_accordeon = '<div class="card accordion-item">
 
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
    <div class="container py-14 py-md-16">
       <h2 class="display-4 mb-3 text-center"><?php echo $settings->title; ?></h2>
       <p class="lead text-center mb-10 px-md-16 px-lg-0"><?php echo $settings->paragraph; ?></p>
@@ -152,7 +152,7 @@ $faq_accordeon1->default_accordeon = '<div class="card accordion-item">
          </div>
          <!--/column -->
          <div class=" col-lg-6">
-            <div id="<?php echo $faq_accordeon1->section_id_2; ?>" class="accordion-wrapper">
+            <div id="<?php echo $faq_accordeon1->section_id; ?>" class="accordion-wrapper">
                <?php $faq_accordeon1->accordeon1(); ?>
             </div>
             <!-- /.accordion-wrapper -->

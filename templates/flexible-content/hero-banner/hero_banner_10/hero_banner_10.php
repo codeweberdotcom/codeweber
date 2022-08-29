@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri();
+
 $settings->title = 'We bring solutions to make life <span class="underline-3 style-3 primary">easier.</span>';
 $settings->paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
 $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/about15.jpg';
@@ -11,8 +11,7 @@ $settings->backgroundcolor = 'dark';
 // $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
 
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -52,7 +51,7 @@ $swiper->default_media = '<figure class="rounded mt-md-n21 mt-lg-n23 mb-14" data
 
 
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <section class="wrapper bg-<?php echo $settings->backgroundcolor; ?>">
       <div class="container pt-11 pt-md-13 pb-11 pb-md-19 pb-lg-22 text-center">
          <div class="row">

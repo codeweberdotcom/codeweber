@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri();
+
 $settings->title = 'We bring solutions to make life <span class="underline-3 style-2 yellow">easier';
 $settings->paragraph = 'We are a creative company that focuses on long term relationships with customers.';
 $settings->imageurl = $settings->root_theme . '/dist/img/illustrations/i6.png';
@@ -11,8 +11,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 // $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -128,7 +127,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
 <section class="wrapper bg-light">
   <div class="container pb-15 pb-md-17">
     <div class="row gx-md-5 gy-5 mt-n19">
-      <?php echo $features->Feutures_3(); ?>
+      <?php echo $features->Feutures(); ?>
       <!--/column -->
     </div>
     <!--/.row -->

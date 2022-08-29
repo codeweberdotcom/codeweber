@@ -159,7 +159,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62e0f1e5aa093",
+                            "key": "field_630c5cc4fa3fb",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
                             "type": "clone",
@@ -220,48 +220,6 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 1
-                        },
-                        {
-                            "key": "field_62e0f1e5b537d",
-                            "label": "Gallery",
-                            "name": "gallery",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62daa88c03ddb"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        },
-                        {
-                            "key": "field_62e0f1e5b9001",
-                            "label": "Buttons",
-                            "name": "buttons",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62dc6f27dc128"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -913,5 +871,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661638451
+    "modified": 1661754578
 }

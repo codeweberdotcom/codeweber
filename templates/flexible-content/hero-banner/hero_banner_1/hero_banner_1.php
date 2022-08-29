@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri();
+
 $settings->title = "Grow Your Business with Our Solutions.";
 $settings->paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
 $settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/i2.png';
@@ -11,8 +11,7 @@ $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'light';
 $settings->textcolor = 'white';
 
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -42,7 +41,7 @@ $swiper->default_media = '<figure><img class="w-auto" src="' . get_template_dire
 ?>
 
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container pt-10 pt-md-14 pb-8 text-center">
     <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
       <div class="col-lg-7">

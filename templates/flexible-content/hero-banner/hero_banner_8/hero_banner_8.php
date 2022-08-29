@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri();
+
 $settings->title = "Crafting project specific solutions with expertise.";
 $settings->paragraph = 'We\'re a company that focuses on establishing long-term relationships with customers.';
 $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/co3.png';
@@ -10,8 +10,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'white';
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -43,7 +42,7 @@ $image->GetImage();
 
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
   <div class="container">
     <div class="card  bg-<?php echo $settings->backgroundcolor; ?> rounded-4 mt-2 mb-13 mb-md-17">
       <div class="card-body p-md-10 py-xl-11 px-xl-15">

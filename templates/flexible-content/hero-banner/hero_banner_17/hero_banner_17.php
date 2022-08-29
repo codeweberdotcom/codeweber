@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+// адрес корня темы , обязательная переменная для демо
 $settings->title = "We bring rapid solutions for your business."; // демо заголовок
 // $settings->paragraph = 'Hello! This is Sandbox'; // демо параграф
 $settings->subtitle = 'Hello! This is Sandbox'; // демо подзаголовок
@@ -11,8 +11,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas'; /
 $settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
 //$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
 $settings->textcolor = 'light'; // цвет текста темной темы
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF(); // получаем занчения полей ACF
 
 /* Add buttons */
@@ -36,7 +35,7 @@ $image->image_size = 'sandbox_hero_11';
 $image->GetImage();
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-gray">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-gray">
    <div class="container pt-12 pt-md-16 text-center">
       <div class="row">
          <div class="col-lg-8 col-xxl-7 mx-auto text-center" data-cues="slideInDown" data-group="page-title" data-delay="600">

@@ -3,7 +3,7 @@
 
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+// адрес корня темы , обязательная переменная для демо
 $settings->title = "I\'m User Interface Designer & Developer."; // демо заголовок
 $settings->paragraph = 'Hello! I\'m Julia, a freelance user interface designer & developer based in London. I’m very passionate about the work that I do.'; // демо параграф
 $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/about17.jpg'; // демо фото
@@ -12,8 +12,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas'; /
 $settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
 $settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
 $settings->textcolor = 'light'; // цвет текста темной темы
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF(); // получаем занчения полей ACF
 
 /* Add buttons */
@@ -43,7 +42,7 @@ $image->image_size = 'sandbox_hero_11';
 $image->GetImage();
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container pt-12 pt-md-14 pb-14 pb-md-16">
     <div class="row gy-10 gy-md-13 gy-lg-0 align-items-center">
       <div class="col-md-8 col-lg-5 d-flex position-relative mx-auto" data-cues="slideInDown" data-group="header">

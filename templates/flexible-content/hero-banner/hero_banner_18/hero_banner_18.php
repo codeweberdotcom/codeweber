@@ -17,7 +17,7 @@ $image_block = '<img class="img-fluid mb-n18" src="/img/illustrations/3d6.png" s
 
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+// адрес корня темы , обязательная переменная для демо
 $settings->title = 'Networking <span class="text-gradient gradient-1">solutions</span> for worldwide communication'; // демо заголовок
 $settings->paragraph = 'We\'re a company that focuses on establishing long-term relationships with customers.'; // демо параграф
 $settings->subtitle = 'Hello! This is Sandbox'; // демо подзаголовок
@@ -28,8 +28,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas'; /
 $settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
 //$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
 $settings->textcolor = 'light'; // цвет текста темной темы
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF(); // получаем занчения полей ACF
 
 /* Add buttons */
@@ -61,7 +60,7 @@ $swiper->default_media = '<img class="img-fluid mb-n18" src="' . $swiper->root_t
 ?>
 
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container-card">
     <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-light-500 mt-2 mb-5" data-image-src="<?php echo $settings->backgroundurl; ?>">
       <div class="card-body py-14 px-0">

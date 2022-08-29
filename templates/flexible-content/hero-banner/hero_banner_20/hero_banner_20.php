@@ -2,7 +2,7 @@
 
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri();
+
 $settings->title = 'Rapid Solutions,Innovative Thinking,Top-Notch Support';
 $settings->paragraph = 'We are a digital agency specializing in web design, mobile development and seo optimization.';
 $settings->imageurl = $settings->root_theme . '/dist/img/illustrations/i6.png';
@@ -12,8 +12,7 @@ $settings->typewriter = 'Rapid Solutions,Innovative Thinking,Top-Notch Support';
 // $settings->backgroundcolor = 'dark';
 // $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF();
 ?>
 

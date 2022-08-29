@@ -309,7 +309,7 @@ class AccordeonS
 								<button class="<?php echo $button_accordeon_class; ?>" data-bs-toggle="collapse" data-bs-target="#collapseOne-<?php echo $this->section_id . '-' . $row_id; ?>" aria-expanded="<?php echo $class_expand; ?>" aria-controls="collapseOne-<?php echo $this->section_id; ?>"> <?php echo $title; ?> </button>
 							</div>
 							<!--/.card-header -->
-							<div id="collapseOne-<?php echo $this->section_id . '-' . $row_id; ?>" class="<?php echo $collapse_class; ?>" aria-labelledby="headingOne-<?php echo $this->section_id; ?>" data-bs-parent="#<?php echo $this->section_id_2; ?>">
+							<div id="collapseOne-<?php echo $this->section_id . '-' . $row_id; ?>" class="<?php echo $collapse_class; ?>" aria-labelledby="headingOne-<?php echo $this->section_id; ?>" data-bs-parent="#<?php echo $this->section_id; ?>">
 								<div class="card-body">
 									<p><?php echo $paragraph; ?></p>
 								</div>
@@ -402,6 +402,7 @@ class Settings
 	public $title = "Grow Your Business with Our Solutions.";
 	public $subtitle = "Hello! This is Sandbox.";
 	public $paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
+
 	public $imageurl = '/dist/img/photos/about18.jpg';
 	public $video_url = '/dist/media/movie.mp4';
 	public $backgroundurl = '/dist/img/photos/bg4.jpg';
@@ -409,9 +410,13 @@ class Settings
 	public $backgroundcolor = 'dark';
 	public $backgroundcolor_light = 0;
 	public $textcolor = 'white';
+	public $section_id = NULL;
+	public $section_classes = NULL;
 
-	public function GetDataACF()
+	public function __construct()
 	{
+		$this->root_theme = get_template_directory_uri();
+
 		if (get_sub_field('title')) :
 			$this->title = get_sub_field('title');
 		endif;
@@ -420,13 +425,13 @@ class Settings
 			$this->subtitle = get_sub_field('subtitle');
 		endif;
 
-		if ($this->backgroundurl) :
-			$this->backgroundurl = $this->root_theme . $this->backgroundurl;
-		endif;
-
 		if (get_sub_field('paragraph')) :
 			$this->paragraph = get_sub_field('paragraph');
 		endif;
+	}
+
+	public function GetDataACF()
+	{
 
 		if (get_sub_field('dark_or_white_light_or_dark') == 0) :
 			$this->backgroundcolor = $this->backgroundcolor;
@@ -1597,8 +1602,8 @@ class Features
 	public $default_features = '';
 	public $pattern = NULL;
 
-	//* Function Feutures_3 *//
-	public function Feutures_3()
+	//* Function Feutures *//
+	public function Feutures()
 	{ ?>
 		<?php if (have_rows('features_block')) : ?>
 			<?php while (have_rows('features_block')) : the_row(); ?>

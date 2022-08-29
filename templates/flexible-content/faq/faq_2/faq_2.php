@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+// адрес корня темы , обязательная переменная для демо
 $settings->title = 'If you don\'t see an answer to your question, you can send us an email from our contact form.'; // демо заголовок
 $settings->paragraph = 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare.'; // демо параграф
 $settings->subtitle = 'FAQ'; // демо подзаголовок
@@ -89,7 +89,7 @@ $faq_accordeon->default_accordeon = '<div class="card accordion-item">
 
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10">
          <div class="col-lg-6 mb-0">
@@ -102,7 +102,7 @@ $faq_accordeon->default_accordeon = '<div class="card accordion-item">
          </div>
          <!--/column -->
          <div class="col-lg-6">
-            <div id="<?php echo $settings->section_id; ?>" class="accordion-wrapper">
+            <div id="<?php echo esc_html($args['block_id']); ?>" class="accordion-wrapper">
                <?php $faq_accordeon->accordeon(); ?>
                <!-- /.card -->
             </div>

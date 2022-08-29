@@ -2,7 +2,7 @@
 
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri();
+
 $settings->title = "Staying on top of your bills never been this easy";
 $settings->paragraph = 'Easily achieve your saving goals. Have all your recurring and one time expenses and incomes in one place.';
 $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/sa1.jpg';
@@ -11,8 +11,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF();
 
 /* Add Image*/
@@ -42,7 +41,7 @@ $button->default_button = '<div class="d-flex justify-content-center flex-wrap" 
 
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <div class="container pt-10 pb-15 pt-md-14 pb-md-20 text-center">
       <div class="row">
          <div class="col-md-10 col-lg-8 col-xl-8 col-xxl-6 mx-auto mb-13" data-cues="slideInDown" data-group="page-title">

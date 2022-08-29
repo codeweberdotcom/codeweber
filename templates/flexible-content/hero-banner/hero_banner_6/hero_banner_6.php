@@ -2,7 +2,7 @@
 
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri();
+
 $settings->title = "Get all of your steps, exercise, sleep and meds in one place.";
 $settings->paragraph = 'Sandbox is now available to download from both the App Store and Google Play Store.';
 $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/devices.png';
@@ -12,8 +12,7 @@ $settings->backgroundcolor = 'dark';
 //$settings->backgroundcolor_light = 'red';
 $settings->textcolor = 'white';
 
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF();
 
 // --- Image ---
@@ -39,7 +38,7 @@ $button->default_button = '<div class="d-flex justify-content-center flex-wrap j
         </div>';
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <div class="container pt-5 pb-15 py-lg-17 py-xl-19 pb-xl-20 position-relative">
       <img class="position-lg-absolute col-12 col-lg-10 col-xl-11 col-xxl-10 px-lg-5 px-xl-0 ms-n5 ms-sm-n8 ms-md-n10 ms-lg-0 mb-md-4 mb-lg-0" src="<?php echo $image->image_1; ?>" srcset="<?php echo $image->image_1; ?>" data-cue="fadeIn" alt="" style="top: -1%; left: -21%;" />
       <div class="row gx-0 align-items-center">

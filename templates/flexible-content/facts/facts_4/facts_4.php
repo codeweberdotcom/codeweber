@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+// адрес корня темы , обязательная переменная для демо
 $settings->title = 'We are trusted by over 5000+ clients. Join them now and grow your business.'; // демо заголовок
 // $settings->paragraph = ''; // демо параграф
 $settings->subtitle = 'Join Our Community'; // демо подзаголовок

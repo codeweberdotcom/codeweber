@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+// адрес корня темы , обязательная переменная для демо
 $settings->title = 'Save Time and Money'; // демо заголовок
 $settings->paragraph = 'Save your time and money by choosing our <span class="underline-3 style-2 yellow">professional</span> team.'; // демо параграф
 $settings->subtitle = 'Company Facts'; // демо подзаголовок

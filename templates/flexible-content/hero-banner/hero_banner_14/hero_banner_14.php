@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri();
+
 $settings->title = 'We bring rapid solutions for your business.';
 $settings->paragraph = 'We are an award winning branding design agency that strongly believes in the power of creative ideas.';
 $settings->imageurl = $settings->root_theme . '/dist/img/photos/about18.jpg';
@@ -11,8 +11,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'light';
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF();
 
 /* Add swiper */
@@ -35,7 +34,7 @@ $swiper->default_media = '<figure class="rounded mb-md-n20"><img src="' . $swipe
 $link = new Links();
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <div class="container pt-10 pt-md-14 pb-14 pb-md-0">
       <div class="row gx-md-8 gx-lg-12 gy-3 gy-lg-0 mb-13">
          <div class="col-lg-6">

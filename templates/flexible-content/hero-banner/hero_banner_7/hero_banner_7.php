@@ -2,7 +2,7 @@
 
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri();
+
 
 $settings->title = "Creative. Smart. Awesome.";
 $settings->paragraph = 'We are an award winning web & mobile design agency that strongly believes in the power of creative ideas.';
@@ -13,8 +13,7 @@ $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'gradient-primary';
 $settings->textcolor = 'white';
 
-$settings->section_id = esc_html($args['block_id']);
-$settings->section_classes = esc_html($args['block_class']);
+
 $settings->GetDataACF();
 
 /* Add Image*/
@@ -38,7 +37,7 @@ $button->default_button = '<div class="d-flex justify-content-center flex-wrap" 
     </div>';
 ?>
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <div class="container py-14 pt-md-15 pb-md-18 text-center">
       <div class="row text-center">
          <div class="col-lg-9 col-xxl-7 mx-auto" data-cues="zoomIn" data-group="welcome" data-interval="-200">

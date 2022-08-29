@@ -1,7 +1,7 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-$settings->root_theme = get_template_directory_uri(); // адрес корня темы , обязательная переменная для демо
+// адрес корня темы , обязательная переменная для демо
 $settings->title = 'Join Our Community'; // демо заголовок
 $settings->paragraph = 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.'; // демо параграф
 $settings->subtitle = 'We have considered our business solutions to support you on every stage of your growth.'; // демо подзаголовок
@@ -120,7 +120,7 @@ $facts->default_template = '<div class="item col-md-6">
 ?>
 
 
-<section id="<?php echo $settings->section_id; ?>" class="<?php echo $settings->section_classes; ?> wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-0 gy-10 align-items-center">
          <div class="col-lg-6 order-lg-2 offset-lg-1 grid">
