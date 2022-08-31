@@ -35,8 +35,8 @@ if (!function_exists('codeweber_sidebars')) {
 		register_sidebar(
 			array(
 				'name' => esc_html__('Services Sidebar', 'codeweber'),
-				'id' => 'sidebar-page',
-				'description' => esc_html__('Page Sidebar', 'codeweber'),
+				'id' => 'sidebar-services',
+				'description' => esc_html__('Services Sidebar', 'codeweber'),
 				'before_widget' => '<div class="widget mt-8 %2$s clearfix">',
 				'after_widget' => '</div>',
 				'before_title' => '<div class="widget-title mb-3">',

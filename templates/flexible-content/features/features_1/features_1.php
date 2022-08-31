@@ -1,7 +1,6 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-
 $settings->title = "Package Design";
 $settings->paragraph = 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius.';
 $settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/i2.png';
@@ -10,7 +9,6 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'light';
 $settings->textcolor = 'white';
-
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -44,7 +42,6 @@ $listicon->default_list = '<div class="row gy-3">
         </div>
         <!--/.row -->';
 
-
 /** Image */
 $image = new ImageCustomizable;
 $image->root_theme = get_template_directory_uri();
@@ -68,11 +65,16 @@ $image->imagethumbsize = 'sandbox_features_1';
             } else {
                $class_features_row = 'row gx-lg-8 gx-xl-12 gy-10 mb-14 mb-md-18 align-items-center';
             }
-
             if (($i % 2) == 0) {
                $class_features_col = 'col-lg-6 position-relative';
             } else {
                $class_features_col = 'col-lg-6 order-lg-2 position-relative';
+            }
+            if (get_sub_field('title')) {
+               $settings->title = get_sub_field('title');
+            }
+            if (get_sub_field('paragraph')) {
+               $settings->paragraph = get_sub_field('paragraph');
             }
          ?>
             <div class="<?php echo $class_features_row; ?>">

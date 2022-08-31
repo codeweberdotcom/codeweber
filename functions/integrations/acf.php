@@ -21,21 +21,21 @@ if (class_exists('ACF')) {
 		acf_add_local_field_group(
 			array(
 				'key' => 'group_theme_meta',
-				'title' => __('Meta', 'bricks'),
+				'title' => __('Meta', 'codeweber'),
 				'fields' => array(
 					array(
 						'key' => 'field_60140651ee8f1',
-						'label' => __('Meta', 'bricks'),
+						'label' => __('Meta', 'codeweber'),
 						'name' => 'meta',
 						'type' => 'group',
 						'layout' => 'block',
 						'sub_fields' => array(
 							array(
 								'key' => 'field_60140662ee8f2',
-								'label' => __('Chrome Theme', 'bricks'),
+								'label' => __('Chrome Theme', 'codeweber'),
 								'name' => 'theme_color',
 								'type' => 'color_picker',
-								'instructions' => __('Tab color in Chrome for Android', 'bricks'),
+								'instructions' => __('Tab color in Chrome for Android', 'codeweber'),
 								'wrapper' => array(
 									'width' => '25',
 								),
@@ -546,10 +546,12 @@ class Icons
 	public $icon_type = 'Unicons';
 	public $iconform = 'btn-circle';
 	public $iconnumber = NULL;
+	public $iconsize = '';
 	public function GetIcon()
 	{
 		if (have_rows('type_icons')) :
 			while (have_rows('type_icons')) : the_row();
+				$this->iconsize = get_sub_field('icon_size');
 				$this->icon_type = get_sub_field('select_type_icons');
 				$this->iconform =  get_sub_field('icon_form');
 				$this->iconnumber = get_sub_field('number');
@@ -568,6 +570,7 @@ class Icons
 class Color
 {
 	public $color_icon = 'primary';
+	public $base_color_icon = 'primary';
 	public function ColorIcon()
 	{
 		if (have_rows('type_color')) :
@@ -576,7 +579,8 @@ class Color
 				if ($type_color == 'Solid') :
 					$this->color_icon = get_sub_field('theme_btn_solid_color');
 				elseif ($type_color == 'Soft') :
-					$this->color_icon = get_sub_field('theme_btn_soft_color');
+					$this->color_icon = 'soft-' . get_sub_field('theme_btn_solid_color');
+					$this->base_color_icon = get_sub_field('theme_btn_solid_color');
 				elseif ($type_color == 'Gradient') :
 					$this->color_icon = get_sub_field('gradient_btn') . ' gradient';
 				endif;
@@ -862,22 +866,28 @@ class Buttons
 							$icon_font = '<i class="icn-caret-right"></i>';
 						elseif ($button_type == 'Default') :
 							$button_type = NULL;
+						elseif ($button_type == 'None') :
+							$button_type = 'none';
 						endif;
 
 						/* Show buttons */
 						if (get_sub_field('select_type') == 'Form') :
 							if (get_sub_field('button_type') == 'Expand') :
-								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font . '<span>' . $text_button . '</span></button></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2 mt-6" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font . '<span>' . $text_button . '</span></button></span>';
 							elseif (get_sub_field('button_type') == 'Play') :
 								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font .  '</button></span>';
+							elseif (get_sub_field('button_type') == 'None') :
+								$button = NULL;
 							else :
 								$button = '<span' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '"><span>' . $icon_font  . $text_button . '</span></button></span>';
 							endif;
 						else :
 							if (get_sub_field('button_type') == 'Expand') :
-								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $form_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font . '<span>' . $text_button . '</span></a></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $form_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2 mt-6" ' . $ghligthbox . '>' . $icon_font . '<span>' . $text_button . '</span></a></span>';
 							elseif (get_sub_field('button_type') == 'Play') :
 								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font .  '</a></span>';
+							elseif (get_sub_field('button_type') == 'None') :
+								$button = NULL;
 							else :
 								$button = '<span ' . $this->animate_swiper_class . '"><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '><span>' . $icon_font  . $text_button . '</span></a></span>';
 							endif;
@@ -953,13 +963,12 @@ class ListUnicon
 	public $icon = '<i class="uil uil-check"></i>';
 	public $color_icon = '-soft-leaf';
 	public $default_list = '';
-
 	public function listunicons()
 	{
-		$responsive = new ResponsiveCol;
-
 		if (have_rows('list_icon')) :
 			while (have_rows('list_icon')) : the_row();
+				$responsive = new ResponsiveCol;
+				$responsiveclass = $responsive->responsives();
 
 				/**Color */
 				$color = new  Color;
@@ -967,13 +976,17 @@ class ListUnicon
 
 				if (have_rows('list')) :
 					?>
-					<ul class="icon-list bullet-bg bullet-<?php echo $color->color_icon; ?> mb-0 row gy-3">
+					<div class="row gy-3">
 						<?php while (have_rows('list')) : the_row();
 							get_sub_field('icon') != NULL ? $icon = get_sub_field('icon') : $icon = '<i class="uil uil-check"></i>';
 						?>
-							<li class="col-xl-6"><span><?php echo $icon; ?></span><span><?php the_sub_field('paragraph'); ?></span></li>
+							<div class="<?php echo $responsiveclass; ?>">
+								<ul class="icon-list bullet-bg bullet-<?php echo $color->color_icon; ?> mb-0 ">
+									<li class=""><span><?php echo $icon; ?></span><span><?php the_sub_field('paragraph'); ?></span></li>
+								</ul>
+							</div>
 						<?php endwhile; ?>
-					</ul>
+					</div>
 					<!--/row -->
 				<?php else :
 					echo $this->default_list; ?>
@@ -1435,6 +1448,7 @@ class ResponsiveCol
 	public $col_lg = 'col-lg-4';
 	public $col_xl = 'col-lg-3';
 	public $col_xxl = 'col-lg-3';
+	public $class_responsive = NULL;
 
 	public function responsives()
 	{
@@ -1451,6 +1465,7 @@ class ResponsiveCol
 				}
 			endwhile;
 		endif;
+		$this->class_responsive = $this->col_sm . ' ' . $this->col_md . ' ' . $this->col_lg;
 		$class_responsive = $this->col_sm . ' ' . $this->col_md . ' ' . $this->col_lg;
 		return $class_responsive;
 	}
@@ -1621,13 +1636,14 @@ class Features
 						// Select Icon
 						$icon = new Icons();
 						$icon->GetIcon();
+						$this->iconsize = $icon->iconsize;
 
 						if ($icon->icon_type == 'Unicons') :
-							$icon_block = '<div class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
+							$icon_block = '<div class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
 						elseif ($icon->icon_type == 'SVG') :
-							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' mb-3"/>';
+							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-' . $this->iconsize . ' text-' . $icon_color->base_color_icon . ' mb-3"/>';
 						elseif ($icon->icon_type == 'Number') :
-							$icon_block = '<span class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number fs-18">' . $icon->iconnumber . '</span></span>';
+							$icon_block = '<span class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number fs-18">' . $icon->iconnumber . '</span></span>';
 						endif;
 
 						if (get_sub_field('title')) {

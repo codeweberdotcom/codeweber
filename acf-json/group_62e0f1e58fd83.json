@@ -24,7 +24,7 @@
                     "sub_fields": [
                         {
                             "key": "field_630a970232c95",
-                            "label": "Features repeater",
+                            "label": "Features row repeater",
                             "name": "features_repeater",
                             "type": "repeater",
                             "instructions": "",
@@ -105,27 +105,6 @@
                                     "prefix_name": 0
                                 },
                                 {
-                                    "key": "field_630a7c3396120",
-                                    "label": "Buttons",
-                                    "name": "buttons",
-                                    "type": "clone",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "clone": [
-                                        "field_62dc6f27dc128"
-                                    ],
-                                    "display": "seamless",
-                                    "layout": "block",
-                                    "prefix_label": 0,
-                                    "prefix_name": 0
-                                },
-                                {
                                     "key": "field_630a29450fde2",
                                     "label": "List",
                                     "name": "list",
@@ -140,6 +119,27 @@
                                     },
                                     "clone": [
                                         "field_630a21d2432c1"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                },
+                                {
+                                    "key": "field_630a7c3396120",
+                                    "label": "Buttons",
+                                    "name": "buttons",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "field_62dc6f27dc128"
                                     ],
                                     "display": "seamless",
                                     "layout": "block",
@@ -880,5 +880,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661870904
+    "modified": 1661953360
 }

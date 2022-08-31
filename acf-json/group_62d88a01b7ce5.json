@@ -297,6 +297,13 @@
                         "operator": "==",
                         "value": "Solid"
                     }
+                ],
+                [
+                    {
+                        "field": "field_62ecc6b54971b",
+                        "operator": "==",
+                        "value": "Soft"
+                    }
                 ]
             ],
             "wrapper": {
@@ -325,51 +332,6 @@
                 "muted": "muted"
             },
             "default_value": "primary",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "return_format": "value",
-            "ajax": 0,
-            "placeholder": ""
-        },
-        {
-            "key": "field_62ecdf0709bd7",
-            "label": "Select Soft Color",
-            "name": "theme_btn_soft_color",
-            "type": "select",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_62ecc6b54971b",
-                        "operator": "==",
-                        "value": "Soft"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "soft-fuchsia": "soft-fuchsia",
-                "soft-green": "soft-green",
-                "soft-orange": "soft-orange",
-                "soft-pink": "soft-pink",
-                "soft-purple": "soft-purple",
-                "soft-red": "soft-red",
-                "soft-sky": "soft-sky",
-                "soft-violet": "soft-violet",
-                "soft-yellow": "soft-yellow",
-                "soft-leaf": "soft-leaf",
-                "soft-ash": "soft-ash",
-                "soft-navy": "soft-navy",
-                "soft-grape": "soft-grape",
-                "soft-muted": "soft-muted"
-            },
-            "default_value": "soft-red",
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -583,6 +545,32 @@
                     "choices": {
                         "btn-circle": "btn-circle",
                         "btn-block": "btn-block"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_630f5c240f91c",
+                    "label": "Icon size",
+                    "name": "icon_size",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "sm": "sm",
+                        "md": "md",
+                        "lg": "lg"
                     },
                     "default_value": false,
                     "allow_null": 0,
@@ -2265,7 +2253,8 @@
                     "choices": {
                         "Default": "Default",
                         "Expand": "Expand",
-                        "Play": "Play"
+                        "Play": "Play",
+                        "None": "None"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -4462,6 +4451,27 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_630f373b7e206",
+                    "label": "Responsive",
+                    "name": "responsive_setttings",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "field_6308a6fa1dd03"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
                     "key": "field_630a222b432c3",
                     "label": "Color",
                     "name": "color",
@@ -4566,5 +4576,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661891244
+    "modified": 1661952944
 }

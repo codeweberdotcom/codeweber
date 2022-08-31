@@ -34,7 +34,7 @@ $features->iconsize = 'btn-lg';
 $features->iconform = 'btn-block';
 $features->linkcolor = 'primary';
 $features->iconpaddingclass = 'pe-none mb-5';
-$features->pattern = '<div class="col-md-6 align-self-start tt">
+$features->pattern = '<div class="col-md-6 align-self-start">
                   <div class="card bg-pale-%5$s">
                      <div class="card-body">
                         %3$s
