@@ -44,6 +44,7 @@ $listicon->default_list = '<div class="row gy-3">
         </div>
         <!--/.row -->';
 
+
 /** Image */
 $image = new ImageCustomizable;
 $image->root_theme = get_template_directory_uri();

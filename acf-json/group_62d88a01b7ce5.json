@@ -342,9 +342,9 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_62ea2af604412",
-                        "operator": "!=",
-                        "value": "SVG"
+                        "field": "field_62ecc6b54971b",
+                        "operator": "==",
+                        "value": "Soft"
                     }
                 ]
             ],
@@ -542,7 +542,8 @@
                     },
                     "choices": {
                         "Unicons": "Unicons",
-                        "SVG": "SVG"
+                        "SVG": "SVG",
+                        "Number": "Number"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -564,6 +565,13 @@
                                 "field": "field_62ea2af604412",
                                 "operator": "==",
                                 "value": "Unicons"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_62ea2af604412",
+                                "operator": "==",
+                                "value": "Number"
                             }
                         ]
                     ],
@@ -633,6 +641,35 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 0
+                },
+                {
+                    "key": "field_630e695f29d5f",
+                    "label": "Number",
+                    "name": "number",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_62ea2af604412",
+                                "operator": "==",
+                                "value": "Number"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "min": "",
+                    "max": "",
+                    "step": ""
                 }
             ]
         },
@@ -3302,7 +3339,7 @@
             "collapsed": "",
             "min": 0,
             "max": 0,
-            "layout": "table",
+            "layout": "block",
             "button_label": "",
             "sub_fields": [
                 {
@@ -3358,27 +3395,6 @@
                     },
                     "clone": [
                         "field_62ea2abc04411"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
-                },
-                {
-                    "key": "field_630cf40d8499a",
-                    "label": "Form icon",
-                    "name": "form_icon",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "field_630cf0ea62f99"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -4550,5 +4566,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661804826
+    "modified": 1661891244
 }

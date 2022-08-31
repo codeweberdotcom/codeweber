@@ -28,7 +28,7 @@ $features->pattern = '
            <div class="col-md-6 col-lg-3">
            %3$s
            <h4 class="text-' . $settings->textcolor . '">%1$s</h4>
-           <p class="text-' . $settings->textcolor . 'mb-3">%2$s</p>
+           <p class="text-' . $settings->textcolor . ' mb-3">%2$s</p>
            %4$s
            </div>
            <!--/column -->';
@@ -61,6 +61,9 @@ $features->default_features = '<div class="col-md-6 col-lg-3">
           </div>
           <!--/column -->';
 ?>
+
+
+
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
    <div class="container py-14 py-md-16">

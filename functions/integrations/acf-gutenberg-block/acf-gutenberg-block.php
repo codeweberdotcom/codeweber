@@ -76,6 +76,22 @@ function my_acf_blocks_init()
 
       ));
 
+      // Register a slider block.
+      acf_register_block_type(array(
+         'name'              => 'process',
+         'title'             => __('Process'),
+         'description'       => __('Process block flexible block.'),
+         'render_template'   => 'templates/flexible-content/process.php',
+         'category'          => 'codeweber',
+         'align'           => 'full',
+         'supports'        => array(
+            'align'        => array('full'),
+            'align'        => true,
+         ),
+         'mode' => 'preview',
+
+      ));
+
       acf_register_block_type(array(
          'name'              => 'widgets',
          'title'             => __('Widgets'),

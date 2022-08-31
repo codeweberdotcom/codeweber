@@ -545,12 +545,14 @@ class Icons
 	public $icon_url = NULL;
 	public $icon_type = 'Unicons';
 	public $iconform = 'btn-circle';
+	public $iconnumber = NULL;
 	public function GetIcon()
 	{
 		if (have_rows('type_icons')) :
 			while (have_rows('type_icons')) : the_row();
 				$this->icon_type = get_sub_field('select_type_icons');
 				$this->iconform =  get_sub_field('icon_form');
+				$this->iconnumber = get_sub_field('number');
 				$this->icon = get_sub_field('icon');
 				if (get_sub_field('icon_lineal_svg')) {
 					$this->icon_url = get_stylesheet_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
@@ -932,7 +934,11 @@ class Links
 				if ($link) :
 					$this->linkurl = esc_url($link);
 				endif;
-				$link_s = '<a href="' . $this->linkurl . '" class="' . $this->linkstyle . ' ' . $this->linktype . ' link-' . $this->linkcolor . '">' . $this->linktext . '</a>';
+				if (get_sub_field('text_link')) {
+					$link_s = '<a href="' . $this->linkurl . '" class="' . $this->linkstyle . ' ' . $this->linktype . ' link-' . $this->linkcolor . '">' . $this->linktext . '</a>';
+				} else {
+					$link_s = NULL;
+				}
 			endwhile;
 		endif;
 		return $link_s;
@@ -1576,7 +1582,7 @@ class ImageCustomizable
 					<?php	} ?>
 				<?php	} ?>
 				<!--/column -->
-		<?php endwhile;
+			<?php endwhile;
 		endif;
 	}
 }
@@ -1596,28 +1602,32 @@ class Features
 	public $iconpaddingclass = NULL;
 	public $iconform = NULL;
 	public $linkcolor = NULL;
+	public $iconcolor = NULL;
 
 	//* Function Feutures *//
 	public function Feutures()
-	{ ?>
-		<?php if (have_rows('features_block')) : ?>
-			<?php while (have_rows('features_block')) : the_row(); ?>
-				<?php if (have_rows('features_item')) : ?>
-					<?php while (have_rows('features_item')) : the_row(); ?>
+	{
+		$i = 0;
+		if (have_rows('features_block')) :
+			while (have_rows('features_block')) : the_row();
+				if (have_rows('features_item')) :
+					while (have_rows('features_item')) : the_row();
 
-						<?php // Select Color 
+						// Select Color 
 						$icon_color = new Color();
 						$icon_color->ColorIcon();
-						?>
+						$iconcolor = $icon_color->color_icon;
 
-						<?php // Select Icon
+						// Select Icon
 						$icon = new Icons();
 						$icon->GetIcon();
 
 						if ($icon->icon_type == 'Unicons') :
 							$icon_block = '<div class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
-						else :
+						elseif ($icon->icon_type == 'SVG') :
 							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' mb-3"/>';
+						elseif ($icon->icon_type == 'Number') :
+							$icon_block = '<span class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number fs-18">' . $icon->iconnumber . '</span></span>';
 						endif;
 
 						if (get_sub_field('title')) {
@@ -1630,16 +1640,78 @@ class Features
 						$link = new Links();
 						$link->linkcolor = $this->linkcolor;
 						$link_s = $link->Link();
-						$pattern = $this->pattern;
-						echo wp_sprintf($pattern, $this->title, $this->paragraph, $icon_block, $link_s); //> На дереве сидят 5 обезьян
-						?>
 
-			<?php endwhile;
+
+						echo wp_sprintf($this->pattern, $this->title, $this->paragraph, $icon_block, $link_s, $iconcolor); //> На дереве сидят 5 обезьян
+						$i++;
+					endwhile;
+
 				endif;
 			endwhile;
 		else :
 			echo $this->default_features;
 			?>
+		<?php endif; ?>
+		<?php
+	}
+
+	//* Function Feutures *//
+	public function Feutures_01()
+	{
+		$i = 0;
+		if (have_rows('features_block')) :
+			while (have_rows('features_block')) : the_row();
+				if (have_rows('features_item')) :
+					while (have_rows('features_item')) : the_row();
+
+						// Select Color 
+						$icon_color = new Color();
+						$icon_color->ColorIcon();
+						$iconcolor = $icon_color->color_icon;
+
+						// Select Icon
+						$icon = new Icons();
+						$icon->GetIcon();
+
+						if ($icon->icon_type == 'Unicons') :
+							$icon_block = '<div class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
+						elseif ($icon->icon_type == 'SVG') :
+							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' mb-3"/>';
+						elseif ($icon->icon_type == 'Number') :
+							$icon_block = '<span class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number">' . $icon->iconnumber . '</span></span>';
+						endif;
+
+						if (get_sub_field('title')) {
+							$this->title = get_sub_field('title');
+						}
+						if (get_sub_field('paragraph')) {
+							$this->paragraph = get_sub_field('paragraph');
+						}
+
+						$link = new Links();
+						$link->linkcolor = $this->linkcolor;
+						$link_s = $link->Link();
+
+
+						if ($i == 0) {
+							$this->pattern = '<div class="col-md-5 offset-md-1 align-self-end"><div class="card bg-pale-%5$s"><div class="card-body">%3$s<h4>%1$s</h4><p class="mb-0">%2$s</p>%4$s</div><!--/.card-body --></div><!--/.card --></div><!--/column -->';
+						} elseif ($i == 1) {
+							$this->pattern = '<div class="col-md-6 align-self-end"><div class="card bg-pale-%5$s"><div class="card-body">%3$s<h4>%1$s</h4><p class="mb-0">%2$s</p>%4$s</div><!--/.card-body --></div><!--/.card --></div><!--/column -->';
+						} elseif ($i == 2) {
+							$this->pattern = '<div class="col-md-5"><div class="card bg-pale-%5$s"><div class="card-body">%3$s<h4>%1$s</h4><p class="mb-0">%2$s</p>%4$s</div><!--/.card-body --></div><!--/.card --></div><!--/column -->';
+						} elseif ($i == 3) {
+							$this->pattern = '<div class="col-md-6 align-self-start"><div class="card bg-pale-%5$s"><div class="card-body">%3$s<h4>%1$s</h4><p class="mb-0">%2$s</p>%4$s</div><!--/.card-body --></div><!--/.card --></div><!--/column -->';
+						}
+
+						echo wp_sprintf($this->pattern, $this->title, $this->paragraph, $icon_block, $link_s, $iconcolor); //> На дереве сидят 5 обезьян
+						$i++;
+					endwhile;
+
+				endif;
+			endwhile;
+		else :
+			echo $this->default_features;
+		?>
 		<?php endif; ?>
 <?php
 	}
