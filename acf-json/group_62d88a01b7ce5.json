@@ -138,6 +138,44 @@
                     "return_format": "label",
                     "ajax": 0,
                     "placeholder": ""
+                },
+                {
+                    "key": "field_630cbc681c649",
+                    "label": "Desctop xl",
+                    "name": "desctop_xl",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_630cbc731c64a",
+                    "label": "Desctop xxl",
+                    "name": "desctop_xxl",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -304,9 +342,9 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_62ecc6b54971b",
-                        "operator": "==",
-                        "value": "Soft"
+                        "field": "field_62ea2af604412",
+                        "operator": "!=",
+                        "value": "SVG"
                     }
                 ]
             ],
@@ -512,6 +550,39 @@
                     "layout": "vertical",
                     "return_format": "value",
                     "save_other_choice": 0
+                },
+                {
+                    "key": "field_630cf0ea62f99",
+                    "label": "Icon form",
+                    "name": "icon_form",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_62ea2af604412",
+                                "operator": "==",
+                                "value": "Unicons"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "btn-circle": "btn-circle",
+                        "btn-block": "btn-block"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
                 },
                 {
                     "key": "field_62ea2b1104413",
@@ -3173,27 +3244,6 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_62eee2f074e8b",
-                    "label": "Select Solid Color",
-                    "name": "theme_btn_solid_color",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "field_62ecdf0409bd6"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
-                },
-                {
                     "key": "field_62eee46a86131",
                     "label": "Type Link",
                     "name": "type_link",
@@ -3308,6 +3358,27 @@
                     },
                     "clone": [
                         "field_62ea2abc04411"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_630cf40d8499a",
+                    "label": "Form icon",
+                    "name": "form_icon",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "field_630cf0ea62f99"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -4479,5 +4550,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661758023
+    "modified": 1661804826
 }

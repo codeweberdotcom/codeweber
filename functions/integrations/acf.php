@@ -416,6 +416,7 @@ class Settings
 	public function __construct()
 	{
 		$this->root_theme = get_template_directory_uri();
+		$this->features = new Icons;
 	}
 
 	public function GetDataACF()
@@ -543,11 +544,13 @@ class Icons
 	public $icon = NULL;
 	public $icon_url = NULL;
 	public $icon_type = 'Unicons';
+	public $iconform = 'btn-circle';
 	public function GetIcon()
 	{
 		if (have_rows('type_icons')) :
 			while (have_rows('type_icons')) : the_row();
 				$this->icon_type = get_sub_field('select_type_icons');
+				$this->iconform =  get_sub_field('icon_form');
 				$this->icon = get_sub_field('icon');
 				if (get_sub_field('icon_lineal_svg')) {
 					$this->icon_url = get_stylesheet_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
@@ -576,18 +579,6 @@ class Color
 					$this->color_icon = get_sub_field('gradient_btn') . ' gradient';
 				endif;
 			endwhile;
-		endif;
-	}
-
-	public function ColorIcon1()
-	{
-		$type_color = get_sub_field('select_type_color');
-		if ($type_color == 'Solid') :
-			$this->color_icon = get_sub_field('theme_btn_solid_color');
-		elseif ($type_color == 'Soft') :
-			$this->color_icon = get_sub_field('theme_btn_soft_color');
-		elseif ($type_color == 'Gradient') :
-			$this->color_icon = get_sub_field('gradient_btn') . ' gradient';
 		endif;
 	}
 }
@@ -625,8 +616,9 @@ class LabelIcons
 
 				$icon_color = new Color();
 				$icon_color->ColorIcon();
-				// Get icon
 
+
+				// Get icon
 				$icon = new Icons;
 				$icon->GetIcon();
 				if (have_rows('type_icons')) :
@@ -1600,6 +1592,10 @@ class Features
 	public $link_text = "Learn more";
 	public $default_features = '';
 	public $pattern = NULL;
+	public $iconsize = NULL;
+	public $iconpaddingclass = NULL;
+	public $iconform = NULL;
+	public $linkcolor = NULL;
 
 	//* Function Feutures *//
 	public function Feutures()
@@ -1619,13 +1615,20 @@ class Features
 						$icon->GetIcon();
 
 						if ($icon->icon_type == 'Unicons') :
-							$icon_block = '<div class="icon btn btn-circle btn-lg btn-' . $icon_color->color_icon . ' disabled mb-3">' . $icon->icon . '</div>';
+							$icon_block = '<div class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
 						else :
 							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' mb-3"/>';
-						endif; ?>
+						endif;
 
-						<?php
+						if (get_sub_field('title')) {
+							$this->title = get_sub_field('title');
+						}
+						if (get_sub_field('paragraph')) {
+							$this->paragraph = get_sub_field('paragraph');
+						}
+
 						$link = new Links();
+						$link->linkcolor = $this->linkcolor;
 						$link_s = $link->Link();
 						$pattern = $this->pattern;
 						echo wp_sprintf($pattern, $this->title, $this->paragraph, $icon_block, $link_s); //> На дереве сидят 5 обезьян

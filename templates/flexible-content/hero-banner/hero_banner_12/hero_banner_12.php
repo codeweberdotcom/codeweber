@@ -73,7 +73,7 @@ $features->paragraph = 'Nulla vitae elit libero, a pharetra augue. Donec id elit
 $features->link_url = "#";
 $features->link_text = "Learn more";
 $features->pattern = '<div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
+         <div class="card shadow-lg">
           <div class="card-body">
              %3$s
             <h4>%1$s</h4>
