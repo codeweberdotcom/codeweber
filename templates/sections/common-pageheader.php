@@ -7,7 +7,7 @@ $user_id = get_the_author_meta('ID');
 			<div class="col-md-10 col-xl-8 mx-auto">
 				<h1 class="display-1 mb-3"><?php brk_page_title(); ?></h1>
 				<p class="lead px-lg-5 px-xxl-8"></p>
-				<?php if (is_single()) : ?>
+				<?php if (is_single() && !is_singular('services')) : ?>
 					<ul class="post-meta">
 						<li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d M Y'); ?></span></li>
 						<li class="post-author"><i class="uil uil-user"></i><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="text-reset"><span> <?php echo __("By", "codeweber"); ?> <?php echo get_the_author(); ?></span></a></li>

@@ -6,6 +6,5 @@ while (have_posts()) :
       get_template_part('templates/sections/common', 'pageheader');
    endif;
    get_template_part('templates/content/page', ''); ?>
-
 <?php endwhile ?>
 <?php get_footer();
