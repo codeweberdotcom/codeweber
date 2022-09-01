@@ -19,8 +19,7 @@ $settings->GetDataACF(); // получаем занчения полей ACF
 <?php
 $my_posts = new WP_Query;
 $myposts = $my_posts->query(array(
-   'post_type' => 'post',
-   'posts_per_page' => 2
+   'post_type' => 'post'
 )); ?>
 <h3 class="mb-6"><?php echo $settings->title; ?></h3>
 <div class="swiper-container blog grid-view mb-16 swiper-container-0" data-margin="30" data-nav="false" data-dots="true" data-items-md="2" data-items-xs="1">

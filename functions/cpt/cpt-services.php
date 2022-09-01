@@ -33,7 +33,7 @@ function cptui_register_my_cpts_services()
 		"can_export" => true,
 		"rewrite" => ["slug" => "services", "with_front" => true],
 		"query_var" => true,
-		"supports" => ["title", "editor", "thumbnail", "excerpt"],
+		"supports" => ["title", "editor", "thumbnail", "excerpt", "revisions", "comments"],
 		"taxonomies" => ["service_category", "types_of_services"],
 		"show_in_graphql" => false,
 	];

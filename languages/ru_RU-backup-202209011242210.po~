@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-09-01 07:47+0000\n"
+"PO-Revision-Date: 2022-09-01 12:41+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -90,7 +90,7 @@ msgstr "Все права защищены"
 #: templates/header/header-sandbox-08.php:119
 #: templates/header/header-sandbox-09.php:119
 msgid "Already have an account?"
-msgstr ""
+msgstr "Уже есть аккаунт?"
 
 #: templates/flexible-content/widgets/widget_6/widget_6.php:14
 msgid "Archive"
@@ -117,6 +117,10 @@ msgstr "Категории"
 
 #: templates/header/header-sandbox-12.php:101
 msgid "CFollow Us"
+msgstr ""
+
+#: functions/integrations/acf.php:35
+msgid "Chrome Theme"
 msgstr ""
 
 #. Name of the theme
@@ -159,7 +163,7 @@ msgstr "Один комментарий"
 #: templates/header/header-sandbox-08.php:114
 #: templates/header/header-sandbox-09.php:114
 msgid "Confirm Password"
-msgstr ""
+msgstr "Подтвердить пароль"
 
 #: templates/header/header-sandbox-02.php:64
 #: templates/header/header-sandbox-10.php:64
@@ -183,7 +187,7 @@ msgstr ""
 #: templates/header/header-sandbox-08.php:74
 #: templates/header/header-sandbox-09.php:74
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Еще нет аккаунта?"
 
 #: templates/footer/footer-sandbox-4.php:47
 msgid "E-mail"
@@ -195,7 +199,7 @@ msgstr "Редактировать"
 
 #: templates/footer/footer-sandbox-25.php:57
 msgid "Elsewhere"
-msgstr ""
+msgstr "Или здесь"
 
 #: templates/header/header-sandbox-05.php:98
 #: templates/header/header-sandbox-08.php:63
@@ -233,7 +237,7 @@ msgstr ""
 #: templates/header/header-sandbox-08.php:59
 #: templates/header/header-sandbox-09.php:59
 msgid "Fill your email and password to sign in."
-msgstr ""
+msgstr "Заполните E-mail и пароль для входа"
 
 #: templates/header/header-sandbox-09.php:164
 #: templates/header/header-sandbox-15.php:81
@@ -257,7 +261,7 @@ msgstr ""
 #: templates/header/header-sandbox-08.php:73
 #: templates/header/header-sandbox-09.php:73
 msgid "Forgot Password?"
-msgstr ""
+msgstr "Забыли пароль?"
 
 #: templates/header/header-sandbox-06.php:50
 #: templates/header/header-sandbox-11.php:40
@@ -297,6 +301,10 @@ msgstr "Свяжитесь с нами"
 #: templates/footer/footer-sandbox-19.php:14
 msgid "Get Started"
 msgstr ""
+
+#: 404.php:13
+msgid "Go to Homepage"
+msgstr "Перейти на Главную"
 
 #: functions/navmenus.php:14
 msgid "Header Menu"
@@ -446,6 +454,10 @@ msgstr "Разработано"
 msgid "Main Sidebar"
 msgstr ""
 
+#: functions/integrations/acf.php:24 functions/integrations/acf.php:28
+msgid "Meta"
+msgstr ""
+
 #: templates/header/header-sandbox-05.php:94
 #: templates/header/header-sandbox-08.php:100
 #: templates/header/header-sandbox-09.php:100
@@ -463,11 +475,15 @@ msgstr "Ваше имя *"
 #: templates/footer/footer-sandbox-7.php:54
 #: templates/footer/footer-sandbox-8.php:15
 msgid "Need Help?"
-msgstr ""
+msgstr "Нужна помощь?"
 
 #: templates/header/header-sandbox-06.php:5
 msgid "New version of our product is finally"
 msgstr ""
+
+#: 404.php:11
+msgid "Oops! Page Not Found."
+msgstr "Ой! Страница не найдена."
 
 #: templates/header/header-sandbox-05.php:114
 #: templates/header/header-sandbox-08.php:75
@@ -475,7 +491,7 @@ msgstr ""
 #: templates/header/header-sandbox-09.php:75
 #: templates/header/header-sandbox-09.php:120
 msgid "or"
-msgstr ""
+msgstr "или"
 
 #: templates/footer/footer-sandbox-1.php:48
 #: templates/footer/footer-sandbox-10.php:43
@@ -506,7 +522,7 @@ msgstr ""
 #: templates/header/header-sandbox-09.php:68
 #: templates/header/header-sandbox-09.php:109
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 #. Name of the template
 msgid "Pattern Library"
@@ -534,6 +550,9 @@ msgstr "Популярные статьи"
 
 #: templates/content/loop.php:14
 #: templates/flexible-content/sliders/slider_1/slider_1.php:46
+#: templates/flexible-content/sliders/slider_2/slider_2.php:27
+#: templates/flexible-content/sliders/slider_3/slider_3.php:27
+#: templates/flexible-content/sliders/slider_4/slider_4.php:29
 msgid "Read More"
 msgstr "Читать далее"
 
@@ -547,7 +566,7 @@ msgstr "Свежие статьи"
 msgid "Registration takes less than a minute."
 msgstr ""
 
-#: functions/custom.php:167
+#: functions/custom.php:191
 msgid "Results for: "
 msgstr ""
 
@@ -568,31 +587,52 @@ msgstr ""
 msgid "says:"
 msgstr ""
 
+#: functions/cpt/cpt-services.php:12
+msgid "Service"
+msgstr ""
+
+#: functions/cpt/taxonomy-services.php:11
+#: functions/cpt/taxonomy-services.php:17
+msgid "Service Categories"
+msgstr ""
+
+#: functions/cpt/taxonomy-services.php:12
+msgid "Service Category"
+msgstr ""
+
+#: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:16
+msgid "Services"
+msgstr ""
+
+#: functions/sidebars.php:37 functions/sidebars.php:39
+msgid "Services Sidebar"
+msgstr ""
+
 #: templates/header/header-sandbox-08.php:40
 #: templates/header/header-sandbox-08.php:70
 #: templates/header/header-sandbox-09.php:40
 #: templates/header/header-sandbox-09.php:70
 msgid "Sign In"
-msgstr ""
+msgstr "Войти"
 
 #: templates/header/header-sandbox-05.php:113
 #: templates/header/header-sandbox-08.php:119
 #: templates/header/header-sandbox-09.php:119
 msgid "Sign in"
-msgstr ""
+msgstr "Войти"
 
 #: templates/header/header-sandbox-05.php:42
 #: templates/header/header-sandbox-05.php:110
 #: templates/header/header-sandbox-08.php:116
 #: templates/header/header-sandbox-09.php:116
 msgid "Sign Up"
-msgstr ""
+msgstr "Регистрация"
 
 #: templates/header/header-sandbox-05.php:68
 #: templates/header/header-sandbox-08.php:74
 #: templates/header/header-sandbox-09.php:74
 msgid "Sign up"
-msgstr ""
+msgstr "Регистрация"
 
 #: templates/header/header-sandbox-05.php:89
 #: templates/header/header-sandbox-08.php:95
@@ -635,10 +675,22 @@ msgid ""
 "worry, we hate spam and we respect your privacy."
 msgstr ""
 
+#: functions/integrations/acf.php:38
+msgid "Tab color in Chrome for Android"
+msgstr ""
+
 #: templates/footer/footer-sandbox-25.php:14
 #: templates/flexible-content/widgets/widget_5/widget_5.php:1
 msgid "Tags"
 msgstr "Метки"
+
+#: 404.php:12
+msgid ""
+"The page you are looking for is not available or has been moved. Try a "
+"different page or go to homepage with the button below."
+msgstr ""
+"Страница, которую вы ищете, недоступна или была перемещена. Перейдите на "
+"главную страницу с помощью кнопки ниже."
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "trusted"
@@ -650,6 +702,15 @@ msgstr ""
 #: templates/footer/footer-sandbox-21.php:5
 #: templates/footer/footer-sandbox-27.php:5
 msgid "Try It For Free"
+msgstr ""
+
+#: functions/cpt/taxonomy-services.php:52
+msgid "Type"
+msgstr ""
+
+#: functions/cpt/taxonomy-services.php:51
+#: functions/cpt/taxonomy-services.php:57
+msgid "Types"
 msgstr ""
 
 #: templates/header/header-sandbox-06.php:5
@@ -676,7 +737,7 @@ msgstr ""
 #: templates/header/header-sandbox-08.php:58
 #: templates/header/header-sandbox-09.php:58
 msgid "Welcome Back"
-msgstr ""
+msgstr "Добро пожаловать"
 
 #: comments.php:147
 msgid "Would you like to share your thoughts?"

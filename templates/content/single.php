@@ -97,6 +97,7 @@ global $post;
 						<hr />
 						<?php get_template_part("templates/flexible-content/sliders/slider_1/slider_1"); ?>
 						<?php
+
 						if (comments_open() || get_comments_number()) { ?>
 							<hr />
 						<?php
