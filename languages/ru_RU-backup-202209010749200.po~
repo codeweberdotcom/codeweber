@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-23 15:14+0000\n"
+"PO-Revision-Date: 2022-09-01 07:47+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Loco-Version: 2.6.2; wp-6.0.1"
+"X-Loco-Version: 2.6.2; wp-6.0.2"
 
 #. 1: Comment date, 2: Comment time.
 #: functions/lib/comments-helper.php:50
@@ -53,7 +53,7 @@ msgid ""
 "amet risus."
 msgstr ""
 
-#: templates/content/single.php:89
+#: templates/content/single.php:86
 msgid "All Posts"
 msgstr "Все Статьи"
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Archive"
 msgstr "Статьи по месяцам"
 
-#: templates/content/loop.php:44 templates/sections/common-pageheader.php:13
+#: templates/content/loop.php:42 templates/sections/common-pageheader.php:13
 msgid "By"
 msgstr "Автор"
 
@@ -104,7 +104,7 @@ msgstr "Автор"
 msgid "by over 5000+ clients. Join them now and grow your business."
 msgstr ""
 
-#: comments.php:130
+#: comments.php:129
 msgid "By using this comment form you agree with our Privacy Policy"
 msgstr ""
 "Используя эту форму для комментариев, вы соглашаетесь с нашей Политикой "
@@ -124,17 +124,17 @@ msgstr ""
 msgid "Codeweber"
 msgstr "Codeweber"
 
-#: comments.php:156
+#: comments.php:155
 #, fuzzy
 #| msgid "Comment"
 msgid "Comment *"
 msgstr "Комменатрий *"
 
-#: templates/content/loop.php:45 templates/sections/common-pageheader.php:14
+#: templates/content/loop.php:43 templates/sections/common-pageheader.php:14
 msgid "Comments"
 msgstr "Комментарии"
 
-#: comments.php:171
+#: comments.php:169
 msgid "Comments are closed."
 msgstr "Комментирование закрыто."
 
@@ -205,7 +205,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: comments.php:141
+#: comments.php:140
 msgid "Email *"
 msgstr ""
 
@@ -269,7 +269,7 @@ msgstr ""
 #: templates/footer/footer-sandbox-25.php:49
 #: templates/footer/footer-sandbox-3.php:24
 msgid "Get in Touch"
-msgstr ""
+msgstr "Свяжитесь с нами"
 
 #: templates/footer/footer-sandbox-10.php:24
 #: templates/footer/footer-sandbox-11.php:29
@@ -405,11 +405,11 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
-#: templates/content/loop.php:51 templates/sections/common-pageheader.php:19
+#: templates/content/loop.php:47 templates/sections/common-pageheader.php:19
 msgid "Likes"
 msgstr "Спасибо"
 
-#: comments.php:135 comments.php:142 comments.php:157
+#: comments.php:134 comments.php:141 comments.php:156
 msgid "Looks good!"
 msgstr "Отлично!"
 
@@ -452,7 +452,7 @@ msgstr ""
 msgid "Name"
 msgstr "Ваше имя"
 
-#: comments.php:134
+#: comments.php:133
 msgid "Name *"
 msgstr "Ваше имя *"
 
@@ -516,23 +516,24 @@ msgstr "Библиотека шаблонов"
 msgid "Phone"
 msgstr ""
 
-#: comments.php:158
+#: comments.php:157
 msgid "Please enter your comment."
 msgstr "Введите ваш комментарий, пожалуйста."
 
-#: comments.php:143
+#: comments.php:142
 msgid "Please enter your E-Mail."
 msgstr "Введите ваш E-Mail, пожалуйста."
 
-#: comments.php:136
+#: comments.php:135
 msgid "Please enter your first name."
 msgstr "Введите ваше имя, пожалуйста."
 
 #: templates/footer/footer-sandbox-25.php:5
 msgid "Popular Posts"
-msgstr ""
+msgstr "Популярные статьи"
 
 #: templates/content/loop.php:14
+#: templates/flexible-content/sliders/slider_1/slider_1.php:46
 msgid "Read More"
 msgstr "Читать далее"
 
@@ -599,7 +600,7 @@ msgstr ""
 msgid "Sign up to"
 msgstr ""
 
-#: comments.php:147
+#: comments.php:146
 msgid "Submit"
 msgstr "Отправить комментарий"
 
@@ -677,13 +678,17 @@ msgstr ""
 msgid "Welcome Back"
 msgstr ""
 
-#: comments.php:148
+#: comments.php:147
 msgid "Would you like to share your thoughts?"
 msgstr "Напишите ваш комментарий."
 
-#: templates/content/single.php:80
+#: templates/content/single.php:77
 msgid "Writer"
 msgstr "Писатель"
+
+#: templates/flexible-content/sliders/slider_1/slider_1.php:5
+msgid "You Might Also Like"
+msgstr "Вам также может понравится"
 
 #: functions/lib/comments-helper.php:97
 msgid "Your comment is awaiting moderation."

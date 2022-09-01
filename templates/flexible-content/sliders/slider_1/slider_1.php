@@ -29,7 +29,7 @@ $myposts = $my_posts->query(array(
          <?php
          // обрабатываем результат
          foreach ($myposts as $post) { ?>
-            <div class="swiper-slide swiper-slide-active" role="group" aria-label="1 / 4" style="width: 343.5px; margin-right: 30px;">
+            <div class="swiper-slide">
                <article>
                   <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="<?php the_permalink(); ?>">
                         <?php

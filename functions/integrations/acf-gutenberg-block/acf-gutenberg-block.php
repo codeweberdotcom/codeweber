@@ -28,7 +28,7 @@ function my_acf_blocks_init()
    // Check function exists.
    if (function_exists('acf_register_block_type')) {
 
-      // Register a hero_banner block.
+      // Register a Hero_banner block.
       acf_register_block_type(array(
          'name'              => 'hero_banner',
          'title'             => __('Hero banner'),
@@ -44,7 +44,7 @@ function my_acf_blocks_init()
 
       ));
 
-      // Register a hero_banner block.
+      // Register Grid block.
       acf_register_block_type(array(
          'name'              => 'grid',
          'title'             => __('Grid block'),
@@ -60,7 +60,7 @@ function my_acf_blocks_init()
 
       ));
 
-      // Register a slider block.
+      // Register a Slider block.
       acf_register_block_type(array(
          'name'              => 'sliders',
          'title'             => __('Slider'),
@@ -76,7 +76,39 @@ function my_acf_blocks_init()
 
       ));
 
-      // Register a slider block.
+      // Register a CTA block.
+      acf_register_block_type(array(
+         'name'              => 'call-to-action',
+         'title'             => __('Call to action'),
+         'description'       => __('call to Action block flexible block.'),
+         'render_template'   => 'templates/flexible-content/call-to-action.php',
+         'category'          => 'codeweber',
+         'align'           => 'full',
+         'supports'        => array(
+            'align'        => array('full'),
+            'align'        => true,
+         ),
+         'mode' => 'preview',
+
+      ));
+
+      // Register a Blog block.
+      acf_register_block_type(array(
+         'name'              => 'blog',
+         'title'             => __('Blog'),
+         'description'       => __('Blog block flexible block.'),
+         'render_template'   => 'templates/flexible-content/blog.php',
+         'category'          => 'codeweber',
+         'align'           => 'full',
+         'supports'        => array(
+            'align'        => array('full'),
+            'align'        => true,
+         ),
+         'mode' => 'preview',
+
+      ));
+
+      // Register a Process block.
       acf_register_block_type(array(
          'name'              => 'process',
          'title'             => __('Process'),
@@ -92,6 +124,7 @@ function my_acf_blocks_init()
 
       ));
 
+      // Register a Widgets block.
       acf_register_block_type(array(
          'name'              => 'widgets',
          'title'             => __('Widgets'),
@@ -106,6 +139,7 @@ function my_acf_blocks_init()
          'mode' => 'preview',
       ));
 
+      // Register a Features block.
       acf_register_block_type(
          array(
             'name'              => 'features',
@@ -123,6 +157,7 @@ function my_acf_blocks_init()
          )
       );
 
+      // Register a Facts block.
       acf_register_block_type(
          array(
             'name'              => 'facts',
@@ -141,6 +176,8 @@ function my_acf_blocks_init()
          )
 
       );
+
+      // Register a FAQ block.
       acf_register_block_type(
          array(
             'name'              => 'faq',
@@ -159,7 +196,9 @@ function my_acf_blocks_init()
          )
 
       );
-      // Register a restricted block.
+
+
+      // Register a Restricted block.
       acf_register_block_type(array(
          'name'                => 'restricted',
          'title'                => 'Restricted',
@@ -174,7 +213,8 @@ function my_acf_blocks_init()
          'render_template' => 'template-parts/flexible-content/block-restricted.php',
       ));
 
-      // Register a section.
+
+      // Register a Section.
       acf_register_block_type(
          array(
             'name'              => 'section',

@@ -1,0 +1,98 @@
+{
+    "key": "group_63107c84a39f7",
+    "title": "Call to Action",
+    "fields": [
+        {
+            "key": "field_63107c8acfd4f",
+            "label": "Call to Action",
+            "name": "call-to-action",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_63107c903e7ce": {
+                    "key": "layout_63107c903e7ce",
+                    "name": "call-to-action_1",
+                    "label": "Call to Action 1",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63107c9ccfd50": {
+                    "key": "layout_63107c9ccfd50",
+                    "name": "call-to-action_2",
+                    "label": "Call to Action 2",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63108c93edd83": {
+                    "key": "layout_63108c93edd83",
+                    "name": "call-to-action_3",
+                    "label": "Call to Action 3",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63108c92edd82": {
+                    "key": "layout_63108c92edd82",
+                    "name": "call-to-action_4",
+                    "label": "Call to Action 4",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63108c91edd81": {
+                    "key": "layout_63108c91edd81",
+                    "name": "call-to-action_5",
+                    "label": "Call to Action 5",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63107ca2cfd51": {
+                    "key": "layout_63107ca2cfd51",
+                    "name": "call-to-action_100",
+                    "label": "Call to Action 100",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Добавить",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/call-to-action"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1662028960
+}

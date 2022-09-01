@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-08-23 20:10+0000\n"
+"PO-Revision-Date: 2022-09-01 08:09+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Loco-Version: 2.6.2; wp-6.0.1"
+"X-Loco-Version: 2.6.2; wp-6.0.2"
 
 #. 1: Comment date, 2: Comment time.
 #: functions/lib/comments-helper.php:50
@@ -119,6 +119,10 @@ msgstr "Категории"
 msgid "CFollow Us"
 msgstr ""
 
+#: functions/integrations/acf.php:35
+msgid "Chrome Theme"
+msgstr ""
+
 #. Name of the theme
 #. Author of the theme
 msgid "Codeweber"
@@ -195,7 +199,7 @@ msgstr "Редактировать"
 
 #: templates/footer/footer-sandbox-25.php:57
 msgid "Elsewhere"
-msgstr ""
+msgstr "Или здесь"
 
 #: templates/header/header-sandbox-05.php:98
 #: templates/header/header-sandbox-08.php:63
@@ -269,7 +273,7 @@ msgstr ""
 #: templates/footer/footer-sandbox-25.php:49
 #: templates/footer/footer-sandbox-3.php:24
 msgid "Get in Touch"
-msgstr ""
+msgstr "Свяжитесь с нами"
 
 #: templates/footer/footer-sandbox-10.php:24
 #: templates/footer/footer-sandbox-11.php:29
@@ -297,6 +301,10 @@ msgstr "Свяжитесь с нами"
 #: templates/footer/footer-sandbox-19.php:14
 msgid "Get Started"
 msgstr ""
+
+#: 404.php:13
+msgid "Go to Homepage"
+msgstr "Перейти на Главную"
 
 #: functions/navmenus.php:14
 msgid "Header Menu"
@@ -446,6 +454,10 @@ msgstr "Разработано"
 msgid "Main Sidebar"
 msgstr ""
 
+#: functions/integrations/acf.php:24 functions/integrations/acf.php:28
+msgid "Meta"
+msgstr ""
+
 #: templates/header/header-sandbox-05.php:94
 #: templates/header/header-sandbox-08.php:100
 #: templates/header/header-sandbox-09.php:100
@@ -463,11 +475,15 @@ msgstr "Ваше имя *"
 #: templates/footer/footer-sandbox-7.php:54
 #: templates/footer/footer-sandbox-8.php:15
 msgid "Need Help?"
-msgstr ""
+msgstr "Нужна помощь?"
 
 #: templates/header/header-sandbox-06.php:5
 msgid "New version of our product is finally"
 msgstr ""
+
+#: 404.php:11
+msgid "Oops! Page Not Found."
+msgstr "Ой! Страница не найдена."
 
 #: templates/header/header-sandbox-05.php:114
 #: templates/header/header-sandbox-08.php:75
@@ -530,10 +546,13 @@ msgstr "Введите ваше имя, пожалуйста."
 
 #: templates/footer/footer-sandbox-25.php:5
 msgid "Popular Posts"
-msgstr ""
+msgstr "Популярные статьи"
 
 #: templates/content/loop.php:14
 #: templates/flexible-content/sliders/slider_1/slider_1.php:46
+#: templates/flexible-content/sliders/slider_2/slider_2.php:27
+#: templates/flexible-content/sliders/slider_3/slider_3.php:27
+#: templates/flexible-content/sliders/slider_4/slider_4.php:29
 msgid "Read More"
 msgstr "Читать далее"
 
@@ -547,7 +566,7 @@ msgstr "Свежие статьи"
 msgid "Registration takes less than a minute."
 msgstr ""
 
-#: functions/custom.php:167
+#: functions/custom.php:191
 msgid "Results for: "
 msgstr ""
 
@@ -566,6 +585,27 @@ msgstr ""
 
 #: functions/lib/comments-helper.php:43
 msgid "says:"
+msgstr ""
+
+#: functions/cpt/cpt-services.php:12
+msgid "Service"
+msgstr ""
+
+#: functions/cpt/taxonomy-services.php:11
+#: functions/cpt/taxonomy-services.php:17
+msgid "Service Categories"
+msgstr ""
+
+#: functions/cpt/taxonomy-services.php:12
+msgid "Service Category"
+msgstr ""
+
+#: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:16
+msgid "Services"
+msgstr ""
+
+#: functions/sidebars.php:37 functions/sidebars.php:39
+msgid "Services Sidebar"
 msgstr ""
 
 #: templates/header/header-sandbox-08.php:40
@@ -635,10 +675,22 @@ msgid ""
 "worry, we hate spam and we respect your privacy."
 msgstr ""
 
+#: functions/integrations/acf.php:38
+msgid "Tab color in Chrome for Android"
+msgstr ""
+
 #: templates/footer/footer-sandbox-25.php:14
 #: templates/flexible-content/widgets/widget_5/widget_5.php:1
 msgid "Tags"
 msgstr "Метки"
+
+#: 404.php:12
+msgid ""
+"The page you are looking for is not available or has been moved. Try a "
+"different page or go to homepage with the button below."
+msgstr ""
+"Страница, которую вы ищете, недоступна или была перемещена. Перейдите на "
+"главную страницу с помощью кнопки ниже."
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "trusted"
@@ -650,6 +702,15 @@ msgstr ""
 #: templates/footer/footer-sandbox-21.php:5
 #: templates/footer/footer-sandbox-27.php:5
 msgid "Try It For Free"
+msgstr ""
+
+#: functions/cpt/taxonomy-services.php:52
+msgid "Type"
+msgstr ""
+
+#: functions/cpt/taxonomy-services.php:51
+#: functions/cpt/taxonomy-services.php:57
+msgid "Types"
 msgstr ""
 
 #: templates/header/header-sandbox-06.php:5

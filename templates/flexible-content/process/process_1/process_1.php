@@ -15,7 +15,6 @@ $settings->GetDataACF();
 
 /* Add Features */
 $features = new Features();
-$features->root_theme = get_template_directory_uri();
 $features->title = 'Collect Ideas';
 $features->paragraph = 'Nulla vitae elit libero pharetra augue dapibus. Praesent commodo cursus.';
 $features->link_url = "#";
@@ -61,10 +60,11 @@ $features->default_features = '<div class="d-flex flex-row mb-6">
                </div>
             </div>';
 
+
+
 $image = new ImageCustomizable;
-$image->root_theme = get_template_directory_uri();
-$image->imagefull = get_template_directory_uri() . '/dist/img/photos/about7.jpg';
-$image->imagesmall = get_template_directory_uri() . '/dist/img/photos/about7.jpg';
+$image->imagefull = $image->root_theme . '/dist/img/photos/about7.jpg';
+$image->imagesmall = $image->root_theme . '/dist/img/photos/about7.jpg';
 $image->imagebigsize = 'brk_big';
 $image->imagethumbsize = 'sandbox_hero_11';
 ?>

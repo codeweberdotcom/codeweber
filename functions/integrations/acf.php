@@ -1491,6 +1491,11 @@ class ImageCustomizable
 	public $hoverclass = '';
 	public $hovergradient = '';
 	public $imagealt = '';
+
+	function __construct()
+	{
+		$this->root_theme = get_template_directory_uri();
+	}
 	function image()
 	{
 		if (have_rows('image_customizable')) : ?>
@@ -1619,6 +1624,10 @@ class Features
 	public $linkcolor = NULL;
 	public $iconcolor = NULL;
 
+	function __construct()
+	{
+		$this->root_theme = get_template_directory_uri();
+	}
 	//* Function Feutures *//
 	public function Feutures()
 	{

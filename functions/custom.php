@@ -200,6 +200,18 @@ function brk_page_title()
     endif;
 }
 
+/** Blog loop excerpt more link and 20 symbols */
+add_filter('excerpt_more', 'new_excerpt_more');
+function new_excerpt_more($more)
+{
+    global $post;
+    return '<a href="' . get_permalink($post) . '"> ...</a>';
+}
+
+add_filter('excerpt_length', function () {
+    return 8;
+});
+
 
 /** Function Recent Post Widget */
 function sandbox_recent_post()
