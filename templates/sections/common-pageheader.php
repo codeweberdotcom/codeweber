@@ -1,6 +1,5 @@
 <?php
 $user_id = get_the_author_meta('ID');
-
 global $post;
 
 if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services')) { ?>
@@ -8,9 +7,8 @@ if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services
 	<?php } else { ?>
 		<section class="wrapper bg-soft-primary">
 		<?php }
-		?>
 
-		<?php if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services')) { ?>
+		 if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services')) { ?>
 			<div class="container pt-10 pb-12 pt-md-14 pb-md-14 text-left">
 				<div class="row">
 					<div class="col-md-10 col-xl-8 mx-0">
@@ -20,10 +18,8 @@ if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services
 							<div class="row">
 								<div class="col-md-10 col-xl-8 mx-auto">
 									<h1 class="display-1 mb-3"><?php brk_page_title(); ?></h1>
-								<?php } ?>
-
-
-								<?php if (is_single() && !is_singular('services')) : ?>
+								<?php }
+                                if (is_single() && !is_singular('services')) : ?>
 									<p class="lead px-lg-5 px-xxl-8">
 									<ul class="post-meta">
 										<li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d M Y'); ?></span></li>
@@ -38,9 +34,7 @@ if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services
 									</ul>
 									</p>
 								<?php endif;
-
                                 // brk_breadcrumbs();
-
 								?>
 								</div>
 								<!-- /column -->
