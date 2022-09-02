@@ -8,11 +8,11 @@ $phone = get_field('phone', 'option');
          <div class="col-xl-12 mx-auto">
             <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-400" data-image-src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/bg3.jpg">
                <div class="card-body p-6 p-md-11 d-lg-flex flex-row align-items-lg-center justify-content-md-between text-left text-lg-start">
-                  <div class="col-lg-7">
-                     <h3 class="display-6 text-white mb-0">Консультация специалиста <br>Донстрах</h3>
+                  <div class="col-lg-6 col-xl-6 col-xxl-7">
+                     <h3 class="display-6 text-white mb-4 mb-lg-0">Консультация специалиста <br>Донстрах</h3>
                   </div>
                   <div class="col">
-                     <div class="d-flex">
+                     <div class="d-flex mb-4 mb-lg-0">
                         <div>
                            <a href="#" class="btn btn-circle btn-outline-white btn-lg me-3"><i class="uil uil-phone"></i></a>
                         </div>
