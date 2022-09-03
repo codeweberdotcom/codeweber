@@ -74,14 +74,14 @@ $features->default_features = '<div class="col-md-6">
 <section class="wrapper bg-light">
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-         <div class="col-md-8 col-lg-6 col-xl-5 order-lg-2 position-relative">
+         <div class="col-md-8 col-lg-6 col-xl-5 position-relative <?php echo $settings->column_one; ?>">
             <div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>
             <figure class="rounded">
                <?php $image->image(); ?>
             </figure>
          </div>
          <!--/column -->
-         <div class="col-lg-6">
+         <div class="col-lg-6 <?php echo $settings->column_two; ?>">
             <h2 class="display-4 mb-3"><?php echo $settings->title; ?></h2>
             <p class="lead fs-lg"><?php echo $settings->subtitle; ?></p>
             <p class="mb-6"><?php echo $settings->paragraph; ?></p>

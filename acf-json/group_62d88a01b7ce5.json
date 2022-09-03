@@ -199,6 +199,48 @@
             "maxlength": ""
         },
         {
+            "key": "field_6313b92df92fc",
+            "label": "Grid image",
+            "name": "grid_image",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_6313b92df92fd",
+                    "label": "image",
+                    "name": "image",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "field_630542ca16dc0"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
+        },
+        {
             "key": "field_62d88aa4234a2",
             "label": "Paragraph",
             "name": "paragraph",
@@ -505,7 +547,8 @@
                     "choices": {
                         "Unicons": "Unicons",
                         "SVG": "SVG",
-                        "Number": "Number"
+                        "Number": "Number",
+                        "None": "None"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -4556,6 +4599,25 @@
                     ]
                 }
             ]
+        },
+        {
+            "key": "field_631366b6d4955",
+            "label": "Mirror",
+            "name": "mirror",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -4576,5 +4638,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661952944
+    "modified": 1662240979
 }

@@ -412,6 +412,8 @@ class Settings
 	public $textcolor = 'white';
 	public $section_id = NULL;
 	public $section_classes = NULL;
+	public $column_one = NULL;
+	public $column_two = NULL;
 
 	public function __construct()
 	{
@@ -421,6 +423,16 @@ class Settings
 
 	public function GetDataACF()
 	{
+
+		if (get_sub_field('mirror') == 1) :
+			$this->column_one = '';
+			$this->column_two = 'order-lg-2';
+		elseif (get_sub_field('mirror') == 0) :
+			$this->column_one = 'order-lg-2';
+			$this->column_two = '';
+		endif;
+
+
 		if (get_sub_field('title')) :
 			$this->title = get_sub_field('title');
 		endif;
@@ -1653,6 +1665,7 @@ class Features
 							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-' . $this->iconsize . ' text-' . $icon_color->base_color_icon . ' ' . $this->iconpaddingclass . '"/>';
 						elseif ($icon->icon_type == 'Number') :
 							$icon_block = '<span class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number fs-18">' . $icon->iconnumber . '</span></span>';
+						elseif ($icon->icon_type == 'None') :
 						endif;
 
 						if (get_sub_field('title')) {
@@ -1697,11 +1710,13 @@ class Features
 						$icon->GetIcon();
 
 						if ($icon->icon_type == 'Unicons') :
-							$icon_block = '<div class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
+							$icon_block = '<div class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
 						elseif ($icon->icon_type == 'SVG') :
-							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"/>';
+							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-' . $this->iconsize . ' text-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"/>';
 						elseif ($icon->icon_type == 'Number') :
-							$icon_block = '<span class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number">' . $icon->iconnumber . '</span></span>';
+							$icon_block = '<span class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number">' . $icon->iconnumber . '</span></span>';
+						elseif ($icon->icon_type == 'None') :
+
 						endif;
 
 						if (get_sub_field('title')) {
