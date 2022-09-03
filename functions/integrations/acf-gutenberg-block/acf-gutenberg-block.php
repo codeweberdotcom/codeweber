@@ -76,6 +76,22 @@ function my_acf_blocks_init()
 
       ));
 
+      // Register a About block.
+      acf_register_block_type(array(
+         'name'              => 'about',
+         'title'             => __('About'),
+         'description'       => __('About block flexible block.'),
+         'render_template'   => 'templates/flexible-content/about.php',
+         'category'          => 'codeweber',
+         'align'           => 'full',
+         'supports'        => array(
+            'align'        => array('full'),
+            'align'        => true,
+         ),
+         'mode' => 'preview',
+
+      ));
+
       // Register a CTA block.
       acf_register_block_type(array(
          'name'              => 'call-to-action',

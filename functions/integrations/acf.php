@@ -1650,7 +1650,7 @@ class Features
 						if ($icon->icon_type == 'Unicons') :
 							$icon_block = '<div class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
 						elseif ($icon->icon_type == 'SVG') :
-							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-' . $this->iconsize . ' text-' . $icon_color->base_color_icon . ' mb-3"/>';
+							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-' . $this->iconsize . ' text-' . $icon_color->base_color_icon . ' ' . $this->iconpaddingclass . '"/>';
 						elseif ($icon->icon_type == 'Number') :
 							$icon_block = '<span class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number fs-18">' . $icon->iconnumber . '</span></span>';
 						endif;
@@ -1665,8 +1665,6 @@ class Features
 						$link = new Links();
 						$link->linkcolor = $this->linkcolor;
 						$link_s = $link->Link();
-
-
 						echo wp_sprintf($this->pattern, $this->title, $this->paragraph, $icon_block, $link_s, $iconcolor); //> На дереве сидят 5 обезьян
 						$i++;
 					endwhile;
@@ -1701,7 +1699,7 @@ class Features
 						if ($icon->icon_type == 'Unicons') :
 							$icon_block = '<div class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
 						elseif ($icon->icon_type == 'SVG') :
-							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' mb-3"/>';
+							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-md text-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"/>';
 						elseif ($icon->icon_type == 'Number') :
 							$icon_block = '<span class="icon btn ' . $icon->iconform . ' ' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number">' . $icon->iconnumber . '</span></span>';
 						endif;

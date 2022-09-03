@@ -6,6 +6,7 @@ $settings->title = "Get Consultation";
 $settings->subtitle = "Call Now";
 //$settings->paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
 $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/bg3.jpg';
+$settings->backgroundurl = get_template_directory_uri() . '/dist/img/photos/bg3.jpg';
 $settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4';
 $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
@@ -31,7 +32,7 @@ $phone = get_field('phone', 'option');
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-xl-12 mx-auto">
-            <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-400" data-image-src="<?php echo $settings->imageurl; ?>">
+            <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-400" data-image-src="<?php echo $settings->backgroundurl; ?>">
                <div class="card-body p-6 p-md-11 d-lg-flex flex-row align-items-lg-center justify-content-md-between text-left text-lg-start">
                   <div class="col-lg-6 col-xl-6 col-xxl-7">
                      <h3 class="display-6 text-white mb-4 mb-lg-0"><?php echo $settings->title; ?></h3>
