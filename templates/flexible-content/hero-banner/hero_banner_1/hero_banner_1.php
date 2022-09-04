@@ -1,7 +1,6 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-
 $settings->title = "Grow Your Business with Our Solutions.";
 $settings->paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
 $settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/i2.png';
@@ -10,8 +9,6 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 $settings->backgroundcolor_light = 'light';
 $settings->textcolor = 'white';
-
-
 $settings->GetDataACF();
 
 /* Add buttons */
@@ -32,9 +29,9 @@ $swiper->data_nav = 'data-nav="true"';
 $swiper->data_dots = 'data-dots="true"';
 $swiper->data_margin = 'data-margin="5"';
 $swiper->image_size = 'sandbox_hero_18';
-$swiper->data_items_lg = 'data-items-lg=1';
-$swiper->data_items_md = 'data-items-md=1';
-$swiper->data_items_xs = 'data-items-xs=1';
+$swiper->data_items_lg = 'data-items-lg="1"';
+$swiper->data_items_md = 'data-items-md="1"';
+$swiper->data_items_xs = 'data-items-xs="1"';
 $swiper->data_autoplay = 'data-autoplay="true"';
 $swiper->data_autoplaytime = 'data-autoplaytime="5000"';
 $swiper->default_media = '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/illustrations/i2.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i2@2x.png 2x" alt="" /></figure>';

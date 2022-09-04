@@ -344,6 +344,8 @@ class SwiperSlider
 	public $data_items_lg = 'data-items-lg="1"';
 	public $data_items_md = 'data-items-md="1"';
 	public $data_items_xs = 'data-items-xs="1"';
+	public $data_items_xl = 'data-items-xl="1"';
+	public $data_items_xxl = 'data-items-xxl="1"';
 	public $data_autoplay = 'data-autoplay="false"';
 	public $data_autoplaytime = 'data-autoplaytime="5000"';
 	public $data_effect = 'data-effect="slide"';
@@ -353,7 +355,7 @@ class SwiperSlider
 	{ ?>
 		<!-- swiper-container -->
 		<?php
-		$data_args = $this->data_nav . ' ' . $this->data_dots . ' ' . $this->data_margin . ' ' . $this->data_effect . ' ' . $this->data_autoplay . ' ' . $this->data_autoplaytime . ' ' . $this->data_items_lg . ' ' . $this->data_items_md . ' ' . $this->data_items_xs; ?>
+		$data_args = $this->data_nav . ' ' . $this->data_dots . ' ' . $this->data_margin . ' ' . $this->data_effect . ' ' . $this->data_autoplay . ' ' . $this->data_autoplaytime . ' ' . $this->data_items_lg . ' ' . $this->data_items_md . ' ' . $this->data_items_xs . ' ' . $this->data_items_xl . ' ' . $this->data_items_xxl; ?>
 		<?php if (have_rows('gallery')) : ?>
 			<div class="<?php echo $this->class_swiper; ?>" <?php echo $data_args; ?>>
 				<div class="swiper">
@@ -1059,7 +1061,7 @@ class HeroSlider
 				/* --- */
 				$photo = get_sub_field('photo');
 				if ($photo) :
-					$size = 'sandbox_hero_14';
+					$size = 'sandbox_hero_15';
 					$image_url = esc_url($photo['sizes'][$size]); ?>
 					<div class="swiper-slide h-100 bg-overlay bg-overlay-400 bg-dark" style="background-image:url(<?php echo $image_url; ?>);">
 						<div class="container h-100">
