@@ -1019,6 +1019,7 @@ class HeroSlider
 
 	public function heroslideritems()
 	{
+		$i = 0;
 		if (have_rows('hero_slider_hero_slider')) :
 			while (have_rows('hero_slider_hero_slider')) : the_row();
 
@@ -1063,11 +1064,17 @@ class HeroSlider
 				if ($photo) :
 					$size = 'sandbox_hero_15';
 					$image_url = esc_url($photo['sizes'][$size]); ?>
+					<?php if ($i == 0) : ?>
+						<?php $title_tag = 'h1'; ?>
+					<?php else : ?>
+						<?php $title_tag = 'h2'; ?>
+					<?php endif; ?>
 					<div class="swiper-slide h-100 bg-overlay bg-overlay-400 bg-dark" style="background-image:url(<?php echo $image_url; ?>);">
 						<div class="container h-100">
 							<div class="row h-100">
 								<div class="<?php echo $position_text; ?>">
-									<h2 class="display-1 fs-56 mb-4 text-<?php echo $textcolor; ?> animate__animated animate__slideInDown animate__delay-1s"><?php echo $title; ?></h2>
+									<?php echo '<' . $title_tag . ' class="display-1 fs-56 mb-4 text-' . $textcolor . ' animate__animated animate__slideInDown animate__delay-1s">' . $title . '</' . $title_tag . '>'; ?>
+
 									<p class="lead fs-23 lh-sm mb-7 text-<?php echo $textcolor; ?> animate__animated animate__slideInRight animate__delay-2s"><?php echo $paragraph; ?></p>
 									<!--  buttons group -->
 									<?php $button->showbuttons(); ?>
@@ -1081,7 +1088,9 @@ class HeroSlider
 					</div>
 					<!--/.swiper-slide -->
 				<?php endif; ?>
+				<?php $i++; ?>
 			<?php endwhile; ?>
+
 		<?php else : ?>
 			<div class="swiper-slide h-100 bg-overlay bg-overlay-400 bg-dark" style="background-image:url(<?php echo $this->root_theme; ?>/dist/img/photos/bg7.jpg);">
 				<div class="container h-100">

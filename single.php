@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php
 if (is_singular('services')) :
-	get_template_part('templates/sections/common', 'pageheader');
+	// get_template_part('templates/sections/common', 'pageheader');
 	get_template_part('templates/content/single', 'services');
 else :
 	while (have_posts()) :
