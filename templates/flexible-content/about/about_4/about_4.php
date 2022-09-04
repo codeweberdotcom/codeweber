@@ -24,7 +24,6 @@ $icon_color->ColorIcon();
 $iconcolor = $icon_color->color_icon;
 
 
-
 /** Add list icon */
 $listicon = new ListUnicon;
 $listicon->default_list = '<div class="row gy-3 gx-xl-8">

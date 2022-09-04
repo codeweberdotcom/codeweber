@@ -887,7 +887,7 @@ class Buttons
 						/* Show buttons */
 						if (get_sub_field('select_type') == 'Form') :
 							if (get_sub_field('button_type') == 'Expand') :
-								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2 mt-6" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font . '<span>' . $text_button . '</span></button></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font . '<span>' . $text_button . '</span></button></span>';
 							elseif (get_sub_field('button_type') == 'Play') :
 								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font .  '</button></span>';
 							elseif (get_sub_field('button_type') == 'None') :
@@ -897,7 +897,7 @@ class Buttons
 							endif;
 						else :
 							if (get_sub_field('button_type') == 'Expand') :
-								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $form_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2 mt-6" ' . $ghligthbox . '>' . $icon_font . '<span>' . $text_button . '</span></a></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $form_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font . '<span>' . $text_button . '</span></a></span>';
 							elseif (get_sub_field('button_type') == 'Play') :
 								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font .  '</a></span>';
 							elseif (get_sub_field('button_type') == 'None') :
@@ -977,6 +977,15 @@ class ListUnicon
 	public $icon = '<i class="uil uil-check"></i>';
 	public $color_icon = '-soft-leaf';
 	public $default_list = '';
+	public $listtrue = NULL;
+
+	public function __construct()
+	{
+		if (have_rows('list_icon')) :
+			$this->listtrue = '1';
+		endif;
+	}
+
 	public function listunicons()
 	{
 		if (have_rows('list_icon')) :
@@ -992,6 +1001,7 @@ class ListUnicon
 					?>
 					<div class="row gy-3">
 						<?php while (have_rows('list')) : the_row();
+
 							get_sub_field('icon') != NULL ? $icon = get_sub_field('icon') : $icon = '<i class="uil uil-check"></i>';
 						?>
 							<div class="<?php echo $responsiveclass; ?>">
