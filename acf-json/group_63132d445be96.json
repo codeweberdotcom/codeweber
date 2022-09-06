@@ -481,6 +481,27 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_631714c1abea5",
+                            "label": "Reverse mobile",
+                            "name": "reverse_mobile",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_631714761dbf8"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_6314bcbbd1a19",
                             "label": "Icon color",
                             "name": "icon_color",
@@ -676,5 +697,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662305651
+    "modified": 1662459521
 }
