@@ -853,6 +853,79 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_631a0437a25bb": {
+                    "key": "layout_631a0437a25bb",
+                    "name": "features_100",
+                    "label": "Features 100",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_631a054edc70d",
+                            "label": "Title",
+                            "name": "title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62d88a70234a0"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_631a054edc70e",
+                            "label": "Paragraph",
+                            "name": "paragraph",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62d88aa4234a2"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_631a054edc70f",
+                            "label": "Features",
+                            "name": "features",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62ee5ecf541f1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -880,5 +953,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661953360
+    "modified": 1662649773
 }
