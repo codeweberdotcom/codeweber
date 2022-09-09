@@ -24,7 +24,7 @@ $features->link_url = "#";
 $features->link_text = "Learn more";
 $features->iconpaddingclass = "mb-3";
 $features->pattern = '<div class="col-md-6 col-xl-3">
-         <div class="card shadow-lg card-border-bottom border-%5$s">
+         <div class="card shadow-lg card-border-bottom border-%5$s lift">
           <div class="card-body">
              %3$s
             <h4>%1$s</h4>
@@ -37,7 +37,7 @@ $features->pattern = '<div class="col-md-6 col-xl-3">
       </div>
       <!--/column -->';
 $features->default_features = '<div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg card-border-bottom border-soft-yellow">
+        <div class="card shadow-lg card-border-bottom border-soft-yellow lift">
           <div class="card-body">
             <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/browser.svg" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
             <h4>Content Marketing</h4>
@@ -50,7 +50,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
       </div>
       <!--/column -->
       <div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg card-border-bottom border-soft-green">
+        <div class="card shadow-lg card-border-bottom border-soft-green lift">
           <div class="card-body">
             <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/chat-2.svg" class="svg-inject icon-svg icon-svg-md text-green mb-3" alt="" />
             <h4>Social Engagement</h4>
@@ -63,7 +63,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
       </div>
       <!--/column -->
       <div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg card-border-bottom border-soft-orange">
+        <div class="card shadow-lg card-border-bottom border-soft-orange lift">
           <div class="card-body">
             <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/id-card.svg" class="svg-inject icon-svg icon-svg-md text-orange mb-3" alt="" />
             <h4>Identity & Branding</h4>
@@ -76,7 +76,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
       </div>
       <!--/column -->
       <div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg card-border-bottom border-soft-blue">
+        <div class="card shadow-lg card-border-bottom border-soft-blue lift">
           <div class="card-body">
             <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/gift.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="" />
             <h4>Product Design</h4>
@@ -90,7 +90,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
 ?>
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
   <div class="container pt-14 pt-md-16 pb-9 pb-md-11 pb-md-17">
-    <div class="row gx-md-5 gy-5 mt-n18 mt-md-n21 mb-14 mb-md-17">
+    <div class="row gx-md-5 gy-5 mt-n18 mt-md-n21">
       <?php echo $features->Feutures(); ?>
       <!--/column -->
     </div>

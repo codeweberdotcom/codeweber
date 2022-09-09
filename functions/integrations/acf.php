@@ -427,10 +427,6 @@ class Settings
 	public function GetDataACF()
 	{
 
-
-
-
-
 		if (get_sub_field('mirror') == 0) :
 
 			if (get_sub_field('reverse_mobile') == 1) :
@@ -441,10 +437,7 @@ class Settings
 				$this->column_two = '';
 			endif;
 			$this->style_parameters = 'top: -2rem; right: -1.9rem;';
-
-
 		elseif (get_sub_field('mirror') == 1) :
-
 			if (get_sub_field('reverse_mobile') == 1) :
 				$this->column_one = 'order-2 order-lg-1';
 				$this->column_two = 'order-1 order-lg-2';
@@ -452,9 +445,7 @@ class Settings
 				$this->column_one = '';
 				$this->column_two = '';
 			endif;
-
 			$this->style_parameters = 'top: -2rem; left: -1.9rem;';
-
 		endif;
 
 
@@ -642,8 +633,12 @@ class LabelIcons
 	public $color_icon = 'primary';
 	public $default_card_body = '';
 	public $pattern = NULL;
-	public $icon_svg_classes = 'svg-inject icon-svg icon-svg-lg mx-auto me-4 mb-lg-3 mb-xl-0';
-	public $icon_classes = 'icon btn btn-circle btn-lg disabled mx-auto me-4 mb-lg-3 mb-xl-0';
+	public $icon_svg_classes = 'svg-inject icon-svg icon-svg-lg mx-auto me-4 mb-lg-3 mb-xl-0'; // на удаление
+	public $icon_classes = 'icon btn btn-circle btn-lg disabled mx-auto me-4 mb-lg-3 mb-xl-0'; // на удаление
+
+	public $iconpaddingclass = 'mx-auto me-4 mb-lg-3 mb-xl-0';
+
+
 
 	public function GetLabel()
 	{
@@ -759,18 +754,28 @@ class LabelIcons
 				// Select Color 
 				$icon_color = new Color();
 				$icon_color->ColorIcon();
+				$iconcolor = $icon_color->color_icon;
 
 				// Get icon
 				$icon = new Icons;
 				$icon->GetIcon();
+				$this->iconsize = $icon->iconsize;
+
+
 
 				if (have_rows('type_icons')) :
 					while (have_rows('type_icons')) : the_row();
+
+
 						if ($icon->icon_type == 'Unicons') :
-							$icon_block = '<div class="' . $this->icon_classes . ' btn-' . $icon_color->color_icon . '">' . get_sub_field('icon') . '</div>';
-						else :
-							$icon_block = '<img src="' . $this->root_theme . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg" class="' . $this->icon_svg_classes . '    text-' . $icon_color->color_icon . '"/>';
+							$icon_block = '<div class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
+						elseif ($icon->icon_type == 'SVG') :
+							$icon_block = '<img src="' . $icon->icon_url . '" class="svg-inject icon-svg icon-svg-' . $this->iconsize . ' text-' . $icon_color->base_color_icon . ' ' . $this->iconpaddingclass . '"/>';
+						elseif ($icon->icon_type == 'Number') :
+							$icon_block = '<span class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' .   $icon_color->color_icon . ' ' . $this->iconpaddingclass . '"><span class="number fs-18">' . $icon->iconnumber . '</span></span>';
+						elseif ($icon->icon_type == 'None') :
 						endif;
+
 						$pattern = $this->pattern;
 						echo wp_sprintf($pattern, $this->title, $this->paragraph, $icon_block); //> На дереве сидят 5 обезьян
 					endwhile;
@@ -1490,6 +1495,8 @@ class FAQ
 				$label_icons->pattern = $this->pattern;
 				$label_icons->icon_svg_classes = $this->icon_svg_classes;
 				$label_icons->icon_classes = $this->icon_classes;
+
+				$label_icons->iconpaddingclass = $this->iconpaddingclass;
 				$label_icons->root_theme = get_template_directory_uri();
 				echo $label_icons->GetLabel_5();
 			endwhile;
