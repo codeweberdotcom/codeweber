@@ -489,7 +489,7 @@
                     "key": "layout_62d9cc515fd90",
                     "name": "features_5",
                     "label": "Features 5",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_62e0f1e5e4f67",
@@ -646,7 +646,7 @@
                     "key": "layout_62da9ae0c77be",
                     "name": "features_6",
                     "label": "Features 6",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_62e0f1e60a79c",
@@ -806,7 +806,7 @@
                     "key": "layout_62db1c200c899",
                     "name": "features_7",
                     "label": "Features 7",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_62e0f1e624496",
@@ -858,7 +858,7 @@
                     "key": "layout_631a0437a25bb",
                     "name": "features_100",
                     "label": "Features 100",
-                    "display": "row",
+                    "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_631a054edc70d",
@@ -926,6 +926,37 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_631b053678592": {
+                    "key": "layout_631b053678592",
+                    "name": "features_101",
+                    "label": "Features 101",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_631b053678595",
+                            "label": "Features",
+                            "name": "features",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_62ee5ecf541f1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -953,5 +984,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662649773
+    "modified": 1662715666
 }
