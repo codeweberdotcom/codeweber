@@ -12,37 +12,21 @@ $settings->backgroundcolor_light = 'light';
 $settings->textcolor = 'white';
 $settings->GetDataACF();
 
+
+
+
 /** Icon */
 $icon = new Icons();
 $icon->GetIcon();
 $icon->iconpaddingclass = 'mb-4';
+
+
 
 /**Color */
 // Select Color 
 $icon_color = new Color();
 $icon_color->ColorIcon();
 $iconcolor = $icon_color->color_icon;
-
-
-/** Add list icon */
-$listicon = new ListUnicon;
-$listicon->default_list = '<div class="row gy-3 gx-xl-8">
-                            <div class="col-xl-6">
-                              <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                                  <li><span><i class="uil uil-check"></i></span><span>Aenean eu leo quam ornare curabitur blandit tempus.</span></li>
-                                  <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Nullam quis risus eget urna mollis ornare donec elit.</span></li>
-                              </ul>
-                           </div>
-                           <!--/column -->
-                           <div class="col-xl-6">
-                           <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                           <li><span><i class="uil uil-check"></i></span><span>Etiam porta sem malesuada magna mollis euismod.</span></li>
-                           <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Fermentum massa vivamus faucibus amet euismod.</span></li>
-                           </ul>
-                           </div>
-                           <!--/column -->
-                           </div>
-                           <!--/.row -->';
 ?>
 
 <section class="wrapper bg-light">
@@ -70,6 +54,25 @@ $listicon->default_list = '<div class="row gy-3 gx-xl-8">
          </div>
          <!--/column -->
          <div class="col-lg-6 <?php echo $settings->column_two; ?>">
+            <?php /** Add list icon */
+            $listicon = new ListUnicon;
+            $listicon->default_list = '<div class="row gy-3 gx-xl-8">
+               <div class="col-xl-6">
+                  <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
+                     <li><span><i class="uil uil-check"></i></span><span>Aenean eu leo quam ornare curabitur blandit tempus.</span></li>
+                     <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Nullam quis risus eget urna mollis ornare donec elit.</span></li>
+                  </ul>
+               </div>
+               <!--/column -->
+               <div class="col-xl-6">
+                  <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
+                     <li><span><i class="uil uil-check"></i></span><span>Etiam porta sem malesuada magna mollis euismod.</span></li>
+                     <li class="mt-3"><span><i class="uil uil-check"></i></span><span>Fermentum massa vivamus faucibus amet euismod.</span></li>
+                  </ul>
+               </div>
+               <!--/column -->
+            </div>
+            <!--/.row -->'; ?>
             <?php if ($icon->icon_type == 'Unicons') :
                $icon_block = '<div class="icon btn ' . $icon->iconform . ' btn-' . $icon->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $icon->iconpaddingclass . ' ">' . $icon->icon . '</div>';
             elseif ($icon->icon_type == 'SVG') :
