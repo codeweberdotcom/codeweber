@@ -28,7 +28,7 @@ $button->default_button = '<span><a class="btn btn-lg btn-white rounded-pill mb-
 $phone = get_field('phone', 'option');
 ?>
 
-<section class="wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-xl-12 mx-auto">
