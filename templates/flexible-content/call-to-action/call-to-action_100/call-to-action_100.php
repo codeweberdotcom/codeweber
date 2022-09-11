@@ -28,8 +28,8 @@ $button->default_button = '<span><a class="btn btn-lg btn-white rounded-pill mb-
 $phone = get_field('phone', 'option');
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
-   <div class="container py-14 py-md-16">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper">
+   <div class="container">
       <div class="row">
          <div class="col-xl-12 mx-auto">
             <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-400" data-image-src="<?php echo $settings->backgroundurl; ?>">
