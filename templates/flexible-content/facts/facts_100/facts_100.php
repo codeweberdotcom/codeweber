@@ -129,7 +129,7 @@ $facts->default_template = '<div class="item col-md-6">
 ?>
 
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper bg-light <?php echo esc_html($args['block_class']); ?>">
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-0 gy-10 align-items-center">
          <div class="col-lg-4">
