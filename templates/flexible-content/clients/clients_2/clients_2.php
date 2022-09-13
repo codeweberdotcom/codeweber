@@ -13,7 +13,7 @@ $settings->textcolor = 'white';
 $settings->GetDataACF();
 ?>
 
-<section class="wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper bg-light <?php echo esc_html($args['block_class']); ?>">
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0">
          <div class="col-lg-4 mt-lg-2">

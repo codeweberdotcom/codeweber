@@ -139,7 +139,7 @@ $faq_accordeon1->default_accordeon = '<div class="card accordion-item">
 
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper bg-light <?php echo esc_html($args['block_class']); ?>">
    <div class="container py-14 py-md-16">
       <h2 class="display-4 mb-3 text-center"><?php echo $settings->title; ?></h2>
       <p class="lead text-center mb-10 px-md-16 px-lg-0"><?php echo $settings->paragraph; ?></p>

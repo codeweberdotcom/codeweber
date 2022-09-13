@@ -79,7 +79,7 @@ $faq_accordeon->default_accordeon = '<div class="card plain accordion-item">
 ?>
 
 
-<section class="wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper bg-light <?php echo esc_html($args['block_class']); ?>">
    <div class="container py-14 py-md-16">
       <div class="card bg-soft-primary rounded-4">
          <div class="card-body p-md-10 p-xl-11">

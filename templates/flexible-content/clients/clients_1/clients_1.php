@@ -13,7 +13,7 @@ $settings->textcolor = 'white';
 $settings->GetDataACF();
 ?>
 
-<section class="wrapper bg-light wrapper-border">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper wrapper-border bg-light <?php echo esc_html($args['block_class']); ?>">
    <div class="container py-14 py-md-16">
       <h2 class="fs-15 text-uppercase text-muted text-center mb-8"><?php echo $settings->title; ?></h2>
 

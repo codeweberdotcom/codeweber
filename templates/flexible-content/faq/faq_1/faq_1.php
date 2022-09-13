@@ -71,7 +71,7 @@ $faq_accordeon->default_accordeon = '<div class="card plain accordion-item">
                <!--/.accordion-item -->'
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper bg-light <?php echo esc_html($args['block_class']); ?> ">
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10">
          <div class="col-lg-6">
