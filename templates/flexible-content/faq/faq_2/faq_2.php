@@ -93,7 +93,7 @@ $faq_accordeon->default_accordeon = '<div class="card accordion-item">
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10">
          <div class="col-lg-6 mb-0">
-            <h2 class="fs-15 text-uppercase text-primary mb-3"><?php echo $settings->subtitle; ?></h2>
+            <h2 class="fs-15 text-uppercase text-muted mb-3"><?php echo $settings->subtitle; ?></h2>
             <h3 class="display-5 mb-4"><?php echo $settings->title; ?></h3>
             <p class="lead mb-6"><?php echo $settings->paragraph; ?></p>
             <!--  buttons group -->
