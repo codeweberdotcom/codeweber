@@ -78,13 +78,14 @@
                                                                <h3 class="mb-1"> <?php the_sub_field('city'); ?></h3>
                                                             </div>
 
+                                                            <?php if (get_sub_field('map_link')) { ?>
+                                                               <div class="col align-self-center d-flex justify-content-end">
+                                                                  <a href="<?php the_sub_field('map_link'); ?>" class="hover more">На карте</a>
+                                                               </div>
+                                                            <?php
+                                                            }
+                                                            ?>
 
-                                                            <div class="col align-self-center d-flex justify-content-end">
-
-
-
-                                                               <a href="<?php the_sub_field('map_link'); ?>" class="hover more">На карте</a>
-                                                            </div>
 
 
                                                          </div>
