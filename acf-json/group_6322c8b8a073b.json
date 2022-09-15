@@ -20,7 +20,7 @@
                 {
                     "key": "field_6322c9beb5172",
                     "label": "Сity",
-                    "name": "sity",
+                    "name": "city",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -78,7 +78,7 @@
                     "key": "field_6322cb7bb5175",
                     "label": "Working time",
                     "name": "working_time",
-                    "type": "text",
+                    "type": "repeater",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -87,11 +87,32 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "collapsed": "",
+                    "min": 0,
+                    "max": 0,
+                    "layout": "table",
+                    "button_label": "",
+                    "sub_fields": [
+                        {
+                            "key": "field_632300540944d",
+                            "label": "Working time",
+                            "name": "working_time",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ]
                 },
                 {
                     "key": "field_6322cc4fb5176",
@@ -132,6 +153,22 @@
                             "maxlength": ""
                         }
                     ]
+                },
+                {
+                    "key": "field_632348248a4c4",
+                    "label": "Ссылка на карту",
+                    "name": "map_link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
                 }
             ]
         }
@@ -154,5 +191,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663225520
+    "modified": 1663256639
 }

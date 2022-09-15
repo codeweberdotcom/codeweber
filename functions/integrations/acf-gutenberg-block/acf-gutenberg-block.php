@@ -76,6 +76,22 @@ function my_acf_blocks_init()
 
       ));
 
+      // Register a Contact block.
+      acf_register_block_type(array(
+         'name'              => 'contact',
+         'title'             => __('Contact'),
+         'description'       => __('Contact block flexible block.'),
+         'render_template'   => 'templates/flexible-content/contact.php',
+         'category'          => 'codeweber',
+         'align'           => 'full',
+         'supports'        => array(
+            'align'        => array('full'),
+            'align'        => true,
+         ),
+         'mode' => 'preview',
+
+      ));
+
       // Register a Сlients block.
       acf_register_block_type(array(
          'name'              => 'clients',
