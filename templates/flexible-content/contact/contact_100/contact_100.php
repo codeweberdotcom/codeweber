@@ -111,7 +111,8 @@
                                                                <?php if (have_rows('phones_office')) : ?>
                                                                   <p class="mb-0 fs-15 text-primary">Телефоны:</p>
                                                                   <?php while (have_rows('phones_office')) : the_row(); ?>
-                                                                     <?php the_sub_field('phone_office'); ?><br>
+                                                                     <a href="tel:<?php the_sub_field('phone_office'); ?>"><?php the_sub_field('phone_office'); ?></a>
+                                                                     <br>
                                                                   <?php endwhile; ?>
                                                                <?php endif; ?>
                                                             </div>
