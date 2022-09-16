@@ -74,7 +74,7 @@ function brk_breadcrumbs()
 			function ($args) {
 				$args = array(
 					'delimiter'   => '&nbsp;&#47;&nbsp;',
-					'wrap_before' => '<nav class="breadcrumb d-flex justify-content-center mt-3"><span>',
+					'wrap_before' => '<nav class="breadcrumb d-flex justify-content-start mt-3"><span>',
 					'wrap_after'  => '</span></nav>',
 					'before'      => '',
 					'after'       => '',
