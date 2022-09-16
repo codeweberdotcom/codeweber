@@ -8,18 +8,18 @@ if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services
 		<section class="wrapper bg-soft-primary">
 		<?php }
 
-		 if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services')) { ?>
+	if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services')) { ?>
 			<div class="container pt-10 pb-12 pt-md-14 pb-md-14 text-left">
 				<div class="row">
 					<div class="col-md-10 col-xl-8 mx-0">
 						<h1 class="display-1 mb-3 text-white"><?php brk_page_title(); ?></h1>
 					<?php } else { ?>
-						<div class="container pt-10 pb-12 pt-md-14 pb-md-14 text-center">
+						<div class="container pt-10 pb-12 pt-md-14 pb-md-14 text-left">
 							<div class="row">
-								<div class="col-md-10 col-xl-8 mx-auto">
+								<div class="col-md-12 mx-0">
 									<h1 class="display-1 mb-3"><?php brk_page_title(); ?></h1>
 								<?php }
-                                if (is_single() && !is_singular('services')) : ?>
+							if (is_single() && !is_singular('services')) : ?>
 									<p class="lead px-lg-5 px-xxl-8">
 									<ul class="post-meta">
 										<li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d M Y'); ?></span></li>
@@ -34,7 +34,7 @@ if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services
 									</ul>
 									</p>
 								<?php endif;
-                                // brk_breadcrumbs();
+							brk_breadcrumbs();
 								?>
 								</div>
 								<!-- /column -->
