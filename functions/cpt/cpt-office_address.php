@@ -17,7 +17,7 @@ function cptui_register_my_cpts()
       "label" => esc_html__("Office addresses", "codeweber"),
       "labels" => $labels,
       "description" => "",
-      "public" => false,
+      "public" => true,
       "publicly_queryable" => false,
       "show_ui" => true,
       "show_in_rest" => true,
@@ -32,10 +32,10 @@ function cptui_register_my_cpts()
       "capability_type" => "post",
       "map_meta_cap" => true,
       "hierarchical" => false,
-      "can_export" => false,
+      "can_export" => true,
       "rewrite" => ["slug" => "office_addresses", "with_front" => true],
       "query_var" => true,
-      "supports" => ["title", "thumbnail"],
+      "supports" => ["title"],
       "show_in_graphql" => false,
    ];
 

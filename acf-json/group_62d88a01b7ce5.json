@@ -513,6 +513,27 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 0
+                },
+                {
+                    "key": "field_6325aafde365c",
+                    "label": "Learn more",
+                    "name": "learn_more",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "field_62e397f067bf5"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 }
             ]
         },
@@ -4784,5 +4805,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662457010
+    "modified": 1663413035
 }

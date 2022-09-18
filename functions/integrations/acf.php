@@ -756,11 +756,16 @@ class LabelIcons
 				$icon_color->ColorIcon();
 				$iconcolor = $icon_color->color_icon;
 
-				// Get icon
+				// Get Icon
 				$icon = new Icons;
 				$icon->GetIcon();
 				$this->iconsize = $icon->iconsize;
 
+
+				// Get Link
+				$link = new Links();
+				$link->linkcolor = $this->linkcolor;
+				$link_s = $link->Link();
 
 
 				if (have_rows('type_icons')) :
@@ -777,7 +782,7 @@ class LabelIcons
 						endif;
 
 						$pattern = $this->pattern;
-						echo wp_sprintf($pattern, $this->title, $this->paragraph, $icon_block); //> На дереве сидят 5 обезьян
+						echo wp_sprintf($pattern, $this->title, $this->paragraph, $icon_block, $link_s); //> На дереве сидят 5 обезьян
 					endwhile;
 				endif;
 			endwhile;

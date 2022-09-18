@@ -16,12 +16,12 @@ $settings->section_id = esc_html($args['block_id']); // присваиваем �
 $settings->GetDataACF(); // получаем занчения полей ACF
 
 
-
 /* Facts */
 $facts = new Faq;
 $facts->text_color = $settings->textcolor;
 $facts->icon_classes = 'icon btn btn-circle btn-lg disabled mx-auto me-4 mb-lg-3 mb-xl-0';
 $facts->icon_svg_classes = 'svg-inject icon-svg icon-svg-lg mx-auto me-4 mb-lg-3 mb-xl-0';
+$facts->iconpaddingclass = 'mx-auto me-4 mb-lg-3 mb-xl-0';
 $facts->pattern = '<div class="item col-md-6">
                   <div class="card shadow-lg lift">
                      <div class="card-body">
@@ -32,6 +32,7 @@ $facts->pattern = '<div class="item col-md-6">
                            <div>
                               <h3 class="mb-1">%1$s</h3>
                               <p class="mb-0">%2$s</p>
+                              %4$s
                            </div>
                         </div>
                      </div>
