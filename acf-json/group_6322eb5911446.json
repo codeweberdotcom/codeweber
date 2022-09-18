@@ -23,10 +23,10 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6322fe020ead4",
-                            "label": "Adresses",
-                            "name": "adresses",
-                            "type": "repeater",
+                            "key": "field_6326d7468dec6",
+                            "label": "Towns",
+                            "name": "towns",
+                            "type": "taxonomy",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -35,74 +35,14 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "collapsed": "",
-                            "min": 0,
-                            "max": 0,
-                            "layout": "table",
-                            "button_label": "",
-                            "sub_fields": [
-                                {
-                                    "key": "field_63230a13f3a93",
-                                    "label": "Address",
-                                    "name": "address",
-                                    "type": "group",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "layout": "block",
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_63230a32f3a94",
-                                            "label": "Town",
-                                            "name": "town",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "50",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "maxlength": ""
-                                        },
-                                        {
-                                            "key": "field_63230a47f3a95",
-                                            "label": "Select address",
-                                            "name": "select_address",
-                                            "type": "relationship",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "50",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "post_type": [
-                                                "office_addresses"
-                                            ],
-                                            "taxonomy": "",
-                                            "filters": [
-                                                "search"
-                                            ],
-                                            "elements": "",
-                                            "min": "",
-                                            "max": "",
-                                            "return_format": "id"
-                                        }
-                                    ]
-                                }
-                            ]
+                            "taxonomy": "towns",
+                            "field_type": "multi_select",
+                            "allow_null": 0,
+                            "add_term": 0,
+                            "save_terms": 1,
+                            "load_terms": 1,
+                            "return_format": "object",
+                            "multiple": 0
                         }
                     ],
                     "min": "",
@@ -248,5 +188,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663451154
+    "modified": 1663493197
 }

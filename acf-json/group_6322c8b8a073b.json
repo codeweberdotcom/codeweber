@@ -18,23 +18,26 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_6322c9beb5172",
-                    "label": "Сity",
-                    "name": "city",
-                    "type": "text",
+                    "key": "field_6326d56157dd2",
+                    "label": "Town",
+                    "name": "town_s",
+                    "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "33.333",
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "taxonomy": "towns",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "add_term": 0,
+                    "save_terms": 1,
+                    "load_terms": 1,
+                    "return_format": "object",
+                    "multiple": 0
                 },
                 {
                     "key": "field_6322cb22b5173",
@@ -191,5 +194,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663256639
+    "modified": 1663489616
 }
