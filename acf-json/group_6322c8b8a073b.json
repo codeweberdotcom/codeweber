@@ -176,8 +176,8 @@
                 {
                     "center_lat": 53.5507112,
                     "center_lng": 10.0006485,
-                    "zoom": 20,
-                    "key": "field_63271052214d3",
+                    "zoom": 12,
+                    "key": "field_632716630cac4",
                     "label": "Map",
                     "name": "map",
                     "type": "open_street_map",
@@ -189,9 +189,9 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "raw",
+                    "return_format": "osm",
                     "layers": [
-                        "OpenStreetMap.Mapnik"
+                        "OpenStreetMap"
                     ],
                     "allow_map_layers": 1,
                     "height": 400,
@@ -218,5 +218,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663504797
+    "modified": 1663525463
 }
