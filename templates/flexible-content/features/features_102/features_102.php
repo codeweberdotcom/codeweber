@@ -89,7 +89,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
       </div>';
 ?>
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
-  <div class="container pt-14 pt-md-16 pb-9 pb-md-6">
+  <div class="container pt-14 pt-md-16 pb-14 pb-md-16">
     <div class="row gx-md-5 gy-5">
       <div class="col-md-6 col-xl-9">
         <div class="card h-100 shadow-lg card-border-bottom border-white">
