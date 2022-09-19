@@ -36,7 +36,7 @@ $button->default_button = NULL;
                <h2 class="display-4 mb-3 text-dark"><?php echo $settings->title; ?></h2>
             <?php } ?>
             <?php if ($settings->subtitle) { ?>
-               <p class="lead fs-lg text-dark"><?php echo $settings->subtitle; ?></p>
+               <p class="lead fs-lg text-dark mb-8"><?php echo $settings->subtitle; ?></p>
             <?php } ?>
             <?php if ($settings->paragraph) { ?>
                <p class="text-dark"><?php echo $settings->paragraph; ?></p>
@@ -45,7 +45,7 @@ $button->default_button = NULL;
                <?php $towns = get_sub_field('towns'); ?>
                <?php if ($towns) : ?>
                   <?php foreach ($towns as $term) : ?>
-                     <div class="item col-md-4">
+                     <div class="item col-md-6 col-lg-4">
                         <div class="card shadow-lg lift">
                            <div class="card-body">
                               <div class="d-flex d-lg-block d-xl-flex flex-row">

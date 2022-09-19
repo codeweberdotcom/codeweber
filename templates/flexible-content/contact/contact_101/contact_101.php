@@ -129,31 +129,6 @@ $facts->default_template = '<div class="item col-md-6">
                <!--/column -->';
 ?>
 
-<?php
-
-
-// $terms = get_terms('towns');
-
-
-
-// if (!empty($terms) && !is_wp_error($terms)) {
-//    echo "<ul>";
-//    foreach ($terms as $term) {
-
-//       printr($term);
-//       echo "<li>" . $term->name . " - " . $term->count . "</li>";
-//    }
-//    echo "</ul>";
-// }
-
-
-?>
-
-
-
-
-
-
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper bg-light <?php echo esc_html($args['block_class']); ?>">
    <div class="container py-14 py-md-16">
@@ -165,18 +140,11 @@ $facts->default_template = '<div class="item col-md-6">
             <?php $button->showbuttons(); ?>
          </div>
          <!--/column -->
-         <div class="col-lg-7  offset-lg-1 grid">
+         <div class="col-lg-7 offset-lg-1 grid">
             <div class="row gx-md-5 gy-5 align-items-center counter-wrapper isotope">
-
-
-
                <?php $towns = get_sub_field('towns'); ?>
                <?php if ($towns) : ?>
-
-
-
                   <?php foreach ($towns as $term) : ?>
-
                      <div class="item col-md-6">
                         <div class="card shadow-lg lift">
                            <div class="card-body">
