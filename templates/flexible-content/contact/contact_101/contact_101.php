@@ -146,7 +146,7 @@ $facts->default_template = '<div class="item col-md-6">
                <?php if ($towns) : ?>
                   <?php foreach ($towns as $term) : ?>
                      <div class="item col-md-6">
-                        <div class="card shadow-lg lift">
+                        <div class="card shadow-lg lift card-border-bottom border-soft-primary">
                            <div class="card-body">
                               <div class="d-flex d-lg-block d-xl-flex flex-row">
                                  <div>
