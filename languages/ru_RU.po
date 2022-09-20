@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-09-20 13:14+0000\n"
+"PO-Revision-Date: 2022-09-20 16:19+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -621,7 +621,7 @@ msgstr ""
 
 #: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:16
 msgid "Services"
-msgstr ""
+msgstr "Услуги"
 
 #: functions/sidebars.php:37 functions/sidebars.php:39
 msgid "Services Sidebar"
