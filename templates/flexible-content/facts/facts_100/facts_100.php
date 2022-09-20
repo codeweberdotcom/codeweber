@@ -34,7 +34,7 @@ $facts->icon_classes = 'icon btn btn-circle btn-lg disabled mx-auto me-4 mb-lg-3
 $facts->icon_svg_classes = 'svg-inject icon-svg icon-svg-lg mx-auto me-4 mb-lg-3 mb-xl-0'; // на удаление - после удаления проверить работоспособность labels
 $facts->iconpaddingclass = 'mx-auto me-4 mb-lg-3 mb-xl-0';
 $facts->pattern = '<div class="item col-md-6">
-                  <div class="card shadow-lg lift">
+                  <div class="card shadow-lg lift card-border-bottom border-soft-primary">
                      <div class="card-body">
                         <div class="d-flex d-lg-block d-xl-flex flex-row">
                            <div>
