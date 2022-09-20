@@ -59,7 +59,7 @@
           </div>
           <div class="offcanvas-body pb-6">
              <div class="widget mb-8">
-                <p><?php esc_html_e('Sandbox is a multipurpose HTML5 template with various layouts which will be a great solution for your business.', 'codeweber'); ?></p>
+                <p><?php the_field('tekst', 'option'); ?></p>
              </div>
              <!-- /.widget -->
              <div class="widget mb-8">
@@ -72,12 +72,7 @@
              <!-- /.widget -->
              <div class="widget mb-8">
                 <h4 class="widget-title text-white mb-3"><?php esc_html_e('Learn More', 'codeweber'); ?></h4>
-                <ul class="list-unstyled">
-                   <li><a href="#">Our Story</a></li>
-                   <li><a href="#">Terms of Use</a></li>
-                   <li><a href="#">Privacy Policy</a></li>
-                   <li><a href="#">Contact Us</a></li>
-                </ul>
+                <?php get_template_part('templates/components/footer-menu-light', ''); ?>
              </div>
              <!-- /.widget -->
              <div class="widget">

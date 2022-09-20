@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-09-01 12:41+0000\n"
+"PO-Revision-Date: 2022-09-01 12:42+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -564,7 +564,7 @@ msgstr "Свежие статьи"
 #: templates/header/header-sandbox-08.php:96
 #: templates/header/header-sandbox-09.php:96
 msgid "Registration takes less than a minute."
-msgstr ""
+msgstr "Регистрация занимает менее минуты."
 
 #: functions/custom.php:191
 msgid "Results for: "
@@ -638,7 +638,7 @@ msgstr "Регистрация"
 #: templates/header/header-sandbox-08.php:95
 #: templates/header/header-sandbox-09.php:95
 msgid "Sign up to"
-msgstr ""
+msgstr "Войти в "
 
 #: comments.php:146
 msgid "Submit"

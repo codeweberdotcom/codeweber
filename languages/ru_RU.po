@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-09-01 12:42+0000\n"
+"PO-Revision-Date: 2022-09-20 11:31+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -53,7 +53,7 @@ msgid ""
 "amet risus."
 msgstr ""
 
-#: templates/content/single.php:86
+#: templates/content/single-blog.php:86
 msgid "All Posts"
 msgstr "Все Статьи"
 
@@ -96,7 +96,7 @@ msgstr "Уже есть аккаунт?"
 msgid "Archive"
 msgstr "Статьи по месяцам"
 
-#: templates/content/loop.php:42 templates/sections/common-pageheader.php:13
+#: templates/content/loop.php:42 templates/sections/common-pageheader.php:26
 msgid "By"
 msgstr "Автор"
 
@@ -109,6 +109,10 @@ msgid "By using this comment form you agree with our Privacy Policy"
 msgstr ""
 "Используя эту форму для комментариев, вы соглашаетесь с нашей Политикой "
 "конфиденциальности"
+
+#: templates/header/header-sandbox-09_cw.php:40
+msgid "Call Order"
+msgstr "Заказать звонок"
 
 #: templates/footer/footer-sandbox-25.php:30
 #: templates/flexible-content/widgets/widget_4/widget_4.php:1
@@ -134,7 +138,7 @@ msgstr "Codeweber"
 msgid "Comment *"
 msgstr "Комменатрий *"
 
-#: templates/content/loop.php:43 templates/sections/common-pageheader.php:14
+#: templates/content/loop.php:43 templates/sections/common-pageheader.php:27
 msgid "Comments"
 msgstr "Комментарии"
 
@@ -173,6 +177,7 @@ msgid "Contact"
 msgstr ""
 
 #: templates/header/header-sandbox-09.php:146
+#: templates/header/header-sandbox-09_cw.php:66
 #: templates/header/header-sandbox-12.php:83
 #: templates/header/header-sandbox-15.php:63
 #: templates/header/header-sandbox-20.php:70
@@ -181,7 +186,7 @@ msgstr ""
 #: templates/header/header-sandbox-24.php:76
 #: templates/header/header-sandbox-27.php:62
 msgid "Contact Info"
-msgstr ""
+msgstr "Контакты"
 
 #: templates/header/header-sandbox-05.php:68
 #: templates/header/header-sandbox-08.php:74
@@ -240,6 +245,7 @@ msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
 
 #: templates/header/header-sandbox-09.php:164
+#: templates/header/header-sandbox-09_cw.php:84
 #: templates/header/header-sandbox-15.php:81
 #: templates/header/header-sandbox-20.php:88
 #: templates/header/header-sandbox-22.php:81
@@ -247,7 +253,7 @@ msgstr "Заполните E-mail и пароль для входа"
 #: templates/header/header-sandbox-24.php:94
 #: templates/header/header-sandbox-27.php:80
 msgid "Follow Us"
-msgstr ""
+msgstr "Присоединяйтесь"
 
 #: functions/navmenus.php:15
 msgid "Footer Menu"
@@ -386,6 +392,7 @@ msgstr ""
 #: templates/footer/footer-sandbox-8.php:23
 #: templates/footer/footer-sandbox-9.php:35
 #: templates/header/header-sandbox-09.php:154
+#: templates/header/header-sandbox-09_cw.php:74
 #: templates/header/header-sandbox-12.php:91
 #: templates/header/header-sandbox-15.php:71
 #: templates/header/header-sandbox-20.php:78
@@ -413,7 +420,7 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
-#: templates/content/loop.php:47 templates/sections/common-pageheader.php:19
+#: templates/content/loop.php:47 templates/sections/common-pageheader.php:32
 msgid "Likes"
 msgstr "Спасибо"
 
@@ -479,6 +486,16 @@ msgstr "Нужна помощь?"
 
 #: templates/header/header-sandbox-06.php:5
 msgid "New version of our product is finally"
+msgstr ""
+
+#: functions/cpt/cpt-office_address.php:12
+msgid "Office address"
+msgstr ""
+
+#: functions/cpt/cpt-office_address.php:11
+#: functions/cpt/cpt-office_address.php:13
+#: functions/cpt/cpt-office_address.php:17
+msgid "Office addresses"
 msgstr ""
 
 #: 404.php:11
@@ -549,10 +566,10 @@ msgid "Popular Posts"
 msgstr "Популярные статьи"
 
 #: templates/content/loop.php:14
-#: templates/flexible-content/sliders/slider_1/slider_1.php:46
-#: templates/flexible-content/sliders/slider_2/slider_2.php:27
-#: templates/flexible-content/sliders/slider_3/slider_3.php:27
-#: templates/flexible-content/sliders/slider_4/slider_4.php:29
+#: templates/flexible-content/sliders/slider_1/slider_1.php:45
+#: templates/flexible-content/sliders/slider_2/slider_2.php:26
+#: templates/flexible-content/sliders/slider_3/slider_3.php:26
+#: templates/flexible-content/sliders/slider_4/slider_4.php:28
 msgid "Read More"
 msgstr "Читать далее"
 
@@ -571,6 +588,7 @@ msgid "Results for: "
 msgstr ""
 
 #: templates/header/header-sandbox-09.php:142
+#: templates/header/header-sandbox-09_cw.php:62
 #: templates/header/header-sandbox-12.php:79
 #: templates/header/header-sandbox-15.php:59
 #: templates/header/header-sandbox-20.php:66
@@ -582,6 +600,8 @@ msgid ""
 "Sandbox is a multipurpose HTML5 template with various layouts which will be "
 "a great solution for your business."
 msgstr ""
+"Компания «Донстрах» предлагает широкий спектр страховых услуг в Донецкой "
+"Народной Республике с 2014 года."
 
 #: functions/lib/comments-helper.php:43
 msgid "says:"
@@ -684,6 +704,15 @@ msgstr ""
 msgid "Tags"
 msgstr "Метки"
 
+#: functions/cpt/cpt-testimonials.php:11
+msgid "Testimonial"
+msgstr ""
+
+#: functions/cpt/cpt-testimonials.php:10 functions/cpt/cpt-testimonials.php:12
+#: functions/cpt/cpt-testimonials.php:17
+msgid "Testimonials"
+msgstr ""
+
 #: 404.php:12
 msgid ""
 "The page you are looking for is not available or has been moved. Try a "
@@ -691,6 +720,15 @@ msgid ""
 msgstr ""
 "Страница, которую вы ищете, недоступна или была перемещена. Перейдите на "
 "главную страницу с помощью кнопки ниже."
+
+#: functions/cpt/taxonomy-office_adressess.php:11
+msgid "Town"
+msgstr ""
+
+#: functions/cpt/taxonomy-office_adressess.php:10
+#: functions/cpt/taxonomy-office_adressess.php:16
+msgid "Towns"
+msgstr ""
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "trusted"
@@ -743,7 +781,7 @@ msgstr "Добро пожаловать"
 msgid "Would you like to share your thoughts?"
 msgstr "Напишите ваш комментарий."
 
-#: templates/content/single.php:77
+#: templates/content/single-blog.php:77
 msgid "Writer"
 msgstr "Писатель"
 
@@ -754,3 +792,7 @@ msgstr "Вам также может понравится"
 #: functions/lib/comments-helper.php:97
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает модерации"
+
+#: functions/cpt/cpt-testimonials.php:13
+msgid "Новый отзыв"
+msgstr ""
