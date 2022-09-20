@@ -52,7 +52,7 @@
        <!-- /.navbar -->
 
 
-       <div class="offcanvas offcanvas-end text-inverse" id="offcanvas-info" data-bs-scroll="true">
+       <div class="offcanvas offcanvas-end bg-light" id="offcanvas-info" data-bs-scroll="true">
           <div class="offcanvas-header">
              <a href="/">
                 <img src="<?php echo brk_logo_light_link(); ?>" srcset="<?php echo brk_logo_light_link(); ?>" alt="" />
@@ -65,7 +65,7 @@
              </div>
              <!-- /.widget -->
              <div class="widget mb-8">
-                <h4 class="widget-title text-white mb-3"><?php esc_html_e('Contact Info', 'codeweber'); ?></h4>
+                <h4 class="widget-title mb-3"><?php esc_html_e('Contact Info', 'codeweber'); ?></h4>
                 <address> <?php echo brk_adress(); ?> </address>
                 <a href="mailto:<?php brk_email(); ?>"><?php echo brk_email(); ?></a><br />
                 <?php echo brk_phone_one(); ?><br />
@@ -73,13 +73,13 @@
              </div>
              <!-- /.widget -->
              <div class="widget mb-8">
-                <h4 class="widget-title text-white mb-3"><?php esc_html_e('Learn More', 'codeweber'); ?></h4>
+                <h4 class="widget-title mb-3"><?php esc_html_e('Learn More', 'codeweber'); ?></h4>
                 <?php get_template_part('templates/components/footer-menu-light', ''); ?>
              </div>
              <!-- /.widget -->
              <div class="widget">
-                <h4 class="widget-title text-white mb-3"><?php esc_html_e('Follow Us', 'codeweber'); ?></h4>
-                <nav class="nav social social-white">
+                <h4 class="widget-title mb-3"><?php esc_html_e('Follow Us', 'codeweber'); ?></h4>
+                <nav class="nav social social-color">
                    <?php if (class_exists('ACF')) {
                         get_template_part('templates/components/socialicons', '');
                      }; ?>

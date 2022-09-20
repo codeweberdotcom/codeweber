@@ -40,7 +40,7 @@ $phone = get_field('phone', 'option');
                   <div class="col">
                      <div class="d-flex mb-4 mb-lg-0">
                         <div>
-                           <a href="tel:<?php echo esc_html($phone); ?>" class="btn btn-circle btn-outline-white text-white btn-lg me-3"><i class="uil uil-phone"></i></a>
+                           <a href="tel:<?php echo esc_html($phone); ?>" class="btn btn-circle btn-outline-white btn-lg me-3"><i class="uil uil-phone"></i></a>
                         </div>
                         <div>
                            <?php if (get_sub_field('phone') == 'Option page') : ?>

@@ -1,5 +1,5 @@
-  <footer class="bg-soft-navy">
-     <div class="container py-13 py-md-15">
+  <footer class="bg-pale-primary">
+     <div class="container pt-13 pt-md-15 pb-6 pb-md-8">
         <div class="row gy-6 gy-lg-0">
            <div class="col-md-4 col-lg-3">
               <div class="widget">

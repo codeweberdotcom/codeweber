@@ -90,7 +90,7 @@ $button->default_button = NULL;
                                           <div class="col-12">
                                              <?php if (have_rows('office_addresses', $post_id)) : ?>
                                                 <?php while (have_rows('office_addresses', $post_id)) : the_row(); ?>
-                                                   <div class=" card shadow-lg lift">
+                                                   <div class=" card shadow-lg lift card-border-bottom border-soft-primary">
                                                       <div class="card-body">
                                                          <div class="d-flex d-lg-block d-xl-flex flex-row flex-wrap">
                                                             <div class="col-12">
