@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-09-20 11:22+0000\n"
+"PO-Revision-Date: 2022-09-20 11:31+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -253,7 +253,7 @@ msgstr "Заполните E-mail и пароль для входа"
 #: templates/header/header-sandbox-24.php:94
 #: templates/header/header-sandbox-27.php:80
 msgid "Follow Us"
-msgstr ""
+msgstr "Присоединяйтесь"
 
 #: functions/navmenus.php:15
 msgid "Footer Menu"

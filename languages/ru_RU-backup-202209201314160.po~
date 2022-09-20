@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-09-20 11:14+0000\n"
+"PO-Revision-Date: 2022-09-20 13:13+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -177,7 +177,7 @@ msgid "Contact"
 msgstr ""
 
 #: templates/header/header-sandbox-09.php:146
-#: templates/header/header-sandbox-09_cw.php:66
+#: templates/header/header-sandbox-09_cw.php:68
 #: templates/header/header-sandbox-12.php:83
 #: templates/header/header-sandbox-15.php:63
 #: templates/header/header-sandbox-20.php:70
@@ -186,7 +186,7 @@ msgstr ""
 #: templates/header/header-sandbox-24.php:76
 #: templates/header/header-sandbox-27.php:62
 msgid "Contact Info"
-msgstr ""
+msgstr "Связаться с нами"
 
 #: templates/header/header-sandbox-05.php:68
 #: templates/header/header-sandbox-08.php:74
@@ -245,7 +245,7 @@ msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
 
 #: templates/header/header-sandbox-09.php:164
-#: templates/header/header-sandbox-09_cw.php:84
+#: templates/header/header-sandbox-09_cw.php:81
 #: templates/header/header-sandbox-15.php:81
 #: templates/header/header-sandbox-20.php:88
 #: templates/header/header-sandbox-22.php:81
@@ -253,7 +253,7 @@ msgstr "Заполните E-mail и пароль для входа"
 #: templates/header/header-sandbox-24.php:94
 #: templates/header/header-sandbox-27.php:80
 msgid "Follow Us"
-msgstr ""
+msgstr "Присоединяйтесь"
 
 #: functions/navmenus.php:15
 msgid "Footer Menu"
@@ -392,7 +392,7 @@ msgstr ""
 #: templates/footer/footer-sandbox-8.php:23
 #: templates/footer/footer-sandbox-9.php:35
 #: templates/header/header-sandbox-09.php:154
-#: templates/header/header-sandbox-09_cw.php:74
+#: templates/header/header-sandbox-09_cw.php:76
 #: templates/header/header-sandbox-12.php:91
 #: templates/header/header-sandbox-15.php:71
 #: templates/header/header-sandbox-20.php:78
@@ -588,7 +588,6 @@ msgid "Results for: "
 msgstr ""
 
 #: templates/header/header-sandbox-09.php:142
-#: templates/header/header-sandbox-09_cw.php:62
 #: templates/header/header-sandbox-12.php:79
 #: templates/header/header-sandbox-15.php:59
 #: templates/header/header-sandbox-20.php:66
@@ -600,6 +599,8 @@ msgid ""
 "Sandbox is a multipurpose HTML5 template with various layouts which will be "
 "a great solution for your business."
 msgstr ""
+"Компания «Донстрах» предлагает широкий спектр страховых услуг в Донецкой "
+"Народной Республике с 2014 года."
 
 #: functions/lib/comments-helper.php:43
 msgid "says:"

@@ -137,31 +137,6 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
-        },
-        {
-            "key": "field_6329a4bb3f908",
-            "label": "Контакты",
-            "name": "kontakty",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33.33",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "office_addresses"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "elements": "",
-            "min": "",
-            "max": "",
-            "return_format": "object"
         }
     ],
     "location": [
@@ -182,5 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663673575
+    "modified": 1663674098
 }

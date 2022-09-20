@@ -54,7 +54,9 @@
 
        <div class="offcanvas offcanvas-end text-inverse" id="offcanvas-info" data-bs-scroll="true">
           <div class="offcanvas-header">
-             <h3 class="text-white fs-30 mb-0"><?php echo get_bloginfo('name'); ?></h3>
+             <a href="/">
+                <img src="<?php echo brk_logo_light_link(); ?>" srcset="<?php echo brk_logo_light_link(); ?>" alt="" />
+             </a>
              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body pb-6">
