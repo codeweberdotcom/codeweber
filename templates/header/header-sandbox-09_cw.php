@@ -79,7 +79,9 @@
                 <h4 class="widget-title mb-3"><?php esc_html_e('Offices', 'codeweber'); ?></h4>
                 <?php
                   $args = [
-                     'taxonomy' => 'towns'
+                     'taxonomy' => 'towns',
+                     'orderby'       => 'date',
+                     'order'         => 'ASC',
                   ]; ?>
 
                 <div class="form-select-wrapper w-100">
