@@ -70,13 +70,33 @@
                 <a href="mailto:<?php brk_email(); ?>"><?php echo brk_email(); ?></a><br />
                 <?php echo brk_phone_one(); ?><br />
                 <?php echo brk_phone_two(); ?><br />
+
+
              </div>
              <!-- /.widget -->
+
              <div class="widget mb-8">
-                <h4 class="widget-title mb-3"><?php esc_html_e('Learn More', 'codeweber'); ?></h4>
-                <?php get_template_part('templates/components/footer-menu-light', ''); ?>
+                <h4 class="widget-title mb-3"><?php esc_html_e('Offices', 'codeweber'); ?></h4>
+                <?php
+                  $args = [
+                     'taxonomy' => 'towns'
+                  ]; ?>
+
+                <div class="form-select-wrapper w-100">
+                   <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
+                      <option value="#0" selected>Выбрать город</option>
+                      <?php $terms = get_terms($args);
+                        $num_option = 1;
+                        foreach ($terms as $term) : ?>
+                         <option value="kontakty/#<?php echo $num_option; ?>"><?php echo esc_html($term->name); ?></option>
+                      <?php $num_option++;
+                        endforeach; ?>
+                   </select>
+                </div>
+
+
+
              </div>
-             <!-- /.widget -->
              <div class="widget">
                 <h4 class="widget-title mb-3"><?php esc_html_e('Follow Us', 'codeweber'); ?></h4>
                 <nav class="nav social social-color">

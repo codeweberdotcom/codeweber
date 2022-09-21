@@ -105,7 +105,7 @@
         },
         {
             "key": "field_6329a2d40e8df",
-            "label": "Инфопаенль",
+            "label": "Инфопанель боковая",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -157,5 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663674098
+    "modified": 1663762085
 }

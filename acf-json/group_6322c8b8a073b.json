@@ -172,30 +172,6 @@
                     },
                     "default_value": "",
                     "placeholder": ""
-                },
-                {
-                    "center_lat": 53.5507112,
-                    "center_lng": 10.0006485,
-                    "zoom": 12,
-                    "key": "field_632716630cac4",
-                    "label": "Map",
-                    "name": "map",
-                    "type": "open_street_map",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "osm",
-                    "layers": [
-                        "OpenStreetMap"
-                    ],
-                    "allow_map_layers": 1,
-                    "height": 400,
-                    "max_markers": ""
                 }
             ]
         }
@@ -218,5 +194,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663525463
+    "modified": 1663768404
 }

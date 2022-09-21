@@ -91,6 +91,11 @@ function brk_socialicons()
 			'icon-style' => 'uil',
 			'icon-name' => 'uil-facebook-f',
 		),
+		'vkontakte' => array(
+			'social-name' => 'Vkontakte',
+			'icon-style' => 'uil',
+			'icon-name' => 'uil-vk',
+		),
 		'twitter' => array(
 			'social-name' => 'Twitter',
 			'icon-style' => 'uil',
@@ -138,7 +143,7 @@ function brk_phone_one()
 {
 	if (get_field('phone', 'option')) :
 		$phone_acf_1 = get_field('phone', 'option');
-		$brk_phone_one = $phone_acf_1;
+		$brk_phone_one = '<a href="tel:' . $phone_acf_1 . '">' . $phone_acf_1 . '</a>';
 	else :
 		$brk_phone_one = '+00 (123) 456 78 90';
 	endif;
@@ -152,7 +157,7 @@ function brk_phone_two()
 {
 	if (get_field('phone_1', 'option')) :
 		$phone_acf_2 = get_field('phone_1', 'option');
-		$brk_phone_two = $phone_acf_2;
+		$brk_phone_two = '<a href="tel:' . $phone_acf_2 . '">' . $phone_acf_2 . '</a>';
 	else :
 		$brk_phone_two = '00 (123) 456 78 91';
 	endif;
