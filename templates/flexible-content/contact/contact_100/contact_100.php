@@ -5,7 +5,7 @@
       <?php if ($towns) : ?>
          <?php $num = 1; ?>
          <?php foreach ($towns as $term) : ?>
-            <article id="<?php echo $num; ?>">
+            <article id="<?php echo $term->slug; ?>">
                <div class="container py-14 py-md-16 pb-md-0">
                   <div class="row gx-lg-0 gy-10 ">
                      <div class="col-lg-3">
@@ -122,7 +122,7 @@
                                  <?php if ($towns) : ?>
                                     <?php $num_option = 1; ?>
                                     <?php foreach ($towns as $term) : ?>
-                                       <option value="#<?php echo $num_option; ?>"><?php echo esc_html($term->name); ?></option>
+                                       <option value="#<?php echo $term->slug; ?>"><?php echo esc_html($term->name); ?></option>
                                        <?php $num_option++; ?>
                                     <?php endforeach; ?>
                                  <?php endif; ?>

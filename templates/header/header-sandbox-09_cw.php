@@ -80,8 +80,8 @@
                 <?php
                   $args = [
                      'taxonomy' => 'towns',
-                     'orderby'       => 'date',
-                     'order'         => 'ASC',
+                     'orderby'       => 'id',
+                     'order'         => 'ASC'
                   ]; ?>
 
                 <div class="form-select-wrapper w-100">
@@ -90,7 +90,7 @@
                       <?php $terms = get_terms($args);
                         $num_option = 1;
                         foreach ($terms as $term) : ?>
-                         <option value="kontakty/#<?php echo $num_option; ?>"><?php echo esc_html($term->name); ?></option>
+                         <option value="kontakty/#<?php echo $term->slug; ?>"><?php echo esc_html($term->name); ?></option>
                       <?php $num_option++;
                         endforeach; ?>
                    </select>
