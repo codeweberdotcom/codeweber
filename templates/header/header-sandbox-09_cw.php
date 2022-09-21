@@ -80,7 +80,7 @@
                 <?php
                   $args = [
                      'taxonomy' => 'towns',
-                     'orderby'       => 'id',
+                     'orderby'       => 'name',
                      'order'         => 'ASC'
                   ]; ?>
 
