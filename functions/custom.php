@@ -241,11 +241,11 @@ function sandbox_recent_post()
             <li>
                 <figure class="rounded"><a href="<?php the_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
                 <div class="post-content">
-                    <h6 class="mb-2"> <a class="link-dark" href="<?php the_permalink($id); ?>"><?php echo $title; ?></a> </h6>
-                    <ul class="post-meta">
-                        <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d F Y', $post); ?></span></li>
-                    </ul>
-                    <!-- /.post-meta -->
+                    <h5 class="h6 mb-2"> <a class="link-dark" href="<?php the_permalink($id); ?>"><?php echo $title; ?></a> </h6>
+                        <ul class="post-meta">
+                            <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d F Y', $post); ?></span></li>
+                        </ul>
+                        <!-- /.post-meta -->
                 </div>
             </li>
         <?php } ?>

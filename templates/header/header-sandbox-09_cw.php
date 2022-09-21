@@ -8,7 +8,7 @@
              </div>
              <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                 <div class="offcanvas-header d-lg-none">
-                   <h3 class="text-white fs-30 mb-0"><?php echo get_bloginfo('name'); ?></h3>
+                   <div class="mb-0 h3 text-light"><?php echo get_bloginfo('name'); ?></div>
                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
@@ -54,9 +54,7 @@
 
        <div class="offcanvas offcanvas-end bg-light" id="offcanvas-info" data-bs-scroll="true">
           <div class="offcanvas-header">
-             <a href="/">
-                <img src="<?php echo brk_logo_light_link(); ?>" srcset="<?php echo brk_logo_light_link(); ?>" alt="" />
-             </a>
+             <div class="mb-0 h3"><?php echo get_bloginfo('name'); ?></div>
              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body pb-6">
@@ -65,25 +63,21 @@
              </div>
              <!-- /.widget -->
              <div class="widget mb-8">
-                <h4 class="widget-title mb-3"><?php esc_html_e('Contact Info', 'codeweber'); ?></h4>
+                <div class="widget-title h4 mb-3"><?php esc_html_e('Contact Info', 'codeweber'); ?></div>
                 <address> <?php echo brk_adress(); ?> </address>
                 <a href="mailto:<?php brk_email(); ?>"><?php echo brk_email(); ?></a><br />
                 <?php echo brk_phone_one(); ?><br />
                 <?php echo brk_phone_two(); ?><br />
-
-
              </div>
              <!-- /.widget -->
-
              <div class="widget mb-8">
-                <h4 class="widget-title mb-3"><?php esc_html_e('Offices', 'codeweber'); ?></h4>
+                <div class="widget-title h4 mb-3"><?php esc_html_e('Offices', 'codeweber'); ?></div>
                 <?php
                   $args = [
                      'taxonomy' => 'towns',
                      'orderby'       => 'name',
                      'order'         => 'ASC'
                   ]; ?>
-
                 <div class="form-select-wrapper w-100">
                    <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
                       <option value="#0" selected>Выбрать город</option>
@@ -95,12 +89,9 @@
                         endforeach; ?>
                    </select>
                 </div>
-
-
-
              </div>
              <div class="widget">
-                <h4 class="widget-title mb-3"><?php esc_html_e('Follow Us', 'codeweber'); ?></h4>
+                <div class="widget-title h4 mb-3"><?php esc_html_e('Follow Us', 'codeweber'); ?></div>
                 <nav class="nav social social-color">
                    <?php if (class_exists('ACF')) {
                         get_template_part('templates/components/socialicons', '');
