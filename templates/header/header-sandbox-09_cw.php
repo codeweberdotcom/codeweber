@@ -78,13 +78,14 @@
                      'orderby'       => 'name',
                      'order'         => 'ASC'
                   ]; ?>
+
                 <div class="form-select-wrapper w-100">
                    <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
                       <option value="#0" selected>Выбрать город</option>
                       <?php $terms = get_terms($args);
                         $num_option = 1;
                         foreach ($terms as $term) : ?>
-                         <option value="kontakty/#<?php echo $term->slug; ?>"><?php echo esc_html($term->name); ?></option>
+                         <option value="<?php echo get_site_url(); ?>/kontakty/#<?php echo $term->slug; ?>"><?php echo esc_html($term->name); ?></option>
                       <?php $num_option++;
                         endforeach; ?>
                    </select>
