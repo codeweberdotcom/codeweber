@@ -11,7 +11,7 @@ $args = array(
 );
 ?>
 
-<h4 class="widget-title mb-3"><?php esc_html_e('Archive', 'codeweber'); ?></h4>
+<h3 class="h4 widget-title mb-3"><?php esc_html_e('Archive', 'codeweber'); ?></h3>
 <ul class="unordered-list bullet-primary text-reset">
    <?php wp_get_archives($args); ?>
 </ul>

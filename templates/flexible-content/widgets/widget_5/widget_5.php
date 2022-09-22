@@ -1,4 +1,4 @@
-<h4 class="widget-title mb-3"><?php esc_html_e('Tags', 'codeweber'); ?></h4>
+<h3 class="h4 widget-title mb-3"><?php esc_html_e('Tags', 'codeweber'); ?></h3>
 <?php
 $tags = get_tags([
    'number'       => 4,

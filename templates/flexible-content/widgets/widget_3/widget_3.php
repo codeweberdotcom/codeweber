@@ -15,5 +15,5 @@ $settings->paragraph = 'Fusce dapibus, tellus ac cursus commodo, tortor mauris c
 $settings->GetDataACF();
 ?>
 
-<h4 class="widget-title mb-3"><?php echo $settings->title; ?></h4>
+<h3 class="h4 widget-title mb-3"><?php echo $settings->title; ?></h3>
 <p><?php echo $settings->paragraph; ?></p>
