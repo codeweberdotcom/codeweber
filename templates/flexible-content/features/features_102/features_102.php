@@ -27,7 +27,7 @@ $features->pattern = '<div class="col-md-6 col-xl-3">
          <div class="card h-100 shadow-lg card-border-bottom border-%5$s lift border-hover-primary">
           <div class="card-body">
              %3$s
-            <h4>%1$s</h4>
+            <h3 class="h4">%1$s</h4>
             <p class="mb-2">%2$s</p>
            %4$s
           </div>
@@ -40,7 +40,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
         <div class="card shadow-lg card-border-bottom border-soft-yellow lift">
           <div class="card-body">
             <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/browser.svg" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
-            <h4>Content Marketing</h4>
+            <h3 class="h4">Content Marketing</h4>
             <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
             <a href="#" class="more hover link-yellow">Learn More</a>
           </div>
@@ -53,7 +53,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
         <div class="card shadow-lg card-border-bottom border-soft-green lift">
           <div class="card-body">
             <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/chat-2.svg" class="svg-inject icon-svg icon-svg-md text-green mb-3" alt="" />
-            <h4>Social Engagement</h4>
+            <h3 class="h4">Social Engagement</h4>
             <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
             <a href="#" class="more hover link-green">Learn More</a>
           </div>
@@ -66,7 +66,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
         <div class="card shadow-lg card-border-bottom border-soft-orange lift">
           <div class="card-body">
             <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/id-card.svg" class="svg-inject icon-svg icon-svg-md text-orange mb-3" alt="" />
-            <h4>Identity & Branding</h4>
+            <h3 class="h4">Identity & Branding</h4>
             <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
             <a href="#" class="more hover link-orange">Learn More</a>
           </div>
@@ -79,7 +79,7 @@ $features->default_features = '<div class="col-md-6 col-xl-3">
         <div class="card shadow-lg card-border-bottom border-soft-blue lift">
           <div class="card-body">
             <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/gift.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="" />
-            <h4>Product Design</h4>
+            <h3 class="h4">Product Design</h4>
             <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
             <a href="#" class="more hover link-blue">Learn More</a>
           </div>
