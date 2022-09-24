@@ -121,7 +121,7 @@
         },
         {
             "key": "field_6329a30f0e8e0",
-            "label": "Текст",
+            "label": "Text",
             "name": "tekst",
             "type": "textarea",
             "instructions": "",
@@ -137,6 +137,43 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_632ee270673ee",
+            "label": "Header",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_632ee307673f1",
+            "label": "Button",
+            "name": "button",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "field_62dc6f27dc128"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         }
     ],
     "location": [
@@ -157,5 +194,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663762085
+    "modified": 1664025722
 }
