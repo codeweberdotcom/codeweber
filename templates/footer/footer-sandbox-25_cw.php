@@ -1,21 +1,4 @@
   <footer class="bg-pale-primary">
-     <!--  generate forms start -->
-     <?php global $forms; ?>
-     <?php $forms = array_unique($forms); ?>
-     <?php if (isset($forms)) {
-         foreach ($forms as $item) {
-            $form = '<div class="modal fade" id="modal-form-' . $item . '" tabindex="-1">
-                        <div class="modal-dialog modal-dialog-centered modal-sm">
-                        <div class="modal-content text-center">
-                        <div class="modal-body">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>';
-            $form .= do_shortcode("[contact-form-7 id='{$item}']");
-            $form .= '</div></div></div></div>';
-            echo  $form;
-         }
-      }
-      ?>
-     <!--  generate forms end -->
      <div class="container pt-13 pt-md-15 pb-6 pb-md-8">
         <div class="row gy-6 gy-lg-0">
            <div class="col-md-4 col-lg-3">
