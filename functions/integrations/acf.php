@@ -842,6 +842,7 @@ class Buttons
 			endif;
 
 			while (have_rows('button_repeater')) : the_row();
+				$i = 0;
 				if (have_rows('button_button')) :
 					while (have_rows('button_button')) : the_row();
 
@@ -865,8 +866,10 @@ class Buttons
 						elseif (get_sub_field('select_type') == 'Form') :
 							$contact_form = get_sub_field('contact_form');
 							if ($contact_form) :
+								global $forms;
 								$cf7_id = $contact_form;
-								$button_bs_target = "#form-{$cf7_id}";
+								$button_bs_target = "#modal-form-{$cf7_id}";
+								array_push($forms, $cf7_id);
 							endif;
 						else :
 							$button_link = $this->button_link;
