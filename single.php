@@ -5,7 +5,7 @@ if (is_singular('services')) :
 	get_template_part('templates/content/single', 'services');
 
 elseif (is_singular('post')) :
-	// get_template_part('templates/sections/common', 'pageheader');
+	get_template_part('templates/sections/common', 'pageheader');
 	get_template_part('templates/content/single', 'blog');
 
 else :
