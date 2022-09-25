@@ -13,11 +13,7 @@ foreach ($terms as $term) : ?>
 <?php
    $args = array(
       'post_type' => 'faq',
-<<<<<<< HEAD
       'post_status' => 'publish',
-=======
-      'post_status'    => 'publish',
->>>>>>> 7d34dba1cafc504c7610bcf96e611fd48d9b2881
       'tax_query' => array(
          array(
             'taxonomy' => 'faq_categories',
