@@ -12,6 +12,8 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div class="page-loader"></div>
+
 	<?php wp_body_open(); ?>
 	<?php sandbox_frame_open(); ?>
 
