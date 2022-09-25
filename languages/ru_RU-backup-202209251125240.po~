@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-09-20 13:13+0000\n"
+"PO-Revision-Date: 2022-09-21 10:03+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -75,6 +75,7 @@ msgstr "Все Статьи"
 #: templates/footer/footer-sandbox-23.php:9
 #: templates/footer/footer-sandbox-24.php:51
 #: templates/footer/footer-sandbox-25.php:85
+#: templates/footer/footer-sandbox-25_cw.php:55
 #: templates/footer/footer-sandbox-26.php:51
 #: templates/footer/footer-sandbox-27.php:16
 #: templates/footer/footer-sandbox-3.php:10
@@ -177,7 +178,7 @@ msgid "Contact"
 msgstr ""
 
 #: templates/header/header-sandbox-09.php:146
-#: templates/header/header-sandbox-09_cw.php:66
+#: templates/header/header-sandbox-09_cw.php:68
 #: templates/header/header-sandbox-12.php:83
 #: templates/header/header-sandbox-15.php:63
 #: templates/header/header-sandbox-20.php:70
@@ -186,7 +187,7 @@ msgstr ""
 #: templates/header/header-sandbox-24.php:76
 #: templates/header/header-sandbox-27.php:62
 msgid "Contact Info"
-msgstr "Контакты"
+msgstr "Связаться с нами"
 
 #: templates/header/header-sandbox-05.php:68
 #: templates/header/header-sandbox-08.php:74
@@ -203,6 +204,7 @@ msgid "Edit"
 msgstr "Редактировать"
 
 #: templates/footer/footer-sandbox-25.php:57
+#: templates/footer/footer-sandbox-25_cw.php:14
 msgid "Elsewhere"
 msgstr "Или здесь"
 
@@ -245,7 +247,7 @@ msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
 
 #: templates/header/header-sandbox-09.php:164
-#: templates/header/header-sandbox-09_cw.php:84
+#: templates/header/header-sandbox-09_cw.php:83
 #: templates/header/header-sandbox-15.php:81
 #: templates/header/header-sandbox-20.php:88
 #: templates/header/header-sandbox-22.php:81
@@ -253,7 +255,7 @@ msgstr "Заполните E-mail и пароль для входа"
 #: templates/header/header-sandbox-24.php:94
 #: templates/header/header-sandbox-27.php:80
 msgid "Follow Us"
-msgstr "Присоединяйтесь"
+msgstr "Или здесь"
 
 #: functions/navmenus.php:15
 msgid "Footer Menu"
@@ -277,6 +279,7 @@ msgstr ""
 
 #: templates/footer/footer-sandbox-1.php:29
 #: templates/footer/footer-sandbox-25.php:49
+#: templates/footer/footer-sandbox-25_cw.php:6
 #: templates/footer/footer-sandbox-3.php:24
 msgid "Get in Touch"
 msgstr "Свяжитесь с нами"
@@ -385,6 +388,7 @@ msgstr ""
 #: templates/footer/footer-sandbox-22.php:44
 #: templates/footer/footer-sandbox-23.php:31
 #: templates/footer/footer-sandbox-25.php:70
+#: templates/footer/footer-sandbox-25_cw.php:36
 #: templates/footer/footer-sandbox-27.php:41
 #: templates/footer/footer-sandbox-3.php:35
 #: templates/footer/footer-sandbox-5.php:35
@@ -392,7 +396,6 @@ msgstr ""
 #: templates/footer/footer-sandbox-8.php:23
 #: templates/footer/footer-sandbox-9.php:35
 #: templates/header/header-sandbox-09.php:154
-#: templates/header/header-sandbox-09_cw.php:74
 #: templates/header/header-sandbox-12.php:91
 #: templates/header/header-sandbox-15.php:71
 #: templates/header/header-sandbox-20.php:78
@@ -401,7 +404,7 @@ msgstr ""
 #: templates/header/header-sandbox-27.php:70
 #| msgid "Read more"
 msgid "Learn More"
-msgstr "Подробнее"
+msgstr "Информация"
 
 #: comments.php:18
 msgid "Leave a comment"
@@ -446,6 +449,7 @@ msgstr "Отлично!"
 #: templates/footer/footer-sandbox-23.php:8
 #: templates/footer/footer-sandbox-24.php:50
 #: templates/footer/footer-sandbox-25.php:84
+#: templates/footer/footer-sandbox-25_cw.php:54
 #: templates/footer/footer-sandbox-26.php:50
 #: templates/footer/footer-sandbox-27.php:15
 #: templates/footer/footer-sandbox-3.php:9
@@ -497,6 +501,10 @@ msgstr ""
 #: functions/cpt/cpt-office_address.php:17
 msgid "Office addresses"
 msgstr ""
+
+#: templates/header/header-sandbox-09_cw.php:79
+msgid "Offices"
+msgstr "Офисы компании"
 
 #: 404.php:11
 msgid "Oops! Page Not Found."
@@ -562,6 +570,7 @@ msgid "Please enter your first name."
 msgstr "Введите ваше имя, пожалуйста."
 
 #: templates/footer/footer-sandbox-25.php:5
+#: templates/footer/footer-sandbox-25_cw.php:43
 msgid "Popular Posts"
 msgstr "Популярные статьи"
 
@@ -588,7 +597,6 @@ msgid "Results for: "
 msgstr ""
 
 #: templates/header/header-sandbox-09.php:142
-#: templates/header/header-sandbox-09_cw.php:62
 #: templates/header/header-sandbox-12.php:79
 #: templates/header/header-sandbox-15.php:59
 #: templates/header/header-sandbox-20.php:66
@@ -621,8 +629,9 @@ msgid "Service Category"
 msgstr ""
 
 #: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:16
+#: templates/footer/footer-sandbox-25_cw.php:28
 msgid "Services"
-msgstr ""
+msgstr "Услуги"
 
 #: functions/sidebars.php:37 functions/sidebars.php:39
 msgid "Services Sidebar"

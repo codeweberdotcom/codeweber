@@ -49,7 +49,7 @@
                                                          </div>
                                                          <?php if (get_sub_field('map_link')) { ?>
                                                             <div class="col align-self-center d-flex justify-content-end">
-                                                               <a href="<?php the_sub_field('map_link'); ?>" class="hover more">На карте</a>
+                                                               <a href="<?php the_sub_field('map_link'); ?>" class="hover more"><?php esc_html_e('Map', 'codeweber'); ?></a>
                                                             </div>
                                                          <?php
                                                          }
