@@ -8,6 +8,7 @@ $button->data_cues = "slideInDown";
 $button->data_group = "page-title-buttons";
 $button->data_delay = "900";
 $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Callback</a></span>';
+
 ?>
 
 <header class="wrapper bg-light pt-1">
@@ -65,7 +66,6 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
    </nav>
    <!-- /.navbar -->
 
-
    <div class="offcanvas offcanvas-end bg-light" id="offcanvas-info" data-bs-scroll="true">
       <div class="offcanvas-header">
          <div class="mb-0 h3"><?php echo get_bloginfo('name'); ?></div>
@@ -81,7 +81,22 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
             <address> <?php echo brk_adress(); ?> </address>
             <a href="mailto:<?php brk_email(); ?>"><?php echo brk_email(); ?></a><br />
             <?php echo brk_phone_one(); ?><br />
-            <?php echo brk_phone_two(); ?><br />
+            <?php echo brk_phone_two(); ?>
+            <div class="mt-3 mb-3">
+               <!--  buttons group -->
+               <?php $button->showbuttonsoption(); ?>
+               <!--/buttons group -->
+            </div>
+            <div class="widget">
+               <div class="widget-title h4 mb-3"><?php esc_html_e('Follow Us', 'codeweber'); ?></div>
+               <nav class="nav social social-color">
+                  <?php if (class_exists('ACF')) {
+                     get_template_part('templates/components/socialicons', '');
+                  }; ?>
+               </nav>
+               <!-- /.social -->
+            </div>
+            <!-- /.widget -->
          </div>
          <!-- /.widget -->
          <div class="widget mb-8">
@@ -92,7 +107,6 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
                'orderby'       => 'name',
                'order'         => 'ASC'
             ]; ?>
-
             <div class="form-select-wrapper w-100">
                <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
                   <option value="#0" selected>Выбрать город</option>
@@ -105,16 +119,7 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
                </select>
             </div>
          </div>
-         <div class="widget">
-            <div class="widget-title h4 mb-3"><?php esc_html_e('Follow Us', 'codeweber'); ?></div>
-            <nav class="nav social social-color">
-               <?php if (class_exists('ACF')) {
-                  get_template_part('templates/components/socialicons', '');
-               }; ?>
-            </nav>
-            <!-- /.social -->
-         </div>
-         <!-- /.widget -->
+
       </div>
       <!-- /.offcanvas-body -->
    </div>
