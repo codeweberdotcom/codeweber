@@ -8,7 +8,7 @@
 			</div>
 			<!-- /column -->
 			<div class="col-lg-8 col-xl-7 col-xxl-6 mx-auto text-center">
-				<h1 class="mb-3"><?php esc_html_e('Oops! Page Not Found.', 'codeweber'); ?> </h1>
+				<h1 class="mb-3"><?php esc_html_e('Oops! Page Not Found.', 'codeweber'); ?></h1>
 				<p class="lead mb-7 px-md-12 px-lg-5 px-xl-7"><?php esc_html_e('The page you are looking for is not available or has been moved. Try a different page or go to homepage with the button below.', 'codeweber'); ?></p>
 				<a href="/" class="btn btn-primary rounded-pill"><?php esc_html_e('Go to Homepage', 'codeweber'); ?></a>
 			</div>

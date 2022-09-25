@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-09-21 10:03+0000\n"
+"PO-Revision-Date: 2022-09-25 11:25+0000\n"
 "Last-Translator: София\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -111,10 +111,6 @@ msgstr ""
 "Используя эту форму для комментариев, вы соглашаетесь с нашей Политикой "
 "конфиденциальности"
 
-#: templates/header/header-sandbox-09_cw.php:40
-msgid "Call Order"
-msgstr "Заказать звонок"
-
 #: templates/footer/footer-sandbox-25.php:30
 #: templates/flexible-content/widgets/widget_4/widget_4.php:1
 msgid "Categories"
@@ -178,7 +174,7 @@ msgid "Contact"
 msgstr ""
 
 #: templates/header/header-sandbox-09.php:146
-#: templates/header/header-sandbox-09_cw.php:68
+#: templates/header/header-sandbox-09_cw.php:80
 #: templates/header/header-sandbox-12.php:83
 #: templates/header/header-sandbox-15.php:63
 #: templates/header/header-sandbox-20.php:70
@@ -240,6 +236,23 @@ msgstr ""
 msgid "Email Address"
 msgstr ""
 
+#: functions/cpt/cpt-faq.php:13
+msgid "FAQ"
+msgstr ""
+
+#: functions/cpt/cpt-faq.php:11 functions/cpt/cpt-faq.php:12
+#: functions/cpt/cpt-faq.php:17
+msgid "Faq"
+msgstr ""
+
+#: functions/cpt/taxonomy-faq.php:11 functions/cpt/taxonomy-faq.php:17
+msgid "Faq categories"
+msgstr ""
+
+#: functions/cpt/taxonomy-faq.php:12
+msgid "Faq category"
+msgstr ""
+
 #: templates/header/header-sandbox-05.php:61
 #: templates/header/header-sandbox-08.php:59
 #: templates/header/header-sandbox-09.php:59
@@ -247,7 +260,7 @@ msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
 
 #: templates/header/header-sandbox-09.php:164
-#: templates/header/header-sandbox-09_cw.php:83
+#: templates/header/header-sandbox-09_cw.php:109
 #: templates/header/header-sandbox-15.php:81
 #: templates/header/header-sandbox-20.php:88
 #: templates/header/header-sandbox-22.php:81
@@ -465,6 +478,10 @@ msgstr "Разработано"
 msgid "Main Sidebar"
 msgstr ""
 
+#: templates/flexible-content/contact/contact_100/contact_100.php:52
+msgid "Map"
+msgstr "На карте"
+
 #: functions/integrations/acf.php:24 functions/integrations/acf.php:28
 msgid "Meta"
 msgstr ""
@@ -502,7 +519,7 @@ msgstr ""
 msgid "Office addresses"
 msgstr ""
 
-#: templates/header/header-sandbox-09_cw.php:79
+#: templates/header/header-sandbox-09_cw.php:88
 msgid "Offices"
 msgstr "Офисы компании"
 

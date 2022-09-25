@@ -7,9 +7,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php wp_head(); ?>
+	<?php global $forms; ?>
+	<?php $forms = array(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+	<div class="page-loader"></div>
+
 	<?php wp_body_open(); ?>
 	<?php sandbox_frame_open(); ?>
 

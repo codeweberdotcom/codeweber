@@ -27,7 +27,7 @@ $features->pattern = '<div class="col-md-6 col-xl-3">
          <div class="card shadow-lg card-border-bottom border-%5$s lift">
           <div class="card-body">
              %3$s
-            <h3 class="h4">%1$s</h4>
+            <div class="h4">%1$s</div>
             <p class="mb-2">%2$s</p>
            %4$s
           </div>
