@@ -1,49 +1,7 @@
 {
     "key": "group_632b203c14819",
     "title": "Faq post",
-    "fields": [
-        {
-            "key": "field_632b23287e67b",
-            "label": "Category",
-            "name": "category",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "faq_categories",
-            "field_type": "select",
-            "allow_null": 0,
-            "add_term": 0,
-            "save_terms": 1,
-            "load_terms": 1,
-            "return_format": "object",
-            "multiple": 0
-        },
-        {
-            "key": "field_632b20d57e67a",
-            "label": "Paragraph",
-            "name": "paragraph",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "br"
-        }
-    ],
+    "fields": [],
     "location": [
         [
             {
@@ -62,5 +20,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664189735
+    "modified": 1664200395
 }
