@@ -527,6 +527,15 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_63303f3c0f58e": {
+                    "key": "layout_63303f3c0f58e",
+                    "name": "faq_6",
+                    "label": "Faq 6",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add FAQ",
@@ -554,5 +563,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660222348
+    "modified": 1664189706
 }

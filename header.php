@@ -11,7 +11,7 @@
 	<?php $forms = array(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> data-bs-spy="scroll" data-bs-target="#sidebar-nav">
 	<div class="page-loader"></div>
 
 	<?php wp_body_open(); ?>
