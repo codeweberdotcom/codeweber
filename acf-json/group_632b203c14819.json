@@ -34,7 +34,7 @@
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "category",
+            "taxonomy": "faq_categories",
             "field_type": "select",
             "allow_null": 0,
             "add_term": 1,
@@ -62,5 +62,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664216796
+    "modified": 1664217239
 }
