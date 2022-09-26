@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row gx-0">
-    <aside class="col-xl-3 sidebar sticky-sidebar mt-md-0 py-16  d-xl-block">
+    <aside class="col-xl-3 sidebar sticky-sidebar mt-md-0 py-16 d-none d-xl-block">
       <div class="widget">
         <nav id="sidebar-nav">
           <?php
