@@ -909,7 +909,10 @@ class Buttons
 								global $forms;
 								$cf7_id = $contact_form;
 								$button_bs_target = "#modal-form-{$cf7_id}";
-								array_push($forms, $cf7_id);
+								if (!is_admin()) {
+									array_push($forms, $cf7_id);
+								}
+
 							endif;
 						else :
 							$button_link = $this->button_link;
@@ -1055,7 +1058,9 @@ class Buttons
 								global $forms;
 								$cf7_id = $contact_form;
 								$button_bs_target = "#modal-form-{$cf7_id}";
-								array_push($forms, $cf7_id);
+								if (!is_admin()) {
+									array_push($forms, $cf7_id);
+								}
 							endif;
 						else :
 							$button_link = $this->button_link;
