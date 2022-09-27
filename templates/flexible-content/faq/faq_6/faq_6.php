@@ -48,7 +48,7 @@
                     $post_id =  get_the_ID(); ?>
                     <div class="card accordion-item">
                       <div class="card-header" id="headingOne">
-                        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $post_id; ?>" aria-expanded="true" aria-controls="collapse<?php echo $post_id; ?>">
+                        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $post_id; ?>" aria-expanded="true" aria-controls="collapse<?php echo $post_id; ?>">
                           <h3 class="h6"><?php the_title(); ?></h3>
                         </button>
                       </div>

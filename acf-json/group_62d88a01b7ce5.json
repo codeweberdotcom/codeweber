@@ -3642,13 +3642,74 @@
                     "save_other_choice": 0
                 },
                 {
+                    "key": "field_6332e75cfec04",
+                    "label": "Custom or PostType",
+                    "name": "custom_or_posttype",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_6332e77bfec05",
+                    "label": "Post",
+                    "name": "post",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6332e75cfec04",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "faq"
+                    ],
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": "",
+                    "min": "",
+                    "max": "",
+                    "return_format": "id"
+                },
+                {
                     "key": "field_62f277bab6922",
                     "label": "Accordeon repeater",
                     "name": "accordeon_repeater",
                     "type": "repeater",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6332e75cfec04",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -4805,5 +4866,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663413035
+    "modified": 1664294283
 }
