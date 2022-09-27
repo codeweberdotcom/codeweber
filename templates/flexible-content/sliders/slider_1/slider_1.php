@@ -42,7 +42,7 @@ $myposts = $my_posts->query(array(
                         ?>
                      </a>
                      <figcaption>
-                        <h5 class="from-top mb-0"><?php esc_html_e('Read More', 'codeweber'); ?></h5>
+                        <div class="from-top mb-0 h5"><?php esc_html_e('Read More', 'codeweber'); ?></div>
                      </figcaption>
                   </figure>
 

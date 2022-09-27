@@ -38,7 +38,7 @@ if (!class_exists('codeweber_Walker_Comment')) {
                      <?php endif;
                      }
                      printf(
-                        '<div><h6 class="comment-author">%1$s</h6><span class="screen-reader-text says">%2$s</span>',
+                        '<div><div class="comment-author h6">%1$s</div><span class="screen-reader-text says">%2$s</span>',
                         esc_html($comment_author),
                         __('says:', 'codeweber')
                      );

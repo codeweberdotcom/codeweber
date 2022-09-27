@@ -72,7 +72,7 @@ global $post;
 											</figure>
 										<?php endif; ?>
 										<div>
-											<h6><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="link-dark"><?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></a></h6>
+											<div class="h6"><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="link-dark"><?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></a></div>
 											<?php
 											$job_title = __('Writer', 'codeweber');
 											if (get_field('job_title', $user_id_prefixed)) {
