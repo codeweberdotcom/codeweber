@@ -3,7 +3,29 @@
     "title": "Faq post",
     "fields": [
         {
-            "key": "field_6331ebc196cbc",
+            "key": "field_632b23287e67b",
+            "label": "Category",
+            "name": "category",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "faq_categories",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_632b20d57e67a",
             "label": "Paragraph",
             "name": "paragraph",
             "type": "textarea",
@@ -20,28 +42,6 @@
             "maxlength": "",
             "rows": "",
             "new_lines": "br"
-        },
-        {
-            "key": "field_6331ebfa96cbd",
-            "label": "Category",
-            "name": "category",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "taxonomy": "faq_categories",
-            "field_type": "select",
-            "allow_null": 0,
-            "add_term": 1,
-            "save_terms": 1,
-            "load_terms": 0,
-            "return_format": "object",
-            "multiple": 0
         }
     ],
     "location": [
@@ -62,5 +62,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664217239
+    "modified": 1664272308
 }

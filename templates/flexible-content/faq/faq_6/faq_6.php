@@ -21,7 +21,7 @@
       <!-- /.widget -->
     </aside>
     <!-- /column -->
-    <div class="col-xl-8">
+    <div class="col-xl-9">
       <?php foreach ($terms as $term) : ?>
         <section id="<?php echo esc_html($term->slug); ?>" class="wrapper pt-16 mt-0">
           <div class="card">
@@ -31,6 +31,7 @@
                 <?php
                 $args = array(
                   'post_type' => 'faq',
+                  'posts_per_page' => -1,
                   'post_status' => 'publish',
                   'tax_query' => array(
                     array(
