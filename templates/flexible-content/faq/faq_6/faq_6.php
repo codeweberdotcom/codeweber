@@ -26,7 +26,7 @@
         <section id="<?php echo esc_html($term->slug); ?>" class="wrapper pt-16 mt-0">
           <div class="card">
             <div class="card-body p-10">
-              <h2 class="mb-3"><?php echo esc_html($term->name); ?></h2>
+              <h2 class="mb-6"><?php echo esc_html($term->name); ?></h2>
               <div class="accordion accordion-wrapper" id="accordion<?php echo esc_html($term->slug); ?>">
                 <?php
                 $args = array(
