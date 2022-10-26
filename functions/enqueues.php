@@ -15,7 +15,8 @@ if (!function_exists('brk_styles_scripts')) {
 		wp_enqueue_style('google-fonts', get_template_directory_uri() . '/dist/css/fonts/urbanist.css', false, $theme_version, 'all');
 		wp_enqueue_style('plugin-styles', get_template_directory_uri() . '/dist/css/plugins.min.css', false, $theme_version, 'all');
 		wp_enqueue_style('theme-styles', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all');
-		//wp_enqueue_style('color-styles', get_template_directory_uri() . '/dist/css/colors/navy.css', false, $theme_version, 'all');
+		
+		wp_enqueue_style('color-styles', get_template_directory_uri() . '/dist/css/colors/green.css', false, $theme_version, 'all');
 
 
 		// --- Custom CSS ---
@@ -28,7 +29,7 @@ if (!function_exists('brk_styles_scripts')) {
 
 		/*add codeweber theme scripts */
 		wp_enqueue_script('plugins-scripts', get_template_directory_uri() . '/dist/js/plugins.min.js', false, $theme_version, true);
-		wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/dist/js/theme.min.js', false, $theme_version, true);
+		wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/dist/js/theme.js', false, $theme_version, true);
 
 		//wp_enqueue_script('theme-scripts1', get_template_directory_uri() . '/dist/js/cf7-generate-forms.js', false, $theme_version, true);
 	}
@@ -53,8 +54,8 @@ if (!function_exists('brk_styles_scripts_admin')) {
 		wp_enqueue_style('gutenberg_admin_styles', get_template_directory_uri() . '/templates/flexible-content/flexible-block.css', false, $theme_version, 'all');
 
 		// --- JS ---
-		wp_enqueue_script('plugins-scripts2', get_template_directory_uri() . '/dist/js/plugins.min.js', false, $theme_version, true);
-		wp_enqueue_script('theme-scripts2', get_template_directory_uri() . '/dist/js/theme.min.js', false, $theme_version, true);
+		//wp_enqueue_script('plugins-scripts2', get_template_directory_uri() . '/dist/js/plugins.min.js', false, $theme_version, true);
+		//wp_enqueue_script('theme-scripts2', get_template_directory_uri() . '/dist/js/theme.min.js', false, $theme_version, true);
 	}
 }
 add_action('admin_enqueue_scripts', 'brk_styles_scripts_admin');

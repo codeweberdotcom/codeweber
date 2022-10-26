@@ -1,6 +1,6 @@
 {
     "key": "group_632c4c5f57118",
-    "title": "Testimonials",
+    "title": "Testimonial post",
     "fields": [
         {
             "key": "field_632c4c7aa5b22",
@@ -18,6 +18,30 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_6347e538c7c9e",
+                    "label": "Photo",
+                    "name": "photo",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
                     "key": "field_632c4ca1a5b23",
                     "label": "Name",
                     "name": "name",
@@ -26,7 +50,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "33.33",
                         "class": "",
                         "id": ""
                     },
@@ -45,7 +69,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "50",
+                        "width": "33.33",
                         "class": "",
                         "id": ""
                     },
@@ -54,6 +78,63 @@
                     "maxlength": "",
                     "rows": "",
                     "new_lines": "br"
+                },
+                {
+                    "key": "field_6347e5876d0a4",
+                    "label": "Town",
+                    "name": "town",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6347e5976d0a5",
+                    "label": "E-Mail",
+                    "name": "e-mail",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_6347e5ee6d0a6",
+                    "label": "Phone",
+                    "name": "phone",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.33",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -76,5 +157,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663847658
+    "modified": 1666609645
 }

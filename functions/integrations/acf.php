@@ -6,9 +6,21 @@
 
 // https://www.advancedcustomfields.com/resources/options-page/
 
-if (function_exists('acf_add_options_page')) {
 
-	acf_add_options_page();
+
+add_action('acf/init', 'my_acf_init');
+
+function my_acf_init()
+{
+
+	if (function_exists('acf_add_options_page')) {
+
+		$option_page = acf_add_options_page(array(
+			'page_title' 	=> __('Options', 'codeweber'),
+			'menu_title' 	=> __('Options', 'codeweber'),
+			'menu_slug' 	=> 'acf-options',
+		));
+	}
 }
 
 // https://www.advancedcustomfields.com/resources/register-fields-via-php/
@@ -202,7 +214,7 @@ function brk_logo_dark_link()
 	if ($logo_header_dark) :
 		$brk_logo_header_dark = $logo_header_dark;
 	else :
-		$brk_logo_header_dark = './dist/img/logo-dark.png';
+		$brk_logo_header_dark = get_template_directory_uri() . '/dist/img/logo-dark.png';
 	endif;
 	return $brk_logo_header_dark;
 };
@@ -216,7 +228,7 @@ function brk_logo_light_link()
 	if ($logo_light) :
 		$brk_logo_light = $logo_light;
 	else :
-		$brk_logo_light = './dist/img/logo-light.png';
+		$brk_logo_light = get_template_directory_uri() . '/dist/img/logo-light.png';
 	endif;
 	return $brk_logo_light;
 };
@@ -434,7 +446,7 @@ class SwiperSlider
 				<!--/.swiper -->
 			</div>
 			<!-- /.swiper-container -->
-			<?php else :
+		<?php else :
 			echo $this->default_media;
 		endif;
 	}
@@ -473,7 +485,6 @@ class Settings
 	{
 
 		if (get_sub_field('mirror') == 0) :
-
 			if (get_sub_field('reverse_mobile') == 1) :
 				$this->column_one = 'order-1 order-lg-2';
 				$this->column_two = '';
@@ -507,6 +518,11 @@ class Settings
 		if (get_sub_field('paragraph')) :
 			$this->paragraph = get_sub_field('paragraph');
 		endif;
+
+
+
+
+
 
 		if (get_sub_field('dark_or_white_light_or_dark') == 0) :
 			$this->backgroundcolor = $this->backgroundcolor;
@@ -637,6 +653,64 @@ class Icons
 			endwhile;
 		endif;
 	}
+	public function GetColorIcon()
+	{
+		if (have_rows('icon')) : ?>
+			<?php while (have_rows('icon')) : the_row();
+
+				if (have_rows('type_color')) :
+					while (have_rows('type_color')) : the_row();
+						$type_color = get_sub_field('select_type_color');
+						if ($type_color == 'Solid') :
+							$color_icon = get_sub_field('theme_btn_solid_color');
+							$base_color_icon = get_sub_field('theme_btn_solid_color');
+						elseif ($type_color == 'Soft') :
+							$color_icon = 'soft-' . get_sub_field('theme_btn_solid_color');
+							$base_color_icon = get_sub_field('theme_btn_solid_color');
+						elseif ($type_color == 'Gradient') :
+							$color_icon = get_sub_field('gradient_btn') . ' gradient';
+						endif;
+					endwhile;
+				endif;
+
+
+				if (have_rows('type_icons')) :
+					while (have_rows('type_icons')) : the_row();
+						$this->iconsize = get_sub_field('icon_size');
+						$this->icon_type = get_sub_field('select_type_icons');
+						$this->iconform = get_sub_field('icon_form');
+						$this->iconnumber = get_sub_field('number');
+						$this->icon = get_sub_field('icon');
+						$this->iconpaddingclass = 'mb-3 pe-none';
+						if (get_sub_field('icon_lineal_svg')) {
+							$this->icon_url = get_stylesheet_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
+						}
+					endwhile;
+				endif;
+
+
+
+				if ($this->icon_type == 'Unicons') :
+					$icon_block = '<div class="icon btn ' . $this->iconform . ' btn-' . $this->iconsize . ' btn-' . $color_icon . ' ' . $this->iconpaddingclass . ' ">' . $this->icon . '</div>';
+					echo $icon_block;
+				elseif ($this->icon_type == 'SVG') :
+					$icon_block = '<img src="' . $this->icon_url . '" class="svg-inject icon-svg icon-svg-' . $this->iconsize . ' text-' . $base_color_icon . ' ' . $this->iconpaddingclass . '"/>';
+					echo $icon_block;
+				elseif ($this->icon_type == 'Number') :
+					$icon_block = '<span class="icon btn ' . $this->iconform . ' btn-' . $this->iconsize . ' btn-' .   $color_icon . ' ' . $this->iconpaddingclass . '"><span class="number fs-18">' . $this->iconnumber . '</span></span>';
+					echo $icon_block;
+				elseif ($this->icon_type == 'None') :
+				endif;
+
+
+
+
+
+
+
+			endwhile;
+		endif;
+	}
 }
 
 
@@ -682,8 +756,6 @@ class LabelIcons
 	public $icon_classes = 'icon btn btn-circle btn-lg disabled mx-auto me-4 mb-lg-3 mb-xl-0'; // на удаление
 
 	public $iconpaddingclass = 'mx-auto me-4 mb-lg-3 mb-xl-0';
-
-
 
 	public function GetLabel()
 	{
@@ -816,7 +888,6 @@ class LabelIcons
 				if (have_rows('type_icons')) :
 					while (have_rows('type_icons')) : the_row();
 
-
 						if ($icon->icon_type == 'Unicons') :
 							$icon_block = '<div class="icon btn ' . $icon->iconform . ' btn-' . $this->iconsize . ' btn-' . $icon_color->color_icon . ' ' . $this->iconpaddingclass . ' ">' . $icon->icon . '</div>';
 						elseif ($icon->icon_type == 'SVG') :
@@ -843,7 +914,7 @@ class Buttons
 	public $form_button = NULL;
 	public $button_outline = NULL;
 	public $button_size = NULL;
-	public $button_link = "#";
+	public $button_link = '#';
 	public $gradient = NULL;
 	public $ghligthbox = NULL;
 	public $count = NULL;
@@ -889,32 +960,51 @@ class Buttons
 						/* link */
 						$ghligthbox = NULL;
 						if (get_sub_field('select_type') == 'Page or Post') :
+
 							$button_link = get_sub_field('button_link');
 							if ($button_link) :
 								$button_link = get_permalink($button_link);
+							else :
+								$button_link = '#';
 							endif;
+
 						elseif (get_sub_field('select_type') == 'Taxonomy') :
+
 							$taxonomy = get_sub_field('taxonomy');
 							if ($taxonomy) :
 								$button_link = esc_url(get_term_link($taxonomy));
+							else :
+								$button_link = '#';
 							endif;
 						elseif (get_sub_field('select_type') == 'URL') :
-							$button_link = get_sub_field('url');
+
+							if (get_sub_field('url')) :
+								$button_link = get_sub_field('url');
+							else :
+								$button_link = '#';
+							endif;
+
 						elseif (get_sub_field('select_type') == 'Video URL') :
-							$button_link = get_sub_field('video_url');
-							$ghligthbox = 'data-glightbox';
-						elseif (get_sub_field('select_type') == 'Form') :
+
+							if (get_sub_field('video_url')) :
+								$button_link = get_sub_field('video_url');
+								$ghligthbox = 'data-glightbox';
+							else :
+								$button_link = '#';
+							endif;
+
+						elseif (get_sub_field('select_type') == 'Form' && !is_admin()) :
 							$contact_form = get_sub_field('contact_form');
 							if ($contact_form) :
-								global $forms;
 								$cf7_id = $contact_form;
-								$button_bs_target = "#modal-form-{$cf7_id}";
-								if (!is_admin()) {
+								$button_bs_target = '#modal-form-' . $cf7_id;
+								global $forms;
+								if (is_array($forms)) :
 									array_push($forms, $cf7_id);
-								}
-
+								endif;
 							endif;
 						else :
+							$button_bs_target = '#';
 							$button_link = $this->button_link;
 						endif;
 
@@ -1063,6 +1153,7 @@ class Buttons
 								}
 							endif;
 						else :
+							$button_bs_target = '#';
 							$button_link = $this->button_link;
 						endif;
 
@@ -1987,7 +2078,6 @@ class Features
 						$link->linkcolor = $this->linkcolor;
 						$link_s = $link->Link();
 
-
 						if ($i == 0) {
 							$this->pattern = '<div class="col-md-5 offset-md-1 align-self-end"><div class="card bg-pale-%5$s"><div class="card-body">%3$s<h4>%1$s</h4><p class="mb-0">%2$s</p>%4$s</div><!--/.card-body --></div><!--/.card --></div><!--/column -->';
 						} elseif ($i == 1) {
@@ -2008,6 +2098,211 @@ class Features
 			echo $this->default_features;
 		?>
 		<?php endif; ?>
-<?php
+		<?php
 	}
+
+	public function Testimonials_01()
+	{
+		$testimonials_loop = get_sub_field('testimonials_loop');
+		if ($testimonials_loop) :
+			$i = 0;
+			foreach ($testimonials_loop as $post_ids) :
+				if (have_rows('testimonials', $post_ids)) :
+					while (have_rows('testimonials', $post_ids)) : the_row();
+						$photo = get_sub_field('photo'); ?>
+						<?php if ($photo) : ?>
+							<img src="<?php echo esc_url($photo['url']); ?>" alt="<?php echo esc_attr($photo['alt']); ?>" />
+						<?php endif; ?>
+
+
+<?php if (get_sub_field('name')) {
+							$this->title = get_sub_field('name');
+						}
+						if (get_sub_field('testimonial')) {
+							$this->paragraph = get_sub_field('testimonial');
+						}
+						if (get_sub_field('town')) {
+							$this->town = get_sub_field('town');
+						}
+
+						if ($i == 0) {
+							$this->pattern = '<div class="col-md-6 col-xl-5 align-self-end"><div class="card bg-pale-yellow"><div class="card-body">
+<blockquote class="icon mb-0">
+            <p>“%2$s”
+            </p>
+            <div class="blockquote-details">
+               <div class="info p-0">
+                  <h5 class="mb-1">%1$s</h5>
+                  <p class="mb-0">%3$s</p>
+               </div>
+            </div>
+         </blockquote>
+      </div>
+      <!--/.card-body -->
+   </div>
+   <!--/.card -->
+</div>
+<!--/column -->';
+						} elseif ($i == 1) {
+							$this->pattern = '<div class="col-md-6 align-self-end">
+   <div class="card bg-pale-red">
+      <div class="card-body">
+         <blockquote class="icon mb-0">
+            <p>“%2$s”</p>
+            <div class="blockquote-details">
+               <div class="info p-0">
+                  <h5 class="mb-1">%1$s</h5>
+                  <p class="mb-0">%3$s</p>
+               </div>
+            </div>
+         </blockquote>
+      </div>
+      <!--/.card-body -->
+   </div>
+   <!--/.card -->
+</div>
+<!--/column -->';
+						} elseif ($i == 2) {
+							$this->pattern = '<div class="col-md-6 col-xl-5 offset-xl-1">
+   <div class="card bg-pale-leaf">
+      <div class="card-body">
+         <blockquote class="icon mb-0">
+            <p>“%2$s”</p>
+            <div class="blockquote-details">
+               <div class="info p-0">
+                  <h5 class="mb-1">%1$s</h5>
+                  <p class="mb-0">%3$s</p>
+               </div>
+            </div>
+         </blockquote>
+      </div>
+      <!--/.card-body -->
+   </div>
+   <!--/.card -->
+</div>
+<!--/column -->';
+						} elseif ($i == 3) {
+							$this->pattern = '<div class="col-md-6 align-self-start">
+   <div class="card bg-pale-blue">
+      <div class="card-body">
+         <blockquote class="icon mb-0">
+            <p>“%2$s”</p>
+            <div class="blockquote-details">
+               <div class="info p-0">
+                  <h5 class="mb-1">%1$s</h5>
+                  <p class="mb-0">%3$s</p>
+               </div>
+            </div>
+         </blockquote>
+      </div>
+      <!--/.card-body -->
+   </div>
+   <!--/.card -->
+</div>
+<!--/column -->';
+						}
+
+
+
+					endwhile;
+				endif;
+				echo wp_sprintf($this->pattern, $this->title, $this->paragraph, $this->town); //> На дереве сидят 5 обезьян
+
+				$i++;
+			endforeach;
+		endif;
+	}
+}
+
+
+
+
+if (
+	function_exists('acf_add_local_field_group')
+) :
+
+	acf_add_local_field_group(array(
+		'key' => 'group_6346af2c75768',
+		'title' => __('Translate', 'codeweber'),
+		'fields' => array(
+			array(
+				'key' => 'field_6346af32a70b7',
+				'label' => __('Test', 'codeweber'),
+				'name' => 'test',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	));
+
+endif;
+
+
+function is_acf_admin()
+{
+
+	if (isset($_GET['post']) && 'acf-field-group' == get_post_type($_GET['post'])) {
+		return true;
+	}
+	if (isset($_POST['post_type']) && 'acf-field-group' == $_POST['post_type']) {
+		return true;
+	}
+	return false;
+}
+
+
+add_filter('acf/load_field', 'translate_acf_fields');
+function translate_acf_fields($field)
+{
+
+	// Don't run on acf-field-group page
+	if (get_post_type(get_the_ID()) == 'acf-field-group') {
+		return $field;
+	}
+
+	// Translate backend labels/titles/instuctions
+	$field['label']        = __($field['label'], 'codeweber');
+	$field['instructions'] = __($field['instructions'], 'codeweber');
+
+	return $field;
+}
+
+
+add_filter('acf/get_field_group', 'translate_acf_field_group');
+
+function translate_acf_field_group($field_group)
+{
+
+	$field_group['title'] = __($field_group['title'], 'codeweber');
+	return $field_group;
 }

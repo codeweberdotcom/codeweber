@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-09-20 13:13+0000\n"
-"Last-Translator: София\n"
+"PO-Revision-Date: 2022-10-15 10:00+0000\n"
+"Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,11 @@ msgstr ""
 #: functions/lib/comments-helper.php:50
 #, php-format
 msgid "%1$s "
-msgstr ""
+msgstr "%1$s "
+
+#: index.php:25 index.php:43
+msgid "&laquo; Previous"
+msgstr "&laquo; Предыдущий"
 
 #: functions/custom.php:19
 msgid "<i class=\"uil uil-comments\"></i>Reply"
@@ -39,11 +43,23 @@ msgstr "<i class=\"uil uil-comments\"></i>Ответить"
 msgid "A modular WordPress theme powered by Bootstrap 5 and Gulp"
 msgstr "Модульный шаблон Wordpress на базе Bootstrap 5 и Gulp"
 
+#: functions/lib/class-wp-bootstrap-navwalker.php:383
+msgid "Add a menu"
+msgstr "Добавить меню"
+
+#: functions/cpt/cpt-price_package.php:16
+msgid "Add New Price Package"
+msgstr "Добавить Новый Пакет"
+
+#: functions/cpt/cpt-price_package.php:15
+msgid "Add Price Packages"
+msgstr "Добавить Пакет"
+
 #: templates/footer/footer-sandbox-24.php:36
 #: templates/footer/footer-sandbox-26.php:36
 #: templates/footer/footer-sandbox-4.php:30
 msgid "Address"
-msgstr ""
+msgstr "Адрес"
 
 #: templates/footer/footer-sandbox-4.php:12
 msgid ""
@@ -56,6 +72,10 @@ msgstr ""
 #: templates/content/single-blog.php:86
 msgid "All Posts"
 msgstr "Все Статьи"
+
+#: functions/cpt/cpt-price_package.php:14
+msgid "All Price Packages"
+msgstr "Все Ценовые Пакеты"
 
 #: templates/footer/footer-sandbox-1.php:15
 #: templates/footer/footer-sandbox-10.php:10
@@ -75,6 +95,7 @@ msgstr "Все Статьи"
 #: templates/footer/footer-sandbox-23.php:9
 #: templates/footer/footer-sandbox-24.php:51
 #: templates/footer/footer-sandbox-25.php:85
+#: templates/footer/footer-sandbox-25_cw.php:55
 #: templates/footer/footer-sandbox-26.php:51
 #: templates/footer/footer-sandbox-27.php:16
 #: templates/footer/footer-sandbox-3.php:10
@@ -96,9 +117,17 @@ msgstr "Уже есть аккаунт?"
 msgid "Archive"
 msgstr "Статьи по месяцам"
 
+#: templates/components/backtotop.php:1
+msgid "Back to top"
+msgstr "Вернуться наверх"
+
 #: templates/content/loop.php:42 templates/sections/common-pageheader.php:26
 msgid "By"
 msgstr "Автор"
+
+#: templates/sections/home-news.php:40
+msgid "By "
+msgstr ""
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "by over 5000+ clients. Join them now and grow your business."
@@ -110,10 +139,6 @@ msgstr ""
 "Используя эту форму для комментариев, вы соглашаетесь с нашей Политикой "
 "конфиденциальности"
 
-#: templates/header/header-sandbox-09_cw.php:40
-msgid "Call Order"
-msgstr "Заказать звонок"
-
 #: templates/footer/footer-sandbox-25.php:30
 #: templates/flexible-content/widgets/widget_4/widget_4.php:1
 msgid "Categories"
@@ -123,7 +148,7 @@ msgstr "Категории"
 msgid "CFollow Us"
 msgstr ""
 
-#: functions/integrations/acf.php:35
+#: functions/integrations/acf.php:47
 msgid "Chrome Theme"
 msgstr ""
 
@@ -161,7 +186,7 @@ msgstr[2] "%1$s Комментариев"
 #, php-format
 msgctxt "comments title"
 msgid "One reply on &ldquo;%s&rdquo;"
-msgstr "Один комментарий"
+msgstr "Один комментарий  от &ldquo;%s&rdquo;"
 
 #: templates/header/header-sandbox-05.php:108
 #: templates/header/header-sandbox-08.php:114
@@ -174,10 +199,10 @@ msgstr "Подтвердить пароль"
 #: templates/header/header-sandbox-14.php:47
 #: templates/header/header-sandbox-21.php:39
 msgid "Contact"
-msgstr ""
+msgstr "Контакт"
 
 #: templates/header/header-sandbox-09.php:146
-#: templates/header/header-sandbox-09_cw.php:68
+#: templates/header/header-sandbox-09_cw.php:84
 #: templates/header/header-sandbox-12.php:83
 #: templates/header/header-sandbox-15.php:63
 #: templates/header/header-sandbox-20.php:70
@@ -186,6 +211,10 @@ msgstr ""
 #: templates/header/header-sandbox-24.php:76
 #: templates/header/header-sandbox-27.php:62
 msgid "Contact Info"
+msgstr "Связаться с нами"
+
+#: templates/footer/footer-columns.php:22
+msgid "Contacts"
 msgstr "Контакты"
 
 #: templates/header/header-sandbox-05.php:68
@@ -196,13 +225,18 @@ msgstr "Еще нет аккаунта?"
 
 #: templates/footer/footer-sandbox-4.php:47
 msgid "E-mail"
-msgstr ""
+msgstr "E-Mail"
 
 #: functions/lib/comments-helper.php:62
 msgid "Edit"
 msgstr "Редактировать"
 
+#: functions/cpt/cpt-price_package.php:17
+msgid "Edit Price Package"
+msgstr "Редактировать Пакет"
+
 #: templates/footer/footer-sandbox-25.php:57
+#: templates/footer/footer-sandbox-25_cw.php:14
 msgid "Elsewhere"
 msgstr "Или здесь"
 
@@ -212,11 +246,11 @@ msgstr "Или здесь"
 #: templates/header/header-sandbox-09.php:63
 #: templates/header/header-sandbox-09.php:104
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: comments.php:140
 msgid "Email *"
-msgstr ""
+msgstr "Email *"
 
 #: templates/footer/footer-sandbox-1.php:57
 #: templates/footer/footer-sandbox-10.php:52
@@ -236,7 +270,32 @@ msgstr ""
 #: templates/footer/footer-sandbox-7.php:19
 #: templates/footer/footer-sandbox-9.php:52
 msgid "Email Address"
-msgstr ""
+msgstr "Email Адрес"
+
+#: functions/cpt/cpt-faq.php:13
+msgid "FAQ"
+msgstr "FAQ"
+
+#: functions/cpt/cpt-faq.php:11 functions/cpt/cpt-faq.php:12
+#: functions/cpt/cpt-faq.php:17
+msgid "Faq"
+msgstr "Faq"
+
+#: functions/cpt/taxonomy-faq.php:11 functions/cpt/taxonomy-faq.php:17
+msgid "Faq categories"
+msgstr "Категории FAQ"
+
+#: functions/cpt/taxonomy-faq.php:12
+msgid "Faq category"
+msgstr "Категория FAQ"
+
+#: functions/cpt/cpt-faq.php:58
+msgid "FAQ Options"
+msgstr "Настройки FAQ"
+
+#: functions/cpt/cpt-faq.php:59
+msgid "FAQ Optionss"
+msgstr "ewewew"
 
 #: templates/header/header-sandbox-05.php:61
 #: templates/header/header-sandbox-08.php:59
@@ -245,7 +304,7 @@ msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
 
 #: templates/header/header-sandbox-09.php:164
-#: templates/header/header-sandbox-09_cw.php:81
+#: templates/header/header-sandbox-09_cw.php:95
 #: templates/header/header-sandbox-15.php:81
 #: templates/header/header-sandbox-20.php:88
 #: templates/header/header-sandbox-22.php:81
@@ -253,15 +312,15 @@ msgstr "Заполните E-mail и пароль для входа"
 #: templates/header/header-sandbox-24.php:94
 #: templates/header/header-sandbox-27.php:80
 msgid "Follow Us"
-msgstr "Присоединяйтесь"
+msgstr "Или здесь"
 
 #: functions/navmenus.php:15
 msgid "Footer Menu"
-msgstr ""
+msgstr "Меню Футера"
 
 #: functions/navmenus.php:16
 msgid "Footer Menu 1"
-msgstr ""
+msgstr "Меню Футера 1"
 
 #: templates/header/header-sandbox-05.php:67
 #: templates/header/header-sandbox-08.php:73
@@ -273,10 +332,11 @@ msgstr "Забыли пароль?"
 #: templates/header/header-sandbox-11.php:40
 #: templates/header/header-sandbox-26.php:39
 msgid "Free Trial"
-msgstr ""
+msgstr "Бесплатный период"
 
 #: templates/footer/footer-sandbox-1.php:29
 #: templates/footer/footer-sandbox-25.php:49
+#: templates/footer/footer-sandbox-25_cw.php:6
 #: templates/footer/footer-sandbox-3.php:24
 msgid "Get in Touch"
 msgstr "Свяжитесь с нами"
@@ -306,7 +366,7 @@ msgstr "Свяжитесь с нами"
 #: templates/footer/footer-sandbox-18.php:15
 #: templates/footer/footer-sandbox-19.php:14
 msgid "Get Started"
-msgstr ""
+msgstr "Начать сейчас"
 
 #: 404.php:13
 msgid "Go to Homepage"
@@ -314,16 +374,16 @@ msgstr "Перейти на Главную"
 
 #: functions/navmenus.php:14
 msgid "Header Menu"
-msgstr ""
+msgstr "Меню Хедера"
 
 #: templates/header/header-sandbox-06.php:5
 msgid "here"
-msgstr ""
+msgstr "здесь"
 
 #. URI of the theme
 #. Author URI of the theme
 msgid "https://codeweber.com"
-msgstr ""
+msgstr "https://codeweber.com"
 
 #: templates/footer/footer-sandbox-16.php:9
 msgid ""
@@ -342,10 +402,16 @@ msgstr ""
 msgid "If you like what you see, let's work together."
 msgstr ""
 
+#: templates/content/loop-none.php:10
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
 #: templates/footer/footer-sandbox-18.php:8
 #: templates/footer/footer-sandbox-19.php:7
 msgid "Join Our Community"
-msgstr ""
+msgstr "Присоединяйтесь к Нам"
 
 #: templates/footer/footer-sandbox-1.php:4
 #: templates/footer/footer-sandbox-11.php:4
@@ -359,7 +425,7 @@ msgstr ""
 #: templates/footer/footer-sandbox-7.php:45
 #: templates/footer/footer-sandbox-8.php:6
 msgid "Join the Community"
-msgstr ""
+msgstr "Присоединяйтесь к нашей компании"
 
 #: templates/footer/footer-sandbox-17.php:8
 #: templates/footer/footer-sandbox-22.php:6
@@ -367,7 +433,7 @@ msgstr ""
 #: templates/footer/footer-sandbox-7.php:47
 #: templates/footer/footer-sandbox-8.php:8
 msgid "Join Us"
-msgstr ""
+msgstr "Присоедениться"
 
 #: templates/footer/footer-sandbox-1.php:40
 #: templates/footer/footer-sandbox-10.php:35
@@ -385,6 +451,7 @@ msgstr ""
 #: templates/footer/footer-sandbox-22.php:44
 #: templates/footer/footer-sandbox-23.php:31
 #: templates/footer/footer-sandbox-25.php:70
+#: templates/footer/footer-sandbox-25_cw.php:36
 #: templates/footer/footer-sandbox-27.php:41
 #: templates/footer/footer-sandbox-3.php:35
 #: templates/footer/footer-sandbox-5.php:35
@@ -392,7 +459,6 @@ msgstr ""
 #: templates/footer/footer-sandbox-8.php:23
 #: templates/footer/footer-sandbox-9.php:35
 #: templates/header/header-sandbox-09.php:154
-#: templates/header/header-sandbox-09_cw.php:76
 #: templates/header/header-sandbox-12.php:91
 #: templates/header/header-sandbox-15.php:71
 #: templates/header/header-sandbox-20.php:78
@@ -405,7 +471,7 @@ msgstr "Информация"
 
 #: comments.php:18
 msgid "Leave a comment"
-msgstr ""
+msgstr "Оставить комментарий"
 
 #: templates/footer/footer-sandbox-17.php:7
 #: templates/footer/footer-sandbox-4.php:11
@@ -446,6 +512,7 @@ msgstr "Отлично!"
 #: templates/footer/footer-sandbox-23.php:8
 #: templates/footer/footer-sandbox-24.php:50
 #: templates/footer/footer-sandbox-25.php:84
+#: templates/footer/footer-sandbox-25_cw.php:54
 #: templates/footer/footer-sandbox-26.php:50
 #: templates/footer/footer-sandbox-27.php:15
 #: templates/footer/footer-sandbox-3.php:9
@@ -459,11 +526,23 @@ msgstr "Разработано"
 
 #: functions/sidebars.php:13 functions/sidebars.php:15
 msgid "Main Sidebar"
-msgstr ""
+msgstr "Главный Сайдбар"
 
-#: functions/integrations/acf.php:24 functions/integrations/acf.php:28
+#: templates/flexible-content/contact/contact_100/contact_100.php:52
+msgid "Map"
+msgstr "На карте"
+
+#: functions/integrations/acf.php:36 functions/integrations/acf.php:40
 msgid "Meta"
 msgstr ""
+
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:82
+msgid "mo"
+msgstr "месяц"
+
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:51
+msgid "Monthly"
+msgstr "Месяц"
 
 #: templates/header/header-sandbox-05.php:94
 #: templates/header/header-sandbox-08.php:100
@@ -484,23 +563,47 @@ msgstr "Ваше имя *"
 msgid "Need Help?"
 msgstr "Нужна помощь?"
 
+#: functions/cpt/cpt-price_package.php:18
+msgid "New Price Package"
+msgstr "Новый Пакет"
+
+#: functions/cpt/cpt-testimonials.php:13
+msgid "New Testimonial"
+msgstr "Новый Отзыв"
+
 #: templates/header/header-sandbox-06.php:5
 msgid "New version of our product is finally"
 msgstr ""
 
+#: templates/sections/home-news.php:5
+msgid "News"
+msgstr "Новости"
+
+#: index.php:26 index.php:44
+msgid "Next &raquo;"
+msgstr "Следующий &raquo;"
+
 #: functions/cpt/cpt-office_address.php:12
 msgid "Office address"
-msgstr ""
+msgstr "Адрес Офиса"
 
 #: functions/cpt/cpt-office_address.php:11
 #: functions/cpt/cpt-office_address.php:13
 #: functions/cpt/cpt-office_address.php:17
 msgid "Office addresses"
-msgstr ""
+msgstr "Адреса Офисов"
+
+#: templates/header/header-sandbox-09_cw.php:107
+msgid "Offices"
+msgstr "Офисы компании"
 
 #: 404.php:11
 msgid "Oops! Page Not Found."
 msgstr "Ой! Страница не найдена."
+
+#: functions/integrations/acf.php:19 functions/integrations/acf.php:20
+msgid "Options"
+msgstr "Опции Темы"
 
 #: templates/header/header-sandbox-05.php:114
 #: templates/header/header-sandbox-08.php:75
@@ -531,7 +634,11 @@ msgstr "Наши новости"
 
 #: functions/sidebars.php:25 functions/sidebars.php:27
 msgid "Page Sidebar"
-msgstr ""
+msgstr "Сайдбар Страницы"
+
+#: templates/footer/footer-columns.php:94
+msgid "Pages"
+msgstr "Страницы"
 
 #: templates/header/header-sandbox-05.php:103
 #: templates/header/header-sandbox-08.php:68
@@ -547,7 +654,7 @@ msgstr "Библиотека шаблонов"
 
 #: templates/footer/footer-sandbox-4.php:38
 msgid "Phone"
-msgstr ""
+msgstr "Телефон"
 
 #: comments.php:157
 msgid "Please enter your comment."
@@ -562,8 +669,23 @@ msgid "Please enter your first name."
 msgstr "Введите ваше имя, пожалуйста."
 
 #: templates/footer/footer-sandbox-25.php:5
+#: templates/footer/footer-sandbox-25_cw.php:43
 msgid "Popular Posts"
 msgstr "Популярные статьи"
+
+#: functions/cpt/cpt-price_package.php:12
+msgid "Price Package"
+msgstr "Ценовой Пакет"
+
+#: functions/cpt/cpt-price_package.php:11
+#: functions/cpt/cpt-price_package.php:13
+#: functions/cpt/cpt-price_package.php:25
+msgid "Price Packages"
+msgstr "Ценовые Пакеты"
+
+#: templates/footer/footer-columns.php:115
+msgid "Privacy"
+msgstr ""
 
 #: templates/content/loop.php:14
 #: templates/flexible-content/sliders/slider_1/slider_1.php:45
@@ -572,6 +694,12 @@ msgstr "Популярные статьи"
 #: templates/flexible-content/sliders/slider_4/slider_4.php:28
 msgid "Read More"
 msgstr "Читать далее"
+
+#: templates/sections/home-cta.php:24 templates/sections/home-news.php:47
+#: templates/sections/home-services.php:30
+#: templates/sections/home-slider.php:33
+msgid "Read more"
+msgstr "Читать еще"
 
 #: templates/flexible-content/widgets/widget_1/widget_1.php:17
 msgid "Recent Posts"
@@ -585,7 +713,7 @@ msgstr "Регистрация занимает менее минуты."
 
 #: functions/custom.php:191
 msgid "Results for: "
-msgstr ""
+msgstr "Результаты для:"
 
 #: templates/header/header-sandbox-09.php:142
 #: templates/header/header-sandbox-12.php:79
@@ -606,26 +734,36 @@ msgstr ""
 msgid "says:"
 msgstr ""
 
+#: searchform.php:3
+msgid "Search"
+msgstr "Поиск"
+
+#: functions/cpt/cpt-price_package.php:21
+msgid "Search Price Package"
+msgstr "Найти Ценовой Пакет"
+
 #: functions/cpt/cpt-services.php:12
 msgid "Service"
-msgstr ""
+msgstr "Услуга"
 
 #: functions/cpt/taxonomy-services.php:11
 #: functions/cpt/taxonomy-services.php:17
 msgid "Service Categories"
-msgstr ""
+msgstr "Категории Услуг"
 
 #: functions/cpt/taxonomy-services.php:12
 msgid "Service Category"
-msgstr ""
+msgstr "Категория Услуги"
 
 #: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:16
+#: templates/footer/footer-sandbox-25_cw.php:28
+#: templates/sections/home-services.php:5
 msgid "Services"
-msgstr ""
+msgstr "Услуги"
 
 #: functions/sidebars.php:37 functions/sidebars.php:39
 msgid "Services Sidebar"
-msgstr ""
+msgstr "Сайдбар Услуг"
 
 #: templates/header/header-sandbox-08.php:40
 #: templates/header/header-sandbox-08.php:70
@@ -659,13 +797,19 @@ msgstr "Регистрация"
 msgid "Sign up to"
 msgstr "Войти в "
 
+#: templates/content/loop-none.php:6
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
 #: comments.php:146
 msgid "Submit"
 msgstr "Отправить комментарий"
 
 #: templates/footer/footer-sandbox-7.php:7
 msgid "Subscribe to our newsletter"
-msgstr ""
+msgstr "Подписаться на наши новости"
 
 #: templates/footer/footer-sandbox-1.php:49
 #: templates/footer/footer-sandbox-10.php:44
@@ -694,7 +838,7 @@ msgid ""
 "worry, we hate spam and we respect your privacy."
 msgstr ""
 
-#: functions/integrations/acf.php:38
+#: functions/integrations/acf.php:50
 msgid "Tab color in Chrome for Android"
 msgstr ""
 
@@ -703,14 +847,18 @@ msgstr ""
 msgid "Tags"
 msgstr "Метки"
 
+#: functions/integrations/acf.php:2044
+msgid "Test"
+msgstr "Тест"
+
 #: functions/cpt/cpt-testimonials.php:11
 msgid "Testimonial"
-msgstr ""
+msgstr "Отзыв"
 
 #: functions/cpt/cpt-testimonials.php:10 functions/cpt/cpt-testimonials.php:12
 #: functions/cpt/cpt-testimonials.php:17
 msgid "Testimonials"
-msgstr ""
+msgstr "Отзывы"
 
 #: 404.php:12
 msgid ""
@@ -722,12 +870,16 @@ msgstr ""
 
 #: functions/cpt/taxonomy-office_adressess.php:11
 msgid "Town"
-msgstr ""
+msgstr "Город"
 
 #: functions/cpt/taxonomy-office_adressess.php:10
 #: functions/cpt/taxonomy-office_adressess.php:16
 msgid "Towns"
-msgstr ""
+msgstr "Города"
+
+#: functions/integrations/acf.php:2040
+msgid "Translate"
+msgstr "Перевод"
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "trusted"
@@ -739,20 +891,28 @@ msgstr ""
 #: templates/footer/footer-sandbox-21.php:5
 #: templates/footer/footer-sandbox-27.php:5
 msgid "Try It For Free"
-msgstr ""
+msgstr "Использовать Бесплатно"
 
 #: functions/cpt/taxonomy-services.php:52
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: functions/cpt/taxonomy-services.php:51
 #: functions/cpt/taxonomy-services.php:57
 msgid "Types"
-msgstr ""
+msgstr "Типы"
 
 #: templates/header/header-sandbox-06.php:5
 msgid "Update"
-msgstr ""
+msgstr "Обновить"
+
+#: functions/cpt/cpt-price_package.php:19
+msgid "View Price Package"
+msgstr "Показать Ценовой Пакет"
+
+#: functions/cpt/cpt-price_package.php:20
+msgid "View Price Packages"
+msgstr "Показать Ценовые Пакеты"
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "We are"
@@ -784,6 +944,10 @@ msgstr "Напишите ваш комментарий."
 msgid "Writer"
 msgstr "Писатель"
 
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:57
+msgid "Yearly"
+msgstr "Год"
+
 #: templates/flexible-content/sliders/slider_1/slider_1.php:5
 msgid "You Might Also Like"
 msgstr "Вам также может понравится"
@@ -792,6 +956,6 @@ msgstr "Вам также может понравится"
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает модерации"
 
-#: functions/cpt/cpt-testimonials.php:13
-msgid "Новый отзыв"
-msgstr ""
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:83
+msgid "yr"
+msgstr "год"

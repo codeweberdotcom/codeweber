@@ -1,7 +1,6 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-
 $settings->title = "Who Are We?";
 $settings->subtitle = "We are a digital and branding company that believes in the power of creative strategy and along with great design.";
 $settings->paragraph = 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.';

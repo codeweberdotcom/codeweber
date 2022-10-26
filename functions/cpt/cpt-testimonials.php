@@ -10,7 +10,7 @@ function cptui_register_my_cpts_testimonials()
         "name" => __("Testimonials", "codeweber"),
         "singular_name" => __("Testimonial", "codeweber"),
         "menu_name" => __("Testimonials", "codeweber"),
-        "new_item" => __("Новый отзыв", "codeweber"),
+        "new_item" => __("New Testimonial", "codeweber"),
     ];
 
     $args = [
@@ -42,3 +42,21 @@ function cptui_register_my_cpts_testimonials()
 }
 
 add_action('init', 'cptui_register_my_cpts_testimonials');
+
+
+
+/**
+ * Add a ACF Option page to the Review CPT
+ */
+
+if (
+    function_exists('acf_add_options_page')
+) {
+    acf_add_options_page(array(
+        'page_title'    => esc_html__('Review Options', 'codeweber'),
+        'menu_title'    => esc_html__('Review Options', 'codeweber'),
+        'parent_slug'   => 'edit.php?post_type=testimonials',
+        'menu_slug'     => 'options_review',
+        'redirect'      => false
+    ));
+}

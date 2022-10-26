@@ -42,3 +42,21 @@ function cptui_register_my_cpts_services()
 }
 
 add_action('init', 'cptui_register_my_cpts_services');
+
+
+
+/**
+ * Add a ACF Option page to the Services CPT
+ */
+
+if (
+	function_exists('acf_add_options_page')
+) {
+	acf_add_options_page(array(
+		'page_title'    => esc_html__('Service Options', 'codeweber'),
+		'menu_title'    => esc_html__('Service Options', 'codeweber'),
+		'parent_slug'   => 'edit.php?post_type=services',
+		'menu_slug'     => 'options_service',
+		'redirect'      => false
+	));
+}

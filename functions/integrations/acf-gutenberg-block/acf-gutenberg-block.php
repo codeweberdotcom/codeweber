@@ -240,9 +240,44 @@ function my_acf_blocks_init()
                'align'        => true,
             ),
             'mode' => 'preview',
-
          )
+      );
 
+      // Register a Testimonial block.
+      acf_register_block_type(
+         array(
+            'name'              => 'testimonial',
+            'title'             => __('Testimonial'),
+            'description'       => __('Testimonial.'),
+            'render_template'   => 'templates/flexible-content/testimonials.php',
+            'category'          => 'codeweber',
+            'mode'                    => 'auto',
+            'align'           => 'full',
+            'supports'        => array(
+               'align'        => array('full'),
+               'align'        => true,
+            ),
+            'mode' => 'preview',
+         )
+      );
+
+
+      // Register a Pricing block.
+      acf_register_block_type(
+         array(
+            'name'                => 'pricing',
+            'title'                => 'Pricing',
+            'description'        => 'A pricing content block.',
+            'render_template'   => 'templates/flexible-content/pricing.php',
+            'category'          => 'codeweber',
+            'mode'                    => 'auto',
+            'align'           => 'full',
+            'supports'        => array(
+               'align'        => array('full'),
+               'align'        => true,
+            ),
+            'mode' => 'preview',
+         )
       );
 
 

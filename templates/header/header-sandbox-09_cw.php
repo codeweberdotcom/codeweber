@@ -7,8 +7,7 @@ $button->class_button_wrapper = "d-flex justify-content-center flex-wrap justify
 $button->data_cues = "slideInDown";
 $button->data_group = "page-title-buttons";
 $button->data_delay = "900";
-$button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Callback</a></span>';
-
+$button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">CallBack</a></span>';
 ?>
 
 <header class="wrapper bg-light pt-1">
@@ -65,17 +64,22 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
       <!-- /.container -->
    </nav>
    <!-- /.navbar -->
-
    <div class="offcanvas offcanvas-end bg-light" id="offcanvas-info" data-bs-scroll="true">
       <div class="offcanvas-header">
-         <div class="mb-0 h3"><?php echo get_bloginfo('name'); ?></div>
+         <div class="navbar-brand w-100">
+            <a href="/">
+               <img src="<?php echo brk_logo_dark_link(); ?>" srcset="<?php echo brk_logo_dark_link(); ?>" alt="" />
+            </a>
+         </div>
          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body pb-6">
-         <div class="widget mb-8">
-            <p><?php the_field('tekst', 'option'); ?></p>
-         </div>
-         <!-- /.widget -->
+         <?php if (get_field('tekst', 'option')) { ?>
+            <div class="widget mb-8">
+               <p><?php the_field('tekst', 'option'); ?></p>
+            </div>
+            <!-- /.widget -->
+         <?php }; ?>
          <div class="widget mb-8">
             <div class="widget-title h4 mb-3"><?php esc_html_e('Contact Info', 'codeweber'); ?></div>
             <address> <?php echo brk_adress(); ?> </address>
@@ -119,7 +123,6 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
                </select>
             </div>
          </div>
-
       </div>
       <!-- /.offcanvas-body -->
    </div>

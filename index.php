@@ -22,8 +22,8 @@
 						the_posts_pagination(
 							array(
 								'mid_size'  => 2,
-								'prev_text' => esc_html__('&laquo; Previous', 'bricks'),
-								'next_text' => esc_html__('Next &raquo;', 'bricks'),
+								'prev_text' => esc_html__('&laquo; Previous', 'codeweber'),
+								'next_text' => esc_html__('Next &raquo;', 'codeweber'),
 							)
 						); ?>
 					</div>
@@ -40,8 +40,8 @@
 						the_posts_pagination(
 							array(
 								'mid_size'  => 2,
-								'prev_text' => esc_html__('&laquo; Previous', 'bricks'),
-								'next_text' => esc_html__('Next &raquo;', 'bricks'),
+								'prev_text' => esc_html__('&laquo; Previous', 'codeweber'),
+								'next_text' => esc_html__('Next &raquo;', 'codeweber'),
 							)
 						); ?>
 					</div>

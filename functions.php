@@ -18,6 +18,9 @@ require_once get_template_directory() . '/functions/lib/class-wp-bootstrap-navwa
 
 
 
+
+
+
 // --- Register Custom Post Types & Taxonomies ---
 
 foreach (glob(get_template_directory() . '/functions/cpt/*.php') as $cpt) {
@@ -56,6 +59,8 @@ require_once get_template_directory() . '/functions/comments-reply.php'; // --- 
 require_once get_template_directory() . '/functions/lib/like_dislike.php'; // --- Like Dislike Functions ---
 
 
+// --- Check ACF ---//
+
 if (!function_exists('get_field')) {
 	add_action('template_redirect', 'template_redirect_warning_missing_acf', 0);
 	function template_redirect_warning_missing_acf()
@@ -63,3 +68,8 @@ if (!function_exists('get_field')) {
 		wp_die(sprintf('This theme can\'t work without ACF PRO plugin. <a href="%s">Please login to admin</a>, and activate it !', wp_login_url()));
 	}
 }
+
+
+// --- Customizer --- //
+
+require_once get_template_directory() . '/functions/customize.php'; // --- Customizer ---

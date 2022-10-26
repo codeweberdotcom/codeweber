@@ -43,3 +43,22 @@ function cptui_register_my_cpts()
 }
 
 add_action('init', 'cptui_register_my_cpts');
+
+
+
+
+/**
+ * Add a ACF Option page to the Address CPT
+ */
+
+if (
+   function_exists('acf_add_options_page')
+) {
+   acf_add_options_page(array(
+      'page_title'    => esc_html__('Address Options', 'codeweber'),
+      'menu_title'    => esc_html__('Address Options', 'codeweber'),
+      'parent_slug'   => 'edit.php?post_type=office_addresses',
+      'menu_slug'     => 'options_adresses',
+      'redirect'      => false
+   ));
+}

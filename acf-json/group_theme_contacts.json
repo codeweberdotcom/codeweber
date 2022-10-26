@@ -24,66 +24,66 @@
             "label": "Company",
             "name": "company",
             "type": "text",
-            "instructions": "Example: Full Company Name",
-            "required": false,
-            "conditional_logic": false,
+            "instructions": "Exapmle: Company name<br>\r\nНапример: Название компании",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_6013f61bd2436",
             "label": "Address - Line 1",
             "name": "address_1",
             "type": "text",
-            "instructions": "Example: Street, Number",
-            "required": false,
-            "conditional_logic": false,
+            "instructions": "Example: Street, Number<br>\r\nНапример: Улица, Номер",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_6013f74fd2437",
             "label": "Address - Line 2",
             "name": "address_2",
             "type": "text",
-            "instructions": "Example => Postal Code, City, State",
-            "required": false,
-            "conditional_logic": false,
+            "instructions": "Example => Postal Code, City, State<br>\r\nНапример: Индекс, Город, Страна",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_6013fcab912d8",
             "label": "Map URL",
             "name": "map_url",
             "type": "url",
-            "instructions": "Example: https:\/\/goo.gl\/maps\/sNAFh8SNCLH5cYyL7 for Google Maps",
-            "required": false,
-            "conditional_logic": false,
+            "instructions": "Example: https:\/\/goo.gl\/maps\/sNAFh8SNCLH5cYyL7 for Google Maps<br>\r\nНапример: https:\/\/goo.gl\/maps\/sNAFh8SNCLH5cYyL7 for Google Maps",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
@@ -97,9 +97,9 @@
             "label": "E-mail address",
             "name": "email",
             "type": "email",
-            "instructions": "Example: info@codeweber.com",
-            "required": false,
-            "conditional_logic": false,
+            "instructions": "Example: info@codeweber.com<br>\r\nНапример: info@codeweber.com",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
@@ -115,76 +115,76 @@
             "label": "Phone number",
             "name": "phone",
             "type": "text",
-            "instructions": "Example: +39 852 852 8525",
-            "required": false,
-            "conditional_logic": false,
+            "instructions": "Example: +39 852 852 852<br>\r\nНапример: +7 495 596 5963",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_6013fcf2112d9",
             "label": "Phone number 1",
             "name": "phone_1",
             "type": "text",
-            "instructions": "Example: +39 852 852 8525",
-            "required": false,
-            "conditional_logic": false,
+            "instructions": "Example: +39 852 852 852<br>\r\nНапример: +7 495 596 5963",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_6013fd34912db",
             "label": "ID Number",
             "name": "id_number",
             "type": "text",
-            "instructions": "Example: Social Security Number, Fiscal Code, etc.",
-            "required": false,
-            "conditional_logic": false,
+            "instructions": "Example: Social Security Number, Fiscal Code, etc.<br>\r\nНапример: Номер Социального Страхования, Фискальный код.",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_6013fd4b912dc",
             "label": "VAT Number",
             "name": "vat_number",
             "type": "text",
-            "instructions": "Example: 123456789",
-            "required": false,
-            "conditional_logic": false,
+            "instructions": "Example: 123456789<br>\r\nНапример: 123456789",
+            "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "33",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": ""
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -205,5 +205,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1658234337
+    "modified": 1665829387
 }

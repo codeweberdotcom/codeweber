@@ -43,3 +43,22 @@ function cptui_register_my_cpts_faq()
 }
 
 add_action('init', 'cptui_register_my_cpts_faq');
+
+
+
+
+/**
+ * Add a ACF Option page to the FAQ CPT
+ */
+
+if (
+	function_exists('acf_add_options_page')
+) {
+	acf_add_options_page(array(
+		'page_title'    => esc_html__('FAQ Options', 'codeweber'),
+		'menu_title'    => esc_html__('FAQ Options', 'codeweber'),
+		'parent_slug'   => 'edit.php?post_type=faq',
+		'menu_slug'     => 'options_faq',
+		'redirect'      => false
+	));
+}

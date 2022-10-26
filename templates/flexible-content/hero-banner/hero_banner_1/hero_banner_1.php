@@ -7,7 +7,7 @@ $settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/i2
 $settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4';
 $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
-$settings->backgroundcolor_light = 'light';
+//$settings->backgroundcolor_light = 'light';
 $settings->textcolor = 'white';
 $settings->GetDataACF();
 
@@ -28,7 +28,7 @@ $swiper->class_swiper = 'swiper-container dots-over shadow-lg';
 $swiper->data_nav = 'data-nav="true"';
 $swiper->data_dots = 'data-dots="true"';
 $swiper->data_margin = 'data-margin="5"';
-$swiper->image_size = 'sandbox_hero_18';
+$swiper->image_size = 'sandbox_faq_1';
 $swiper->data_items_lg = 'data-items-lg="1"';
 $swiper->data_items_md = 'data-items-md="1"';
 $swiper->data_items_xs = 'data-items-xs="1"';
@@ -36,7 +36,6 @@ $swiper->data_autoplay = 'data-autoplay="true"';
 $swiper->data_autoplaytime = 'data-autoplaytime="5000"';
 $swiper->default_media = '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/illustrations/i2.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i2@2x.png 2x" alt="" /></figure>';
 ?>
-
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container pt-10 pt-md-14 pb-8 text-center">

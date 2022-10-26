@@ -184,7 +184,7 @@
             "label": "SubTitle",
             "name": "subtitle",
             "type": "text",
-            "instructions": "",
+            "instructions": "ПодЗаголовок",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -203,7 +203,7 @@
             "label": "Grid image",
             "name": "grid_image",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Сетка изображений",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -245,7 +245,7 @@
             "label": "Paragraph",
             "name": "paragraph",
             "type": "textarea",
-            "instructions": "",
+            "instructions": "Параграф",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -264,7 +264,7 @@
             "label": "Typewriter effect text",
             "name": "typewriter_effect_text",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Текст для эффекта печатной машинки",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -304,7 +304,7 @@
             "label": "Select Type Color",
             "name": "select_type_color",
             "type": "select",
-            "instructions": "",
+            "instructions": "Выбрать тип цвета",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -330,7 +330,7 @@
             "label": "Select Solid Color",
             "name": "theme_btn_solid_color",
             "type": "select",
-            "instructions": "",
+            "instructions": "Выбрать Однотонный Цвет",
             "required": 0,
             "conditional_logic": [
                 [
@@ -386,7 +386,7 @@
             "label": "Gradient Color",
             "name": "gradient_btn",
             "type": "select",
-            "instructions": "",
+            "instructions": "Выбрать Градиентный Цвет",
             "required": 0,
             "conditional_logic": [
                 [
@@ -424,7 +424,7 @@
             "label": "Label on banner",
             "name": "label_on_banner",
             "type": "group",
-            "instructions": "",
+            "instructions": "Текст этикетки",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -542,7 +542,7 @@
             "label": "Type Icons",
             "name": "type_icons",
             "type": "group",
-            "instructions": "",
+            "instructions": "Тип иконки",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1965,7 +1965,7 @@
             "label": "Icon lineal SVG",
             "name": "icon_lineal_svg",
             "type": "icon-picker",
-            "instructions": "",
+            "instructions": "Иконка SVG",
             "required": 0,
             "conditional_logic": [
                 [
@@ -1988,7 +1988,7 @@
             "label": "Features",
             "name": "features",
             "type": "group",
-            "instructions": "",
+            "instructions": "Преимущества",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -4846,6 +4846,91 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_6351c45b2f718",
+            "label": "Icon and Color",
+            "name": "icon_and_color",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6351c4732f719",
+                    "label": "Type icons",
+                    "name": "type_icons",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "field_62ea2abc04411"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_6351c4db2f71a",
+                    "label": "Type color",
+                    "name": "type_color",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "field_62f3e53d58bed"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
+        },
+        {
+            "key": "field_635674d7a3ea0",
+            "label": "Testimonials posts",
+            "name": "testimonials_loop",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "testimonials"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "taxonomy"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
         }
     ],
     "location": [
@@ -4866,5 +4951,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664294283
+    "modified": 1666610589
 }

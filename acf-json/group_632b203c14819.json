@@ -18,7 +18,7 @@
             "taxonomy": "faq_categories",
             "field_type": "multi_select",
             "allow_null": 1,
-            "add_term": 0,
+            "add_term": 1,
             "save_terms": 1,
             "load_terms": 1,
             "return_format": "object",
@@ -62,5 +62,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664272308
+    "modified": 1665571371
 }

@@ -259,7 +259,7 @@ function sandbox_recent_post()
 // Sandbox Frame Content Open Function 
 function sandbox_frame_open()
 {
-    if (get_field('content_frame', 'option') == 1) :
+    if (get_theme_mod('codeweber_frame_content') == 1) :
         echo '<div class="page-frame bg-light">';
     else :
         return;
@@ -269,9 +269,38 @@ function sandbox_frame_open()
 // Sandbox Frame Content Close Function
 function sandbox_frame_close()
 {
-    if (get_field('content_frame', 'option') == 1) :
+    if (get_theme_mod('codeweber_frame_content') == 1) :
         echo '</div><style>.page-frame .swiper-slide .rounded-4-lg-start { border-radius: 0.8rem!important; }</style>';
     else :
         return;
     endif;
 };
+
+
+
+
+function auto_generate_post_title($title)
+{
+    global $post;
+    /** Проверка на Post Type */
+    if (isset($post->post_type)) {
+        $post_type = $post->post_type;
+    }
+    /** Проверка на Post Type Testimonials*/
+    if (isset($post->ID) && $post_type == 'testimonials') {
+        if (have_rows('testimonials')) :
+            while (have_rows('testimonials')) : the_row();
+                $name = get_sub_field('name');
+                $city = get_sub_field('town') . ' ' . $value;
+            endwhile;
+        endif;
+        $id = get_the_ID();
+        $prefix = __('Testimonial', 'codeweber');
+
+        /** Формирование Title*/
+        $title = $prefix . ' - ' . $name . ' - ' . $city . ' - ' . $id;
+    }
+    return $title;
+}
+
+add_filter('title_save_pre', 'auto_generate_post_title');

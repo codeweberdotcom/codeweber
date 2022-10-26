@@ -1,8 +1,6 @@
 <?php
 /* Add settings */
 $settings = new Settings();
-
-
 $settings->title = "Grow Your Business with Our Solutions.";
 $settings->paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
 $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/about7.jpg';
@@ -11,7 +9,6 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 //$settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'white';
-
 $settings->GetDataACF();
 
 /* Add buttons */

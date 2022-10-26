@@ -1,6 +1,6 @@
 {
     "key": "group_6322c8b8a073b",
-    "title": "Office addresses",
+    "title": "Office adresses",
     "fields": [
         {
             "key": "field_6322c973b5171",
@@ -33,7 +33,7 @@
                     "taxonomy": "towns",
                     "field_type": "select",
                     "allow_null": 0,
-                    "add_term": 0,
+                    "add_term": 1,
                     "save_terms": 1,
                     "load_terms": 1,
                     "return_format": "object",
@@ -194,5 +194,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663768404
+    "modified": 1666694351
 }

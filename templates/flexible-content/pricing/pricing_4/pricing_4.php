@@ -1,15 +1,43 @@
-<section class="wrapper bg-light">
+<?php
+/* Add settings */
+$settings = new Settings();
+$settings->title = "Our Pricing";
+$settings->subtitle = 'We offer <span class="underline">great prices</span>, premium and quality products for your business.';
+$settings->paragraph = 'Enjoy a <a href="#" class="hover">free 30-day trial</a> and experience the full service. No credit card required!';
+//$settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/i2.png';
+//$settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4';
+//$settings->typewriter = 'customer satisfaction,business needs,creative ideas';
+//$settings->backgroundcolor = 'dark';
+//$settings->backgroundcolor_light = 'light';
+//$settings->textcolor = 'white';
+$settings->GetDataACF();
+
+/* Add buttons */
+$button = new Buttons();
+$button->form_button = "rounded-pill mt-2";
+$button->button_size = NULL;
+$button->class_button_wrapper = "d-flex justify-content-center flex-wrap justify-content-lg-start";
+$button->data_cues = "slideInDown";
+$button->data_group = "page-title-buttons";
+$button->data_delay = "900";
+$button->default_button = '<a href="#" class="btn btn-primary rounded-pill mt-2">See All Prices</a>';
+?>
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
    <div class="container py-14 py-md-16">
-      <h2 class="display-4 mb-3">Our Pricing</h2>
-      <p class="lead fs-lg">We offer <span class="underline">great prices</span>, premium and quality products for your business.</p>
+      <h2 class="display-4 mb-3"><?php echo $settings->title; ?></h2>
+      <p class="lead fs-lg"><?php echo $settings->subtitle; ?></p>
       <div class="row">
          <div class="col-lg-4">
-            <p>Enjoy a <a href="#" class="hover">free 30-day trial</a> and experience the full service. No credit card required!</p>
+            <p><?php echo $settings->paragraph; ?></p>
          </div>
          <!--/column -->
       </div>
       <!--/.row -->
-      <a href="#" class="btn btn-primary rounded-pill mt-2">See All Prices</a>
+      <!--  buttons group -->
+      <?php $button->showbuttons(); ?>
+      <!--/buttons group -->
+
       <div class="table-responsive">
          <table class="table table-borderless table-striped text-center">
             <thead>
