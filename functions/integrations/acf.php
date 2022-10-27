@@ -196,9 +196,10 @@ function brk_adress()
 {
 	$adress_1 = get_field('address_1', 'option');
 	$adress_2 = get_field('address_2', 'option');
-
-	if ($adress_1 && $adress_2) :
+	if ($adress_2 && $adress_1) :
 		$brk_adress = $adress_1 . ' ' . $adress_2;
+	elseif ($adress_1) :
+		$brk_adress = $adress_1;
 	else :
 		$brk_adress = 'Moonshine St. 14/05 Light City, London, United Kingdom';
 	endif;

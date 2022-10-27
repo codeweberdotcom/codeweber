@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-10-15 12:57+0000\n"
+"PO-Revision-Date: 2022-10-26 09:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -42,10 +42,6 @@ msgstr "<i class=\"uil uil-comments\"></i>Ответить"
 #. Description of the theme
 msgid "A modular WordPress theme powered by Bootstrap 5 and Gulp"
 msgstr "Модульный шаблон Wordpress на базе Bootstrap 5 и Gulp"
-
-#: functions/integrations/acf-gutenberg-block/acf-gutenberg-block.php:252
-msgid "A pricing content block."
-msgstr ""
 
 #: functions/lib/class-wp-bootstrap-navwalker.php:383
 msgid "Add a menu"
@@ -381,6 +377,10 @@ msgstr "Перейти на Главную"
 msgid "Header Menu"
 msgstr "Меню Хедера"
 
+#: functions/customize.php:73
+msgid "Header Options"
+msgstr "Настройки Хедера"
+
 #: templates/header/header-sandbox-06.php:5
 msgid "here"
 msgstr "здесь"
@@ -495,6 +495,10 @@ msgstr ""
 msgid "Likes"
 msgstr "Спасибо"
 
+#: functions/customize.php:63
+msgid "Link Color"
+msgstr ""
+
 #: comments.php:134 comments.php:141 comments.php:156
 msgid "Looks good!"
 msgstr "Отлично!"
@@ -542,10 +546,14 @@ msgid "Meta"
 msgstr ""
 
 #: templates/flexible-content/pricing/pricing_1/pricing_1.php:82
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:81
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:73
 msgid "mo"
 msgstr "месяц"
 
-#: templates/flexible-content/pricing/pricing_1/pricing_1.php:51
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:53
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:43
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:36
 msgid "Monthly"
 msgstr "Месяц"
 
@@ -681,7 +689,7 @@ msgstr "Популярные статьи"
 #: functions/cpt/cpt-price_package.php:65
 #: functions/cpt/cpt-price_package.php:66
 msgid "Price Options"
-msgstr ""
+msgstr "Опции Цен"
 
 #: functions/cpt/cpt-price_package.php:12
 msgid "Price Package"
@@ -692,10 +700,6 @@ msgstr "Ценовой Пакет"
 #: functions/cpt/cpt-price_package.php:25
 msgid "Price Packages"
 msgstr "Ценовые Пакеты"
-
-#: functions/integrations/acf-gutenberg-block/acf-gutenberg-block.php:251
-msgid "Pricing"
-msgstr "Цены"
 
 #: templates/footer/footer-columns.php:115
 msgid "Privacy"
@@ -869,11 +873,11 @@ msgstr ""
 msgid "Tags"
 msgstr "Метки"
 
-#: functions/integrations/acf.php:2044
+#: functions/integrations/acf.php:2230
 msgid "Test"
 msgstr "Тест"
 
-#: functions/cpt/cpt-testimonials.php:11
+#: functions/custom.php:298 functions/cpt/cpt-testimonials.php:11
 msgid "Testimonial"
 msgstr "Отзыв"
 
@@ -899,7 +903,7 @@ msgstr "Город"
 msgid "Towns"
 msgstr "Города"
 
-#: functions/integrations/acf.php:2040
+#: functions/integrations/acf.php:2226
 msgid "Translate"
 msgstr "Перевод"
 
@@ -966,7 +970,9 @@ msgstr "Напишите ваш комментарий."
 msgid "Writer"
 msgstr "Писатель"
 
-#: templates/flexible-content/pricing/pricing_1/pricing_1.php:57
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:59
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:49
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:42
 msgid "Yearly"
 msgstr "Год"
 
@@ -979,5 +985,7 @@ msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает модерации"
 
 #: templates/flexible-content/pricing/pricing_1/pricing_1.php:83
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:86
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:78
 msgid "yr"
 msgstr "год"

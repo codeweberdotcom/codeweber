@@ -66,20 +66,24 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
    <!-- /.navbar -->
    <div class="offcanvas offcanvas-end bg-light" id="offcanvas-info" data-bs-scroll="true">
       <div class="offcanvas-header">
+         <?php do_action('codeweber_infopanel_head_start'); ?>
          <div class="navbar-brand w-100">
             <a href="/">
                <img src="<?php echo brk_logo_dark_link(); ?>" srcset="<?php echo brk_logo_dark_link(); ?>" alt="" />
             </a>
          </div>
          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         <?php do_action('codeweber_infopanel_head_finish'); ?>
       </div>
       <div class="offcanvas-body pb-6">
+         <?php do_action('codeweber_infopanel_body_start'); ?>
          <?php if (get_field('tekst', 'option')) { ?>
             <div class="widget mb-8">
                <p><?php the_field('tekst', 'option'); ?></p>
             </div>
             <!-- /.widget -->
          <?php }; ?>
+         <?php do_action('codeweber_infopanel_contact'); ?>
          <div class="widget mb-8">
             <div class="widget-title h4 mb-3"><?php esc_html_e('Contact Info', 'codeweber'); ?></div>
             <address> <?php echo brk_adress(); ?> </address>
@@ -91,6 +95,7 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
                <?php $button->showbuttonsoption(); ?>
                <!--/buttons group -->
             </div>
+            <?php do_action('codeweber_infopanel_social'); ?>
             <div class="widget">
                <div class="widget-title h4 mb-3"><?php esc_html_e('Follow Us', 'codeweber'); ?></div>
                <nav class="nav social social-color">
@@ -103,6 +108,7 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
             <!-- /.widget -->
          </div>
          <!-- /.widget -->
+         <?php do_action('codeweber_infopanel_offices'); ?>
          <div class="widget mb-8">
             <div class="widget-title h4 mb-3"><?php esc_html_e('Offices', 'codeweber'); ?></div>
             <?php
@@ -123,6 +129,7 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
                </select>
             </div>
          </div>
+         <?php do_action('codeweber_infopanel_body_end'); ?>
       </div>
       <!-- /.offcanvas-body -->
    </div>

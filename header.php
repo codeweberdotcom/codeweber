@@ -12,9 +12,11 @@
 </head>
 
 <body <?php body_class(); ?> data-bs-spy="scroll" data-bs-target="#sidebar-nav">
+	<?php do_action('codeweber_start_body_open'); ?>
 	<?php wp_body_open(); ?>
 	<?php sandbox_frame_open(); ?>
 	<div id="content-wrapper" class="content-wrapper">
+		<?php do_action('codeweber_start_content_wrapper'); ?>
 		<?php
-		get_template_part('templates/header/header', get_theme_mod('codeweber_header'));
+		do_action('codeweber_header');
 		?>

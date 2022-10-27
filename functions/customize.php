@@ -1,50 +1,5 @@
 <?php
 
-function codeweber_customize_register($wp_customize)
-{
-
-   $wp_customize->add_section('themename_color_scheme', array(
-      'title'    => __('Color Scheme', 'themename'),
-      'description' => '',
-      'priority' => 120,
-
-   ));
-
-
-   //  =============================
-   //  = Radio Input               =
-   //  =============================
-   $wp_customize->add_setting('themename_theme_options[color_scheme]', array(
-      'default'        => 'value2',
-      'capability'     => 'edit_theme_options',
-      'type'           => 'option',
-   ));
-
-   $wp_customize->add_control('themename_color_scheme', array(
-      'label'      => __('Color Scheme', 'themename'),
-      'section'    => 'themename_color_scheme',
-      'settings'   => 'themename_theme_options[color_scheme]',
-      'type'       => 'radio',
-      'choices'    => array(
-         'value1' => 'Aqua',
-         'value2' => 'Green',
-         'value3' => 'Navy',
-      ),
-   ));
-}
-
-add_action('customize_register', 'codeweber_customize_register');
-
-function codeweber_color()
-{
-   //echo get_theme_mod('themename_theme_options[color_scheme]', 'navy');
-}
-add_action('wp_head', 'codeweber_color');
-
-
-
-
-
 function codeweber_register_theme_customizer($wp_customize)
 {
 
@@ -72,9 +27,20 @@ function codeweber_register_theme_customizer($wp_customize)
          'label'    => __('Color Theme', 'codeweber'),
          'type'     => 'select',
          'choices'  => array(
-            'green'   => 'Green',
-            'navy'   => 'Navy',
-            'red'   => 'Red'
+            'aqua'       => 'Aqua',
+            'fuchsia'    => 'Fuchsia',
+            'grape'      => 'Grape',
+            'green'      => 'Green',
+            'leaf'       => 'Leaf',
+            'navy'       => 'Navy',
+            'orange'     => 'Orange',
+            'pink'       => 'Pink',
+            'purple'     => 'Purple',
+            'red'        => 'Red',
+            'sky'        => 'Sky',
+            'violet'     => 'Violet',
+            'yellow'     => 'Yellow',
+            'custom'     => 'Custom'
          )
       )
    );
@@ -155,3 +121,37 @@ function codeweber_register_theme_customizer($wp_customize)
    );
 }
 add_action('customize_register', 'codeweber_register_theme_customizer');
+
+
+function change_header()
+{
+   get_template_part('templates/header/header', get_theme_mod('codeweber_header'));
+}
+
+add_action('codeweber_header', 'change_header', 10);
+
+
+
+
+/// https://awhitepixel.com/blog/compile-scss-with-php-add-variables-to-wordpress-customizer/
+
+add_action('customize_register', function ($wp_customize) {
+   $wp_customize->add_section('theme-variables', [
+      'title' => __('Theme Variables', 'txtdomain'),
+      'priority' => 25
+   ]);
+
+   $wp_customize->add_setting('theme-main', ['default' => '#594c74']);
+   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'theme-main', [
+      'section' => 'theme-variables',
+      'label' => __('Main theme color', 'txtdomain'),
+      'priority' => 10
+   ]));
+
+   $wp_customize->add_setting('theme-secondary', ['default' => '#555']);
+   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'theme-secondary', [
+      'section' => 'theme-variables',
+      'label' => __('Secondary theme color', 'txtdomain'),
+      'priority' => 20
+   ]));
+});

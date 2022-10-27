@@ -15,8 +15,15 @@ if (!function_exists('brk_styles_scripts')) {
 		wp_enqueue_style('google-fonts', get_template_directory_uri() . '/dist/css/fonts/urbanist.css', false, $theme_version, 'all');
 		wp_enqueue_style('plugin-styles', get_template_directory_uri() . '/dist/css/plugins.min.css', false, $theme_version, 'all');
 		wp_enqueue_style('theme-styles', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all');
-		
-		wp_enqueue_style('color-styles', get_template_directory_uri() . '/dist/css/colors/green.css', false, $theme_version, 'all');
+
+
+		// --- Change Theme Color
+		if (get_theme_mod('codeweber_color') == 'custom') :
+			wp_enqueue_style('color-styles', get_template_directory_uri() . '/dist/css/colors/custom.css', false, $theme_version, 'all');
+		else :
+			wp_enqueue_style('color-styles', get_template_directory_uri() . '/dist/css/colors/' . get_theme_mod('codeweber_color') . '.css', false, $theme_version, 'all');
+		endif;
+
 
 
 		// --- Custom CSS ---
