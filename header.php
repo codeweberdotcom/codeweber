@@ -12,7 +12,7 @@
 </head>
 
 <body <?php body_class(); ?> data-bs-spy="scroll" data-bs-target="#sidebar-nav">
-	<?php do_action('codeweber_start_body_open'); ?>
+	<?php do_action('codeweber_start_body'); ?>
 	<?php wp_body_open(); ?>
 	<?php sandbox_frame_open(); ?>
 	<div id="content-wrapper" class="content-wrapper">

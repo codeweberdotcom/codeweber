@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-10-15 12:59+0000\n"
+"PO-Revision-Date: 2022-10-27 07:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -42,10 +42,6 @@ msgstr "<i class=\"uil uil-comments\"></i>Ответить"
 #. Description of the theme
 msgid "A modular WordPress theme powered by Bootstrap 5 and Gulp"
 msgstr "Модульный шаблон Wordpress на базе Bootstrap 5 и Gulp"
-
-#: functions/integrations/acf-gutenberg-block/acf-gutenberg-block.php:252
-msgid "A pricing content block."
-msgstr "Блок для вывода ценовых предложений."
 
 #: functions/lib/class-wp-bootstrap-navwalker.php:383
 msgid "Add a menu"
@@ -166,6 +162,14 @@ msgstr ""
 msgid "Codeweber"
 msgstr "Codeweber"
 
+#: functions/customize.php:10
+msgid "Color Options"
+msgstr "Настройки Цветов"
+
+#: functions/customize.php:27
+msgid "Color Theme"
+msgstr "Цвет Темы"
+
 #: comments.php:155
 #, fuzzy
 #| msgid "Comment"
@@ -211,7 +215,7 @@ msgid "Contact"
 msgstr "Контакт"
 
 #: templates/header/header-sandbox-09.php:146
-#: templates/header/header-sandbox-09_cw.php:84
+#: templates/header/header-sandbox-09_cw.php:88
 #: templates/header/header-sandbox-12.php:83
 #: templates/header/header-sandbox-15.php:63
 #: templates/header/header-sandbox-20.php:70
@@ -225,6 +229,10 @@ msgstr "Связаться с нами"
 #: templates/footer/footer-columns.php:22
 msgid "Contacts"
 msgstr "Контакты"
+
+#: functions/customize.php:71
+msgid "Content Frame?"
+msgstr "Контент с отступом?"
 
 #: templates/header/header-sandbox-05.php:68
 #: templates/header/header-sandbox-08.php:74
@@ -309,7 +317,7 @@ msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
 
 #: templates/header/header-sandbox-09.php:164
-#: templates/header/header-sandbox-09_cw.php:95
+#: templates/header/header-sandbox-09_cw.php:100
 #: templates/header/header-sandbox-15.php:81
 #: templates/header/header-sandbox-20.php:88
 #: templates/header/header-sandbox-22.php:81
@@ -319,6 +327,10 @@ msgstr "Заполните E-mail и пароль для входа"
 msgid "Follow Us"
 msgstr "Или здесь"
 
+#: functions/customize.php:145
+msgid "Footer"
+msgstr ""
+
 #: functions/navmenus.php:15
 msgid "Footer Menu"
 msgstr "Меню Футера"
@@ -326,6 +338,10 @@ msgstr "Меню Футера"
 #: functions/navmenus.php:16
 msgid "Footer Menu 1"
 msgstr "Меню Футера 1"
+
+#: functions/customize.php:128
+msgid "Footer Options"
+msgstr "Настройки Футера"
 
 #: templates/header/header-sandbox-05.php:67
 #: templates/header/header-sandbox-08.php:73
@@ -377,9 +393,17 @@ msgstr "Начать сейчас"
 msgid "Go to Homepage"
 msgstr "Перейти на Главную"
 
+#: functions/customize.php:89
+msgid "Header"
+msgstr ""
+
 #: functions/navmenus.php:14
 msgid "Header Menu"
 msgstr "Меню Хедера"
+
+#: functions/customize.php:53
+msgid "Header Options"
+msgstr "Настройки Хедера"
 
 #: templates/header/header-sandbox-06.php:5
 msgid "here"
@@ -542,10 +566,14 @@ msgid "Meta"
 msgstr ""
 
 #: templates/flexible-content/pricing/pricing_1/pricing_1.php:82
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:81
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:73
 msgid "mo"
 msgstr "месяц"
 
-#: templates/flexible-content/pricing/pricing_1/pricing_1.php:51
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:53
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:43
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:36
 msgid "Monthly"
 msgstr "Месяц"
 
@@ -598,7 +626,7 @@ msgstr "Адрес Офиса"
 msgid "Office addresses"
 msgstr "Адреса Офисов"
 
-#: templates/header/header-sandbox-09_cw.php:107
+#: templates/header/header-sandbox-09_cw.php:113
 msgid "Offices"
 msgstr "Офисы компании"
 
@@ -692,11 +720,6 @@ msgstr "Ценовой Пакет"
 #: functions/cpt/cpt-price_package.php:25
 msgid "Price Packages"
 msgstr "Ценовые Пакеты"
-
-#: templates/flexible-content/pricing.php:38
-#: functions/integrations/acf-gutenberg-block/acf-gutenberg-block.php:251
-msgid "Pricing"
-msgstr "Цены"
 
 #: templates/footer/footer-columns.php:115
 msgid "Privacy"
@@ -863,18 +886,18 @@ msgstr ""
 
 #: functions/integrations/acf.php:50
 msgid "Tab color in Chrome for Android"
-msgstr ""
+msgstr "Цвет Хедера браузера в Chrome для Android"
 
 #: templates/footer/footer-sandbox-25.php:14
 #: templates/flexible-content/widgets/widget_5/widget_5.php:1
 msgid "Tags"
 msgstr "Метки"
 
-#: functions/integrations/acf.php:2044
+#: functions/integrations/acf.php:2231
 msgid "Test"
 msgstr "Тест"
 
-#: functions/cpt/cpt-testimonials.php:11
+#: functions/custom.php:298 functions/cpt/cpt-testimonials.php:11
 msgid "Testimonial"
 msgstr "Отзыв"
 
@@ -891,6 +914,15 @@ msgstr ""
 "Страница, которую вы ищете, недоступна или была перемещена. Перейдите на "
 "главную страницу с помощью кнопки ниже."
 
+#: functions.php:53
+#, php-format
+msgid ""
+"This theme can't work without ACF PRO plugin. <a href=\"%s\">Please login to "
+"admin</a>, and activate it !"
+msgstr ""
+"Этот шаблон не может работать без плагина ACF PRO. <a href=\"%s\">Пожалуйста,"
+" войдите в систему под аккаунтом администратора</a> и активируйте его!"
+
 #: functions/cpt/taxonomy-office_adressess.php:11
 msgid "Town"
 msgstr "Город"
@@ -900,7 +932,7 @@ msgstr "Город"
 msgid "Towns"
 msgstr "Города"
 
-#: functions/integrations/acf.php:2040
+#: functions/integrations/acf.php:2227
 msgid "Translate"
 msgstr "Перевод"
 
@@ -967,7 +999,9 @@ msgstr "Напишите ваш комментарий."
 msgid "Writer"
 msgstr "Писатель"
 
-#: templates/flexible-content/pricing/pricing_1/pricing_1.php:57
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:59
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:49
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:42
 msgid "Yearly"
 msgstr "Год"
 
@@ -980,5 +1014,7 @@ msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает модерации"
 
 #: templates/flexible-content/pricing/pricing_1/pricing_1.php:83
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:86
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:78
 msgid "yr"
 msgstr "год"

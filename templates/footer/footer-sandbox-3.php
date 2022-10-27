@@ -52,7 +52,7 @@
                   <div class="mc-field-group input-group form-floating">
                     <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Email Address" id="mce-EMAIL2">
                     <label for="mce-EMAIL2"><?php esc_html_e('Email Address', 'codeweber'); ?></label>
-                    <input type="submit" value="Join" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary ">
+                    <input type="submit" value="<?php esc_html_e('Join', 'codeweber'); ?>" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary ">
                   </div>
                   <div id="mce-responses2" class="clear">
                     <div class="response" id="mce-error-response2" style="display:none"></div>

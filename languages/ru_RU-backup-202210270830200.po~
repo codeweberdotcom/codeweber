@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-10-27 07:24+0000\n"
+"PO-Revision-Date: 2022-10-27 07:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -164,11 +164,11 @@ msgstr "Codeweber"
 
 #: functions/customize.php:10
 msgid "Color Options"
-msgstr ""
+msgstr "Настройки Цветов"
 
 #: functions/customize.php:27
 msgid "Color Theme"
-msgstr ""
+msgstr "Цвет Темы"
 
 #: comments.php:155
 #, fuzzy
@@ -229,6 +229,10 @@ msgstr "Связаться с нами"
 #: templates/footer/footer-columns.php:22
 msgid "Contacts"
 msgstr "Контакты"
+
+#: functions/customize.php:71
+msgid "Content Frame?"
+msgstr "Контент с отступом?"
 
 #: templates/header/header-sandbox-05.php:68
 #: templates/header/header-sandbox-08.php:74
@@ -323,6 +327,10 @@ msgstr "Заполните E-mail и пароль для входа"
 msgid "Follow Us"
 msgstr "Или здесь"
 
+#: functions/customize.php:145
+msgid "Footer"
+msgstr "Футер"
+
 #: functions/navmenus.php:15
 msgid "Footer Menu"
 msgstr "Меню Футера"
@@ -330,6 +338,10 @@ msgstr "Меню Футера"
 #: functions/navmenus.php:16
 msgid "Footer Menu 1"
 msgstr "Меню Футера 1"
+
+#: functions/customize.php:128
+msgid "Footer Options"
+msgstr "Настройки Футера"
 
 #: templates/header/header-sandbox-05.php:67
 #: templates/header/header-sandbox-08.php:73
@@ -874,7 +886,7 @@ msgstr ""
 
 #: functions/integrations/acf.php:50
 msgid "Tab color in Chrome for Android"
-msgstr ""
+msgstr "Цвет Хедера браузера в Chrome для Android"
 
 #: templates/footer/footer-sandbox-25.php:14
 #: templates/flexible-content/widgets/widget_5/widget_5.php:1

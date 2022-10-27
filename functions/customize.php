@@ -68,7 +68,7 @@ function codeweber_register_theme_customizer($wp_customize)
       'codeweber_frame_content',
       array(
          'section'   => 'codeweber_header_options',
-         'label'     => 'Content Frame?',
+         'label'     => __('Content Frame?', 'codeweber'),
          'type'      => 'checkbox',
       )
    );
@@ -119,9 +119,64 @@ function codeweber_register_theme_customizer($wp_customize)
          )
       )
    );
+
+
+   // Header Section
+   $wp_customize->add_section(
+      'codeweber_footer_options',
+      array(
+         'title'     => __('Footer Options', 'codeweber'),
+         'priority'  => 1
+      )
+   );
+
+   // Footer Control
+   $wp_customize->add_setting(
+      'codeweber_footer',
+      array(
+         'default'   => 'sandbox-1',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_footer',
+      array(
+         'section'  => 'codeweber_footer_options',
+         'label'    => __('Footer', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'sandbox-1'   => 'Footer 01',
+            'sandbox-2-6'   => 'Footer 02-06',
+            'sandbox-3'   => 'Footer 03',
+            'sandbox-4'   => 'Footer 04',
+            'sandbox-5'   => 'Footer 05',
+            'sandbox-7'   => 'Footer 07',
+            'sandbox-8'   => 'Footer 08',
+            'sandbox-9'   => 'Footer 09',
+            'sandbox-10'   => 'Footer 10',
+            'sandbox-11'   => 'Footer 11',
+            'sandbox-12'   => 'Footer 12',
+            'sandbox-13'   => 'Footer 13',
+            'sandbox-14'   => 'Footer 14',
+            'sandbox-15'   => 'Footer 15',
+            'sandbox-16'   => 'Footer 16',
+            'sandbox-17'   => 'Footer 17',
+            'sandbox-18'   => 'Footer 18',
+            'sandbox-19'   => 'Footer 19',
+            'sandbox-20'   => 'Footer 20',
+            'sandbox-21'   => 'Footer 21',
+            'sandbox-22'   => 'Footer 22',
+            'sandbox-25_cw'   => 'Footer 25_CW',
+
+         )
+      )
+   );
 }
 add_action('customize_register', 'codeweber_register_theme_customizer');
 
+
+
+// --- Function Change Header --- //
 
 function change_header()
 {
@@ -133,25 +188,11 @@ add_action('codeweber_header', 'change_header', 10);
 
 
 
-/// https://awhitepixel.com/blog/compile-scss-with-php-add-variables-to-wordpress-customizer/
+// --- Function Change Footer --- //
 
-add_action('customize_register', function ($wp_customize) {
-   $wp_customize->add_section('theme-variables', [
-      'title' => __('Theme Variables', 'txtdomain'),
-      'priority' => 25
-   ]);
+function change_footer()
+{
+   get_template_part('templates/footer/footer', get_theme_mod('codeweber_footer'));
+}
 
-   $wp_customize->add_setting('theme-main', ['default' => '#594c74']);
-   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'theme-main', [
-      'section' => 'theme-variables',
-      'label' => __('Main theme color', 'txtdomain'),
-      'priority' => 10
-   ]));
-
-   $wp_customize->add_setting('theme-secondary', ['default' => '#555']);
-   $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'theme-secondary', [
-      'section' => 'theme-variables',
-      'label' => __('Secondary theme color', 'txtdomain'),
-      'priority' => 20
-   ]));
-});
+add_action('codeweber_footer_start', 'change_footer', 10);

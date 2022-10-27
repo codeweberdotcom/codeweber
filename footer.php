@@ -1,6 +1,7 @@
 	<?php
 	// get_template_part( 'templates/footer/footer', 'columns' );
-	get_template_part("templates/footer/footer", "sandbox-25_cw"); ?>
+	do_action('codeweber_footer_start'); ?>
+
 	<!--  generate forms start -->
 	<?php global $forms; ?>
 	<?php $forms = array_unique($forms); ?>
@@ -24,9 +25,12 @@
 			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
 		</svg>
 	</div>
+	<?php do_action('codeweber_footer_end'); ?>
 	<?php
 	wp_footer();
 	?>
+	<?php do_action('codeweber_end_content_wrapper'); ?>
 	</div> <!-- #content-wrapper -->
 	<?php sandbox_frame_close(); ?>
+	<?php do_action('codeweber_end_body'); ?>
 	</body>

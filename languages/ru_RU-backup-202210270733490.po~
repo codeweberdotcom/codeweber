@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-10-26 09:39+0000\n"
+"PO-Revision-Date: 2022-10-27 07:26+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -162,6 +162,14 @@ msgstr ""
 msgid "Codeweber"
 msgstr "Codeweber"
 
+#: functions/customize.php:10
+msgid "Color Options"
+msgstr "Настройки Цветов"
+
+#: functions/customize.php:27
+msgid "Color Theme"
+msgstr "Цвет Темы"
+
 #: comments.php:155
 #, fuzzy
 #| msgid "Comment"
@@ -207,7 +215,7 @@ msgid "Contact"
 msgstr "Контакт"
 
 #: templates/header/header-sandbox-09.php:146
-#: templates/header/header-sandbox-09_cw.php:84
+#: templates/header/header-sandbox-09_cw.php:88
 #: templates/header/header-sandbox-12.php:83
 #: templates/header/header-sandbox-15.php:63
 #: templates/header/header-sandbox-20.php:70
@@ -305,7 +313,7 @@ msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
 
 #: templates/header/header-sandbox-09.php:164
-#: templates/header/header-sandbox-09_cw.php:95
+#: templates/header/header-sandbox-09_cw.php:100
 #: templates/header/header-sandbox-15.php:81
 #: templates/header/header-sandbox-20.php:88
 #: templates/header/header-sandbox-22.php:81
@@ -373,11 +381,15 @@ msgstr "Начать сейчас"
 msgid "Go to Homepage"
 msgstr "Перейти на Главную"
 
+#: functions/customize.php:89
+msgid "Header"
+msgstr ""
+
 #: functions/navmenus.php:14
 msgid "Header Menu"
 msgstr "Меню Хедера"
 
-#: functions/customize.php:73
+#: functions/customize.php:53
 msgid "Header Options"
 msgstr "Настройки Хедера"
 
@@ -495,10 +507,6 @@ msgstr ""
 msgid "Likes"
 msgstr "Спасибо"
 
-#: functions/customize.php:63
-msgid "Link Color"
-msgstr ""
-
 #: comments.php:134 comments.php:141 comments.php:156
 msgid "Looks good!"
 msgstr "Отлично!"
@@ -606,7 +614,7 @@ msgstr "Адрес Офиса"
 msgid "Office addresses"
 msgstr "Адреса Офисов"
 
-#: templates/header/header-sandbox-09_cw.php:107
+#: templates/header/header-sandbox-09_cw.php:113
 msgid "Offices"
 msgstr "Офисы компании"
 
@@ -866,14 +874,14 @@ msgstr ""
 
 #: functions/integrations/acf.php:50
 msgid "Tab color in Chrome for Android"
-msgstr ""
+msgstr "Цвет Хедера браузера в Chrome для Android"
 
 #: templates/footer/footer-sandbox-25.php:14
 #: templates/flexible-content/widgets/widget_5/widget_5.php:1
 msgid "Tags"
 msgstr "Метки"
 
-#: functions/integrations/acf.php:2230
+#: functions/integrations/acf.php:2231
 msgid "Test"
 msgstr "Тест"
 
@@ -894,6 +902,15 @@ msgstr ""
 "Страница, которую вы ищете, недоступна или была перемещена. Перейдите на "
 "главную страницу с помощью кнопки ниже."
 
+#: functions.php:53
+#, php-format
+msgid ""
+"This theme can't work without ACF PRO plugin. <a href=\"%s\">Please login to "
+"admin</a>, and activate it !"
+msgstr ""
+"Этот шаблон не может работать без плагина ACF PRO. <a href=\"%s\">Пожалуйста,"
+" войдите в систему под аккаунтом администратора</a> и активируйте его!"
+
 #: functions/cpt/taxonomy-office_adressess.php:11
 msgid "Town"
 msgstr "Город"
@@ -903,7 +920,7 @@ msgstr "Город"
 msgid "Towns"
 msgstr "Города"
 
-#: functions/integrations/acf.php:2226
+#: functions/integrations/acf.php:2227
 msgid "Translate"
 msgstr "Перевод"
 
