@@ -55,7 +55,7 @@ var theme = {
     theme.bsPopovers();
     theme.bsModal();
     theme.iTooltip();
-    theme.forms();
+    // theme.forms();
     theme.passVisibility();
     theme.pricingSwitcher();
     theme.textRotator();
