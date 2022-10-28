@@ -926,6 +926,7 @@ class Buttons
 	public $data_delay = "900";
 	public $animate_swiper = 'false';
 	public $animate_swiper_class = NULL;
+	public $button_paddings = 'me-2 mb-2';
 
 	//* Function Data Buttons *//
 	public function showbuttons()
@@ -1057,7 +1058,7 @@ class Buttons
 							$icon_font = '<i class="icn-caret-right"></i>';
 						elseif ($button_type == 'Default') :
 							$button_type = NULL;
-							$form_button = get_theme_mod('codeweber_button_style');
+							$form_button = get_theme_mod('codeweber_button_form');
 							$button_size = get_theme_mod('codeweber_button_size');
 						elseif ($button_type == 'None') :
 							$button_type = 'none';
@@ -1066,23 +1067,23 @@ class Buttons
 						/* Show buttons */
 						if (get_sub_field('select_type') == 'Form') :
 							if (get_sub_field('button_type') == 'Expand') :
-								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font . '<span>' . $text_button . '</span></button></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $form_button . ' ' . $button_type . $this->button_paddings . '" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font . '<span>' . $text_button . '</span></button></span>';
 							elseif (get_sub_field('button_type') == 'Play') :
-								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font .  '</button></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . $this->button_paddings . '" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font .  '</button></span>';
 							elseif (get_sub_field('button_type') == 'None') :
 								$button = NULL;
 							else :
-								$button = '<span' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '"><span>' . $icon_font  . $text_button . '</span></button></span>';
+								$button = '<span' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . $button_type . $this->button_paddings . '" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '"><span>' . $icon_font  . $text_button . '</span></button></span>';
 							endif;
 						else :
 							if (get_sub_field('button_type') == 'Expand') :
-								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $form_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font . '<span>' . $text_button . '</span></a></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $form_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . $this->button_paddings . '" ' . $ghligthbox . '>' . $icon_font . '<span>' . $text_button . '</span></a></span>';
 							elseif (get_sub_field('button_type') == 'Play') :
-								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font .  '</a></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . $this->button_paddings . '" ' . $ghligthbox . '>' . $icon_font .  '</a></span>';
 							elseif (get_sub_field('button_type') == 'None') :
 								$button = NULL;
 							else :
-								$button = '<span ' . $this->animate_swiper_class . '"><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '><span>' . $icon_font  . $text_button . '</span></a></span>';
+								$button = '<span ' . $this->animate_swiper_class . '"><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . ' ' . $button_type . $this->button_paddings . '" ' . $ghligthbox . '><span>' . $icon_font  . $text_button . '</span></a></span>';
 							endif;
 						endif;
 						echo $button;
@@ -1208,7 +1209,7 @@ class Buttons
 							$icon_font = '<i class="icn-caret-right"></i>';
 						elseif ($button_type == 'Default') :
 							$button_type = NULL;
-							$form_button = get_theme_mod('codeweber_button_style');
+							$form_button = get_theme_mod('codeweber_button_form');
 							$button_size = get_theme_mod('codeweber_button_size');
 						elseif ($button_type == 'None') :
 							$button_type = 'none';
@@ -1217,9 +1218,9 @@ class Buttons
 						/* Show buttons */
 						if (get_sub_field('select_type') == 'Form') :
 							if (get_sub_field('button_type') == 'Expand') :
-								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font . '<span>' . $text_button . '</span></button></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $form_button . ' ' . $button_type . $this->button_paddings . '" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font . '<span>' . $text_button . '</span></button></span>';
 							elseif (get_sub_field('button_type') == 'Play') :
-								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font .  '</button></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . $this->button_paddings . '" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '">' . $icon_font .  '</button></span>';
 							elseif (get_sub_field('button_type') == 'None') :
 								$button = NULL;
 							else :
@@ -1227,13 +1228,13 @@ class Buttons
 							endif;
 						else :
 							if (get_sub_field('button_type') == 'Expand') :
-								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $form_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font . '<span>' . $text_button . '</span></a></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $form_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . $this->button_paddings . '" ' . $ghligthbox . '>' . $icon_font . '<span>' . $text_button . '</span></a></span>';
 							elseif (get_sub_field('button_type') == 'Play') :
-								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '>' . $icon_font .  '</a></span>';
+								$button = '<span ' . $this->animate_swiper_class . '><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $class_button_swiper_animate . ' ' . $button_type . $this->button_paddings . '" ' . $ghligthbox . '>' . $icon_font .  '</a></span>';
 							elseif (get_sub_field('button_type') == 'None') :
 								$button = NULL;
 							else :
-								$button = '<span ' . $this->animate_swiper_class . '"><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . ' ' . $button_type . ' me-2 mb-2" ' . $ghligthbox . '><span>' . $icon_font  . $text_button . '</span></a></span>';
+								$button = '<span ' . $this->animate_swiper_class . '"><a href="' . $button_link . '" class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . ' ' . $button_type . $this->button_paddings . '" ' . $ghligthbox . '><span>' . $icon_font  . $text_button . '</span></a></span>';
 							endif;
 						endif;
 						echo $button;

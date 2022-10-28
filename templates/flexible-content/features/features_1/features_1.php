@@ -19,6 +19,7 @@ $button->class_button_wrapper = "d-flex justify-content-center flex-wrap justify
 $button->data_cues = "slideInDown";
 $button->data_group = "page-title-buttons";
 $button->data_delay = "900";
+$button->button_paddings = 'mt-6 me-2';
 $button->default_button = '<span><a href="#" class="btn btn-soft-leaf rounded-pill mt-6 mb-0">More Details</a></span>';
 
 
