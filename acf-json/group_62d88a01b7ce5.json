@@ -4634,7 +4634,7 @@
                     "min": 0,
                     "max": 0,
                     "layout": "block",
-                    "button_label": "",
+                    "button_label": "Добавить элемент списка",
                     "sub_fields": [
                         {
                             "key": "field_630a226d432c5",
@@ -4951,5 +4951,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666610589
+    "modified": 1666955316
 }
