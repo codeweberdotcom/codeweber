@@ -1057,6 +1057,8 @@ class Buttons
 							$icon_font = '<i class="icn-caret-right"></i>';
 						elseif ($button_type == 'Default') :
 							$button_type = NULL;
+							$form_button = get_theme_mod('codeweber_button_style');
+							$button_size = get_theme_mod('codeweber_button_size');
 						elseif ($button_type == 'None') :
 							$button_type = 'none';
 						endif;
@@ -1206,6 +1208,8 @@ class Buttons
 							$icon_font = '<i class="icn-caret-right"></i>';
 						elseif ($button_type == 'Default') :
 							$button_type = NULL;
+							$form_button = get_theme_mod('codeweber_button_style');
+							$button_size = get_theme_mod('codeweber_button_size');
 						elseif ($button_type == 'None') :
 							$button_type = 'none';
 						endif;

@@ -3,6 +3,53 @@
 function codeweber_register_theme_customizer($wp_customize)
 {
 
+
+   // Button Section
+   $wp_customize->add_section(
+      'codeweber_button_options',
+      array(
+         'title'     => __('Button Options', 'codeweber'),
+         'priority'  => 3
+      )
+   );
+
+   // Button Form
+
+   $wp_customize->add_setting('codeweber_button_form', array(
+      'default' => 'rounded-pill',
+   ));
+
+   $wp_customize->add_control('codeweber_button_form', array(
+      'type' => 'radio',
+      'section' => 'codeweber_button_options', // Add a default or your own section
+      'label' => __('Button style', 'codeweber'),
+      //'description' => __('This is a custom radio input.'),
+      'choices'    => array(
+         'rounded-pill' => __('Rounded-pill', 'codeweber'),
+         'rounded' =>  __('Rounded', 'codeweber'),
+         'rounded-0' =>  __('Squared', 'codeweber'),
+      ),
+   ));
+
+   // Button Size
+
+   $wp_customize->add_setting('codeweber_button_size', array(
+      'default' => '',
+   ));
+
+   $wp_customize->add_control('codeweber_button_size', array(
+      'type' => 'radio',
+      'section' => 'codeweber_button_options', // Add a default or your own section
+      'label' => __('Button Size', 'codeweber'),
+      //'description' => __('This is a custom radio input.'),
+      'choices'    => array(
+         'btn-lg' => __('Button Big', 'codeweber'),
+         'btn-md' => __('Button Middle', 'codeweber'),
+         'btn-sm' => __('Button Small', 'codeweber'),
+      ),
+   ));
+
+
    // Color Section
    $wp_customize->add_section(
       'codeweber_color_options',
@@ -121,6 +168,8 @@ function codeweber_register_theme_customizer($wp_customize)
    );
 
 
+
+
    // Header Section
    $wp_customize->add_section(
       'codeweber_footer_options',
@@ -176,6 +225,11 @@ add_action('customize_register', 'codeweber_register_theme_customizer');
 
 
 
+
+
+
+
+
 // --- Function Change Header --- //
 
 function change_header()
@@ -196,3 +250,47 @@ function change_footer()
 }
 
 add_action('codeweber_footer_start', 'change_footer', 10);
+
+
+
+function theme_slug_customizer($wp_customize)
+{
+
+   //your section
+   $wp_customize->add_section(
+      'theme_slug_customizer_your_section',
+      array(
+         'title' => esc_html__('Your Section', 'theme_slug'),
+         'priority' => 150
+      )
+   );
+
+
+   //checkbox sanitization function
+   function theme_slug_sanitize_checkbox($input)
+   {
+
+      //returns true if checkbox is checked
+      return (isset($input) ? true : false);
+   }
+
+
+   //add setting to your section
+   $wp_customize->add_setting(
+      'theme_slug_customizer_checkbox',
+      array(
+         'default' => '',
+         'sanitize_callback' => 'theme_slug_sanitize_checkbox'
+      )
+   );
+
+   $wp_customize->add_control(
+      'theme_slug_customizer_checkbox',
+      array(
+         'label' => esc_html__('Your Setting with Checkbox', 'theme_slug'),
+         'section' => 'theme_slug_customizer_your_section',
+         'type' => 'checkbox'
+      )
+   );
+}
+add_action('customize_register', 'theme_slug_customizer');

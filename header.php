@@ -17,6 +17,4 @@
 	<?php sandbox_frame_open(); ?>
 	<div id="content-wrapper" class="content-wrapper">
 		<?php do_action('codeweber_start_content_wrapper'); ?>
-		<?php
-		do_action('codeweber_header');
-		?>
+		<?php do_action('codeweber_header'); ?>
