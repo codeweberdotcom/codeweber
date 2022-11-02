@@ -13,13 +13,11 @@
        <nav class="navbar navbar-expand-lg classic transparent navbar-light">
           <div class="container flex-lg-row flex-nowrap align-items-center">
              <div class="navbar-brand w-100">
-                <a href="/">
-                   <img src="<?php echo brk_logo_dark_link(); ?>" srcset="<?php echo brk_logo_dark_link(); ?>" alt="" />
-                </a>
+                <?php echo codeweber_logo_dark_link(); ?>
              </div>
              <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                 <div class="offcanvas-header d-lg-none">
-                   <h3 class="text-white fs-30 mb-0"><?php echo get_bloginfo('name'); ?></h3>
+                   <?php echo codeweber_logo_light_link(); ?>
                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
