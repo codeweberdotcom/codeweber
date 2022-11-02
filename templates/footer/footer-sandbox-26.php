@@ -3,7 +3,7 @@
         <div class="row gx-lg-0 gy-6">
            <div class="col-lg-4">
               <div class="widget">
-                 <img class="mb-4" src="<?php echo brk_logo_dark_link(); ?>" srcset="<?php echo brk_logo_dark_link(); ?>" alt="" />
+                 <?php echo codeweber_logo_dark_link(); ?>
                  <p class="lead mb-0"><?php esc_html_e('We are trusted by over 5000+ clients. Join them by using our services and grow your business.', 'codeweber'); ?></p>
               </div>
               <!-- /.widget -->

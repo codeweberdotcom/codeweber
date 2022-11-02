@@ -3,7 +3,7 @@
     <div class="row gy-6 gy-lg-0">
       <div class="col-md-4 col-lg-3">
         <div class="widget">
-          <img class="mb-4" src="<?php echo brk_logo_light_link(); ?>" srcset="<?php echo brk_logo_light_link(); ?>" alt="" />
+          <?php echo codeweber_logo_light_link(); ?>
           <p class="mb-4">
             <a class="text-white-50" href="<?php echo esc_attr(wp_get_theme()->get('ThemeURI')); ?>" target="_blank">
               © <?php echo date("Y"); ?> <?php esc_html_e('Made with', 'codeweber'); ?> Codeweber</a>
