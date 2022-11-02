@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-10-27 07:33+0000\n"
+"PO-Revision-Date: 2022-10-28 10:49+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -126,6 +126,30 @@ msgstr "Статьи по месяцам"
 msgid "Back to top"
 msgstr "Вернуться наверх"
 
+#: functions/customize.php:46
+msgid "Button Big"
+msgstr "Кнопка Большая"
+
+#: functions/customize.php:47
+msgid "Button Middle"
+msgstr "Кнопка Средняя"
+
+#: functions/customize.php:11
+msgid "Button Options"
+msgstr "Настройки Кнопок"
+
+#: functions/customize.php:43
+msgid "Button Size"
+msgstr "Размер Кнопки"
+
+#: functions/customize.php:48
+msgid "Button Small"
+msgstr "Кнопка Маленькая"
+
+#: functions/customize.php:25
+msgid "Button style"
+msgstr "Стиль кнопки"
+
 #: templates/content/loop.php:42 templates/sections/common-pageheader.php:26
 msgid "By"
 msgstr "Автор"
@@ -162,11 +186,11 @@ msgstr ""
 msgid "Codeweber"
 msgstr "Codeweber"
 
-#: functions/customize.php:10
+#: functions/customize.php:57
 msgid "Color Options"
 msgstr "Настройки Цветов"
 
-#: functions/customize.php:27
+#: functions/customize.php:74
 msgid "Color Theme"
 msgstr "Цвет Темы"
 
@@ -230,7 +254,7 @@ msgstr "Связаться с нами"
 msgid "Contacts"
 msgstr "Контакты"
 
-#: functions/customize.php:71
+#: functions/customize.php:118
 msgid "Content Frame?"
 msgstr "Контент с отступом?"
 
@@ -327,6 +351,10 @@ msgstr "Заполните E-mail и пароль для входа"
 msgid "Follow Us"
 msgstr "Или здесь"
 
+#: functions/customize.php:194
+msgid "Footer"
+msgstr "Футер"
+
 #: functions/navmenus.php:15
 msgid "Footer Menu"
 msgstr "Меню Футера"
@@ -334,6 +362,10 @@ msgstr "Меню Футера"
 #: functions/navmenus.php:16
 msgid "Footer Menu 1"
 msgstr "Меню Футера 1"
+
+#: functions/customize.php:177
+msgid "Footer Options"
+msgstr "Настройки Футера"
 
 #: templates/header/header-sandbox-05.php:67
 #: templates/header/header-sandbox-08.php:73
@@ -385,7 +417,7 @@ msgstr "Начать сейчас"
 msgid "Go to Homepage"
 msgstr "Перейти на Главную"
 
-#: functions/customize.php:89
+#: functions/customize.php:136
 msgid "Header"
 msgstr ""
 
@@ -393,7 +425,7 @@ msgstr ""
 msgid "Header Menu"
 msgstr "Меню Хедера"
 
-#: functions/customize.php:53
+#: functions/customize.php:100
 msgid "Header Options"
 msgstr "Настройки Хедера"
 
@@ -428,6 +460,12 @@ msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
+
+#: templates/footer/footer-sandbox-1.php:58
+#: templates/footer/footer-sandbox-2-6.php:53
+#: templates/footer/footer-sandbox-3.php:55
+msgid "Join"
+msgstr "Подписаться"
 
 #: templates/footer/footer-sandbox-18.php:8
 #: templates/footer/footer-sandbox-19.php:7
@@ -749,6 +787,14 @@ msgstr "Результаты для:"
 msgid "Review Options"
 msgstr ""
 
+#: functions/customize.php:29
+msgid "Rounded"
+msgstr "Скругление"
+
+#: functions/customize.php:28
+msgid "Rounded-pill"
+msgstr "Скругление 50%"
+
 #: templates/header/header-sandbox-09.php:142
 #: templates/header/header-sandbox-12.php:79
 #: templates/header/header-sandbox-15.php:59
@@ -841,6 +887,10 @@ msgid ""
 "different keywords."
 msgstr ""
 
+#: functions/customize.php:30
+msgid "Squared"
+msgstr "Без Скругления"
+
 #: comments.php:146
 msgid "Submit"
 msgstr "Отправить комментарий"
@@ -885,7 +935,7 @@ msgstr "Цвет Хедера браузера в Chrome для Android"
 msgid "Tags"
 msgstr "Метки"
 
-#: functions/integrations/acf.php:2231
+#: functions/integrations/acf.php:2235
 msgid "Test"
 msgstr "Тест"
 
@@ -924,7 +974,7 @@ msgstr "Город"
 msgid "Towns"
 msgstr "Города"
 
-#: functions/integrations/acf.php:2227
+#: functions/integrations/acf.php:2231
 msgid "Translate"
 msgstr "Перевод"
 
