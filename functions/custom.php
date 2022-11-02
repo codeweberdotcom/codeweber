@@ -55,6 +55,7 @@ function getYoutubeIdFromUrl($url)
 }
 
 
+
 // --- Custom login form---
 function wp_login_form_brk($args = array())
 {
@@ -304,3 +305,30 @@ function auto_generate_post_title($title)
 }
 
 add_filter('title_save_pre', 'auto_generate_post_title');
+
+
+
+// --- Logo Dark Link ---
+
+function codeweber_logo_dark_link()
+{
+    if (get_theme_mod('dark_logo')) :
+        $codeweber_logo_header_dark = '<a href="' . get_home_url() . '" class="dark-logo-link" rel="home" aria-current="page"><img src="' . get_theme_mod('dark_logo') . '"/></a>';
+    else :
+        $codeweber_logo_header_dark = get_template_directory_uri() . '/dist/img/logo-dark.png';
+    endif;
+    return $codeweber_logo_header_dark;
+};
+
+
+// --- Logo Light Link ---
+
+function codeweber_logo_light_link()
+{
+    if (get_custom_logo()) :
+        $codeweber_logo_light = get_custom_logo();
+    else :
+        $codeweber_logo_light = get_template_directory_uri() . '/dist/img/logo-light.png';
+    endif;
+    return $codeweber_logo_light;
+};
