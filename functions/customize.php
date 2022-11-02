@@ -3,6 +3,43 @@
 function codeweber_register_theme_customizer($wp_customize)
 {
 
+   /// https://stackoverflow.com/questions/62850036/wordpress-add-second-logo-to-customizer
+
+   $wp_customize->get_setting('blogname')->transport         = 'postMessage';
+   $wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
+   $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+
+   if (isset($wp_customize->selective_refresh)) {
+      $wp_customize->selective_refresh->add_partial(
+         'blogname',
+         array(
+            'selector'        => '.site-title a',
+            'render_callback' => 'mytheme_customize_partial_blogname',
+         )
+      );
+      $wp_customize->selective_refresh->add_partial(
+         'blogdescription',
+         array(
+            'selector'        => '.site-description',
+            'render_callback' => 'mytheme_customize_partial_blogdescription',
+         )
+      );
+   }
+
+   $wp_customize->add_setting('dark_logo');
+   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'dark_logo', array(
+      'label' => __('Dark Logo', 'codeweber'),
+      'section' => 'title_tagline',
+      'settings' => 'dark_logo',
+      'render_callback' => 'mytheme_customize_partial_blogname',
+      'priority' => 8
+   )));
+
+
+   /*  <?php the_custom_logo(); ?>
+       <img src="<?php echo get_theme_mod('dark_logo') ?>" class="dark-logo" alt="logo codeweber"> */
+   ///
+
 
    // Button Section
    $wp_customize->add_section(
@@ -224,12 +261,6 @@ function codeweber_register_theme_customizer($wp_customize)
 add_action('customize_register', 'codeweber_register_theme_customizer');
 
 
-
-
-
-
-
-
 // --- Function Change Header --- //
 
 function change_header()
@@ -240,8 +271,6 @@ function change_header()
 add_action('codeweber_header', 'change_header', 10);
 
 
-
-
 // --- Function Change Footer --- //
 
 function change_footer()
@@ -250,47 +279,3 @@ function change_footer()
 }
 
 add_action('codeweber_footer_start', 'change_footer', 10);
-
-
-
-function theme_slug_customizer($wp_customize)
-{
-
-   //your section
-   $wp_customize->add_section(
-      'theme_slug_customizer_your_section',
-      array(
-         'title' => esc_html__('Your Section', 'theme_slug'),
-         'priority' => 150
-      )
-   );
-
-
-   //checkbox sanitization function
-   function theme_slug_sanitize_checkbox($input)
-   {
-
-      //returns true if checkbox is checked
-      return (isset($input) ? true : false);
-   }
-
-
-   //add setting to your section
-   $wp_customize->add_setting(
-      'theme_slug_customizer_checkbox',
-      array(
-         'default' => '',
-         'sanitize_callback' => 'theme_slug_sanitize_checkbox'
-      )
-   );
-
-   $wp_customize->add_control(
-      'theme_slug_customizer_checkbox',
-      array(
-         'label' => esc_html__('Your Setting with Checkbox', 'theme_slug'),
-         'section' => 'theme_slug_customizer_your_section',
-         'type' => 'checkbox'
-      )
-   );
-}
-add_action('customize_register', 'theme_slug_customizer');
