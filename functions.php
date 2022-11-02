@@ -3,7 +3,6 @@
 /**
  *  https://developer.wordpress.org/themes/basics/theme-functions/
  */
-
 require_once get_template_directory() . '/functions/setup.php'; // --- Theme setup ---
 require_once get_template_directory() . '/functions/enqueues.php'; // --- Include CSS & JavaScript ---
 require_once get_template_directory() . '/functions/images.php'; // --- Image settings ---
@@ -12,14 +11,12 @@ require_once get_template_directory() . '/functions/sidebars.php'; // --- Regist
 require_once get_template_directory() . '/functions/lib/class-wp-bootstrap-navwalker.php'; // --- Nav Walker ---
 
 
-// --- Register Custom Post Types & Taxonomies ---
-
+// --- Register Custom Post Types & Taxonomies --- //
 foreach (glob(get_template_directory() . '/functions/cpt/*.php') as $cpt) {
 	require_once $cpt;
 };
 
-// --- Add Theme Functions ---
-
+// --- Add Theme Functions --- //
 require_once get_template_directory() . '/functions/global.php'; // --- Various global functions ---
 require_once get_template_directory() . '/functions/integrations/acf.php'; // --- ACF integration ---
 require_once get_template_directory() . '/functions/integrations/acf-icon/acf-icon-picker.php'; // --- ACF integration ---
@@ -29,23 +26,19 @@ require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup
 require_once get_template_directory() . '/functions/custom.php'; // --- Custom user functions ---
 
 
-/** ACF Gutenberg Blocks */
-
+// --- ACF Gutenberg Blocks --- //
 require_once get_template_directory() . '/functions/integrations/acf-gutenberg-block/acf-gutenberg-block.php'; // --- Custom user functions ---
 
 
-// --- Add comment helper ---//
-
+// --- Add Comment Helper --- //
 require_once get_template_directory() . '/functions/lib/comments-helper.php'; // --- Comments Helper ---
 require_once get_template_directory() . '/functions/comments-reply.php'; // --- Comments Reply Functions ---
 
-// --- Add like dislike function ---// 
-
+// --- Add like dislike function --- // 
 require_once get_template_directory() . '/functions/lib/like_dislike.php'; // --- Like Dislike Functions ---
 
 
 // --- Check ACF ---//
-
 if (!function_exists('get_field')) {
 	add_action('template_redirect', 'template_redirect_warning_missing_acf', 0);
 	function template_redirect_warning_missing_acf()
@@ -56,5 +49,8 @@ if (!function_exists('get_field')) {
 
 
 // --- Customizer --- //
-
 require_once get_template_directory() . '/functions/customize.php'; // --- Customizer ---
+
+
+// --- Woocommerce ---//
+require_once get_template_directory() . '/functions/woocommerce.php'; // --- Comments Helper ---
