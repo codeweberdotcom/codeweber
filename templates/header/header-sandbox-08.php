@@ -2,13 +2,11 @@
        <nav class="navbar navbar-expand-lg classic transparent navbar-light">
           <div class="container flex-lg-row flex-nowrap align-items-center">
              <div class="navbar-brand w-100">
-                <a href="/">
-                   <img src="<?php echo brk_logo_dark_link(); ?>" srcset="<?php echo brk_logo_dark_link(); ?>" alt="" />
-                </a>
+                <?php echo codeweber_logo_dark_link(); ?>
              </div>
              <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                 <div class="offcanvas-header d-lg-none">
-                   <h3 class="text-white fs-30 mb-0"><?php echo get_bloginfo('name'); ?></h3>
+                   <?php echo codeweber_logo_light_link(); ?>
                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
@@ -67,7 +65,7 @@
                          <span class="password-toggle"><i class="uil uil-eye"></i></span>
                          <label for="loginPassword"><?php esc_html_e('Password', 'codeweber'); ?></label>
                       </div>
-                      <a class="btn btn-primary rounded-pill btn-login w-100 mb-2"><?php esc_html_e('Sign In', 'codeweber'); ?></a>
+                      <a class="btn btn-primary <?php echo ButtonStyleCustomizer(); ?>rounded-pill btn-login w-100 mb-2"><?php esc_html_e('Sign In', 'codeweber'); ?></a>
                    </form>
                    <!-- /form -->
                    <p class="mb-1"><a href="#" class="hover"><?php esc_html_e('Forgot Password?', 'codeweber'); ?></a></p>
@@ -113,7 +111,7 @@
                          <span class="password-toggle"><i class="uil uil-eye"></i></span>
                          <label for="loginPasswordConfirm"><?php esc_html_e('Confirm Password', 'codeweber'); ?></label>
                       </div>
-                      <a class="btn btn-primary rounded-pill btn-login w-100 mb-2"><?php esc_html_e('Sign Up', 'codeweber'); ?></a>
+                      <a class="btn btn-primary <?php echo ButtonStyleCustomizer(); ?> btn-login w-100 mb-2"><?php esc_html_e('Sign Up', 'codeweber'); ?></a>
                    </form>
                    <!-- /form -->
                    <p class="mb-0"><?php esc_html_e('Already have an account?', 'codeweber'); ?> <a href="#" data-bs-target="#modal-signin" data-bs-toggle="modal" data-bs-dismiss="modal" class="hover"><?php esc_html_e('Sign in', 'codeweber'); ?></a></p>

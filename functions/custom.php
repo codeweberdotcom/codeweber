@@ -22,12 +22,43 @@ function wpb_comment_reply_text($link)
 add_filter('comment_reply_link', 'wpb_comment_reply_text');
 
 
-// --- Var Dump ---
+// --- Custom Var Dump ---
 function printr($data)
 {
     echo "<pre>";
     print_r($data);
     echo "</pre>";
+}
+
+
+/**
+ * Customizer Style Button 
+ */
+
+function ButtonStyleCustomizer()
+{
+    if (get_theme_mod('codeweber_button_form')) :
+        $button_form = get_theme_mod('codeweber_button_form');
+    endif;
+    if (get_theme_mod('codeweber_button_size')) :
+        $button_size = get_theme_mod('codeweber_button_size');
+    endif;
+    $button_style = $button_form . ' ' . $button_size;
+    return $button_style;
+}
+/**
+ * What Hook
+ * https://ittricks.ru/programmirovanie/cms/wordpress/1199/posmotret-kakie-funkcii-dobavleny-k
+ */
+function print_filters_for($hook = '')
+{
+    global $wp_filter;
+    if (empty($hook) || !isset($wp_filter[$hook]))
+        return;
+
+    print '<pre>';
+    print_r($wp_filter[$hook]);
+    print '</pre>';
 }
 
 /**
@@ -53,6 +84,7 @@ function getYoutubeIdFromUrl($url)
     }
     return false;
 }
+
 
 
 // --- Custom login form---
@@ -180,7 +212,7 @@ function wp_login_form_brk($args = array())
 }
 
 // Page title Function
-function brk_page_title()
+function codeweber_page_title()
 {
     if (!is_front_page() || !is_home()) :
         if (is_tag() || is_category() || is_archive() || is_author()) :
@@ -304,3 +336,30 @@ function auto_generate_post_title($title)
 }
 
 add_filter('title_save_pre', 'auto_generate_post_title');
+
+
+
+// --- Logo Dark Link ---
+
+function codeweber_logo_dark_link()
+{
+    if (get_theme_mod('dark_logo')) :
+        $codeweber_logo_header_dark = '<a href="' . get_home_url() . '" class="dark-logo-link" rel="home" aria-current="page"><img src="' . get_theme_mod('dark_logo') . '"/></a>';
+    else :
+        $codeweber_logo_header_dark = get_template_directory_uri() . '/dist/img/logo-dark.png';
+    endif;
+    return $codeweber_logo_header_dark;
+};
+
+
+// --- Logo Light Link ---
+
+function codeweber_logo_light_link()
+{
+    if (get_custom_logo()) :
+        $codeweber_logo_light = get_custom_logo();
+    else :
+        $codeweber_logo_light = get_template_directory_uri() . '/dist/img/logo-light.png';
+    endif;
+    return $codeweber_logo_light;
+};

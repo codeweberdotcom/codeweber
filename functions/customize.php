@@ -3,6 +3,43 @@
 function codeweber_register_theme_customizer($wp_customize)
 {
 
+   /// https://stackoverflow.com/questions/62850036/wordpress-add-second-logo-to-customizer
+
+   $wp_customize->get_setting('blogname')->transport         = 'postMessage';
+   $wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
+   $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+
+   if (isset($wp_customize->selective_refresh)) {
+      $wp_customize->selective_refresh->add_partial(
+         'blogname',
+         array(
+            'selector'        => '.site-title a',
+            'render_callback' => 'mytheme_customize_partial_blogname',
+         )
+      );
+      $wp_customize->selective_refresh->add_partial(
+         'blogdescription',
+         array(
+            'selector'        => '.site-description',
+            'render_callback' => 'mytheme_customize_partial_blogdescription',
+         )
+      );
+   }
+
+   $wp_customize->add_setting('dark_logo');
+   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'dark_logo', array(
+      'label' => __('Dark Logo', 'codeweber'),
+      'section' => 'title_tagline',
+      'settings' => 'dark_logo',
+      'render_callback' => 'mytheme_customize_partial_blogname',
+      'priority' => 8
+   )));
+
+
+   /*  <?php the_custom_logo(); ?>
+       <img src="<?php echo get_theme_mod('dark_logo') ?>" class="dark-logo" alt="logo codeweber"> */
+   ///
+
 
    // Button Section
    $wp_customize->add_section(
@@ -133,7 +170,7 @@ function codeweber_register_theme_customizer($wp_customize)
       'codeweber_header',
       array(
          'section'  => 'codeweber_header_options',
-         'label'    => __('Header', 'codeweber'),
+         'label'    => __('Main Header', 'codeweber'),
          'type'     => 'select',
          'choices'  => array(
             'sandbox-02'   => 'Header 02',
@@ -162,12 +199,33 @@ function codeweber_register_theme_customizer($wp_customize)
             'sandbox-25'   => 'Header 25',
             'sandbox-26'   => 'Header 26',
             'sandbox-27'   => 'Header 27',
-            'sandbox-09_cw' => 'Header CW'
+            'sandbox-09_cw' => 'Header CW',
+            'sandbox-woo-01' => 'Header Woo 1'
          )
       )
    );
 
 
+   $wp_customize->add_setting(
+      'codeweber_page_header',
+      array(
+         'default' => 'type_1',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_page_header',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Secondary Header', 'codeweber'),
+         'section' => 'codeweber_header_options',
+         'choices' => array(
+            'type_1' => esc_html__('Type 1', 'codeweber'),
+            'type_2' => esc_html__('Type 2', 'codeweber'),
+            'type_3' => esc_html__('Type 3', 'codeweber'),
+         ),
+      )
+   );
 
 
    // Header Section
@@ -224,12 +282,6 @@ function codeweber_register_theme_customizer($wp_customize)
 add_action('customize_register', 'codeweber_register_theme_customizer');
 
 
-
-
-
-
-
-
 // --- Function Change Header --- //
 
 function change_header()
@@ -238,8 +290,6 @@ function change_header()
 }
 
 add_action('codeweber_header', 'change_header', 10);
-
-
 
 
 // --- Function Change Footer --- //
@@ -253,44 +303,39 @@ add_action('codeweber_footer_start', 'change_footer', 10);
 
 
 
-function theme_slug_customizer($wp_customize)
+function forgoodmeasure_customize_register($wp_customize)
 {
 
-   //your section
-   $wp_customize->add_section(
-      'theme_slug_customizer_your_section',
-      array(
-         'title' => esc_html__('Your Section', 'theme_slug'),
-         'priority' => 150
-      )
-   );
+   // add a panel
+   $wp_customize->add_panel('shiny-panel', array(
+      'title'       => __('Shiny Panel'),
+      'description' => __('This is my shiny new panel.'),
+   ));
 
+   // add a section to our panel
+   $wp_customize->add_section('shiny-section', array(
+      'title' => 'Shiny Section',
+      'description' => 'This is a section of my panel',
+      'panel' => 'shiny-panel',
+   ));
 
-   //checkbox sanitization function
-   function theme_slug_sanitize_checkbox($input)
-   {
+   // add a setting because our panel won't show up without settings and controls
+   $wp_customize->add_setting('color_scheme', array(
+      'default'        => 'light',
+      'type'           => 'theme_mod',
+   ));
 
-      //returns true if checkbox is checked
-      return (isset($input) ? true : false);
-   }
-
-
-   //add setting to your section
-   $wp_customize->add_setting(
-      'theme_slug_customizer_checkbox',
-      array(
-         'default' => '',
-         'sanitize_callback' => 'theme_slug_sanitize_checkbox'
-      )
-   );
-
-   $wp_customize->add_control(
-      'theme_slug_customizer_checkbox',
-      array(
-         'label' => esc_html__('Your Setting with Checkbox', 'theme_slug'),
-         'section' => 'theme_slug_customizer_your_section',
-         'type' => 'checkbox'
-      )
-   );
+   // and we add a control
+   $wp_customize->add_control('color_scheme', array(
+      'label'   => 'Select A Color Scheme:',
+      'section' => 'shiny-section',
+      'type'    => 'select',
+      'choices'    => array(
+         'light' => 'Light',
+         'dark' => 'Dark',
+         'neon' => 'Neon',
+      ),
+   ));
 }
-add_action('customize_register', 'theme_slug_customizer');
+
+add_action('customize_register', 'forgoodmeasure_customize_register');

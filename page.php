@@ -3,8 +3,28 @@
 while (have_posts()) :
    the_post();
    if (!is_front_page()) :
-      get_template_part('templates/sections/common', 'pageheader');
+      if (get_theme_mod('codeweber_page_header') == 'type_1') :
+         get_template_part('templates/sections/common', 'breadcrumb');
+      endif;
    endif;
-   get_template_part('templates/content/page', ''); ?>
+   if (!is_front_page()) :
+      if (get_theme_mod('codeweber_page_header') == 'type_2') :
+         get_template_part('templates/sections/common', 'pageheader');
+      elseif (get_theme_mod('codeweber_page_header') == 'type_3') :
+         get_template_part('templates/sections/common', 'pageheader_1');
+      endif;
+   endif;
+
+
+   if (is_shop()) :
+      get_template_part('templates/content/shop', '');
+   elseif (is_cart()) :
+      get_template_part('templates/content/cart', '');
+   elseif (is_checkout()) :
+      get_template_part('templates/content/checkout', '');
+   else :
+      get_template_part('templates/content/page', '');
+   endif;
+?>
 <?php endwhile ?>
 <?php get_footer();

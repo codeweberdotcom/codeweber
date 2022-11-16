@@ -3,10 +3,7 @@
           <div class="container justify-content-between align-items-center">
              <div class="d-flex flex-row w-100 justify-content-between align-items-center d-lg-none">
                 <div class="navbar-brand">
-                   <a href="/">
-                      <img class="logo-dark" src="<?php echo brk_logo_dark_link(); ?>" srcset="<?php echo brk_logo_dark_link(); ?>" alt="" />
-                      <img class="logo-light" src="<?php echo brk_logo_light_link(); ?>" srcset="<?php echo brk_logo_light_link(); ?>" alt="" />
-                   </a>
+                   <?php echo codeweber_logo_light_link(); ?>
                 </div>
                 <div class="navbar-other ms-auto">
                    <ul class="navbar-nav flex-row align-items-center">
@@ -22,11 +19,7 @@
              <div class="navbar-collapse-wrapper d-flex flex-row align-items-center w-100">
                 <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                    <div class="offcanvas-header mx-lg-auto order-0 order-lg-1 d-lg-flex px-lg-15">
-                      <a href="./index.html" class="transition-none d-none d-lg-flex">
-                        <img class="logo-dark" src="./assets/img/logo-dark.png" srcset="./assets/img/logo-dark@2x.png 2x" alt="" />
-                         <img class="logo-light" src="./assets/img/logo-light.png" srcset="./assets/img/logo-light@2x.png 2x" alt="" />
-                        </a>
-                      <h3 class="text-white fs-30 mb-0 d-lg-none"><?php echo get_bloginfo('name'); ?></h3>
+                      <?php echo codeweber_logo_light_link(); ?>
                       <button type="button" class="btn-close btn-close-white d-lg-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                    </div>
                    <div class="w-100 order-1 order-lg-0 d-lg-flex offcanvas-body">

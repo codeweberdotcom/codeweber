@@ -1,23 +1,6 @@
 {
     "key": "group_theme_meta",
     "title": "Meta",
-    "location": [
-        [
-            {
-                "param": "options_page",
-                "operator": "==",
-                "value": "acf-options"
-            }
-        ]
-    ],
-    "menu_order": 2,
-    "position": "normal",
-    "style": "seamless",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "",
     "fields": [
         {
             "key": "field_60140651ee8f1",
@@ -54,5 +37,23 @@
             ]
         }
     ],
-    "modified": 1658234208
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1667083626
 }

@@ -11,7 +11,7 @@
 add_action('init', 'brk_disable_emojis');           // https://wordpress.stackexchange.com/q/185577/
 add_action('init', 'brk_disable_oembed');           // https://wordpress.stackexchange.com/q/211467/
 add_action('init', 'brk_disable_query_strings');    // https://stackoverflow.com/q/38288476/
-add_action('wp_enqueue_scripts', 'brk_jquery_footer');    // https://wordpress.stackexchange.com/a/173605/
+//add_action('wp_enqueue_scripts', 'brk_jquery_footer');    // https://wordpress.stackexchange.com/a/173605/
 add_action('init', 'brk_disable_head_links');
 
 
@@ -82,12 +82,12 @@ function brk_disable_query_strings()
 	}
 }
 
-function brk_jquery_footer()
-{
-	$theme_version = wp_get_theme()->get('Version');
-	wp_deregister_script('jquery');
-	// wp_enqueue_script('jquery', includes_url('/js/jquery/jquery.js'), false, $theme_version, true);
-}
+// function brk_jquery_footer()
+// {
+// 	$theme_version = wp_get_theme()->get('Version');
+// 	wp_deregister_script('jquery');
+// 	wp_enqueue_script('jquery', includes_url('/js/jquery/jquery.js'), false, $theme_version, true);
+// }
 
 
 function brk_disable_head_links()

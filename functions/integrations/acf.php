@@ -25,73 +25,6 @@ function my_acf_init()
 
 // https://www.advancedcustomfields.com/resources/register-fields-via-php/
 
-if (class_exists('ACF')) {
-
-	function brk_acf_meta()
-	{
-
-		acf_add_local_field_group(
-			array(
-				'key' => 'group_theme_meta',
-				'title' => __('Meta', 'codeweber'),
-				'fields' => array(
-					array(
-						'key' => 'field_60140651ee8f1',
-						'label' => __('Meta', 'codeweber'),
-						'name' => 'meta',
-						'type' => 'group',
-						'layout' => 'block',
-						'sub_fields' => array(
-							array(
-								'key' => 'field_60140662ee8f2',
-								'label' => __('Chrome Theme', 'codeweber'),
-								'name' => 'theme_color',
-								'type' => 'color_picker',
-								'instructions' => __('Tab color in Chrome for Android', 'codeweber'),
-								'wrapper' => array(
-									'width' => '25',
-								),
-							),
-						),
-					),
-				),
-				'location' => array(
-					array(
-						array(
-							'param' => 'options_page',
-							'operator' => '==',
-							'value' => 'acf-options',
-						),
-					),
-				),
-				'menu_order' => 2,
-				'position' => 'normal',
-				'style' => 'seamless',
-				'label_placement' => 'top',
-				'instruction_placement' => 'label',
-				'hide_on_screen' => '',
-				'active' => true,
-				'description' => '',
-			)
-		);
-	}
-	add_action('acf/init', 'brk_acf_meta');
-
-	// --- Metadata ---
-
-	function brk_head_meta()
-	{
-
-		// --- Chrome theme ---
-
-		$themecolor = get_field('meta_theme_color', 'option');
-
-		if ($themecolor) {
-			echo '<meta name="theme-color" content="', esc_attr($themecolor), '">';
-		}
-	}
-	add_action('wp_head', 'brk_head_meta');
-}
 
 // --- Social icons ---
 
@@ -204,34 +137,6 @@ function brk_adress()
 		$brk_adress = 'Moonshine St. 14/05 Light City, London, United Kingdom';
 	endif;
 	return $brk_adress;
-};
-
-
-// --- Logo Dark Link ---
-
-function brk_logo_dark_link()
-{
-	$logo_header_dark = get_field('logo_dark', 'option');
-	if ($logo_header_dark) :
-		$brk_logo_header_dark = $logo_header_dark;
-	else :
-		$brk_logo_header_dark = get_template_directory_uri() . '/dist/img/logo-dark.png';
-	endif;
-	return $brk_logo_header_dark;
-};
-
-
-// --- Logo Light Link ---
-
-function brk_logo_light_link()
-{
-	$logo_light = get_field('logo_light', 'option');
-	if ($logo_light) :
-		$brk_logo_light = $logo_light;
-	else :
-		$brk_logo_light = get_template_directory_uri() . '/dist/img/logo-light.png';
-	endif;
-	return $brk_logo_light;
 };
 
 // --- Accordeon ---
@@ -505,9 +410,6 @@ class Settings
 			$this->style_parameters = 'top: -2rem; left: -1.9rem;';
 		endif;
 
-
-
-
 		if (get_sub_field('title')) :
 			$this->title = get_sub_field('title');
 		endif;
@@ -519,11 +421,6 @@ class Settings
 		if (get_sub_field('paragraph')) :
 			$this->paragraph = get_sub_field('paragraph');
 		endif;
-
-
-
-
-
 
 		if (get_sub_field('dark_or_white_light_or_dark') == 0) :
 			$this->backgroundcolor = $this->backgroundcolor;
