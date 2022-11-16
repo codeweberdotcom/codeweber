@@ -14,7 +14,7 @@ $button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Ca
    <nav class="navbar navbar-expand-lg classic transparent navbar-light">
       <div class="container flex-lg-row flex-nowrap align-items-center">
          <div class="navbar-brand w-100">
-               <?php echo codeweber_logo_dark_link(); ?>
+            <?php echo codeweber_logo_dark_link(); ?>
          </div>
          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">

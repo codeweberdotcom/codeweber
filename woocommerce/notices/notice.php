@@ -26,7 +26,7 @@ if (!$notices) {
 
 ?>
 <?php foreach ($notices as $notice) : ?>
-	<div class="woocommerce-info alert alert-green mt-3" <?php echo wc_get_notice_data_attr($notice); ?>>
-		<?php echo wc_kses_notice($notice['notice']); ?>
+	<div class="woocommerce-info alert alert-blue alert-icon mb-6 mt-3" <?php echo wc_get_notice_data_attr($notice); ?>>
+		<i class="uil uil-exclamation-circle"></i><?php echo wc_kses_notice($notice['notice']); ?>
 	</div>
 <?php endforeach; ?>

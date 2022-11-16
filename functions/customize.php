@@ -170,7 +170,7 @@ function codeweber_register_theme_customizer($wp_customize)
       'codeweber_header',
       array(
          'section'  => 'codeweber_header_options',
-         'label'    => __('Header', 'codeweber'),
+         'label'    => __('Main Header', 'codeweber'),
          'type'     => 'select',
          'choices'  => array(
             'sandbox-02'   => 'Header 02',
@@ -199,12 +199,33 @@ function codeweber_register_theme_customizer($wp_customize)
             'sandbox-25'   => 'Header 25',
             'sandbox-26'   => 'Header 26',
             'sandbox-27'   => 'Header 27',
-            'sandbox-09_cw' => 'Header CW'
+            'sandbox-09_cw' => 'Header CW',
+            'sandbox-woo-01' => 'Header Woo 1'
          )
       )
    );
 
 
+   $wp_customize->add_setting(
+      'codeweber_page_header',
+      array(
+         'default' => 'type_1',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_page_header',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Secondary Header', 'codeweber'),
+         'section' => 'codeweber_header_options',
+         'choices' => array(
+            'type_1' => esc_html__('Type 1', 'codeweber'),
+            'type_2' => esc_html__('Type 2', 'codeweber'),
+            'type_3' => esc_html__('Type 3', 'codeweber'),
+         ),
+      )
+   );
 
 
    // Header Section
@@ -279,3 +300,42 @@ function change_footer()
 }
 
 add_action('codeweber_footer_start', 'change_footer', 10);
+
+
+
+function forgoodmeasure_customize_register($wp_customize)
+{
+
+   // add a panel
+   $wp_customize->add_panel('shiny-panel', array(
+      'title'       => __('Shiny Panel'),
+      'description' => __('This is my shiny new panel.'),
+   ));
+
+   // add a section to our panel
+   $wp_customize->add_section('shiny-section', array(
+      'title' => 'Shiny Section',
+      'description' => 'This is a section of my panel',
+      'panel' => 'shiny-panel',
+   ));
+
+   // add a setting because our panel won't show up without settings and controls
+   $wp_customize->add_setting('color_scheme', array(
+      'default'        => 'light',
+      'type'           => 'theme_mod',
+   ));
+
+   // and we add a control
+   $wp_customize->add_control('color_scheme', array(
+      'label'   => 'Select A Color Scheme:',
+      'section' => 'shiny-section',
+      'type'    => 'select',
+      'choices'    => array(
+         'light' => 'Light',
+         'dark' => 'Dark',
+         'neon' => 'Neon',
+      ),
+   ));
+}
+
+add_action('customize_register', 'forgoodmeasure_customize_register');

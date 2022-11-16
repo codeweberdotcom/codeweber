@@ -47,10 +47,13 @@ if (!function_exists('get_field')) {
 	}
 }
 
-
 // --- Customizer --- //
 require_once get_template_directory() . '/functions/customize.php'; // --- Customizer ---
 
 
 // --- Woocommerce ---//
-require_once get_template_directory() . '/functions/woocommerce.php'; // --- Comments Helper ---
+require_once get_template_directory() . '/functions/woocommerce.php'; // --- Woocommerce Functions ---
+
+
+// --- Widgets ---//
+require_once get_template_directory() . '/functions/widgets.php'; // --- Custom Widgets ---

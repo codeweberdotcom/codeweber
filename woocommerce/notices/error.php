@@ -26,10 +26,10 @@ if (!$notices) {
 
 ?>
 
-<ul class="woocommerce-error alert alert-red mt-3" role="alert">
+<ul class="woocommerce-error alert alert-danger alert-icon mt-3 list-unstyled" role="alert">
 	<?php foreach ($notices as $notice) : ?>
 		<li<?php echo wc_get_notice_data_attr($notice); ?>>
-			<?php echo wc_kses_notice($notice['notice']); ?>
+			<i class="uil uil-times-circle"></i><?php echo wc_kses_notice($notice['notice']); ?>
 			</li>
 		<?php endforeach; ?>
 </ul>

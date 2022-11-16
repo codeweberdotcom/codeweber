@@ -410,9 +410,6 @@ class Settings
 			$this->style_parameters = 'top: -2rem; left: -1.9rem;';
 		endif;
 
-
-
-
 		if (get_sub_field('title')) :
 			$this->title = get_sub_field('title');
 		endif;
@@ -424,11 +421,6 @@ class Settings
 		if (get_sub_field('paragraph')) :
 			$this->paragraph = get_sub_field('paragraph');
 		endif;
-
-
-
-
-
 
 		if (get_sub_field('dark_or_white_light_or_dark') == 0) :
 			$this->backgroundcolor = $this->backgroundcolor;

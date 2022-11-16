@@ -65,7 +65,7 @@
                          <span class="password-toggle"><i class="uil uil-eye"></i></span>
                          <label for="loginPassword"><?php esc_html_e('Password', 'codeweber'); ?></label>
                       </div>
-                      <a class="btn btn-primary rounded-pill btn-login w-100 mb-2"><?php esc_html_e('Sign In', 'codeweber'); ?></a>
+                      <a class="btn btn-primary <?php echo ButtonStyleCustomizer(); ?>rounded-pill btn-login w-100 mb-2"><?php esc_html_e('Sign In', 'codeweber'); ?></a>
                    </form>
                    <!-- /form -->
                    <p class="mb-1"><a href="#" class="hover"><?php esc_html_e('Forgot Password?', 'codeweber'); ?></a></p>
@@ -111,7 +111,7 @@
                          <span class="password-toggle"><i class="uil uil-eye"></i></span>
                          <label for="loginPasswordConfirm"><?php esc_html_e('Confirm Password', 'codeweber'); ?></label>
                       </div>
-                      <a class="btn btn-primary rounded-pill btn-login w-100 mb-2"><?php esc_html_e('Sign Up', 'codeweber'); ?></a>
+                      <a class="btn btn-primary <?php echo ButtonStyleCustomizer(); ?> btn-login w-100 mb-2"><?php esc_html_e('Sign Up', 'codeweber'); ?></a>
                    </form>
                    <!-- /form -->
                    <p class="mb-0"><?php esc_html_e('Already have an account?', 'codeweber'); ?> <a href="#" data-bs-target="#modal-signin" data-bs-toggle="modal" data-bs-dismiss="modal" class="hover"><?php esc_html_e('Sign in', 'codeweber'); ?></a></p>

@@ -48,13 +48,15 @@ if ($product->is_in_stock()) : ?>
          do_action('woocommerce_after_add_to_cart_quantity');
          ?>
          <div class="flex-grow-1 mx-2">
-            <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="single_add_to_cart_button button alt btn btn-primary btn-icon btn-icon-start rounded w-100 flex-grow-1"><i class="uil uil-shopping-bag"></i><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
+            <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="single_add_to_cart_button button alt btn btn-primary btn-icon btn-icon-start <?php echo ButtonStyleCustomizer(); ?> w-100 flex-grow-1"><i class="uil uil-shopping-bag"></i><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
          </div>
 
          <div>
-            <button class="btn btn-block btn-outline-primary btn-icon rounded px-3 w-100 h-100"><i class="uil uil-heart"></i></button>
+            <button class="btn btn-block btn-outline-red btn-icon <?php echo ButtonStyleCustomizer(); ?> px-3 w-100 h-100"><i class="uil uil-heart"></i></button>
          </div>
-
+         <div class="ps-1">
+            <button class="btn btn-block btn-outline-red btn-icon <?php echo ButtonStyleCustomizer(); ?> px-3 w-100 h-100"><i class="uil uil-exchange"></i></i></button>
+         </div>
 
          <?php do_action('woocommerce_after_add_to_cart_button'); ?>
       </div>

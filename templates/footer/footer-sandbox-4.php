@@ -10,7 +10,7 @@
                     <h2 class="display-4 mb-3"><?php esc_html_e('Let’s Talk', 'codeweber'); ?></h2>
                     <p class="lead fs-lg"><?php esc_html_e("Let's make something great together. We are trusted by over 5000+ clients. Join them by using our services and grow your business.", 'codeweber'); ?></p>
                     <p><?php esc_html_e('Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.', 'codeweber'); ?></p>
-                    <a href="#" class="btn btn-primary rounded-pill mt-2"><?php esc_html_e('Join Us', 'codeweber'); ?></a>
+                    <a href="#" class="btn btn-primary <?php echo ButtonStyleCustomizer(); ?>rounded-pill mt-2"><?php esc_html_e('Join Us', 'codeweber'); ?></a>
                  </div>
                  <!--/div -->
               </div>

@@ -69,23 +69,55 @@ function brk_breadcrumbs()
 
 		// https://s.rankmath.com/breadcrumbs
 
+
 		add_filter(
 			'rank_math/frontend/breadcrumb/args',
 			function ($args) {
 				$args = array(
-					'delimiter'   => '&nbsp;&#47;&nbsp;',
-					'wrap_before' => '<nav class="breadcrumb d-flex justify-content-start mt-3"><span>',
-					'wrap_after'  => '</span></nav>',
-					'before'      => '',
-					'after'       => '',
+					'delimiter'   => '',
+					'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0">',
+					'wrap_after'  => '</ol></nav>',
+					'before'      => '<li class="breadcrumb-item ">',
+					'after'       => '</li>',
 				);
 				return $args;
 			}
 		);
-
 		rank_math_the_breadcrumbs();
 	}
 }
+
+
+
+add_filter('woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs');
+function jk_woocommerce_breadcrumbs()
+{
+	return array(
+		'delimiter' => '',
+		'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0">',
+		'wrap_after' => '</ol></nav>',
+		'before' => '<li class="breadcrumb-item">',
+		'after' => '</li>',
+	);
+}
+
+
+add_filter('rank_math/frontend/breadcrumb/html', function ($html, $crumbs, $class) {
+	$html = str_replace('<span class="separator"> - </span>', '', $html);
+	return $html;
+}, 10, 3);
+
+
+add_filter(
+	'rank_math/frontend/breadcrumb/html',
+	function ($html, $crumbs, $class) {
+		$html = str_replace('<span class="last">' . get_the_title() . '</span>', '<span class="text-muted">' . get_the_title() . '</span>', $html);
+		return $html;
+	},
+	10,
+	3
+);
+
 
 
 // --- Nav Walker attributes fix for Bootstrap 5 ---

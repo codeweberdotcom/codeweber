@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-11-02 00:10+0000\n"
+"PO-Revision-Date: 2022-11-10 22:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -118,7 +118,7 @@ msgstr "Все права защищены"
 msgid "Already have an account?"
 msgstr "Уже есть аккаунт?"
 
-#: woocommerce/cart/cart.php:160
+#: woocommerce/cart/cart.php:159
 msgid "Apply coupon"
 msgstr "Применить"
 
@@ -180,6 +180,10 @@ msgstr "Категории"
 #: templates/header/header-sandbox-12.php:99
 msgid "CFollow Us"
 msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:27
+msgid "Click here to enter your code"
+msgstr "Нажмите , чтобы ввести код купона"
 
 #. Name of the theme
 #. Author of the theme
@@ -257,6 +261,10 @@ msgstr "Контакты"
 #: functions/customize.php:155
 msgid "Content Frame?"
 msgstr "Контент с отступом?"
+
+#: woocommerce/order/order-details-customer.php:32
+msgid "Customer details"
+msgstr "Информация о покупателе"
 
 #: functions/customize.php:31
 msgid "Dark Logo"
@@ -377,11 +385,49 @@ msgstr "Настройки Футера"
 msgid "Forgot Password?"
 msgstr "Забыли пароль?"
 
+#: woocommerce/myaccount/form-lost-password.php:33
+msgid "Form lost password"
+msgstr "Форма восстановления пароля"
+
+#: woocommerce/myaccount/form-reset-password.php:32
+msgid "Form Reset password"
+msgstr "Форма восстановления пароля"
+
 #: templates/header/header-sandbox-06.php:48
 #: templates/header/header-sandbox-11.php:37
 #: templates/header/header-sandbox-26.php:37
 msgid "Free Trial"
 msgstr "Бесплатный период"
+
+#. 1: Orders URL 2: Address URL 3: Account URL.
+#: woocommerce/myaccount/dashboard.php:46
+#, php-format
+msgid ""
+"From your account dashboard you can view your <a href=\"%1$s\" class=\"alert-"
+"link hover\">recent orders</a>, manage your <a href=\"%2$s\" class=\"alert-"
+"link hover\">billing address</a>, and <a href=\"%3$s\" class=\"alert-link "
+"hover\">edit your password and account details</a>."
+msgstr ""
+"На панели управления вашей учетной записи вы можете просматривать свои <a "
+"href=\"%1$s\" class=\"alert-link hover\">последние заказы</a>, управлять "
+"своим <a href=\"%2$s\" class=\"alert-link hover\">платежным адресом</a>, и "
+"<a href=\"%3$s\" class=\"alert-link hover\">отредактируйте свой пароль и "
+"данные учетной записи</a>."
+
+#. 1: Orders URL 2: Addresses URL 3: Account URL.
+#: woocommerce/myaccount/dashboard.php:49
+#, php-format
+msgid ""
+"From your account dashboard you can view your <a href=\"%1$s\" class=\"alert-"
+"link hover\">recent orders</a>, manage your <a href=\"%2$s\" class=\"alert-"
+"link hover\">shipping and billing addresses</a>, and <a href=\"%3$s\" "
+"class=\"alert-link hover\">edit your password and account details</a>."
+msgstr ""
+"На панели управления вашей учетной записи вы можете просматривать свои <a "
+"href=\"%1$s\" class=\"alert-link hover\"> последние заказы</a>, управлять "
+"своими <a href=\"%2$s\" class=\"alert-link hover\"> адресами доставки и "
+"выставления счетов</a>, и <a href=\"%3$s\" class=\"alert-link hover\">"
+"отредактируйте свой пароль и данные учетной записи</a>."
 
 #: templates/footer/footer-sandbox-1.php:29
 #: templates/footer/footer-sandbox-25.php:49
@@ -432,6 +478,16 @@ msgstr "Меню Хедера"
 #: functions/customize.php:137
 msgid "Header Options"
 msgstr "Настройки Хедера"
+
+#. 1: user display name 2: logout url
+#: woocommerce/myaccount/dashboard.php:36
+#, php-format
+msgid ""
+"Hello %1$s (not %1$s? <a href=\"%2$s\" class=\"alert-link hover\">Log out</a>"
+")"
+msgstr ""
+"Здравствуйте %1$s (не %1$s? <a href=\"%2$s\" class=\"alert-link hover\">"
+"Выйти</a>)"
 
 #: templates/header/header-sandbox-06.php:5
 msgid "here"
@@ -755,6 +811,10 @@ msgstr "Ценовые Пакеты"
 msgid "Privacy"
 msgstr ""
 
+#: woocommerce/cart/cart.php:38
+msgid "Quantity"
+msgstr "Кол-во"
+
 #: templates/content/loop.php:14
 #: templates/flexible-content/sliders/slider_1/slider_1.php:45
 #: templates/flexible-content/sliders/slider_2/slider_2.php:26
@@ -930,12 +990,17 @@ msgid ""
 "worry, we hate spam and we respect your privacy."
 msgstr ""
 
+#: woocommerce/cart/cart-totals.php:29 woocommerce/cart/cart-totals.php:30
+#: woocommerce/cart/cart.php:41
+msgid "Subtotal"
+msgstr "Всего"
+
 #: templates/footer/footer-sandbox-25.php:14
 #: templates/flexible-content/widgets/widget_5/widget_5.php:1
 msgid "Tags"
 msgstr "Метки"
 
-#: functions/integrations/acf.php:2141
+#: functions/integrations/acf.php:2133
 msgid "Test"
 msgstr "Тест"
 
@@ -974,7 +1039,7 @@ msgstr "Город"
 msgid "Towns"
 msgstr "Города"
 
-#: functions/integrations/acf.php:2137
+#: functions/integrations/acf.php:2129
 msgid "Translate"
 msgstr "Перевод"
 
@@ -1050,10 +1115,6 @@ msgstr "Год"
 #: templates/flexible-content/sliders/slider_1/slider_1.php:5
 msgid "You Might Also Like"
 msgstr "Вам также может понравится"
-
-#: woocommerce/cart/cart-totals.php:67 woocommerce/cart/cart-totals.php:68
-msgid "You saved"
-msgstr "Вы сэкономили"
 
 #: functions/lib/comments-helper.php:97
 msgid "Your comment is awaiting moderation."

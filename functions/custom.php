@@ -22,12 +22,43 @@ function wpb_comment_reply_text($link)
 add_filter('comment_reply_link', 'wpb_comment_reply_text');
 
 
-// --- Var Dump ---
+// --- Custom Var Dump ---
 function printr($data)
 {
     echo "<pre>";
     print_r($data);
     echo "</pre>";
+}
+
+
+/**
+ * Customizer Style Button 
+ */
+
+function ButtonStyleCustomizer()
+{
+    if (get_theme_mod('codeweber_button_form')) :
+        $button_form = get_theme_mod('codeweber_button_form');
+    endif;
+    if (get_theme_mod('codeweber_button_size')) :
+        $button_size = get_theme_mod('codeweber_button_size');
+    endif;
+    $button_style = $button_form . ' ' . $button_size;
+    return $button_style;
+}
+/**
+ * What Hook
+ * https://ittricks.ru/programmirovanie/cms/wordpress/1199/posmotret-kakie-funkcii-dobavleny-k
+ */
+function print_filters_for($hook = '')
+{
+    global $wp_filter;
+    if (empty($hook) || !isset($wp_filter[$hook]))
+        return;
+
+    print '<pre>';
+    print_r($wp_filter[$hook]);
+    print '</pre>';
 }
 
 /**
@@ -181,7 +212,7 @@ function wp_login_form_brk($args = array())
 }
 
 // Page title Function
-function brk_page_title()
+function codeweber_page_title()
 {
     if (!is_front_page() || !is_home()) :
         if (is_tag() || is_category() || is_archive() || is_author()) :

@@ -20,7 +20,7 @@ defined('ABSPATH') || exit;
 
 do_action('woocommerce_before_cart'); ?>
 
-<form class="woocommerce-cart-form container pt-12 pt-md-14 pb-14 pb-md-16" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
+<form class="woocommerce-cart-form container" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
    <?php do_action('woocommerce_before_cart_table'); ?>
    <div class="row gx-md-8 gx-xl-12 gy-12">
       <div class="col-lg-8">
@@ -29,23 +29,22 @@ do_action('woocommerce_before_cart'); ?>
                <thead>
                   <tr>
                      <th class="ps-0 w-25">
-                        <div class="h4 mb-0 text-start"><?php esc_html_e('Product', 'woocommerce'); ?></div>
+                        <div class="h4 mb-0 text-start nowrap"><?php esc_html_e('Product', 'woocommerce'); ?></div>
                      </th>
                      <th>
-                        <div class="h4 mb-0 text-start"><?php esc_html_e('Price', 'woocommerce'); ?></div>
+                        <div class="h4 mb-0 text-start nowrap"><?php esc_html_e('Price', 'woocommerce'); ?></div>
                      </th>
                      <th>
-                        <div class="h4 mb-0 text-start"><?php esc_html_e('Quantity', 'codeweber'); ?></div>
+                        <div class="h4 mb-0 text-start nowrap"><?php esc_html_e('Quantity', 'codeweber'); ?></div>
                      </th>
                      <th>
-                        <div class="h4 mb-0 text-start"><?php esc_html_e('Subtotal', 'codeweber'); ?></div>
+                        <div class="h4 mb-0 text-start nowrap"><?php esc_html_e('Subtotal', 'codeweber'); ?></div>
                      </th>
                      <th></th>
                   </tr>
                </thead>
                <tbody>
                   <?php do_action('woocommerce_before_cart_contents'); ?>
-
                   <?php
                   foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
                      $_product   = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
@@ -95,10 +94,11 @@ do_action('woocommerce_before_cart'); ?>
                                  ?>
                               </div>
                            </td>
-                           <td class="product-price" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
-                              <?php
-                              echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
-                              ?>
+                           <td class="product-price nowrap" data-title="<?php esc_attr_e('Price', 'woocommerce'); ?>">
+                              <p class="price">
+                                 <?php
+                                 echo apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key); // PHPCS: XSS ok.
+                                 ?></p>
                            </td>
 
                            <td class="product-quantity" data-title="<?php esc_attr_e('Quantity', 'woocommerce'); ?>">
@@ -121,10 +121,10 @@ do_action('woocommerce_before_cart'); ?>
                               echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
                               ?>
                            </td>
-                           <td class="product-subtotal" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
-                              <?php
-                              echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // PHPCS: XSS ok.
-                              ?>
+                           <td class="product-subtotal nowrap" data-title="<?php esc_attr_e('Subtotal', 'woocommerce'); ?>">
+                              <p class="price"><?php
+                                                echo apply_filters('woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal($_product, $cart_item['quantity']), $cart_item, $cart_item_key); // PHPCS: XSS ok.
+                                                ?></p>
                            </td>
                            <td class="product-remove pe-0">
                               <?php
@@ -155,15 +155,15 @@ do_action('woocommerce_before_cart'); ?>
             <div class="col-md-8 col-lg-7">
                <?php if (wc_coupons_enabled()) { ?>
                   <div class="form-floating input-group">
-                     <input type="text" name="coupon_code" class="input-text form-control" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
+                     <input type="text" name="coupon_code" class="input-text form-control <?php echo ButtonStyleCustomizer(); ?>" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
                      <label for="coupon_code"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label>
-                     <button type="submit" class="button btn btn-primary" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'codeweber'); ?>"><?php esc_attr_e('Apply coupon', 'codeweber'); ?></button>
+                     <button type="submit" class="button btn btn-primary <?php echo ButtonStyleCustomizer(); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'codeweber'); ?>"><?php esc_attr_e('Apply coupon', 'codeweber'); ?></button>
                      <?php do_action('woocommerce_cart_coupon'); ?>
                   </div>
                <?php } ?>
             </div>
             <div class="col-md-4 col-lg-5 ms-auto ms-lg-0 text-md-end">
-               <button type="submit" class="button btn btn-primary rounded" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+               <button type="submit" class="button btn btn-primary <?php echo ButtonStyleCustomizer(); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
             </div>
             <?php do_action('woocommerce_cart_actions'); ?>
             <?php wp_nonce_field('woocommerce-cart', 'woocommerce-cart-nonce'); ?>
