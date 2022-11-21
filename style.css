@@ -95,16 +95,13 @@ input#calc_shipping_state {
 
 .woocommerce-billing-fields__field-wrapper p label,
 .woocommerce-shipping-fields__field-wrapper p label,
-.woocommerce-EditAccountForm p label {
+.woocommerce-EditAccountForm p label,
+.woocommerce-address-fields__field-wrapper p label {
   left: 15px;
 }
 
 .nowrap {
   white-space: nowrap;
-}
-
-.form-floating.mb-4 {
-  overflow: hidden;
 }
 
 li.woocommerce-MyAccount-navigation-link.is-active {
@@ -126,4 +123,67 @@ span.header-cart-count.avatar.badge {
 
 .quantity.form-select-wrapper {
   min-width: 85px;
+}
+
+.woocommerce #respond input#submit.added::after,
+.woocommerce a.button.added::after,
+.woocommerce button.button.added::after,
+.woocommerce input.button.added::after {
+  font-family: Unicons !important;
+  content: "\e9dd";
+  margin-left: 0.53em;
+  vertical-align: bottom;
+}
+
+.woocommerce #respond input#submit.loading::after,
+.woocommerce a.button.loading::after,
+.woocommerce button.button.loading::after,
+.woocommerce input.button.loading::after {
+  font-family: Unicons !important;
+  content: "\ec83";
+  vertical-align: top;
+  font-weight: 400;
+  position: absolute;
+  top: 0.618em;
+  right: 1em;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+/**/
+
+.product-card {
+  position: relative;
+  width: 300px;
+}
+.product-card img {
+  width: 100%;
+}
+
+.hover-slider-indicator {
+  position: absolute;
+  top: auto;
+  right: 0;
+  bottom: 0.75rem;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hover-slider-indicator-dot {
+  background-color: white;
+  opacity: 0.75;
+  border-radius: 50%;
+  height: 2px;
+  width: 100%;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+.hover-slider-indicator-dot.active {
+  background-color: #ff3363;
+  opacity: 1;
+}
+
+.quantity {
+  display: flex;
 }

@@ -1,7 +1,7 @@
     <header class="wrapper bg-gray">
        <nav class="navbar navbar-expand-lg center-nav navbar-light navbar-bg-light">
           <div class="container flex-lg-row flex-nowrap align-items-center">
-             <div class="navbar-brand w-100">
+             <div class="navbar-brand w-100 pe-3">
                 <?php echo codeweber_logo_dark_link(); ?>
              </div>
              <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
@@ -41,7 +41,7 @@
                       </nav>
                       <!-- /.social -->
                    </li>
-                   <li class="nav-item d-lg-none">
+                   <li class="nav-item d-lg-none ms-0">
                       <button class="hamburger offcanvas-nav-btn"><span></span></button>
                    </li>
                 </ul>

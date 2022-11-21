@@ -54,8 +54,8 @@ if (!function_exists('brk_styles_scripts_admin')) {
 		$theme_version = wp_get_theme()->get('Version');
 
 		// --- Unicons admin acf ---
-		// wp_enqueue_style('plugin-styles1', get_template_directory_uri() . '/dist/css/plugins.min.css', false, $theme_version, 'all');
-		// wp_enqueue_style('theme-styles1', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all');
+		wp_enqueue_style('plugin-styles1', get_template_directory_uri() . '/dist/css/plugins.min.css', false, $theme_version, 'all');
+		wp_enqueue_style('theme-styles1', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all');
 
 
 		/* Gutenberg Admin Flexible Content CSS*/

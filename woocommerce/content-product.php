@@ -25,7 +25,7 @@ if (empty($product) || !$product->is_visible()) {
 	return;
 }
 ?>
-<div class="project item col-6 col-md-6 col-xl-3">
+<div class="project item col-md-6 col-xl-4">
 	<?php
 	/**
 	 * Hook: woocommerce_before_shop_loop_item.

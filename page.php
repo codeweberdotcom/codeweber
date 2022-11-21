@@ -16,7 +16,7 @@ while (have_posts()) :
    endif;
 
 
-   if (is_shop()) :
+   if (is_shop() || is_product_tag() || is_product_category()) :
       get_template_part('templates/content/shop', '');
    elseif (is_cart()) :
       get_template_part('templates/content/cart', '');

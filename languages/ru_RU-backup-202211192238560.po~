@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-11-14 09:59+0000\n"
+"PO-Revision-Date: 2022-11-14 10:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -271,7 +271,7 @@ msgstr "Информация о покупателе"
 
 #: functions/customize.php:31
 msgid "Dark Logo"
-msgstr ""
+msgstr "Темный Логотип"
 
 #: templates/header/header-sandbox-05.php:66
 #: templates/header/header-sandbox-08.php:72
@@ -478,7 +478,7 @@ msgstr "Перейти на Главную"
 
 #: functions/customize.php:173
 msgid "Header"
-msgstr ""
+msgstr "Хедер"
 
 #: functions/navmenus.php:14
 msgid "Header Menu"
@@ -548,6 +548,7 @@ msgstr "Присоединяйтесь к Нам"
 #: templates/footer/footer-sandbox-27.php:4
 msgid "Join our community by using our services and grow your business."
 msgstr ""
+"Присоединяйтесь к нашему сообществу и развивайте свой бизнес.\n"
 
 #: templates/footer/footer-sandbox-17.php:6
 #: templates/footer/footer-sandbox-7.php:45
@@ -824,7 +825,7 @@ msgstr "Ценовые Пакеты"
 
 #: templates/footer/footer-columns.php:115
 msgid "Privacy"
-msgstr ""
+msgstr "Конфиденциальность"
 
 #: woocommerce/cart/cart.php:38
 msgid "Quantity"
@@ -878,7 +879,7 @@ msgstr "Скидка"
 #: woocommerce/loop/sale-flash.php:28
 #: woocommerce/single-product/sale-flash.php:28
 msgid "Sale!"
-msgstr ""
+msgstr "Скидка!"
 
 #: templates/header/header-sandbox-09.php:140
 #: templates/header/header-sandbox-12.php:77
@@ -898,7 +899,7 @@ msgstr ""
 
 #: functions/lib/comments-helper.php:43
 msgid "says:"
-msgstr ""
+msgstr "говорит:"
 
 #: searchform.php:3
 msgid "Search"
@@ -923,7 +924,7 @@ msgstr "Категория Услуги"
 
 #: functions/cpt/cpt-services.php:56 functions/cpt/cpt-services.php:57
 msgid "Service Options"
-msgstr ""
+msgstr "Настройки Услуг"
 
 #: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:16
 #: templates/footer/footer-sandbox-25_cw.php:28
@@ -978,6 +979,8 @@ msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
+"Извините, но ничто не соответствовало вашим поисковым запросам. Пожалуйста, "
+"попробуйте еще раз с другими ключевыми словами."
 
 #: functions/customize.php:67
 msgid "Squared"
@@ -1017,6 +1020,8 @@ msgid ""
 "Subscribe to our newsletter to get our news & deals delivered to you. Don't "
 "worry, we hate spam and we respect your privacy."
 msgstr ""
+"Подпишитесь на нашу рассылку новостей, чтобы получать наши новости и "
+"предложения. Не волнуйтесь, мы ненавидим спам и уважаем вашу частную жизнь."
 
 #: woocommerce/cart/cart-totals.php:29 woocommerce/cart/cart-totals.php:30
 #: woocommerce/cart/cart.php:41

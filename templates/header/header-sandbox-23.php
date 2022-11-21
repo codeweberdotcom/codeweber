@@ -1,7 +1,7 @@
     <header class="wrapper bg-soft-primary">
        <nav class="navbar navbar-expand-lg center-nav transparent position-absolute navbar-dark caret-none">
           <div class="container flex-lg-row flex-nowrap align-items-center">
-             <div class="navbar-brand w-100">
+             <div class="navbar-brand w-100 pe-3">
                 <?php echo codeweber_logo_light_link(); ?>
              </div>
              <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
@@ -35,7 +35,7 @@
                 <ul class="navbar-nav flex-row align-items-center ms-auto">
                    <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
                    <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search"><i class="uil uil-search"></i></a></li>
-                   <li class="nav-item d-lg-none">
+                   <li class="nav-item d-lg-none ms-0">
                       <button class="hamburger offcanvas-nav-btn"><span></span></button>
                    </li>
                 </ul>

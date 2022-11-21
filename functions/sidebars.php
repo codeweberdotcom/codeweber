@@ -44,6 +44,15 @@ if (!function_exists('codeweber_sidebars')) {
 				'before_sidebar' => '',
 			)
 		);
+
+		register_sidebar(array(
+			'name'          => __('Woocommerce sidebar', 'codeweber'),
+			'id'            => 'woocommerce_sidebar',
+			'before_widget' => '<div>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="rounded">',
+			'after_title'   => '</h2>',
+		));
 	}
 }
 

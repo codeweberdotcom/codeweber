@@ -70,6 +70,28 @@ defined('ABSPATH') || exit;
 							<p class="price nowrap"><?php wc_cart_totals_subtotal_html(); ?></p>
 						</td>
 					</tr>
+					<?php
+					$discount_total = 0;
+					foreach (WC()->cart->get_cart() as $cart_item_key => $values) {
+						$product = $values['data'];
+						if ($product->is_on_sale()) {
+							$regular_price = $product->get_regular_price();
+							$sale_price = $product->get_sale_price();
+							$discount = ((float)$regular_price - (float)$sale_price) * (int)$values['quantity'];
+							$discount_total += $discount;
+						}
+					}
+					if ($discount_total > 0) { ?>
+
+						<tr>
+							<td class="ps-0"><strong class="text-dark"><?php esc_html_e('Sale', 'codeweber'); ?></strong></td>
+							<td class="pe-0 text-end" data-title="<?php esc_html_e('Sale', 'codeweber'); ?>">
+								<p class="price text-red"><?php echo wc_price($discount_total + WC()->cart->get_discount_total()); ?></p>
+							</td>
+						</tr>
+
+					<?php }
+					?>
 					<?php foreach (WC()->cart->get_coupons() as $code => $coupon) : ?>
 						<tr class="cart-discount coupon-<?php echo esc_attr(sanitize_title($code)); ?>">
 							<td class="ps-0"><strong class="text-dark"><?php wc_cart_totals_coupon_label($coupon); ?></strong></td>

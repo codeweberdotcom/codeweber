@@ -1,5 +1,11 @@
 <?php
 global $post; ?>
-<div class="container pt-12 pt-md-14 pb-14 pb-md-16">
+<?php if (is_account_page()) { ?>
+   <div class="container pt-12 pt-md-14 pb-14 pb-md-16">
+   <?php }; ?>
+
    <?php the_content(); ?>
-</div>
+
+   <?php if (is_account_page()) { ?>
+   </div>
+<?php }; ?>

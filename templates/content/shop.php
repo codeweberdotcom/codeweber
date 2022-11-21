@@ -9,7 +9,9 @@ global $post; ?>
          </aside>
          <!-- /column .sidebar -->
       <?php endif; ?>
-      <?php the_content(); ?>
+      <div class="col-lg-9 order-lg-2">
+         <?php the_content(); ?>
+      </div>
       <?php do_action('shop_content_after') ?>
    </div>
 </div>

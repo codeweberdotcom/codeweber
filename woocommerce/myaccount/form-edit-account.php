@@ -56,7 +56,7 @@ do_action('woocommerce_before_edit_account_form'); ?>
 	<fieldset class="col-12">
 
 
-		<legend class="h3 mb-4 orw"><?php esc_html_e('Password change', 'woocommerce'); ?></legend>
+		<legend class="h3 mb-4"><?php esc_html_e('Password change', 'woocommerce'); ?></legend>
 
 		<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide form-floating mb-4 ">
 			<input type="password" class="woocommerce-Input woocommerce-Input--password input-text password-field form-control" placeholder="<?php esc_html_e('Current password (leave blank to leave unchanged)', 'woocommerce'); ?>" name="password_current" id="password_current" autocomplete="off" />

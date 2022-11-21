@@ -79,8 +79,8 @@ $button->default_button = '<a href="#" class="btn btn-primary rounded-pill mt-2"
                                                       }; ?>">
                               <div class="card-body pb-12">
                                  <div class="prices text-dark">
-                                    <div class="price price-show justify-content-start"><span class="price-currency"><?php echo $currency; ?></span><span class="price-value"><?php the_sub_field('price_montly'); ?></span> <span class="price-duration"><?php esc_html_e('mo', 'codeweber'); ?></span></div>
-                                    <div class="price price-hide price-hidden justify-content-start"><span class="price-currency"><?php echo $currency; ?></span><span class="price-value"><?php the_sub_field('price_year'); ?></span> <span class="price-duration"><?php esc_html_e('yr', 'codeweber'); ?></span></div>
+                                    <div class="price price-show justify-content-start nowrap"><span class="price-currency"><?php echo $currency; ?></span><span class="price-value"><?php the_sub_field('price_montly'); ?></span> <span class="price-duration"><?php esc_html_e('mo', 'codeweber'); ?></span></div>
+                                    <div class="price price-hide price-hidden justify-content-start nowrap"><span class="price-currency"><?php echo $currency; ?></span><span class="price-value"><?php the_sub_field('price_year'); ?></span> <span class="price-duration"><?php esc_html_e('yr', 'codeweber'); ?></span></div>
                                  </div>
                                  <!--/.prices -->
                                  <h4 class="card-title mt-2"> <?php the_sub_field('title_package'); ?></h4>

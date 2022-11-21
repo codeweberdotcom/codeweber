@@ -970,7 +970,7 @@ class Buttons
 							elseif (get_sub_field('button_type') == 'None') :
 								$button = NULL;
 							else :
-								$button = '<span' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . $button_type . $this->button_paddings . '" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '"><span>' . $icon_font  . $text_button . '</span></button></span>';
+								$button = '<span' . $this->animate_swiper_class . '><button class = "btn ' . $color_button . ' ' . $button_size . ' ' . $class_button_swiper_animate . ' ' . $icon_class . ' ' . $form_button . ' ' . $button_type . $this->button_paddings . '" data-bs-toggle="modal" data-bs-target="' . $button_bs_target . '"><span>' . $icon_font  . $text_button . '</span></button></span>';
 							endif;
 						else :
 							if (get_sub_field('button_type') == 'Expand') :

@@ -1,7 +1,7 @@
     <header class="wrapper bg-light">
        <nav class="navbar navbar-expand-lg classic transparent navbar-light">
           <div class="container flex-lg-row flex-nowrap align-items-center">
-             <div class="navbar-brand w-100">
+             <div class="navbar-brand w-100 pe-3">
                 <?php echo codeweber_logo_dark_link(); ?>
              </div>
              <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
@@ -36,7 +36,7 @@
                    <li class="nav-item d-none d-md-block">
                       <a href="./contact.html" class="btn btn-sm btn-primary rounded-pill"><?php esc_html_e('Contact', 'codeweber'); ?></a>
                    </li>
-                   <li class="nav-item d-lg-none">
+                   <li class="nav-item d-lg-none ms-0">
                       <button class="hamburger offcanvas-nav-btn"><span></span></button>
                    </li>
                 </ul>

@@ -51,8 +51,8 @@ $settings->GetDataACF();
                <div class="row gy-6 position-relative mt-5">
                   <div class="shape bg-dot primary rellax w-16 h-18" data-rellax-speed="1" style="bottom: -0.5rem; right: -1.6rem;"></div>
                   <div class="shape rounded-circle bg-line red rellax w-18 h-18" data-rellax-speed="1" style="top: -1rem; left: -2rem;"></div>
-                  
-                  
+
+
                   <?php $post = $price_package; ?>
                   <?php setup_postdata($post); ?>
                   <?php $post_id = $post->ID; ?>
@@ -136,7 +136,7 @@ $settings->GetDataACF();
                         <!--/column -->
 
 
-                        
+
                      <?php endwhile; ?>
                   <?php endif; ?>
                   <?php wp_reset_postdata(); ?>

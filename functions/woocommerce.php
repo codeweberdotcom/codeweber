@@ -10,6 +10,28 @@
  * @param WC_Product $product Product object.
  */
 
+
+
+/**
+ * Cleanup Woocommerce
+ * Set WooCommerce image dimensions upon theme activation
+ * https://woocommerce.com/document/disable-the-default-stylesheet/
+ */
+add_filter('woocommerce_enqueue_styles', 'jk_dequeue_styles');
+function jk_dequeue_styles($enqueue_styles)
+{
+   unset($enqueue_styles['woocommerce-general']);   // Remove the gloss
+   unset($enqueue_styles['woocommerce-layout']);      // Remove the layout
+   unset($enqueue_styles['woocommerce-smallscreen']);   // Remove the smallscreen optimisation
+   return $enqueue_styles;
+}
+
+// Or just remove them all in one line
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+
+
+
+
 function filter_woocommerce_post_class($classes, $product)
 {
    // is_product() - Returns true on a single product page
@@ -22,9 +44,6 @@ function filter_woocommerce_post_class($classes, $product)
    return $classes;
 }
 add_filter('woocommerce_post_class', 'filter_woocommerce_post_class', 10, 2);
-
-
-
 
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
@@ -51,26 +70,6 @@ function modify_wc_price($return, $price, $args)
    return $formatted_price;
 }
 add_filter('wc_price', 'modify_wc_price', 99, 3);
-
-
-
-
-/**
- * Set WooCommerce image dimensions upon theme activation
- * https://woocommerce.com/document/disable-the-default-stylesheet/
- */
-// Remove each style one by one
-add_filter('woocommerce_enqueue_styles', 'jk_dequeue_styles');
-function jk_dequeue_styles($enqueue_styles)
-{
-   unset($enqueue_styles['woocommerce-general']);   // Remove the gloss
-   unset($enqueue_styles['woocommerce-layout']);      // Remove the layout
-   unset($enqueue_styles['woocommerce-smallscreen']);   // Remove the smallscreen optimisation
-   return $enqueue_styles;
-}
-
-// Or just remove them all in one line
-add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
 
 
@@ -364,7 +363,7 @@ function woocommerce_form_field($key, $args, $value = null)
    $field           = '';
    $label_id        = $args['id'];
    $sort            = $args['priority'] ? $args['priority'] : '';
-   $field_container = '<p class="form-row %1$s" id="%2$s" data-priority="' . esc_attr($sort) . '">%3$s</p>';
+   $field_container = '<p class="form-row %1$s form-floating mb-4 form-select-wrapper" id="%2$s" data-priority="' . esc_attr($sort) . '">%3$s</p>';
 
    switch ($args['type']) {
       case 'country':
@@ -378,7 +377,7 @@ function woocommerce_form_field($key, $args, $value = null)
          } else {
             $data_label = !empty($args['label']) ? 'data-label="' . esc_attr($args['label']) . '"' : '';
 
-            $field = '<select name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" class="country_to_state country_select ' . esc_attr(implode(' ', $args['input_class'])) . '" ' . implode(' ', $custom_attributes) . ' data-placeholder="' . esc_attr($args['placeholder'] ? $args['placeholder'] : esc_attr__('Select a country / region&hellip;', 'woocommerce')) . '" ' . $data_label . '><option value="">' . esc_html__('Select a country / region&hellip;', 'woocommerce') . '</option>';
+            $field = '<select name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" class="country_to_state form-select country_select ' . esc_attr(implode(' ', $args['input_class'])) . '" ' . implode(' ', $custom_attributes) . ' data-placeholder="' . esc_attr($args['placeholder'] ? $args['placeholder'] : esc_attr__('Select a country / region&hellip;', 'woocommerce')) . '" ' . $data_label . '><option value="">' . esc_html__('Select a country / region&hellip;', 'woocommerce') . '</option>';
 
             foreach ($countries as $ckey => $cvalue) {
                $field .= '<option value="' . esc_attr($ckey) . '" ' . selected($value, $ckey, false) . '>' . esc_html($cvalue) . '</option>';
@@ -403,7 +402,7 @@ function woocommerce_form_field($key, $args, $value = null)
          } elseif (!is_null($for_country) && is_array($states)) {
             $data_label = !empty($args['label']) ? 'data-label="' . esc_attr($args['label']) . '"' : '';
 
-            $field .= '<select name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" class="state_select ' . esc_attr(implode(' ', $args['input_class'])) . '" ' . implode(' ', $custom_attributes) . ' data-placeholder="' . esc_attr($args['placeholder'] ? $args['placeholder'] : esc_html__('Select an option&hellip;', 'woocommerce')) . '"  data-input-classes="' . esc_attr(implode(' ', $args['input_class'])) . '" ' . $data_label . '>
+            $field .= '<select name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" class="state_select form-select ' . esc_attr(implode(' ', $args['input_class'])) . '" ' . implode(' ', $custom_attributes) . ' data-placeholder="' . esc_attr($args['placeholder'] ? $args['placeholder'] : esc_html__('Select an option&hellip;', 'woocommerce')) . '"  data-input-classes="' . esc_attr(implode(' ', $args['input_class'])) . '" ' . $data_label . '>
 						<option value="">' . esc_html__('Select an option&hellip;', 'woocommerce') . '</option>';
 
             foreach ($states as $ckey => $cvalue) {
@@ -438,11 +437,11 @@ function woocommerce_form_field($key, $args, $value = null)
       case 'email':
       case 'url':
       case 'tel':
-         $field .= '<input type="' . esc_attr($args['type']) . '" class="input-text ' . esc_attr(implode(' ', $args['input_class'])) . '" name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" placeholder="' . esc_attr($args['id']) . '"  value="' . esc_attr($value) . '" ' . implode(' ', $custom_attributes) . ' />';
+         $field .= '<input type="' . esc_attr($args['type']) . '" class="input-text form-control ' . esc_attr(implode(' ', $args['input_class'])) . '" name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" placeholder="' . esc_attr($args['id']) . '"  value="' . esc_attr($value) . '" ' . implode(' ', $custom_attributes) . ' />';
 
          break;
       case 'hidden':
-         $field .= '<input type="' . esc_attr($args['type']) . '" class="input-hidden ' . esc_attr(implode(' ', $args['input_class'])) . '" name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" value="' . esc_attr($value) . '" ' . implode(' ', $custom_attributes) . ' />';
+         $field .= '<input type="' . esc_attr($args['type']) . '" class="input-hidden form-control ' . esc_attr(implode(' ', $args['input_class'])) . '" name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" value="' . esc_attr($value) . '" ' . implode(' ', $custom_attributes) . ' />';
 
          break;
       case 'select':
@@ -524,9 +523,9 @@ function woocommerce_form_field($key, $args, $value = null)
  * https://misha.agency/woocommerce/otklyuchit-polya-na-stranicze-oformleniya-zakaza.html
  */
 
-add_filter('woocommerce_checkout_fields', 'woo_del_fields', 25);
+add_filter('woocommerce_checkout_fields', 'codeweber_del_fields', 25);
 
-function woo_del_fields($fields)
+function codeweber_del_fields($fields)
 {
 
    // unset( $fields[ 'billing' ][ 'billing_first_name' ] ); // имя
@@ -546,6 +545,24 @@ function woo_del_fields($fields)
    unset($fields['shipping']['shipping_company']); // компания
    unset($fields['shipping']['shipping_address_2']); // адрес 2
 
+   return $fields;
+}
+
+
+
+
+add_filter('woocommerce_billing_fields', 'codeweber_remove_billing_fields');
+function codeweber_remove_billing_fields($fields)
+{
+   unset($fields['billing_address_2']); // or shipping_address_2 for woocommerce_shipping_fields hook
+   return $fields;
+}
+
+
+add_filter('woocommerce_shipping_fields', 'codeweber_remove_shipping_fields');
+function codeweber_remove_shipping_fields($fields)
+{
+   unset($fields['shipping_address_2']); // or shipping_address_2 for woocommerce_shipping_fields hook
    return $fields;
 }
 
@@ -592,13 +609,14 @@ add_filter('woocommerce_default_address_fields', 'country_class_change');
 function country_class_change($address_fields)
 {
    // change country class
-   $address_fields['first_name']['class'] = array('col-6');
-   $address_fields['last_name']['class'] = array('col-6');
-   $address_fields['country']['class'] = array('col-6');
-   $address_fields['postcode']['class'] = array('col-3');
-   $address_fields['state']['class'] = array('col-6');
-   $address_fields['city']['class'] = array('col-4');
-   $address_fields['address_1']['class'] = array('col-5');
+   $address_fields['first_name']['class'] = array('col-md-6');
+   $address_fields['last_name']['class'] = array('col-md-6');
+   $address_fields['country']['class'] = array('col-md-6');
+   $address_fields['postcode']['class'] = array('col-md-12 col-xl-3');
+   $address_fields['state']['class'] = array('col-md-6');
+   $address_fields['city']['class'] = array('col-md-6 col-lg-6 col-xl-4');
+   $address_fields['address_1']['class'] = array('col-md-6 col-xl-5');
+   $address_fields['']['class'] = array('col-md-6');
 
    return $address_fields;
 }
@@ -1151,6 +1169,21 @@ remove_action('woocommerce_after_shop_loop', 'woocommerce_result_count', 20);
  * Move result count
  */
 add_action('codeweber_result_count', 'woocommerce_result_count', 20);
+
+
+
+/**
+ * Logout redirect homepage
+ */
+add_action('wp_logout', 'codeweber_homepage_logout_redirect');
+
+function codeweber_homepage_logout_redirect()
+{
+   wp_redirect(home_url());
+   exit;
+}
+
+
 
 
 

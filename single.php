@@ -9,7 +9,7 @@ elseif (is_singular('product')) :
 		the_post();
 ?>
 		<?php
-		if (!is_front_page()) :
+		if (!is_front_page() || !is_product()) :
 			if (get_theme_mod('codeweber_page_header') == 'type_1') :
 				get_template_part('templates/sections/common', 'breadcrumb');
 			endif;
@@ -17,12 +17,15 @@ elseif (is_singular('product')) :
 		?>
 		<div class="container py-14 py-md-16">
 			<?php get_template_part('templates/content/single', ''); ?>
-			<nav class="nav">
-				<?php
-				previous_post_link('<span class="nav-link me-auto">&laquo; %link</span>');
-				next_post_link('<span class="nav-link ms-auto">%link &raquo;</span>');
-				?>
-			</nav>
+
+			<?php if (!is_product()) : ?>
+				<nav class="nav">
+					<?php
+					previous_post_link('<span class="nav-link me-auto">&laquo; %link</span>');
+					next_post_link('<span class="nav-link ms-auto">%link &raquo;</span>');
+					?>
+				</nav>
+			<?php endif; ?>
 		</div>
 	<?php endwhile;
 
@@ -44,6 +47,7 @@ elseif (is_singular('post')) :
 	get_template_part('templates/content/single', 'blog');
 
 else :
+
 	while (have_posts()) :
 		the_post();
 		if (!is_front_page()) :
@@ -55,12 +59,16 @@ else :
 		endif;
 
 		get_template_part('templates/content/single', ''); ?>
+
+
 		<nav class="nav">
 			<?php
 			previous_post_link('<span class="nav-link me-auto">&laquo; %link</span>');
 			next_post_link('<span class="nav-link ms-auto">%link &raquo;</span>');
 			?>
 		</nav>
+
+
 <?php endwhile;
 endif;
 get_footer();

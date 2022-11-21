@@ -44,8 +44,9 @@ $col    = 1;
 ?>
 
 <div class="col-12">
-	<div class="alert alert-dark alert-icon" role="alert"><i class="uil uil-map-marker-info"></i> <?php echo apply_filters('woocommerce_my_account_my_address_description', esc_html__('The following addresses will be used on the checkout page by default.', 'woocommerce')); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-																																	?></div>
+	<div class="alert alert-dark alert-icon" role="alert"><i class="uil uil-map-marker-info"></i> <?php echo apply_filters('woocommerce_my_account_my_address_description', esc_html__('The following addresses will be used on the checkout page by default.', 'woocommerce')); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 																																	
+																																	?>
+	</div>
 </div>
 
 
@@ -60,10 +61,7 @@ $col    = 1;
 				$col     = $col * -1;
 				$oldcol  = $oldcol * -1;
 				?>
-
-
 				<div class="u-column<?php echo $col < 0 ? 1 : 2; ?> col-<?php echo $oldcol < 0 ? 1 : 2; ?> woocommerce-Address col-12 col-md-6">
-
 					<header class="woocommerce-Address-title title">
 						<h3 class="card-title"><?php echo esc_html($address_title); ?></h3>
 					</header>
@@ -74,9 +72,6 @@ $col    = 1;
 					</address>
 					<a href="<?php echo esc_url(wc_get_endpoint_url('edit-address', $name)); ?>" class="edit alert-link hover"><?php echo $address ? esc_html__('Edit', 'woocommerce') : esc_html__('Add', 'woocommerce'); ?></a>
 				</div>
-
-
-
 			<?php endforeach; ?>
 		</div>
 	</div>

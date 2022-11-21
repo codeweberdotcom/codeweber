@@ -344,7 +344,7 @@ add_filter('title_save_pre', 'auto_generate_post_title');
 function codeweber_logo_dark_link()
 {
     if (get_theme_mod('dark_logo')) :
-        $codeweber_logo_header_dark = '<a href="' . get_home_url() . '" class="dark-logo-link" rel="home" aria-current="page"><img src="' . get_theme_mod('dark_logo') . '"/></a>';
+        $codeweber_logo_header_dark = '<a href="' . get_home_url() . '" class="dark-logo-link" rel="home" aria-current="page"><img class="img-fluid" src="' . get_theme_mod('dark_logo') . '"/></a>';
     else :
         $codeweber_logo_header_dark = get_template_directory_uri() . '/dist/img/logo-dark.png';
     endif;
