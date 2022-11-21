@@ -19,7 +19,7 @@ if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services
 								<div class="col-md-12 mx-0">
 									<h1 class="display-1 mb-3"><?php codeweber_page_title(); ?></h1>
 								<?php }
-							if (is_single() && !is_singular('services')) : ?>
+							if (get_post_type() == 'post') : ?>
 									<p class="lead px-lg-5 px-xxl-8">
 									<ul class="post-meta">
 										<li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d M Y'); ?></span></li>
