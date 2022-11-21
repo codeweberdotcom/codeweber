@@ -32,7 +32,7 @@ if (!empty($block['align'])) {
       <?php $layout = get_row_layout(); ?>
       <?php $block_id = esc_attr($id); ?>
       <?php $layout_path = 'templates/flexible-content/pricing/' . $layout . '/' . $layout; ?>
-      <?php get_template_part($layout_path, '', array($layout, 'block_id' => $block_id, 'block_class' => $classes)); ?>
+      <?php get_template_part($layout_path, '', array('block_layout' => $layout, 'block_id' => $block_id, 'block_class' => $classes)); ?>
    <?php endwhile; ?>
 <?php else : ?>
    <h1>Pricing</h1>
