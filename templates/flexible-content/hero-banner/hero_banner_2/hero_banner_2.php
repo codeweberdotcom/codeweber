@@ -9,7 +9,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 //$settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'white';
-$settings->GetDataACF();
+$settings->GetDataACF(); 
 
 /* Add buttons */
 $button = new Buttons();

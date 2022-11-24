@@ -1,6 +1,6 @@
   <footer class="bg-gradient-reverse-primary">
      <div class="container pt-13 pt-md-15 pb-7">
-        <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-400 mb-13" data-image-src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/photos/bg2.jpg">
+        <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-400 mb-13" data-image-src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/bg2.jpg">
            <div class="card-body p-9 p-xl-11">
               <div class="row align-items-center gy-6">
                  <div class="col-lg-7">

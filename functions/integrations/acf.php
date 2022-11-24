@@ -367,7 +367,6 @@ class Settings
 	public $title = "Grow Your Business with Our Solutions.";
 	public $subtitle = "Hello! This is Sandbox.";
 	public $paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
-
 	public $imageurl = '/dist/img/photos/about18.jpg';
 	public $video_url = '/dist/media/movie.mp4';
 	public $backgroundurl = '/dist/img/photos/bg4.jpg';
@@ -546,7 +545,7 @@ class Icons
 				$this->iconnumber = get_sub_field('number');
 				$this->icon = get_sub_field('icon');
 				if (get_sub_field('icon_lineal_svg')) {
-					$this->icon_url = get_stylesheet_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
+					$this->icon_url = get_template_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
 				}
 			endwhile;
 		endif;
@@ -570,8 +569,6 @@ class Icons
 						endif;
 					endwhile;
 				endif;
-
-
 				if (have_rows('type_icons')) :
 					while (have_rows('type_icons')) : the_row();
 						$this->iconsize = get_sub_field('icon_size');
@@ -581,13 +578,10 @@ class Icons
 						$this->icon = get_sub_field('icon');
 						$this->iconpaddingclass = 'mb-3 pe-none';
 						if (get_sub_field('icon_lineal_svg')) {
-							$this->icon_url = get_stylesheet_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
+							$this->icon_url = get_template_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('icon_lineal_svg') . '.svg';
 						}
 					endwhile;
 				endif;
-
-
-
 				if ($this->icon_type == 'Unicons') :
 					$icon_block = '<div class="icon btn ' . $this->iconform . ' btn-' . $this->iconsize . ' btn-' . $color_icon . ' ' . $this->iconpaddingclass . ' ">' . $this->icon . '</div>';
 					echo $icon_block;
@@ -599,13 +593,6 @@ class Icons
 					echo $icon_block;
 				elseif ($this->icon_type == 'None') :
 				endif;
-
-
-
-
-
-
-
 			endwhile;
 		endif;
 	}

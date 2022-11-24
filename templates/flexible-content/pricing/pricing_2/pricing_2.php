@@ -162,7 +162,7 @@ $settings->GetDataACF();
                <div class="col-md-6 col-lg-4">
                   <div class="pricing card text-center">
                      <div class="card-body">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/icons/lineal/shopping-basket.svg" class="svg-inject icon-svg icon-svg-md text-primary mb-3" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/lineal/shopping-basket.svg" class="svg-inject icon-svg icon-svg-md text-primary mb-3" alt="" />
                         <h4 class="card-title">Basic Plan</h4>
                         <div class="prices text-dark">
                            <div class="price price-show"><span class="price-currency">$</span><span class="price-value">9</span> <span class="price-duration">mo</span></div>
@@ -186,7 +186,7 @@ $settings->GetDataACF();
                <div class="col-md-6 col-lg-4 popular">
                   <div class="pricing card text-center">
                      <div class="card-body">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/icons/lineal/home.svg" class="svg-inject icon-svg icon-svg-md text-primary mb-3" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/lineal/home.svg" class="svg-inject icon-svg icon-svg-md text-primary mb-3" alt="" />
                         <h4 class="card-title">Premium Plan</h4>
                         <div class="prices text-dark">
                            <div class="price price-show"><span class="price-currency">$</span><span class="price-value">19</span> <span class="price-duration">mo</span></div>
@@ -210,7 +210,7 @@ $settings->GetDataACF();
                <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-0">
                   <div class="pricing card text-center">
                      <div class="card-body">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/img/icons/lineal/briefcase-2.svg" class="svg-inject icon-svg icon-svg-md text-primary mb-3" alt="" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/lineal/briefcase-2.svg" class="svg-inject icon-svg icon-svg-md text-primary mb-3" alt="" />
                         <h4 class="card-title">Corporate Plan</h4>
                         <div class="prices text-dark">
                            <div class="price price-show"><span class="price-currency">$</span><span class="price-value">49</span> <span class="price-duration">mo</span></div>
