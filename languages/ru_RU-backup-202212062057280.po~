@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-11-20 20:01+0000\n"
+"PO-Revision-Date: 2022-12-06 20:53+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -30,10 +30,6 @@ msgstr ""
 #, php-format
 msgid "%1$s "
 msgstr "%1$s "
-
-#: index.php:25 index.php:43
-msgid "&laquo; Previous"
-msgstr "&laquo; Предыдущий"
 
 #: functions/custom.php:19
 msgid "<i class=\"uil uil-comments\"></i>Reply"
@@ -74,6 +70,11 @@ msgid ""
 "amet risus."
 msgstr ""
 
+#: templates/archive/archive-projects-3.php:33
+#: templates/archive/archive-projects-4.php:33
+msgid "All"
+msgstr "Все"
+
 #: templates/content/single-blog.php:86
 msgid "All Posts"
 msgstr "Все Статьи"
@@ -112,10 +113,9 @@ msgstr "Все Ценовые Пакеты"
 msgid "All rights reserved."
 msgstr "Все права защищены"
 
-#: templates/header/header-sandbox-05.php:111
-#: templates/header/header-sandbox-08.php:117
-#: templates/header/header-sandbox-09.php:117
-#: templates/header/header-sandbox-woo-01.php:176
+#: templates/header/header-sandbox-05.php:115
+#: templates/header/header-sandbox-08.php:121
+#: templates/header/header-sandbox-09.php:121
 msgid "Already have an account?"
 msgstr "Уже есть аккаунт?"
 
@@ -130,6 +130,18 @@ msgstr "Статьи по месяцам"
 #: templates/components/backtotop.php:1
 msgid "Back to top"
 msgstr "Вернуться наверх"
+
+#: functions/customize.php:314
+msgid "Blog"
+msgstr "Блог"
+
+#: functions/customize.php:333
+msgid "Blog archive template"
+msgstr "Шаблон главной страницы Блога"
+
+#: functions/customize.php:315
+msgid "blog settings"
+msgstr "Настройки блога"
 
 #: functions/customize.php:83
 msgid "Button Big"
@@ -174,7 +186,7 @@ msgstr ""
 "Используя эту форму для комментариев, вы соглашаетесь с нашей Политикой "
 "конфиденциальности"
 
-#: templates/header/header-sandbox-woo-01.php:65
+#: templates/header/header-sandbox-woo-01.php:69
 msgid "Cart"
 msgstr "Корзина"
 
@@ -187,14 +199,19 @@ msgstr "Категории"
 msgid "CFollow Us"
 msgstr ""
 
-#: templates/header/header-sandbox-woo-01.php:68
-#: templates/header/header-sandbox-woo-01.php:71
+#: templates/header/header-sandbox-woo-01.php:72
+#: templates/header/header-sandbox-woo-01.php:75
 msgid "Checkout"
 msgstr "Оформить заказ"
 
 #: woocommerce/checkout/form-coupon.php:27
 msgid "Click here to enter your code"
 msgstr "Нажмите , чтобы ввести код купона"
+
+#: single-projects-1.php:117 single-projects-2.php:79 single-projects-3.php:62
+#: single-projects.php:81
+msgid "CMS"
+msgstr "Платформа"
 
 #. Name of the theme
 #. Author of the theme
@@ -241,30 +258,28 @@ msgctxt "comments title"
 msgid "One reply on &ldquo;%s&rdquo;"
 msgstr "Один комментарий  от &ldquo;%s&rdquo;"
 
-#: templates/header/header-sandbox-05.php:106
-#: templates/header/header-sandbox-08.php:112
-#: templates/header/header-sandbox-09.php:112
-#: templates/header/header-sandbox-woo-01.php:171
+#: templates/header/header-sandbox-05.php:110
+#: templates/header/header-sandbox-08.php:116
+#: templates/header/header-sandbox-09.php:116
 msgid "Confirm Password"
 msgstr "Подтвердить пароль"
 
 #: templates/header/header-sandbox-02.php:62
 #: templates/header/header-sandbox-10.php:62
-#: templates/header/header-sandbox-14.php:45
-#: templates/header/header-sandbox-21.php:37
+#: templates/header/header-sandbox-14.php:49
+#: templates/header/header-sandbox-21.php:41
 msgid "Contact"
 msgstr "Контакт"
 
-#: templates/header/header-sandbox-09.php:144
-#: templates/header/header-sandbox-09_cw.php:84
+#: templates/header/header-sandbox-09.php:148
 #: templates/header/header-sandbox-12.php:81
 #: templates/header/header-sandbox-15.php:60
 #: templates/header/header-sandbox-20.php:67
 #: templates/header/header-sandbox-22.php:60
 #: templates/header/header-sandbox-23.php:60
 #: templates/header/header-sandbox-24.php:74
-#: templates/header/header-sandbox-27.php:60
-#: templates/header/header-sandbox-woo-01.php:217
+#: templates/header/header-sandbox-27.php:64
+#: templates/header/header-sandbox-woo-01.php:129
 msgid "Contact Info"
 msgstr "Связаться с нами"
 
@@ -284,10 +299,14 @@ msgstr "Информация о покупателе"
 msgid "Dark Logo"
 msgstr "Темный Логотип"
 
-#: templates/header/header-sandbox-05.php:66
-#: templates/header/header-sandbox-08.php:72
-#: templates/header/header-sandbox-09.php:72
-#: templates/header/header-sandbox-woo-01.php:131
+#: single-projects-1.php:111 single-projects-2.php:73 single-projects-3.php:56
+#: single-projects.php:75
+msgid "Date"
+msgstr "Дата"
+
+#: templates/header/header-sandbox-05.php:70
+#: templates/header/header-sandbox-08.php:76
+#: templates/header/header-sandbox-09.php:76
 msgid "Don't have an account?"
 msgstr "Еще нет аккаунта?"
 
@@ -308,13 +327,11 @@ msgstr "Редактировать Пакет"
 msgid "Elsewhere"
 msgstr "Или здесь"
 
-#: templates/header/header-sandbox-05.php:96
-#: templates/header/header-sandbox-08.php:61
-#: templates/header/header-sandbox-08.php:102
-#: templates/header/header-sandbox-09.php:61
-#: templates/header/header-sandbox-09.php:102
-#: templates/header/header-sandbox-woo-01.php:120
-#: templates/header/header-sandbox-woo-01.php:161
+#: templates/header/header-sandbox-05.php:100
+#: templates/header/header-sandbox-08.php:65
+#: templates/header/header-sandbox-08.php:106
+#: templates/header/header-sandbox-09.php:65
+#: templates/header/header-sandbox-09.php:106
 msgid "Email"
 msgstr "Email"
 
@@ -363,22 +380,25 @@ msgstr "Категория FAQ"
 msgid "FAQ Options"
 msgstr "Настройки FAQ"
 
-#: templates/header/header-sandbox-05.php:59
-#: templates/header/header-sandbox-08.php:57
-#: templates/header/header-sandbox-09.php:57
-#: templates/header/header-sandbox-woo-01.php:116
+#: templates/header/header-sandbox-05.php:63
+#: templates/header/header-sandbox-08.php:61
+#: templates/header/header-sandbox-09.php:61
 msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
 
-#: templates/header/header-sandbox-09.php:162
-#: templates/header/header-sandbox-09_cw.php:96
+#: templates/archive/archive-projects-3.php:31
+#: templates/archive/archive-projects-4.php:31
+msgid "Filter:"
+msgstr "Фильтр:"
+
+#: templates/header/header-sandbox-09.php:166
 #: templates/header/header-sandbox-15.php:78
 #: templates/header/header-sandbox-20.php:85
 #: templates/header/header-sandbox-22.php:78
 #: templates/header/header-sandbox-23.php:78
 #: templates/header/header-sandbox-24.php:92
-#: templates/header/header-sandbox-27.php:78
-#: templates/header/header-sandbox-woo-01.php:235
+#: templates/header/header-sandbox-27.php:82
+#: templates/header/header-sandbox-woo-01.php:147
 msgid "Follow Us"
 msgstr "Или здесь"
 
@@ -398,10 +418,9 @@ msgstr "Меню Футера 1"
 msgid "Footer Options"
 msgstr "Настройки Футера"
 
-#: templates/header/header-sandbox-05.php:65
-#: templates/header/header-sandbox-08.php:71
-#: templates/header/header-sandbox-09.php:71
-#: templates/header/header-sandbox-woo-01.php:130
+#: templates/header/header-sandbox-05.php:69
+#: templates/header/header-sandbox-08.php:75
+#: templates/header/header-sandbox-09.php:75
 msgid "Forgot Password?"
 msgstr "Забыли пароль?"
 
@@ -415,7 +434,7 @@ msgstr "Форма восстановления пароля"
 
 #: templates/header/header-sandbox-06.php:48
 #: templates/header/header-sandbox-11.php:37
-#: templates/header/header-sandbox-26.php:37
+#: templates/header/header-sandbox-26.php:41
 msgid "Free Trial"
 msgstr "Бесплатный период"
 
@@ -497,7 +516,7 @@ msgstr "Настройки Хедера"
 
 #: functions/widgets.php:11
 msgid "Header right sidebar"
-msgstr ""
+msgstr "Хедер правый сайдбар"
 
 #. 1: user display name 2: logout url
 #: woocommerce/myaccount/dashboard.php:36
@@ -598,14 +617,14 @@ msgstr "Присоедениться"
 #: templates/footer/footer-sandbox-7.php:62
 #: templates/footer/footer-sandbox-8.php:23
 #: templates/footer/footer-sandbox-9.php:35
-#: templates/header/header-sandbox-09.php:152
+#: templates/header/header-sandbox-09.php:156
 #: templates/header/header-sandbox-12.php:89
 #: templates/header/header-sandbox-15.php:68
 #: templates/header/header-sandbox-20.php:75
 #: templates/header/header-sandbox-22.php:68
 #: templates/header/header-sandbox-24.php:82
-#: templates/header/header-sandbox-27.php:68
-#: templates/header/header-sandbox-woo-01.php:225
+#: templates/header/header-sandbox-27.php:72
+#: templates/header/header-sandbox-woo-01.php:137
 #| msgid "Read more"
 msgid "Learn More"
 msgstr "Информация"
@@ -632,13 +651,13 @@ msgstr ""
 msgid "Likes"
 msgstr "Спасибо"
 
-#: templates/header/header-sandbox-woo-01.php:57
+#: templates/header/header-sandbox-woo-01.php:61
 msgid "Login / Register"
 msgstr "Войти / Регистрация"
 
-#: templates/header/header-sandbox-woo-01.php:71
+#: templates/header/header-sandbox-woo-01.php:75
 msgid "Logout"
-msgstr ""
+msgstr "Выйти"
 
 #: comments.php:134 comments.php:141 comments.php:156
 msgid "Looks good!"
@@ -676,7 +695,7 @@ msgstr "Разработано"
 
 #: functions/customize.php:173
 msgid "Main Header"
-msgstr ""
+msgstr "Главный Хедер"
 
 #: functions/sidebars.php:13 functions/sidebars.php:15
 msgid "Main Sidebar"
@@ -698,14 +717,13 @@ msgstr "месяц"
 msgid "Monthly"
 msgstr "Месяц"
 
-#: templates/header/header-sandbox-woo-01.php:55
+#: templates/header/header-sandbox-woo-01.php:59
 msgid "My Account"
 msgstr "Личный кабинет"
 
-#: templates/header/header-sandbox-05.php:92
-#: templates/header/header-sandbox-08.php:98
-#: templates/header/header-sandbox-09.php:98
-#: templates/header/header-sandbox-woo-01.php:157
+#: templates/header/header-sandbox-05.php:96
+#: templates/header/header-sandbox-08.php:102
+#: templates/header/header-sandbox-09.php:102
 msgid "Name"
 msgstr "Ваше имя"
 
@@ -738,9 +756,9 @@ msgstr ""
 msgid "News"
 msgstr "Новости"
 
-#: index.php:26 index.php:44
-msgid "Next &raquo;"
-msgstr "Следующий &raquo;"
+#: functions/bootstrap/bootstrap_post-nav.php:17
+msgid "Next"
+msgstr "Следующий"
 
 #: functions/cpt/cpt-office_address.php:12
 msgid "Office address"
@@ -752,10 +770,6 @@ msgstr "Адрес Офиса"
 msgid "Office addresses"
 msgstr "Адреса Офисов"
 
-#: templates/header/header-sandbox-09_cw.php:109
-msgid "Offices"
-msgstr "Офисы компании"
-
 #: 404.php:11
 msgid "Oops! Page Not Found."
 msgstr "Ой! Страница не найдена."
@@ -764,17 +778,15 @@ msgstr "Ой! Страница не найдена."
 msgid "Options"
 msgstr "Опции Темы"
 
-#: templates/header/header-sandbox-05.php:112
-#: templates/header/header-sandbox-08.php:73
-#: templates/header/header-sandbox-08.php:118
-#: templates/header/header-sandbox-09.php:73
-#: templates/header/header-sandbox-09.php:118
-#: templates/header/header-sandbox-woo-01.php:132
-#: templates/header/header-sandbox-woo-01.php:177
+#: templates/header/header-sandbox-05.php:116
+#: templates/header/header-sandbox-08.php:77
+#: templates/header/header-sandbox-08.php:122
+#: templates/header/header-sandbox-09.php:77
+#: templates/header/header-sandbox-09.php:122
 msgid "or"
 msgstr "или"
 
-#: templates/header/header-sandbox-woo-01.php:61
+#: templates/header/header-sandbox-woo-01.php:65
 msgid "Orders"
 msgstr "Заказы"
 
@@ -805,13 +817,11 @@ msgstr "Сайдбар Страницы"
 msgid "Pages"
 msgstr "Страницы"
 
-#: templates/header/header-sandbox-05.php:101
-#: templates/header/header-sandbox-08.php:66
-#: templates/header/header-sandbox-08.php:107
-#: templates/header/header-sandbox-09.php:66
-#: templates/header/header-sandbox-09.php:107
-#: templates/header/header-sandbox-woo-01.php:125
-#: templates/header/header-sandbox-woo-01.php:166
+#: templates/header/header-sandbox-05.php:105
+#: templates/header/header-sandbox-08.php:70
+#: templates/header/header-sandbox-08.php:111
+#: templates/header/header-sandbox-09.php:70
+#: templates/header/header-sandbox-09.php:111
 msgid "Password"
 msgstr "Пароль"
 
@@ -840,6 +850,10 @@ msgstr "Введите ваше имя, пожалуйста."
 msgid "Popular Posts"
 msgstr "Популярные статьи"
 
+#: functions/bootstrap/bootstrap_post-nav.php:13
+msgid "Prev"
+msgstr "Предыдущий"
+
 #: functions/cpt/cpt-price_package.php:65
 #: functions/cpt/cpt-price_package.php:66
 msgid "Price Options"
@@ -858,6 +872,38 @@ msgstr "Ценовые Пакеты"
 #: templates/footer/footer-columns.php:115
 msgid "Privacy"
 msgstr "Конфиденциальность"
+
+#: functions/customize.php:389
+msgid "Project Archive Description"
+msgstr "Описание главной страницы Проектов"
+
+#: functions/customize.php:405
+msgid "Project Archive Title"
+msgstr "Заголовок главной страницы Проектов"
+
+#: functions/customize.php:346
+msgid "project settings"
+msgstr "Настройки проектов"
+
+#: functions/customize.php:345
+msgid "Projects"
+msgstr "Проекты"
+
+#. Name of the template
+msgid "Projects 1"
+msgstr ""
+
+#. Name of the template
+msgid "Projects 2"
+msgstr ""
+
+#. Name of the template
+msgid "Projects 3"
+msgstr ""
+
+#: functions/customize.php:366
+msgid "Projects archive template"
+msgstr "Шаблон основной страницы Проектов"
 
 #: woocommerce/cart/cart.php:38
 msgid "Quantity"
@@ -881,14 +927,13 @@ msgstr "Читать еще"
 msgid "Recent Posts"
 msgstr "Свежие статьи"
 
-#: templates/header/header-sandbox-05.php:88
-#: templates/header/header-sandbox-08.php:94
-#: templates/header/header-sandbox-09.php:94
-#: templates/header/header-sandbox-woo-01.php:153
+#: templates/header/header-sandbox-05.php:92
+#: templates/header/header-sandbox-08.php:98
+#: templates/header/header-sandbox-09.php:98
 msgid "Registration takes less than a minute."
 msgstr "Регистрация занимает менее минуты."
 
-#: functions/custom.php:223
+#: functions/custom.php:236
 msgid "Results for: "
 msgstr "Результаты для:"
 
@@ -905,6 +950,8 @@ msgid "Rounded-pill"
 msgstr "Скругление 50%"
 
 #: woocommerce/cart/cart-totals.php:46 woocommerce/cart/cart-totals.php:47
+#: woocommerce/checkout/review-order.php:87
+#: woocommerce/checkout/review-order.php:88
 msgid "Sale"
 msgstr "Скидка"
 
@@ -913,15 +960,15 @@ msgstr "Скидка"
 msgid "Sale!"
 msgstr "Скидка!"
 
-#: templates/header/header-sandbox-09.php:140
+#: templates/header/header-sandbox-09.php:144
 #: templates/header/header-sandbox-12.php:77
 #: templates/header/header-sandbox-15.php:56
 #: templates/header/header-sandbox-20.php:63
 #: templates/header/header-sandbox-22.php:56
 #: templates/header/header-sandbox-23.php:56
 #: templates/header/header-sandbox-24.php:70
-#: templates/header/header-sandbox-27.php:56
-#: templates/header/header-sandbox-woo-01.php:213
+#: templates/header/header-sandbox-27.php:60
+#: templates/header/header-sandbox-woo-01.php:125
 msgid ""
 "Sandbox is a multipurpose HTML5 template with various layouts which will be "
 "a great solution for your business."
@@ -943,7 +990,12 @@ msgstr "Найти Ценовой Пакет"
 
 #: functions/customize.php:220
 msgid "Secondary Header"
-msgstr ""
+msgstr "Вторичный Хедер"
+
+#: templates/archive/archive-projects-1.php:39
+#: templates/archive/archive-projects-2.php:69
+msgid "See Project"
+msgstr "Показать Проект"
 
 #: functions/cpt/cpt-services.php:12
 msgid "Service"
@@ -962,51 +1014,62 @@ msgstr "Категория Услуги"
 msgid "Service Options"
 msgstr "Настройки Услуг"
 
-#: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:16
+#: functions/customize.php:413 functions/cpt/cpt-services.php:11
+#: functions/cpt/cpt-services.php:16
 #: templates/footer/footer-sandbox-25_cw.php:28
 #: templates/sections/home-services.php:5
 msgid "Services"
 msgstr "Услуги"
 
+#: functions/customize.php:433
+msgid "Services archive template"
+msgstr "Шаблон основной страницы Услуг"
+
+#: functions/customize.php:414
+msgid "Services settings"
+msgstr "Настройки услуг"
+
 #: functions/sidebars.php:37 functions/sidebars.php:39
 msgid "Services Sidebar"
 msgstr "Сайдбар Услуг"
 
-#: templates/header/header-sandbox-08.php:38
-#: templates/header/header-sandbox-08.php:68
-#: templates/header/header-sandbox-09.php:38
-#: templates/header/header-sandbox-09.php:68
-#: templates/header/header-sandbox-woo-01.php:96
-#: templates/header/header-sandbox-woo-01.php:127
+#: functions/customize.php:307
+msgid "Settings CPT"
+msgstr "Настройки CPT"
+
+#: functions/customize.php:308
+msgid "Settings Custom Post Type"
+msgstr "Настройки архивных страниц"
+
+#: templates/header/header-sandbox-08.php:42
+#: templates/header/header-sandbox-08.php:72
+#: templates/header/header-sandbox-09.php:42
+#: templates/header/header-sandbox-09.php:72
 msgid "Sign In"
 msgstr "Войти"
 
-#: templates/header/header-sandbox-05.php:111
-#: templates/header/header-sandbox-08.php:117
-#: templates/header/header-sandbox-09.php:117
-#: templates/header/header-sandbox-woo-01.php:176
+#: templates/header/header-sandbox-05.php:115
+#: templates/header/header-sandbox-08.php:121
+#: templates/header/header-sandbox-09.php:121
 msgid "Sign in"
 msgstr "Войти"
 
-#: templates/header/header-sandbox-05.php:40
-#: templates/header/header-sandbox-05.php:108
-#: templates/header/header-sandbox-08.php:114
-#: templates/header/header-sandbox-09.php:114
-#: templates/header/header-sandbox-woo-01.php:173
+#: templates/header/header-sandbox-05.php:44
+#: templates/header/header-sandbox-05.php:112
+#: templates/header/header-sandbox-08.php:118
+#: templates/header/header-sandbox-09.php:118
 msgid "Sign Up"
 msgstr "Регистрация"
 
-#: templates/header/header-sandbox-05.php:66
-#: templates/header/header-sandbox-08.php:72
-#: templates/header/header-sandbox-09.php:72
-#: templates/header/header-sandbox-woo-01.php:131
+#: templates/header/header-sandbox-05.php:70
+#: templates/header/header-sandbox-08.php:76
+#: templates/header/header-sandbox-09.php:76
 msgid "Sign up"
 msgstr "Регистрация"
 
-#: templates/header/header-sandbox-05.php:87
-#: templates/header/header-sandbox-08.php:93
-#: templates/header/header-sandbox-09.php:93
-#: templates/header/header-sandbox-woo-01.php:152
+#: templates/header/header-sandbox-05.php:91
+#: templates/header/header-sandbox-08.php:97
+#: templates/header/header-sandbox-09.php:97
 msgid "Sign up to"
 msgstr "Войти в "
 
@@ -1069,18 +1132,26 @@ msgstr "Всего"
 msgid "Tags"
 msgstr "Метки"
 
-#: functions/integrations/acf.php:2133
+#: functions/integrations/acf.php:156
 msgid "Test"
 msgstr "Тест"
 
-#: functions/custom.php:330 functions/cpt/cpt-testimonials.php:11
+#: functions/custom.php:344 functions/cpt/cpt-testimonials.php:11
 msgid "Testimonial"
 msgstr "Отзыв"
 
-#: functions/cpt/cpt-testimonials.php:10 functions/cpt/cpt-testimonials.php:12
-#: functions/cpt/cpt-testimonials.php:17
+#: functions/customize.php:446 functions/cpt/cpt-testimonials.php:10
+#: functions/cpt/cpt-testimonials.php:12 functions/cpt/cpt-testimonials.php:17
 msgid "Testimonials"
 msgstr "Отзывы"
+
+#: functions/customize.php:466
+msgid "Testimonials archive template"
+msgstr "Шаблон основной страницы Отзывов"
+
+#: functions/customize.php:447
+msgid "Testimonials settings"
+msgstr "Настройки отзывов"
 
 #: 404.php:12
 msgid ""
@@ -1099,6 +1170,11 @@ msgstr ""
 "Этот шаблон не может работать без плагина ACF PRO. <a href=\"%s\">Пожалуйста,"
 " войдите в систему под аккаунтом администратора</a> и активируйте его!"
 
+#: single-projects-1.php:95 single-projects-2.php:57 single-projects-3.php:143
+#: single-projects.php:59 single-projects.php:130
+msgid "Title"
+msgstr ""
+
 #: functions/cpt/taxonomy-office_adressess.php:11
 msgid "Town"
 msgstr "Город"
@@ -1108,7 +1184,7 @@ msgstr "Город"
 msgid "Towns"
 msgstr "Города"
 
-#: functions/integrations/acf.php:2129
+#: functions/integrations/acf.php:152
 msgid "Translate"
 msgstr "Перевод"
 
@@ -1130,15 +1206,15 @@ msgstr "Тип"
 
 #: functions/customize.php:223
 msgid "Type 1"
-msgstr ""
+msgstr "Тип 1"
 
 #: functions/customize.php:224
 msgid "Type 2"
-msgstr ""
+msgstr "Тип 2"
 
 #: functions/customize.php:225
 msgid "Type 3"
-msgstr ""
+msgstr "Тип 3"
 
 #: functions/cpt/taxonomy-services.php:51
 #: functions/cpt/taxonomy-services.php:57
@@ -1173,16 +1249,15 @@ msgid ""
 "We are trusted by over 5000+ clients. Join them now and grow your business."
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:58
-#: templates/header/header-sandbox-08.php:56
-#: templates/header/header-sandbox-09.php:56
-#: templates/header/header-sandbox-woo-01.php:115
+#: templates/header/header-sandbox-05.php:62
+#: templates/header/header-sandbox-08.php:60
+#: templates/header/header-sandbox-09.php:60
 msgid "Welcome Back"
 msgstr "Добро пожаловать"
 
 #: functions/sidebars.php:49
 msgid "Woocommerce sidebar"
-msgstr ""
+msgstr "Woocommerce сайдбар"
 
 #: comments.php:147
 msgid "Would you like to share your thoughts?"
@@ -1203,7 +1278,8 @@ msgstr "Год"
 msgid "You Might Also Like"
 msgstr "Вам также может понравится"
 
-#: functions/woocommerce.php:999 templates/header/header-sandbox-woo-01.php:197
+#: functions/woocommerce.php:1018
+#: templates/header/header-sandbox-woo-01.php:110
 msgid "Your cart"
 msgstr "Ваша корзина"
 
@@ -1216,3 +1292,8 @@ msgstr "Ваш комментарий ожидает модерации"
 #: templates/flexible-content/pricing/pricing_3/pricing_3.php:78
 msgid "yr"
 msgstr "год"
+
+#: single-projects-1.php:123 single-projects-2.php:85 single-projects-3.php:68
+#: single-projects.php:87
+msgid "Перейти на сайт"
+msgstr ""
