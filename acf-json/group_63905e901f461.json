@@ -1,0 +1,214 @@
+{
+    "key": "group_63905e901f461",
+    "title": "Page Settings",
+    "fields": [
+        {
+            "key": "field_63905e9ec68fd",
+            "label": "Header",
+            "name": "header",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "default",
+                "sandbox-02": "sandbox-02",
+                "sandbox-03": "sandbox-03",
+                "sandbox-04": "sandbox-04",
+                "sandbox-05": "sandbox-05",
+                "sandbox-06": "sandbox-06",
+                "sandbox-07": "sandbox-07",
+                "sandbox-08": "sandbox-08",
+                "sandbox-09": "sandbox-09",
+                "sandbox-10": "sandbox-10",
+                "sandbox-11": "sandbox-11",
+                "sandbox-12": "sandbox-12",
+                "sandbox-13": "sandbox-13",
+                "sandbox-14": "sandbox-14",
+                "sandbox-15": "sandbox-15",
+                "sandbox-16": "sandbox-16",
+                "sandbox-17": "sandbox-17",
+                "sandbox-18": "sandbox-18",
+                "sandbox-19": "sandbox-19",
+                "sandbox-20": "sandbox-20",
+                "sandbox-21": "sandbox-21",
+                "sandbox-22": "sandbox-22",
+                "sandbox-23": "sandbox-23",
+                "sandbox-24": "sandbox-24",
+                "sandbox-25": "sandbox-25",
+                "sandbox-26": "sandbox-26",
+                "sandbox-27": "sandbox-27",
+                "sandbox-09_cw": "sandbox-09_cw",
+                "sandbox-woo-01": "sandbox-woo-01"
+            },
+            "default_value": "default",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_639072e9c6909",
+            "label": "Footer",
+            "name": "footer",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "default",
+                "sandbox-1": "sandbox-1",
+                "sandbox-2-6": "sandbox-2-6",
+                "sandbox-3": "sandbox-3",
+                "sandbox-4": "sandbox-4",
+                "sandbox-5": "sandbox-5",
+                "sandbox-7": "sandbox-7",
+                "sandbox-8": "sandbox-8",
+                "sandbox-9": "sandbox-9",
+                "sandbox-10": "sandbox-10",
+                "sandbox-11": "sandbox-11",
+                "sandbox-12": "sandbox-12",
+                "sandbox-13": "sandbox-13",
+                "sandbox-14": "sandbox-14",
+                "sandbox-15": "sandbox-15",
+                "sandbox-16": "sandbox-16",
+                "sandbox-17": "sandbox-17",
+                "sandbox-18": "sandbox-18",
+                "sandbox-19": "sandbox-19",
+                "sandbox-20": "sandbox-20",
+                "sandbox-21": "sandbox-21",
+                "sandbox-22": "sandbox-22",
+                "sandbox-25_cw": "sandbox-25_cw"
+            },
+            "default_value": "default",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_639077bd478ad",
+            "label": "PageHeader",
+            "name": "pageheader",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "default",
+                "disable": "disable",
+                "type_1": "type_1",
+                "type_2": "type_2",
+                "type_3": "type_3"
+            },
+            "default_value": "default",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "services"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "faq"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "office_addresses"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonials"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "projects"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "shop_order"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1670412325
+}
