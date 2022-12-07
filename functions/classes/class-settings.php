@@ -1,12 +1,9 @@
 <?php
-
-// namespace CW\Codeweber;
-
 //* --- Settings Class ACF---
 
-class Settings()
+class Settings
 {
-   public $root_theme = '';
+   public $root_theme;
    public $title = "Grow Your Business with Our Solutions.";
    public $subtitle = "Hello! This is Sandbox.";
    public $paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
@@ -27,7 +24,6 @@ class Settings()
    {
       $this->root_theme = get_template_directory_uri();
       $this->features = new Icons;
-      
    }
 
    public function GetDataACF()
