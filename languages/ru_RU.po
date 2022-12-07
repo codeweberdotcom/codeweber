@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2022-12-06 20:57+0000\n"
+"PO-Revision-Date: 2022-12-07 12:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -131,15 +131,15 @@ msgstr "Статьи по месяцам"
 msgid "Back to top"
 msgstr "Вернуться наверх"
 
-#: functions/customize.php:314
+#: functions/customize.php:302
 msgid "Blog"
 msgstr "Блог"
 
-#: functions/customize.php:333
+#: functions/customize.php:321
 msgid "Blog archive template"
 msgstr "Шаблон главной страницы Блога"
 
-#: functions/customize.php:315
+#: functions/customize.php:303
 msgid "blog settings"
 msgstr "Настройки блога"
 
@@ -208,8 +208,8 @@ msgstr "Оформить заказ"
 msgid "Click here to enter your code"
 msgstr "Нажмите , чтобы ввести код купона"
 
-#: single-projects-1.php:117 single-projects-2.php:79 single-projects-3.php:62
-#: single-projects.php:81
+#: single-projects-1.php:133 single-projects-2.php:95 single-projects-3.php:78
+#: single-projects.php:97
 msgid "CMS"
 msgstr "Платформа"
 
@@ -299,8 +299,8 @@ msgstr "Информация о покупателе"
 msgid "Dark Logo"
 msgstr "Темный Логотип"
 
-#: single-projects-1.php:111 single-projects-2.php:73 single-projects-3.php:56
-#: single-projects.php:75
+#: single-projects-1.php:127 single-projects-2.php:89 single-projects-3.php:72
+#: single-projects.php:91
 msgid "Date"
 msgstr "Дата"
 
@@ -506,8 +506,8 @@ msgstr "Начать сейчас"
 msgid "Go to Homepage"
 msgstr "Перейти на Главную"
 
-#: single-projects-1.php:123 single-projects-2.php:85 single-projects-3.php:68
-#: single-projects.php:87
+#: single-projects-1.php:139 single-projects-2.php:101 single-projects-3.php:84
+#: single-projects.php:103
 msgid "Go to the website"
 msgstr "Перейти на сайт"
 
@@ -878,19 +878,28 @@ msgstr "Ценовые Пакеты"
 msgid "Privacy"
 msgstr "Конфиденциальность"
 
-#: functions/customize.php:389
+#: functions/cpt/cpt-projects.php:11
+msgid "Project"
+msgstr "Проект"
+
+#: functions/customize.php:378
 msgid "Project Archive Description"
 msgstr "Описание главной страницы Проектов"
 
-#: functions/customize.php:405
+#: functions/customize.php:394
 msgid "Project Archive Title"
 msgstr "Заголовок главной страницы Проектов"
 
-#: functions/customize.php:346
+#: functions/cpt/taxonomy-projects.php:11
+msgid "Project Category"
+msgstr "Категория Проекта"
+
+#: functions/customize.php:334
 msgid "project settings"
 msgstr "Настройки проектов"
 
-#: functions/customize.php:345
+#: functions/customize.php:333 functions/cpt/cpt-projects.php:10
+#: functions/cpt/cpt-projects.php:15
 msgid "Projects"
 msgstr "Проекты"
 
@@ -906,9 +915,14 @@ msgstr "Проекты 2"
 msgid "Projects 3"
 msgstr "Проекты 3"
 
-#: functions/customize.php:366
+#: functions/customize.php:354
 msgid "Projects archive template"
 msgstr "Шаблон основной страницы Проектов"
+
+#: functions/cpt/taxonomy-projects.php:10
+#: functions/cpt/taxonomy-projects.php:16
+msgid "Projects Categories"
+msgstr "Категории Проекта"
 
 #: woocommerce/cart/cart.php:38
 msgid "Quantity"
@@ -1019,18 +1033,18 @@ msgstr "Категория Услуги"
 msgid "Service Options"
 msgstr "Настройки Услуг"
 
-#: functions/customize.php:413 functions/cpt/cpt-services.php:11
+#: functions/customize.php:402 functions/cpt/cpt-services.php:11
 #: functions/cpt/cpt-services.php:16
 #: templates/footer/footer-sandbox-25_cw.php:28
 #: templates/sections/home-services.php:5
 msgid "Services"
 msgstr "Услуги"
 
-#: functions/customize.php:433
+#: functions/customize.php:422
 msgid "Services archive template"
 msgstr "Шаблон основной страницы Услуг"
 
-#: functions/customize.php:414
+#: functions/customize.php:403
 msgid "Services settings"
 msgstr "Настройки услуг"
 
@@ -1038,11 +1052,11 @@ msgstr "Настройки услуг"
 msgid "Services Sidebar"
 msgstr "Сайдбар Услуг"
 
-#: functions/customize.php:307
+#: functions/customize.php:295
 msgid "Settings CPT"
 msgstr "Настройки CPT"
 
-#: functions/customize.php:308
+#: functions/customize.php:296
 msgid "Settings Custom Post Type"
 msgstr "Настройки архивных страниц"
 
@@ -1145,16 +1159,16 @@ msgstr "Тест"
 msgid "Testimonial"
 msgstr "Отзыв"
 
-#: functions/customize.php:446 functions/cpt/cpt-testimonials.php:10
+#: functions/customize.php:435 functions/cpt/cpt-testimonials.php:10
 #: functions/cpt/cpt-testimonials.php:12 functions/cpt/cpt-testimonials.php:17
 msgid "Testimonials"
 msgstr "Отзывы"
 
-#: functions/customize.php:466
+#: functions/customize.php:455
 msgid "Testimonials archive template"
 msgstr "Шаблон основной страницы Отзывов"
 
-#: functions/customize.php:447
+#: functions/customize.php:436
 msgid "Testimonials settings"
 msgstr "Настройки отзывов"
 
@@ -1175,8 +1189,8 @@ msgstr ""
 "Этот шаблон не может работать без плагина ACF PRO. <a href=\"%s\">Пожалуйста,"
 " войдите в систему под аккаунтом администратора</a> и активируйте его!"
 
-#: single-projects-1.php:95 single-projects-2.php:57 single-projects-3.php:143
-#: single-projects.php:59 single-projects.php:130
+#: single-projects-1.php:111 single-projects-2.php:73 single-projects-3.php:159
+#: single-projects.php:75 single-projects.php:146
 msgid "Title"
 msgstr "Заголовок"
 
