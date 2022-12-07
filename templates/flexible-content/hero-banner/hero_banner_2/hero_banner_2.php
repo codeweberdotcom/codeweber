@@ -9,7 +9,7 @@ $settings->typewriter = 'customer satisfaction,business needs,creative ideas';
 $settings->backgroundcolor = 'dark';
 //$settings->backgroundcolor_light = 'soft-primary';
 $settings->textcolor = 'white';
-$settings->GetDataACF(); 
+$settings->GetDataACF();
 
 /* Add buttons */
 $button = new Buttons();
@@ -39,6 +39,12 @@ $swiper->data_autoplay = 'data-autoplay="true"';
 $swiper->data_autoplaytime = 'data-autoplaytime="3000"';
 $swiper->default_media = '<figure class="rounded"><img src="' . get_template_directory_uri() . '/dist/img/photos/about7.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about7@2x.jpg 2x" alt="" /></figure>';
 ?>
+
+
+
+
+
+
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
   <div class="container pt-8 pt-md-14">

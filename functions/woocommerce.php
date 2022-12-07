@@ -1015,7 +1015,7 @@ add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
    <div class="offcanvas_cart_wrapper">
       <?php do_action('codeweber_offcanvas_cart_start'); ?>
       <div class="offcanvas-header">
-         <h3 class="mb-0"><?php echo esc_html__('Your cart', 'codeweber'); ?> </h3>
+         <div class="h3 mb-0"><?php echo esc_html__('Your cart', 'codeweber'); ?> </div>
          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <?php woocommerce_mini_cart(); ?>

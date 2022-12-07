@@ -45,14 +45,14 @@
                  <div class="col-md-4">
                     <div class="widget">
                        <h4 class="widget-title"><?php esc_html_e('E-mail', 'codeweber'); ?></h4>
-                       <p><a href="mailto:<?php echo brk_email(); ?>" class="link-body"><?php echo brk_email(); ?></a></p>
+                       <p><a href="mailto:<?php echo brk_email(); ?>" class="link-body alert-link hover"><?php echo brk_email(); ?></a></p>
                     </div>
                     <!-- /.widget -->
                  </div>
                  <!--/column -->
               </div>
               <!--/.row -->
-              <p><a class="link-body" href="<?php echo esc_attr(wp_get_theme()->get('ThemeURI')); ?>" target="_blank">
+              <p><a class="link-body alert-link hover" href="<?php echo esc_attr(wp_get_theme()->get('ThemeURI')); ?>" target="_blank">
                     © <?php echo date("Y"); ?> <?php esc_html_e('Made with', 'codeweber'); ?> Codeweber</a>
                  <br class="d-none d-lg-block" /><?php esc_html_e('All rights reserved.', 'codeweber'); ?>
               </p>

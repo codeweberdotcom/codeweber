@@ -46,6 +46,9 @@ function ButtonStyleCustomizer()
     $button_style = $button_form . ' ' . $button_size;
     return $button_style;
 }
+
+
+
 /**
  * What Hook
  * https://ittricks.ru/programmirovanie/cms/wordpress/1199/posmotret-kakie-funkcii-dobavleny-k
@@ -60,6 +63,14 @@ function print_filters_for($hook = '')
     print_r($wp_filter[$hook]);
     print '</pre>';
 }
+
+/**
+ *  Bootstrap Integration
+ */
+require 'bootstrap/bootstrap_pagination.php';
+require 'bootstrap/bootstrap_post-nav.php';
+require 'bootstrap/bootstrap_share-page.php';
+
 
 /**
  * Get Youtube video ID from URL
@@ -215,7 +226,9 @@ function wp_login_form_brk($args = array())
 function codeweber_page_title()
 {
     if (!is_front_page() || !is_home()) :
-        if (is_tag() || is_category() || is_archive() || is_author()) :
+        if (is_post_type_archive('projects') && get_theme_mod('project_title')) :
+            echo get_theme_mod('project_title');
+        elseif (is_tag() || is_category() || is_archive() || is_author()) :
             the_archive_title();
         elseif (is_page()) :
             the_title();
@@ -232,6 +245,7 @@ function codeweber_page_title()
     endif;
 }
 
+
 /** Blog loop excerpt more link and 20 symbols */
 add_filter('excerpt_more', 'new_excerpt_more');
 function new_excerpt_more($more)
@@ -239,7 +253,6 @@ function new_excerpt_more($more)
     global $post;
     return '<a href="' . get_permalink($post) . '"> ...</a>';
 }
-
 add_filter('excerpt_length', function () {
     return 8;
 });
@@ -297,6 +310,7 @@ function sandbox_frame_open()
         return;
     endif;
 };
+
 
 // Sandbox Frame Content Close Function
 function sandbox_frame_close()

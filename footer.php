@@ -2,6 +2,14 @@
 	// get_template_part( 'templates/footer/footer', 'columns' );
 	do_action('codeweber_footer_start'); ?>
 
+	<?php if (get_field('footer') && get_field('footer') !== 'default') { ?>
+		<?php get_template_part('templates/footer/footer', get_field('footer')); ?>
+	<?php } else { ?>
+		<?php get_template_part('templates/footer/footer', get_theme_mod('codeweber_footer')); ?>
+	<?php } ?>
+
+
+
 	<!--  generate forms start -->
 	<?php global $forms; ?>
 	<?php $forms = array_unique($forms); ?>

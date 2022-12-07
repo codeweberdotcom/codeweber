@@ -75,9 +75,9 @@ function brk_breadcrumbs()
 			function ($args) {
 				$args = array(
 					'delimiter'   => '',
-					'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0">',
+					'wrap_before' => '<nav class="d-inline-block text-" aria-label="breadcrumb"><ol class="breadcrumb mb-0">',
 					'wrap_after'  => '</ol></nav>',
-					'before'      => '<li class="breadcrumb-item ">',
+					'before'      => '<li class="breadcrumb-item text-muted">',
 					'after'       => '</li>',
 				);
 				return $args;

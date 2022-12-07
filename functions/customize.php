@@ -282,60 +282,185 @@ function codeweber_register_theme_customizer($wp_customize)
 add_action('customize_register', 'codeweber_register_theme_customizer');
 
 
-// --- Function Change Header --- //
-
-function change_header()
-{
-   get_template_part('templates/header/header', get_theme_mod('codeweber_header'));
-}
-
-add_action('codeweber_header', 'change_header', 10);
-
-
-// --- Function Change Footer --- //
-
-function change_footer()
-{
-   get_template_part('templates/footer/footer', get_theme_mod('codeweber_footer'));
-}
-
-add_action('codeweber_footer_start', 'change_footer', 10);
 
 
 
-function forgoodmeasure_customize_register($wp_customize)
+
+
+function codeweber_cpt_customize_register($wp_customize)
 {
 
    // add a panel
-   $wp_customize->add_panel('shiny-panel', array(
-      'title'       => __('Shiny Panel'),
-      'description' => __('This is my shiny new panel.'),
+   $wp_customize->add_panel('cpt-panel', array(
+      'title'       => __('Settings CPT', 'codeweber'),
+      'description' => __('Settings Custom Post Type', 'codeweber'),
    ));
 
-   // add a section to our panel
-   $wp_customize->add_section('shiny-section', array(
-      'title' => 'Shiny Section',
-      'description' => 'This is a section of my panel',
-      'panel' => 'shiny-panel',
+
+   // Add blog section to our panel
+   $wp_customize->add_section('blog-section', array(
+      'title' => __('Blog', 'codeweber'),
+      'description' => __('blog settings', 'codeweber'),
+      'panel' => 'cpt-panel',
    ));
 
-   // add a setting because our panel won't show up without settings and controls
-   $wp_customize->add_setting('color_scheme', array(
-      'default'        => 'light',
-      'type'           => 'theme_mod',
+   // blog Control
+   $wp_customize->add_setting(
+      'blog_template',
+      array(
+         'choices'  => array(
+            'default'   => 'Template 1',
+         )
+      )
+   );
+
+   $wp_customize->add_control(
+      'blog_template',
+      array(
+         'section' => 'blog-section',
+         'label'    => __('Blog archive template', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'template_1'   => 'Template 1',
+            'template_2'   => 'Template 2',
+            'template_3'   => 'Template 3',
+         )
+      )
+   );
+
+   // Add project section to our panel
+   $wp_customize->add_section('project-section', array(
+      'title' => __('Projects', 'codeweber'),
+      'description' => __('project settings', 'codeweber'),
+      'panel' => 'cpt-panel',
    ));
 
-   // and we add a control
-   $wp_customize->add_control('color_scheme', array(
-      'label'   => 'Select A Color Scheme:',
-      'section' => 'shiny-section',
-      'type'    => 'select',
-      'choices'    => array(
-         'light' => 'Light',
-         'dark' => 'Dark',
-         'neon' => 'Neon',
-      ),
+   // Project Control
+   $wp_customize->add_setting(
+      'project_template',
+      array(
+         'type' => 'theme_mod',
+         'capability' => 'edit_theme_options',
+         'choices'  => array(
+            'default'   => 'Template 1',
+         )
+      )
+   );
+
+   $wp_customize->add_control(
+      'project_template',
+      array(
+         'section' => 'project-section',
+         'label'    => __('Projects archive template', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'template_1'   => 'Template 1',
+            'template_2'   => 'Template 2',
+            'template_3'   => 'Template 3',
+            'template_4'   => 'Template 4',
+            'template_5'   => 'Template 5',
+         )
+      )
+   );
+
+
+   $wp_customize->add_setting('project_description', array(
+      'default' => '',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options',
+      'transport' => 'refresh',
+
    ));
+
+   $wp_customize->add_control('project_description', array(
+      'type' => 'textarea',
+      'priority' => 20,
+      'label' => __('Project Archive Description', 'codeweber'),
+      'section' => 'project-section',
+   ));
+
+
+   $wp_customize->add_setting('project_title', array(
+      'default' => '',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options',
+      'transport' => 'refresh',
+
+   ));
+
+   $wp_customize->add_control('project_title', array(
+      'type' => 'textarea',
+      'priority' => 15,
+      'label' => __('Project Archive Title', 'codeweber'),
+      'section' => 'project-section',
+   ));
+
+
+
+   // Add service section to our panel
+   $wp_customize->add_section('services-section', array(
+      'title' => __('Services', 'codeweber'),
+      'description' => __('Services settings', 'codeweber'),
+      'panel' => 'cpt-panel',
+   ));
+
+
+   // Service Control
+   $wp_customize->add_setting(
+      'service_template',
+      array(
+         'choices'  => array(
+            'default'   => 'Template 1',
+         )
+      )
+   );
+
+   $wp_customize->add_control(
+      'service_template',
+      array(
+         'section' => 'services-section',
+         'label'    => __('Services archive template', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'template_1'   => 'Template 1',
+            'template_2'   => 'Template 2',
+            'template_3'   => 'Template 3',
+         )
+      )
+   );
+
+
+   // Add service section to our panel
+   $wp_customize->add_section('testimonial-section', array(
+      'title' => __('Testimonials', 'codeweber'),
+      'description' => __('Testimonials settings', 'codeweber'),
+      'panel' => 'cpt-panel',
+   ));
+
+
+   // Service Control
+   $wp_customize->add_setting(
+      'testimonial_template',
+      array(
+         'choices'  => array(
+            'default'   => 'Template 1',
+         )
+      )
+   );
+
+   $wp_customize->add_control(
+      'testimonial_template',
+      array(
+         'section' => 'testimonial-section',
+         'label'    => __('Testimonials archive template', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'template_1'   => 'Template 1',
+            'template_2'   => 'Template 2',
+            'template_3'   => 'Template 3',
+         )
+      )
+   );
 }
 
-add_action('customize_register', 'forgoodmeasure_customize_register');
+add_action('customize_register', 'codeweber_cpt_customize_register');

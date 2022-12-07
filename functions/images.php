@@ -40,6 +40,7 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('sandbox_youtube_mq', 480, 360, true);
 
 
+
 		add_image_size('sandbox_clients_logo_1', 272, 80, true);
 		add_image_size('sandbox_clients_logo_1-1', 272, 80, false);
 		add_image_size('sandbox_clients_logo_2', 140, 90, true);
@@ -49,11 +50,28 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('cart_checkout', 90, 100, true);
 
 
+		add_image_size('project_1', 1290, 735, true);
+		add_image_size('project_1_1', 630, 420, true);
 
-		// remove_image_size('large');
+
+		add_image_size('project_4_banner', 1920, 600, true);
+		add_image_size('project_4', 410, 555, true);
+		add_image_size('project_4_1', 850, 555, true);
+
+
+
+		add_image_size('archive_4', 410, 410, true);
+		add_image_size('archive_4_2', 410, 445, true);
+		add_image_size('archive_4_1', 410, 310, true);
+
+
+
+
+
+		remove_image_size('large');
 		// remove_image_size('thumbnail');
-		// remove_image_size('medium');
-		// remove_image_size('medium_large');
+		remove_image_size('medium');
+		remove_image_size('medium_large');
 		remove_image_size('1536x1536');
 		remove_image_size('2048x2048');
 	}

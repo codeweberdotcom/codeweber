@@ -187,3 +187,7 @@ span.header-cart-count.avatar.badge {
 .quantity {
   display: flex;
 }
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #aab0bc !important;
+}

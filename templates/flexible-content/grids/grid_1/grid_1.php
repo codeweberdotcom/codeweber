@@ -13,19 +13,19 @@ if (get_row_layout() == 'grid_1') : ?>
       else : ?>
          <div class="row g-6 mt-3 mb-10">
             <div class="col-md-6">
-               <figure class="hover-scale rounded cursor-dark"><a href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b8-full.jpg" data-glightbox="title: Heading; description: Purus Vulputate Sem Tellus Quam" data-gallery="post"> <img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b8.jpg" alt=""></a></figure>
+               <figure class="hover-scale rounded cursor-dark"><a href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b8-full.jpg" data-glightbox="title: Heading; description: Purus Vulputate Sem Tellus Quam" data-gallery="post"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b8.jpg" alt=""></a></figure>
             </div>
             <!--/column -->
             <div class="col-md-6">
-               <figure class="hover-scale rounded cursor-dark"><a href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b9-full.jpg" data-glightbox="" data-gallery="post"> <img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b9.jpg" alt=""></a></figure>
+               <figure class="hover-scale rounded cursor-dark"><a href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b9-full.jpg" data-glightbox="" data-gallery="post"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b9.jpg" alt=""></a></figure>
             </div>
             <!--/column -->
             <div class="col-md-6">
-               <figure class="hover-scale rounded cursor-dark"><a href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b10-full.jpg" data-glightbox="" data-gallery="post"> <img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b10.jpg" alt=""></a></figure>
+               <figure class="hover-scale rounded cursor-dark"><a href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b10-full.jpg" data-glightbox="" data-gallery="post"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b10.jpg" alt=""></a></figure>
             </div>
             <!--/column -->
             <div class="col-md-6">
-               <figure class="hover-scale rounded cursor-dark"><a href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b11-full.jpg" data-glightbox="" data-gallery="post"> <img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b11.jpg" alt=""></a></figure>
+               <figure class="hover-scale rounded cursor-dark"><a href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b11-full.jpg" data-glightbox="" data-gallery="post"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/b11.jpg" alt=""></a></figure>
             </div>
             <!--/column -->
          </div>

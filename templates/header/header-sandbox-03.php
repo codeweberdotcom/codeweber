@@ -1,5 +1,9 @@
+<?php if ($args['style_nav'] == 'transparent') {
+  $class_nav = 'position-absolute navbar-dark';
+}   ?>
+
 <header class="wrapper bg-dark">
-  <nav class="navbar navbar-expand-lg center-nav transparent navbar-dark">
+  <nav class="navbar navbar-expand-lg center-nav transparent navbar-dark <?php echo $class_nav; ?>">
     <div class="container flex-lg-row flex-nowrap align-items-center">
       <div class="navbar-brand w-100">
         <?php echo codeweber_logo_light_link(); ?>

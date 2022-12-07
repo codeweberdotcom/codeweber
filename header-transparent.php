@@ -17,7 +17,7 @@
 	<?php sandbox_frame_open(); ?>
 	<div id="content-wrapper" class="content-wrapper">
 		<?php do_action('codeweber_start_content_wrapper'); ?>
-		<?php $params = ['style_nav' => 'solid']; ?>
+		<?php $params = ['style_nav' => 'transparent']; ?>
 		<?php if (get_field('header') && get_field('header') !== 'default') { ?>
 			<?php get_template_part('templates/header/header', get_field('header'), $params); ?>
 		<?php } else { ?>

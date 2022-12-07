@@ -19,13 +19,8 @@
 							the_post();
 							get_template_part('templates/content/loop', 'services');
 						endwhile;
-						the_posts_pagination(
-							array(
-								'mid_size'  => 2,
-								'prev_text' => esc_html__('&laquo; Previous', 'codeweber'),
-								'next_text' => esc_html__('Next &raquo;', 'codeweber'),
-							)
-						); ?>
+						codeweber_pagination(); ?>
+						<!-- /post pagination -->
 					</div>
 				</div>
 			<?php get_sidebar();
@@ -37,13 +32,8 @@
 							the_post();
 							get_template_part('templates/content/loop', '');
 						endwhile;
-						the_posts_pagination(
-							array(
-								'mid_size'  => 2,
-								'prev_text' => esc_html__('&laquo; Previous', 'codeweber'),
-								'next_text' => esc_html__('Next &raquo;', 'codeweber'),
-							)
-						); ?>
+						codeweber_pagination(); ?>
+						<!-- /post pagination -->
 					</div>
 				</div>
 			<?php get_sidebar();
