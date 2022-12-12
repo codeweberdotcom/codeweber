@@ -3,12 +3,22 @@
 <?php
 while (have_posts()) :
    the_post();
-   if (!is_front_page() && get_field('pageheader') && get_field('pageheader') !== 'disable') :
+   if (is_shop() || is_product_tag() || is_product_category()) :
+      if (get_theme_mod('codeweber_page_header') == 'type_1') :
+         get_template_part('templates/sections/common', 'breadcrumb');
+      endif;
+   elseif (!is_front_page() && get_field('pageheader') && get_field('pageheader') !== 'disable') :
       if (get_theme_mod('codeweber_page_header') == 'type_1') :
          get_template_part('templates/sections/common', 'breadcrumb');
       endif;
    endif;
-   if (!is_front_page() && get_field('pageheader') && get_field('pageheader') !== 'disable') :
+   if (is_shop() || is_product_tag() || is_product_category()) :
+      if (get_theme_mod('codeweber_page_header') == 'type_2') :
+         get_template_part('templates/sections/common', 'pageheader');
+      elseif (get_theme_mod('codeweber_page_header') == 'type_3') :
+         get_template_part('templates/sections/common', 'pageheader_1');
+      endif;
+   elseif (!is_front_page() && get_field('pageheader') && get_field('pageheader') !== 'disable') :
       if (get_theme_mod('codeweber_page_header') == 'type_2') :
          get_template_part('templates/sections/common', 'pageheader');
       elseif (get_theme_mod('codeweber_page_header') == 'type_3') :

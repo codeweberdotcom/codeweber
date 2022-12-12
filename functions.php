@@ -24,6 +24,7 @@ require_once get_template_directory() . '/functions/integrations/cf7.php'; // --
 // require_once get_template_directory() . '/functions/searchfilter.php'; // --- Search results filter ---
 require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup ---
 require_once get_template_directory() . '/functions/custom.php'; // --- Custom user functions ---
+require_once get_template_directory() . '/functions/admin.php'; // --- Custom user functions ---
 
 
 // --- ACF Gutenberg Blocks --- //

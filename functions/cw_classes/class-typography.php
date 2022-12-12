@@ -6,7 +6,6 @@ class CW_Typography
 
 {
    public $root_theme;
-   public $cw_typography;
    public $tag;
    public $display;
    public $textdecoration;

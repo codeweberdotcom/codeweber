@@ -37,7 +37,24 @@ $swiper->data_autoplaytime = 'data-autoplaytime="5000"';
 $swiper->default_media = '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/illustrations/i2.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i2@2x.png 2x" alt="" /></figure>';
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+
+<?php
+/**
+ * CW
+ */
+$hero = new CW_Settings(
+  $cw_settings = array(
+    'title' => 'Grow Your Business with Our Solutions.',
+    'paragraph' => 'We help our clients to increase their website traffic, rankings and visibility in search results.',
+    'patternTitle' => '<h1 class="display-1 mb-5 mx-md-n5 mx-lg-0">%s</h1>',
+    'patternParagraph' => '<p class="lead fs-lg mb-7">%s</p>',
+  )
+);
+?>
+
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-gradient-primary">
+
   <div class="container pt-10 pt-md-14 pb-8 text-center">
     <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
       <div class="col-lg-7">
@@ -47,9 +64,10 @@ $swiper->default_media = '<figure><img class="w-auto" src="' . get_template_dire
       </div>
       <!-- /column -->
       <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start">
-        <h1 class="display-1 mb-5 mx-md-n5 mx-lg-0 text-<?php echo $settings->textcolor; ?>"><?php echo $settings->title; ?></h1>
-        <p class="lead fs-lg mb-7 text-<?php echo $settings->textcolor; ?>"><?php echo $settings->paragraph; ?></p>
-        <!--  buttons group -->
+        <?php echo $hero->title; ?>
+        <!--/title -->
+        <?php echo $hero->paragraph; ?>
+        <!--/pargraph -->
         <?php $button->showbuttons(); ?>
         <!--/buttons group -->
       </div>
@@ -58,5 +76,7 @@ $swiper->default_media = '<figure><img class="w-auto" src="' . get_template_dire
     <!-- /.row -->
   </div>
   <!-- /.container -->
+
+
 </section>
 <!-- /section -->

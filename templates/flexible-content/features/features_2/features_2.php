@@ -61,8 +61,56 @@ $features->default_features = '<div class="col-md-6 col-lg-3">
           <!--/column -->';
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
-   <div class="container py-14 py-md-16">
+<?php
+if (have_rows('background_settings')) :
+   while (have_rows('background_settings')) : the_row();
+
+      if (get_sub_field('fixed_photo') == 1) :
+         $background_wrapper = 'wrapper image-wrapper';
+      else :
+         $background_wrapper = 'wrapper';
+      endif;
+
+
+      if (get_sub_field('background_overlay') == 'Disable') :
+         $background_overlay = NULL;
+      elseif (get_sub_field('background_overlay') == '50') :
+         $background_overlay = 'bg-overlay';
+      elseif (get_sub_field('background_overlay') == '40') :
+         $background_overlay = 'bg-overlay bg-overlay-400';
+      elseif (get_sub_field('background_overlay') == '30') :
+         $background_overlay = 'bg-overlay bg-overlay-300';
+      endif;
+
+      if (get_sub_field('background_type') == 'photo') :
+         $background = get_sub_field('background');
+         if ($background) :
+            $background_data = 'data-image-src="' . esc_url($background['url']) . '"';
+            $background_back = 'bg-image';
+         endif;
+      elseif (get_sub_field('background_type') == 'color') :
+         if (have_rows('type_color')) :
+            while (have_rows('type_color')) : the_row();
+               $type_color = get_sub_field('select_type_color');
+               if ($type_color == 'Solid') :
+                  $background_back = 'bg-' . get_sub_field('theme_btn_solid_color');
+               elseif ($type_color == 'Soft') :
+                  $background_back = 'bg-soft-' . get_sub_field('theme_btn_solid_color');
+               elseif ($type_color == 'Pale') :
+                  $background_back = 'bg-pale-' . get_sub_field('theme_btn_solid_color');
+               elseif ($type_color == 'Gradient') :
+                  $background_back = get_sub_field('gradient_btn') . ' gradient';
+               endif;
+               $background_data = NULL;
+            endwhile;
+         endif;
+      endif;
+   endwhile;
+endif;
+?>
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> <?php echo $background_overlay; ?> <?php echo $background_wrapper; ?> <?php echo $background_back; ?>" <?php echo $background_data; ?>>
+   <div class=" container py-14 py-md-16">
       <div class="row">
          <div class="col-lg-8 col-xl-7 col-xxl-6">
             <h2 class="fs-15 text-uppercase text-muted mb-3"><?php echo $settings->subtitle; ?></h2>

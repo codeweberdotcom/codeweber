@@ -44,6 +44,8 @@ elseif (is_singular('post')) :
 			get_template_part('templates/sections/common', 'pageheader');
 		elseif (get_theme_mod('codeweber_page_header') == 'type_3') :
 			get_template_part('templates/sections/common', 'pageheader_1');
+		else :
+			get_template_part('templates/sections/common', 'pageheader_2');
 		endif;
 	endif;
 

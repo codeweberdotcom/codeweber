@@ -159,6 +159,27 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_63911b65bce83",
+                            "label": "Background Type",
+                            "name": "background_type",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_639118925bf88"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_630c5cc4fa3fb",
                             "label": "Dark or White?",
                             "name": "dark_or_white",
@@ -1057,5 +1078,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1663588411
+    "modified": 1670459281
 }

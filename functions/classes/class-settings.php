@@ -24,6 +24,23 @@ class Settings
    {
       $this->root_theme = get_template_directory_uri();
       $this->features = new Icons;
+      $this->backgroundcolor = $this->cw_get_background_color();
+   }
+
+   public function cw_get_background_color()
+   {
+      if (get_sub_field('dark_or_white_light_or_dark') == 0) :
+         $this->backgroundcolor = $this->backgroundcolor;
+         $this->textcolor = 'light';
+      elseif (get_sub_field('dark_or_white_light_or_dark') == 1) :
+         if ($this->backgroundcolor_light == 0) :
+            $this->backgroundcolor = $this->backgroundcolor_light;
+            $this->textcolor = 'dark';
+         else :
+            $this->backgroundcolor = $this->backgroundcolor;
+            $this->textcolor = 'light';
+         endif;
+      endif;
    }
 
    public function GetDataACF()
@@ -61,18 +78,7 @@ class Settings
          $this->paragraph = get_sub_field('paragraph');
       endif;
 
-      if (get_sub_field('dark_or_white_light_or_dark') == 0) :
-         $this->backgroundcolor = $this->backgroundcolor;
-         $this->textcolor = 'light';
-      elseif (get_sub_field('dark_or_white_light_or_dark') == 1) :
-         if ($this->backgroundcolor_light == 0) :
-            $this->backgroundcolor = $this->backgroundcolor_light;
-            $this->textcolor = 'dark';
-         else :
-            $this->backgroundcolor = $this->backgroundcolor;
-            $this->textcolor = 'light';
-         endif;
-      endif;
+
 
       /* --- Typewriter --- */
       if (have_rows('typewriter_effect_text')) :

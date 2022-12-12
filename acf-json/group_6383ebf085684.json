@@ -1,6 +1,6 @@
 {
     "key": "group_6383ebf085684",
-    "title": "CW Title",
+    "title": "CW Text",
     "fields": [
         {
             "key": "field_6383ec1d68ff4",
@@ -48,6 +48,27 @@
                     },
                     "clone": [
                         "field_6384be9fc05c8"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_63925399e39e8",
+                    "label": "Color",
+                    "name": "cw_color",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_6391c29e6e4b9"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -151,6 +172,27 @@
                     "prefix_name": 0
                 },
                 {
+                    "key": "field_6392537fe39e7",
+                    "label": "Color",
+                    "name": "cw_color",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_6391c29e6e4b9"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
                     "key": "field_6384afba2c505",
                     "label": "Typography",
                     "name": "cw_typography",
@@ -247,6 +289,27 @@
                     "prefix_name": 0
                 },
                 {
+                    "key": "field_63925686c6fd6",
+                    "label": "Color",
+                    "name": "cw_color",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_6391c29e6e4b9"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
                     "key": "field_6384b03e2c50a",
                     "label": "Typography",
                     "name": "cw_typography",
@@ -309,5 +372,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1669644122
+    "modified": 1670535109
 }

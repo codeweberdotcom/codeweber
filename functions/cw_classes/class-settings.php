@@ -12,6 +12,11 @@ class CW_Settings
    public $paragraph;
    public $typewriter;
    public $tag;
+   public $color;
+
+   public $patterntitle;
+   public $patternsubtitle;
+   public $patternparagraph;
 
    // public $video_url = '/dist/media/movie.mp4';
    // public $backgroundurl = '/dist/img/photos/bg4.jpg';
@@ -28,7 +33,6 @@ class CW_Settings
    {
       $this->root_theme = get_template_directory_uri();
       $this->cw_settings = $cw_settings;
-
       $this->title = $this->cw_get_title();
       $this->subtitle = $this->cw_get_subtitle();
       $this->paragraph = $this->cw_get_paragraph();
@@ -37,17 +41,41 @@ class CW_Settings
    public function cw_get_title()
    {
       if (isset($this->cw_settings['title']) && !$this->cw_settings['title'] == NULL) {
+
          if (have_rows('cw_title')) :
             while (have_rows('cw_title')) : the_row();
-               if (get_sub_field('cw_title')) {
-                  $title = $this->cw_the_title(get_sub_field('cw_title'), NULL, NULL, NULL, NULL, NULL, NULL,  NULL, false);
+               $color = new CW_Color;
+               if ($color->color == 'none') {
+                  $this->color = '';
                } else {
-                  $title = $this->cw_settings['title'];
+                  $this->color = 'text-' . $color->color;
+               }
+               if ($this->cw_settings['patternTitle'] && !get_sub_field('cw_tag') && !get_sub_field('cw_class')) {
+                  $pattern = $this->cw_settings['patternTitle'];
+                  if (get_sub_field('cw_title')) {
+                     $get_title = get_sub_field('cw_title');
+                  } else {
+                     $get_title = $this->cw_settings['title'];
+                  }
+                  $title = sprintf(
+                     $pattern,
+                     $get_title,
+                  );
+               } else {
+                  if (get_sub_field('cw_title')) {
+                     $title = $this->cw_the_title(get_sub_field('cw_title'), get_sub_field('cw_tag'), get_sub_field('cw_class'), get_sub_field('cw_class_display'), get_sub_field('class_lead'), get_sub_field('class_fs'), get_sub_field('text_align'),  get_sub_field('cw_id'), $this->color, false);
+                  } else {
+                     $title = $this->cw_the_title($this->cw_settings['title'], get_sub_field('cw_tag'), get_sub_field('cw_class'), get_sub_field('cw_class_display'), get_sub_field('class_lead'), get_sub_field('class_fs'), get_sub_field('text_align'),  get_sub_field('cw_id'), $this->color, false);
+                  }
                }
             endwhile;
          endif;
       } else {
-         $title = $this->cw_settings['title'];
+         if (isset($this->cw_settings['title'])) {
+            $title = $this->cw_settings['title'];
+         } else {
+            $title = NULL;
+         }
       }
       return $title;
    }
@@ -57,15 +85,38 @@ class CW_Settings
       if (isset($this->cw_settings['subtitle']) && !$this->cw_settings['subtitle'] == NULL) {
          if (have_rows('cw_subtitle')) :
             while (have_rows('cw_subtitle')) : the_row();
-               if (get_sub_field('cw_subtitle')) {
-                  $subtitle = $this->cw_the_title(get_sub_field('cw_subtitle'), NULL, NULL, NULL, NULL, NULL, NULL, NULL, false);
+               $color = new CW_Color;
+               if ($color->color == 'none') {
+                  $this->color = '';
                } else {
-                  $subtitle = $this->cw_settings['subtitle'];
+                  $this->color = 'text-' . $color->color;
+               }
+               if ($this->cw_settings['patternSubTitle'] && !get_sub_field('cw_tag') && !get_sub_field('cw_class')) {
+                  $pattern = $this->cw_settings['patternSubTitle'];
+                  if (get_sub_field('cw_subtitle')) {
+                     $get_subtitle = get_sub_field('cw_subtitle');
+                  } else {
+                     $get_subtitle = $this->cw_settings['subtitle'];
+                  }
+                  $subtitle = sprintf(
+                     $pattern,
+                     $get_subtitle,
+                  );
+               } else {
+                  if (get_sub_field('cw_subtitle')) {
+                     $subtitle = $this->cw_the_title(get_sub_field('cw_subtitle'), get_sub_field('cw_tag'), get_sub_field('cw_class'), get_sub_field('cw_class_display'), get_sub_field('class_lead'), get_sub_field('class_fs'), get_sub_field('text_align'),  get_sub_field('cw_id'), $this->color, false);
+                  } else {
+                     $subtitle = $this->cw_the_title($this->cw_settings['subtitle'], get_sub_field('cw_tag'), get_sub_field('cw_class'), get_sub_field('cw_class_display'), get_sub_field('class_lead'), get_sub_field('class_fs'), get_sub_field('text_align'),  get_sub_field('cw_id'), $this->color, false);
+                  }
                }
             endwhile;
          endif;
       } else {
-         $subtitle = $this->cw_settings['subtitle'];
+         if (isset($this->cw_settings['subtitle'])) {
+            $subtitle = $this->cw_settings['subtitle'];
+         } else {
+            $subtitle = NULL;
+         }
       }
       return $subtitle;
    }
@@ -77,91 +128,103 @@ class CW_Settings
 
          if (have_rows('cw_paragraph')) :
             while (have_rows('cw_paragraph')) : the_row();
-               if (get_sub_field('cw_paragraph')) {
-                  $paragraph = $this->cw_the_title(get_sub_field('cw_paragraph'), NULL, NULL, NULL, NULL, NULL, NULL, NULL, false);
+               $color = new CW_Color;
+               if ($color->color == 'none') {
+                  $this->color = '';
                } else {
-                  $paragraph = $this->cw_settings['paragraph'];
+                  $this->color = 'text-' . $color->color;
+               }
+               if ($this->cw_settings['patternParagraph'] && !get_sub_field('cw_tag') && !get_sub_field('cw_class')) {
+                  $pattern = $this->cw_settings['patternParagraph'];
+                  if (get_sub_field('cw_paragraph')) {
+                     $get_paragraph = get_sub_field('cw_paragraph');
+                  } else {
+                     $get_paragraph = $this->cw_settings['paragraph'];
+                  }
+                  $paragraph = sprintf(
+                     $pattern,
+                     $get_paragraph,
+                  );
+               } else {
+                  if (get_sub_field('cw_paragraph')) {
+                     $paragraph = $this->cw_the_title(get_sub_field('cw_paragraph'), get_sub_field('cw_tag'), get_sub_field('cw_class'), get_sub_field('cw_class_display'), get_sub_field('class_lead'), get_sub_field('class_fs'), get_sub_field('text_align'),  get_sub_field('cw_id'), $this->color, false);
+                  } else {
+                     $paragraph = $this->cw_the_title($this->cw_settings['paragraph'], get_sub_field('cw_tag'), get_sub_field('cw_class'), get_sub_field('cw_class_display'), get_sub_field('class_lead'), get_sub_field('class_fs'), get_sub_field('text_align'),  get_sub_field('cw_id'), $this->color, false);
+                  }
                }
             endwhile;
          else :
             $paragraph = $this->cw_settings['paragraph'];
-
          endif;
          return $paragraph;
       }
    }
 
-
-
-
-   
-   public function cw_the_title($title = NULL, $tag = NULL, $class = NULL, $display = NULL, $lead = NULL, $fs = NULL, $textalign = NULL, $cw_id = NULL, $echo = false)
-   {
+   public function cw_the_title(
+      $title = NULL,
+      $tag = NULL,
+      $class = NULL,
+      $display = NULL,
+      $lead = NULL,
+      $fs = NULL,
+      $textalign = NULL,
+      $cw_id = NULL,
+      $cw_color = NULL,
+      $echo = false
+   ) {
       if (
          strlen($title) == 0
       ) {
          return;
       }
 
-      if (!isset($tag) || !$tag == NULL) {
-         if (get_sub_field('cw_tag')) {
-            $tag = get_sub_field('cw_tag');
+      if ($tag) {
+
+         if ($class || $display   || $lead  || $fs || $textalign || $cw_color) {
+            $classes = 'class="';
+            $class_array = array();
+            if ($class) {
+               $class_array[] = $class;
+            }
+
+            if ($display) {
+               $class_array[] = $display;
+            }
+
+            if ($lead) {
+               $class_array[] = $lead;
+            }
+
+            if ($fs) {
+               $class_array[] = $fs;
+            }
+
+            if ($cw_color) {
+               $class_array[] = $cw_color;
+            }
+
+
+            if ($textalign) {
+               $class_array[] = $textalign;
+            }
+
+            $classes .= implode(' ', $class_array);
+         } else {
+            $classes = NULL;
          }
-      }
 
-      if (!isset($class) || !isset($display) || !isset($lead) || !isset($fs) || !isset($textalign)) {
-         $class = 'class="';
-         $class_array = array();
-      }
-
-      if (!isset($class) || !$class == NULL) {
-         if (get_sub_field('cw_class')) {
-            $class_array[] = get_sub_field('cw_class');
+         if ($cw_id) {
+            $cw_id = 'id="' . $cw_id . '"';
          }
-      }
 
-      if (!isset($display) || !$display == NULL) {
-         if (get_sub_field('cw_class_display')) {
-            $class_array[] = get_sub_field('cw_class_display');
+         if ($class || $display   || $lead  || $fs || $textalign || $cw_color) {
+            $classes .= '"';
          }
-      }
 
-      if (!isset($lead) || !$lead == NULL) {
-         if (get_sub_field('class_lead')) {
-            $class_array[] = get_sub_field('class_lead');
-         }
-      }
-
-      if (!isset($fs) || !$fs == NULL) {
-         if (get_sub_field('class_fs')) {
-            $class_array[] = get_sub_field('class_fs');
-         }
-      }
-
-      if (!isset($textalign) || !$textalign == NULL) {
-         if (get_sub_field('text_align')) {
-            $class_array[] = get_sub_field('text_align');
-         }
-      }
-
-      if (!isset($cw_id) || !$cw_id == NULL) {
-         if (get_sub_field('cw_id')) {
-            $cw_id = 'id="' . get_sub_field('cw_id') . '"';
-         }
-      }
-
-      $class .= implode(' ', $class_array);
-
-      if (!isset($class) || !isset($display) || !isset($lead) || !isset($fs)) {
-         $class .= '"';
-      }
-
-      if ($tag == NULL) {
-         $title =  $title;
+         $title = '<' . $tag . ' ' . $classes . ' ' . $cw_id . '>' . $title . '</' . $tag . '>';
       } else {
-         $title = '<' . $tag . ' ' . $class . ' ' . $cw_id . '>' . $title . '</' . $tag . '>';
+         $title =  $title;
       }
-
 
       if (
          $echo

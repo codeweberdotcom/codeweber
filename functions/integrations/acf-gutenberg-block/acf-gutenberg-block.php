@@ -7,9 +7,14 @@ function checkCategoryOrder($categories)
       'slug'  => 'codeweber',
       'title' => 'Codeweber Blocks'
    );
+   $temp_1 = array(
+      'slug'  => 'codeweber_elements',
+      'title' => 'Codeweber Elements'
+   );
    //new categories array and adding new custom category at first location
    $newCategories = array();
    $newCategories[0] = $temp;
+   $newCategories[1] = $temp_1;
    //appending original categories in the new array
    foreach ($categories as $category) {
       $newCategories[] = $category;
@@ -18,6 +23,7 @@ function checkCategoryOrder($categories)
    return $newCategories;
 }
 add_filter('block_categories_all', 'checkCategoryOrder', 99, 1);
+
 
 
 // --- ACF Flexible Block
@@ -304,7 +310,28 @@ function my_acf_blocks_init()
             'title'             => __('Section'),
             'description'       => __('Section.'),
             'render_template'   => 'templates/flexible-content/section.php',
-            'category'          => 'codeweber',
+            'category'          => 'codeweber_elements',
+            'mode'                    => 'auto',
+            'align'           => 'full',
+            'supports'        => array(
+               'align'        => array('full'),
+               'align'        => true,
+               'jsx' => true,
+            ),
+            'mode' => 'preview',
+
+         )
+
+      );
+
+      // Register a Icon.
+      acf_register_block_type(
+         array(
+            'name'              => 'cw_elements',
+            'title'             => __('CW Elements'),
+            'description'       => __('CW Elements.'),
+            'render_template'   => 'templates/flexible-content/cw_elements.php',
+            'category'          => 'codeweber_elements',
             'mode'                    => 'auto',
             'align'           => 'full',
             'supports'        => array(
