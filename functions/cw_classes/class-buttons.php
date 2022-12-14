@@ -2,7 +2,7 @@
 
 //* ---Buttons Class ACF---
 
-class CW_Buttons
+class CW_Button
 {
    public $text_button;
    public $contact_form_id;
@@ -11,6 +11,7 @@ class CW_Buttons
    public $type_button;
    public $color_button;
    public $class_button;
+   public $import_class;
    public $icon_button;
    public $id_button;
    public $button_link = '#';
@@ -29,18 +30,19 @@ class CW_Buttons
    // public $animate_swiper = 'false';
    // public $animate_swiper_class = NULL;
 
-   public function __construct()
+   public function __construct($import_class = NULL)
    {
       $this->text_button = $this->cw_text_button();
       $this->link_button = $this->cw_link_button();
       $this->icon_button = $this->cw_icon_button();
       $this->shape_button = $this->cw_shape_button();
       $this->class_button = $this->cw_class_button();
+      $this->import_class = $import_class;
       $this->id_button = $this->cw_id_button();
       $this->size_button = $this->cw_size_button();
       $this->color_button = $this->cw_color_button();
       $this->type_button = $this->cw_type_button();
-      $this->final_button = $this->cw_final_button();
+      $this->final_button = $this->cw_final_button($import_class);
    }
 
    //Icon 
@@ -213,6 +215,8 @@ class CW_Buttons
       return $color_button;
    }
 
+
+
    //Final Button
    public function cw_final_button()
    {
@@ -227,6 +231,7 @@ class CW_Buttons
          $button_classes_array[] = $this->size_button;
          $button_classes_array[] = $this->color_button;
          $button_classes_array[] = $this->class_button;
+         $button_classes_array[] = $this->import_class;
          $button_classes = implode(' ', $button_classes_array);
          $final_button = '<a href="' . $this->button_link . '" class="' . $button_classes . '"' .  $button_id . ' ' . $this->ghligthbox . ' ' . $this->button_bs_target . '>' . $icon_button . $this->text_button . '</a>';
       } elseif ($type_button == 'Icon') {
@@ -236,6 +241,7 @@ class CW_Buttons
          $button_classes_array[] = $this->size_button;
          $button_classes_array[] = $this->color_button;
          $button_classes_array[] = $this->class_button;
+         $button_classes_array[] = $this->import_class;
          $button_classes_array[] = 'btn-icon btn-icon-start';
          $icon_button = $this->icon_button;
          $button_classes = implode(' ', $button_classes_array);
@@ -245,6 +251,7 @@ class CW_Buttons
          $button_classes_array[] = 'btn';
          $button_classes_array[] = $this->color_button;
          $button_classes_array[] = $this->class_button;
+         $button_classes_array[] = $this->import_class;
          $button_classes_array[] = 'btn-expand rounded-pill';
          $icon_button = $this->icon_button;
          $button_classes = implode(' ', $button_classes_array);
@@ -254,6 +261,7 @@ class CW_Buttons
          $button_classes_array[] = 'btn';
          $button_classes_array[] = $this->color_button;
          $button_classes_array[] = $this->class_button;
+         $button_classes_array[] = $this->import_class;
          $button_classes_array[] = 'btn-circle btn-play ripple';
          $button_classes = implode(' ', $button_classes_array);
          $final_button = '<a href="' . $this->button_link . '" class="' . $button_classes . '"' .  $button_id . ' ' . $this->ghligthbox . ' ' . $this->button_bs_target . '><i class="icn-caret-right"></i></a>';
@@ -263,10 +271,67 @@ class CW_Buttons
          $button_classes_array[] = $this->size_button;
          $button_classes_array[] = $this->color_button;
          $button_classes_array[] = $this->class_button;
+         $button_classes_array[] = $this->import_class;
          $button_classes_array[] = 'btn-circle';
          $button_classes = implode(' ', $button_classes_array);
          $final_button = '<a href="' . $this->button_link . '" class="' . $button_classes . '"' .  $button_id . ' ' . $this->ghligthbox . ' ' . $this->button_bs_target . '><span><i class="uil uil-check"></i></span></a>';
       }
       return $final_button;
+   }
+}
+
+
+
+
+
+class CW_Buttons
+{
+   public $final_buttons;
+   public $buttons_pattern;
+   public $buttons_items;
+
+
+   public function __construct($buttons_pattern = NULL, $buttons_items = NULL)
+   {
+      $this->final_buttons = $this->cw_final_buttons($buttons_pattern, $buttons_items);
+   }
+   public function cw_final_buttons($buttons_pattern, $buttons_items)
+   {
+      $buttons_array = array();
+      if (is_array(get_sub_field('cw_buttons_repeater'))) {
+         $count = count(get_sub_field('cw_buttons_repeater'));
+      }
+
+
+      if (have_rows('cw_buttons_repeater')) :
+         while (have_rows('cw_buttons_repeater')) : the_row();
+            if ($count == 1) {
+               $button = new CW_Button();
+               $buttons_array[] = '<div>' . $button->final_button . '</div>';
+            } else {
+               $button = new CW_Button($import_class = 'me-2');
+               $buttons_array[] = '<span>' . $button->final_button . '</span>';
+            }
+         endwhile;
+         $buttons_list = implode('', $buttons_array);
+      else :
+         $buttons_list = $buttons_items;
+      endif;
+
+
+
+      if ($count >=  2) {
+         $buttons_final = sprintf($buttons_pattern, $buttons_list);
+      } else {
+         $buttons_final = $buttons_list;
+      }
+
+
+
+
+
+
+
+      return $buttons_final;
    }
 }

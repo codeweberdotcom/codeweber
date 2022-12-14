@@ -1,25 +1,4 @@
 <?php
-/* Add settings */
-$settings = new Settings();
-$settings->title = "Grow Your Business with Our Solutions.";
-$settings->paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
-$settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/i2.png';
-$settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4';
-$settings->typewriter = 'customer satisfaction,business needs,creative ideas';
-$settings->backgroundcolor = 'dark';
-//$settings->backgroundcolor_light = 'light';
-$settings->textcolor = 'white';
-$settings->GetDataACF();
-
-/* Add buttons */
-$button = new Buttons();
-$button->form_button = "rounded-pill";
-$button->button_size = NULL;
-$button->class_button_wrapper = "d-flex justify-content-center flex-wrap justify-content-lg-start";
-$button->data_cues = "slideInDown";
-$button->data_group = "page-title-buttons";
-$button->data_delay = "900";
-$button->default_button = '<span><a class="btn btn-primary rounded-pill me-2">Try It For Free</a></span>';
 
 /* Add swiper */
 $swiper = new SwiperSlider();
@@ -48,6 +27,8 @@ $hero = new CW_Settings(
     'paragraph' => 'We help our clients to increase their website traffic, rankings and visibility in search results.',
     'patternTitle' => '<h1 class="display-1 mb-5 mx-md-n5 mx-lg-0">%s</h1>',
     'patternParagraph' => '<p class="lead fs-lg mb-7">%s</p>',
+    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    'buttons' => '<span><a class="btn btn-primary rounded-pill me-2">Try It For Free</a></span>'
   )
 );
 ?>
@@ -68,7 +49,7 @@ $hero = new CW_Settings(
         <!--/title -->
         <?php echo $hero->paragraph; ?>
         <!--/pargraph -->
-        <?php $button->showbuttons(); ?>
+        <?php echo $hero->buttons; ?>
         <!--/buttons group -->
       </div>
       <!-- /column -->

@@ -14,6 +14,8 @@ class CW_Settings
    public $tag;
    public $color;
 
+   public $buttons;
+
    public $patterntitle;
    public $patternsubtitle;
    public $patternparagraph;
@@ -36,12 +38,28 @@ class CW_Settings
       $this->title = $this->cw_get_title();
       $this->subtitle = $this->cw_get_subtitle();
       $this->paragraph = $this->cw_get_paragraph();
+      $this->buttons = $this->cw_buttons();
    }
+
+   public function cw_buttons()
+   {
+      if (isset($this->cw_settings['buttons_pattern']) && !$this->cw_settings['buttons_pattern'] == NULL) {
+
+         $buttons_object = new CW_Buttons($this->cw_settings['buttons_pattern'], $this->cw_settings['buttons']);
+
+         if ($buttons_object->final_buttons !== false) {
+            $buttons = $buttons_object->final_buttons;
+         }
+      }
+      return $buttons;
+   }
+
+
+
 
    public function cw_get_title()
    {
       if (isset($this->cw_settings['title']) && !$this->cw_settings['title'] == NULL) {
-
          if (have_rows('cw_title')) :
             while (have_rows('cw_title')) : the_row();
                $color = new CW_Color;
