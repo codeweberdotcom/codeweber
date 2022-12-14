@@ -19,7 +19,7 @@
             "sub_fields": [
                 {
                     "key": "field_6398efdf5c76d",
-                    "label": "Image Background",
+                    "label": "Background",
                     "name": "",
                     "type": "tab",
                     "instructions": "",
@@ -34,13 +34,50 @@
                     "endpoint": 0
                 },
                 {
+                    "key": "field_6399b66d3fcfc",
+                    "label": "Background Type",
+                    "name": "cw_background_type",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Theme": "Theme",
+                        "Image": "Image",
+                        "Library": "Library",
+                        "Color": "Color",
+                        "Pattern": "Pattern",
+                        "Video": "Video"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
                     "key": "field_6398f1205c76e",
                     "label": "Image Background",
                     "name": "cw_image_background",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Image"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -64,7 +101,15 @@
                     "type": "select",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Image"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -90,7 +135,15 @@
                     "type": "select",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Image"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -102,6 +155,109 @@
                         "40%": "40%"
                     },
                     "default_value": "Default",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6399b92825d37",
+                    "label": "Video",
+                    "name": "cw_video",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6399b97725d38",
+                    "label": "Background Pattern",
+                    "name": "cw_background_pattern",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Pattern"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_6399b9a925d39",
+                    "label": "Library image",
+                    "name": "cw_library_image",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Library"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "bg2": "Abstract 2",
+                        "bg3": "Abstract 3",
+                        "bg4": "Abstract 4",
+                        "bg5": "Abstract 5",
+                        "bg14": "Gradient 14",
+                        "bg15": "Gradient 15",
+                        "bg16": "Gradient 16",
+                        "bg17": "Gradient 17",
+                        "bg18": "Gradient 18",
+                        "bg19": "Gradient 19",
+                        "bg20": "Gradient 20",
+                        "bg21": "Gradient 21",
+                        "bg22": "Gradient 22",
+                        "bg23": "Gradient 23",
+                        "bg24": "Gradient 24",
+                        "bg25": "Gradient 25"
+                    },
+                    "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -151,5 +307,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670969429
+    "modified": 1671019550
 }
