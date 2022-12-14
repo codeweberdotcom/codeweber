@@ -24,7 +24,9 @@ printr($but);
 
 echo $but->final_button;
 
+$bag = new CW_Background;
 
+printr($bag);
 
 
 echo $test->title; ?><br>
