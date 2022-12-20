@@ -28,7 +28,7 @@ function my_acf_init()
 
 // --- Social icons ---
 
-function brk_socialicons()
+function codeweber_socialicons()
 {
 	$brk_socialnetworks = array(
 		'facebook' => array(

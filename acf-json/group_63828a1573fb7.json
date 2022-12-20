@@ -212,14 +212,31 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_639f43a7abf2b",
+            "label": "Info",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<a href=\"https:\/\/sandbox.elemisthemes.com\/docs\/elements\/text-highlight.html\">Text Highlight<\/a>\r\n<a href=\"https:\/\/sandbox.elemisthemes.com\/docs\/elements\/text-animations.html\">Text Animation<\/a>\r\n<a href=\"https:\/\/sandbox.elemisthemes.com\/docs\/elements\/typography.html\">Typography<\/a>",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_format",
                 "operator": "==",
-                "value": "acf\/section"
+                "value": "chat"
             }
         ]
     ],
@@ -232,5 +249,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670533683
+    "modified": 1671399017
 }

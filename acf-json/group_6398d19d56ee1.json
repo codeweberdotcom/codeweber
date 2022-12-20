@@ -108,6 +108,13 @@
                                 "operator": "==",
                                 "value": "Image"
                             }
+                        ],
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Library"
+                            }
                         ]
                     ],
                     "wrapper": {
@@ -116,6 +123,7 @@
                         "id": ""
                     },
                     "choices": {
+                        "none": "none",
                         "auto": "auto",
                         "100%": "100%",
                         "cover": "cover"
@@ -142,6 +150,20 @@
                                 "operator": "==",
                                 "value": "Image"
                             }
+                        ],
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Video"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Library"
+                            }
                         ]
                     ],
                     "wrapper": {
@@ -150,6 +172,7 @@
                         "id": ""
                     },
                     "choices": {
+                        "none": "none",
                         "50%": "50%",
                         "30%": "30%",
                         "40%": "40%"
@@ -163,10 +186,10 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_6399b92825d37",
-                    "label": "Video",
-                    "name": "cw_video",
-                    "type": "url",
+                    "key": "field_639b43b6d4ec0",
+                    "label": "Video Preview",
+                    "name": "cw_video_preview",
+                    "type": "image",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -183,8 +206,43 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": ""
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_6399b92825d37",
+                    "label": "Video",
+                    "name": "cw_video",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6399b66d3fcfc",
+                                "operator": "==",
+                                "value": "Video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
                 },
                 {
                     "key": "field_6399b97725d38",
@@ -240,22 +298,45 @@
                         "id": ""
                     },
                     "choices": {
-                        "bg2": "Abstract 2",
-                        "bg3": "Abstract 3",
-                        "bg4": "Abstract 4",
-                        "bg5": "Abstract 5",
-                        "bg14": "Gradient 14",
-                        "bg15": "Gradient 15",
-                        "bg16": "Gradient 16",
-                        "bg17": "Gradient 17",
-                        "bg18": "Gradient 18",
-                        "bg19": "Gradient 19",
-                        "bg20": "Gradient 20",
-                        "bg21": "Gradient 21",
-                        "bg22": "Gradient 22",
-                        "bg23": "Gradient 23",
-                        "bg24": "Gradient 24",
-                        "bg25": "Gradient 25"
+                        "bg1.jpg": "Photo 1",
+                        "bg2.jpg": "Abstarct 2",
+                        "bg3.jpg": "Abstarct 3",
+                        "bg4.jpg": "Abstarct 4",
+                        "bg5.jpg": "Abstarct 5",
+                        "bg6.jpg": "Photo 2",
+                        "bg7.jpg": "Photo 3",
+                        "bg8.jpg": "Photo 4",
+                        "bg9.jpg": "Photo 5",
+                        "bg10.jpg": "Photo 6",
+                        "bg11.jpg": "Photo 7",
+                        "bg12.jpg": "Photo 8",
+                        "bg13.jpg": "Abstarct 5",
+                        "bg14.png": "Gradient 14",
+                        "bg15.png": "Gradient 15",
+                        "bg16.png": "Gradient 16",
+                        "bg17.png": "Gradient 17",
+                        "bg18.png": "Gradient 18",
+                        "bg19.png": "Gradient 19",
+                        "bg20.png": "Gradient 20",
+                        "bg21.png": "Gradient 21",
+                        "bg22.png": "Gradient 22",
+                        "bg23.png": "Gradient 23",
+                        "bg24.png": "Gradient 24",
+                        "bg25.png": "Gradient 25",
+                        "bg26.jpg": "Photo 9",
+                        "bg27.jpg": "Photo10",
+                        "bg28.jpg": "Photo11",
+                        "bg29.jpg": "Photo12",
+                        "bg30.jpg": "Photo13",
+                        "bg31.jpg": "Photo14",
+                        "bg32.jpg": "Photo15",
+                        "bg33.jpg": "Photo16",
+                        "bg34.jpg": "Photo17",
+                        "bg35.jpg": "Photo18",
+                        "bg36.jpg": "Photo19",
+                        "bg37.jpg": "Photo 20",
+                        "bg38.jpg": "Photo 21",
+                        "bg39.jpg": "Photo 22"
                     },
                     "default_value": false,
                     "allow_null": 0,
@@ -292,9 +373,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "user_role",
                 "operator": "==",
-                "value": "post"
+                "value": "administrator"
             }
         ]
     ],
@@ -307,5 +388,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671019550
+    "modified": 1671536687
 }

@@ -352,14 +352,31 @@
                     "prefix_name": 0
                 }
             ]
+        },
+        {
+            "key": "field_639f435130e07",
+            "label": "Документация",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<a href=\"https:\/\/sandbox.elemisthemes.com\/docs\/elements\/text-highlight.html\">Text Highlight<\/a>",
+            "new_lines": "wpautop",
+            "esc_html": 0
         }
     ],
     "location": [
         [
             {
-                "param": "block",
+                "param": "user_role",
                 "operator": "==",
-                "value": "acf\/section"
+                "value": "administrator"
             }
         ]
     ],
@@ -372,5 +389,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670535109
+    "modified": 1671404624
 }
