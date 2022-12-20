@@ -63,9 +63,9 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_format",
                 "operator": "==",
-                "value": "acf\/section"
+                "value": "chat"
             }
         ]
     ],
@@ -78,5 +78,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1669644487
+    "modified": 1671399042
 }

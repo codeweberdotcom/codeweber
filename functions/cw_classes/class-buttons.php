@@ -21,15 +21,6 @@ class CW_Button
 
    public $final_button;
 
-   // public $count = NULL;
-   // public $class_button_wrapper = "d-flex justify-content-start flex-wrap";
-   // public $default_button;
-   // public $data_cues = "slideInDown";
-   // public $data_group = "page-title-buttons";
-   // public $data_delay = "900";
-   // public $animate_swiper = 'false';
-   // public $animate_swiper_class = NULL;
-
    public function __construct($import_class = NULL)
    {
       $this->text_button = $this->cw_text_button();
@@ -171,9 +162,13 @@ class CW_Button
             } elseif (get_sub_field('cw_shape_button') == 'Rounded') {
                $shape_button = '';
             } elseif (get_sub_field('cw_shape_button') == 'Theme') {
-               $shape_button = '';
+               $shape_button = get_theme_mod('codeweber_button_form');
+            } else {
+               $shape_button = NULL;
             }
          endwhile;
+      else :
+         $shape_button = NULL;
       endif;
       return $shape_button;
    }
@@ -281,15 +276,11 @@ class CW_Button
 }
 
 
-
-
-
 class CW_Buttons
 {
    public $final_buttons;
    public $buttons_pattern;
    public $buttons_items;
-
 
    public function __construct($buttons_pattern = NULL, $buttons_items = NULL)
    {
@@ -300,9 +291,9 @@ class CW_Buttons
       $buttons_array = array();
       if (is_array(get_sub_field('cw_buttons_repeater'))) {
          $count = count(get_sub_field('cw_buttons_repeater'));
+      } else {
+         $count = NULL;
       }
-
-
       if (have_rows('cw_buttons_repeater')) :
          while (have_rows('cw_buttons_repeater')) : the_row();
             if ($count == 1) {
@@ -317,21 +308,11 @@ class CW_Buttons
       else :
          $buttons_list = $buttons_items;
       endif;
-
-
-
       if ($count >=  2) {
          $buttons_final = sprintf($buttons_pattern, $buttons_list);
       } else {
          $buttons_final = $buttons_list;
       }
-
-
-
-
-
-
-
       return $buttons_final;
    }
 }

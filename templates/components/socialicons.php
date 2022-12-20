@@ -2,7 +2,7 @@
 
 // --- Single icon -----
 
-foreach (brk_socialicons() as $key => $value) {
+foreach (codeweber_socialicons() as $key => $value) {
 
 	if (get_field('social_' . $key, 'option')) { ?>
 		<a href="<?php echo esc_attr(get_field('social_' . $key, 'option')); ?>" title="<?php echo esc_attr($value['social-name']); ?>" target="_blank">

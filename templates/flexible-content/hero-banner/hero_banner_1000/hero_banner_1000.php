@@ -11,6 +11,31 @@
 ); ?>
 
 
+<?php
+
+$bag = new CW_Background;
+
+printr($bag); ?>
+
+
+<?php if (have_rows('cw_background')) : ?>
+  <?php while (have_rows('cw_background')) : the_row(); ?>
+    <?php the_sub_field('cw_background_type'); ?>
+    <?php $cw_image_background = get_sub_field('cw_image_background'); ?>
+    <?php if ($cw_image_background) : ?>
+      <img src="<?php echo esc_url($cw_image_background['url']); ?>" alt="<?php echo esc_attr($cw_image_background['alt']); ?>" />
+    <?php endif; ?>
+    <?php the_sub_field('cw_background_size'); ?>
+    <?php the_sub_field('cw_background_overlay'); ?>
+    <?php if (have_rows('color')) : ?>
+      <?php while (have_rows('color')) : the_row(); ?>
+        <?php the_sub_field('select_type_color'); ?>
+        <?php the_sub_field('select_solid_color'); ?>
+        <?php the_sub_field('gradient_color'); ?>
+      <?php endwhile; ?>
+    <?php endif; ?>
+  <?php endwhile; ?>
+<?php endif; ?>
 
 
 
@@ -18,17 +43,11 @@
 
 
 
-$but = new CW_Buttons;
-
-printr($but);
-
-echo $but->final_button;
-
-
-
-
-echo $test->title; ?><br>
+// echo $test->title; 
+?><br>
 <?php
-echo $test->subtitle; ?><br>
+// echo $test->subtitle; 
+?><br>
 <?php
-echo $test->paragraph; ?>
+// echo $test->paragraph; 
+?>

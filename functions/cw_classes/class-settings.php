@@ -20,16 +20,18 @@ class CW_Settings
    public $patternsubtitle;
    public $patternparagraph;
 
-   // public $video_url = '/dist/media/movie.mp4';
-   // public $backgroundurl = '/dist/img/photos/bg4.jpg';
-   // public $backgroundcolor = 'dark';
-   // public $backgroundcolor_light = 0;
-   // public $textcolor = 'white';
-   // public $section_id = NULL;
-   // public $section_classes = NULL;
-   // public $column_one = NULL;
-   // public $column_two = NULL;
-   // public $style_parameters = NULL;
+   public $background_object;
+   public $background_class;
+   public $background_data;
+   public $background_video_bool;
+   public $background_video_url;
+   public $background_video_preview;
+   public $images;
+
+   public $divider_class;
+   public $divider_wave;
+
+
 
    public function __construct($cw_settings)
    {
@@ -39,23 +41,64 @@ class CW_Settings
       $this->subtitle = $this->cw_get_subtitle();
       $this->paragraph = $this->cw_get_paragraph();
       $this->buttons = $this->cw_buttons();
+      $this->background_object = $this->cw_background_data($cw_settings);
+      $this->images = $this->cw_images($cw_settings);
+      $this->divider_class = $this->cw_divider_class($cw_settings);
+      $this->divider_wave = $this->cw_divider_wave($cw_settings);
+   }
+
+   public function cw_background_data($cw_settings = NULL)
+   {
+      $background_object = new CW_Background($cw_settings = $cw_settings);
+      $this->background_class = $background_object->class_background;
+      $this->background_data = $background_object->data_background;
+      $this->background_video_bool = $background_object->bool_video_background;
+      $this->background_video_url = $background_object->url_video_background;
+      $this->background_video_preview = $background_object->preview_video_background;
+      return $background_object;
+   }
+
+   public function cw_images($cw_settings)
+   {
+      $image_object = new CW_Image($cw_settings = $cw_settings);
+      $images = $image_object->final_image;
+      return $images;
    }
 
    public function cw_buttons()
    {
       if (isset($this->cw_settings['buttons_pattern']) && !$this->cw_settings['buttons_pattern'] == NULL) {
-
          $buttons_object = new CW_Buttons($this->cw_settings['buttons_pattern'], $this->cw_settings['buttons']);
-
          if ($buttons_object->final_buttons !== false) {
             $buttons = $buttons_object->final_buttons;
          }
+      } else {
+         $buttons = NULL;
       }
       return $buttons;
    }
 
+   public function cw_divider_class($cw_settings)
+   {
+      if (isset($cw_settings['divider']) && $cw_settings['divider'] == true) {
+         $divider = new CW_Divider;
+         $divider_class = $divider->class_divider;
+      } else {
+         $divider_class = NULL;
+      }
+      return $divider_class;
+   }
 
-
+   public function cw_divider_wave($cw_settings)
+   {
+      if (isset($cw_settings['divider']) && $cw_settings['divider'] == true) {
+         $divider = new CW_Divider;
+         $div_wave = $divider->div_wave;
+      } else {
+         $div_wave = NULL;
+      }
+      return $div_wave;
+   }
 
    public function cw_get_title()
    {
@@ -87,6 +130,8 @@ class CW_Settings
                   }
                }
             endwhile;
+         else :
+            $title = NULL;
          endif;
       } else {
          if (isset($this->cw_settings['title'])) {

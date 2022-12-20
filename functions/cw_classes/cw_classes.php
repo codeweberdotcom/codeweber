@@ -5,3 +5,6 @@ include 'class-color.php';
 include 'class-buttons.php';
 include 'class-icons.php';
 include 'class-section_settings.php';
+include 'class-background.php';
+include 'class-image.php';
+include 'class-divider.php';

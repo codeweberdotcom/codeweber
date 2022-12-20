@@ -79,9 +79,9 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "user_role",
                 "operator": "==",
-                "value": "acf\/section"
+                "value": "administrator"
             }
         ]
     ],
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1669587915
+    "modified": 1671404610
 }

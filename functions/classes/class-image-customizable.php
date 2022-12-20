@@ -7,9 +7,12 @@ class ImageCustomizable
    public $imagebig = '';
    public $imagesmall = '';
    public $imagelink = '#';
+
    public $imagebigsize = 'brk_big';
    public $imagethumbsize = 'sandbox_youtube_mq';
+
    public $imagelightbox = 'false';
+
    public $imageeffectcursor = 'primary';
    public $titleclass = 'from-top mb-1';
    public $descriptionclass = 'from-bottom';

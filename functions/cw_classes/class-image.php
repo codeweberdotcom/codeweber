@@ -1,0 +1,330 @@
+<?php
+
+//* ---Image Class ACF---
+
+class CW_Image
+{
+   public $root_theme;
+
+   public $image_url_big;
+   public $image_url_small;
+
+   public $image_link_type;
+   public $image_link;
+
+   public $image_id;
+   public $image_alt;
+   public $image_title;
+   public $image_figcaption;
+   public $image_description;
+   public $image_classes;
+   public $cursor_effect;
+   public $wrapper_image_classes;
+
+   public $image_thumb_size;
+   public $image_big_size;
+   public $image_srscet;
+
+   public $final_image;
+
+
+   public function __construct($cw_settings)
+   {
+      $this->root_theme = get_template_directory_uri();
+      $this->image_title = $this->cw_title_image($cw_settings);
+      $this->image_srscet = $this->cw_image_size($cw_settings);
+      $this->image_urls = $this->cw_image($cw_settings);
+      $this->image_classes = $this->cw_image_classes($cw_settings);
+      $this->wrapper_image_classes = $this->cw_wrapper_image_classes($cw_settings);
+      $this->image_link = $this->cw_link_image($cw_settings);
+      $this->final_image = $this->cw_final_image($cw_settings);
+   }
+
+   //Image Link
+   public function cw_link_image($cw_settings)
+   {
+      if (have_rows('cw_image')) :
+         while (have_rows('cw_image')) : the_row();
+            if (get_sub_field('cw_link_type') == 'image') {
+               $image_link =  $this->image_url_big;
+            } elseif (get_sub_field('cw_link_type') == 'link') {
+               $image_link = $this->image_link;
+            } elseif (get_sub_field('cw_link_type') == 'video') {
+               $image_link = get_sub_field('media');
+            } elseif (get_sub_field('cw_link_type') == 'youtube') {
+               $image_link = get_sub_field('cw_link_video');
+            } elseif (get_sub_field('cw_link_type') == 'youtube_preview') {
+               $youtubeid = getYoutubeIdFromUrl(get_sub_field('cw_link_video'));
+               $this->image_url_small = 'https://img.youtube.com/vi/' . $youtubeid . '/sddefault.jpg';
+               $image_link = get_sub_field('cw_link_video');
+            } elseif (get_sub_field('cw_link_type') == 'none') {
+               $image_link = NULL;
+            }
+         endwhile;
+      else :
+         $image_link = NULL;
+      endif;
+      return $image_link;
+   }
+
+   //Image Title
+   public function cw_title_image($cw_settings)
+   {
+      if (have_rows('cw_image')) :
+         while (have_rows('cw_image')) : the_row();
+            if (get_sub_field('cw_cursor_effect') == 'itooltip itooltip-light' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-dark' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-primary') {
+               if (get_sub_field('cw_caption_image')) {
+                  $image_title = 'title="' . get_sub_field('cw_caption_image') . '"';
+                  $this->image_description = get_sub_field('description_image');
+               } else {
+                  $image_title = 'title="Вы не заполнили Заголовок"';
+               }
+            } elseif ((get_sub_field('cw_cursor_effect') == 'overlay overlay-1' || get_sub_field('cw_cursor_effect') == 'overlay overlay-2' || get_sub_field('cw_cursor_effect') == 'overlay overlay-3')) {
+               $image_title = NULL;
+               if (get_sub_field('cw_caption_image') || get_sub_field('description_image')) {
+                  $image_title = NULL;
+                  $figcaption = '<figcaption>';
+                  if (get_sub_field('cw_caption_image') && get_sub_field('cw_cursor_effect') == 'overlay overlay-1') {
+                     $figcaption .= '<h5 class="from-top mb-0">' . get_sub_field('cw_caption_image') . '</h5>';
+                  } elseif (get_sub_field('cw_caption_image') && get_sub_field('cw_cursor_effect') == 'overlay overlay-2') {
+                     $figcaption .= '<h5 class="from-top mb-1">' . get_sub_field('cw_caption_image') . '</h5>';
+                  } elseif (get_sub_field('cw_caption_image') && get_sub_field('cw_cursor_effect') == 'overlay overlay-3') {
+                     $figcaption .= '<h5 class="from-left mb-1">' . get_sub_field('cw_caption_image') . '</h5>';
+                  }
+                  if (get_sub_field('description_image') && get_sub_field('cw_cursor_effect') == 'overlay overlay-2') {
+                     $figcaption .= '<h5 class="from-bottom">' . get_sub_field('description_image') . '</p>';
+                  } elseif (get_sub_field('description_image') && get_sub_field('cw_cursor_effect') == 'overlay overlay-3') {
+                     $figcaption .= '<p class="from-left mb-0">' . get_sub_field('description_image') . '</p>';
+                  }
+                  $figcaption .= '</figcaption>';
+                  $this->image_figcaption = $figcaption;
+               }
+            } elseif (get_sub_field('cw_cursor_effect') == 'video_button') {
+               $this->cursor_effect = 'video_button';
+               $this->image_description = get_sub_field('description_image');
+               $this->image_figcaption = NULL;
+               $image_title = get_sub_field('cw_caption_image');
+            } else {
+               $image_title = NULL;
+               $this->image_figcaption = NULL;
+            }
+         endwhile;
+      else :
+         $image_title = NULL;
+      endif;
+      return $image_title;
+   }
+
+
+
+
+   //Image sizes
+   public function cw_image_size($cw_settings)
+   {
+      if (isset($cw_settings['image_thumb_size']) && !$cw_settings['image_thumb_size'] == NULL) {
+         $this->image_thumb_size = $cw_settings['image_thumb_size'];
+      } else {
+         $this->image_thumb_size = 'sandbox_hero_1';
+      }
+      if (isset($cw_settings['image_big_size']) && !$cw_settings['image_big_size'] == NULL) {
+         $this->image_big_size = $cw_settings['image_big_size'];
+      } else {
+         $this->image_big_size = 'project_1';
+      }
+      $this->image_srscet = $this->image_thumb_size;
+   }
+
+
+   //image 
+   public function cw_image($cw_settings)
+   {
+      if (have_rows('cw_image')) :
+         while (have_rows('cw_image')) : the_row();
+            $cw_image = get_sub_field('cw_image');
+            if ($cw_image) :
+               $this->image_url_big = esc_url($cw_image['sizes'][$this->image_big_size]);
+               $this->image_url_small = esc_url($cw_image['sizes'][$this->image_thumb_size]);
+               $this->image_alt = esc_attr($cw_image['alt']);
+               $this->image_link_type = get_sub_field('cw_link_type');
+            else :
+               $this->image_url_big = $this->root_theme . $cw_settings['image_link'];
+               $this->image_url_small = $this->root_theme . $cw_settings['image_link'];
+               $this->image_link_type = get_sub_field('cw_link_type');
+            endif;
+         endwhile;
+      endif;
+   }
+
+
+
+   //image Classes
+   public function cw_image_classes($cw_settings)
+   {
+      $image_class = array();
+      if (have_rows('cw_image')) :
+         while (have_rows('cw_image')) : the_row();
+            if (get_sub_field('cw_class')) {
+               $image_class[] = get_sub_field('cw_class');
+            }
+            $image_classes = implode(' ', $image_class);
+         endwhile;
+      else :
+         $image_classes = NULL;
+
+      endif;
+      return $image_classes;
+   }
+
+
+   //Image Wrapper Classe
+   public function cw_wrapper_image_classes($cw_settings)
+   {
+      $image_wrapper_class = array();
+
+      if (have_rows('cw_image')) :
+         while (have_rows('cw_image')) : the_row();
+            if (get_sub_field('cw_shape_image') == 'img-mask mask-1' || get_sub_field('cw_shape_image') == 'img-mask mask-2' || get_sub_field('cw_shape_image') == 'img-mask mask-3') {
+               $image_wrapper_class[] = get_sub_field('cw_shape_image');
+            }
+            if (get_sub_field('cw_effect_hover') == 'hover-scale') {
+               $image_wrapper_class[] = 'hover-scale';
+            } elseif (get_sub_field('cw_effect_hover') == 'lift') {
+               $image_wrapper_class[] = 'lift';
+            }
+
+            if (get_sub_field('cw_shape_image') == 'rounded-0' || get_sub_field('cw_shape_image') == 'rounded' || get_sub_field('cw_shape_image') == 'rounded-pill') {
+               $image_wrapper_class[] = get_sub_field('cw_shape_image');
+            }
+
+            if (get_sub_field('cw_cursor_effect')) {
+               $image_wrapper_class[] = get_sub_field('cw_cursor_effect');
+            } else {
+               $image_wrapper_class[] = NULL;
+            }
+
+            if (get_sub_field('cw_cursor_effect') == 'video_button') {
+               $image_wrapper_class[] = 'position-relative';
+            } else {
+               $image_wrapper_class[] = NULL;
+            }
+
+            if (get_sub_field('cw_gradient') !== 'none') {
+               $image_wrapper_class[] = get_sub_field('cw_gradient');
+            }
+            $image_wrapper_class = implode(' ', $image_wrapper_class);
+         endwhile;
+      endif;
+      return $image_wrapper_class;
+   }
+
+
+   //Final Image
+   public function cw_final_image($cw_settings)
+   {
+      $image_classes = $this->image_classes;
+      $image_wrapper_classes = $this->wrapper_image_classes;
+      $image_alt = $this->image_alt;
+      $image_url_small = $this->image_url_small; // %1$s
+      $image_url_big = $this->image_url_big; // %2$s
+      $image_url_src = $this->image_srscet;
+      $image_link = $this->image_link;
+      $image_link_type = $this->image_link_type;
+      $image_title = $this->image_title;
+      $cursor_effect = $this->cursor_effect;
+      $image_description = $this->image_description;
+      $image_figcaption = $this->image_figcaption;
+
+      if (isset($cw_settings['image_pattern']) && !$cw_settings['image_pattern'] == NULL) {
+
+
+
+         if ($image_alt || $image_classes || $image_wrapper_classes || $image_description || $image_url_src || $image_title || $image_figcaption || $image_link) {
+
+            // %3$s
+            if ($image_alt) {
+               $image_alt = 'alt="' . $image_alt . '"';
+            } else {
+               $image_alt = NULL;
+            }
+
+            // %4$s
+            if ($image_classes) {
+               $image_classes = 'class="' . $this->image_classes . '"';
+            } else {
+               $image_classes = NULL;
+            }
+
+            // %5$s
+            if ($image_wrapper_classes) {
+               $wrapper_image_classes = 'class="' . $this->wrapper_image_classes . '"';
+            } else {
+               $wrapper_image_classes = NULL;
+            }
+
+            //
+            if ($image_description) {
+               $image_description_1 = 'data-description="' . $image_description . '"';
+               $image_description_simple = $image_description;
+            } else {
+               $image_description_1 = NULL;
+               $image_description_simple = NULL;
+            }
+
+
+            // %8$s
+            if ($image_url_src) {
+               $image_url_src = $image_url_src;
+            } else {
+               $image_url_src = NULL;
+            }
+
+            // %9$s
+            if ($image_title) {
+               $image_title = $image_title;
+            } else {
+               $image_title = NULL;
+            }
+
+            // %10$s
+            if ($image_figcaption) {
+               $image_figcaption = $image_figcaption;
+            } else {
+               $image_figcaption = NULL;
+            }
+
+            // %6$s - %7$s
+            if ($image_link) {
+               if (have_rows('cw_image')) :
+                  while (have_rows('cw_image')) : the_row();
+                     if ($cursor_effect == 'video_button') {
+                        $image_link_open = '<a href="' . $image_link . '" class="btn btn-circle btn-light btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox  ' . $image_description_1 . ' data-title="' . $image_title . '" data-gallery="hero"><i class="icn-caret-right text-dark"></i></a>';
+                        $image_link_close = NULL;
+                     } elseif (get_sub_field('cw_cursor_effect') == 'itooltip itooltip-light' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-dark' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-primary') {
+                        $image_link_open = '<a href="' . $image_link . '" data-glightbox="title: ' . get_sub_field('cw_caption_image') . '; description: ' .  $image_description_simple . '" data-gallery="g1">';
+                        $image_link_close = '</a>';
+                     } else {
+                        $image_link_open = '<a href="' . $image_link . '" ' . $image_description_1 . ' ' . $image_title . '" data-glightbox data-gallery="g1">';
+                        $image_link_close = '</a>';
+                     }
+                  endwhile;
+               endif;
+            } else {
+               $image_link_open = NULL;
+               $image_link_close = NULL;
+            }
+
+            $image_pattern = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s</figure>';
+            $final_image = sprintf($image_pattern, $image_url_small, $image_url_small, $image_alt, $image_classes, $wrapper_image_classes, $image_link_open, $image_link_close, $image_url_src, $image_title, $image_figcaption);
+         } else {
+            $image_pattern = $cw_settings['image_pattern'];
+            $image_url_big = $this->image_url_big;
+            $image_url_small = $this->image_url_small;
+            $final_image = sprintf($image_pattern, $image_url_small, $image_url_small, NULL);
+         }
+      } else {
+         $final_image = NULL;
+      }
+
+      return $final_image;
+   }
+}
