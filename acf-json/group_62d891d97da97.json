@@ -269,44 +269,6 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_6384bfab988db",
-                            "label": "Gallery",
-                            "name": "",
-                            "type": "accordion",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "open": 0,
-                            "multi_expand": 0,
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_6384bfab988dc",
-                            "label": "Gallery",
-                            "name": "gallery",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62daa88c03ddb"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        },
-                        {
                             "key": "field_63986c022468f",
                             "label": "Buttons",
                             "name": "",
@@ -3412,5 +3374,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671238820
+    "modified": 1671545654
 }
