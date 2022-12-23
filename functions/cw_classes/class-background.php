@@ -36,12 +36,14 @@ class CW_Background
    //Class
    public function cw_class_background($cw_settings = NULL)
    {
+      $class_background = array();
       if (have_rows('cw_background')) :
          while (have_rows('cw_background')) : the_row();
-            $class_background = array();
+
             $color = $this->color_background;
             $overlay = $this->overlay_background;
             $size = $this->size_background;
+
             if ($overlay !== 'none') {
                $class_background[] = $overlay;
             }
@@ -49,15 +51,19 @@ class CW_Background
                $class_background[] = $size;
             }
             if ($color !== 'none') {
-               $class_background[] = $this->color_background;
-            } else {
-               $class_background[] = $cw_settings['background_class_default'];
+               $class_background[] = $color;
             }
-            $final_class_background = implode(' ', $class_background);
+            if ($color) {
+               $final_class_background = implode(' ', $class_background);
+            } else {
+               $final_class_background =  $cw_settings['background_class_default'];
+            }
+
          endwhile;
       else :
-         $final_class_background = NULL;
+         $final_class_background =  $cw_settings['background_class_default'];
       endif;
+
       return $final_class_background;
    }
 
@@ -89,11 +95,11 @@ class CW_Background
             } elseif (get_sub_field('cw_background_size') == 'none') {
                $size_background = 'none';
             } else {
-               $size_background = NULL;
+               $size_background = 'none';
             }
          endwhile;
       else :
-         $size_background = NULL;
+         $size_background = 'none';
       endif;
 
       return $size_background;
@@ -118,7 +124,7 @@ class CW_Background
             }
          endwhile;
       else :
-         $overlay_background = NULL;
+         $overlay_background = 'none';
       endif;
       return $overlay_background;
    }
@@ -200,7 +206,7 @@ class CW_Background
             }
          endwhile;
       else :
-         $color_background = NULL;
+         $color_background = 'none';
       endif;
       return $color_background;
    }

@@ -32,6 +32,8 @@ class CW_Color
                $color = 'none';
             endif;
          endwhile;
+      else :
+         $color = 'none';
       endif;
 
       return $color;
@@ -55,6 +57,8 @@ class CW_Color
                $color = 'none';
             endif;
          endwhile;
+      else :
+         $color = 'none';
       endif;
 
       return $color;
