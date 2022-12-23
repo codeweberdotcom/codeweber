@@ -542,15 +542,17 @@ class CW_Swiper
             endwhile;
          endif;
          $final_slider .= '</div></div></div>';
-      } else {
+      } elseif ($count_image == 1) {
          if (have_rows('cw_images')) :
             while (have_rows('cw_images')) : the_row();
                $image = new CW_Image($cw_settings);
                $final_slider = $image->final_image;
             endwhile;
          endif;
+      } elseif ($count_image == 0) {
+         $url = get_template_directory_uri() . $cw_settings['image_link'];
+         $final_slider =  sprintf($cw_settings['image_pattern'], $url, $url, NULL);
       }
-
 
       return $final_slider;
    }

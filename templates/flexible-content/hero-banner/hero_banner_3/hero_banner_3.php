@@ -63,9 +63,9 @@ $hero = new CW_Settings(
     'background_video_url' => '/dist/media/movie2.mp4',
     'background_pattern_url' => '/dist/img/pattern.png',
 
-    'image_pattern' => '<figure class="rounded shadow-lg"><img src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
-    'image_link' => '/dist/img/photos/about7.jpg',
-    'image_thumb_size' => 'sandbox_hero_18',
+    'image_pattern' => '<figure class="rounded shadow-lg"><img src="%1$s" srcset="%2$s" alt="%3$s"/></figure>',
+    'image_link' => '/dist/img/photos/about13.jpg',
+    'image_thumb_size' => 'sandbox_hero_3',
     'image_big_size' => 'project_1',
 
     'swiper' => array('swiper' => true, 'data' => ''),
