@@ -182,6 +182,7 @@
                         "id": ""
                     },
                     "choices": {
+                        "none": "none",
                         "theme": "Theme",
                         "rounded-0": "Square",
                         "rounded": "Rounded",
@@ -190,7 +191,7 @@
                         "img-mask mask-2": "Mask 2",
                         "img-mask mask-3": "Mask 3"
                     },
-                    "default_value": "theme",
+                    "default_value": "none",
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -284,7 +285,8 @@
                         "itooltip itooltip-primary": "itooltip itooltip-primary",
                         "overlay overlay-1": "overlay overlay-1",
                         "overlay overlay-2": "overlay overlay-2",
-                        "overlay overlay-3": "overlay overlay-3"
+                        "overlay overlay-3": "overlay overlay-3",
+                        "swiper-caption": "swiper-caption"
                     },
                     "default_value": "none",
                     "allow_null": 0,
@@ -410,6 +412,13 @@
                                 "field": "field_639d01755c8d5",
                                 "operator": "==",
                                 "value": "video_button"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_639d01755c8d5",
+                                "operator": "==",
+                                "value": "swiper-caption"
                             }
                         ]
                     ],
@@ -552,5 +561,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671399091
+    "modified": 1671698871
 }

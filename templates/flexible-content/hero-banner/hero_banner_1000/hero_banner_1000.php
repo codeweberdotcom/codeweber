@@ -1,53 +1,49 @@
-<?php $test = new CW_Settings(
+<?php
+
+/**
+ * CW
+ */
+$hero = new CW_Settings(
   $cw_settings = array(
-    'title' => 'Grow Your Business with Our Solutions.', // echo $test->title;
-    'subtitle' => 'Ge help our clients to increase their website traffic, rankings and visibility in search results', //echo $test->subtitle;
-    'paragraph' => 'We help our clients to increase their website traffic, rankings and visibility in search results.', //echo $test->paragraph;
-    'patternTitle' => '<h1 class="display-1 mb-5 mx-md-n5 mx-lg-0">%s</h1>', // шаблон с переменной %s
-    'patternSubTitle' => '<p class="mb-5">%s</p>',                           // шаблон с переменной %s
-    'patternParagraph' => '<p class=" fs-lg mb-7">%s</p>',                   // шаблон с переменной %s
-    'pattern_button' => ' <span><a class="btn btn-primary rounded-pill me-2"></a></span>' // шаблон кнопки
+    'image_pattern' => '<figure %5s title="dsdsds"><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+    'image_link' => '/dist/img/illustrations/i2.png',
+    'image_thumb_size' => 'sandbox_hero_1',
+    'image_big_size' => 'project_1',
+    'swiper' => array('swiper' => true, 'xs' => '1'),
   )
-); ?>
-
-
-<?php
-
-$bag = new CW_Background;
-
-printr($bag); ?>
-
-
-<?php if (have_rows('cw_background')) : ?>
-  <?php while (have_rows('cw_background')) : the_row(); ?>
-    <?php the_sub_field('cw_background_type'); ?>
-    <?php $cw_image_background = get_sub_field('cw_image_background'); ?>
-    <?php if ($cw_image_background) : ?>
-      <img src="<?php echo esc_url($cw_image_background['url']); ?>" alt="<?php echo esc_attr($cw_image_background['alt']); ?>" />
-    <?php endif; ?>
-    <?php the_sub_field('cw_background_size'); ?>
-    <?php the_sub_field('cw_background_overlay'); ?>
-    <?php if (have_rows('color')) : ?>
-      <?php while (have_rows('color')) : the_row(); ?>
-        <?php the_sub_field('select_type_color'); ?>
-        <?php the_sub_field('select_solid_color'); ?>
-        <?php the_sub_field('gradient_color'); ?>
-      <?php endwhile; ?>
-    <?php endif; ?>
-  <?php endwhile; ?>
-<?php endif; ?>
-
-
-
-<?php
-
-
-
-// echo $test->title; 
-?><br>
-<?php
-// echo $test->subtitle; 
-?><br>
-<?php
-// echo $test->paragraph; 
+);
 ?>
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $hero->background_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $hero->background_data; ?>>
+  <?php if ($hero->background_video_bool == true) { ?>
+    <video poster="<?php echo $hero->background_video_preview; ?>" src="<?php echo $hero->background_video_url; ?>" autoplay loop playsinline muted></video>
+    <div class="video-content">
+    <?php } ?>
+    <div class="container pt-10 pt-md-14 pb-8 text-center">
+      <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+        <div class="col-lg-7">
+          <?php
+          echo $hero->swiper_final;
+          ?>
+          <!--/images -->
+        </div>
+        <!-- /column -->
+        <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start">
+          <?php echo $hero->title; ?>
+          <!--/title -->
+          <?php echo $hero->paragraph; ?>
+          <!--/pargraph -->
+          <?php echo $hero->buttons; ?>
+          <!--/buttons group -->
+        </div>
+        <!-- /column -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+    <?php if ($hero->background_video_bool == true) { ?>
+    </div>
+    </video>
+  <?php } ?>
+</section>
+<!-- /section -->

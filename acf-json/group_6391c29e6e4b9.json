@@ -53,7 +53,7 @@
                         "Pale": "Pale",
                         "Gradient": "Gradient"
                     },
-                    "default_value": "Solid",
+                    "default_value": "none",
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -211,5 +211,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671398018
+    "modified": 1671710869
 }

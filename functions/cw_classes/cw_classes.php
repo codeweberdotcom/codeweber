@@ -8,3 +8,5 @@ include 'class-section_settings.php';
 include 'class-background.php';
 include 'class-image.php';
 include 'class-divider.php';
+include 'class-swiper.php';
+include 'class-typewriter.php';
