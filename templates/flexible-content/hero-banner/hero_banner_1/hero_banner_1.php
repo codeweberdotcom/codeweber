@@ -1,23 +1,5 @@
 <?php
 
-/* Add swiper */
-$swiper = new SwiperSlider();
-$swiper->root_theme = get_template_directory_uri();
-$swiper->class_swiper = 'swiper-container dots-over shadow-lg';
-$swiper->data_nav = 'data-nav="true"';
-$swiper->data_dots = 'data-dots="true"';
-$swiper->data_margin = 'data-margin="5"';
-$swiper->image_size = 'sandbox_faq_1';
-$swiper->data_items_lg = 'data-items-lg="1"';
-$swiper->data_items_md = 'data-items-md="1"';
-$swiper->data_items_xs = 'data-items-xs="1"';
-$swiper->data_autoplay = 'data-autoplay="true"';
-$swiper->data_autoplaytime = 'data-autoplaytime="5000"';
-$swiper->default_media = '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/illustrations/i2.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i2@2x.png 2x" alt="" /></figure>';
-
-
-
-
 /**
  * CW
  */
@@ -39,21 +21,25 @@ $hero = new CW_Settings(
     'image_link' => '/dist/img/illustrations/i2.png',
     'image_thumb_size' => 'sandbox_hero_1',
     'image_big_size' => 'project_1',
+
+    'swiper' => array('swiper' => true, 'xs' => '1'),
   )
 );
 ?>
 
-
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $hero->background_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $hero->background_data; ?>>
+
   <?php if ($hero->background_video_bool == true) { ?>
     <video poster="<?php echo $hero->background_video_preview; ?>" src="<?php echo $hero->background_video_url; ?>" autoplay loop playsinline muted></video>
     <div class="video-content">
     <?php } ?>
+    <!-- /video background -->
+
     <div class="container pt-10 pt-md-14 pb-8 text-center">
       <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
         <div class="col-lg-7">
-          <?php echo $hero->images; ?>
-          <!--/images -->
+          <?php echo $hero->swiper_final; ?>
+          <!--/swiper -->
         </div>
         <!-- /column -->
         <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start">
@@ -69,9 +55,11 @@ $hero = new CW_Settings(
       <!-- /.row -->
     </div>
     <!-- /.container -->
+
     <?php if ($hero->background_video_bool == true) { ?>
     </div>
     </video>
   <?php } ?>
+  <!-- /video background -->
 </section>
 <!-- /section -->

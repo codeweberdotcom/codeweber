@@ -28,6 +28,9 @@ class CW_Settings
    public $background_video_preview;
    public $images;
 
+   public $swiper;
+   public $swiper_final;
+
    public $divider_class;
    public $divider_wave;
 
@@ -36,7 +39,9 @@ class CW_Settings
    public function __construct($cw_settings)
    {
       $this->root_theme = get_template_directory_uri();
+
       $this->cw_settings = $cw_settings;
+      $this->typewriter = $this->cw_typewriter($cw_settings);
       $this->title = $this->cw_get_title();
       $this->subtitle = $this->cw_get_subtitle();
       $this->paragraph = $this->cw_get_paragraph();
@@ -45,7 +50,36 @@ class CW_Settings
       $this->images = $this->cw_images($cw_settings);
       $this->divider_class = $this->cw_divider_class($cw_settings);
       $this->divider_wave = $this->cw_divider_wave($cw_settings);
+
+
+
+      $this->swiper_final = $this->cw_swiper_final($cw_settings);
    }
+
+
+   public function cw_typewriter($cw_settings)
+   {
+      if (isset($this->cw_settings['typewriter']) && !$this->cw_settings['typewriter'] == NULL) {
+         $typewriter = new CW_Typewriter($cw_settings = $cw_settings);
+         $typewriter = $typewriter->typewriter_final;
+      } else {
+         $typewriter = NULL;
+      }
+      return $typewriter;
+   }
+
+
+   public function cw_swiper_final($cw_settings)
+   {
+      if (isset($this->cw_settings['swiper']) && !$this->cw_settings['swiper'] == NULL) {
+         $swiper = new CW_Swiper($cw_settings = $cw_settings);
+         $swiper_final = $swiper->final_swiper;
+      } else {
+         $swiper_final = NULL;
+      }
+      return $swiper_final;
+   }
+
 
    public function cw_background_data($cw_settings = NULL)
    {
@@ -60,8 +94,12 @@ class CW_Settings
 
    public function cw_images($cw_settings)
    {
-      $image_object = new CW_Image($cw_settings = $cw_settings);
-      $images = $image_object->final_image;
+      if (isset($this->cw_settings['image_pattern']) && !$this->cw_settings['image_pattern'] == NULL) {
+         $image_object = new CW_Image($cw_settings = $cw_settings);
+         $images = $image_object->final_image;
+      } else {
+         $images = NULL;
+      }
       return $images;
    }
 
@@ -118,9 +156,11 @@ class CW_Settings
                   } else {
                      $get_title = $this->cw_settings['title'];
                   }
+                  $typewriter = $this->typewriter;
                   $title = sprintf(
                      $pattern,
                      $get_title,
+                     $typewriter,
                   );
                } else {
                   if (get_sub_field('cw_title')) {
@@ -297,76 +337,4 @@ class CW_Settings
          return $title;
       }
    }
-
-
-
-
-
-   // public function GetDataACF()
-   // {
-
-   //    if (get_sub_field('mirror') == 0) :
-   //       if (get_sub_field('reverse_mobile') == 1) :
-   //          $this->column_one = 'order-1 order-lg-2';
-   //          $this->column_two = '';
-   //       elseif (get_sub_field('reverse_mobile') == 0) :
-   //          $this->column_one = 'order-lg-2';
-   //          $this->column_two = '';
-   //       endif;
-   //       $this->style_parameters = 'top: -2rem; right: -1.9rem;';
-   //    elseif (get_sub_field('mirror') == 1) :
-   //       if (get_sub_field('reverse_mobile') == 1) :
-   //          $this->column_one = 'order-2 order-lg-1';
-   //          $this->column_two = 'order-1 order-lg-2';
-   //       elseif (get_sub_field('reverse_mobile') == 0) :
-   //          $this->column_one = '';
-   //          $this->column_two = '';
-   //       endif;
-   //       $this->style_parameters = 'top: -2rem; left: -1.9rem;';
-   //    endif;
-
-   //    if (get_sub_field('title')) :
-   //       $this->title = get_sub_field('title');
-   //    endif;
-
-   //    if (get_sub_field('subtitle')) :
-   //       $this->subtitle = get_sub_field('subtitle');
-   //    endif;
-
-   //    if (get_sub_field('paragraph')) :
-   //       $this->paragraph = get_sub_field('paragraph');
-   //    endif;
-
-   //    if (get_sub_field('dark_or_white_light_or_dark') == 0) :
-   //       $this->backgroundcolor = $this->backgroundcolor;
-   //       $this->textcolor = 'light';
-   //    elseif (get_sub_field('dark_or_white_light_or_dark') == 1) :
-   //       if ($this->backgroundcolor_light == 0) :
-   //          $this->backgroundcolor = $this->backgroundcolor_light;
-   //          $this->textcolor = 'dark';
-   //       else :
-   //          $this->backgroundcolor = $this->backgroundcolor;
-   //          $this->textcolor = 'light';
-   //       endif;
-   //    endif;
-
-   //    /* --- Typewriter --- */
-   //    if (have_rows('typewriter_effect_text')) :
-   //       $typewriterarray = array();
-   //       while (have_rows('typewriter_effect_text')) : the_row();
-   //          array_push($typewriterarray, get_sub_field('text'));
-   //       endwhile;
-   //       $this->typewriter = implode(", ", $typewriterarray);
-   //    endif;
-
-   //    $background = get_sub_field('background');
-   //    if ($background) :
-   //       $this->backgroundurl = esc_url($background['url']);
-   //    endif;
-
-   //    $video_url = get_sub_field('video');
-   //    if ($video_url) :
-   //       $this->video_url = $video_url;
-   //    endif;
-   // }
 };

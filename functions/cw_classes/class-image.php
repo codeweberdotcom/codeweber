@@ -14,6 +14,7 @@ class CW_Image
 
    public $image_id;
    public $image_alt;
+   public $image_shape;
    public $image_title;
    public $image_figcaption;
    public $image_description;
@@ -24,6 +25,7 @@ class CW_Image
    public $image_thumb_size;
    public $image_big_size;
    public $image_srscet;
+   public $image_clean_title;
 
    public $final_image;
 
@@ -35,10 +37,32 @@ class CW_Image
       $this->image_srscet = $this->cw_image_size($cw_settings);
       $this->image_urls = $this->cw_image($cw_settings);
       $this->image_classes = $this->cw_image_classes($cw_settings);
+      $this->image_shape = $this->cw_image_shape($cw_settings);
       $this->wrapper_image_classes = $this->cw_wrapper_image_classes($cw_settings);
       $this->image_link = $this->cw_link_image($cw_settings);
       $this->final_image = $this->cw_final_image($cw_settings);
    }
+
+
+   //Image Link
+   public function cw_image_shape($cw_settings)
+   {
+      if (have_rows('cw_image')) :
+         while (have_rows('cw_image')) : the_row();
+            if (get_sub_field('cw_shape_image') == 'Theme') {
+               $image_shape = get_sub_field('cw_shape_image');
+            } elseif (get_sub_field('cw_shape_image') == 'None') {
+               $image_shape = NULL;
+            } else {
+               $image_shape = get_sub_field('cw_shape_image');
+            }
+         endwhile;
+      else :
+         $image_shape = NULL;
+      endif;
+      return $image_shape;
+   }
+
 
    //Image Link
    public function cw_link_image($cw_settings)
@@ -75,13 +99,16 @@ class CW_Image
             if (get_sub_field('cw_cursor_effect') == 'itooltip itooltip-light' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-dark' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-primary') {
                if (get_sub_field('cw_caption_image')) {
                   $image_title = 'title="' . get_sub_field('cw_caption_image') . '"';
+                  $this->image_clean_title = get_sub_field('cw_caption_image');
                   $this->image_description = get_sub_field('description_image');
                } else {
                   $image_title = 'title="Вы не заполнили Заголовок"';
                }
             } elseif ((get_sub_field('cw_cursor_effect') == 'overlay overlay-1' || get_sub_field('cw_cursor_effect') == 'overlay overlay-2' || get_sub_field('cw_cursor_effect') == 'overlay overlay-3')) {
                $image_title = NULL;
+               $this->image_clean_title = NULL;
                if (get_sub_field('cw_caption_image') || get_sub_field('description_image')) {
+                  $this->image_clean_title = NULL;
                   $image_title = NULL;
                   $figcaption = '<figcaption>';
                   if (get_sub_field('cw_caption_image') && get_sub_field('cw_cursor_effect') == 'overlay overlay-1') {
@@ -104,12 +131,19 @@ class CW_Image
                $this->image_description = get_sub_field('description_image');
                $this->image_figcaption = NULL;
                $image_title = get_sub_field('cw_caption_image');
+               $this->image_clean_title = get_sub_field('cw_caption_image');
+            } elseif (get_sub_field('cw_cursor_effect') == 'swiper-caption') {
+               $this->image_clean_title = get_sub_field('cw_caption_image');
+               $this->image_figcaption = NULL;
+               $image_title = NULL;
             } else {
+               $this->image_clean_title = NULL;
                $image_title = NULL;
                $this->image_figcaption = NULL;
             }
          endwhile;
       else :
+         $this->image_clean_title = NULL;
          $image_title = NULL;
       endif;
       return $image_title;
@@ -183,34 +217,43 @@ class CW_Image
 
       if (have_rows('cw_image')) :
          while (have_rows('cw_image')) : the_row();
-            if (get_sub_field('cw_shape_image') == 'img-mask mask-1' || get_sub_field('cw_shape_image') == 'img-mask mask-2' || get_sub_field('cw_shape_image') == 'img-mask mask-3') {
-               $image_wrapper_class[] = get_sub_field('cw_shape_image');
+
+
+            if (get_sub_field('cw_shape_image') == 'img-mask mask-1') {
+               $image_wrapper_class[] = $this->image_shape;
+            } elseif (get_sub_field('cw_shape_image') == 'img-mask mask-2') {
+               $image_wrapper_class[] = $this->image_shape;
+            } elseif (get_sub_field('cw_shape_image') == 'img-mask mask-3') {
+               $image_wrapper_class[] = $this->image_shape;
             }
+
+
             if (get_sub_field('cw_effect_hover') == 'hover-scale') {
                $image_wrapper_class[] = 'hover-scale';
             } elseif (get_sub_field('cw_effect_hover') == 'lift') {
                $image_wrapper_class[] = 'lift';
             }
 
-            if (get_sub_field('cw_shape_image') == 'rounded-0' || get_sub_field('cw_shape_image') == 'rounded' || get_sub_field('cw_shape_image') == 'rounded-pill') {
-               $image_wrapper_class[] = get_sub_field('cw_shape_image');
+            if (get_sub_field('cw_shape_image') == 'rounded-0') {
+               $image_wrapper_class[] = $this->image_shape;
+            } elseif (get_sub_field('cw_shape_image') == 'rounded') {
+               $image_wrapper_class[] = $this->image_shape;
+            } elseif (get_sub_field('cw_shape_image') == 'rounded-pill') {
+               $image_wrapper_class[] = $this->image_shape;
             }
 
-            if (get_sub_field('cw_cursor_effect')) {
+            if (get_sub_field('cw_cursor_effect') !== 'none') {
                $image_wrapper_class[] = get_sub_field('cw_cursor_effect');
-            } else {
-               $image_wrapper_class[] = NULL;
             }
 
             if (get_sub_field('cw_cursor_effect') == 'video_button') {
                $image_wrapper_class[] = 'position-relative';
-            } else {
-               $image_wrapper_class[] = NULL;
             }
 
             if (get_sub_field('cw_gradient') !== 'none') {
                $image_wrapper_class[] = get_sub_field('cw_gradient');
             }
+
             $image_wrapper_class = implode(' ', $image_wrapper_class);
          endwhile;
       endif;
@@ -236,9 +279,7 @@ class CW_Image
 
       if (isset($cw_settings['image_pattern']) && !$cw_settings['image_pattern'] == NULL) {
 
-
-
-         if ($image_alt || $image_classes || $image_wrapper_classes || $image_description || $image_url_src || $image_title || $image_figcaption || $image_link) {
+         if ($image_classes || $image_wrapper_classes || $image_description || $image_url_src || $image_title || $image_figcaption || $image_link) {
 
             // %3$s
             if ($image_alt) {
@@ -249,14 +290,14 @@ class CW_Image
 
             // %4$s
             if ($image_classes) {
-               $image_classes = 'class="' . $this->image_classes . '"';
+               $image_classes = 'class="' . $image_classes . '"';
             } else {
                $image_classes = NULL;
             }
 
             // %5$s
             if ($image_wrapper_classes) {
-               $wrapper_image_classes = 'class="' . $this->wrapper_image_classes . '"';
+               $wrapper_image_classes = 'class="' . $image_wrapper_classes . '"';
             } else {
                $wrapper_image_classes = NULL;
             }
@@ -317,9 +358,7 @@ class CW_Image
             $final_image = sprintf($image_pattern, $image_url_small, $image_url_small, $image_alt, $image_classes, $wrapper_image_classes, $image_link_open, $image_link_close, $image_url_src, $image_title, $image_figcaption);
          } else {
             $image_pattern = $cw_settings['image_pattern'];
-            $image_url_big = $this->image_url_big;
-            $image_url_small = $this->image_url_small;
-            $final_image = sprintf($image_pattern, $image_url_small, $image_url_small, NULL);
+            $final_image = sprintf($image_pattern, $image_url_small, $image_url_small, $image_alt = NULL);
          }
       } else {
          $final_image = NULL;

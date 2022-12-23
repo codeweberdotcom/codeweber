@@ -7,7 +7,7 @@
             "label": "Title",
             "name": "cw_title",
             "type": "text",
-            "instructions": "",
+            "instructions": "Sandbox focuses on <br \/><span class=\"typer text-primary text-nowrap\" data-delay=\"100\" data-words=\"customer satisfaction,business needs,creative ideas\"><\/span><span class=\"cursor text-primary\" data-owner=\"typer\"><\/span>",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -58,6 +58,46 @@
             "maxlength": "",
             "rows": "",
             "new_lines": "br"
+        },
+        {
+            "key": "field_63a465653a56f",
+            "label": "Typewriter",
+            "name": "cw_typewriter",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_63a4657e3a570",
+                    "label": "Text",
+                    "name": "cw_text",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                }
+            ]
         }
     ],
     "location": [
@@ -78,5 +118,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671399042
+    "modified": 1671745395
 }
