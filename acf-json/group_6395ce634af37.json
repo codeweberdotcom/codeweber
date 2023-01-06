@@ -57,23 +57,7 @@
                                 "operator": "==",
                                 "value": "URL"
                             }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array"
-                },
-                {
-                    "key": "field_6395cfa7bc2de",
-                    "label": "Video Url",
-                    "name": "cw_video_url",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
+                        ],
                         [
                             {
                                 "field": "field_6395ce75bc2da",
@@ -87,8 +71,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": ""
+                    "return_format": "array"
                 },
                 {
                     "key": "field_6395cfdebc2df",
@@ -141,5 +124,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670845412
+    "modified": 1672093282
 }

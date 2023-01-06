@@ -3,47 +3,39 @@
 /**
  * CW
  */
-$hero = new CW_Settings(
-  $cw_settings = array(
-    'image_pattern' => '<figure %5s title="dsdsds"><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
-    'image_link' => '/dist/img/illustrations/i2.png',
-    'image_thumb_size' => 'sandbox_hero_1',
-    'image_big_size' => 'project_1',
-    'swiper' => array('swiper' => true, 'xs' => '1'),
-  )
-);
-?>
+// $testt = new CW_Features;
+// printr($testt);
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $hero->background_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $hero->background_data; ?>>
-  <?php if ($hero->background_video_bool == true) { ?>
-    <video poster="<?php echo $hero->background_video_preview; ?>" src="<?php echo $hero->background_video_url; ?>" autoplay loop playsinline muted></video>
-    <div class="video-content">
-    <?php } ?>
-    <div class="container pt-10 pt-md-14 pb-8 text-center">
-      <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-        <div class="col-lg-7">
-          <?php
-          echo $hero->swiper_final;
-          ?>
-          <!--/images -->
+// echo $testt->features_item_final;
+/* new CW_Title(
+ * $title_color = NULL, 
+ * $title_text = NULL, 
+ * $title_tag = NULL, 
+ * $title_display = NULL, 
+ * $title_lead = NULL, 
+ * $title_fs = NULL, 
+ * $title_align = NULL, 
+ * $title_id);
+ */
+$features = new CW_Features(
+   NULL,
+   NULL,
+   NULL,
+   NULL,
+   '<div class="col-md-6 col-xl-3 %1$s"><div class="card shadow-lg"><div class="card-body">%2$s<h4>%3$s</h4><p class="mb-5">%4$s</p>%5$s</div><!--/.card-body --></div><!--/.card --></div><!--/column -->',
+   '<div class="col-md-6 col-xl-3">
+          <div class="card shadow-lg">
+            <div class="card-body">
+              <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/search-2.svg" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
+              <h4>SEO Services</h4>
+              <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+              <a href="%6$s" class="more hover link-yellow">Learn More</a>
+            </div>
+            <!--/.card-body -->
+          </div>
+          <!--/.card -->
         </div>
-        <!-- /column -->
-        <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start">
-          <?php echo $hero->title; ?>
-          <!--/title -->
-          <?php echo $hero->paragraph; ?>
-          <!--/pargraph -->
-          <?php echo $hero->buttons; ?>
-          <!--/buttons group -->
-        </div>
-        <!-- /column -->
-      </div>
-      <!-- /.row -->
-    </div>
-    <!-- /.container -->
-    <?php if ($hero->background_video_bool == true) { ?>
-    </div>
-    </video>
-  <?php } ?>
-</section>
-<!-- /section -->
+        <!--/column -->'
+);
+
+echo $features->features_item_final;

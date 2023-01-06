@@ -291,87 +291,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62e0f1e5bcaf5",
-                            "label": "Dark or White?",
-                            "name": "dark_or_white",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d93856d15e2"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        },
-                        {
-                            "key": "field_630dff7d93ae0",
-                            "label": "Subtitle",
-                            "name": "subtitle",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d88a8b234a1"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_62e0f1e5c05d6",
-                            "label": "Title",
-                            "name": "title",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33.33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d88a70234a0"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        },
-                        {
-                            "key": "field_630dff06568b8",
-                            "label": "Features",
-                            "name": "",
-                            "type": "accordion",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "open": 0,
-                            "multi_expand": 0,
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_630dff12568b9",
+                            "key": "field_63acc1f6c55ba",
                             "label": "Features",
                             "name": "features",
                             "type": "clone",
@@ -384,7 +304,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62ee5ecf541f1"
+                                "group_63acc08203fb5"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1078,5 +998,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670459281
+    "modified": 1672266252
 }

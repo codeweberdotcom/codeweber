@@ -50,6 +50,7 @@
                         "Unicons": "Unicons",
                         "SVG": "SVG",
                         "Number": "Number",
+                        "Image": "Image",
                         "None": "None"
                     },
                     "allow_null": 0,
@@ -72,6 +73,13 @@
                                 "field": "field_6393a9cca3528",
                                 "operator": "!=",
                                 "value": "None"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6393a9cca3528",
+                                "operator": "!=",
+                                "value": "Image"
                             }
                         ]
                     ],
@@ -107,6 +115,13 @@
                                 "operator": "!=",
                                 "value": "None"
                             }
+                        ],
+                        [
+                            {
+                                "field": "field_6393a9cca3528",
+                                "operator": "!=",
+                                "value": "Image"
+                            }
                         ]
                     ],
                     "wrapper": {
@@ -126,6 +141,38 @@
                     "return_format": "value",
                     "ajax": 0,
                     "placeholder": ""
+                },
+                {
+                    "key": "field_63a61558071be",
+                    "label": "Image",
+                    "name": "cw_image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6393a9cca3528",
+                                "operator": "==",
+                                "value": "Image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
                 },
                 {
                     "key": "field_6393aac6a352b",
@@ -1493,5 +1540,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671400786
+    "modified": 1671830852
 }
