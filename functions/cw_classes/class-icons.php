@@ -10,6 +10,7 @@ class CW_Icon
    public $size_icon;
    public $unicons_icon;
    public $lineal_icon;
+   public $image_icon;
    public $color_icon;
    public $number_icon;
    public $class_icon;
@@ -25,6 +26,7 @@ class CW_Icon
       $this->form_icon = $this->cw_form_icon();
       $this->size_icon = $this->cw_size_icon();
       $this->unicons_icon = $this->cw_unicons_icon();
+      $this->image_icon = $this->cw_image_icon();
       $this->lineal_icon = $this->cw_lineal_icon();
       $this->number_icon = $this->cw_number_icon();
       $this->final_icon = $this->cw_final_icon();
@@ -102,6 +104,47 @@ class CW_Icon
       return $size_icon;
    }
 
+   // Image
+   public function cw_image_icon()
+   {
+      if (have_rows('cw_icons')) :
+         while (have_rows('cw_icons')) : the_row();
+            if (get_sub_field('cw_image')) {
+
+               $image = get_sub_field('cw_image');
+               $form = $this->form_icon;
+               $size = $this->size_icon;
+               $class = array();
+               $class[] = $this->class_icon;
+               if ($form == 'btn-circle')
+                  $class[] = 'rounded-pill';
+               elseif ($form == 'btn-block') {
+                  $class[] = 'rounded';
+               } else {
+                  $class[] = NULL;
+               }
+               $class = 'class="' . implode(' ', $class) . '"';
+
+               if ($size == 'sm') {
+                  $size = 'cw_icon_sm';
+               } elseif ($size == 'md') {
+                  $size = 'cw_icon_md';
+               } elseif ($size == 'lg') {
+                  $size = 'cw_icon_lg';
+               } else {
+                  $size = 'cw_icon_lg';
+               }
+               $image_icon = '<img ' . $class . ' src="' . $image['sizes'][$size] . '"/>';
+            } else {
+               $image_icon = 'NULL';
+            }
+
+         endwhile;
+      else :
+         $image_icon = 'NULL';
+      endif;
+      return $image_icon;
+   }
 
    //Unicons
    public function cw_unicons_icon()
@@ -168,8 +211,14 @@ class CW_Icon
                } else {
                   $final_icon =  '<div class="icon btn btn-circle btn-' . $this->size_icon . ' btn-' . $this->color_icon . '" ' . $this->id_icon . '>' . $this->number_icon . '</div>';
                }
+            } elseif (get_sub_field('cw_type_icon') == 'Image' && get_sub_field('cw_type_icon') !== 'None') {
+               $final_icon =  $this->image_icon;
+            } else {
+               $final_icon = NULL;
             }
          endwhile;
+      else :
+         $final_icon = NULL;
       endif;
       return $final_icon;
    }

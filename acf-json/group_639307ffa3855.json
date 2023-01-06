@@ -86,12 +86,53 @@
                             },
                             "choices": {
                                 "Theme": "Theme",
+                                "Link": "Link",
                                 "Icon": "Icon",
                                 "Expand": "Expand",
                                 "Play": "Play",
                                 "Circle": "Circle",
                                 "Social": "Social",
                                 "None": "None"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_63acb196d54f6",
+                            "label": "Link Effect",
+                            "name": "cw_link_effect",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Link"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "Link 1": "Link 1",
+                                "Link 2": "Link 2",
+                                "Link 3": "Link 3",
+                                "Link 4": "Link 4",
+                                "Link 5": "Link 5",
+                                "Link 6": "Link 6",
+                                "Link 7": "Link 7",
+                                "Link 8": "Link 8",
+                                "Link 9": "Link 9"
                             },
                             "default_value": false,
                             "allow_null": 0,
@@ -112,8 +153,36 @@
                                 [
                                     {
                                         "field": "field_639309e624420",
-                                        "operator": "!=",
-                                        "value": "Expand"
+                                        "operator": "==",
+                                        "value": "Theme"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Icon"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Play"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Circle"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Social"
                                     }
                                 ]
                             ],
@@ -147,8 +216,36 @@
                                 [
                                     {
                                         "field": "field_639309e624420",
-                                        "operator": "!=",
-                                        "value": "Expand"
+                                        "operator": "==",
+                                        "value": "Theme"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Icon"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Play"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Circle"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Social"
                                     }
                                 ]
                             ],
@@ -1415,8 +1512,36 @@
                                 [
                                     {
                                         "field": "field_639309e624420",
-                                        "operator": "!=",
-                                        "value": "Expand"
+                                        "operator": "==",
+                                        "value": "Theme"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Icon"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Play"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Circle"
+                                    }
+                                ],
+                                [
+                                    {
+                                        "field": "field_639309e624420",
+                                        "operator": "==",
+                                        "value": "Social"
                                     }
                                 ]
                             ],
@@ -1541,5 +1666,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671662083
+    "modified": 1672262499
 }

@@ -18,5 +18,10 @@ function my_custom_fonts()
 .acf-tab-group {
     padding: 5px 5px 0;
 }
+.acf-label.acf-accordion-title {
+    background: lightgray;
+    font-weight: 800!important;
+    letter-spacing: 1px;
+}
   </style>';
 }

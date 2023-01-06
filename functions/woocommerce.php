@@ -1185,13 +1185,72 @@ function codeweber_homepage_logout_redirect()
 
 
 
+/**
+ * overwritten from https://woocommerce.wp-a2z.org/oik_api/wc_get_gallery_image_html/
+ */
+function my_custom_img_function($attachment_id, $main_image = false, $size = NULL)
+{
+   $flexslider        = (bool) apply_filters('woocommerce_single_product_flexslider_enabled', get_theme_support('wc-product-gallery-slider'));
+   $gallery_thumbnail = wc_get_image_size('gallery_thumbnail');
+   $thumbnail_size    = apply_filters('woocommerce_gallery_thumbnail_size', array($gallery_thumbnail['width'], $gallery_thumbnail['height']));
+   $image_size        = apply_filters('woocommerce_gallery_image_size', $flexslider || $main_image ? 'woocommerce_single' : $thumbnail_size);
+   $full_size         = apply_filters('woocommerce_gallery_full_size', apply_filters('woocommerce_product_thumbnails_large_size', 'full'));
+   $thumbnail_src     = wp_get_attachment_image_src($attachment_id, $thumbnail_size);
+   $full_src          = wp_get_attachment_image_src($attachment_id, $full_size);
+   $alt_text          = trim(wp_strip_all_tags(get_post_meta($attachment_id, '_wp_attachment_image_alt', true)));
 
 
 
+   $image = wp_get_attachment_image(
+      $attachment_id,
+      $image_size,
+      false,
+      apply_filters(
+         'woocommerce_gallery_image_html_attachment_image_params',
+         array(
+            'title'                   => _wp_specialchars(get_post_field('post_title', $attachment_id), ENT_QUOTES, 'UTF-8', true),
+            'data-caption'            => _wp_specialchars(get_post_field('post_excerpt', $attachment_id), ENT_QUOTES, 'UTF-8', true),
+            'data-src'                => esc_url($full_src[0]),
+            'data-large_image'        => esc_url($full_src[0]),
+            'data-large_image_width'  => esc_attr($full_src[1]),
+            'data-large_image_height' => esc_attr($full_src[2]),
+            'class'                   => esc_attr($main_image ? 'wp-post-image' : ''),
+         ),
+         $attachment_id,
+         $image_size,
+         $main_image
+      )
+   );
 
-// add_action('wp_ajax_hello', 'say_hello');
+   if ($size == 'full') {
+      return '<div data-thumb="' . esc_url($thumbnail_src[0]) . '" data-thumb-alt="' . esc_attr($alt_text) . '" class="woocommerce-product-gallery__image swiper-slide"><figure class="rounded">' . $image . '<a class="item-link" href="' . esc_url($full_src[0]) . '" data-glightbox data-gallery="product-group"><i class="uil uil-focus-add"></i></a></figure></div>';
+   } elseif ($size == 'thumbnail') {
+      return '
+      <div class="swiper-slide"><img src="' . esc_url($thumbnail_src[0]) . '" class="rounded" alt="" /></div>';
+   }
+}
 
-// function say_hello()
-// {
-//    echo "привет";
-// }
+
+add_filter('woocommerce_get_image_size_single', 'my_set_product_img_size');
+add_filter('woocommerce_get_image_size_shop_single', 'my_set_product_img_size');
+add_filter('woocommerce_get_image_size_woocommerce_single', 'my_set_product_img_size');
+function my_set_product_img_size()
+{
+   $size = array(
+      'width'  => 600,
+      'height' => 600,
+      'crop'   => 1,
+   );
+   return $size;
+}
+
+
+add_filter('woocommerce_get_image_size_gallery_thumbnail', function ($size) {
+   return array(
+      'width'  => 150,
+      'height' => 150,
+      'crop'   => 0,
+   );
+});
+
+//add_filter("woocommerce_reset_variations_link", "__return_false");

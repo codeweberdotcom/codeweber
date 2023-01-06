@@ -5,12 +5,16 @@
  */
 $hero = new CW_Settings(
   $cw_settings = array(
+
+
     'title' => 'Grow Your Business with Our Solutions.',
-    'paragraph' => 'We help our clients to increase their website traffic, rankings and visibility in search results.',
     'patternTitle' => '<h1 class="display-1 mb-5 mx-md-n5 mx-lg-0">%s</h1>',
+    'paragraph' => 'We help our clients to increase their website traffic, rankings and visibility in search results.',
     'patternParagraph' => '<p class="lead fs-lg mb-7">%s</p>',
-    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    // 'subtitle' => 'Grow Your Business with Our Solutions.',
+    // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
     'buttons' => '<span><a class="btn btn-primary rounded-pill me-2">Try It For Free</a></span>',
+    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
     'background_class_default' => 'wrapper bg-image',
     'background_data_default' => '/dist/img/photos/bg16.png',
     'background_video_preview' => '/dist/img/photos/movie2.jpg',

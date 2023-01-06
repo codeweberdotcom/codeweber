@@ -459,6 +459,7 @@ var theme = {
             if (slider1.getAttribute("data-autoplay") !== "true") {
               this.autoplay.stop();
             }
+
             this.update();
           },
         },
@@ -508,12 +509,27 @@ var theme = {
         },
       });
     }
+
+    jQuery(document).ready(function ($) {
+      $("input.variation_id").change(function () {
+        if ("" != $("input.variation_id").val()) {
+          document.querySelector(
+            ".swiper-thumbs .swiper-wrapper .swiper-slide img"
+          ).src = document.querySelector(
+            ".woocommerce-product-gallery__wrapper .swiper-slide img"
+          ).src;
+          slider.slideTo(0, 500, true);
+        }
+      });
+    });
   },
+
   /**
    * GLightbox
    * Enables lightbox functionality
    * Requires assets/js/vendor/glightbox.js
    */
+
   lightbox: () => {
     const lightbox = GLightbox({
       selector: "*[data-glightbox]",
