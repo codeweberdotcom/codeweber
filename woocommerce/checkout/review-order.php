@@ -26,11 +26,12 @@ defined('ABSPATH') || exit;
 		foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
 			$_product = apply_filters('woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key);
 			$image_url = wp_get_attachment_image_src(get_post_thumbnail_id($cart_item['product_id']), 'cart_checkout');
+			$thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
 			if ($_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters('woocommerce_checkout_cart_item_visible', true, $cart_item, $cart_item_key)) {
 		?>
 				<div class="shopping-cart-item d-flex justify-content-between mb-4">
 					<div class="d-flex flex-row d-flex align-items-center">
-						<figure class="rounded w-17"><a href="<?php echo get_permalink($cart_item['product_id']); ?>"><img src="<?php echo $image_url[0]; ?>" srcset="<?php echo $image_url[0]; ?>" alt=""></a></figure>
+						<figure class="rounded w-17"><a href="<?php echo get_permalink($cart_item['product_id']); ?>"><?php echo $thumbnail; ?></a></figure>
 						<div class="w-100 ms-4">
 							<h3 class="post-title h6 lh-xs mb-1"><a href="<?php echo get_permalink($cart_item['product_id']); ?>" class="link-dark"><?php echo wp_kses_post(apply_filters('woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key)) . '&nbsp;'; ?>
 									<?php echo apply_filters('woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf('&times;&nbsp;%s', $cart_item['quantity']) . '</strong>', $cart_item, $cart_item_key); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 

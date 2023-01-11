@@ -1253,4 +1253,4 @@ add_filter('woocommerce_get_image_size_gallery_thumbnail', function ($size) {
    );
 });
 
-//add_filter("woocommerce_reset_variations_link", "__return_false");
+add_filter("woocommerce_reset_variations_link", "__return_false");

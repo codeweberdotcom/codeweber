@@ -1,5 +1,4 @@
 "use strict";
-
 (function () {
   "use strict";
   window.addEventListener(
@@ -45,7 +44,7 @@ var theme = {
     theme.rellax();
     theme.scrollCue();
     theme.swiperSlider();
-    theme.lightbox();
+    //theme.lightbox();
     theme.plyr();
     theme.progressBar();
     theme.loader();
@@ -428,6 +427,7 @@ var theme = {
         threshold: 2,
         slideToClickedSlide: true,
       });
+
       if (slider1.getAttribute("data-thumbs") === "true") {
         var thumbsInit = sliderTh;
         var swiperMain = document.createElement("div");
@@ -508,20 +508,21 @@ var theme = {
           swiper: thumbsInit,
         },
       });
-    }
 
-    jQuery(document).ready(function ($) {
-      $("input.variation_id").change(function () {
-        if ("" != $("input.variation_id").val()) {
+      if (document.querySelector("input.variation_id") !== null) {
+        document.querySelector("input.variation_id").onchange = function fff() {
           document.querySelector(
             ".swiper-thumbs .swiper-wrapper .swiper-slide img"
           ).src = document.querySelector(
             ".woocommerce-product-gallery__wrapper .swiper-slide img"
           ).src;
+          console.log(slider);
           slider.slideTo(0, 500, true);
-        }
-      });
-    });
+
+          theme.lightbox.reload();
+        };
+      }
+    }
   },
 
   /**
@@ -530,42 +531,41 @@ var theme = {
    * Requires assets/js/vendor/glightbox.js
    */
 
-  lightbox: () => {
-    const lightbox = GLightbox({
-      selector: "*[data-glightbox]",
-      touchNavigation: true,
-      loop: false,
-      zoomable: false,
-      autoplayVideos: true,
-      moreLength: 0,
-      slideExtraAttributes: {
-        poster: "",
-      },
-      plyr: {
-        css: "",
-        js: "",
-        config: {
-          ratio: "",
-          fullscreen: {
-            enabled: false,
-            iosNative: false,
-          },
-          youtube: {
-            noCookie: true,
-            rel: 0,
-            showinfo: 0,
-            iv_load_policy: 3,
-          },
-          vimeo: {
-            byline: false,
-            portrait: false,
-            title: false,
-            transparent: false,
-          },
+  lightbox: new GLightbox({
+    selector: "*[data-glightbox]",
+    touchNavigation: true,
+    loop: false,
+    zoomable: false,
+    autoplayVideos: true,
+    moreLength: 0,
+    slideExtraAttributes: {
+      poster: "",
+    },
+    plyr: {
+      css: "",
+      js: "",
+      config: {
+        ratio: "",
+        fullscreen: {
+          enabled: false,
+          iosNative: false,
+        },
+        youtube: {
+          noCookie: true,
+          rel: 0,
+          showinfo: 0,
+          iv_load_policy: 3,
+        },
+        vimeo: {
+          byline: false,
+          portrait: false,
+          title: false,
+          transparent: false,
         },
       },
-    });
-  },
+    },
+  }),
+
   /**
    * Plyr
    * Enables media player
