@@ -8,18 +8,20 @@ class CW_Divider
    public $class_divider;
    public $div_wave;
    public $div_border;
+   public $div_color;
 
 
-   public function __construct()
+   public function __construct($type_divider, $class_divider, $div_wave, $div_color, $div_border)
    {
-      $this->type_divider = $this->cw_type_divider();
-      $this->class_divider = $this->cw_class_divider();
-      $this->div_wave = $this->cw_div_wave();
-      $this->div_border = $this->cw_div_border();
+      $this->type_divider = $this->cw_type_divider($type_divider);
+      $this->div_color = $this->cw_div_color($div_color);
+      $this->class_divider = $this->cw_class_divider($class_divider);
+      $this->div_wave = $this->cw_div_wave($div_wave);
+      $this->div_border = $this->cw_div_border($div_border);
    }
 
    //Type_divider
-   public function cw_type_divider()
+   public function cw_type_divider($type_divider)
    {
       if (have_rows('cw_divider')) :
          while (have_rows('cw_divider')) : the_row();
@@ -31,28 +33,48 @@ class CW_Divider
       return $type_divider;
    }
 
+   //Color_divider
+   public function cw_div_color($div_color)
+   {
+      if (have_rows('cw_divider')) :
+         while (have_rows('cw_divider')) : the_row();
+            $cw_div_color_object = new CW_Color();
+            $cw_div_color = $cw_div_color_object->color;
+            if ($cw_div_color == 'none') {
+               $cw_div_color = $div_color;
+            }
+         endwhile;
+      else :
+         $cw_div_color = NULL;
+      endif;
+
+
+      return $cw_div_color;
+   }
+
    //Class_divider
-   public function cw_class_divider()
+   public function cw_class_divider($class_divider)
    {
       $type_divider = $this->type_divider;
       if (have_rows('cw_divider') && $type_divider == 'angle' && $type_divider !== 'none') :
          while (have_rows('cw_divider')) : the_row();
-            $class_divider = 'wrapper angled ' . get_sub_field('cw_start_angle');
+            $cw_class_divider = 'wrapper angled ' . get_sub_field('cw_start_angle');
          endwhile;
       else :
-         $class_divider = NULL;
+         $cw_class_divider = 'wrapper angled ' . $class_divider;
       endif;
-      return $class_divider;
+      return $cw_class_divider;
    }
 
    //Div_wave
-   public function cw_div_wave()
+   public function cw_div_wave($div_wave)
    {
       $type_divider = $this->type_divider;
+      $color = 'text-' . $this->div_color;
       if (have_rows('cw_divider') && $type_divider == 'wave' && $type_divider !== 'none') {
          while (have_rows('cw_divider')) : the_row();
             $type_wave = get_sub_field('cw_start_wave');
-            $div_wave = '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2">';
+            $div_wave = '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider ' . $color . ' mx-n2">';
             if ($type_wave == 'wave_1') {
                $div_wave .= '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 70"><path fill="currentColor" d="M1440,70H0V45.16a5762.49,5762.49,0,0,1,1440,0Z"/></svg>';
             } elseif ($type_wave == 'wave_2') {
@@ -62,21 +84,27 @@ class CW_Divider
             } elseif ($type_wave == 'wave_4') {
                $div_wave .= '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="currentColor" d="M1260,1.65c-60-5.07-119.82,2.47-179.83,10.13s-120,11.48-180,9.57-120-7.66-180-6.42c-60,1.63-120,11.21-180,16a1129.52,1129.52,0,0,1-180,0c-60-4.78-120-14.36-180-19.14S60,7,30,7H0v93H1440V30.89C1380.07,23.2,1319.93,6.15,1260,1.65Z"/></svg>';
             } elseif ($type_wave == 'wave_5') {
-               $div_wave .= ' <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="currentColor" d="M1260.2,37.86c-60-10-120-20.07-180-16.76-60,3.71-120,19.77-180,18.47-60-1.71-120-21.78-180-31.82s-120-10-180-1.7c-60,8.73-120,24.79-180,28.5-60,3.31-120-6.73-180-11.74s-120-5-150-5H0V100H1440V49.63C1380.07,57.9,1320.13,47.88,1260.2,37.86Z"/></svg>';
-            } else {
-               $div_wave = NULL;
+               $div_wave .= '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100"><path fill="currentColor" d="M1260.2,37.86c-60-10-120-20.07-180-16.76-60,3.71-120,19.77-180,18.47-60-1.71-120-21.78-180-31.82s-120-10-180-1.7c-60,8.73-120,24.79-180,28.5-60,3.31-120-6.73-180-11.74s-120-5-150-5H0V100H1440V49.63C1380.07,57.9,1320.13,47.88,1260.2,37.86Z"/></svg>';
+            } elseif ($type_wave == 'wave_6') {
+               $div_wave .= '<svg viewBox="0 0 1440 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M364.5 84.0006C588 82.5 1207.5 -79.9999 1440 52.6209V102.991H0V20.8009C0 20.8009 141 85.5013 364.5 84.0006Z"/></svg>';
+            } elseif ($type_wave == 'wave_7') {
+               $div_wave .= '<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+    </svg>';
             };
             $div_wave .= '</div></div><!-- /.overflow-hidden -->';
+
+            $this->class_divider = NULL;
          endwhile;
       } else {
-         $div_wave = NULL;
+         $div_wave = $div_wave;
       }
       return $div_wave;
    }
 
 
    //Div_border
-   public function cw_div_border()
+   public function cw_div_border($div_border)
    {
       $type_divider = $this->type_divider;
 

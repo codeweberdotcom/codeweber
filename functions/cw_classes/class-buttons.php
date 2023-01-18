@@ -36,12 +36,12 @@ class CW_Button
       $this->link_button = $this->cw_link_button();
       $this->icon_button = $this->cw_icon_button();
       $this->shape_button = $this->cw_shape_button();
-      $this->class_button = $this->cw_class_button();
+      $this->class_button = $this->cw_class_button($import_class);
       $this->color_button = $this->cw_color_button();
       $this->size_button = $this->cw_size_button();
 
       $this->id_button = $this->cw_id_button();
-      $this->classes_button  = $this->cw_button_classes();
+      $this->classes_button  = $this->cw_button_classes($import_class);
 
       $this->final_button = $this->cw_final_button($import_class);
    }
@@ -232,8 +232,11 @@ class CW_Button
    }
 
    //Button Classes
-   public function cw_button_classes()
+   public function cw_button_classes($import_class)
    {
+      if ($import_class !== NULL) {
+         $this->import_class = $import_class;
+      }
       $button_classes_array = array();
 
       if ($this->shape_button) {
@@ -257,7 +260,7 @@ class CW_Button
    }
 
    //Final Button
-   public function cw_final_button()
+   public function cw_final_button($import_class)
    {
 
       if (have_rows('cw_buttons')) {
@@ -277,47 +280,51 @@ class CW_Button
       $type_button = $this->type_button;
       $text_button = $this->text_button;
 
-      if ($type_button == 'Theme') {
-         $button_classes_array = array('btn');
-         $button_classes_array[] = $this->classes_button;
-         $button_classes = implode(' ', $button_classes_array);
-         $icon_button = NULL;
-      } elseif ($type_button == 'Icon') {
-         $button_classes_array = array();
-         $button_classes_array[] = 'btn btn-icon btn-icon-start';
-         $button_classes_array[] = $this->classes_button;
-         $icon_button = $icon_button;
-         $button_classes = implode(' ', $button_classes_array);
-      } elseif ($type_button == 'Expand') {
-         $button_classes_array = array();
-         $button_classes_array[] = 'btn btn-expand rounded-pill';
-         $button_classes_array[] = $this->classes_button;
-         $button_classes = implode(' ', $button_classes_array);
-         $icon_button = '<i class="uil uil-arrow-right"></i>';
-         $text_button = '<span>' . $text_button . '</span>';
-      } elseif ($type_button == 'Play') {
-         $button_classes_array = array();
-         $button_classes_array[] = 'btn btn-circle btn-play ripple';
-         $button_classes_array[] = $this->classes_button;
-         $button_classes = implode(' ', $button_classes_array);
-         $icon_button = '<i class="icn-caret-right"></i>';
-         $text_button = NULL;
-      } elseif ($type_button == 'Circle') {
-         $button_classes_array = array();
-         $button_classes_array[] = 'btn btn-circle';
-         $button_classes_array[] = $this->classes_button;
-         $button_classes = implode(' ', $button_classes_array);
-         $icon_button = '<span><i class="uil uil-check"></i></span>';
-         $text_button = NULL;
-      } elseif ($type_button == 'Link') {
-         $button_classes_array = array();
-         $button_classes_array[] = $this->link_button;
-         $button_classes_array[] = $this->classes_button;
-         $button_classes = implode(' ', $button_classes_array);
-         $icon_button = NULL;
-      }
-      $final_button = '<a ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . '>' . $icon_button . $text_button . '</a>';
+      if ($type_button !== 'None') {
+         if ($type_button == 'Theme') {
+            $button_classes_array = array('btn');
+            $button_classes_array[] = $this->classes_button;
+            $button_classes = implode(' ', $button_classes_array);
+            $icon_button = NULL;
+         } elseif ($type_button == 'Icon') {
+            $button_classes_array = array();
+            $button_classes_array[] = 'btn btn-icon btn-icon-start';
+            $button_classes_array[] = $this->classes_button;
+            $icon_button = $icon_button;
+            $button_classes = implode(' ', $button_classes_array);
+         } elseif ($type_button == 'Expand') {
+            $button_classes_array = array();
+            $button_classes_array[] = 'btn btn-expand rounded-pill';
+            $button_classes_array[] = $this->classes_button;
+            $button_classes = implode(' ', $button_classes_array);
+            $icon_button = '<i class="uil uil-arrow-right"></i>';
+            $text_button = '<span>' . $text_button . '</span>';
+         } elseif ($type_button == 'Play') {
+            $button_classes_array = array();
+            $button_classes_array[] = 'btn btn-circle btn-play ripple';
+            $button_classes_array[] = $this->classes_button;
+            $button_classes = implode(' ', $button_classes_array);
+            $icon_button = '<i class="icn-caret-right"></i>';
+            $text_button = NULL;
+         } elseif ($type_button == 'Circle') {
+            $button_classes_array = array();
+            $button_classes_array[] = 'btn btn-circle';
+            $button_classes_array[] = $this->classes_button;
+            $button_classes = implode(' ', $button_classes_array);
+            $icon_button = '<span><i class="uil uil-check"></i></span>';
+            $text_button = NULL;
+         } elseif ($type_button == 'Link') {
+            $button_classes_array = array();
+            $button_classes_array[] = $this->link_button;
+            $button_classes_array[] = $this->classes_button;
+            $button_classes = implode(' ', $button_classes_array);
+            $icon_button = NULL;
+         }
 
+         $final_button = '<a ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . '>' . $icon_button . $text_button . '</a>';
+      } else {
+         $final_button = NULL;
+      }
       return $final_button;
    }
 }
@@ -342,6 +349,7 @@ class CW_Buttons
          $count = NULL;
       }
       if (have_rows('cw_buttons_repeater')) {
+
          while (have_rows('cw_buttons_repeater')) {
             the_row();
             if ($count == 1) {

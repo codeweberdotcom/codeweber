@@ -16,3 +16,8 @@ include 'class-link.php';
 include 'class-title.php';
 include 'class-paragraph.php';
 include 'class-subtitle.php';
+include 'class-responsive-col.php';
+include 'class-shapes.php';
+include 'class-lists.php';
+include 'class-column.php';
+include 'class-columns_two.php';

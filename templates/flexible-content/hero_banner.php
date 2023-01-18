@@ -25,9 +25,7 @@ if (!empty($block['className'])) {
 if (!empty($block['align'])) {
    $classes .= ' align' . $block['align'];
 }
-
 ?>
-
 <?php if (have_rows('hero_banner')) : ?>
    <?php while (have_rows('hero_banner')) : the_row(); ?>
       <?php $layout = get_row_layout(); ?>

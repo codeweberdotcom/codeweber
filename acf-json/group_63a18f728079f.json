@@ -3,6 +3,23 @@
     "title": "CW Dividers",
     "fields": [
         {
+            "key": "field_63c7b892ecaac",
+            "label": "Divider",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 0,
+            "endpoint": 0
+        },
+        {
             "key": "field_639f86d96ca0b",
             "label": "Divider",
             "name": "cw_divider",
@@ -18,8 +35,8 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_63a19088a7e84",
-                    "label": "Dividers",
+                    "key": "field_63c7b8d3521bd",
+                    "label": "Divider Type",
                     "name": "",
                     "type": "tab",
                     "instructions": "",
@@ -87,7 +104,9 @@
                         "wave_2": "wave_2",
                         "wave_3": "wave_3",
                         "wave_4": "wave_4",
-                        "wave_5": "wave_5"
+                        "wave_5": "wave_5",
+                        "wave_6": "wave_6",
+                        "wave_7": "wave_7"
                     },
                     "default_value": "wave_1",
                     "allow_null": 0,
@@ -168,6 +187,35 @@
                     "return_format": "value",
                     "ajax": 0,
                     "placeholder": ""
+                },
+                {
+                    "key": "field_63c7b8e2521be",
+                    "label": "Color",
+                    "name": "cw_color",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_639f87cc6ca0c",
+                                "operator": "==",
+                                "value": "wave"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_6391c29e6e4b9"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 }
             ]
         }
@@ -190,5 +238,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671544781
+    "modified": 1674067465
 }

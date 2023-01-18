@@ -30,6 +30,8 @@ class CW_Color
                $color =  'gradient ' . get_sub_field('gradient_color');
             elseif ($type_color == 'None') :
                $color = 'none';
+            else :
+               $color = 'none';
             endif;
          endwhile;
       else :
@@ -54,6 +56,8 @@ class CW_Color
             elseif ($type_color == 'Gradient') :
                $color =  get_sub_field('gradient_color');
             elseif ($type_color == 'None') :
+               $color = 'none';
+            else :
                $color = 'none';
             endif;
          endwhile;

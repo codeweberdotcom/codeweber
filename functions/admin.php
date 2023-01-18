@@ -23,5 +23,9 @@ function my_custom_fonts()
     font-weight: 800!important;
     letter-spacing: 1px;
 }
+body {
+    display: block;
+    flex-direction: unset;
+}
   </style>';
 }

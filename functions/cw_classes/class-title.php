@@ -15,7 +15,7 @@ class CW_Title
    public $title_class;
    public $title_final;
 
-   public function __construct($title_color, $title_text, $title_tag, $title_display, $title_lead, $title_fs, $title_align, $title_id, $title_class, $title_pattern)
+   public function __construct($title_color, $title_text, $title_tag, $title_display, $title_lead, $title_fs, $title_align, $title_id, $title_class, $title_pattern, $typewriter)
    {
       $this->title_color = $this->cw_title_color($title_color);
       $this->title_text = $this->cw_title_text($title_text);
@@ -26,7 +26,7 @@ class CW_Title
       $this->title_align = $this->cw_title_align($title_align);
       $this->title_id = $this->cw_title_id($title_id);
       $this->title_class = $this->cw_title_class($title_class);
-      $this->title_final = $this->cw_title_final($title_pattern);
+      $this->title_final = $this->cw_title_final($title_pattern, $typewriter);
    }
 
    //Title_color
@@ -61,6 +61,7 @@ class CW_Title
       else :
          $cw_title_text = NULL;
       endif;
+
       return $cw_title_text;
    }
 
@@ -185,8 +186,9 @@ class CW_Title
    }
 
    //Title final 
-   public function cw_title_final($title_pattern)
+   public function cw_title_final($title_pattern, $typewriter)
    {
+
       $classes = array();
       if ($this->title_align) {
          $classes[] = $this->title_align;
@@ -209,7 +211,9 @@ class CW_Title
 
       if ($classes) {
          $class = ' class="' . implode(' ', $classes) . '"';
+         $class_p = implode(' ', $classes);
       } else {
+         $class_p = NULL;
          $class = NULL;
       }
       if ($this->title_id) {
@@ -222,13 +226,21 @@ class CW_Title
       } else {
          $tag = NULL;
       }
+
       if ($title_pattern !== NULL) {
-         $text = sprintf($title_pattern, $this->title_text);
+         $title_text = $this->title_text;
+         if ($typewriter !== NULL) {
+            $title_text .= ' <br>' . $typewriter;
+         }
+         $text = sprintf($title_pattern, $title_text, $class_p);
       } else {
          $text = $this->title_text;
+         if ($typewriter !== NULL) {
+            $text .= ' <br>' . $typewriter;
+         }
       }
       if ($tag) {
-         $cw_title_final = '<' . $tag . ' ' . $class .  $id . '>' . $this->title_text . '</' . $tag . '>';
+         $cw_title_final = '<' . $tag . ' ' . $class .  $id . '>' . $text . '</' . $tag . '>';
       } elseif ($title_pattern !== NULL) {
          $cw_title_final = $text;
       } else {

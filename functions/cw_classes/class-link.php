@@ -7,12 +7,9 @@ class CW_Link
    public $link_type;
    public $link_url;
    public $link_glightbox;
-
    public $link_url_target;
    public $link_url_title;
-
    public $link_form;
-
 
    public function __construct($link_type, $link_url, $form)
    {
@@ -25,9 +22,10 @@ class CW_Link
    public function cw_link_type($link_type)
    {
       if (have_rows('cw_links')) {
-         while (have_rows('cw_links')) : the_row();
+         while (have_rows('cw_links')) {
+            the_row();
             $cw_link_type = get_sub_field('cw_link_type');
-         endwhile;
+         }
       } elseif ($link_type !== NULL) {
          $cw_link_type = $link_type;
       } else {
@@ -49,6 +47,12 @@ class CW_Link
                $this->link_url_title = 'title="' . esc_html($cw_url['title']) . '"';
             } elseif ($cw_url && $this->link_type == 'Video URL') {
                $cw_link_url =  'href="' . esc_url($cw_url['url']) . '"';
+               $this->link_glightbox = 'data-glightbox';
+            } elseif (get_sub_field('cw_image') && $this->link_type == 'Image') {
+               $cw_image = get_sub_field('cw_image');
+               if ($cw_image) {
+                  $cw_link_url =  'href="' . esc_url($cw_image['sizes']['brk_big']) . '"';
+               }
                $this->link_glightbox = 'data-glightbox';
             } else {
                $cw_link_url = 'href="#"';

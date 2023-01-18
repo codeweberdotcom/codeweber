@@ -53,7 +53,7 @@ do_action('woocommerce_before_mini_cart'); ?>
 
 								</figure>
 								<div class="w-100 ms-4">
-									<h3 class="post-title fs-16 lh-xs mb-1"><a href="<?php echo esc_url($product_permalink); ?>" class="link-dark"><?php echo wp_kses_post($product_name); ?></a></h3>
+									<div class="h3 post-title fs-16 lh-xs mb-1"><a href="<?php echo esc_url($product_permalink); ?>" class="link-dark"><?php echo wp_kses_post($product_name); ?></a></div>
 									<?php echo wc_get_formatted_cart_item_data($cart_item); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 									?>
 									<p class="price fs-sm"><?php echo $cart_item['quantity']; ?> &times; <span class="amount"><?php echo wp_kses_post($product_price); ?></span></p>

@@ -1,6 +1,6 @@
 <?php
 
-//* ---Buttons Class ACF---
+//* ---Typewriter---
 
 class CW_Typewriter
 {
@@ -14,21 +14,21 @@ class CW_Typewriter
 
    public $typewriter_final;
 
-   public function __construct()
+   public function __construct($cw_settings)
    {
-      $this->typewriter_loop = $this->cw_typewriter_loop();
-      $this->typewriter_delay = $this->cw_typewriter_delay();
-      $this->typewriter_color = $this->cw_typewriter_color();
-      $this->typewriter_cursor = $this->cw_typewriter_cursor();
-      $this->typewriter_text = $this->cw_typewriter_text();
-      $this->typewriter_class = $this->cw_typewriter_class();
+      $this->typewriter_loop = $this->cw_typewriter_loop($cw_settings);
+      $this->typewriter_delay = $this->cw_typewriter_delay($cw_settings);
+      $this->typewriter_color = $this->cw_typewriter_color($cw_settings);
+      $this->typewriter_cursor = $this->cw_typewriter_cursor($cw_settings);
+      $this->typewriter_text = $this->cw_typewriter_text($cw_settings);
+      $this->typewriter_class = $this->cw_typewriter_class($cw_settings);
 
 
-      $this->typewriter_final = $this->cw_typewriter_final();
+      $this->typewriter_final = $this->cw_typewriter_final($cw_settings);
    }
 
    //Typewriter_loop
-   public function cw_typewriter_loop()
+   public function cw_typewriter_loop($cw_settings)
    {
       if (have_rows('typewriter')) :
          while (have_rows('typewriter')) : the_row();
@@ -45,7 +45,7 @@ class CW_Typewriter
    }
 
    //Typewriter_delay
-   public function cw_typewriter_delay()
+   public function cw_typewriter_delay($cw_settings)
    {
       if (have_rows('typewriter')) :
          while (have_rows('typewriter')) : the_row();
@@ -62,7 +62,7 @@ class CW_Typewriter
    }
 
    //Typewriter_color
-   public function cw_typewriter_color()
+   public function cw_typewriter_color($cw_settings)
    {
       if (have_rows('typewriter')) :
          while (have_rows('typewriter')) : the_row();
@@ -75,7 +75,7 @@ class CW_Typewriter
    }
 
    //Typewriter_Class
-   public function cw_typewriter_class()
+   public function cw_typewriter_class($cw_settings)
    {
       if (have_rows('typewriter')) :
          while (have_rows('typewriter')) : the_row();
@@ -88,7 +88,7 @@ class CW_Typewriter
    }
 
    //Typewriter_cursor
-   public function cw_typewriter_cursor()
+   public function cw_typewriter_cursor($cw_settings)
    {
       if (have_rows('typewriter')) :
          while (have_rows('typewriter')) : the_row();
@@ -106,10 +106,9 @@ class CW_Typewriter
    }
 
    //Typewriter_text
-   public function cw_typewriter_text()
+   public function cw_typewriter_text($cw_settings)
    {
-
-      if (have_rows('typewriter')) :
+      if (have_rows('typewriter')) {
          $typewriter_text_array = array();
          while (have_rows('typewriter')) : the_row();
             if (have_rows('cw_typewriter')) :
@@ -118,19 +117,17 @@ class CW_Typewriter
                endwhile;
                $typewriter_text = 'data-words="' . implode(',', $typewriter_text_array) . '"';
             else :
-               $typewriter_text = NULL;
+               $typewriter_text = 'data-words="' . $cw_settings['typewriter'] . '"';
             endif;
          endwhile;
-      else :
+      } else {
          $typewriter_text = NULL;
-      endif;
-
-
+      }
       return $typewriter_text;
    }
 
    //Typewriter_Final
-   public function cw_typewriter_final()
+   public function cw_typewriter_final($cw_settings)
    {
       $typewriter_text = $this->typewriter_text;
       $data_typewriter = $this->typewriter_delay;

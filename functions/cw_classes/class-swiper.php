@@ -551,7 +551,7 @@ class CW_Swiper
          endif;
       } elseif ($count_image == 0) {
          $url = get_template_directory_uri() . $cw_settings['image_link'];
-         $final_slider =  sprintf($cw_settings['image_pattern'], $url, $url, NULL);
+         $final_slider =  sprintf($cw_settings['image_pattern'], $url, $url, NULL, NULL, NULL);
       }
 
       return $final_slider;

@@ -18,6 +18,8 @@ add_filter('wpcf7_form_elements', function ($content) {
     return $content;
 });
 
+add_filter('wpcf7_autop_or_not', '__return_false');
+
 
 
 

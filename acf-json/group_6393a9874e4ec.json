@@ -1401,11 +1401,11 @@
                         "<i class=\"uil uil-10-plus\"><\/i>": "10-plus",
                         "<i class=\"uil uil-0-plus\"><\/i>": "0-plus"
                     },
-                    "default_value": "youtube",
+                    "default_value": "<i class=\"uil uil-youtube\"><\/i>",
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 1,
-                    "ajax": 0,
+                    "ajax": 1,
                     "return_format": "value",
                     "placeholder": ""
                 },
@@ -1540,5 +1540,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671830852
+    "modified": 1673777263
 }

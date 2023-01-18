@@ -209,7 +209,9 @@ class CW_Parargraph
 
       if ($classes) {
          $class = ' class="' . implode(' ', $classes) . '"';
+         $class_p = implode(' ', $classes);
       } else {
+         $class_p = NULL;
          $class = NULL;
       }
       if ($this->paragraph_id) {
@@ -222,8 +224,9 @@ class CW_Parargraph
       } else {
          $tag = NULL;
       }
+
       if ($paragraph_pattern !== NULL) {
-         $text = sprintf($paragraph_pattern, $this->paragraph_text);
+         $text = sprintf($paragraph_pattern, $this->paragraph_text, $class_p);
       } else {
          $text = $this->paragraph_text;
       }

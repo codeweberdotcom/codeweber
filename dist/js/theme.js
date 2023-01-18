@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 "use strict";
 (function () {
   "use strict";
@@ -509,18 +510,20 @@ var theme = {
         },
       });
 
-      if (document.querySelector("input.variation_id") !== null) {
-        document.querySelector("input.variation_id").onchange = function fff() {
-          document.querySelector(
-            ".swiper-thumbs .swiper-wrapper .swiper-slide img"
-          ).src = document.querySelector(
-            ".woocommerce-product-gallery__wrapper .swiper-slide img"
-          ).src;
-          console.log(slider);
-          slider.slideTo(0, 500, true);
-
-          theme.lightbox.reload();
-        };
+      if (thumbsInit != null) {
+        if (document.querySelector("input.variation_id") !== null) {
+          document.querySelector("input.variation_id").onchange = function () {
+            document.querySelector(
+              ".swiper-thumbs .swiper-wrapper .swiper-slide img"
+            ).src = document.querySelector(
+              ".woocommerce-product-gallery__wrapper .swiper-slide img"
+            ).src;
+            console.log(i);
+            slider.slideTo(slider.activeIndex + 1, 500, true);
+            slider.slideTo(0, 500, true);
+            theme.lightbox.reload();
+          };
+        }
       }
     }
   },

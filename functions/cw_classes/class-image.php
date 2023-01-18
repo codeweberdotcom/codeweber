@@ -358,7 +358,7 @@ class CW_Image
             $final_image = sprintf($image_pattern, $image_url_small, $image_url_small, $image_alt, $image_classes, $wrapper_image_classes, $image_link_open, $image_link_close, $image_url_src, $image_title, $image_figcaption);
          } else {
             $image_pattern = $cw_settings['image_pattern'];
-            $final_image = sprintf($image_pattern, $image_url_small, $image_url_small, NULL,);
+            $final_image = sprintf($image_pattern, $image_url_small, $image_url_small, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
          }
       } else {
          $final_image = NULL;
