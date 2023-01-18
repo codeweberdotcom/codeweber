@@ -44,6 +44,7 @@ class CW_Title
       else :
          $cw_title_color = NULL;
       endif;
+
       return $cw_title_color;
    }
 
@@ -209,6 +210,8 @@ class CW_Title
          $classes[] = $this->title_class;
       }
 
+
+
       if ($classes) {
          $class = ' class="' . implode(' ', $classes) . '"';
          $class_p = implode(' ', $classes);
@@ -227,7 +230,10 @@ class CW_Title
          $tag = NULL;
       }
 
-      if ($title_pattern !== NULL) {
+
+
+      if ($title_pattern !== NULL && empty($tag)) {
+
          $title_text = $this->title_text;
          if ($typewriter !== NULL) {
             $title_text .= ' <br>' . $typewriter;

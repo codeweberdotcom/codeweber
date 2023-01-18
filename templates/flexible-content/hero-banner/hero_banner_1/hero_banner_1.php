@@ -17,7 +17,7 @@ $block = new CW_Settings(
     'buttons' => '<span><a class="btn btn-primary rounded-pill me-2">Try It For Free</a></span>',
     'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
-    'background_class_default' => 'wrapper bg-gradient-primary angled upper-start lower-end',
+    'background_class_default' => 'wrapper bg-gradient-primary',
     'background_data_default' => '/dist/img/photos/bg16.png',
     'background_video_preview' => '/dist/img/photos/movie2.jpg',
     'background_video_url' => '/dist/media/movie2.mp4',
