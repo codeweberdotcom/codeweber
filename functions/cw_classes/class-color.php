@@ -42,7 +42,6 @@ class CW_Color
 
    public function cw_background_color($bg_color)
    {
-
       if (have_rows('color')) :
          while (have_rows('color')) : the_row();
             $type_color = get_sub_field('select_type_color');

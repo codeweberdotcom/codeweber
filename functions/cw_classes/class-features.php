@@ -8,6 +8,7 @@ class CW_Feature
    public $features_title;
    public $features_paragraph;
    public $features_link;
+   public $features_border_class;
    public $features_pattern;
    public $features_item_final;
    public $features_list_final;
@@ -16,64 +17,87 @@ class CW_Feature
    {
       $this->features_icon = $this->cw_features_icon($features_icon);
       $this->features_title = $this->cw_features_title($features_title);
+      $this->features_border_class = $this->cw_features_border_class();
       $this->features_paragraph = $this->cw_features_paragraph($features_paragraph);
       $this->features_link = $this->cw_features_link($features_link);
       $this->features_item_final = $this->cw_features_item_final($features_pattern, $features_title, $demo);
    }
 
+   //Features_border
+   public function cw_features_border_class()
+   {
+      if (have_rows('cw_features_item')) {
+         while (have_rows('cw_features_item')) {
+            the_row();
+            $features_border_object = new CW_Border(NULL, NULL, NULL);
+            $features_border_class =
+               $features_border_object->final_border_class;
+         }
+      } else {
+         $features_border_class = NULL;
+      }
+
+      return $features_border_class;
+   }
    //Features_icon
    public function cw_features_icon($features_icon)
    {
-      if (have_rows('cw_features_item')) :
-         while (have_rows('cw_features_item')) : the_row();
+      if (have_rows('cw_features_item')) {
+         while (have_rows('cw_features_item')) {
+            the_row();
             $features_icon_object = new CW_Icon();
             $features_icon =  $features_icon_object->final_icon;
-         endwhile;
-      else :
+         }
+      } else {
          $features_icon = NULL;
-      endif;
+      }
       return $features_icon;
    }
+
+
 
    //Features_title
    public function cw_features_title($features_title)
    {
-      if (have_rows('cw_features_item')) :
-         while (have_rows('cw_features_item')) : the_row();
+      if (have_rows('cw_features_item')) {
+         while (have_rows('cw_features_item')) {
+            the_row();
             $features_object = new CW_Title(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
             $features_title =  $features_object->title_text;
-         endwhile;
-      else :
+         }
+      } else {
          $features_title = NULL;
-      endif;
+      }
       return $features_title;
    }
 
    //Features_title
    public function cw_features_paragraph($features_paragraph)
    {
-      if (have_rows('cw_features_item')) :
-         while (have_rows('cw_features_item')) : the_row();
+      if (have_rows('cw_features_item')) {
+         while (have_rows('cw_features_item')) {
+            the_row();
             $features_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
             $features_paragraph =  $features_object->paragraph_text;
-         endwhile;
-      else :
+         }
+      } else {
          $features_paragraph = NULL;
-      endif;
+      }
       return $features_paragraph;
    }
 
    //Features_link
    public function cw_features_link($features_link)
    {
-      if (have_rows('cw_features_item')) :
-         while (have_rows('cw_features_item')) : the_row();
+      if (have_rows('cw_features_item')) {
+         while (have_rows('cw_features_item')) {
+            the_row();
             $features_link_object =  new CW_Buttons($buttons_pattern = NULL, $buttons_items = NULL);
             $features_link = $features_link_object->final_buttons;
-         endwhile;
-      else :
+         }
+      } else {
          $features_link = NULL;
-      endif;
+      }
       return $features_link;
    }
 
@@ -84,19 +108,21 @@ class CW_Feature
       $title = $this->features_title;
       $paragraph = $this->features_paragraph;
       $icon = $this->features_icon;
+      $border_class = $this->features_border_class;
 
-      if (have_rows('cw_features_item')) :
-         while (have_rows('cw_features_item')) : the_row();
+      if (have_rows('cw_features_item')) {
+         while (have_rows('cw_features_item')) {
+            the_row();
             if (!$title && !$paragraph && !$icon) {
                $features_item = $demo;
             } else {
                $features_item_pattern = $features_pattern;
-               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link);
+               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link, $border_class);
             }
-         endwhile;
-      else :
+         }
+      } else {
          $features_item = NULL;
-      endif;
+      }
       return $features_item;
    }
 }
@@ -118,7 +144,8 @@ class CW_Features
    {
       if (have_rows('cw_features')) {
          $cw_features_list = '';
-         while (have_rows('cw_features')) : the_row();
+         while (have_rows('cw_features')) {
+            the_row();
             $features_item = new CW_Feature(
                NULL,
                NULL,
@@ -128,7 +155,7 @@ class CW_Features
                $demo
             );
             $cw_features_list .= $features_item->features_item_final;
-         endwhile;
+         }
       } else {
          $cw_features_list = NULL;
       }

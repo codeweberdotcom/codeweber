@@ -35,7 +35,7 @@ class CW_Image
       $this->root_theme = get_template_directory_uri();
       $this->image_title = $this->cw_title_image($cw_settings);
       $this->image_srscet = $this->cw_image_size($cw_settings);
-      $this->image_urls = $this->cw_image($cw_settings);
+      $this->image_link = $this->cw_image($cw_settings);
       $this->image_classes = $this->cw_image_classes($cw_settings);
       $this->image_shape = $this->cw_image_shape($cw_settings);
       $this->wrapper_image_classes = $this->cw_wrapper_image_classes($cw_settings, $class);
@@ -47,8 +47,9 @@ class CW_Image
    //Image Link
    public function cw_image_shape($cw_settings)
    {
-      if (have_rows('cw_image')) :
-         while (have_rows('cw_image')) : the_row();
+      if (have_rows('cw_image')) {
+         while (have_rows('cw_image')) {
+            the_row();
             if (get_sub_field('cw_shape_image') == 'Theme') {
                $image_shape = get_sub_field('cw_shape_image');
             } elseif (get_sub_field('cw_shape_image') == 'None') {
@@ -56,10 +57,10 @@ class CW_Image
             } else {
                $image_shape = get_sub_field('cw_shape_image');
             }
-         endwhile;
-      else :
+         }
+      } else {
          $image_shape = NULL;
-      endif;
+      }
       return $image_shape;
    }
 
@@ -67,8 +68,9 @@ class CW_Image
    //Image Link
    public function cw_link_image($cw_settings)
    {
-      if (have_rows('cw_image')) :
-         while (have_rows('cw_image')) : the_row();
+      if (have_rows('cw_image')) {
+         while (have_rows('cw_image')) {
+            the_row();
             if (get_sub_field('cw_link_type') == 'image') {
                $image_link =  $this->image_url_big;
             } elseif (get_sub_field('cw_link_type') == 'link') {
@@ -84,18 +86,19 @@ class CW_Image
             } elseif (get_sub_field('cw_link_type') == 'none') {
                $image_link = NULL;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $image_link = NULL;
-      endif;
+      }
       return $image_link;
    }
 
    //Image Title
    public function cw_title_image($cw_settings)
    {
-      if (have_rows('cw_image')) :
-         while (have_rows('cw_image')) : the_row();
+      if (have_rows('cw_image')) {
+         while (have_rows('cw_image')) {
+            the_row();
             if (get_sub_field('cw_cursor_effect') == 'itooltip itooltip-light' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-dark' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-primary') {
                if (get_sub_field('cw_caption_image')) {
                   $image_title = 'title="' . get_sub_field('cw_caption_image') . '"';
@@ -141,11 +144,11 @@ class CW_Image
                $image_title = NULL;
                $this->image_figcaption = NULL;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $this->image_clean_title = NULL;
          $image_title = NULL;
-      endif;
+      }
       return $image_title;
    }
 
@@ -172,21 +175,22 @@ class CW_Image
    //image 
    public function cw_image($cw_settings)
    {
-      if (have_rows('cw_image')) :
-         while (have_rows('cw_image')) : the_row();
+      if (have_rows('cw_image')) {
+         while (have_rows('cw_image')) {
+            the_row();
             $cw_image = get_sub_field('cw_image');
-            if ($cw_image) :
+            if ($cw_image) {
                $this->image_url_big = esc_url($cw_image['sizes'][$this->image_big_size]);
                $this->image_url_small = esc_url($cw_image['sizes'][$this->image_thumb_size]);
                $this->image_alt = esc_attr($cw_image['alt']);
                $this->image_link_type = get_sub_field('cw_link_type');
-            else :
+            } else {
                $this->image_url_big = $this->root_theme . $cw_settings['image_link'];
                $this->image_url_small = $this->root_theme . $cw_settings['image_link'];
                $this->image_link_type = get_sub_field('cw_link_type');
-            endif;
-         endwhile;
-      endif;
+            }
+         }
+      }
    }
 
 
@@ -195,17 +199,17 @@ class CW_Image
    public function cw_image_classes($cw_settings)
    {
       $image_class = array();
-      if (have_rows('cw_image')) :
-         while (have_rows('cw_image')) : the_row();
+      if (have_rows('cw_image')) {
+         while (have_rows('cw_image')) {
+            the_row();
             if (get_sub_field('cw_class')) {
                $image_class[] = get_sub_field('cw_class');
             }
             $image_classes = implode(' ', $image_class);
-         endwhile;
-      else :
+         }
+      } else {
          $image_classes = NULL;
-
-      endif;
+      }
       return $image_classes;
    }
 
@@ -215,9 +219,9 @@ class CW_Image
    {
       $image_wrapper_class = array();
 
-      if (have_rows('cw_image')) :
-         while (have_rows('cw_image')) : the_row();
-
+      if (have_rows('cw_image')) {
+         while (have_rows('cw_image')) {
+            the_row();
 
             if (get_sub_field('cw_shape_image') == 'img-mask mask-1') {
                $image_wrapper_class[] = $this->image_shape;
@@ -258,10 +262,9 @@ class CW_Image
                $image_wrapper_class[] = $class;
             }
 
-
             $image_wrapper_class = implode(' ', $image_wrapper_class);
-         endwhile;
-      endif;
+         }
+      }
       return $image_wrapper_class;
    }
 
@@ -340,8 +343,9 @@ class CW_Image
 
             // %6$s - %7$s
             if ($image_link) {
-               if (have_rows('cw_image')) :
-                  while (have_rows('cw_image')) : the_row();
+               if (have_rows('cw_image')) {
+                  while (have_rows('cw_image')) {
+                     the_row();
                      if ($cursor_effect == 'video_button') {
                         $image_link_open = '<a href="' . $image_link . '" class="btn btn-circle btn-light btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox  ' . $image_description_1 . ' data-title="' . $image_title . '" data-gallery="hero"><i class="icn-caret-right text-dark"></i></a>';
                         $image_link_close = NULL;
@@ -352,8 +356,8 @@ class CW_Image
                         $image_link_open = '<a href="' . $image_link . '" ' . $image_description_1 . ' ' . $image_title . '" data-glightbox data-gallery="g1">';
                         $image_link_close = '</a>';
                      }
-                  endwhile;
-               endif;
+                  }
+               }
             } else {
                $image_link_open = NULL;
                $image_link_close = NULL;

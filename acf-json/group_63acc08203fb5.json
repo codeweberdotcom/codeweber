@@ -1,6 +1,6 @@
 {
     "key": "group_63acc08203fb5",
-    "title": "CW Feature item",
+    "title": "CW Feature List",
     "fields": [
         {
             "key": "field_63acc12e0f158",
@@ -63,5 +63,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1673539905
+    "modified": 1674237863
 }

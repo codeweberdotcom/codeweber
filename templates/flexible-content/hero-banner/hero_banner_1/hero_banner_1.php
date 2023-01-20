@@ -27,10 +27,10 @@ $block = new CW_Settings(
     //'divider_angles' => 'upper-start',
     //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
 
-    'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
-    'image_link' => '/dist/img/illustrations/i2.png',
-    'image_thumb_size' => 'sandbox_hero_1',
-    'image_big_size' => 'project_1',
+    // 'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+    // 'image_link' => '/dist/img/illustrations/i2.png',
+    // 'image_thumb_size' => 'sandbox_hero_1',
+    // 'image_big_size' => 'project_1',
 
     'swiper' => array('swiper' => true, 'xs' => '1'),
 

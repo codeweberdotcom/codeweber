@@ -94,17 +94,22 @@ class CW_Swiper
    //Data Margin
    public function cw_data_margin($cw_settings)
    {
-      if (have_rows('gallery')) :
-         while (have_rows('gallery')) : the_row();
+      if (have_rows('gallery')) {
+         while (have_rows('gallery')) {
+            the_row();
             if (get_sub_field('cw_margin')) {
                $data_margin = 'data-margin="' . get_sub_field('cw_margin') . '"';
             } else {
-               $data_margin = 'data-margin="30"';
+               if (isset($cw_settings['swiper']['data_margin']) && !$cw_settings['swiper']['data_margin'] == NULL) {
+                  $data_margin = $cw_settings['swiper']['data_margin'];
+               } else {
+                  $data_margin = 'data-margin="30"';
+               }
             }
-         endwhile;
-      else :
+         }
+      } else {
          $data_margin = NULL;
-      endif;
+      }
       return $data_margin;
    }
 
@@ -112,51 +117,54 @@ class CW_Swiper
    //Caption
    public function cw_caption_bool($cw_settings)
    {
-      if (have_rows('gallery')) :
-         while (have_rows('gallery')) : the_row();
-            if (get_sub_field('cw_caption') == 1) :
+      if (have_rows('gallery')) {
+         while (have_rows('gallery')) {
+            the_row();
+            if (get_sub_field('cw_caption') == 1) {
                $caption_bool = true;
-            else :
+            } else {
                $caption_bool = false;
-            endif;
-         endwhile;
-      else :
+            }
+         }
+      } else {
          $caption_bool = NULL;
-      endif;
+      }
       return $caption_bool;
    }
 
    //Nav
    public function cw_nav($cw_settings)
    {
-      if (have_rows('gallery')) :
-         while (have_rows('gallery')) : the_row();
-            if (get_sub_field('cw_nav') == 1) :
+      if (have_rows('gallery')) {
+         while (have_rows('gallery')) {
+            the_row();
+            if (get_sub_field('cw_nav') == 1) {
                $nav = 'data-nav="true"';
-            else :
+            } else {
                $nav = NULL;
-            endif;
-         endwhile;
-      else :
+            }
+         }
+      } else {
          $nav = NULL;
-      endif;
+      }
       return $nav;
    }
 
    //Nav Color
    public function cw_nav_color($cw_settings)
    {
-      if (have_rows('gallery')) :
-         while (have_rows('gallery')) : the_row();
-            if (get_sub_field('cw_nav_color') && get_sub_field('cw_nav') == 1) :
+      if (have_rows('gallery')) {
+         while (have_rows('gallery')) {
+            the_row();
+            if (get_sub_field('cw_nav_color') && get_sub_field('cw_nav') == 1) {
                $nav_color = get_sub_field('cw_nav_color');
-            else :
+            } else {
                $nav_color = NULL;
-            endif;
-         endwhile;
-      else :
+            }
+         }
+      } else {
          $nav_color = NULL;
-      endif;
+      }
       return $nav_color;
    }
 
@@ -549,14 +557,18 @@ class CW_Swiper
       } elseif ($count_image == 1) {
          if (have_rows('cw_images')) :
             while (have_rows('cw_images')) : the_row();
-               $image = new CW_Image($cw_settings, 'mt-md-n21 mt-lg-n23 mb-14 rounded');
+               $image = new CW_Image($cw_settings, $class);
                $final_slider = $image->final_image;
             endwhile;
          endif;
-      } elseif ($count_image == 0) {
+      } elseif ($count_image == 0 && isset($cw_settings['image_pattern']) && !$cw_settings['image_pattern'] == NULL) {
+
          $url = get_template_directory_uri() . $cw_settings['image_link'];
          $final_slider =  sprintf($cw_settings['image_pattern'], $url, $url, NULL, NULL, NULL);
+      } else {
+         $final_slider = NULL;
       }
+
 
       return $final_slider;
    }
