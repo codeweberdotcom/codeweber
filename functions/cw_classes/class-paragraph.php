@@ -34,7 +34,7 @@ class CW_Parargraph
    {
       if (have_rows('cw_paragraph')) :
          while (have_rows('cw_paragraph')) : the_row();
-            $paragraph_color_object = new CW_Color;
+            $paragraph_color_object = new CW_Color(NULL, NULL);
             if ($paragraph_color_object->color !== 'none') {
                $cw_paragraph_color = 'text-' . $paragraph_color_object->color;
             } else {

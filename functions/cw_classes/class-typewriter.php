@@ -66,7 +66,7 @@ class CW_Typewriter
    {
       if (have_rows('typewriter')) :
          while (have_rows('typewriter')) : the_row();
-            $typewriter_color =  new CW_Color;
+            $typewriter_color =  new CW_Color(NULL, NULL);
          endwhile;
       else :
          $typewriter_color = NULL;

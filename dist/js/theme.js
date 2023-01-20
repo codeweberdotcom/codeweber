@@ -364,7 +364,7 @@ var theme = {
    */
   swiperSlider: function () {
     var carousel = document.querySelectorAll(".swiper-container");
-    for (var i = 0; i < carousel.length; i++) {
+    for (let i = 0; i < carousel.length; i++) {
       var slider1 = carousel[i];
       slider1.classList.add("swiper-container-" + i);
       var controls = document.createElement("div");
@@ -440,7 +440,7 @@ var theme = {
       } else {
         var thumbsInit = null;
       }
-      var slider = new Swiper(swiper, {
+      let slider = new Swiper(swiper, {
         on: {
           beforeInit: function () {
             if (
@@ -510,7 +510,7 @@ var theme = {
         },
       });
 
-      if (thumbsInit != null) {
+      if (thumbsInit !== null) {
         if (document.querySelector("input.variation_id") !== null) {
           document.querySelector("input.variation_id").onchange = function () {
             document.querySelector(
@@ -518,8 +518,7 @@ var theme = {
             ).src = document.querySelector(
               ".woocommerce-product-gallery__wrapper .swiper-slide img"
             ).src;
-            console.log(i);
-            slider.slideTo(slider.activeIndex + 1, 500, true);
+            slider.slideTo(slider.activeIndex + 1, 1, true);
             slider.slideTo(0, 500, true);
             theme.lightbox.reload();
           };

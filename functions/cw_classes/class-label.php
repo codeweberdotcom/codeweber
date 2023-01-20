@@ -1,21 +1,29 @@
 <?php
 
-//* ---Icon Class ACF---
 
-class CW_Icon
+
+
+//* ---Label Class ACF---
+
+class CW_Label
 {
-   public $type_icon;
-   public $form_icon;
-   public $class;
-   public $size_icon;
-   public $unicons_icon;
-   public $lineal_icon;
-   public $image_icon;
-   public $color_icon;
-   public $number_icon;
-   public $class_icon;
-   public $id_icon;
-   public $final_icon;
+   public $label_type_icon;
+   public $label_form_icon;
+   public $label_size_icon;
+   public $label_unicons_icon;
+   public $label_lineal_icon;
+   public $label_image_icon;
+   public $label_color_icon;
+   public $label_number_icon;
+   public $label_title;
+   public $label_paragraph;
+   public $label_position_x;
+   public $label_position_y;
+   public $label_background_color;
+   public $label_link;
+   public $label_animation_data;
+
+   public $final_label;
 
    public function __construct()
    {

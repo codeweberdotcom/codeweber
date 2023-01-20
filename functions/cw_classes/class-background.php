@@ -185,7 +185,7 @@ class CW_Background
          while (have_rows('cw_background')) {
             the_row();
             if (get_sub_field('cw_background_type') == 'Color') {
-               $color = new CW_Color;
+               $color = new CW_Color(NULL, NULL);
                if ($color->bg_color == 'none') {
                   $color_background = '';
                } else {

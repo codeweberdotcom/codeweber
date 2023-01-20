@@ -30,7 +30,7 @@ class CW_Image
    public $final_image;
 
 
-   public function __construct($cw_settings)
+   public function __construct($cw_settings, $class)
    {
       $this->root_theme = get_template_directory_uri();
       $this->image_title = $this->cw_title_image($cw_settings);
@@ -38,7 +38,7 @@ class CW_Image
       $this->image_urls = $this->cw_image($cw_settings);
       $this->image_classes = $this->cw_image_classes($cw_settings);
       $this->image_shape = $this->cw_image_shape($cw_settings);
-      $this->wrapper_image_classes = $this->cw_wrapper_image_classes($cw_settings);
+      $this->wrapper_image_classes = $this->cw_wrapper_image_classes($cw_settings, $class);
       $this->image_link = $this->cw_link_image($cw_settings);
       $this->final_image = $this->cw_final_image($cw_settings);
    }
@@ -211,7 +211,7 @@ class CW_Image
 
 
    //Image Wrapper Classe
-   public function cw_wrapper_image_classes($cw_settings)
+   public function cw_wrapper_image_classes($cw_settings, $class)
    {
       $image_wrapper_class = array();
 
@@ -253,6 +253,11 @@ class CW_Image
             if (get_sub_field('cw_gradient') !== 'none') {
                $image_wrapper_class[] = get_sub_field('cw_gradient');
             }
+
+            if ($class !== NULL) {
+               $image_wrapper_class[] = $class;
+            }
+
 
             $image_wrapper_class = implode(' ', $image_wrapper_class);
          endwhile;

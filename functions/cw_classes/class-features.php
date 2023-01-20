@@ -26,7 +26,7 @@ class CW_Feature
    {
       if (have_rows('cw_features_item')) :
          while (have_rows('cw_features_item')) : the_row();
-            $features_icon_object = new CW_Icon;
+            $features_icon_object = new CW_Icon();
             $features_icon =  $features_icon_object->final_icon;
          endwhile;
       else :

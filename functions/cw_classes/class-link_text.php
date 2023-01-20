@@ -54,7 +54,7 @@ class CW_LinkText
    {
       if (have_rows('cw_links')) :
          while (have_rows('cw_links')) : the_row();
-            $color = new CW_Color;
+            $color = new CW_Color(NULL, NULL);
             $link_color = $color->color;
          endwhile;
       else :

@@ -214,7 +214,7 @@ class CW_Button
    {
       if (have_rows('cw_buttons')) {
          while (have_rows('cw_buttons')) : the_row();
-            $color = new CW_Color;
+            $color = new CW_Color(NULL, NULL);
             if ($color->color == 'none') {
                $color_button = '';
             } elseif (get_sub_field('cw_button_type') == 'Link') {

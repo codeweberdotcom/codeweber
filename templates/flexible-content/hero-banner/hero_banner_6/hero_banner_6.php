@@ -1,52 +1,66 @@
 <?php
 
-/* Add settings */
-$settings = new Settings();
+/**
+ * Hero 6
+ */
+$block = new CW_Settings(
+   $cw_settings = array(
+      'title' => 'Get all of your steps, exercise, sleep and meds in one place.',
+      'patternTitle' => '<h1 class="display-2 mb-4 mx-sm-n2 mx-md-0">%s</h1>',
 
-$settings->title = "Get all of your steps, exercise, sleep and meds in one place.";
-$settings->paragraph = 'Sandbox is now available to download from both the App Store and Google Play Store.';
-$settings->imageurl = get_template_directory_uri() . '/dist/img/photos/devices.png';
-$settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4';
-$settings->typewriter = 'customer satisfaction,business needs,creative ideas';
-$settings->backgroundcolor = 'dark';
-//$settings->backgroundcolor_light = 'red';
-$settings->textcolor = 'white';
+      'paragraph' => 'Sandbox is now available to download from both the App Store and Google Play Store.',
+      'patternParagraph' => '<p class="lead fs-lg mb-7 px-md-10 px-lg-0">%s</p>',
 
+      // 'subtitle' => 'Grow Your Business with Our Solutions.',
+      // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
-$settings->GetDataACF();
+      'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
+               <span><a class="btn btn-primary btn-icon btn-icon-start rounded me-2"><i class="uil uil-apple"></i> App Store</a></span>
+               <span><a class="btn btn-green btn-icon btn-icon-start rounded"><i class="uil uil-google-play"></i> Google Play</a></span>
+            </div>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
-// --- Image ---
-/* Add Image*/
-$image = new Images;
-$image->root_theme = get_template_directory_uri();
-$image->image_1 = get_template_directory_uri() . '/dist/img/photos/devices.png';
-$image->image_size = 'large';
-$image->GetImage();
+      'background_class_default' => 'wrapper bg-soft-primary',
+      'background_data_default' => '/dist/img/photos/bg16.png',
+      'background_video_preview' => '/dist/img/photos/movie2.jpg',
+      'background_video_url' => '/dist/media/movie2.mp4',
+      'background_pattern_url' => '/dist/img/pattern.png',
 
+      'divider' => true,
+      //'divider_angles' => 'upper-start',
+      //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
 
-/* Add buttons */
-$button = new Buttons();
-$button->form_button = "rounded";
-$button->button_size = NULL;
-$button->class_button_wrapper = "d-flex justify-content-center flex-wrap justify-content-lg-start";
-$button->data_cues = "slideInDown";
-$button->data_group = "page-title-buttons";
-$button->data_delay = "900";
-$button->default_button = '<div class="d-flex justify-content-center flex-wrap justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
-          <span><a class="btn btn-primary btn-icon btn-icon-start rounded me-2"><i class="uil uil-apple"></i> App Store</a></span>
-          <span><a class="btn btn-green btn-icon btn-icon-start rounded"><i class="uil uil-google-play"></i> Google Play</a></span>
-        </div>';
+      'image_pattern' => '<img class="position-lg-absolute col-12 col-lg-10 col-xl-11 col-xxl-10 px-lg-5 px-xl-0 ms-n5 ms-sm-n8 ms-md-n10 ms-lg-0 mb-md-4 mb-lg-0 zindex-1" src="%1$s" srcset="%2$s" data-cue="fadeIn" alt="%3$s" style="top: -1%%; left: -21%%;" />',
+      'image_link' => '/dist/img/photos/devices.png',
+      'image_thumb_size' => 'sandbox_hero_6',
+      'image_big_size' => 'project_1',
+
+      'swiper' => array('swiper' => true, 'xs' => '1'),
+
+      'column_class_1' => '',
+      'column_class_2' => 'order-lg-2',
+   )
+);
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+
    <div class="container pt-5 pb-15 py-lg-17 py-xl-19 pb-xl-20 position-relative">
-      <img class="position-lg-absolute col-12 col-lg-10 col-xl-11 col-xxl-10 px-lg-5 px-xl-0 ms-n5 ms-sm-n8 ms-md-n10 ms-lg-0 mb-md-4 mb-lg-0" src="<?php echo $image->image_1; ?>" srcset="<?php echo $image->image_1; ?>" data-cue="fadeIn" alt="" style="top: -1%; left: -21%;" />
+
+      <?php echo $block->swiper_final; ?>
+      <!--/swiper -->
       <div class="row gx-0 align-items-center">
          <div class="col-md-10 offset-md-1 col-lg-5 offset-lg-7 offset-xxl-6 ps-xxl-12 mt-md-n9 text-center text-lg-start" data-cues="slideInDown" data-group="page-title" data-delay="600">
-            <h1 class="display-2 mb-4 mx-sm-n2 mx-md-0 text-<?php echo $settings->textcolor; ?>"><?php echo $settings->title; ?></h1>
-            <p class="lead fs-lg mb-7 px-md-10 px-lg-0 text-<?php echo $settings->textcolor; ?>"><?php echo $settings->paragraph; ?></p>
-            <!--  buttons group -->
-            <?php $button->showbuttons(); ?>
+
+            <?php echo $block->title; ?>
+            <!--/title -->
+
+            <?php echo $block->paragraph; ?>
+            <!--/pargraph -->
+
+            <?php echo $block->buttons; ?>
             <!--/buttons group -->
          </div>
          <!-- /column -->
@@ -54,5 +68,9 @@ $button->default_button = '<div class="d-flex justify-content-center flex-wrap j
       <!-- /.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

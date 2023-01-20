@@ -53,7 +53,7 @@ class CW_Shape
    //Color
    public function cw_shape_color($shape_color = NULL)
    {
-      $cw_shape_color_object = new CW_Color;
+      $cw_shape_color_object = new CW_Color(NULL, NULL);
       $cw_shape_color = $cw_shape_color_object->color;
       return $cw_shape_color;
    }

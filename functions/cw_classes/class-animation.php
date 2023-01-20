@@ -1,26 +1,21 @@
 <?php
 
-//* ---Icon Class ACF---
+//* ---Animation Class ACF---
 
-class CW_Icon
+class CW_Animation
 {
-   public $type_icon;
-   public $form_icon;
-   public $class;
-   public $size_icon;
-   public $unicons_icon;
-   public $lineal_icon;
-   public $image_icon;
-   public $color_icon;
-   public $number_icon;
-   public $class_icon;
-   public $id_icon;
-   public $final_icon;
+   public $default_data;
+   public $animation_data_cues;
+   public $animation_data_final;
+   public $animation_data_group;
+   public $animation_data_duration;
+   public $animation_data_interval;
+   public $animation_data_data_delay;
 
-   public function __construct()
+   public function __construct($animation_data_cues, $animation_data_final, $animation_data_group, $animation_data_duration, $animation_data_interval, $animation_data_data_delay, $default_data)
    {
-      $this->class_icon = $this->cw_class_icon();
-      $this->id_icon = 'id="' . $this->cw_id_icon() . '"';
+      $this->animation_data_final = $this->cw_animation_data_final();
+      $this->data_group = 'id="' . $this->data_group() . '"';
       $this->type_icon = $this->cw_type_icon();
       $this->color_icon = $this->cw_color_icon();
       $this->form_icon = $this->cw_form_icon();

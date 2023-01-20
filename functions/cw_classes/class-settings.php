@@ -195,7 +195,7 @@ class CW_Settings
    public function cw_images($cw_settings)
    {
       if (isset($this->cw_settings['image_pattern']) && !$this->cw_settings['image_pattern'] == NULL) {
-         $image_object = new CW_Image($cw_settings = $cw_settings);
+         $image_object = new CW_Image($cw_settings = $cw_settings, NULL);
          $images = $image_object->final_image;
       } else {
          $images = NULL;
@@ -262,9 +262,6 @@ class CW_Settings
          }
          if ($cw_settings['title'] !== NULL) {
             $title_text = $cw_settings['title'];
-            if ($this->typewriter !== NULL) {
-               $title_text .= '<br>' . $this->typewriter;
-            }
          } else {
             $title_text = NULL;
          }

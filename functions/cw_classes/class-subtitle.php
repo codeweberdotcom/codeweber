@@ -35,7 +35,7 @@ class CW_SubTitle
       if (have_rows('cw_subtitle')) {
          while (have_rows('cw_subtitle')) {
             the_row();
-            $sub_title_color_object = new CW_Color;
+            $sub_title_color_object = new CW_Color(NULL, NULL);
             if ($sub_title_color_object->color !== 'none') {
                $cw_subtitle_color = 'text-' . $sub_title_color_object->color;
             } else {

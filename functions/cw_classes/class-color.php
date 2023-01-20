@@ -7,14 +7,13 @@ class CW_Color
    public $color;
    public $bg_color;
 
-
-   public function __construct()
+   public function __construct($color, $bg_color)
    {
-      $this->color = $this->cw_color();
-      $this->bg_color = $this->cw_background_color();
+      $this->color = $this->cw_color($color);
+      $this->bg_color = $this->cw_background_color($bg_color);
    }
 
-   public function cw_color()
+   public function cw_color($color)
    {
       if (have_rows('color')) :
          while (have_rows('color')) : the_row();
@@ -41,8 +40,9 @@ class CW_Color
       return $color;
    }
 
-   public function cw_background_color()
+   public function cw_background_color($bg_color)
    {
+
       if (have_rows('color')) :
          while (have_rows('color')) : the_row();
             $type_color = get_sub_field('select_type_color');
@@ -56,7 +56,11 @@ class CW_Color
             elseif ($type_color == 'Gradient') :
                $color =  get_sub_field('gradient_color');
             elseif ($type_color == 'None') :
-               $color = 'none';
+               if ($bg_color !== NULL) {
+                  $color = $bg_color;
+               } else {
+                  $color = 'none';
+               }
             else :
                $color = 'none';
             endif;

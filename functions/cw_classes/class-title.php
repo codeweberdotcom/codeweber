@@ -34,7 +34,7 @@ class CW_Title
    {
       if (have_rows('cw_title')) :
          while (have_rows('cw_title')) : the_row();
-            $title_color_object = new CW_Color;
+            $title_color_object = new CW_Color(NULL, NULL);
             if ($title_color_object->color !== 'none') {
                $cw_title_color = 'text-' . $title_color_object->color;
             } else {
@@ -232,7 +232,8 @@ class CW_Title
 
 
 
-      if ($title_pattern !== NULL && empty($tag)) {
+      if ($title_pattern !== NULL) {
+
 
          $title_text = $this->title_text;
          if ($typewriter !== NULL) {
@@ -245,6 +246,9 @@ class CW_Title
             $text .= ' <br>' . $typewriter;
          }
       }
+
+
+
       if ($tag) {
          $cw_title_final = '<' . $tag . ' ' . $class .  $id . '>' . $text . '</' . $tag . '>';
       } elseif ($title_pattern !== NULL) {

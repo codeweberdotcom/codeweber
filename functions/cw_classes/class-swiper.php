@@ -513,6 +513,10 @@ class CW_Swiper
          $class_array[] = $dots_position;
       }
 
+      if (isset($cw_settings['swiper']['default_class']) && !$cw_settings['swiper']['default_class'] == NULL) {
+         $class_array[] = $cw_settings['swiper']['default_class'];
+      }
+
       $class = implode(' ', $class_array);
       return $class;
    }
@@ -532,7 +536,7 @@ class CW_Swiper
                <div class="swiper-wrapper">';
          if (have_rows('cw_images')) :
             while (have_rows('cw_images')) : the_row();
-               $image = new CW_Image($cw_settings);
+               $image = new CW_Image($cw_settings, NULL);
                if ($image->image_clean_title) {
                   $caption_image = '<div class="caption-wrapper p-8"><div class="caption bg-white rounded px-4 py-3 mt-auto animate__animated animate__slideInDown animate__delay-1s"><div class="mb-0 h5">' . $image->image_clean_title . '</div></div><!--/.caption --></div><!--/.caption-wrapper -->';
                } else {
@@ -545,7 +549,7 @@ class CW_Swiper
       } elseif ($count_image == 1) {
          if (have_rows('cw_images')) :
             while (have_rows('cw_images')) : the_row();
-               $image = new CW_Image($cw_settings);
+               $image = new CW_Image($cw_settings, 'mt-md-n21 mt-lg-n23 mb-14 rounded');
                $final_slider = $image->final_image;
             endwhile;
          endif;

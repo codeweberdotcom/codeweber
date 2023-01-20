@@ -39,7 +39,7 @@ class CW_List
    //list_color
    public function cw_list_color($list_color = NULL)
    {
-      $color_object = new CW_Color();
+      $color_object = new CW_Color(NULL, NULL);
       $cw_list_color = $color_object->color;
       if ($list_color !== NULL) {
          $cw_list_color = $list_color;
