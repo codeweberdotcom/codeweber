@@ -41,7 +41,7 @@ $block = new CW_Settings(
          'image_thumb_size' => 'sandbox_hero_14',
          'image_demo' => '<figure class="rounded mb-md-n20"><img src="' . get_template_directory_uri() . '/dist/img/photos/about18.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about18@2x.jpg 2x" alt="" /></figure>',
          'image_big_size' => 'project_1',
-         'img_url' => '/dist/img/photos/about18.jpg',
+         'img_link' => '/dist/img/photos/about18.jpg',
          'data_margin' => '30',
          'nav' => 'true',
          'nav_color' => '',
@@ -60,7 +60,8 @@ $block = new CW_Settings(
          'autoplay' => 'true',
          'autoplay_time' => '500',
          'loop' => 'true',
-         'autoheight' => 'false'
+         'autoheight' => 'false',
+         'image_shape' => 'rounded'
       ),
 
       //'column_class_1' => 'order-2 order-lg-0',

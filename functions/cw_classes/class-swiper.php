@@ -587,6 +587,7 @@ class CW_Swiper
          $data_array[] = 'data-margin="' . $data_margin . '"';
       }
 
+
       if ($dots) {
          $data_array[] = 'data-dots="' . $dots . '"';
       }

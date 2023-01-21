@@ -57,7 +57,7 @@ class CW_Image
    }
 
 
-   //Image Link
+   //Image Shape
    public function cw_image_shape($image_shape)
    {
       if (have_rows('cw_image')) {
@@ -190,7 +190,9 @@ class CW_Image
          while (have_rows('cw_image')) {
             the_row();
             $cw_image = get_sub_field('cw_image');
+
             if ($cw_image) {
+
                $this->image_url_big = esc_url($cw_image['sizes'][$this->image_big_size]);
                $this->image_url_small = esc_url($cw_image['sizes'][$this->image_thumb_size]);
                $this->image_alt = esc_attr($cw_image['alt']);
@@ -213,7 +215,6 @@ class CW_Image
       if (have_rows('cw_image')) {
          while (have_rows('cw_image')) {
             the_row();
-
             if (get_sub_field('cw_shape_image') == 'rounded-0') {
                $image_class[] = get_sub_field('cw_shape_image');
             } elseif (get_sub_field('cw_shape_image') == 'rounded') {
@@ -243,7 +244,6 @@ class CW_Image
    public function cw_wrapper_image_classes($wrapper_image_classes, $image_shape)
    {
       $image_wrapper_class = array();
-
       if (have_rows('cw_image')) {
          while (have_rows('cw_image')) {
             the_row();
