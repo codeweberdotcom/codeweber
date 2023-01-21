@@ -52,9 +52,8 @@ $features = new CW_Settings(
          </div>
          <!-- /.row -->
          <div class="position-relative">
-            <?php
-            echo $features->shapes;
-            ?>
+            <?php echo $features->shapes; ?>
+            <!--/.shape -->
             <div class="row gx-md-5 gy-5 text-center">
                <?php echo $features->features;
                ?>

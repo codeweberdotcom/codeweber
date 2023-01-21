@@ -31,22 +31,24 @@ $block = new CW_Settings(
       // 'image_link' => '/dist/img/photos/about15.jpg',
       // 'image_thumb_size' => 'sandbox_hero_10',
       // 'image_big_size' => 'project_1',
-
       'swiper' => array(
-         'swiper_container_class' => 'mt-md-n21 mt-lg-n23 mb-14',
-         'image_class' => 'mt-md-n21 mt-lg-n23 mb-14',
-         'image_pattern' => '<figure class="rounded" data-cue="slideInDown" data-delay="900" ><img src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+         'swiper_container_class' => 'mt-md-n21 mt-lg-n23 mb-14 ss',
+         'image_class' => NULL,
+         'wrapper_image_class' => 'mt-md-n21 mt-lg-n23 mb-14',
+         'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
          'image_thumb_size' => 'sandbox_hero_10',
+         'image_demo' => '<figure class="rounded mt-md-n21 mt-lg-n23 mb-14" data-cue="slideInDown" data-delay="900"><img src="' . get_template_directory_uri() . '/dist/img/photos/about15.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about15@2x.jpg 2x" alt="" /></figure>',
          'image_big_size' => 'project_1',
-         'img_url' => '/dist/img/photos/about15.jpg',
+         'img_link' => '/dist/img/photos/about15.jpg',
+         'image_shape' => 'rounded',
          'data_margin' => '30',
-         'nav' => true,
-         'nav_color' => '',
-         'nav_position' => '',
-         'dots' => true,
-         'dots_color' => '',
-         'dots_position' => '',
-         'swiper_effect' => '',
+         'nav' => 'true',
+         'nav_color' => 'nav-dark',
+         'nav_position' => 'nav-bottom',
+         'dots' => 'true',
+         'dots_color' => 'dots-dark',
+         'dots_position' => 'dots-closer',
+         'swiper_effect' => 'fade',
          'base_items' => '1',
          'items_xs' => '1',
          'items_sm' => '1',
@@ -54,11 +56,10 @@ $block = new CW_Settings(
          'items_lg' => '1',
          'items_xl' => '1',
          'items_xxl' => '1',
-         'autoplay' => true,
+         'autoplay' => 'false',
          'autoplay_time' => '500',
-         'loop' => true,
-         'autoheight' => false
-
+         'loop' => 'false',
+         'autoheight' => 'false',
       ),
 
       //'column_class_1' => '',
@@ -66,7 +67,6 @@ $block = new CW_Settings(
    )
 );
 ?>
-
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container pt-11 pt-md-13 pb-11 pb-md-19 pb-lg-22 text-center">

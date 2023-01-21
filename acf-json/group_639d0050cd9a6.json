@@ -1,6 +1,6 @@
 {
     "key": "group_639d0050cd9a6",
-    "title": "CW Image",
+    "title": "CW Images",
     "fields": [
         {
             "key": "field_639d00565c8cf",
@@ -561,5 +561,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671698871
+    "modified": 1674257035
 }

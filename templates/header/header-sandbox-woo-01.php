@@ -1,7 +1,8 @@
 <?php if ($args['style_nav'] == 'transparent') {
    $class_nav = 'position-absolute navbar-dark';
+} else {
+   $class_nav = 'navbar-light';
 };   ?>
-
 
 <header class="wrapper">
    <nav class="navbar navbar-expand-lg classic transparent navbar-light <?php echo $class_nav; ?>">

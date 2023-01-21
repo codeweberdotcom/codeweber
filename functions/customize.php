@@ -130,6 +130,39 @@ function codeweber_register_theme_customizer($wp_customize)
    );
 
 
+   // Image Section
+   $wp_customize->add_section(
+      'codeweber_image_options',
+      array(
+         'title'     => __('Image Options', 'codeweber'),
+         'priority'  => 2
+      )
+   );
+
+   // Image Control
+   $wp_customize->add_setting(
+      'codeweber_image',
+      array(
+         'default'   => 'rounded',
+      )
+   );
+
+   // Image Control
+   $wp_customize->add_control(
+      'codeweber_image',
+      array(
+         'section'  => 'codeweber_image_options',
+         'label'    => __('Image Form', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'rounded'       => 'rounded',
+            'rounded-pill'    => 'rounded-pill',
+            'rounded-0'      => 'rounded-0',
+         )
+      )
+   );
+
+
    // Header Section
    $wp_customize->add_section(
       'codeweber_header_options',
@@ -280,10 +313,6 @@ function codeweber_register_theme_customizer($wp_customize)
    );
 }
 add_action('customize_register', 'codeweber_register_theme_customizer');
-
-
-
-
 
 
 

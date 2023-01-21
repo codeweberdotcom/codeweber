@@ -3,8 +3,27 @@
     "title": "CW Slider",
     "fields": [
         {
+            "key": "field_63cb22c99c62e",
+            "label": "Custom Gallery",
+            "name": "custom_gallery",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_63a21c1110373",
-            "label": "Images",
+            "label": "Gallery",
             "name": "cw_images",
             "type": "repeater",
             "instructions": "",
@@ -23,7 +42,7 @@
             "sub_fields": [
                 {
                     "key": "field_63a21c2310374",
-                    "label": "Image",
+                    "label": "Images",
                     "name": "cw_image",
                     "type": "clone",
                     "instructions": "",
@@ -694,5 +713,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674041011
+    "modified": 1674287997
 }

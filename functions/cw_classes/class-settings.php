@@ -165,8 +165,214 @@ class CW_Settings
    //Swiper Final
    public function cw_swiper_final($cw_settings)
    {
+      // Check for Swiper
       if (isset($this->cw_settings['swiper']) && !$this->cw_settings['swiper'] == NULL) {
-         $swiper = new CW_Swiper($cw_settings = $cw_settings);
+
+         // Check for array ['swiper']['swiper_container_class']
+         if (isset($cw_settings['swiper']['swiper_container_class']) && !$cw_settings['swiper']['swiper_container_class'] == NULL) {
+            $swiper_container_class =  $cw_settings['swiper']['swiper_container_class'];
+         } else {
+            $swiper_container_class = NULL;
+         }
+         // Check for array ['swiper']['image_class']
+         if (isset($cw_settings['swiper']['image_class']) && !$cw_settings['swiper']['image_class'] == NULL) {
+            $swiper_image_class =  $cw_settings['swiper']['image_class'];
+         } else {
+            $swiper_image_class = NULL;
+         }
+         // Check for array ['swiper']['image_pattern']
+         if (isset($cw_settings['swiper']['image_pattern']) && !$cw_settings['swiper']['image_pattern'] == NULL) {
+            $swiper_image_pattern =  $cw_settings['swiper']['image_pattern'];
+         } else {
+            $swiper_image_pattern = NULL;
+         }
+         // Check for array ['swiper']['image_thumb_size']
+         if (isset($cw_settings['swiper']['image_thumb_size']) && !$cw_settings['swiper']['image_thumb_size'] == NULL) {
+            $swiper_image_thumb_size =  $cw_settings['swiper']['image_thumb_size'];
+         } else {
+            $swiper_image_thumb_size = NULL;
+         }
+         // Check for array ['swiper']['image_big_size']
+         if (isset($cw_settings['swiper']['image_big_size']) && !$cw_settings['swiper']['image_big_size'] == NULL) {
+            $swiper_image_big_size =  $cw_settings['swiper']['image_big_size'];
+         } else {
+            $swiper_image_big_size = NULL;
+         }
+         // Check for array ['swiper']['img_link']
+         if (isset($cw_settings['swiper']['img_link']) && !$cw_settings['swiper']['img_link'] == NULL) {
+            $swiper_img_link =  $cw_settings['swiper']['img_link'];
+         } else {
+            $swiper_img_link = NULL;
+         }
+         // Check for array ['swiper']['data_margin']
+         if (isset($cw_settings['swiper']['data_margin']) && !$cw_settings['swiper']['data_margin'] == NULL) {
+            $swiper_data_margin =  $cw_settings['swiper']['data_margin'];
+         } else {
+            $swiper_data_margin = NULL;
+         }
+         // Check for array ['swiper']['nav']
+         if (isset($cw_settings['swiper']['nav']) && !$cw_settings['swiper']['nav'] == NULL) {
+            $swiper_nav =  $cw_settings['swiper']['nav'];
+         } else {
+            $swiper_nav = NULL;
+         }
+         // Check for array ['swiper']['nav_color']
+         if (isset($cw_settings['swiper']['nav_color']) && !$cw_settings['swiper']['nav_color'] == NULL) {
+            $swiper_nav_color =  $cw_settings['swiper']['nav_color'];
+         } else {
+            $swiper_nav_color = NULL;
+         }
+         // Check for array ['swiper']['nav']
+         if (isset($cw_settings['swiper']['nav']) && !$cw_settings['swiper']['nav'] == NULL) {
+            $swiper_nav =  $cw_settings['swiper']['nav'];
+         } else {
+            $swiper_nav = NULL;
+         }
+         // Check for array ['swiper']['nav_position']
+         if (isset($cw_settings['swiper']['nav_position']) && !$cw_settings['swiper']['nav_position'] == NULL) {
+            $swiper_nav_position =  $cw_settings['swiper']['nav_position'];
+         } else {
+            $swiper_nav_position = NULL;
+         }
+         // Check for array ['swiper']['dots']
+         if (isset($cw_settings['swiper']['dots']) && !$cw_settings['swiper']['dots'] == NULL) {
+            $swiper_dots =  $cw_settings['swiper']['dots'];
+         } else {
+            $swiper_dots = NULL;
+         }
+         // Check for array ['swiper']['dots_color']
+         if (isset($cw_settings['swiper']['dots_color']) && !$cw_settings['swiper']['dots_color'] == NULL) {
+            $swiper_dots_color =  $cw_settings['swiper']['dots_color'];
+         } else {
+            $swiper_dots_color = NULL;
+         }
+         // Check for array ['swiper']['dots_position']
+         if (isset($cw_settings['swiper']['dots_position']) && !$cw_settings['swiper']['dots_position'] == NULL) {
+            $swiper_dots_position =  $cw_settings['swiper']['dots_position'];
+         } else {
+            $swiper_dots_position = NULL;
+         }
+         // Check for array ['swiper']['swiper_effect']
+         if (isset($cw_settings['swiper']['swiper_effect']) && !$cw_settings['swiper']['swiper_effect'] == NULL) {
+            $swiper_effect =  $cw_settings['swiper']['swiper_effect'];
+         } else {
+            $swiper_effect = NULL;
+         }
+         // Check for array ['swiper']['base_items']
+         if (isset($cw_settings['swiper']['base_items']) && !$cw_settings['swiper']['base_items'] == NULL) {
+            $swiper_base_items =  $cw_settings['swiper']['base_items'];
+         } else {
+            $swiper_base_items = NULL;
+         }
+         // Check for array ['swiper']['items_xs']
+         if (isset($cw_settings['swiper']['items_xs']) && !$cw_settings['swiper']['items_xs'] == NULL) {
+            $swiper_items_xs =  $cw_settings['swiper']['items_xs'];
+         } else {
+            $swiper_items_xs = NULL;
+         }
+         // Check for array ['swiper']['items_sm']
+         if (isset($cw_settings['swiper']['items_sm']) && !$cw_settings['swiper']['items_sm'] == NULL) {
+            $swiper_items_sm =  $cw_settings['swiper']['items_sm'];
+         } else {
+            $swiper_items_sm = NULL;
+         }
+         // Check for array ['swiper']['items_md']
+         if (isset($cw_settings['swiper']['items_md']) && !$cw_settings['swiper']['items_md'] == NULL) {
+            $swiper_items_md =  $cw_settings['swiper']['items_md'];
+         } else {
+            $swiper_items_md = NULL;
+         }
+         // Check for array ['swiper']['items_lg']
+         if (isset($cw_settings['swiper']['items_lg']) && !$cw_settings['swiper']['items_lg'] == NULL) {
+            $swiper_items_lg =  $cw_settings['swiper']['items_lg'];
+         } else {
+            $swiper_items_lg = NULL;
+         }
+         // Check for array ['swiper']['items_xl']
+         if (isset($cw_settings['swiper']['items_xl']) && !$cw_settings['swiper']['items_xl'] == NULL) {
+            $swiper_items_xl =  $cw_settings['swiper']['items_xl'];
+         } else {
+            $swiper_items_xl = NULL;
+         }
+         // Check for array ['swiper']['items_xxl']
+         if (isset($cw_settings['swiper']['items_xxl']) && !$cw_settings['swiper']['items_xxl'] == NULL) {
+            $swiper_items_xxl =  $cw_settings['swiper']['items_xxl'];
+         } else {
+            $swiper_items_xxl = NULL;
+         }
+         // Check for array ['swiper']['autoplay']
+         if (isset($cw_settings['swiper']['autoplay']) && !$cw_settings['swiper']['autoplay'] == NULL) {
+            $swiper_autoplay =  $cw_settings['swiper']['autoplay'];
+         } else {
+            $swiper_autoplay = NULL;
+         }
+         // Check for array ['swiper']['autoplay_time']
+         if (isset($cw_settings['swiper']['autoplay_time']) && !$cw_settings['swiper']['autoplay_time'] == NULL) {
+            $swiper_autoplay_time =  $cw_settings['swiper']['autoplay_time'];
+         } else {
+            $swiper_autoplay_time = NULL;
+         }
+         // Check for array ['swiper']['loop']
+         if (isset($cw_settings['swiper']['loop']) && !$cw_settings['swiper']['loop'] == NULL) {
+            $swiper_loop =  $cw_settings['swiper']['loop'];
+         } else {
+            $swiper_loop = NULL;
+         }
+         // Check for array ['swiper']['autoheight']
+         if (isset($cw_settings['swiper']['autoheight']) && !$cw_settings['swiper']['autoheight'] == NULL) {
+            $swiper_autoheight =  $cw_settings['swiper']['autoheight'];
+         } else {
+            $swiper_autoheight = NULL;
+         }
+         // Check for array ['swiper']['wrapper_image_class']
+         if (isset($cw_settings['swiper']['wrapper_image_class']) && !$cw_settings['swiper']['wrapper_image_class'] == NULL) {
+            $swiper_wrapper_image_class =  $cw_settings['swiper']['wrapper_image_class'];
+         } else {
+            $swiper_wrapper_image_class = NULL;
+         }
+         // Check for array ['swiper']['image_demo']
+         if (isset($cw_settings['swiper']['image_demo']) && !$cw_settings['swiper']['image_demo'] == NULL) {
+            $swiper_image_demo =  $cw_settings['swiper']['image_demo'];
+         } else {
+            $swiper_image_demo = NULL;
+         }
+         // Check for array ['swiper']['image_shape']
+         if (isset($cw_settings['swiper']['image_shape']) && !$cw_settings['swiper']['image_shape'] == NULL) {
+            $swiper_image_shape =  $cw_settings['swiper']['image_shape'];
+         } else {
+            $swiper_image_shape = NULL;
+         }
+
+         $swiper = new CW_Swiper(
+            $swiper_container_class,
+            $swiper_image_class,
+            $swiper_image_pattern,
+            $swiper_image_thumb_size,
+            $swiper_image_big_size,
+            $swiper_img_link,
+            $swiper_data_margin,
+            $swiper_nav,
+            $swiper_nav_color,
+            $swiper_nav_position,
+            $swiper_dots,
+            $swiper_dots_color,
+            $swiper_dots_position,
+            $swiper_effect,
+            $swiper_base_items,
+            $swiper_items_xs,
+            $swiper_items_sm,
+            $swiper_items_md,
+            $swiper_items_lg,
+            $swiper_items_xl,
+            $swiper_items_xxl,
+            $swiper_autoplay,
+            $swiper_autoplay_time,
+            $swiper_loop,
+            $swiper_autoheight,
+            $swiper_wrapper_image_class,
+            $swiper_image_demo,
+            $swiper_image_shape
+         );
          $swiper_final = $swiper->final_swiper;
       } else {
          $swiper_final = NULL;
