@@ -1,82 +1,97 @@
 <?php
-$root_theme = get_template_directory_uri();
-$title = 'Networking <span class="text-gradient gradient-1">solutions</span> for worldwide communication';
-$paragraph = 'We\'re a company that focuses on establishing long-term relationships with customers.';
-$imageurl = $root_theme . '/dist/img/illustrations/3d6.png';
-$videourl = $root_theme . '/dist/media/movie.mp4';
-$backgroundurl = $root_theme . '/dist/img/photos/bg22.png';
-$typewriter = 'customer satisfaction,business needs,creative ideas';
-$glightbox = '';
-$button_link = "#";
-$backgroundcolor = 'dark';
-$textcolor = 'white';
-$typewriter = 'customer satisfaction,business needs,creative ideas';
-$forms = array();
 
-$image_block = '<img class="img-fluid mb-n18" src="/img/illustrations/3d6.png" srcset="./assets/img/illustrations/3d6@2x.png 2x" data-cue="fadeIn" data-delay="300" alt="" />';
+/**
+ * Hero 18
+ */
+$block = new CW_Settings(
+  $cw_settings = array(
+    'title' => 'Networking <span class="text-gradient gradient-1">solutions</span> for worldwide communication',
+    'patternTitle' => '<h1 class="display-2 mb-4 me-xl-5 me-xxl-0">%s</h1>',
 
-/* Add settings */
-$settings = new Settings();
-// адрес корня темы , обязательная переменная для демо
-$settings->title = 'Networking <span class="text-gradient gradient-1">solutions</span> for worldwide communication'; // демо заголовок
-$settings->paragraph = 'We\'re a company that focuses on establishing long-term relationships with customers.'; // демо параграф
-$settings->subtitle = 'Hello! This is Sandbox'; // демо подзаголовок
-$settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/3d6.png'; // демо фото
-$settings->backgroundurl = get_template_directory_uri() . '/dist/img/photos/bg22.png'; // демо бэкграунд
-$settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4'; // демо видео
-$settings->typewriter = 'customer satisfaction,business needs,creative ideas'; // демо данные эффекта печатной машинки
-$settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
-//$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
-$settings->textcolor = 'light'; // цвет текста темной темы
+    'paragraph' => 'We\'re a company that focuses on establishing long-term relationships with customers.',
+    'patternParagraph' => '<p class="lead fs-23 lh-sm mb-7 pe-xxl-15">%s</p>',
 
-$settings->GetDataACF(); // получаем занчения полей ACF
+    // 'subtitle' => 'Grow Your Business with Our Solutions.',
+    // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
-/* Add buttons */
-$button = new Buttons();
-$button->form_button = "rounded";
-$button->button_size = 'btn-lg';
-$button->class_button_wrapper = "d-flex justify-content-start flex-wrap ";
-$button->data_cues = "slideInDown";
-$button->data_group = "page-title-buttons";
-$button->data_delay = "900";
-$button->default_button = '<a href="#" class="btn btn-lg btn-gradient gradient-1 rounded">Explore Now</a>';
+    'buttons' => '<a href="#" class="btn btn-lg btn-gradient gradient-1 rounded">Explore Now</a>',
+    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
+    'background_class_default' => 'wrapper bg-light',
+    'background_data_default' => '/dist/img/photos/bg16.png',
+    'background_video_preview' => '/dist/img/photos/movie2.jpg',
+    'background_video_url' => '/dist/media/movie2.mp4',
+    'background_pattern_url' => '/dist/img/pattern.png',
 
-/* Add swiper */
-$swiper = new SwiperSlider();
-$swiper->root_theme = get_template_directory_uri();
-$swiper->class_swiper = 'swiper-container dots-over shadow-lg mb-n18';
-$swiper->data_nav = 'data-nav="false"';
-$swiper->data_dots = 'data-dots="true"';
-$swiper->data_margin = 'data-margin="5"';
-$swiper->image_size = 'sandbox_hero_18';
-$swiper->data_items_lg = 'data-items-lg=1';
-$swiper->data_items_md = 'data-items-md=1';
-$swiper->data_items_xs = 'data-items-xs=1';
-$swiper->data_autoplay = 'data-autoplay="true"';
-$swiper->data_autoplaytime = 'data-autoplaytime="3000"';
-$swiper->data_effect = 'data-effect="fade"';
-$swiper->default_media = '<img class="img-fluid mb-n18" src="' . $swiper->root_theme . '/dist/img/illustrations/3d6.png" srcset="' . $swiper->root_theme . '/dist/img/illustrations/3d6.png" data-cue="fadeIn" data-delay="300" alt="" />';
+    //'divider' => true,
+    //'divider_angles' => 'upper-start',
+    //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
+
+    // 'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+    // 'image_link' => '/dist/img/illustrations/i6.png',
+    // 'image_thumb_size' => 'sandbox_hero_1',
+    // 'image_big_size' => 'project_1',
+    //'shapes' => array('<div class="shape bg-dot primary rellax w-17 h-21" data-rellax-speed="1" style="top: -2.5rem; right: -2.7rem;"></div>'),
+
+    'swiper' => array(
+      'swiper_container_class' => 'img-fluid mb-n18',
+      'image_class' => 'img-fluid mb-n18',
+      'wrapper_image_class' => 'img-fluid mb-n18',
+      'image_pattern' => '<figure %5s><img %4$s src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+      'image_thumb_size' => 'sandbox_hero_18',
+      'image_demo' => '<figure><img class="img-fluid mb-n18" src="' . get_template_directory_uri() . '/dist/img/illustrations/3d6.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/3d6@2x.png 2x" alt="" data-cue="fadeIn" data-delay="300" /></figure>',
+      'image_big_size' => 'project_1',
+      'img_link' => '/dist/img/illustrations/3d6.png',
+      'data_margin' => '30',
+      'nav' => 'false',
+      'nav_color' => NULL,
+      'nav_position' => NULL,
+      'dots' => 'false',
+      'dots_color' => NULL,
+      'dots_position' => NULL,
+      'swiper_effect' => 'fade',
+      'base_items' => '1',
+      'items_xs' => '1',
+      'items_sm' => '1',
+      'items_md' => '1',
+      'items_lg' => '1',
+      'items_xl' => '1',
+      'items_xxl' => '1',
+      'autoplay' => 'true',
+      'autoplay_time' => '3000',
+      'loop' => 'loop',
+      'autoheight' => 'false',
+      'image_shape' => '',
+      'label_demo' => '<div class="card shadow-lg position-absolute" style="bottom: 10%%; right: 2%%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="./assets/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+
+      'label_pattern' => '<div class="card shadow-lg position-absolute %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
+    ),
+
+    'column_class_1' => 'order-lg-2 offset-lg-1',
+    'column_class_2' => '',
+
+  )
+);
 ?>
 
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-<?php echo $settings->backgroundcolor; ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
   <div class="container-card">
-    <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-light-500 mt-2 mb-5" data-image-src="<?php echo $settings->backgroundurl; ?>">
+    <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-light-500 mt-2 mb-5" data-image-src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/bg22.png">
       <div class="card-body py-14 px-0">
         <div class="container">
           <div class="row gx-md-8 gx-xl-12 gy-10 align-items-center text-center text-lg-start">
-            <div class="col-lg-6" data-cues="slideInDown" data-group="page-title" data-delay="900">
-              <h1 class="display-2 mb-4 me-xl-5 me-xxl-0 text-<?php echo $settings->textcolor; ?>"><?php echo $settings->title; ?></h1>
-              <p class="lead fs-23 lh-sm mb-7 pe-xxl-15 text-<?php echo $settings->textcolor; ?>"><?php echo $settings->paragraph; ?></p>
-              <!--  buttons group -->
-              <?php $button->showbuttons(); ?>
+            <div class="col-lg-5 <?php echo $block->column_class_1; ?>" data-cues="slideInDown" data-group="page-title" data-delay="900">
+              <?php echo $block->title; ?>
+              <!--/title -->
+              <?php echo $block->paragraph; ?>
+              <!--/pargraph -->
+              <?php echo $block->buttons; ?>
               <!--/buttons group -->
             </div>
             <!--/column -->
-            <div class="col-lg-6">
-              <!--  swiper -->
-              <?php echo $swiper->GetSwiper(); ?>
+            <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
+              <?php echo $block->swiper_final; ?>
               <!--/swiper -->
             </div>
             <!--/column -->

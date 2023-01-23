@@ -1,74 +1,103 @@
 <?php
-/* Add settings */
-$settings = new Settings();
 
-$settings->title = 'Crafting project specific solutions with expertise.';
-$settings->paragraph = 'We\’re a creative company that focuses on establishing long-term relationships with customers.';
-$settings->imageurl = '/dist/img/photos/about21.jpg';
-$settings->videourl = '/dist/media/movie.mp4';
-$settings->backgroundurl = '/dist/img/photos/bg4.jpg';
-$settings->typewriter = 'customer satisfaction,business needs,creative ideas';
-$settings->backgroundcolor = 'dark';
-// $settings->backgroundcolor_light = 'soft-primary';
-$settings->textcolor = 'light';
+/**
+ * Hero 11
+ */
+$block = new CW_Settings(
+  $cw_settings = array(
+    'title' => 'Crafting project specific solutions with expertise.',
+    'patternTitle' => '<h1 class="display-2 mb-5 text-white">%s</h1>',
 
-$settings->GetDataACF();
+    'paragraph' => 'We’re a creative company that focuses on establishing long-term relationships with customers.',
+    'patternParagraph' => '<p class="lead fs-lg lh-sm mb-7 pe-xl-10">%s</p>',
 
-/* Add buttons */
-$button = new Buttons();
-$button->form_button = "rounded-pill";
-$button->button_size = 'btn-lg';
-$button->class_button_wrapper = "d-flex justify-content-center flex-wrap justify-content-lg-start";
-$button->data_cues = "slideInDown";
-$button->data_group = "page-title-buttons";
-$button->data_delay = "900";
-$button->default_button = '<div class="d-flex justify-content-center flex-wrap justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
+    // 'subtitle' => 'Grow Your Business with Our Solutions.',
+    // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+
+    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
           <span><a href="#" class="btn btn-lg btn-white rounded-pill me-2">Explore Now</a></span>
           <span><a href="#" class="btn btn-lg btn-outline-white rounded-pill">Contact Us</a></span>
-        </div>';
+        </div>',
 
-/* Add swiper */
-$swiper = new SwiperSlider();
-$swiper->root_theme = get_template_directory_uri();
-$swiper->class_swiper = 'swiper-container dots-over shadow-lg';
-$swiper->data_nav = 'data-nav="true"';
-$swiper->data_dots = 'data-dots="true"';
-$swiper->data_margin = 'data-margin="5"';
-$swiper->image_size = 'sandbox_hero_11';
-$swiper->data_items_lg = 'data-items-lg=1';
-$swiper->data_items_md = 'data-items-md=1';
-$swiper->data_items_xs = 'data-items-xs=1';
-$swiper->data_autoplay = 'data-autoplay="false"';
-$swiper->data_autoplaytime = 'data-autoplaytime="5000"';
-$swiper->default_media = '<div class="swiper-container dots-over shadow-lg" data-margin="5" data-nav="true" data-dots="true">
-          <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><img src="' . $swiper->root_theme . '/dist/img/photos/about21.jpg" srcset="' . $swiper->root_theme . '/dist/img/photos/about21@2x.jpg 2x" class="rounded" alt="" /></div>
-              <div class="swiper-slide"><a href="' . $swiper->root_theme . '/dist/media/movie.mp4" class="btn btn-circle btn-white btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox data-gallery="hero"><i class="icn-caret-right"></i></a><img src="' . $swiper->root_theme . '/dist/img/photos/about22.jpg" srcset="' . $swiper->root_theme . '/dist/img/photos/about22@2x.jpg 2x" class="rounded" alt="" /></div>
-              <div class="swiper-slide"><img src="' . $swiper->root_theme . '/dist/img/photos/about23.jpg" srcset="' . $swiper->root_theme . '/dist/img/photos/about23@2x.jpg 2x" class="rounded" alt="" /></div>
-            </div>
-            <!--/.swiper-wrapper -->
-          </div>
-          <!--/.swiper -->
-        </div>
-        <!-- /.swiper-container -->';
+    'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay bg-overlay-400 bg-content text-white',
+    'background_data_default' => '/dist/img/photos/bg4.jpg',
+    //'background_video_preview' => '/dist/img/photos/movie2.jpg',
+    //'background_video_url' => '/dist/media/movie2.mp4',
+    //'background_pattern_url' => '/dist/img/pattern.png',
+
+    'divider' => true,
+    //'divider_angles' => 'upper-start',
+    //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
+
+    //'shapes' => array(
+    //  '<div class="shape bg-dot primary rellax w-17 h-19" data-rellax-speed="1" style="top: -1.7rem; left: -1.5rem;"></div>',
+    //  '<div class="shape rounded bg-soft-primary rellax d-md-block" data-rellax-speed="0" style="bottom: -1.8rem; right: -0.8rem; width: 85%; height: 90%;"></div>'
+    // ),
+
+    // 'image_pattern' => '<figure class="rounded"><img src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+    // 'image_link' => '/dist/img/photos/about21.jpg',
+    // 'image_thumb_size' => 'sandbox_hero_11',
+    // 'image_big_size' => 'project_1',
+
+    'swiper' => array(
+      'swiper_container_class' => 'rounded',
+      'image_class' => 'rounded',
+      'wrapper_image_class' => 'rounded',
+      'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+      'image_thumb_size' => 'sandbox_hero_11',
+      'image_demo' => '<figure><img class="rounded" src="' . get_template_directory_uri() . '/dist/img/photos/about21.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about21@2x.jpg 2x" alt="" /></figure>',
+      'image_big_size' => 'project_1',
+      'img_link' => '/dist/img/photos/about21.jpg',
+      'img_shape' => 'rounded',
+      'data_margin' => '30',
+      'nav' => 'true',
+      'nav_color' => 'nav-light',
+      'nav_position' => 'nav-start',
+      'dots' => 'true',
+      'dots_color' => 'nav-start',
+      'dots_position' => 'dots-over',
+      'swiper_effect' => 'slide',
+      'base_items' => '1',
+      'items_xs' => '1',
+      'items_sm' => '1',
+      'items_md' => '1',
+      'items_lg' => '1',
+      'items_xl' => '1',
+      'items_xxl' => '1',
+      'autoplay' => 'false',
+      'autoplay_time' => '500',
+      'loop' => 'false',
+      'autoheight' => 'false',
+      'image_shape' => 'rounded',
+      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 10%%; right: 2%%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="./assets/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+
+      'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
+    ),
+
+    'column_class_1' => 'offset-md-1 offset-lg-0',
+    'column_class_2' => 'offset-lg-1',
+  )
+);
 ?>
 
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> image-wrapper bg-image bg-overlay bg-overlay-400 bg-content text-<?php echo $settings->textcolor; ?>" data-image-src="<?php echo $settings->backgroundurl; ?>">
+
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->background_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
   <div class="container pt-18 pb-16" style="z-index: 5; position:relative">
     <div class="row gx-0 gy-12 align-items-center">
-      <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-6 content text-center text-lg-start" data-cues="slideInDown" data-group="page-title" data-delay="600">
-        <h1 class="display-2 mb-5 text-<?php echo $settings->textcolor; ?>"><?php echo $settings->title; ?></h1>
-        <p class="lead fs-lg lh-sm mb-7 pe-xl-10 text-<?php echo $settings->textcolor; ?>"><?php echo $settings->paragraph; ?></p>
-        <!--  buttons group -->
-        <?php $button->showbuttons(); ?>
+      <div class="col-md-10 col-lg-6 content text-center text-lg-start <?php echo $block->column_class_1; ?>" data-cues="slideInDown" data-group="page-title" data-delay="600">
+        <?php echo $block->title; ?>
+        <!--/title -->
+        <?php echo $block->paragraph; ?>
+        <!--/pargraph -->
+        <?php echo $block->buttons; ?>
         <!--/buttons group -->
       </div>
       <!--/column -->
-      <div class="col-lg-5 offset-lg-1">
-        <!--  swiper -->
-        <?php echo $swiper->GetSwiper(); ?>
+      <div class="col-lg-5 <?php echo $block->column_class_2; ?>">
+        <?php echo $block->swiper_final; ?>
         <!--/swiper -->
       </div>
       <!-- /column -->
@@ -76,5 +105,9 @@ $swiper->default_media = '<div class="swiper-container dots-over shadow-lg" data
     <!-- /.row -->
   </div>
   <!-- /.container -->
+  <?php if ($block->divider_wave) {
+    echo $block->divider_wave;
+  } ?>
+  <!-- /divider -->
 </section>
 <!-- /section -->

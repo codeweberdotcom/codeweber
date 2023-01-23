@@ -101,6 +101,8 @@ class CW_Shape
          else :
             $cw_shape_position_y = 'left: 0';
          endif;
+
+
          if (have_rows('cw_position_y')) :
             while (have_rows('cw_position_y')) : the_row();
                $cw_shape_position_y = get_sub_field('position') . ': ' . get_sub_field('number');

@@ -31,7 +31,7 @@ class CW_Image
    public $final_image;
 
 
-   public function __construct($image_thumb_size, $image_big_size, $image_link_type, $image_link, $image_alt, $image_shape, $image_classes, $wrapper_image_classes, $final_image, $image_pattern)
+   public function __construct($image_thumb_size, $image_big_size, $image_link_type, $image_link, $image_alt, $image_shape, $image_classes, $wrapper_image_classes, $final_image, $image_pattern, $label)
    {
       $this->root_theme = get_template_directory_uri();
       $this->image_pattern = $this->cw_image_pattern($image_pattern);
@@ -42,7 +42,7 @@ class CW_Image
       $this->image_shape = $this->cw_image_shape($image_shape);
       $this->wrapper_image_classes = $this->cw_wrapper_image_classes($wrapper_image_classes, $image_shape);
       $this->image_link = $this->cw_link_image($image_link);
-      $this->final_image = $this->cw_final_image($final_image, $image_link, $image_pattern);
+      $this->final_image = $this->cw_final_image($final_image, $image_link, $image_pattern, $label);
    }
 
    //Image Pattern
@@ -240,13 +240,15 @@ class CW_Image
    }
 
 
-   //Image Wrapper Classe
+   //Image Wrapper Classes
    public function cw_wrapper_image_classes($wrapper_image_classes, $image_shape)
    {
       $image_wrapper_class = array();
       if (have_rows('cw_image')) {
          while (have_rows('cw_image')) {
             the_row();
+
+            $image_wrapper_class[] = 'position-relative';
 
             if (get_sub_field('cw_shape_image') == 'rounded-0') {
                $image_wrapper_class[] = get_sub_field('cw_shape_image');
@@ -303,7 +305,7 @@ class CW_Image
 
 
    //Final Image
-   public function cw_final_image($final_image, $image_link, $image_pattern)
+   public function cw_final_image($final_image, $image_link, $image_pattern, $label)
    {
       $image_classes = $this->image_classes;
       $image_wrapper_classes = $this->wrapper_image_classes;
@@ -398,10 +400,10 @@ class CW_Image
          if ($image_pattern !== NULL) {
             $image_pattern_default = $image_pattern;
          } else {
-            $image_pattern_default = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s</figure>';
-         }
 
-         $final_image = sprintf($image_pattern_default, $image_url_small, $image_url_small, $image_alt, $image_classes, $wrapper_image_classes, $image_link_open, $image_link_close, $image_url_src, $image_title, $image_figcaption);
+            $image_pattern_default = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>';
+         }
+         $final_image = sprintf($image_pattern_default, $image_url_small, $image_url_small, $image_alt, $image_classes, $wrapper_image_classes, $image_link_open, $image_link_close, $image_url_src, $image_title, $image_figcaption, $label);
       } else {
          $final_image = $final_image;
       }

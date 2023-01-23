@@ -73,7 +73,9 @@ class CW_Swiper
       $autoheight,
       $wrapper_image_class,
       $image_demo,
-      $image_shape
+      $image_shape,
+      $label_demo,
+      $label_pattern
    ) {
       $this->root_theme = get_template_directory_uri();
       $this->custom_settings_bool = $this->cw_custom_settings_bool();
@@ -108,7 +110,17 @@ class CW_Swiper
       $this->swiper_container_class = $this->cw_class($swiper_container_class);
       $this->swiper_data = $this->cw_data();
 
-      $this->final_swiper = $this->cw_final_slider($image_class, $image_pattern, $image_thumb_size, $image_big_size, $img_link, $wrapper_image_class, $image_demo);
+      $this->final_swiper = $this->cw_final_slider(
+         $image_class,
+         $image_pattern,
+         $image_thumb_size,
+         $image_big_size,
+         $img_link,
+         $wrapper_image_class,
+         $image_demo,
+         $label_demo,
+         $label_pattern
+      );
    }
 
 
@@ -209,6 +221,8 @@ class CW_Swiper
                the_row();
                if (get_sub_field('cw_nav') == 1) {
                   $cw_nav = 'true';
+               } else {
+                  $cw_nav = 'false';
                }
             }
          } else {
@@ -229,6 +243,8 @@ class CW_Swiper
                the_row();
                if (get_sub_field('cw_nav_color') && get_sub_field('cw_nav') == 1) {
                   $cw_nav_color = get_sub_field('cw_nav_color');
+               } else {
+                  $cw_nav_color = $nav_color;
                }
             }
          } else {
@@ -249,6 +265,8 @@ class CW_Swiper
                the_row();
                if (get_sub_field('cw_nav_position') && get_sub_field('cw_nav') == 1) {
                   $cw_nav_position = get_sub_field('cw_nav_position');
+               } else {
+                  $cw_nav_position = $nav_position;
                }
             }
          } else {
@@ -670,7 +688,7 @@ class CW_Swiper
 
 
    //Final Slider
-   public function cw_final_slider($image_class, $image_pattern, $image_thumb_size, $image_big_size, $img_link, $wrapper_image_class, $image_demo)
+   public function cw_final_slider($image_class, $image_pattern, $image_thumb_size, $image_big_size, $img_link, $wrapper_image_class, $image_demo, $label_demo, $label_pattern)
    {
       $count_image = $this->count_image;
       $final_slider = '';
@@ -692,7 +710,7 @@ class CW_Swiper
 
                $image_pattern = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s</figure>';
 
-               $image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, $image_class, NULL, NULL, $image_pattern);
+               $image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, $image_class, NULL, NULL, $image_pattern, NULL);
 
                if ($image->image_clean_title) {
                   $caption_image = '<div class="caption-wrapper p-8"><div class="caption bg-white rounded px-4 py-3 mt-auto animate__animated animate__slideInDown animate__delay-1s"><div class="mb-0 h5">' . $image->image_clean_title . '</div></div><!--/.caption --></div><!--/.caption-wrapper -->';
@@ -702,12 +720,21 @@ class CW_Swiper
                $final_slider .= '<div class="swiper-slide">' . $image->final_image . $caption_image . '</div>';
             }
          }
-         $final_slider .= '</div></div></div>';
+         $final_slider .= '</div>';
+         $final_slider .= '</div>';
+         $label = new CW_Labels($label_pattern, $label_demo, NULL);
+         $final_slider .= $label->final_labels;
+
+         $final_slider .= '</div>';
       } elseif ($count_image == 1) {
+         $label_object = new CW_Labels($label_pattern, $label_demo, NULL);
+         $label = $label_object->final_labels;
+
          if (have_rows('cw_images')) {
             while (have_rows('cw_images')) {
                the_row();
-               $image = new CW_Image($image_thumb_size, $image_big_size, NULL, $img_link, NULL, $image_shape, NULL, $wrapper_image_class, $image_demo, NULL);
+               $image = new CW_Image($image_thumb_size, $image_big_size, NULL, $img_link, NULL, $image_shape, NULL, $wrapper_image_class, $image_demo, NULL, $label);
+
                $final_slider = $image->final_image;
             }
          }

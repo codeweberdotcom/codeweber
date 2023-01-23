@@ -64,6 +64,27 @@
             ]
         },
         {
+            "key": "field_63ce777dcde3d",
+            "label": "Labels",
+            "name": "cw_labels",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_63cd469caa77c"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_63a20057fc723",
             "label": "Swiper Gallery",
             "name": "gallery",
@@ -713,5 +734,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674287997
+    "modified": 1674475569
 }

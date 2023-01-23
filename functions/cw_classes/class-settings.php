@@ -343,6 +343,20 @@ class CW_Settings
             $swiper_image_shape = NULL;
          }
 
+         // Check for array ['swiper']['label_demo']
+         if (isset($cw_settings['swiper']['label_demo']) && !$cw_settings['swiper']['label_demo'] == NULL) {
+            $swiper_label_demo =  $cw_settings['swiper']['label_demo'];
+         } else {
+            $swiper_label_demo = NULL;
+         }
+
+         // Check for array ['swiper']['label_pattern']
+         if (isset($cw_settings['swiper']['label_pattern']) && !$cw_settings['swiper']['label_pattern'] == NULL) {
+            $swiper_label_pattern =  $cw_settings['swiper']['label_pattern'];
+         } else {
+            $swiper_label_pattern = NULL;
+         }
+
          $swiper = new CW_Swiper(
             $swiper_container_class,
             $swiper_image_class,
@@ -371,13 +385,14 @@ class CW_Settings
             $swiper_autoheight,
             $swiper_wrapper_image_class,
             $swiper_image_demo,
-            $swiper_image_shape
+            $swiper_image_shape,
+            $swiper_label_demo,
+            $swiper_label_pattern
          );
          $swiper_final = $swiper->final_swiper;
       } else {
          $swiper_final = NULL;
       }
-
       return $swiper_final;
    }
 

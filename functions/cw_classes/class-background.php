@@ -153,6 +153,7 @@ class CW_Background
             the_row();
             if (get_sub_field('cw_background_type') == 'Image') {
                $cw_image_background = get_sub_field('cw_image_background');
+
                if ($cw_image_background) {
                   $background_data = 'data-image-src="'  . esc_url($cw_image_background['url']) . '"';
                } elseif (isset($cw_settings['background_data_default'])) {
@@ -168,6 +169,9 @@ class CW_Background
                }
             } elseif (get_sub_field('cw_background_type') == 'Library') {
                $background_data = 'data-image-src="'  . get_template_directory_uri() . '/dist/img/photos/' . get_sub_field('cw_library_image') . '"';
+            } elseif (get_sub_field('cw_background_type') == 'Theme') {
+
+               $background_data = 'data-image-src="' . get_template_directory_uri() .  $cw_settings['background_data_default'] . '"';
             } else {
                $background_data = NULL;
             }

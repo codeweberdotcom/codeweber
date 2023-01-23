@@ -1,38 +1,94 @@
 <?php
-/* Add settings */
-$settings = new Settings();
 
-$settings->title = 'We bring solutions to make life <span class="underline-3 style-2 yellow">easier';
-$settings->paragraph = 'We are a creative company that focuses on long term relationships with customers.';
-$settings->imageurl = $settings->root_theme . '/dist/img/illustrations/i6.png';
-$settings->videourl = $settings->root_theme . '/dist/media/movie.mp4';
-$settings->backgroundurl = '/dist/img/photos/bg16.png';
-$settings->typewriter = 'customer satisfaction,business needs,creative ideas';
-$settings->backgroundcolor = 'dark';
-// $settings->backgroundcolor_light = 'soft-primary';
-$settings->textcolor = 'light';
+/**
+ * Hero 19
+ */
+$block = new CW_Settings(
+  $cw_settings = array(
+    'title' => 'We bring solutions to make life <span class="underline-3 style-2 yellow">easier</span>',
+    'patternTitle' => '<h1 class="display-1 text-white fs-60 mb-4 px-md-15 px-lg-0">%s</h1>',
 
-$settings->GetDataACF();
+    'paragraph' => 'We are a creative company that focuses on long term relationships with customers..',
+    'patternParagraph' => '<p class="lead fs-24 text-white lh-sm mb-7 mx-md-13 mx-lg-10">%s</p>',
 
-/* Add buttons */
-$button = new Buttons();
-$button->form_button = "rounded";
-$button->button_size = NULL;
-$button->class_button_wrapper = "d-flex justify-content-center flex-wrap";
-$button->data_cues = "slideInDown";
-$button->data_group = "page-title-buttons";
-$button->data_delay = "900";
-$button->default_button = '<div><a class="btn btn-white rounded mb-10 mb-xxl-5">Read More</a></div>';
+    // 'subtitle' => 'Grow Your Business with Our Solutions.',
+    // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+
+    'buttons' => '<div><a class="btn btn-white rounded mb-10 mb-xxl-5">Read More</a></div>',
+    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+
+    'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay bg-overlay-300',
+    'background_data_default' => '/dist/img/photos/bg16.png',
+    'background_video_preview' => '/dist/img/photos/movie2.jpg',
+    'background_video_url' => '/dist/media/movie2.mp4',
+    'background_pattern_url' => '/dist/img/pattern.png',
+
+    'divider' => '<div class="overflow-hidden"><div class="divider text-light mx-n2">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z" /></svg>
+    </div></div>',
+    //'divider_angles' => 'upper-start',
+    //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
+
+    // 'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+    // 'image_link' => '/dist/img/illustrations/i6.png',
+    // 'image_thumb_size' => 'sandbox_hero_1',
+    // 'image_big_size' => 'project_1',
+
+    // 'swiper' => array(
+    //   'swiper_container_class' => 'rounded',
+    //   'image_class' => 'rounded',
+    //   'wrapper_image_class' => 'rounded',
+    //   'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+    //   'image_thumb_size' => 'sandbox_hero_1',
+    //   'image_demo' => '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/illustrations/i6.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i6@2x.png 2x" alt="" /></figure>',
+    //   'image_big_size' => 'project_1',
+    //   'img_link' => '/dist/img/illustrations/i6.png',
+    //   'img_shape' => 'rounded',
+    //   'data_margin' => '30',
+    //   'nav' => 'true',
+    //   'nav_color' => 'nav-dark',
+    //   'nav_position' => 'nav-bottom',
+    //   'dots' => 'true',
+    //   'dots_color' => 'dots-dark',
+    //   'dots_position' => 'dots-start',
+    //   'swiper_effect' => 'fade',
+    //   'base_items' => '1',
+    //   'items_xs' => '1',
+    //   'items_sm' => '1',
+    //   'items_md' => '1',
+    //   'items_lg' => '1',
+    //   'items_xl' => '1',
+    //   'items_xxl' => '1',
+    //   'autoplay' => 'false',
+    //   'autoplay_time' => '500',
+    //   'loop' => 'false',
+    //   'autoheight' => 'false',
+    // ),
+
+    'column_class_1' => 'order-2 order-lg-0',
+    'column_class_2' => '',
+
+    'features' => '<div class="col-md-6 col-xl-3"><div class="card shadow-lg"><div class="card-body">
+    <img src="' . get_template_directory_uri() . '/dist/img/icons/solid/edit.svg" class="svg-inject icon-svg icon-svg-sm solid-mono text-fuchsia mb-3" alt="" /><h4>Content Marketing</h4>
+    <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+    <a href="#" class="more hover link-fuchsia">Learn More</a></div><!--/.card-body --></div><!--/.card --></div><!--/column -->',
+
+    'features_pattern' => '<div class="col-md-6 col-xl-3 %1$s"><div class="card shadow-lg %6$s"><div class="card-body">%2$s<h4>%3$s</h4><p class="mb-5">%4$s</p>%5$s</div><!--/.card-body --></div><!--/.card --></div><!--/column -->',
+  )
+);
 ?>
 
-<section class="wrapper image-wrapper bg-image bg-overlay bg-overlay-300" data-image-src="<?php echo $settings->backgroundurl; ?>">
+
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
   <div class="container pt-17 pb-19 pt-md-18 pb-md-17 text-center">
     <div class="row">
       <div class="col-lg-8 col-xl-7 col-xxl-6 mx-auto" data-cues="slideInDown" data-group="page-title">
-        <h1 class="display-1 text-<?php echo $settings->textcolor; ?> fs-60 mb-4 px-md-15 px-lg-0"><?php echo $settings->title; ?></span></h1>
-        <p class="lead fs-24 text-<?php echo $settings->textcolor; ?> lh-sm mb-7 mx-md-13 mx-lg-10"><?php echo $settings->paragraph; ?></p>
-        <!--  buttons group -->
-        <?php $button->showbuttons(); ?>
+        <?php echo $block->title; ?>
+        <!--/title -->
+        <?php echo $block->paragraph; ?>
+        <!--/pargraph -->
+        <?php echo $block->buttons; ?>
         <!--/buttons group -->
       </div>
       <!-- /column -->
@@ -40,95 +96,16 @@ $button->default_button = '<div><a class="btn btn-white rounded mb-10 mb-xxl-5">
     <!-- /.row -->
   </div>
   <!-- /.container -->
-  <div class="overflow-hidden">
-    <div class="divider text-light mx-n2">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60">
-        <path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z" />
-      </svg>
-    </div>
-  </div>
+  <?php if ($block->divider_wave) {
+    echo $block->divider_wave;
+  } ?>
+  <!-- /divider -->
 </section>
 <!-- /section -->
-
-<?php
-/* Add Features */
-$features = new Features();
-$features->root_theme = get_template_directory_uri();
-$features->title = '24/7 Support';
-$features->paragraph = 'Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus. Cras justo.';
-$features->link_url = "#";
-$features->link_text = "Learn more";
-$features->pattern = '<div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
-          <div class="card-body">
-             %3$s
-            <h4>%1$s</h4>
-            <p class="mb-2">%2$s</p>
-            %4$s
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
-      </div>
-      <!--/column -->';
-$features->default_features = '<div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
-          <div class="card-body">
-            <img src="' . get_template_directory_uri() . '/dist/img/icons/solid/edit.svg" class="svg-inject icon-svg icon-svg-sm solid-mono text-fuchsia mb-3" alt="" />
-            <h4>Content Marketing</h4>
-            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-            <a href="#" class="more hover link-fuchsia">Learn More</a>
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
-      </div>
-      <!--/column -->
-      <div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
-          <div class="card-body">
-            <img src="' . get_template_directory_uri() . '/dist/img/icons/solid/team.svg" class="svg-inject icon-svg icon-svg-sm solid-mono text-violet mb-3" alt="" />
-            <h4>Social Engagement</h4>
-            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-            <a href="#" class="more hover link-violet">Learn More</a>
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
-      </div>
-      <!--/column -->
-      <div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
-          <div class="card-body">
-            <img src="' . get_template_directory_uri() . '/dist/img/icons/solid/lamp.svg" class="svg-inject icon-svg icon-svg-sm solid-mono text-orange mb-3" alt="" />
-            <h4>Identity & Branding</h4>
-            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-            <a href="#" class="more hover link-orange">Learn More</a>
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
-      </div>
-      <!--/column -->
-      <div class="col-md-6 col-xl-3">
-        <div class="card shadow-lg">
-          <div class="card-body">
-            <img src="' . get_template_directory_uri() . '/dist/img/icons/solid/delivery-box.svg" class="svg-inject icon-svg icon-svg-sm solid-mono text-green mb-3" alt="" />
-            <h4>Product Design</h4>
-            <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-            <a href="#" class="more hover link-green">Learn More</a>
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
-      </div>
-      <!--/column -->';
-?>
 <section class="wrapper bg-light">
   <div class="container pb-15 pb-md-17">
     <div class="row gx-md-5 gy-5 mt-n19">
-      <?php echo $features->Feutures(); ?>
-      <!--/column -->
+      <?php echo $block->features; ?>
     </div>
     <!--/.row -->
   </div>

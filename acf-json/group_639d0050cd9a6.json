@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_639d00565c8cf",
-            "label": "CW Image",
+            "label": "Images",
             "name": "cw_image",
             "type": "group",
             "instructions": "",
@@ -561,5 +561,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674257035
+    "modified": 1674475258
 }

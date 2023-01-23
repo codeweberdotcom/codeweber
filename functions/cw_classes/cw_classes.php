@@ -1,5 +1,7 @@
 <?php
 include 'class-settings.php';
+include 'class-label.php';
+include 'class-position.php';
 include 'class-typography.php';
 include 'class-color.php';
 include 'class-buttons.php';

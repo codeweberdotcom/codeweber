@@ -25,7 +25,7 @@ class CW_Title
       $this->title_fs = $this->cw_title_fs($title_fs);
       $this->title_align = $this->cw_title_align($title_align);
       $this->title_id = $this->cw_title_id($title_id);
-      $this->title_class = $this->cw_title_class($title_class);
+      $this->title_class = $this->cw_title_class($title_class, $title_text);
       $this->title_final = $this->cw_title_final($title_pattern, $typewriter);
    }
 
@@ -210,7 +210,9 @@ class CW_Title
          $classes[] = $this->title_class;
       }
 
-
+      if (is_numeric(mb_substr($this->title_text, 0, -1))) {
+         $classes[] = 'counter';
+      }
 
       if ($classes) {
          $class = ' class="' . implode(' ', $classes) . '"';
