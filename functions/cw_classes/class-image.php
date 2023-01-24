@@ -390,7 +390,6 @@ class CW_Image
                      $image_link_open = '<a href="' . $img_link . '" data-glightbox="title: ' . get_sub_field('cw_caption_image') . '; description: ' .  $image_description_simple . '" data-gallery="g1">';
                      $image_link_close = '</a>';
                   } else {
-                     echo 'f';
                      $image_link_open = '<a href="' . $img_link . '" ' . $image_description_1 . ' ' . $image_title . '" data-glightbox data-gallery="g1">';
                      $image_link_close = '</a>';
                   }
