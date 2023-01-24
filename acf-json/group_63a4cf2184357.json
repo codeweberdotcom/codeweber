@@ -34,13 +34,47 @@
                     "endpoint": 0
                 },
                 {
+                    "key": "field_63cf084545f86",
+                    "label": "Effect",
+                    "name": "cw_effect",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "cursor": "cursor",
+                        "rotator-fade": "rotator-fade",
+                        "rotator-zoom": "rotator-zoom"
+                    },
+                    "default_value": "cursor",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
                     "key": "field_63a464d83a56d",
                     "label": "Loop",
                     "name": "cw_loop",
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63cf084545f86",
+                                "operator": "==",
+                                "value": "cursor"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "50",
                         "class": "",
@@ -59,7 +93,15 @@
                     "type": "true_false",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63cf084545f86",
+                                "operator": "==",
+                                "value": "cursor"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "50",
                         "class": "",
@@ -78,7 +120,15 @@
                     "type": "number",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63cf084545f86",
+                                "operator": "==",
+                                "value": "cursor"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -192,5 +242,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671792863
+    "modified": 1674513800
 }

@@ -166,6 +166,7 @@ class CW_Features
          $cw_features_list = '';
          while (have_rows('cw_features')) {
             the_row();
+            $class_image = 'mb-3';
             $features_item = new CW_Feature(
                NULL,
                NULL,
@@ -173,7 +174,7 @@ class CW_Features
                NULL,
                $features_pattern,
                $demo,
-               NULL,
+               $class_image,
                NULL
             );
             $cw_features_list .= $features_item->features_item_final;

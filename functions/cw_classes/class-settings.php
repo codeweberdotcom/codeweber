@@ -416,7 +416,19 @@ class CW_Settings
    public function cw_images($cw_settings)
    {
       if (isset($this->cw_settings['image_pattern']) && !$this->cw_settings['image_pattern'] == NULL) {
-         $image_object = new CW_Image($cw_settings = $cw_settings, NULL);
+         $image_object = new CW_Image(
+            $cw_settings['image_thumb_size'],
+            $cw_settings['image_big_size'],
+            NULL,
+            $cw_settings['image_link'],
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            NULL,
+            $cw_settings['image_pattern'],
+            NULL
+         );
          $images = $image_object->final_image;
       } else {
          $images = NULL;

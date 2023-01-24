@@ -18,10 +18,10 @@ $block = new CW_Settings(
     'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900"><span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span><span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Free Trial</a></span></div>',
 
     'background_class_default' => 'wrapper bg-image',
-    'background_data_default' => '/dist/img/photos/bg16.png',
-    'background_video_preview' => '/dist/img/photos/movie2.jpg',
-    'background_video_url' => '/dist/media/movie2.mp4',
-    'background_pattern_url' => '/dist/img/pattern.png',
+    //'background_data_default' => '/dist/img/photos/bg16.png',
+    //'background_video_preview' => '/dist/img/photos/movie2.jpg',
+    //'background_video_url' => '/dist/media/movie2.mp4',
+    //'background_pattern_url' => '/dist/img/pattern.png',
 
     'divider' => true,
     //'divider_angles' => 'upper-start',
@@ -66,7 +66,7 @@ $block = new CW_Settings(
       'loop' => 'loop',
       'autoheight' => 'false',
       'image_shape' => 'rounded',
-      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 10%%; right: 2%%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="./assets/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; left: -2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
 
       'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
     ),

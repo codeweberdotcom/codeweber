@@ -5,7 +5,7 @@
  */
 $block = new CW_Settings(
   $cw_settings = array(
-    'title' => '<span class="rotator-zoom">Rapid Solutions,Innovative Thinking,Top-Notch Support</span>',
+    'title' => ' ',
     'patternTitle' => '<h1 class="display-1 fs-54 text-white mb-5">%s</h1>',
 
     'paragraph' => 'We are a digital agency specializing in web design, mobile development and seo optimization.',
@@ -14,14 +14,18 @@ $block = new CW_Settings(
     // 'subtitle' => 'Grow Your Business with Our Solutions.',
     // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
+
+    'typewriter' => 'Rapid Solutions,Innovative Thinking,Top-Notch Support',
+
+
     // 'buttons' => '<a href="#" class="btn btn-lg btn-gradient gradient-1 rounded">Explore Now</a>',
     // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
     'background_class_default' => 'video-wrapper bg-overlay bg-overlay-gradient px-0 mt-0 min-vh-80',
-    'background_data_default' => '/dist/img/photos/movie2.jpg',
+    //'background_data_default' => '/dist/img/photos/movie2.jpg',
     'background_video_preview' => '/dist/img/photos/movie2.jpg',
     'background_video_url' => '/dist/media/movie2.mp4',
-    'background_pattern_url' => '/dist/img/pattern.png',
+    //'background_pattern_url' => '/dist/img/pattern.png',
 
     //'divider' => true,
     //'divider_angles' => 'upper-start',

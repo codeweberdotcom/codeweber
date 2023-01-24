@@ -171,7 +171,11 @@ class CW_Background
                $background_data = 'data-image-src="'  . get_template_directory_uri() . '/dist/img/photos/' . get_sub_field('cw_library_image') . '"';
             } elseif (get_sub_field('cw_background_type') == 'Theme') {
 
-               $background_data = 'data-image-src="' . get_template_directory_uri() .  $cw_settings['background_data_default'] . '"';
+               if (isset($cw_settings['background_data_default']) && !$cw_settings['background_data_default'] == NULL) {
+                  $background_data = 'data-image-src="' . get_template_directory_uri() .  $cw_settings['background_data_default'] . '"';
+               } else {
+                  $background_data = NULL;
+               }
             } else {
                $background_data = NULL;
             }
@@ -243,6 +247,18 @@ class CW_Background
                   } else {
                      $this->preview_video_background = get_template_directory_uri() . $cw_settings['background_video_preview'];
                   }
+               }
+            } elseif (get_sub_field('cw_background_type') == 'Theme') {
+               if (isset($cw_settings['background_video_url']) && !$cw_settings['background_video_url'] == NULL) {
+                  $this->url_video_background = get_template_directory_uri() . $cw_settings['background_video_url'];
+                  $this->bool_video_background = true;
+               } else {
+                  $this->url_video_background = NULL;
+               }
+               if (isset($cw_settings['background_video_preview']) && !$cw_settings['background_video_preview'] == NULL) {
+                  $this->preview_video_background = get_template_directory_uri() . $cw_settings['background_video_preview'];
+               } else {
+                  $this->preview_video_background = NULL;
                }
             }
          }

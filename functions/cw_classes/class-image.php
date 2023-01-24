@@ -299,6 +299,8 @@ class CW_Image
 
             $cw_image_wrapper_class = implode(' ', $image_wrapper_class);
          }
+      } else {
+         $cw_image_wrapper_class = NULL;
       }
       return $cw_image_wrapper_class;
    }
@@ -388,6 +390,7 @@ class CW_Image
                      $image_link_open = '<a href="' . $img_link . '" data-glightbox="title: ' . get_sub_field('cw_caption_image') . '; description: ' .  $image_description_simple . '" data-gallery="g1">';
                      $image_link_close = '</a>';
                   } else {
+                     echo 'f';
                      $image_link_open = '<a href="' . $img_link . '" ' . $image_description_1 . ' ' . $image_title . '" data-glightbox data-gallery="g1">';
                      $image_link_close = '</a>';
                   }
@@ -397,10 +400,10 @@ class CW_Image
             $image_link_open = NULL;
             $image_link_close = NULL;
          }
+
          if ($image_pattern !== NULL) {
             $image_pattern_default = $image_pattern;
          } else {
-
             $image_pattern_default = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>';
          }
          $final_image = sprintf($image_pattern_default, $image_url_small, $image_url_small, $image_alt, $image_classes, $wrapper_image_classes, $image_link_open, $image_link_close, $image_url_src, $image_title, $image_figcaption, $label);

@@ -88,9 +88,7 @@ class CW_Divider
             } elseif ($type_wave == 'wave_6') {
                $div_wave .= '<svg viewBox="0 0 1440 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M364.5 84.0006C588 82.5 1207.5 -79.9999 1440 52.6209V102.991H0V20.8009C0 20.8009 141 85.5013 364.5 84.0006Z"/></svg>';
             } elseif ($type_wave == 'wave_7') {
-               $div_wave .= '<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
-    </svg>';
+               $div_wave .= '<svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path></svg>';
             } elseif ($type_wave == 'wave_8') {
                $div_wave .= '<svg class="editorial"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 "preserveAspectRatio="none"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs><g class="parallax1"><use xlink:href="#gentle-wave" x="50" y="3" fill="#f461c1"/></g><g class="parallax2"><use xlink:href="#gentle-wave" x="50" y="0" fill="#4579e2"/></g><g class="parallax3"><use xlink:href="#gentle-wave" x="50" y="9" fill="#3461c1"/></g><g class="parallax4"><use xlink:href="#gentle-wave" x="50" y="6" fill="#fff"/> </g></svg><style>.parallax1 > use {
   animation: move-forever1 10s linear infinite;

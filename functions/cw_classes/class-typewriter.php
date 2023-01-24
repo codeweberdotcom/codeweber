@@ -9,6 +9,8 @@ class CW_Typewriter
    public $typewriter_color;
    public $typewriter_cursor;
    public $typewriter_text;
+   public $typewriter_clean_text;
+   public $typewriter_effect;
    public $typewriter_class;
 
 
@@ -17,6 +19,7 @@ class CW_Typewriter
    public function __construct($cw_settings)
    {
       $this->typewriter_loop = $this->cw_typewriter_loop($cw_settings);
+      $this->typewriter_effect = $this->cw_typewriter_effect($cw_settings);
       $this->typewriter_delay = $this->cw_typewriter_delay($cw_settings);
       $this->typewriter_color = $this->cw_typewriter_color($cw_settings);
       $this->typewriter_cursor = $this->cw_typewriter_cursor($cw_settings);
@@ -26,6 +29,28 @@ class CW_Typewriter
 
       $this->typewriter_final = $this->cw_typewriter_final($cw_settings);
    }
+
+
+   //Typewriter_loop
+   public function cw_typewriter_effect($cw_settings)
+   {
+      if (have_rows('typewriter')) {
+         while (have_rows('typewriter')) {
+            the_row();
+            if (get_sub_field('cw_effect') == 'rotator-fade') {
+               $cw_typewriter_effect = 'rotator-fade';
+            } elseif (get_sub_field('cw_effect') == 'rotator-zoom') {
+               $cw_typewriter_effect = 'rotator-zoom';
+            } elseif (get_sub_field('cw_effect') == 'cursor') {
+               $cw_typewriter_effect = 'cursor';
+            }
+         }
+      } else {
+         $cw_typewriter_effect = true;
+      }
+      return $cw_typewriter_effect;
+   }
+
 
    //Typewriter_loop
    public function cw_typewriter_loop($cw_settings)
@@ -116,8 +141,10 @@ class CW_Typewriter
                   $typewriter_text_array[] = get_sub_field('cw_text');
                endwhile;
                $typewriter_text = 'data-words="' . implode(',', $typewriter_text_array) . '"';
+               $this->typewriter_clean_text = implode(',', $typewriter_text_array);
             else :
                $typewriter_text = 'data-words="' . $cw_settings['typewriter'] . '"';
+               $this->typewriter_clean_text = $cw_settings['typewriter'];
             endif;
          endwhile;
       } else {
@@ -136,7 +163,15 @@ class CW_Typewriter
       $color_typewriter = $this->typewriter_color;
       $class_typewriter = $this->typewriter_class;
       if ($typewriter_text) {
-         $final_typewriter = '<span class="' . $class_typewriter . ' typer text-' . $color_typewriter->color . '" ' . $data_typewriter . '></span><span class="' . $class_typewriter . ' cursor text-' . $color_typewriter->color . '" data-owner="typer"></span>';
+         if ($this->typewriter_effect == 'cursor') {
+            $final_typewriter = '<span class="' . $class_typewriter . ' typer text-' . $color_typewriter->color . '" ' . $data_typewriter . '></span><span class="' . $class_typewriter . ' cursor text-' . $color_typewriter->color . '" data-owner="typer"></span>';
+         } elseif ($this->typewriter_effect == 'rotator-zoom') {
+            $final_typewriter = '<span class="rotator-zoom">' . $this->typewriter_clean_text . '</span>';
+         } elseif ($this->typewriter_effect == 'rotator-fade') {
+            $final_typewriter = '<span class="rotator-fade">' . $this->typewriter_clean_text . '</span>';
+         } else {
+            $final_typewriter = NULL;
+         }
       } else {
          $final_typewriter = NULL;
       }
