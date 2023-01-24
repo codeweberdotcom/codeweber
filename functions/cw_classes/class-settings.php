@@ -343,16 +343,16 @@ class CW_Settings
             $swiper_image_shape = NULL;
          }
 
-         // Check for array ['swiper']['label_demo']
-         if (isset($cw_settings['swiper']['label_demo']) && !$cw_settings['swiper']['label_demo'] == NULL) {
-            $swiper_label_demo =  $cw_settings['swiper']['label_demo'];
+         // Check for array ['label_demo']
+         if (isset($cw_settings['label_demo']) && !$cw_settings['label_demo'] == NULL) {
+            $swiper_label_demo =  $cw_settings['label_demo'];
          } else {
             $swiper_label_demo = NULL;
          }
 
-         // Check for array ['swiper']['label_pattern']
-         if (isset($cw_settings['swiper']['label_pattern']) && !$cw_settings['swiper']['label_pattern'] == NULL) {
-            $swiper_label_pattern =  $cw_settings['swiper']['label_pattern'];
+         // Check for array ['label_pattern']
+         if (isset($cw_settings['label_pattern']) && !$cw_settings['label_pattern'] == NULL) {
+            $swiper_label_pattern =  $cw_settings['label_pattern'];
          } else {
             $swiper_label_pattern = NULL;
          }
@@ -416,6 +416,28 @@ class CW_Settings
    public function cw_images($cw_settings)
    {
       if (isset($this->cw_settings['image_pattern']) && !$this->cw_settings['image_pattern'] == NULL) {
+
+
+         // Check for array ['label_demo']
+         if (isset($cw_settings['label_demo']) && !$cw_settings['label_demo'] == NULL) {
+            $image_label_demo =  $cw_settings['label_demo'];
+         } else {
+            $image_label_demo = NULL;
+         }
+
+         // Check for array ['label_pattern']
+         if (isset($cw_settings['label_pattern']) && !$cw_settings['label_pattern'] == NULL) {
+            $image_label_pattern =  $cw_settings['label_pattern'];
+         } else {
+            $image_label_pattern = NULL;
+         }
+
+         $image_labels_object = new CW_Labels($image_label_pattern, $image_label_demo, NULL);
+
+         $labels = $image_labels_object->final_labels;
+
+
+
          $image_object = new CW_Image(
             $cw_settings['image_thumb_size'],
             $cw_settings['image_big_size'],
@@ -427,7 +449,7 @@ class CW_Settings
             NULL,
             NULL,
             $cw_settings['image_pattern'],
-            NULL
+            $labels
          );
          $images = $image_object->final_image;
       } else {
