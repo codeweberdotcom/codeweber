@@ -18,10 +18,10 @@ $block = new CW_Settings(
     'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
     'background_class_default' => 'wrapper bg-gradient-primary',
-    'background_data_default' => '/dist/img/photos/bg16.png',
-    'background_video_preview' => '/dist/img/photos/movie2.jpg',
-    'background_video_url' => '/dist/media/movie2.mp4',
-    'background_pattern_url' => '/dist/img/pattern.png',
+    //'background_data_default' => '/dist/img/photos/bg16.png',
+    //'background_video_preview' => '/dist/img/photos/movie2.jpg',
+    //'background_video_url' => '/dist/media/movie2.mp4',
+    //'background_pattern_url' => '/dist/img/pattern.png',
 
     'divider' => true,
     //'divider_angles' => 'upper-start',
@@ -36,7 +36,7 @@ $block = new CW_Settings(
       'swiper_container_class' => '',
       'image_class' => 'w-auto',
       'wrapper_image_class' => '',
-      'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+      'image_pattern' => '<figure %5s %9s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" />%7$s %10$s %11$s</figure>',
       'image_thumb_size' => 'sandbox_hero_1',
       'image_demo' => '<figure><img %4$s src="' . get_template_directory_uri() . '/dist/img/illustrations/i2.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i2@2x.png 2x" alt="" /></figure>',
       'image_big_size' => 'project_1',
@@ -60,11 +60,12 @@ $block = new CW_Settings(
       'autoplay_time' => '3000',
       'loop' => 'loop',
       'autoheight' => 'false',
-      'image_shape' => 'rounded',
-      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; right: 2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
-
-      'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
+      'image_shape' => 'rounded'
     ),
+
+    'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; right: 2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+
+    'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
     'column_class_1' => '',
     'column_class_2' => 'order-lg-2',

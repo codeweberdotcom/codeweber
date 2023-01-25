@@ -35,7 +35,7 @@
                         "id": ""
                     },
                     "clone": [
-                        "group_639d0050cd9a6"
+                        "group_63d063edc6b89"
                     ],
                     "display": "seamless",
                     "layout": "block",
@@ -693,44 +693,6 @@
                     "ui_off_text": ""
                 }
             ]
-        },
-        {
-            "key": "field_63cef991103c8",
-            "label": "Labels fo Image",
-            "name": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
-            "key": "field_63ce777dcde3d",
-            "label": "Labels",
-            "name": "cw_labels",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_63cd469caa77c"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
         }
     ],
     "location": [
@@ -751,5 +713,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674508703
+    "modified": 1674605944
 }

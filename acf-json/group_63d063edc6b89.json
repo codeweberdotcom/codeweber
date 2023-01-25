@@ -1,11 +1,11 @@
 {
-    "key": "group_639d0050cd9a6",
-    "title": "CW Images",
+    "key": "group_63d063edc6b89",
+    "title": "CW Images1",
     "fields": [
         {
-            "key": "field_639d00565c8cf",
+            "key": "field_63d063f50c146",
             "label": "Images",
-            "name": "cw_image",
+            "name": "cw_image1",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -18,10 +18,10 @@
             "layout": "block",
             "sub_fields": [
                 {
-                    "key": "field_639d03f25398c",
+                    "key": "field_63d064110c147",
                     "label": "Image Settings",
                     "name": "",
-                    "type": "tab",
+                    "type": "accordion",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -30,11 +30,12 @@
                         "class": "",
                         "id": ""
                     },
-                    "placement": "top",
+                    "open": 0,
+                    "multi_expand": 0,
                     "endpoint": 0
                 },
                 {
-                    "key": "field_639d00695c8d0",
+                    "key": "field_63d064200c148",
                     "label": "Image",
                     "name": "cw_image",
                     "type": "image",
@@ -58,7 +59,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_639d007a5c8d1",
+                    "key": "field_63d064390c149",
                     "label": "Link type",
                     "name": "cw_link_type",
                     "type": "select",
@@ -87,7 +88,7 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_639d01095c8d2",
+                    "key": "field_63d064610c14a",
                     "label": "Link",
                     "name": "cw_link",
                     "type": "url",
@@ -96,7 +97,7 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_639d007a5c8d1",
+                                "field": "field_63d064390c149",
                                 "operator": "==",
                                 "value": "link"
                             }
@@ -111,7 +112,7 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_639f22c0e9bcd",
+                    "key": "field_63d0646f0c14b",
                     "label": "Media",
                     "name": "media",
                     "type": "file",
@@ -120,7 +121,7 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_639d007a5c8d1",
+                                "field": "field_63d064390c149",
                                 "operator": "==",
                                 "value": "video"
                             }
@@ -138,7 +139,7 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_639d01305c8d3",
+                    "key": "field_63d064ac0c14c",
                     "label": "Link Video",
                     "name": "cw_link_video",
                     "type": "url",
@@ -147,14 +148,14 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_639d007a5c8d1",
+                                "field": "field_63d064390c149",
                                 "operator": "==",
                                 "value": "youtube"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d007a5c8d1",
+                                "field": "field_63d064390c149",
                                 "operator": "==",
                                 "value": "youtube_preview"
                             }
@@ -169,7 +170,7 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_639e2fb42e753",
+                    "key": "field_63d064e40c14e",
                     "label": "Shape image",
                     "name": "cw_shape_image",
                     "type": "select",
@@ -200,7 +201,7 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_639d03725c8d9",
+                    "key": "field_63d065090c14f",
                     "label": "Effect hover",
                     "name": "cw_effect_hover",
                     "type": "select",
@@ -226,7 +227,7 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_639d01755c8d5",
+                    "key": "field_63d065260c150",
                     "label": "Cursor effect",
                     "name": "cw_cursor_effect",
                     "type": "select",
@@ -235,35 +236,35 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_639d007a5c8d1",
+                                "field": "field_63d064390c149",
                                 "operator": "==",
                                 "value": "image"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d007a5c8d1",
+                                "field": "field_63d064390c149",
                                 "operator": "==",
                                 "value": "video"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d007a5c8d1",
+                                "field": "field_63d064390c149",
                                 "operator": "==",
                                 "value": "link"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d007a5c8d1",
+                                "field": "field_63d064390c149",
                                 "operator": "==",
                                 "value": "youtube"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d007a5c8d1",
+                                "field": "field_63d064390c149",
                                 "operator": "==",
                                 "value": "youtube_preview"
                             }
@@ -291,13 +292,13 @@
                     "default_value": "none",
                     "allow_null": 0,
                     "multiple": 0,
-                    "ui": 1,
-                    "ajax": 0,
+                    "ui": 0,
                     "return_format": "value",
+                    "ajax": 0,
                     "placeholder": ""
                 },
                 {
-                    "key": "field_639d01e25c8d6",
+                    "key": "field_63d0659b0c159",
                     "label": "Gradient",
                     "name": "cw_gradient",
                     "type": "select",
@@ -306,21 +307,21 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "overlay overlay-1"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "overlay overlay-2"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "overlay overlay-3"
                             }
@@ -351,7 +352,7 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_639d03875c8da",
+                    "key": "field_63d065df0c15c",
                     "label": "Caption image",
                     "name": "cw_caption_image",
                     "type": "text",
@@ -360,65 +361,58 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "itooltip itooltip-light"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "itooltip itooltip-dark"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "itooltip itooltip-primary"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
-                                "operator": "==",
-                                "value": "itooltip itooltip-primary"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "overlay overlay-1"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "overlay overlay-2"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "overlay overlay-3"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
-                                "value": "video_button"
+                                "value": "swiper-caption"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
-                                "value": "swiper-caption"
+                                "value": "video_button"
                             }
                         ]
                     ],
@@ -434,7 +428,7 @@
                     "maxlength": ""
                 },
                 {
-                    "key": "field_639d03bc5c8db",
+                    "key": "field_63d066390c164",
                     "label": "Description image",
                     "name": "description_image",
                     "type": "textarea",
@@ -443,49 +437,49 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "itooltip itooltip-light"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "itooltip itooltip-dark"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "itooltip itooltip-primary"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "overlay overlay-1"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "overlay overlay-2"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "overlay overlay-3"
                             }
                         ],
                         [
                             {
-                                "field": "field_639d01755c8d5",
+                                "field": "field_63d065260c150",
                                 "operator": "==",
                                 "value": "video_button"
                             }
@@ -503,7 +497,7 @@
                     "new_lines": ""
                 },
                 {
-                    "key": "field_639e2df509000",
+                    "key": "field_63d0668b0c16b",
                     "label": "Class",
                     "name": "class",
                     "type": "clone",
@@ -522,33 +516,37 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 0
+                },
+                {
+                    "key": "field_63d0685dbdecb",
+                    "label": "Labels",
+                    "name": "cw_labels",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_63cd456990266"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 }
             ]
-        },
-        {
-            "key": "field_639d14fc18db6",
-            "label": "Documentation",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "<a href=\"https:\/\/sandbox.elemisthemes.com\/docs\/elements\/image-hover.html\" target=\"_blank\">Examples Image Hover<\/a>\r\n<a href=\"https:\/\/sandbox.elemisthemes.com\/docs\/elements\/image-mask.html\" target=\"_blank\">Examples Image Mask<\/a>\r\n<a href=\"https:\/\/sandbox.elemisthemes.com\/docs\/elements\/lightbox.html\" target=\"_blank\">Examples Light Box<\/a>",
-            "new_lines": "br",
-            "esc_html": 0
         }
     ],
     "location": [
         [
             {
-                "param": "post_format",
+                "param": "post_type",
                 "operator": "==",
-                "value": "chat"
+                "value": "post"
             }
         ]
     ],
@@ -561,5 +559,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674475258
+    "modified": 1674643093
 }

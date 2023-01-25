@@ -17,13 +17,13 @@ $block = new CW_Settings(
     'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
     'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900"><span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span><span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Free Trial</a></span></div>',
 
-    'background_class_default' => 'wrapper bg-image',
+    'background_class_default' => 'wrapper bg-light',
     //'background_data_default' => '/dist/img/photos/bg16.png',
     //'background_video_preview' => '/dist/img/photos/movie2.jpg',
     //'background_video_url' => '/dist/media/movie2.mp4',
     //'background_pattern_url' => '/dist/img/pattern.png',
 
-    'divider' => true,
+    'divider' => 'true',
     //'divider_angles' => 'upper-start',
     //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
 
@@ -41,7 +41,7 @@ $block = new CW_Settings(
       'swiper_container_class' => '',
       'image_class' => 'w-auto',
       'wrapper_image_class' => '',
-      'image_pattern' => '<figure %5s><img %4$s src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+      'image_pattern' => '<figure %5s><img %4$s src="%1$s" srcset="%2$s" alt="%3$s"/></figure>',
       'image_thumb_size' => 'sandbox_hero_18',
       'image_demo' => '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/photos/about7.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about7@2x.jpg 2x" alt="" /></figure>',
       'image_big_size' => 'project_1',
@@ -65,11 +65,12 @@ $block = new CW_Settings(
       'autoplay_time' => '3000',
       'loop' => 'loop',
       'autoheight' => 'false',
-      'image_shape' => 'rounded',
-      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; left: -2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
-
-      'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
+      'image_shape' => 'rounded'
     ),
+
+    'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; left: -2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+
+    'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
     'column_class_1' => 'order-lg-2 offset-md-2 offset-lg-1',
     'column_class_2' => '',
@@ -79,7 +80,7 @@ $block = new CW_Settings(
 
 
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->background_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
 
   <?php if ($block->background_video_bool == true) { ?>
     <video poster="<?php echo $block->background_video_preview; ?>" src="<?php echo $block->background_video_url; ?>" autoplay loop playsinline muted></video>
@@ -113,6 +114,9 @@ $block = new CW_Settings(
     </video>
   <?php } ?>
   <!-- /video background -->
-
+  <?php if ($block->divider_wave) {
+    echo $block->divider_wave;
+  } ?>
+  <!-- /divider -->
 </section>
 <!-- /section -->

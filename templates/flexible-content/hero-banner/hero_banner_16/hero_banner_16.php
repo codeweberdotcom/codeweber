@@ -40,9 +40,9 @@ $block = new CW_Settings(
       'swiper_container_class' => 'w-100',
       'image_class' => '',
       'wrapper_image_class' => NULL,
-      'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+      'image_pattern' => '<figure %5s %9s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" />%7$s %10$s %11$s</figure>',
       'image_thumb_size' => 'sandbox_hero_16',
-      'image_demo' => '<figure class="img-mask mask-1"><img src="' . get_template_directory_uri() . '/dist/img/photos/about17.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about17@2x.jpg 2x" alt="" /></figure>',
+      'image_demo' => '<div class="img-mask mask-1"><img src="' . get_template_directory_uri() . '/dist/img/photos/about17.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about17@2x.jpg 2x" alt="" /></div><div class="card shadow-lg position-absolute" style="bottom: 10%; right: 2%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
       'image_big_size' => 'project_1',
       'img_link' => '/dist/img/photos/about17.jpg',
       'data_margin' => '30',
@@ -64,8 +64,12 @@ $block = new CW_Settings(
       'autoplay_time' => '3000',
       'loop' => 'false',
       'autoheight' => 'false',
-      'image_shape' => 'img-mask mask-1'
+      'image_shape' => 'img-mask mask-1',
     ),
+
+    'label_demo' => '<div class="card shadow-lg" style="bottom: 5rem; right: 5rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+
+    'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
     'column_class_1' => 'order-lg-2 offset-lg-1',
     'column_class_2' => '',
@@ -74,31 +78,15 @@ $block = new CW_Settings(
 );
 ?>
 
-
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
   <div class="container pt-12 pt-md-14 pb-14 pb-md-16">
     <div class="row gy-10 gy-md-13 gy-lg-0 align-items-center">
       <div class="col-md-8 col-lg-5 d-flex position-relative mx-auto <?php echo $block->column_class_1; ?>" data-cues="slideInDown" data-group="header">
         <?php echo $block->swiper_final; ?>
         <!--/swiper -->
-        <div class="card shadow-lg position-absolute" style="bottom: 10%; right: 2%;">
-          <div class="card-body py-4 px-5">
-            <div class="d-flex flex-row align-items-center">
-              <div>
-                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" />
-              </div>
-              <div>
-                <h3 class="counter mb-0 text-nowrap">250+</h3>
-                <p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p>
-              </div>
-            </div>
-          </div>
-          <!--/.card-body -->
-        </div>
-        <!--/.card -->
       </div>
       <!--/column -->
-      <div class="col-lg-6  col-xxl-5 text-center text-lg-start <?php echo $block->column_class_2; ?>" data-cues="slideInDown" data-group="page-title" data-delay="600">
+      <div class="col-lg-5 text-center text-lg-start <?php echo $block->column_class_2; ?>" data-cues="slideInDown" data-group="page-title" data-delay="600">
         <?php echo $block->title; ?>
         <!--/title -->
         <?php echo $block->paragraph; ?>

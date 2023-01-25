@@ -60,8 +60,8 @@ class CW_Image
    //Image Shape
    public function cw_image_shape($image_shape)
    {
-      if (have_rows('cw_image')) {
-         while (have_rows('cw_image')) {
+      if (have_rows('cw_image1')) {
+         while (have_rows('cw_image1')) {
             the_row();
             if (get_sub_field('cw_shape_image') == 'Theme') {
                $cw_image_shape = get_sub_field('cw_shape_image');
@@ -81,8 +81,8 @@ class CW_Image
    //Image Link
    public function cw_link_image($image_link)
    {
-      if (have_rows('cw_image')) {
-         while (have_rows('cw_image')) {
+      if (have_rows('cw_image1')) {
+         while (have_rows('cw_image1')) {
             the_row();
             if (get_sub_field('cw_link_type') == 'image') {
                $cw_image_link =  $this->image_url_big;
@@ -109,8 +109,8 @@ class CW_Image
    //Image Title
    public function cw_title_image()
    {
-      if (have_rows('cw_image')) {
-         while (have_rows('cw_image')) {
+      if (have_rows('cw_image1')) {
+         while (have_rows('cw_image1')) {
             the_row();
             if (get_sub_field('cw_cursor_effect') == 'itooltip itooltip-light' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-dark' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-primary') {
                if (get_sub_field('cw_caption_image')) {
@@ -186,8 +186,8 @@ class CW_Image
    //image 
    public function cw_image($image_thumb_size, $image_big_size, $image_link)
    {
-      if (have_rows('cw_image')) {
-         while (have_rows('cw_image')) {
+      if (have_rows('cw_image1')) {
+         while (have_rows('cw_image1')) {
             the_row();
             $cw_image = get_sub_field('cw_image');
 
@@ -212,8 +212,8 @@ class CW_Image
    public function cw_image_classes($image_classes, $image_shape)
    {
       $image_class = array();
-      if (have_rows('cw_image')) {
-         while (have_rows('cw_image')) {
+      if (have_rows('cw_image1')) {
+         while (have_rows('cw_image1')) {
             the_row();
             if (get_sub_field('cw_shape_image') == 'rounded-0') {
                $image_class[] = get_sub_field('cw_shape_image');
@@ -244,8 +244,8 @@ class CW_Image
    public function cw_wrapper_image_classes($wrapper_image_classes, $image_shape)
    {
       $image_wrapper_class = array();
-      if (have_rows('cw_image')) {
-         while (have_rows('cw_image')) {
+      if (have_rows('cw_image1')) {
+         while (have_rows('cw_image1')) {
             the_row();
 
             $image_wrapper_class[] = 'position-relative';
@@ -380,8 +380,8 @@ class CW_Image
 
          // %6$s - %7$s
          if ($this->image_link) {
-            if (have_rows('cw_image')) {
-               while (have_rows('cw_image')) {
+            if (have_rows('cw_image1')) {
+               while (have_rows('cw_image1')) {
                   the_row();
                   if ($cursor_effect == 'video_button') {
                      $image_link_open = '<a href="' . $img_link . '" class="btn btn-circle btn-light btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox  ' . $image_description_1 . ' data-title="' . $image_title . '" data-gallery="hero"><i class="icn-caret-right text-dark"></i></a>';
@@ -405,9 +405,28 @@ class CW_Image
          } else {
             $image_pattern_default = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>';
          }
+
+         if (have_rows('cw_image1')) {
+            while (have_rows('cw_image1')) {
+               the_row();
+               if (get_sub_field('cw_show') == 0) :
+                  $label_object = new CW_Labels(
+                     '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap text-dark">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap text-dark">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
+
+                     '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 0rem; left: 0rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+                     NULL
+                  );
+                  $label = $label_object->final_labels;
+               else :
+                  $label = NULL;
+               endif;
+            }
+         }
+
          $final_image = sprintf($image_pattern_default, $image_url_small, $image_url_small, $image_alt, $image_classes, $wrapper_image_classes, $image_link_open, $image_link_close, $image_url_src, $image_title, $image_figcaption, $label);
       } else {
-         $final_image = $final_image;
+
+         $final_image = $final_image . $label;
       }
 
       return $final_image;

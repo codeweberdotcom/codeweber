@@ -37,7 +37,7 @@ $block = new CW_Settings(
          'swiper_container_class' => 'rounded mb-md-n20',
          'image_class' => 'rounded mb-md-n20',
          'wrapper_image_class' => NULL,
-         'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+         'image_pattern' => '<figure %5s %9s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" />%7$s %10$s %11$s</figure>',
          'image_thumb_size' => 'sandbox_hero_14',
          'image_demo' => '<figure class="rounded mb-md-n20"><img src="' . get_template_directory_uri() . '/dist/img/photos/about18.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about18@2x.jpg 2x" alt="" /></figure>',
          'image_big_size' => 'project_1',
