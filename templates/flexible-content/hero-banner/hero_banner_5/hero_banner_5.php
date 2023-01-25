@@ -67,7 +67,7 @@ $block = new CW_Settings(
 
       ),
 
-      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 10%%; right: 2%%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 10%%; right: 2%%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
 
       'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
@@ -103,29 +103,30 @@ $block = new CW_Settings(
    <div class="container pb-14 pb-md-16 mb-lg-22 mb-xl-24">
       <div class="row gx-0 mb-16 mb-mb-20">
          <div class="col-9 col-sm-10 col-lg-9 mx-auto mt-n15 mt-md-n20" data-cues data-group="images" data-delay="1500">
-            <?php echo $block->swiper_final; ?>
-            <?php if (have_rows('cw_multi_image')) : ?>
-               <?php while (have_rows('cw_multi_image')) : the_row(); ?>
-                  <?php $cw_image_1 = get_sub_field('cw_image_1'); ?>
-                  <?php if ($cw_image_1) : ?>
+            <?php echo $block->swiper_final;
+            if (have_rows('cw_multi_image')) {
+               while (have_rows('cw_multi_image')) {
+                  the_row();
+                  $cw_image_1 = get_sub_field('cw_image_1');
+                  if ($cw_image_1) { ?>
                      <img class="position-absolute rounded shadow-lg" data-cue="slideInRight" src="<?php echo esc_url($cw_image_1['url']); ?>" srcset="<?php echo esc_url($cw_image_1['url']); ?>" style="top: 20%; right:-10%; max-width:30%; height: auto;" alt="<?php echo esc_attr($cw_image_1['alt']); ?>" />
-                  <?php else : ?>
+                  <?php } else { ?>
                      <img class="position-absolute rounded shadow-lg" data-cue="slideInRight" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa2.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa2@2x.jpg 2x" style="top: 20%; right:-10%; max-width:30%; height: auto;" alt="" />
-                  <?php endif; ?>
-                  <?php $cw_image_2 = get_sub_field('cw_image_2'); ?>
-                  <?php if ($cw_image_2) : ?>
+                  <?php }
+                  $cw_image_2 = get_sub_field('cw_image_2');
+                  if ($cw_image_2) { ?>
                      <img class="position-absolute rounded shadow-lg" data-cue="slideInLeft" src="<?php echo esc_url($cw_image_2['url']); ?>" srcset="<?php echo esc_url($cw_image_2['url']); ?>" style="top: 10%; left:-10%; max-width:30%; height: auto;" alt="<?php echo esc_attr($cw_image_2['alt']); ?>" />
-                  <?php else : ?>
+                  <?php } else { ?>
                      <img class="position-absolute rounded shadow-lg" data-cue="slideInLeft" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa3.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa3@2x.jpg 2x" style="top: 10%; left:-10%; max-width:30%; height: auto;" alt="" />
-                  <?php endif; ?>
-                  <?php $cw_image_3 = get_sub_field('cw_image_3'); ?>
-                  <?php if ($cw_image_3) : ?>
+                  <?php }
+                  $cw_image_3 = get_sub_field('cw_image_3');
+                  if ($cw_image_3) { ?>
                      <img class="position-absolute rounded shadow-lg" data-cue="slideInLeft" src="<?php echo esc_url($cw_image_3['url']); ?>" srcset="<?php echo esc_url($cw_image_3['url']); ?>" style="bottom: 10%; left:-13%; max-width:30%; height: auto;" alt="<?php echo esc_attr($cw_image_3['alt']); ?>" />
-                  <?php else : ?>
+                  <?php } else { ?>
                      <img class="position-absolute rounded shadow-lg" data-cue="slideInLeft" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa4.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa4@2x.jpg 2x" style="bottom: 10%; left:-13%; max-width:30%; height: auto;" alt="" />
-                  <?php endif; ?>
-               <?php endwhile; ?>
-            <?php endif; ?>
+            <?php }
+               }
+            } ?>
          </div>
          <!-- /column -->
       </div>

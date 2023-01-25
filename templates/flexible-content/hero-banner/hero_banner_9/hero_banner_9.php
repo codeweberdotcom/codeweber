@@ -35,13 +35,42 @@ $block = new CW_Settings(
       // ),
 
       'typewriter' => 'easy usage,fast transactions,secure payments',
+      'swiper' => array(
+         'swiper_container_class' => 'w-100 img-fluid shadow-lg',
+         'image_class' => 'w-100 img-fluid shadow-lg',
+         'wrapper_image_class' => 'w-100 img-fluid shadow-lg',
+         'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
+         'image_thumb_size' => 'sandbox_hero_9',
+         'image_demo' => '<div><img class="w-100 img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa16.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/sa16@2x.jpg 2x" alt="" /></div>',
+         'image_big_size' => 'project_1',
+         'img_link' => '/dist/img/photos/sa1.jpg',
+         'data_margin' => '30',
+         'nav' => 'false',
+         'nav_color' => 'nav-light',
+         'nav_position' => 'nav-start',
+         'dots' => 'true',
+         'dots_color' => 'nav-start',
+         'dots_position' => 'dots-over',
+         'swiper_effect' => 'slide',
+         'base_items' => '1',
+         'items_xs' => '1',
+         'items_sm' => '1',
+         'items_md' => '1',
+         'items_lg' => '1',
+         'items_xl' => '1',
+         'items_xxl' => '1',
+         'autoplay' => 'true',
+         'autoplay_time' => '3000',
+         'loop' => 'loop',
+         'autoheight' => 'false',
+         'image_shape' => 'rounded',
 
-      'image_pattern' => '<figure class="rounded shadow-lg"><img src="%1$s" srcset="%2$s" alt="%3$s""></figure>',
-      'image_link' => '/dist/img/photos/about13.jpg',
-      'image_thumb_size' => 'sandbox_hero_3',
-      'image_big_size' => 'project_1',
+      ),
 
-      'swiper' => array('swiper' => true, 'data' => ''),
+      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 10%%; right: 2%%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+
+      'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
+
 
       // 'column_class_1' => '',
       // 'column_class_2' => 'offset-lg-1  order-lg-2',
@@ -67,18 +96,94 @@ $block = new CW_Settings(
          <div class="col-lg-7">
             <div class="row">
                <div class="col-3 offset-1 offset-lg-0 col-lg-4 d-flex flex-column" data-cues="zoomIn" data-group="col-start" data-delay="300">
-                  <div class="ms-auto mt-auto"><img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa20.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa20@2x.jpg 2x" alt="" /></div>
-                  <div class="ms-auto mt-5 mb-10"><img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa18.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa18@2x.jpg 2x" alt="" /></div>
+                  <div class="ms-auto mt-auto">
+
+                     <?php if (have_rows('cw_multi_image')) {
+                        while (have_rows('cw_multi_image')) {
+                           the_row();
+                           $cw_image_1 = get_sub_field('cw_image_1');
+                           if ($cw_image_1) { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo esc_url($cw_image_1['url']); ?>" srcset="<?php echo esc_url($cw_image_1['url']); ?>" alt="<?php echo esc_attr($cw_image_1['alt']); ?>" />
+                           <?php } else { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa20.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa20@2x.jpg 2x" alt="" />
+                     <?php }
+                        }
+                     } ?>
+
+                  </div>
+                  <div class="ms-auto mt-5 mb-10">
+
+                     <?php if (have_rows('cw_multi_image')) {
+                        while (have_rows('cw_multi_image')) {
+                           the_row();
+                           $cw_image_2 = get_sub_field('cw_image_2');
+                           if ($cw_image_2) { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo esc_url($cw_image_2['url']); ?>" srcset="<?php echo esc_url($cw_image_2['url']); ?>" alt="<?php echo esc_attr($cw_image_2['alt']); ?>" />
+                           <?php } else { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa18.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa20@2x.jpg 2x" alt="" />
+                     <?php }
+                        }
+                     } ?>
+
+
+                  </div>
                </div>
                <!-- /column -->
                <div class="col-4 col-lg-5" data-cue="zoomIn">
-                  <div><img class="w-100 img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa16.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa16@2x.jpg 2x" alt="" /></div>
+
+
+                  <?php echo $block->swiper_final; ?>
+                  <!--/swiper -->
+
+
                </div>
                <!-- /column -->
+
                <div class="col-3 d-flex flex-column" data-cues="zoomIn" data-group="col-end" data-delay="300">
-                  <div class="mt-auto"><img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa21.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa21@2x.jpg 2x" alt="" /></div>
-                  <div class="mt-5"><img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa19.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa19@2x.jpg 2x" alt="" /></div>
-                  <div class="mt-5 mb-10"><img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa17.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa17@2x.jpg 2x" alt="" /></div>
+
+                  <div class="mt-auto">
+                     <?php if (have_rows('cw_multi_image')) {
+                        while (have_rows('cw_multi_image')) {
+                           the_row();
+                           $cw_image_3 = get_sub_field('cw_image_3');
+                           if ($cw_image_3) { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo esc_url($cw_image_3['url']); ?>" srcset="<?php echo esc_url($cw_image_3['url']); ?>" alt="<?php echo esc_attr($cw_image_3['alt']); ?>" />
+                           <?php } else { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa21.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa20@2x.jpg 2x" alt="" />
+                     <?php }
+                        }
+                     } ?>
+                  </div>
+
+
+                  <div class="mt-5">
+                     <?php if (have_rows('cw_multi_image')) {
+                        while (have_rows('cw_multi_image')) {
+                           the_row();
+                           $cw_image_4 = get_sub_field('cw_image_4');
+                           if ($cw_image_4) { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo esc_url($cw_image_4['url']); ?>" srcset="<?php echo esc_url($cw_image_4['url']); ?>" alt="<?php echo esc_attr($cw_image_4['alt']); ?>" />
+                           <?php } else { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa19.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa20@2x.jpg 2x" alt="" />
+                     <?php }
+                        }
+                     } ?>
+                  </div>
+
+                  <div class="mt-5 mb-10">
+                     <?php if (have_rows('cw_multi_image')) {
+                        while (have_rows('cw_multi_image')) {
+                           the_row();
+                           $cw_image_5 = get_sub_field('cw_image_5');
+                           if ($cw_image_5) { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo esc_url($cw_image_5['url']); ?>" srcset="<?php echo esc_url($cw_image_5['url']); ?>" alt="<?php echo esc_attr($cw_image_5['alt']); ?>" />
+                           <?php } else { ?>
+                              <img class="img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa17.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa20@2x.jpg 2x" alt="" />
+                     <?php }
+                        }
+                     } ?>
+                  </div>
+
                </div>
                <!-- /column -->
             </div>
