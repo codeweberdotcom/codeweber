@@ -23,7 +23,7 @@ $block = new CW_Settings(
       //'background_video_url' => '/dist/media/movie2.mp4',
       //'background_pattern_url' => '/dist/img/pattern.png',
 
-      //'divider' => true,
+      'divider' => 'true',
       //'divider_angles' => 'upper-start',
       //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
 
@@ -96,5 +96,9 @@ $block = new CW_Settings(
       <?php echo $block->swiper_final; ?>
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->
