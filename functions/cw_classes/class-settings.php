@@ -28,6 +28,8 @@ class CW_Settings
    public $background_video_preview;
    public $images;
 
+   public $labels_final;
+
    public $swiper;
    public $swiper_final;
 
@@ -52,6 +54,7 @@ class CW_Settings
       $this->cw_settings = $cw_settings;
       $this->typewriter = $this->cw_typewriter($cw_settings);
       $this->shapes = $this->cw_shapes($cw_settings);
+      $this->labels_final = $this->cw_labels($cw_settings);
       $this->title = $this->cw_get_title($cw_settings);
       $this->subtitle = $this->cw_get_subtitle($cw_settings);
       $this->paragraph = $this->cw_get_paragraph($cw_settings);
@@ -69,6 +72,12 @@ class CW_Settings
       $this->section_class = $this->cw_section_class($cw_settings);
    }
 
+
+   public function cw_labels($cw_settings)
+   {
+   }
+
+   
    //Section class
    public function cw_column_class($cw_settings)
    {
@@ -412,11 +421,12 @@ class CW_Settings
       return $background_object;
    }
 
+
+
    //Images
    public function cw_images($cw_settings)
    {
       if (isset($this->cw_settings['image_pattern']) && !$this->cw_settings['image_pattern'] == NULL) {
-
 
          // Check for array ['label_demo']
          if (isset($cw_settings['label_demo']) && !$cw_settings['label_demo'] == NULL) {
@@ -433,10 +443,7 @@ class CW_Settings
          }
 
          $image_labels_object = new CW_Labels($image_label_pattern, $image_label_demo, NULL);
-
          $labels = $image_labels_object->final_labels;
-
-
 
          $image_object = new CW_Image(
             $cw_settings['image_thumb_size'],
@@ -558,8 +565,6 @@ class CW_Settings
       }
       return $paragraph;
    }
-
-
 
 
    //SubTitle text

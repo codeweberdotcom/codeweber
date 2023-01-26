@@ -36,7 +36,7 @@ class CW_Background
    }
 
    //Class
-   public function cw_class_background($cw_settings = NULL)
+   public function cw_class_background($cw_settings)
    {
       $class_background = array();
       if (have_rows('cw_background')) {
@@ -75,7 +75,7 @@ class CW_Background
 
 
 
-   public function cw_pattern_url_background($cw_settings = NULL)
+   public function cw_pattern_url_background($cw_settings)
    {
       if (have_rows('cw_background')) {
          while (have_rows('cw_background')) {
@@ -96,7 +96,7 @@ class CW_Background
    }
 
    //Size
-   public function cw_size_background($cw_settings = NULL)
+   public function cw_size_background($cw_settings)
    {
       if (have_rows('cw_background')) {
          while (have_rows('cw_background')) {
@@ -120,7 +120,7 @@ class CW_Background
    }
 
    //Overlay
-   public function cw_overlay_background($cw_settings = NULL)
+   public function cw_overlay_background($cw_settings)
    {
       if (have_rows('cw_background')) {
          while (have_rows('cw_background')) {
@@ -146,7 +146,7 @@ class CW_Background
 
 
    //Data - Image 
-   public function cw_data_background($cw_settings = NULL)
+   public function cw_data_background($cw_settings)
    {
       if (have_rows('cw_background')) {
          while (have_rows('cw_background')) {
@@ -187,7 +187,7 @@ class CW_Background
    }
 
    //Color 
-   public function cw_color_background($cw_settings = NULL)
+   public function cw_color_background($cw_settings)
    {
       if (have_rows('cw_background')) {
          while (have_rows('cw_background')) {
@@ -226,7 +226,7 @@ class CW_Background
    }
 
    //Video 
-   public function cw_video_background($cw_settings = NULL)
+   public function cw_video_background($cw_settings)
    {
       if (have_rows('cw_background')) {
          while (have_rows('cw_background')) {

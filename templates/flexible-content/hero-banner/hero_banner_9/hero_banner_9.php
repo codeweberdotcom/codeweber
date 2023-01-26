@@ -41,7 +41,7 @@ $block = new CW_Settings(
          'wrapper_image_class' => 'w-100 img-fluid shadow-lg',
          'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
          'image_thumb_size' => 'sandbox_hero_9',
-         'image_demo' => '<div><img class="w-100 img-fluid rounded shadow-lg" src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/sa16.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/sa16@2x.jpg 2x" alt="" /></div>',
+         'image_demo' => '<div><img class="w-100 img-fluid rounded shadow-lg" src="' . get_template_directory_uri() . '/dist/img/photos/sa16.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/sa16@2x.jpg 2x" alt="" /></div>',
          'image_big_size' => 'project_1',
          'img_link' => '/dist/img/photos/sa1.jpg',
          'data_margin' => '30',
@@ -67,7 +67,7 @@ $block = new CW_Settings(
 
       ),
 
-      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 10%%; right: 2%%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 10%%; right: 2%%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
 
       'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 

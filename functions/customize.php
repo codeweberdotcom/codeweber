@@ -71,7 +71,7 @@ function codeweber_register_theme_customizer($wp_customize)
    // Button Size
 
    $wp_customize->add_setting('codeweber_button_size', array(
-      'default' => '',
+      'default' => 'btn-lg',
    ));
 
    $wp_customize->add_control('codeweber_button_size', array(

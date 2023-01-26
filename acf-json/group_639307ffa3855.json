@@ -1553,10 +1553,10 @@
                             "choices": {
                                 "Theme": "Theme",
                                 "Sm": "Sm",
-                                "Default": "Default",
+                                "Md": "Md",
                                 "Lg": "Lg"
                             },
-                            "default_value": "Default",
+                            "default_value": "Theme",
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
@@ -1666,5 +1666,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672262499
+    "modified": 1674727725
 }

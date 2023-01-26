@@ -160,7 +160,7 @@ class CW_Button
                $size_button = 'btn-lg';
             } elseif (get_sub_field('button_size') == 'Sm') {
                $size_button = 'btn-sm';
-            } elseif (get_sub_field('button_size') == 'Default') {
+            } elseif (get_sub_field('button_size') == 'Md') {
                $size_button = '';
             } elseif (get_sub_field('button_size') == 'Theme') {
                $size_button = get_theme_mod('codeweber_button_size');

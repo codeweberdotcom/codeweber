@@ -1,5 +1,5 @@
+/* eslint-disable no-var */
 "use strict";
-
 (function () {
   "use strict";
   window.addEventListener(
@@ -45,7 +45,7 @@ var theme = {
     theme.rellax();
     theme.scrollCue();
     theme.swiperSlider();
-    theme.lightbox();
+    //theme.lightbox();
     theme.plyr();
     theme.progressBar();
     theme.loader();
@@ -364,7 +364,7 @@ var theme = {
    */
   swiperSlider: function () {
     var carousel = document.querySelectorAll(".swiper-container");
-    for (var i = 0; i < carousel.length; i++) {
+    for (let i = 0; i < carousel.length; i++) {
       var slider1 = carousel[i];
       slider1.classList.add("swiper-container-" + i);
       var controls = document.createElement("div");
@@ -428,6 +428,7 @@ var theme = {
         threshold: 2,
         slideToClickedSlide: true,
       });
+
       if (slider1.getAttribute("data-thumbs") === "true") {
         var thumbsInit = sliderTh;
         var swiperMain = document.createElement("div");
@@ -439,7 +440,7 @@ var theme = {
       } else {
         var thumbsInit = null;
       }
-      var slider = new Swiper(swiper, {
+      let slider = new Swiper(swiper, {
         on: {
           beforeInit: function () {
             if (
@@ -459,6 +460,7 @@ var theme = {
             if (slider1.getAttribute("data-autoplay") !== "true") {
               this.autoplay.stop();
             }
+
             this.update();
           },
         },
@@ -507,49 +509,65 @@ var theme = {
           swiper: thumbsInit,
         },
       });
+
+      if (thumbsInit !== null) {
+        if (document.querySelector("input.variation_id") !== null) {
+          document.querySelector("input.variation_id").onchange = function () {
+            document.querySelector(
+              ".swiper-thumbs .swiper-wrapper .swiper-slide img"
+            ).src = document.querySelector(
+              ".woocommerce-product-gallery__wrapper .swiper-slide img"
+            ).src;
+            slider.slideTo(slider.activeIndex + 1, 1, true);
+            slider.slideTo(0, 500, true);
+            theme.lightbox.reload();
+          };
+        }
+      }
     }
   },
+
   /**
    * GLightbox
    * Enables lightbox functionality
    * Requires assets/js/vendor/glightbox.js
    */
-  lightbox: () => {
-    const lightbox = GLightbox({
-      selector: "*[data-glightbox]",
-      touchNavigation: true,
-      loop: false,
-      zoomable: false,
-      autoplayVideos: true,
-      moreLength: 0,
-      slideExtraAttributes: {
-        poster: "",
-      },
-      plyr: {
-        css: "",
-        js: "",
-        config: {
-          ratio: "",
-          fullscreen: {
-            enabled: false,
-            iosNative: false,
-          },
-          youtube: {
-            noCookie: true,
-            rel: 0,
-            showinfo: 0,
-            iv_load_policy: 3,
-          },
-          vimeo: {
-            byline: false,
-            portrait: false,
-            title: false,
-            transparent: false,
-          },
+
+  lightbox: new GLightbox({
+    selector: "*[data-glightbox]",
+    touchNavigation: true,
+    loop: false,
+    zoomable: false,
+    autoplayVideos: true,
+    moreLength: 0,
+    slideExtraAttributes: {
+      poster: "",
+    },
+    plyr: {
+      css: "",
+      js: "",
+      config: {
+        ratio: "",
+        fullscreen: {
+          enabled: false,
+          iosNative: false,
+        },
+        youtube: {
+          noCookie: true,
+          rel: 0,
+          showinfo: 0,
+          iv_load_policy: 3,
+        },
+        vimeo: {
+          byline: false,
+          portrait: false,
+          title: false,
+          transparent: false,
         },
       },
-    });
-  },
+    },
+  }),
+
   /**
    * Plyr
    * Enables media player

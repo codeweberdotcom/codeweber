@@ -1,22 +1,3 @@
-<?php
-$block = new CW_Settings(
-  $cw_settings = array(
-    'title' => 'Networking <span class="text-gradient gradient-1">solutions</span> for worldwide communication',
-    'patternTitle' => '<h1 class="display-2 mb-4 me-xl-5 me-xxl-0">%s</h1>',
-
-    'paragraph' => 'We\'re a company that focuses on establishing long-term relationships with customers.',
-    'patternParagraph' => '<p class="lead fs-23 lh-sm mb-7 pe-xxl-15">%s</p>',
-
-    // 'subtitle' => 'Grow Your Business with Our Solutions.',
-    // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
-
-    'buttons' => '<a href="#" class="btn btn-lg btn-gradient gradient-1 rounded">Explore Now</a>',
-    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
-
-  )
-);
-?>
-
 <div class="swiper-container swiper-hero dots-over" data-margin="0" data-autoplay="true" data-autoplaytime="5000" data-nav="true" data-dots="true" data-items="1">
   <div class="swiper">
     <div class="swiper-wrapper">
@@ -34,6 +15,15 @@ $block = new CW_Settings(
               'buttons_pattern' => '<div class="animate__animated animate__slideInUp animate__delay-3s">%s</div>',
             )
           );
+
+          $position = get_sub_field('cw_content_position');
+          if ($position == 'left') {
+            $position_class = 'col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start';
+          } elseif ($position == 'center') {
+            $position_class = 'col-md-11 col-lg-8 col-xl-7 col-xxl-6 mx-auto text-center justify-content-center align-self-center';
+          } elseif ($position == 'right') {
+            $position_class = 'col-md-10 offset-md-1 col-lg-7 offset-lg-5 col-xl-6 offset-xl-6 col-xxl-5 offset-xxl-6 text-center text-lg-start justify-content-center align-self-center align-items-start';
+          }
           if (have_rows('cw_image1')) {
             while (have_rows('cw_image1')) {
               the_row();
@@ -47,7 +37,7 @@ $block = new CW_Settings(
           <div class="swiper-slide h-100 bg-overlay bg-overlay-400 bg-dark" style="background-image:url(<?php echo $image_link; ?>">
             <div class="container h-100">
               <div class="row h-100">
-                <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-0 col-xl-6 col-xxl-5 text-center text-lg-start justify-content-center align-self-center align-items-start">
+                <div class="<?php echo $position_class; ?>">
                   <?php echo $block->title; ?>
                   <!-- title -->
                   <?php echo $block->paragraph; ?>
