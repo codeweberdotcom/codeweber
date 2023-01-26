@@ -8,7 +8,6 @@ $block = new CW_Settings(
       'subtitle' => 'Trusted by Over 5000 Clients',
       'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted text-center mb-8">%s</h2>',
 
-
       'background_class_default' => 'wrapper wrapper-border bg-light',
       // 'background_data_default' => '/dist/img/photos/bg16.png',
       // 'background_video_preview' => '/dist/img/photos/movie2.jpg',
@@ -16,15 +15,15 @@ $block = new CW_Settings(
       // 'background_pattern_url' => '/dist/img/pattern.png',
 
       'swiper' => array(
-         'swiper_container_class' => '',
-         'image_class' => 'img-fluid px-md-3 px-lg-0 px-xl-2 px-xxl-5 ',
+         'swiper_container_class' => 'clients',
+         'image_class' => '',
          'wrapper_image_class' => '',
-         'image_pattern' => '<img class="img-fluid px-md-3 px-lg-0 px-xl-2 px-xxl-5" src="%1$s" srcset="%1$s" %3$s />',
+         'image_pattern' => '<img src="%1$s" srcset="%1$s" %3$s />',
          'image_thumb_size' => 'sandbox_clients_logo_1-1',
-         'image_demo' => '<img class="img-fluid px-md-3 px-lg-0 px-xl-2 px-xxl-5" src="' . get_template_directory_uri() . '/dist/img/brands/c3.png" srcset="' . get_template_directory_uri() . '/dist/img/brands/c3.png" alt="" data-cue="fadeIn" data-delay="300" />',
+         'image_demo' => '<img src="' . get_template_directory_uri() . '/dist/img/brands/c3.png" srcset="' . get_template_directory_uri() . '/dist/img/brands/c3.png" alt="" data-cue="fadeIn" data-delay="300" />',
          'image_big_size' => 'project_1',
          'img_link' => '/dist/img/brands/c3.png',
-         'data_margin' => '40',
+         'data_margin' => '80',
          'nav' => 'false',
          'nav_color' => '',
          'nav_position' => '',
@@ -53,8 +52,9 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <?php echo $block->subtitle; ?>
       <!--/title -->
-      <?php echo $block->swiper_final; ?>
-      <!--/swiper -->
+      <div data-cues="fadeIn" data-group="page-title-buttons" data-delay="100">
+         <?php echo $block->swiper_final; ?> <!--/swiper -->
+      </div>
       <!--/swiper -->
    </div>
    <!-- /.container -->
