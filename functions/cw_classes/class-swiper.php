@@ -707,7 +707,13 @@ class CW_Swiper
          if (have_rows('cw_images')) {
             while (have_rows('cw_images')) {
                the_row();
-               $cw_image_pattern = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>';
+
+               if ($image_pattern !== NULL) {
+                  $cw_image_pattern = $image_pattern;
+               } else {
+                  $cw_image_pattern = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>';
+               }
+
                $image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, $image_class, NULL, NULL, $cw_image_pattern, NULL);
                if ($image->image_clean_title) {
                   $caption_image = '<div class="caption-wrapper p-8"><div class="caption bg-white rounded px-4 py-3 mt-auto animate__animated animate__slideInDown animate__delay-1s"><div class="mb-0 h5">' . $image->image_clean_title . '</div></div><!--/.caption --></div><!--/.caption-wrapper -->';
