@@ -17,8 +17,6 @@ $block = new CW_Settings(
 );
 ?>
 
-
-
 <div class="swiper-container swiper-hero dots-over" data-margin="0" data-autoplay="true" data-autoplaytime="5000" data-nav="true" data-dots="true" data-items="1">
   <div class="swiper">
     <div class="swiper-wrapper">
