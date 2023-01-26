@@ -1,88 +1,60 @@
 <?php
-/* Add settings */
-$settings = new Settings();
-$settings->title = "Trusted by Over 5000 Clients";
-$settings->subtitle = "We are a digital and branding company that believes in the power of creative strategy and along with great design.";
-$settings->paragraph = 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.';
-$settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/i2.png';
-$settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4';
-$settings->typewriter = 'customer satisfaction,business needs,creative ideas';
-$settings->backgroundcolor = 'dark';
-$settings->backgroundcolor_light = 'light';
-$settings->textcolor = 'white';
-$settings->GetDataACF();
+
+/**
+ * Clients 1
+ */
+$block = new CW_Settings(
+   $cw_settings = array(
+      'subtitle' => 'Trusted by Over 5000 Clients',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted text-center mb-8">%s</h2>',
+
+
+      'background_class_default' => 'wrapper wrapper-border bg-light',
+      // 'background_data_default' => '/dist/img/photos/bg16.png',
+      // 'background_video_preview' => '/dist/img/photos/movie2.jpg',
+      // 'background_video_url' => '/dist/media/movie2.mp4',
+      // 'background_pattern_url' => '/dist/img/pattern.png',
+
+      'swiper' => array(
+         'swiper_container_class' => '',
+         'image_class' => 'img-fluid px-md-3 px-lg-0 px-xl-2 px-xxl-5',
+         'wrapper_image_class' => 'img-fluid mb-n18',
+         'image_pattern' => '<div class="col"><img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure></div>',
+         'image_thumb_size' => 'sandbox_clients_logo_1-1',
+         'image_demo' => '<div class="col"><img class="img-fluid px-md-3 px-lg-0 px-xl-2 px-xxl-5" src="' . get_template_directory_uri() . '/dist/img/brands/c3.png" srcset="' . get_template_directory_uri() . '/dist/img/brands/c3.png" alt="" data-cue="fadeIn" data-delay="300" /></div>',
+         'image_big_size' => 'project_1',
+         'img_link' => '/dist/img/brands/c3.png',
+         'data_margin' => '85',
+         'nav' => 'false',
+         'nav_color' => NULL,
+         'nav_position' => NULL,
+         'dots' => 'false',
+         'dots_color' => NULL,
+         'dots_position' => 'dots-over',
+         'swiper_effect' => 'slide',
+         'base_items' => '1',
+         'items_xs' => '1',
+         'items_sm' => '1',
+         'items_md' => '3',
+         'items_lg' => '7',
+         'items_xl' => '7',
+         'items_xxl' => '7',
+         'autoplay' => 'true',
+         'autoplay_time' => '3000',
+         'loop' => 'loop',
+         'autoheight' => 'false',
+         'image_shape' => 'rounded',
+      ),
+   )
+);
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper wrapper-border bg-light <?php echo esc_html($args['block_class']); ?>">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
-      <h2 class="fs-15 text-uppercase text-muted text-center mb-8"><?php echo $settings->title; ?></h2>
-
-      <?php if (have_rows('logos')) : ?>
-         <?php while (have_rows('logos')) : the_row(); ?>
-            <?php $type_clients = get_sub_field('logo'); ?>
-            <?php if ($type_clients == 'Images') : ?>
-               <?php if (have_rows('images')) : ?>
-                  <div class="swiper-container clients mb-0" data-margin="30" data-dots="false" data-autoplay-timeout="3000" data-items-xxl="7" data-items-xl="6" data-items-lg="5" data-items-md="4" data-items-xs="2">
-                     <div class="swiper">
-                        <div class="swiper-wrapper">
-                           <?php while (have_rows('images')) : the_row(); ?>
-                              <?php $images = get_sub_field('images'); ?>
-                              <?php if ($images) : ?>
-                                 <div class="swiper-slide px-5">
-                                    <img src="<?php echo esc_url($images['url']); ?>" alt="<?php echo esc_attr($images['alt']); ?>" />
-                                 </div>
-                              <?php endif; ?>
-                           <?php endwhile; ?>
-                        </div>
-                        <!--/.swiper-wrapper -->
-                     </div>
-                     <!-- /.swiper -->
-                  </div>
-                  <!-- /.swiper-container -->
-               <?php else : ?>
-                  <div class="swiper-container clients mb-0" data-margin="30" data-dots="false" data-autoplay-timeout="3000" data-items-xxl="7" data-items-xl="6" data-items-lg="5" data-items-md="4" data-items-xs="2">
-                     <div class="swiper">
-                        <div class="swiper-wrapper">
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c1.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c2.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c3.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c4.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c5.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c6.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c7.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c8.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c9.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c10.png" alt="" /></div>
-                           <div class="swiper-slide px-5"><img src="<?php echo $settings->root_theme; ?>/dist/img/brands/c11.png" alt="" /></div>
-                        </div>
-                        <!--/.swiper-wrapper -->
-                     </div>
-                     <!-- /.swiper -->
-                  </div>
-                  <!-- /.swiper-container -->
-               <?php endif; ?>
-            <?php elseif ($type_clients == 'Posts') : ?>
-               <?php $posts = get_sub_field('posts'); ?>
-               <?php if ($posts) : ?>
-                  <div class="swiper-container clients mb-0" data-margin="30" data-dots="false" data-autoplay-timeout="3000" data-items-xxl="7" data-items-xl="6" data-items-lg="5" data-items-md="4" data-items-xs="2">
-                     <div class="swiper">
-                        <div class="swiper-wrapper">
-                           <?php foreach ($posts as $post) : ?>
-                              <?php setup_postdata($post); ?>
-                              <?php $id = $post->ID; ?>
-                              <div class="swiper-slide px-5"><?php echo get_the_post_thumbnail($id, 'sandbox_clients_logo_2', null); ?></div>
-                           <?php endforeach; ?>
-                        </div>
-                        <!--/.swiper-wrapper -->
-                     </div>
-                     <!-- /.swiper -->
-                  </div>
-                  <!-- /.swiper-container -->
-                  <?php wp_reset_postdata(); ?>
-               <?php endif; ?>
-            <?php endif; ?>
-         <?php endwhile; ?>
-      <?php endif; ?>
+      <?php echo $block->subtitle; ?>
+      <!--/title -->
+      <?php echo $block->swiper_final; ?>
+      <!--/swiper -->
       <!--/swiper -->
    </div>
    <!-- /.container -->

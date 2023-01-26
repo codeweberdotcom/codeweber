@@ -1,6 +1,6 @@
 {
     "key": "group_63146f969bbc4",
-    "title": "Clients",
+    "title": "CW Clients",
     "fields": [
         {
             "key": "field_63146f9fd9af8",
@@ -23,9 +23,26 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_631479dd9896a",
-                            "label": "Title",
-                            "name": "title",
+                            "key": "field_63d277a13cba3",
+                            "label": "Main settings",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63d277b23cba4",
+                            "label": "Sub title",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -36,7 +53,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62d88a70234a0"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -44,9 +61,26 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_63148ff51fb03",
-                            "label": "Logos",
-                            "name": "logos",
+                            "key": "field_63d277c83cba5",
+                            "label": "Slider",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63d277d23cba6",
+                            "label": "Slider",
+                            "name": "cw_slider",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -57,7 +91,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_63148ec9094e2"
+                                "group_63a2003c62223"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -280,5 +314,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662795222
+    "modified": 1674738046
 }

@@ -40,7 +40,7 @@ $block = new CW_Settings(
          'swiper_container_class' => '',
          'image_class' => '',
          'wrapper_image_class' => NULL,
-         'image_pattern' => '<figure %5s><img src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+         'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
          'image_thumb_size' => 'sandbox_hero_17',
          'image_demo' => '<figure class="" style="bottom: 0; left: 0; z-index: 2;"><img src="' . get_template_directory_uri() . '/dist/img/photos/bg11.jpg" srcset="" alt="" /></figure>',
          'image_big_size' => 'project_1',
@@ -74,7 +74,7 @@ $block = new CW_Settings(
 );
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?> px-0 overflow-hidden" <?php echo $block->background_data; ?>>
    <div class="container pt-12 pt-md-16 text-center">
       <div class="row">
          <div class="col-lg-8 col-xxl-7 mx-auto text-center" data-cues="slideInDown" data-group="page-title" data-delay="600">

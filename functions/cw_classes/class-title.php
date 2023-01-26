@@ -234,9 +234,7 @@ class CW_Title
 
 
 
-      if ($title_pattern !== NULL) {
-
-
+      if ($title_pattern !== NULL && !$tag) {
          $title_text = $this->title_text;
          if ($typewriter !== NULL) {
             $title_text .= ' <br>' . $typewriter;

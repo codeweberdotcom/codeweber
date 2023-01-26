@@ -3815,44 +3815,6 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
-                        },
-                        {
-                            "key": "field_63cda44bf0b60",
-                            "label": "Typewriter",
-                            "name": "",
-                            "type": "accordion",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "open": 0,
-                            "multi_expand": 0,
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_63cda3f9be2c2",
-                            "label": "Typewriter",
-                            "name": "cw_typewriter",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_63a4cf2184357"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -4469,5 +4431,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674730129
+    "modified": 1674736252
 }
