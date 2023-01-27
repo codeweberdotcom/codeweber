@@ -191,3 +191,9 @@ span.header-cart-count.avatar.badge {
 .breadcrumb-item + .breadcrumb-item::before {
   color: #aab0bc !important;
 }
+
+ol.breadcrumb {
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+}

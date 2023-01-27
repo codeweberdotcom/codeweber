@@ -84,6 +84,8 @@ function brk_breadcrumbs()
 			}
 		);
 		rank_math_the_breadcrumbs();
+	} elseif (function_exists("seopress_display_breadcrumbs")) {
+		seopress_display_breadcrumbs();
 	}
 }
 

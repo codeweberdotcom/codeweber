@@ -97,6 +97,14 @@ function getYoutubeIdFromUrl($url)
 }
 
 
+//Seo Press disable Breadcrumbs CSS
+function sp_pro_breadcrumbs_css()
+{
+    //Disable breadcrumbs inline CSS 
+    return false;
+}
+add_action('seopress_pro_breadcrumbs_css', 'sp_pro_breadcrumbs_css');
+
 
 // --- Custom login form---
 function wp_login_form_brk($args = array())
