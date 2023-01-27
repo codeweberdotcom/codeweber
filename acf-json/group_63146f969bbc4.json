@@ -102,17 +102,17 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_631c38070b352": {
-                    "key": "layout_631c38070b352",
+                "layout_63d2fff618433": {
+                    "key": "layout_63d2fff618433",
                     "name": "clients_2",
                     "label": "clients 2",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_631c38160b358",
-                            "label": "Subtitle",
-                            "name": "subtitle",
-                            "type": "clone",
+                            "key": "field_63d2fff618434",
+                            "label": "Main settings",
+                            "name": "",
+                            "type": "accordion",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -121,18 +121,14 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "clone": [
-                                "field_62d88a8b234a1"
-                            ],
-                            "display": "seamless",
-                            "layout": "",
-                            "prefix_label": 0,
-                            "prefix_name": 0
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
                         },
                         {
-                            "key": "field_631c38070b353",
+                            "key": "field_63d2fffc18438",
                             "label": "Title",
-                            "name": "title",
+                            "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -143,17 +139,17 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62d88a70234a0"
+                                "field_6383ec1d68ff4"
                             ],
                             "display": "seamless",
-                            "layout": "",
+                            "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_631c38370b359",
+                            "key": "field_63d3002618439",
                             "label": "Paragraph",
-                            "name": "paragraph",
+                            "name": "cw_paragraph",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -164,17 +160,17 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62d88aa4234a2"
+                                "field_6384b03e2c507"
                             ],
                             "display": "seamless",
-                            "layout": "",
+                            "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_631c38070b354",
-                            "label": "Logos",
-                            "name": "logos",
+                            "key": "field_63d2fff618435",
+                            "label": "Sub title",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -185,12 +181,138 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_63148ec9094e2"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
-                            "layout": "",
+                            "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d300f098b8c",
+                            "label": "Clients",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63d3010098b8d",
+                            "label": "Type clients",
+                            "name": "cw_type_clients",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "post": "post",
+                                "image": "image"
+                            },
+                            "default_value": "image",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_63d3011f98b8e",
+                            "label": "Posts",
+                            "name": "cw_posts",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_63d3010098b8d",
+                                        "operator": "==",
+                                        "value": "post"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "clients"
+                            ],
+                            "taxonomy": "",
+                            "filters": "",
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
+                        },
+                        {
+                            "key": "field_63d3016398b8f",
+                            "label": "Images",
+                            "name": "images",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_63d3010098b8d",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_63d3a3a9f5497",
+                                    "label": "Image",
+                                    "name": "cw_image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "sandbox_clients_logo_1-1",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -314,5 +436,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674738046
+    "modified": 1674817464
 }

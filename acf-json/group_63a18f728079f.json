@@ -107,7 +107,8 @@
                         "wave_5": "wave_5",
                         "wave_6": "wave_6",
                         "wave_7": "wave_7",
-                        "wave_8": "wave_8"
+                        "wave_8": "wave_8",
+                        "wave_9": "wave_9"
                     },
                     "default_value": "wave_1",
                     "allow_null": 0,
@@ -239,5 +240,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674507315
+    "modified": 1674813448
 }
