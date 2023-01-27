@@ -61,9 +61,9 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0">
          <div class="col-lg-4 mt-lg-2">
-            <h2 class="fs-15 text-uppercase text-muted mb-3"><?php echo $block->subtitle; ?></h2>
-            <h3 class="display-4 mb-3 pe-xxl-5"><?php echo $block->title; ?></h3>
-            <p class="lead fs-lg mb-0 pe-xxl-5"><?php echo $block->paragraph; ?></p>
+            <?php echo $block->subtitle; ?>
+            <?php echo $block->title; ?>
+            <?php echo $block->paragraph; ?>
          </div>
          <!-- /column -->
          <div class="col-lg-8">
@@ -76,7 +76,7 @@ $block = new CW_Settings(
                         $cw_logotip = get_field('cw_logotip', $post_ids);
                         if ($cw_logotip) {  ?>
                            <div class="col">
-                              <figure class="px-3 px-md-0 px-xxl-2"> <img src="<?php echo esc_url($cw_logotip['sizes']['sandbox_clients_logo_1-1']); ?>" alt="<?php echo esc_attr($cw_logotip['alt']); ?>" /></figure>
+                              <figure class="px-3 px-md-0 px-xxl-2"> <img src="<?php echo esc_url($cw_logotip['sizes']['sandbox_slider_2']); ?>" alt="<?php echo esc_attr($cw_logotip['alt']); ?>" /></figure>
                            </div>
                            <!--/column -->
                      <?php };
@@ -88,7 +88,7 @@ $block = new CW_Settings(
                         <?php $cw_image = get_sub_field('cw_image'); ?>
                         <?php if ($cw_image) : ?>
                            <div class="col">
-                              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo esc_url($cw_image['sizes']['sandbox_clients_logo_1-1']); ?>" alt="<?php echo esc_attr($cw_image['alt']); ?>" /></figure>
+                              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo esc_url($cw_image['sizes']['sandbox_slider_2']); ?>" alt="<?php echo esc_attr($cw_image['alt']); ?>" /></figure>
                            </div>
                            <!--/column -->
                         <?php endif; ?>

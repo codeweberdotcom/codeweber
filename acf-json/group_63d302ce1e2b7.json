@@ -1,26 +1,7 @@
 {
     "key": "group_63d302ce1e2b7",
-    "title": "Clients Post Field",
+    "title": "CW Clients Post Field",
     "fields": [
-        {
-            "key": "field_63d302deeb36a",
-            "label": "Title",
-            "name": "cw_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
         {
             "key": "field_63d302edeb36b",
             "label": "Logo",
@@ -30,7 +11,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -64,5 +45,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674816965
+    "modified": 1674821731
 }
