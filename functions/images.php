@@ -34,6 +34,7 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('sandbox_hero_17', 1920, 890, true);
 		add_image_size('sandbox_hero_10', 1200, 581, true);
 		add_image_size('sandbox_hero_18', 800, 800, true);
+		add_image_size('sandbox_hero_26', 800, 1080, true);
 
 		add_image_size('sandbox_hero_9', 285, 546, true);
 
