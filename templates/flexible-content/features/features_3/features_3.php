@@ -18,7 +18,7 @@ $features = new CW_Settings(
       'background_video_preview' => '/dist/img/photos/movie2.jpg',
       'background_video_url' => '/dist/media/movie2.mp4',
       'background_pattern_url' => '/dist/img/pattern.png',
-      // 'image_pattern' => '<figure %5s title="dsdsds"><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+      // 'image_pattern' => '<figure %5$s title="dsdsds"><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
       // 'image_link' => '/dist/img/illustrations/i2.png',
       // 'image_thumb_size' => 'sandbox_hero_1',
       // 'image_big_size' => 'project_1',

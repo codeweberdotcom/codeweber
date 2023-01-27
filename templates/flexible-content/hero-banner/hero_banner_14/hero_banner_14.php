@@ -27,7 +27,7 @@ $block = new CW_Settings(
       //'divider_angles' => 'upper-start',
       //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
 
-      // 'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+      // 'image_pattern' => '<figure %5$s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
       // 'image_link' => '/dist/img/illustrations/i6.png',
       // 'image_thumb_size' => 'sandbox_hero_1',
       // 'image_big_size' => 'project_1',
@@ -37,7 +37,7 @@ $block = new CW_Settings(
          'swiper_container_class' => 'rounded mb-md-n20',
          'image_class' => 'rounded mb-md-n20',
          'wrapper_image_class' => NULL,
-         'image_pattern' => '<figure %5s %9s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" />%7$s %10$s %11$s</figure>',
+         'image_pattern' => '<figure %5$s %9$s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" />%7$s %10$s %11$s</figure>',
          'image_thumb_size' => 'sandbox_hero_14',
          'image_demo' => '<figure class="rounded mb-md-n20"><img src="' . get_template_directory_uri() . '/dist/img/photos/about18.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about18@2x.jpg 2x" alt="" /></figure>',
          'image_big_size' => 'project_1',

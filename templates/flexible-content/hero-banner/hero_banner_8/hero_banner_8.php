@@ -43,7 +43,7 @@ $block = new CW_Settings(
     //   'swiper_container_class' => 'img-fluid ms-auto mx-auto me-lg-8 position-relative',
     //   'image_class' => 'img-fluid ms-auto mx-auto me-lg-8 position-relative',
     //   'wrapper_image_class' => 'img-fluid ms-auto mx-auto me-lg-8 position-relative',
-    //   'image_pattern' => '<figure %5s data-cue="fadeIn"><img %4$s src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+    //   'image_pattern' => '<figure %5$s data-cue="fadeIn"><img %4$s src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
     //   'image_thumb_size' => 'sandbox_hero_8',
     //   'image_demo' => ' <img class="img-fluid ms-auto mx-auto me-lg-8" src="' . get_template_directory_uri() . '/dist/img/photos/co3.png" srcset="' . get_template_directory_uri() . '/dist/img/photos/co3@2x.png 2x" alt="" data-cue="fadeIn">
     //         <div data-cue="slideInRight" data-delay="300">

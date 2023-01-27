@@ -54,7 +54,7 @@ class CW_Settings
       $this->cw_settings = $cw_settings;
       $this->typewriter = $this->cw_typewriter($cw_settings);
       $this->shapes = $this->cw_shapes($cw_settings);
-      $this->labels_final = $this->cw_labels($cw_settings);
+      // $this->labels_final = $this->cw_labels($cw_settings);
       $this->title = $this->cw_get_title($cw_settings);
       $this->subtitle = $this->cw_get_subtitle($cw_settings);
       $this->paragraph = $this->cw_get_paragraph($cw_settings);
@@ -73,12 +73,12 @@ class CW_Settings
    }
 
 
-   public function cw_labels($cw_settings)
-   {
-   }
+   // public function cw_labels($cw_settings)
+   // {
+   // }
 
-   
-   //Section class
+
+   //Column class
    public function cw_column_class($cw_settings)
    {
       if (isset($cw_settings['column_class_1']) && !$cw_settings['column_class_1'] == NULL || isset($cw_settings['column_class_2']) && !$cw_settings['column_class_2'] == NULL) {
@@ -107,7 +107,7 @@ class CW_Settings
    }
 
 
-   //Features
+   //List
    public function cw_list($cw_settings)
    {
       if (isset($cw_settings['list']) && $cw_settings['list'] == NULL) {
@@ -183,6 +183,44 @@ class CW_Settings
          } else {
             $swiper_container_class = NULL;
          }
+
+         // Check for array ['swiper']['data_thumbs']
+         if (isset($cw_settings['swiper']['data_thumbs']) && !$cw_settings['swiper']['data_thumbs'] == NULL) {
+            $data_thumbs =  $cw_settings['swiper']['data_thumbs'];
+         } else {
+            $data_thumbs = NULL;
+         }
+
+         // Check for array ['swiper']['swiper_container_content']
+         if (isset($cw_settings['swiper']['swiper_container_content']) && !$cw_settings['swiper']['swiper_container_content'] == NULL) {
+            $swiper_container_content =  $cw_settings['swiper']['swiper_container_content'];
+         } else {
+            $swiper_container_content = NULL;
+         }
+
+
+
+         // Check for array ['swiper']['swiper_first_slide']
+         if (isset($cw_settings['swiper']['swiper_first_slide']) && !$cw_settings['swiper']['swiper_first_slide'] == NULL) {
+            $swiper_first_slide =  $cw_settings['swiper']['swiper_first_slide'];
+         } else {
+            $swiper_first_slide = NULL;
+         }
+
+         // Check for array ['swiper']['swiper-slide_class']
+         if (isset($cw_settings['swiper']['swiper-slide_class']) && !$cw_settings['swiper']['swiper-slide_class'] == NULL) {
+            $swiper_slide_class =  $cw_settings['swiper']['swiper-slide_class'];
+         } else {
+            $swiper_slide_class = NULL;
+         }
+
+         // Check for array ['swiper']['swiper-slide_data']
+         if (isset($cw_settings['swiper']['swiper-slide_data']) && !$cw_settings['swiper']['swiper-slide_data'] == NULL) {
+            $swiper_slide_data =  $cw_settings['swiper']['swiper-slide_data'];
+         } else {
+            $swiper_slide_data = NULL;
+         }
+
          // Check for array ['swiper']['image_class']
          if (isset($cw_settings['swiper']['image_class']) && !$cw_settings['swiper']['image_class'] == NULL) {
             $swiper_image_class =  $cw_settings['swiper']['image_class'];
@@ -396,7 +434,12 @@ class CW_Settings
             $swiper_image_demo,
             $swiper_image_shape,
             $swiper_label_demo,
-            $swiper_label_pattern
+            $swiper_label_pattern,
+            $swiper_first_slide,
+            $swiper_slide_class,
+            $swiper_slide_data,
+            $data_thumbs,
+            $swiper_container_content
          );
          $swiper_final = $swiper->final_swiper;
       } else {

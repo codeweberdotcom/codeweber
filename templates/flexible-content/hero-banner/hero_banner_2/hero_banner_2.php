@@ -41,7 +41,7 @@ $block = new CW_Settings(
       'swiper_container_class' => '',
       'image_class' => 'w-auto',
       'wrapper_image_class' => '',
-      'image_pattern' => '<figure %5s><img %4$s src="%1$s" srcset="%2$s" alt="%3$s"/></figure>',
+      'image_pattern' => '<figure %5$s><img %4$s src="%1$s" srcset="%2$s" alt="%3$s"/></figure>',
       'image_thumb_size' => 'sandbox_hero_18',
       'image_demo' => '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/photos/about7.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about7@2x.jpg 2x" alt="" /></figure>',
       'image_big_size' => 'project_1',

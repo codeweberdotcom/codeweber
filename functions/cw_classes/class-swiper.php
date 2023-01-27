@@ -75,10 +75,15 @@ class CW_Swiper
       $image_demo,
       $image_shape,
       $label_demo,
-      $label_pattern
+      $label_pattern,
+      $swiper_first_slide,
+      $swiper_slide_class,
+      $swiper_slide_data,
+      $data_thumbs,
+      $swiper_container_content
    ) {
       $this->root_theme = get_template_directory_uri();
-      $this->custom_settings_bool = $this->cw_custom_settings_bool();
+      $this->custom_settings_bool = $this->cw_custom_settings_bool($data_thumbs);
       $this->count_image = $this->cw_count_image();
       $this->image_shape = $this->cw_image_shape($image_shape);
       $this->image_demo = $this->cw_image_demo($image_demo);
@@ -108,7 +113,7 @@ class CW_Swiper
       $this->loop = $this->cw_loop($loop);
 
       $this->swiper_container_class = $this->cw_class($swiper_container_class);
-      $this->swiper_data = $this->cw_data();
+      $this->swiper_data = $this->cw_data($data_thumbs);
 
       $this->final_swiper = $this->cw_final_slider(
          $image_class,
@@ -119,7 +124,12 @@ class CW_Swiper
          $wrapper_image_class,
          $image_demo,
          $label_demo,
-         $label_pattern
+         $label_pattern,
+         $swiper_first_slide,
+         $swiper_slide_class,
+         $swiper_slide_data,
+         $data_thumbs,
+         $swiper_container_content
       );
    }
 
@@ -138,7 +148,7 @@ class CW_Swiper
 
 
    //Custom settings bool 
-   public function cw_custom_settings_bool()
+   public function cw_custom_settings_bool($data_thumbs)
    {
       if (get_sub_field('custom_gallery') == 1) :
          $cw_custom_settings_bool =  'true';
@@ -581,7 +591,7 @@ class CW_Swiper
    }
 
    //Data
-   public function cw_data()
+   public function cw_data($data_thumbs)
    {
       $data_array = array();
       $data_margin = $this->data_margin;
@@ -595,7 +605,6 @@ class CW_Swiper
       $items_lg = $this->items_lg;
       $items_xl = $this->items_xl;
       $items_xxl = $this->items_xxl;
-
       $autoplay = $this->autoplay;
       $autoplay_time = $this->autoplay_time;
       $loop = $this->loop;
@@ -604,7 +613,6 @@ class CW_Swiper
       if ($data_margin) {
          $data_array[] = 'data-margin="' . $data_margin . '"';
       }
-
 
       if ($dots) {
          $data_array[] = 'data-dots="' . $dots . '"';
@@ -646,6 +654,9 @@ class CW_Swiper
       if ($loop) {
          $data_array[] = 'data-loop="' . $loop . '"';
       }
+      if ($data_thumbs == 'true') {
+         $data_array[] = 'data-thumbs="true"';
+      }
       $data_array[] = 'data-autoheight="false"';
 
       $cw_data = implode(' ', $data_array);
@@ -686,9 +697,8 @@ class CW_Swiper
    }
 
 
-
    //Final Slider
-   public function cw_final_slider($image_class, $image_pattern, $image_thumb_size, $image_big_size, $img_link, $wrapper_image_class, $image_demo, $label_demo, $label_pattern)
+   public function cw_final_slider($image_class, $image_pattern, $image_thumb_size, $image_big_size, $img_link, $wrapper_image_class, $image_demo, $label_demo, $label_pattern, $swiper_first_slide, $swiper_slide_class, $swiper_slide_data, $data_thumbs, $swiper_container_content)
    {
       $count_image = $this->count_image;
       $final_slider = '';
@@ -699,8 +709,12 @@ class CW_Swiper
       } else {
          $image_shape = NULL;
       }
+      $data_thumbs = 'true';
+      if ($data_thumbs == 'true') {
+         $thumbnail_swiper_array = array();
+      }
 
-      if ($count_image >= 2) {
+      if ($count_image >= 2 || $swiper_first_slide == 'true') {
          $final_slider .= '<div class="swiper-container ' . $class . '" ' . $data . '>
             <div class="swiper">
                <div class="swiper-wrapper">';
@@ -715,24 +729,62 @@ class CW_Swiper
                }
 
                $image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, $image_class, NULL, NULL, $cw_image_pattern, NULL);
+
+               if ($data_thumbs == 'true') {
+                  $thumbnail_swiper_array[] = $image->image_url_small;
+               };
+
                if ($image->image_clean_title) {
                   $caption_image = '<div class="caption-wrapper p-8"><div class="caption bg-white rounded px-4 py-3 mt-auto animate__animated animate__slideInDown animate__delay-1s"><div class="mb-0 h5">' . $image->image_clean_title . '</div></div><!--/.caption --></div><!--/.caption-wrapper -->';
                } else {
                   $caption_image = NULL;
                }
-               $final_slider .= '<div class="swiper-slide">' . $image->final_image . $caption_image . '</div>';
+
+               if ($swiper_slide_class !== NULL) {
+                  $swiper_slide_class = ' ' . $swiper_slide_class;
+               } else {
+                  $swiper_slide_class = NULL;
+               }
+
+               if ($swiper_slide_data !== NULL) {
+                  if ($image->image_url_big) {
+                     $cw_swiper_slide_data = 'data-image-src="' . $image->image_url_big . '"';
+                  } else {
+                     $cw_swiper_slide_data = $swiper_slide_data;
+                  }
+                  $final_slider .= '<div class="swiper-slide' . $swiper_slide_class . '" ' . $cw_swiper_slide_data . ' ></div>';
+               } else {
+                  $final_slider .= '<div class="swiper-slide' . $swiper_slide_class . '">' . $image->final_image . $caption_image . '</div>';
+               }
             }
          }
          $final_slider .= '</div>';
          $final_slider .= '</div>';
+
+
+         //Thumbs
+         if ($data_thumbs == 'true') {
+            $final_slider .= '<div class="swiper swiper-thumbs"><div class="swiper-wrapper">';
+            if (isset($thumbnail_swiper_array)) {
+               foreach ($thumbnail_swiper_array as $slide) {
+                  $final_slider .= ' <div class="swiper-slide"><img src="' . $slide . '" alt="" /></div>';
+               }
+            }
+            $final_slider .= '</div><!--/.swiper-wrapper --></div>';
+         }
+
+
+         //Content
+         if ($swiper_container_content !== NULL) {
+            $final_slider .= $swiper_container_content;
+         }
+
          $final_slider .= '</div>';
       } elseif ($count_image == 1) {
-
 
          if (have_rows('cw_images')) {
             while (have_rows('cw_images')) {
                the_row();
-
                $image = new CW_Image($image_thumb_size, $image_big_size, NULL, $img_link, NULL, $image_shape, NULL, $wrapper_image_class, $image_demo, $image_pattern, NULL);
                $final_slider = $image->final_image;
             }

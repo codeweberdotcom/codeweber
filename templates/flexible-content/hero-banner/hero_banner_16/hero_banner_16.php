@@ -30,7 +30,7 @@ $block = new CW_Settings(
     //'divider_angles' => 'upper-start',
     //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
 
-    // 'image_pattern' => '<figure %5s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+    // 'image_pattern' => '<figure %5$s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
     // 'image_link' => '/dist/img/illustrations/i6.png',
     // 'image_thumb_size' => 'sandbox_hero_1',
     // 'image_big_size' => 'project_1',
@@ -40,7 +40,7 @@ $block = new CW_Settings(
       'swiper_container_class' => 'w-100',
       'image_class' => '',
       'wrapper_image_class' => NULL,
-      'image_pattern' => '<figure %5s %9s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" />%7$s %10$s %11$s</figure>',
+      'image_pattern' => '<figure %5$s %9$s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" />%7$s %10$s %11$s</figure>',
       'image_thumb_size' => 'sandbox_hero_16',
       'image_demo' => '<div class="img-mask mask-1"><img src="' . get_template_directory_uri() . '/dist/img/photos/about17.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about17@2x.jpg 2x" alt="" /></div><div class="card shadow-lg position-absolute" style="bottom: 10%; right: 2%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
       'image_big_size' => 'project_1',
