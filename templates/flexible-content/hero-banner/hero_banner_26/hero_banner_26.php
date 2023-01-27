@@ -14,15 +14,15 @@ $block = new CW_Settings(
     // 'subtitle' => 'Grow Your Business with Our Solutions.',
     // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
-    'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
-    <a href="#" class="btn btn-lg btn-grape rounded">Try it for Free</a><a href="#" class="btn btn-lg btn-outline-grape rounded">Explore Now</a></div>',
+    'buttons' => '<div class="d-inline-flex me-2"><a href="#" class="btn btn-lg btn-grape rounded">Try it for Free</a></div>
+          <div class="d-inline-flex"><a href="#" class="btn btn-lg btn-outline-grape rounded">Explore Now</a></div>',
     'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
     'background_class_default' => 'wrapper bg-soft-primary',
-    'background_data_default' => '/dist/img/photos/bg16.png',
-    'background_video_preview' => '/dist/img/photos/movie2.jpg',
-    'background_video_url' => '/dist/media/movie2.mp4',
-    'background_pattern_url' => '/dist/img/pattern.png',
+    //'background_data_default' => '/dist/img/photos/bg16.png',
+    //'background_video_preview' => '/dist/img/photos/movie2.jpg',
+    //'background_video_url' => '/dist/media/movie2.mp4',
+    //'background_pattern_url' => '/dist/img/pattern.png',
 
     //'typewriter' => 'easy usage,fast transactions,secure payments',
 
@@ -42,7 +42,7 @@ $block = new CW_Settings(
       'wrapper_image_class' => 'img-fluid mb-n12 mb-md-n14 mb-lg-n19',
       'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
       'image_thumb_size' => 'sandbox_hero_26',
-      'image_demo' => '<figure><img class="img-fluid mb-n12 mb-md-n14 mb-lg-n19" src="' . get_template_directory_uri() . '/img/illustrations/3d11.png" srcset="' . get_template_directory_uri() . '/img/illustrations/3d11@2x.png 2x" data-cue="fadeIn" data-delay="300" alt="" /></figure>',
+      'image_demo' => '<figure><img class="img-fluid mb-n12 mb-md-n14 mb-lg-n19" src="' . get_template_directory_uri() . '/dist/img/illustrations/3d11.png" srcset="' . get_template_directory_uri() . '/img/illustrations/3d11@2x.png 2x" data-cue="fadeIn" data-delay="300" alt="" /></figure>',
       'image_big_size' => 'project_1',
       'img_link' => '/dist/img/illustrations/3d11.png',
       'data_margin' => '30',
@@ -70,7 +70,6 @@ $block = new CW_Settings(
     'label_demo' => '<div class="card shadow-lg position-absolute" style="bottom: 10%%; right: 2%%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
 
     'label_pattern' => '<div class="card shadow-lg position-absolute %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
-
 
     'column_class_1' => '',
     'column_class_2' => 'order-lg-2',
