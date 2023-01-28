@@ -14,8 +14,8 @@ $block = new CW_Settings(
       // 'subtitle' => 'Grow Your Business with Our Solutions.',
       // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
-      // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
-      // 'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900"><span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span><span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Free Trial</a></span></div>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+      'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900"><span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span><span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Free Trial</a></span></div>',
 
       'background_class_default' => 'wrapper bg-light',
       //'background_data_default' => '/dist/img/photos/bg16.png',
@@ -36,18 +36,10 @@ $block = new CW_Settings(
 
       'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
-      'features' => '<div class="col-md-6 col-lg-3"> <span class="icon btn btn-circle btn-lg btn-primary pe-none mb-4"><span class="number">02</span></span>
-        <h4 class="mb-1">Prepare</h4>
-        <p class="mb-0">Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.</p>
-      </div>
-      <!--/column -->',
+      'features' => '<div class="col-md-6 col-lg-3"> <span class="icon btn btn-circle btn-lg btn-primary pe-none mb-4"><span class="number">02</span></span><h4 class="mb-1">Prepare</h4><p class="mb-0">Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.</p></div><!--/column -->',
 
-      'features_pattern' => '<div class="col-md-6 col-lg-3 %1$s">%2$s
-            <h4 class="mb-1">%3$s</h4>
-            <p class="mb-0">%4$s</p>
-         </div>
-         <!--/column -->',
-      'features_style_icon' => 'me-5',
+      'features_pattern' => '<div class="col-md-6 col-lg-3 %1$s">%2$s<h4 class="mb-1">%3$s</h4><p class="mb-0">%4$s</p></div><!--/column -->',
+      'features_style_icon' => 'mb-4',
 
    )
 );
