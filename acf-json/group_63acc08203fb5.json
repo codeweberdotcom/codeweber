@@ -19,7 +19,7 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "",
+            "button_label": "Add Icon block",
             "sub_fields": [
                 {
                     "key": "field_63c02644cb6d6",
@@ -63,5 +63,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674237863
+    "modified": 1674942065
 }

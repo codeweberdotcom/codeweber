@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Hero 2
+ * Process 1
  */
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'How It Works?',
-      'patternTitle' => ' <h2 class="h1 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="h1 mb-3">%s</h2>',
 
       'paragraph' => 'So here are three working steps why our valued customers choose us.',
       'patternParagraph' => '<p class="lead fs-lg mb-6">%s</p>',
@@ -103,6 +103,7 @@ $block = new CW_Settings(
                <?php echo $block->paragraph; ?>
                <!--/pargraph -->
                <?php echo $block->features; ?>
+               <!--/fearures -->
             </div>
             <!--/column -->
          </div>

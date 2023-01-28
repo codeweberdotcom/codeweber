@@ -279,16 +279,33 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_630f282b64527": {
-                    "key": "layout_630f282b64527",
+                "layout_63d5985c43768": {
+                    "key": "layout_63d5985c43768",
                     "name": "process_2",
                     "label": "Process 2",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_630f282b64529",
-                            "label": "Title",
-                            "name": "title",
+                            "key": "field_63d5985c4376b",
+                            "label": "Main Settings",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63d5985c4376c",
+                            "label": "Заголовок",
+                            "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -299,7 +316,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62d88a70234a0"
+                                "field_6383ec1d68ff4"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -307,9 +324,9 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_630f282b6452a",
+                            "key": "field_63d5985c4376d",
                             "label": "Paragraph",
-                            "name": "paragraph",
+                            "name": "cw_paragraph",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -320,7 +337,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62d88aa4234a2"
+                                "field_6384b03e2c507"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -328,9 +345,26 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_630f282b6452b",
-                            "label": "Features",
-                            "name": "features",
+                            "key": "field_63d5985c4376e",
+                            "label": "Background",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63d5985c4376f",
+                            "label": "Background",
+                            "name": "cw_background",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -341,7 +375,87 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62ee5ecf541f1"
+                                "group_6398d19d56ee1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d5985c43770",
+                            "label": "Column",
+                            "name": "cw_column",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63c5b17b05bfa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d5985c43773",
+                            "label": "Divider",
+                            "name": "cw_divider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63a18f728079f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d5985c43774",
+                            "label": "Features",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63d5985c43775",
+                            "label": "Features",
+                            "name": "cw_features",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63acc08203fb5"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -376,5 +490,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674940743
+    "modified": 1674942582
 }
