@@ -41,7 +41,7 @@ $block = new CW_Settings(
       'swiper_container_class' => '',
       'image_class' => 'w-auto',
       'wrapper_image_class' => '',
-      'image_pattern' => '<figure %5$s><img %4$s src="%1$s" srcset="%2$s" alt="%3$s"/></figure>',
+      'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
       'image_thumb_size' => 'sandbox_hero_18',
       'image_demo' => '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/photos/about7.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about7@2x.jpg 2x" alt="" /></figure>',
       'image_big_size' => 'project_1',
@@ -90,9 +90,7 @@ $block = new CW_Settings(
     <div class="container pt-8 pt-md-14">
       <div class="row gx-lg-0 gx-xl-8 gy-10 gy-md-13 gy-lg-0 mb-7 mb-md-10 mb-lg-16 align-items-center">
         <div class="col-md-8 col-lg-6  position-relative <?php echo $block->column_class_1; ?>" data-cue="zoomIn">
-          <?php
-          echo $block->shapes;
-          ?>
+          <?php echo $block->shapes; ?>
           <!--/shapes -->
           <?php echo $block->swiper_final; ?>
           <!--/swiper -->

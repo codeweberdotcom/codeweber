@@ -41,7 +41,7 @@ $block = new CW_Settings(
       'image_demo' => '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/illustrations/i6.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i6@2x.png 2x" alt="" /></figure>',
       'image_big_size' => 'project_1',
       'img_link' => '/dist/img/illustrations/i6.png',
-      'img_shape' => 'rounded',
+      'image_shape' => 'rounded',
       'data_margin' => '30',
       'nav' => 'true',
       'nav_color' => 'nav-dark',

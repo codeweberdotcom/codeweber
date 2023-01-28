@@ -37,12 +37,12 @@ $block = new CW_Settings(
       'swiper_container_class' => 'rounded',
       'image_class' => 'rounded',
       'wrapper_image_class' => 'rounded',
-      'image_pattern' => '<figure %5$s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+      'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
       'image_thumb_size' => 'sandbox_hero_1',
       'image_demo' => '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/illustrations/i6.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i6@2x.png 2x" alt="" /></figure>',
       'image_big_size' => 'project_1',
       'img_link' => '/dist/img/illustrations/i6.png',
-      'img_shape' => 'rounded',
+      'image_shape' => 'rounded',
       'data_margin' => '30',
       'nav' => 'true',
       'nav_color' => 'nav-dark',
@@ -88,7 +88,6 @@ $block = new CW_Settings(
         <!--/title -->
         <?php echo $block->paragraph; ?>
         <!--/pargraph -->
-
         <?php echo $block->buttons; ?>
         <!--/buttons group -->
       </div>

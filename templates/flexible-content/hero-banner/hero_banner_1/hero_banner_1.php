@@ -32,6 +32,7 @@ $block = new CW_Settings(
     // 'image_thumb_size' => 'sandbox_hero_1',
     // 'image_big_size' => 'project_1',
 
+
     'swiper' => array(
       'swiper_container_class' => '',
       'image_class' => 'w-auto',
@@ -74,7 +75,11 @@ $block = new CW_Settings(
 );
 ?>
 
+
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+
+
+
   <?php if ($block->background_video_bool == true) { ?>
     <video poster="<?php echo $block->background_video_preview; ?>" src="<?php echo $block->background_video_url; ?>" autoplay loop playsinline muted></video>
     <div class="video-content">
@@ -109,5 +114,6 @@ $block = new CW_Settings(
     echo $block->divider_wave;
   } ?>
   <!-- /divider -->
+
 </section>
 <!-- /section -->
