@@ -273,7 +273,7 @@ class CW_Button
 
             if ($cw_link_object->link_type == 'Tooltip') {
                $data_link_object = new CW_Tooltip(NULL, NULL, NULL, NULL, NULL);
-               printr($data_link_object);
+
                $button_data = $data_link_object->tooltip_data;
             } else {
                $button_data = NULL;

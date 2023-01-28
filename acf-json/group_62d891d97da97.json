@@ -4799,15 +4799,15 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_62f12037d1a28": {
-                    "key": "layout_62f12037d1a28",
+                "layout_63d50337ceca7": {
+                    "key": "layout_63d50337ceca7",
                     "name": "hero_banner_27",
                     "label": "Hero banner_27",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62f13743ffbbf",
-                            "label": "Main settings",
+                            "key": "field_63d50337cecaa",
+                            "label": "Main Settings",
                             "name": "",
                             "type": "accordion",
                             "instructions": "",
@@ -4823,51 +4823,9 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_62f13749ffbc0",
+                            "key": "field_63d50337cecab",
                             "label": "Заголовок",
-                            "name": "title",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33.33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d88a70234a0"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_62f1374cffbc1",
-                            "label": "Paragraph",
-                            "name": "paragraph",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33.33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d88aa4234a2"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_62f137c6ffbc4",
-                            "label": "Background",
-                            "name": "background",
+                            "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -4878,7 +4836,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62db0704bdee9"
+                                "field_6383ec1d68ff4"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -4886,7 +4844,28 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_62f1379dffbc2",
+                            "key": "field_63d50337cecac",
+                            "label": "Paragraph",
+                            "name": "cw_paragraph",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6384b03e2c507"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d50337cecad",
                             "label": "Buttons",
                             "name": "",
                             "type": "accordion",
@@ -4903,9 +4882,9 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_62f137a1ffbc3",
+                            "key": "field_63d50337cecae",
                             "label": "Buttons",
-                            "name": "buttons",
+                            "name": "cw_buttons",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -4916,7 +4895,66 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62dc6f27dc128"
+                                "group_639307ffa3855"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d50337cecaf",
+                            "label": "Background",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63d50337cecb0",
+                            "label": "Background",
+                            "name": "cw_background",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6398d19d56ee1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d509ee0fb7a",
+                            "label": "Divider",
+                            "name": "cw_divider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63a18f728079f"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -4984,5 +5022,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674857033
+    "modified": 1674906140
 }
