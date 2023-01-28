@@ -148,7 +148,7 @@ class CW_Swiper
 
 
    //Custom settings bool 
-   public function cw_custom_settings_bool($data_thumbs)
+   public function cw_custom_settings_bool()
    {
       if (get_sub_field('custom_gallery') == 1) :
          $cw_custom_settings_bool =  'true';
@@ -709,7 +709,7 @@ class CW_Swiper
       } else {
          $image_shape = NULL;
       }
-      $data_thumbs = 'true';
+
       if ($data_thumbs == 'true') {
          $thumbnail_swiper_array = array();
       }

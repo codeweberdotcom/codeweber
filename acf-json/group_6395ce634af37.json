@@ -34,7 +34,9 @@
                         "URL": "URL",
                         "Video URL": "Video URL",
                         "Form": "Form",
-                        "Image": "Image"
+                        "Image": "Image",
+                        "Tooltip": "Tooltip",
+                        "Modal": "Modal"
                     },
                     "default_value": false,
                     "allow_null": 0,
@@ -135,6 +137,42 @@
                     "multiple": 0,
                     "return_format": "id",
                     "ui": 1
+                },
+                {
+                    "key": "field_63d4ebb2c9552",
+                    "label": "Tooltip & Popover",
+                    "name": "cw_tooltip_popover",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6395ce75bc2da",
+                                "operator": "==",
+                                "value": "URL"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6395ce75bc2da",
+                                "operator": "==",
+                                "value": "Tooltip"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_63d4e9b06d3b6"
+                    ],
+                    "display": "group",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
                 }
             ]
         }
@@ -157,5 +195,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1673615036
+    "modified": 1674903758
 }

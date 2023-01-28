@@ -130,7 +130,12 @@ class CW_Settings
          $features_pattern = $this->cw_settings['features_pattern'];
          $demo = $this->cw_settings['features'];
 
-         $features_object = new CW_Features($features_pattern, $demo);
+         if (isset($this->cw_settings['features_style_icon']) && !$this->cw_settings['features_style_icon'] == NULL) {
+            $style = $this->cw_settings['features_style_icon'];
+         } else {
+            $style = NULL;
+         }
+         $features_object = new CW_Features($features_pattern, $demo, $style);
          $cw_features = $features_object->features_list_final;
 
          if ($cw_features == NULL) {
@@ -197,8 +202,6 @@ class CW_Settings
          } else {
             $swiper_container_content = NULL;
          }
-
-
 
          // Check for array ['swiper']['swiper_first_slide']
          if (isset($cw_settings['swiper']['swiper_first_slide']) && !$cw_settings['swiper']['swiper_first_slide'] == NULL) {
@@ -463,8 +466,6 @@ class CW_Settings
       }
       return $background_object;
    }
-
-
 
    //Images
    public function cw_images($cw_settings)

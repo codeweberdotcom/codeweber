@@ -27,6 +27,8 @@ class CW_Button
    public $link_type;
    public $ghligthbox;
 
+   public $button_data; //???
+
    public $final_button;
 
    public function __construct($import_class = NULL)
@@ -45,6 +47,7 @@ class CW_Button
 
       $this->final_button = $this->cw_final_button($import_class);
    }
+
 
    //Icon 
    public function cw_icon_button()
@@ -267,6 +270,15 @@ class CW_Button
          while (have_rows('cw_buttons')) {
             the_row();
             $cw_link_object = new CW_Link(NULL, NULL, NULL);
+
+            if ($cw_link_object->link_type == 'Tooltip') {
+               $data_link_object = new CW_Tooltip(NULL, NULL, NULL, NULL, NULL);
+               printr($data_link_object);
+               $button_data = $data_link_object->tooltip_data;
+            } else {
+               $button_data = NULL;
+            }
+
             $ghligthbox = $cw_link_object->link_glightbox;
             $button_url = $cw_link_object->link_url;
             $button_link_url_target = $cw_link_object->link_url_target;
@@ -321,7 +333,7 @@ class CW_Button
             $icon_button = NULL;
          }
 
-         $final_button = '<a ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . '>' . $icon_button . $text_button . '</a>';
+         $final_button = '<a ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
       } else {
          $final_button = NULL;
       }

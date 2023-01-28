@@ -91,7 +91,7 @@ class CW_Feature
       return $features_title;
    }
 
-   //Features_title
+   //Features_paragraph
    public function cw_features_paragraph($features_paragraph)
    {
       if (have_rows('cw_features_item')) {
@@ -154,19 +154,18 @@ class CW_Feature
 class CW_Features
 {
    public $features_list_final;
-   public function __construct($features_pattern, $demo)
+   public function __construct($features_pattern, $demo, $style)
    {
-      $this->features_list_final = $this->cw_features_list_final($features_pattern, $demo);
+      $this->features_list_final = $this->cw_features_list_final($features_pattern, $demo, $style);
    }
 
    //Features_list
-   public function cw_features_list_final($features_pattern, $demo)
+   public function cw_features_list_final($features_pattern, $demo, $style)
    {
       if (have_rows('cw_features')) {
          $cw_features_list = '';
          while (have_rows('cw_features')) {
             the_row();
-            $class_image = 'mb-3';
             $features_item = new CW_Feature(
                NULL,
                NULL,
@@ -174,7 +173,7 @@ class CW_Features
                NULL,
                $features_pattern,
                $demo,
-               $class_image,
+               $style,
                NULL
             );
             $cw_features_list .= $features_item->features_item_final;
