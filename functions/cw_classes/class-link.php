@@ -10,13 +10,33 @@ class CW_Link
    public $link_url_target;
    public $link_url_title;
    public $link_form;
+   public $link_data;
 
    public function __construct($link_type, $link_url, $form)
    {
       $this->link_type = $this->cw_link_type($link_type);
+      $this->link_data = $this->cw_link_data();
       $this->link_url = $this->cw_link_url($link_url);
       $this->link_form = $this->cw_form($form);
    }
+
+   //link_data
+   public function  cw_link_data()
+   {
+      if ($this->link_type == 'Popover' || $this->link_type == 'Tooltip') {
+         if (have_rows('cw_links')) {
+            while (have_rows('cw_links')) {
+               the_row();
+               $data_link_object = new CW_Tooltip(NULL, NULL, NULL, NULL, NULL);
+            }
+         }
+         $cw_link_data =  $data_link_object->tooltip_data;
+      } else {
+         $cw_link_data = NULL;
+      }
+      return $cw_link_data;
+   }
+
 
    //Link_type
    public function cw_link_type($link_type)

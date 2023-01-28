@@ -1,6 +1,6 @@
 {
     "key": "group_630e7b3a4c0c1",
-    "title": "Process",
+    "title": "CW Process Templates",
     "fields": [
         {
             "key": "field_630e7bb5d9942",
@@ -23,9 +23,26 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_630f1f299c6e1",
-                            "label": "Image customizable",
-                            "name": "image_customizable",
+                            "key": "field_63a4128d4445f",
+                            "label": "Image",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63a4128d44460",
+                            "label": "Gallery",
+                            "name": "cw_slider",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -36,7 +53,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_630542ca16dc0"
+                                "group_63a2003c62223"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -44,9 +61,26 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_630f1f5a9c6e2",
-                            "label": "Title",
-                            "name": "title",
+                            "key": "field_63a4128d44461",
+                            "label": "Main Settings",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63a4128d44462",
+                            "label": "Заголовок",
+                            "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -57,7 +91,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62d88a70234a0"
+                                "field_6383ec1d68ff4"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -65,9 +99,9 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_630f1f709c6e3",
+                            "key": "field_63a4128d44463",
                             "label": "Paragraph",
-                            "name": "paragraph",
+                            "name": "cw_paragraph",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -78,7 +112,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62d88aa4234a2"
+                                "field_6384b03e2c507"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -86,9 +120,26 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_630f1f899c6e4",
-                            "label": "Features",
-                            "name": "features",
+                            "key": "field_63a4128d44466",
+                            "label": "Background",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63a4128d44467",
+                            "label": "Background",
+                            "name": "cw_background",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -99,7 +150,125 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62ee5ecf541f1"
+                                "group_6398d19d56ee1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63c679d8efe41",
+                            "label": "Column",
+                            "name": "cw_column",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63c5b17b05bfa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63c7f0d7dbf15",
+                            "label": "Shape",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63c7f0655fad2",
+                            "label": "Shape",
+                            "name": "cw_shape",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63c2ad4fe2fa1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d111e0cc0e0",
+                            "label": "Divider",
+                            "name": "cw_divider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63a18f728079f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d59133ac7f2",
+                            "label": "Features",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63d58fd759fb3",
+                            "label": "Features",
+                            "name": "cw_features",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63acc08203fb5"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -207,5 +376,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1662649719
+    "modified": 1674940743
 }

@@ -62,8 +62,8 @@ class CW_Tooltip
    //tooltip_content
    public function cw_tooltip_content($tooltip_content)
    {
-      if (get_sub_field('paragraph')) {
-         $cw_tooltip_content = get_sub_field('paragraph');
+      if (get_sub_field('cw_paragraph')) {
+         $cw_tooltip_content = get_sub_field('cw_paragraph');
       } elseif ($tooltip_content !== NULL) {
          $cw_tooltip_content = $tooltip_content;
       } else {
@@ -85,15 +85,13 @@ class CW_Tooltip
          $data_tooltip[] = 'title="' . $this->tooltip_title . '"';
       }
 
-      if ($this->type_tooltip == 'tooltip') {
+      if ($this->type_tooltip == 'Tooltip') {
          $data_tooltip[] = 'data-bs-toggle="tooltip"';
-      } elseif ($this->type_tooltip == 'popover') {
+      } elseif ($this->type_tooltip == 'Popover') {
          $data_tooltip[] = 'data-bs-toggle="popover"';
          $data_tooltip[] = 'tabindex="0"';
          $data_tooltip[] = 'data-bs-trigger="focus"';
-         if ($this->tooltip_content !== NULL) {
-            $data_tooltip[] = 'data-bs-content="' . $this->tooltip_content . '"';
-         }
+         $data_tooltip[] = 'data-bs-content="' . $this->tooltip_content . '"';
       }
 
       $cw_tooltip_data = implode(' ', $data_tooltip);

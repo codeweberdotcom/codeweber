@@ -197,3 +197,26 @@ ol.breadcrumb {
   margin: 0;
   display: inline-flex;
 }
+
+.tooltip-inner {
+  background-color: #fff !important;
+
+  border: 1px solid #ddd;
+}
+.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: #fff !important;
+}
+.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: #fff !important;
+}
+.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: #fff !important;
+}
+.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: #fff !important;
+}
+
+.itooltip-color.itooltip-inner,
+.itooltip-primary.itooltip-inner {
+  background: #ddd !important;
+}

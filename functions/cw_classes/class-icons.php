@@ -225,7 +225,7 @@ class CW_Icon
                $final_icon =  $this->lineal_icon;
             } elseif (get_sub_field('cw_type_icon') == 'Number' && get_sub_field('cw_type_icon') !== 'None') {
                if ($this->form_icon !== 'none') {
-                  $final_icon =  '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . ' ' . $this->id_icon . '>' . $this->number_icon . '</div>';
+                  $final_icon =  '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '>' . $this->number_icon . '</div>';
                } else {
                   $final_icon =  '<div class="icon btn btn-circle btn-' . $this->size_icon . ' btn-' . $this->color_icon . '" ' . $this->id_icon . '>' . $this->number_icon . '</div>';
                }

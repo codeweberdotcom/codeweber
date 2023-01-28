@@ -271,14 +271,11 @@ class CW_Button
             the_row();
             $cw_link_object = new CW_Link(NULL, NULL, NULL);
 
-            if ($cw_link_object->link_type == 'Tooltip') {
-               $data_link_object = new CW_Tooltip(NULL, NULL, NULL, NULL, NULL);
-
-               $button_data = $data_link_object->tooltip_data;
+            if ($cw_link_object->link_type == 'Tooltip' || $cw_link_object->link_type == 'Popover') {
+               $button_data = $cw_link_object->link_data;
             } else {
                $button_data = NULL;
             }
-
             $ghligthbox = $cw_link_object->link_glightbox;
             $button_url = $cw_link_object->link_url;
             $button_link_url_target = $cw_link_object->link_url_target;

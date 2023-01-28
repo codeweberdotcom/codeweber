@@ -28,6 +28,8 @@ $features = new CW_Settings(
       'features' => '<div class="col-md-6 col-xl-3"><div class="card shadow-lg"><div class="card-body"><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/search-2.svg" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" /><h4>SEO Services</h4><p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p><a href="#" class="more hover link-yellow">Learn More</a></div><!--/.card-body --></div><!--/.card --></div><!--/column -->',
 
       'features_pattern' => '<div class="col-md-6 col-xl-3 %1$s"><div class="card shadow-lg"><div class="card-body">%2$s<h4>%3$s</h4><p class="mb-5">%4$s</p>%5$s</div><!--/.card-body --></div><!--/.card --></div><!--/column -->',
+
+      'features_style_icon' => 'mb-3',
       //'list' => true,
       //'list_class' => ''
    )

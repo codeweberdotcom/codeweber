@@ -18,6 +18,42 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_63d4f3963c1f2",
+                    "label": "UTM",
+                    "name": "utm",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_63d582813f79d",
+                    "label": "UTM generator",
+                    "name": "",
+                    "type": "message",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "<a href=\"https:\/\/tilda.cc\/ru\/utm\/\" target=\"blank\">Генератор UTM<\/a>",
+                    "new_lines": "",
+                    "esc_html": 0
+                },
+                {
                     "key": "field_6395ce75bc2da",
                     "label": "Link Type",
                     "name": "cw_link_type",
@@ -139,10 +175,10 @@
                     "ui": 1
                 },
                 {
-                    "key": "field_63d4ebb2c9552",
-                    "label": "Tooltip & Popover",
-                    "name": "cw_tooltip_popover",
-                    "type": "clone",
+                    "key": "field_63d583f03d9ac",
+                    "label": "Modal",
+                    "name": "cw_modal",
+                    "type": "post_object",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -150,9 +186,32 @@
                             {
                                 "field": "field_6395ce75bc2da",
                                 "operator": "==",
-                                "value": "URL"
+                                "value": "Modal"
                             }
-                        ],
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "modal"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "return_format": "id",
+                    "ui": 1
+                },
+                {
+                    "key": "field_63d4e9be1beec",
+                    "label": "Type Tooltip",
+                    "name": "type_tooltip",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
                         [
                             {
                                 "field": "field_6395ce75bc2da",
@@ -166,13 +225,106 @@
                         "class": "",
                         "id": ""
                     },
-                    "clone": [
-                        "group_63d4e9b06d3b6"
+                    "choices": {
+                        "Tooltip": "Tooltip",
+                        "Popover": "Popover"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_63d4e9f21beed",
+                    "label": "Position",
+                    "name": "cw_position",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6395ce75bc2da",
+                                "operator": "==",
+                                "value": "Tooltip"
+                            }
+                        ]
                     ],
-                    "display": "group",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "top": "top",
+                        "bottom": "bottom",
+                        "left": "left",
+                        "right": "right"
+                    },
+                    "default_value": "top",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_63d4ea4c1beef",
+                    "label": "Заголовок",
+                    "name": "cw_title",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6395ce75bc2da",
+                                "operator": "==",
+                                "value": "Tooltip"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
+                },
+                {
+                    "key": "field_63d4ea9b1bef0",
+                    "label": "Paragraph",
+                    "name": "cw_paragraph",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63d4e9be1beec",
+                                "operator": "==",
+                                "value": "Popover"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
                 }
             ]
         }
@@ -195,5 +347,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674903758
+    "modified": 1674938133
 }
