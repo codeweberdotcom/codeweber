@@ -37,7 +37,7 @@ $block = new CW_Settings(
          <!--/pargraph -->
          <div class="row gx-lg-8 gx-xl-12 gy-6 process-wrapper line">
             <?php echo $block->features; ?>
-            <!--/fearures -->
+            <!--/features -->
          </div>
          <!--/.row -->
       </div>

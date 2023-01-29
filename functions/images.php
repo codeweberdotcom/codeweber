@@ -68,6 +68,9 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('project_4', 410, 555, true);
 		add_image_size('project_4_1', 850, 555, true);
 
+		add_image_size('process_3', 650, 874, true);
+
+
 
 
 		add_image_size('archive_4', 410, 410, true);

@@ -107,6 +107,7 @@ $block = new CW_Settings(
   <div class="container pt-14 pt-md-16 pb-9 pb-md-11 pb-md-17">
     <div class="row gx-md-5 gy-5 mt-n18 mt-md-n21 mb-14 mb-md-17">
       <?php echo $block->features; ?>
+      <!--/features -->
     </div>
     <!--/.row -->
   </div>

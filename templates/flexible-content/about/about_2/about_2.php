@@ -134,6 +134,7 @@ if (have_rows('icon_text_count')) {
             <!--/pargraph -->
             <div class="row counter-wrapper gy-6">
                <?php echo $block->features; ?>
+               <!--/features -->
             </div>
             <!--/.row -->
          </div>

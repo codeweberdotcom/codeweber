@@ -112,6 +112,7 @@ $block = new CW_Settings(
                      <div class="card-body p-9 p-xl-10">
                         <div class="row align-items-center counter-wrapper gy-4 text-center">
                            <?php echo $block->features; ?>
+                           <!--/features -->
                         </div>
                         <!--/.row -->
                      </div>

@@ -103,7 +103,7 @@ $block = new CW_Settings(
                <?php echo $block->paragraph; ?>
                <!--/pargraph -->
                <?php echo $block->features; ?>
-               <!--/fearures -->
+               <!--/features -->
             </div>
             <!--/column -->
          </div>

@@ -108,6 +108,7 @@ $block = new CW_Settings(
                <!--/pargraph -->
                <div class="row gx-xl-10 gy-6">
                   <?php echo $block->features; ?>
+                  <!--/features -->
                </div>
                <!--/.row -->
             </div>

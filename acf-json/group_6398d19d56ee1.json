@@ -387,27 +387,6 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 0
-                },
-                {
-                    "key": "field_63c7b823e8baa",
-                    "label": "Divider",
-                    "name": "cw_divider",
-                    "type": "clone",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "clone": [
-                        "group_63a18f728079f"
-                    ],
-                    "display": "seamless",
-                    "layout": "block",
-                    "prefix_label": 0,
-                    "prefix_name": 0
                 }
             ]
         }
@@ -430,5 +409,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674033222
+    "modified": 1675012330
 }
