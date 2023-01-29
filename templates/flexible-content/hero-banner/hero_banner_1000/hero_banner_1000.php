@@ -1,6 +1,4 @@
 <?php
 
-
-$fsfsd = new CW_Tooltip(NULL, NULL, NULL, NULL, NULL);
-
-printr($fsfsd);
+$ttt = new CW_Video(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+echo $ttt->final_video;
