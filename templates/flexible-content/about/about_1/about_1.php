@@ -24,7 +24,7 @@ $block = new CW_Settings(
       //'background_video_url' => '/dist/media/movie2.mp4',
       //'background_pattern_url' => '/dist/img/pattern.png',
 
-      //'divider' => true,
+      'divider' => true,
       //'divider_angles' => 'upper-start',
       //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
 
@@ -85,31 +85,45 @@ $block = new CW_Settings(
 
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
-   <div class="container py-14 py-md-16">
-      <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-         <div class="col-md-8 col-lg-6 col-xl-5  position-relative <?php echo $block->column_class_1; ?>">
-            <?php echo $block->shapes; ?>
-            <!--/shapes -->
-            <?php echo $block->swiper_final; ?>
-            <!--/swiper -->
-         </div>
-         <!--/column -->
-         <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
-            <?php echo $block->title; ?>
-            <!--/title -->
-            <?php echo $block->subtitle; ?>
-            <!--/title -->
-            <?php echo $block->paragraph; ?>
-            <!--/pargraph -->
-            <div class="row gx-xl-10 gy-6">
-               <?php echo $block->features; ?>
+   <?php if ($block->background_video_bool == true) { ?>
+      <video poster="<?php echo $block->background_video_preview; ?>" src="<?php echo $block->background_video_url; ?>" autoplay loop playsinline muted></video>
+      <div class="video-content">
+      <?php } ?>
+      <!-- /video background -->
+      <div class="container py-14 py-md-16">
+         <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+            <div class="col-md-8 col-lg-6 col-xl-5  position-relative <?php echo $block->column_class_1; ?>">
+               <?php echo $block->shapes; ?>
+               <!--/shapes -->
+               <?php echo $block->swiper_final; ?>
+               <!--/swiper -->
             </div>
-            <!--/.row -->
+            <!--/column -->
+            <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
+               <?php echo $block->title; ?>
+               <!--/title -->
+               <?php echo $block->subtitle; ?>
+               <!--/title -->
+               <?php echo $block->paragraph; ?>
+               <!--/pargraph -->
+               <div class="row gx-xl-10 gy-6">
+                  <?php echo $block->features; ?>
+               </div>
+               <!--/.row -->
+            </div>
+            <!--/column -->
          </div>
-         <!--/column -->
+         <!--/.row -->
       </div>
-      <!--/.row -->
-   </div>
-   <!-- /.container -->
+      <!-- /.container -->
+      <?php if ($block->background_video_bool == true) { ?>
+      </div>
+      </video>
+   <?php } ?>
+   <!-- /video background -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

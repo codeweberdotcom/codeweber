@@ -114,6 +114,5 @@ $block = new CW_Settings(
     echo $block->divider_wave;
   } ?>
   <!-- /divider -->
-
 </section>
 <!-- /section -->

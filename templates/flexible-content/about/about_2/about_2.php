@@ -24,50 +24,9 @@ $block = new CW_Settings(
       //'background_video_url' => '/dist/media/movie2.mp4',
       //'background_pattern_url' => '/dist/img/pattern.png',
 
-      //'divider' => true,
+      //'divider' => 'true',
       //'divider_angles' => 'upper-start',
       //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
-
-      // 'image_pattern' => '<figure %5$s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
-      // 'image_link' => '/dist/img/illustrations/i6.png',
-      // 'image_thumb_size' => 'sandbox_hero_1',
-      // 'image_big_size' => 'project_1',
-
-      // 'swiper' => array(
-      //    'swiper_container_class' => 'overflow-hidden',
-      //    'image_class' => '',
-      //    'data_thumbs' => NULL,
-      //    'wrapper_image_class' => '',
-      //    'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
-      //    'image_thumb_size' => 'sandbox_hero_11',
-      //    'image_demo' => '<figure class="rounded"><img src="' . get_template_directory_uri() . '/dist/img/photos/about7.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about7@2x.jpg 2x" alt=""></figure>',
-      //    'image_big_size' => 'project_1',
-      //    'img_link' => '/dist/img/photos/about7.jpg',
-      //    'image_shape' => 'rounded',
-      //    'data_margin' => '30',
-      //    'nav' => 'true',
-      //    'nav_color' => 'nav-light',
-      //    'nav_position' => 'nav-start',
-      //    'dots' => 'true',
-      //    'dots_color' => 'dots-light',
-      //    'dots_position' => 'dots-over',
-      //    'swiper_effect' => 'slide',
-      //    'base_items' => '1',
-      //    'items_xs' => '1',
-      //    'items_sm' => '1',
-      //    'items_md' => '1',
-      //    'items_lg' => '1',
-      //    'items_xl' => '1',
-      //    'items_xxl' => '1',
-      //    'autoplay' => 'false',
-      //    'autoplay_time' => '1500',
-      //    'loop' => 'false',
-      //    'autoheight' => 'false',
-
-      //    'label_demo' => '<div class="card shadow-lg" style="bottom: 5rem; right: 5rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
-
-      //    'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->'
-      // ),
 
       // 'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),
 
@@ -81,6 +40,27 @@ $block = new CW_Settings(
       // 'features_style_icon' => 'me-4'
    )
 );
+
+$final_icon = '<img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/handshake.svg" class="svg-inject icon-svg icon-svg-md mb-4" alt="" />';
+$icon = new CW_Icon(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $final_icon, NULL);
+
+$btn_title = 'Year Experience';
+$btn_color = 'primary';
+$btn_number = '20+';
+
+if (have_rows('icon_text_count')) {
+   while (have_rows('icon_text_count')) {
+      the_row();
+      if (get_sub_field('cw_number')) {
+         $btn_number = get_sub_field('cw_number');
+      }
+      if (get_sub_field('cw_title')) {
+         $btn_title = get_sub_field('cw_title');
+      }
+      $btn_color_object = new CW_Color(NULL, NULL);
+      $btn_color = $btn_color_object->color;
+   }
+}
 ?>
 
 
@@ -88,15 +68,14 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-12 align-items-center">
          <div class="col-lg-6 position-relative <?php echo $block->column_class_1; ?>">
-            <div class="btn btn-circle btn-primary pe-none position-absolute counter-wrapper flex-column d-none d-md-flex" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 170px; height: 170px;">
-               <h3 class="text-white mb-1 mt-n2"><span class="counter counter-lg">20+</span></h3>
-               <p>Year Experience</p>
+            <div class="btn btn-circle btn-<?php echo $btn_color; ?> pe-none position-absolute counter-wrapper flex-column d-none d-md-flex" style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 170px; height: 170px;">
+               <div class="mb-1 mt-n2"><span class="counter counter-lg"><?php echo $btn_number; ?></span></div>
+               <p><?php echo $btn_title; ?></p>
             </div>
             <div class="row gx-md-5 gy-5 align-items-center">
                <div class="col-md-6">
                   <div class="row gx-md-5 gy-5">
                      <div class="col-md-10 offset-md-2">
-
                         <?php if (have_rows('cw_multi_image')) {
                            while (have_rows('cw_multi_image')) {
                               the_row();
@@ -147,7 +126,8 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/dist/img/icons/lineal/handshake.svg" class="svg-inject icon-svg icon-svg-md mb-4" alt="" />
+            <?php echo $icon->final_icon; ?>
+            <!--/final_icon -->
             <?php echo $block->title; ?>
             <!--/title -->
             <?php echo $block->paragraph; ?>

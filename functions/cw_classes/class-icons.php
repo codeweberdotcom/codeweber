@@ -23,8 +23,8 @@ class CW_Icon
 
    {
       $this->class_icon = $this->cw_class_icon($class_icon, $class_image);
-      $this->id_icon = $this->cw_id_icon();
       $this->type_icon = $this->cw_type_icon($type_icon);
+      $this->id_icon = $this->cw_id_icon();
       $this->style_icon = $this->cw_style_icon($style_icon, $class_image);
       $this->color_icon = $this->cw_color_icon($color_icon);
       $this->form_icon = $this->cw_form_icon($form_icon);
@@ -44,6 +44,8 @@ class CW_Icon
             the_row();
             $cw_style_icon = get_sub_field('cw_icon_style');
          }
+      } else {
+         $cw_style_icon = NULL;
       }
       return $cw_style_icon;
    }
@@ -88,6 +90,8 @@ class CW_Icon
                $id_icon = NULL;
             }
          }
+      } else {
+         $id_icon = NULL;
       }
       return $id_icon;
    }
@@ -111,6 +115,8 @@ class CW_Icon
                $cw_color_icon = $color_icon;
             }
          }
+      } else {
+         $cw_color_icon = NULL;
       }
       return $cw_color_icon;
    }
@@ -237,29 +243,35 @@ class CW_Icon
       if (have_rows('cw_icons')) {
          while (have_rows('cw_icons')) {
             the_row();
-            if (get_sub_field('cw_type_icon') == 'Unicons' && get_sub_field('cw_type_icon') !== 'None') {
-               if ($this->form_icon !== 'none') {
-                  $final_icon = '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '>' . $this->unicons_icon . '</div>';
+
+            if ($this->type_icon !== 'None') {
+               if ($this->type_icon == 'Unicons') {
+                  if ($this->form_icon !== 'none') {
+                     $cw_final_icon = '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '>' . $this->unicons_icon . '</div>';
+                  } else {
+                     $cw_final_icon = $this->unicons_icon;
+                  }
+               } elseif ($this->type_icon == 'SVG') {
+                  $cw_final_icon =  $this->lineal_icon;
+               } elseif ($this->type_icon == 'Number') {
+                  if ($this->form_icon !== 'none') {
+                     $cw_final_icon =  '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '><span class="number">' . $this->number_icon . '</span></div>';
+                  } else {
+                     $cw_final_icon =  '<div class="icon btn btn-circle btn-' . $this->size_icon . ' btn-' . $this->color_icon . '" ' . $this->id_icon . '><span class="number">' . $this->number_icon . '</span></div>';
+                  }
+               } elseif ($this->type_icon == 'Image') {
+                  $cw_final_icon =  $this->image_icon;
                } else {
-                  $final_icon = $this->unicons_icon;
+                  $cw_final_icon = NULL;
                }
-            } elseif (get_sub_field('cw_type_icon') == 'SVG' && get_sub_field('cw_type_icon') !== 'None') {
-               $final_icon =  $this->lineal_icon;
-            } elseif (get_sub_field('cw_type_icon') == 'Number' && get_sub_field('cw_type_icon') !== 'None') {
-               if ($this->form_icon !== 'none') {
-                  $final_icon =  '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '><span class="number">' . $this->number_icon . '</span></div>';
-               } else {
-                  $final_icon =  '<div class="icon btn btn-circle btn-' . $this->size_icon . ' btn-' . $this->color_icon . '" ' . $this->id_icon . '><span class="number">' . $this->number_icon . '</span></div>';
-               }
-            } elseif (get_sub_field('cw_type_icon') == 'Image' && get_sub_field('cw_type_icon') !== 'None') {
-               $final_icon =  $this->image_icon;
             } else {
-               $final_icon = NULL;
+               $cw_final_icon = $final_icon;
             }
          }
       } else {
-         $final_icon = NULL;
+         $cw_final_icon = NULL;
       }
-      return $final_icon;
+      return
+         $cw_final_icon;
    }
 }
