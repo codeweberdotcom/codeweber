@@ -65,7 +65,7 @@ class CW_Feature
             } else {
                $class_icon = NULL;
             }
-            $features_icon_object = new CW_Icon(NULL, NULL, $class_icon, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+            $features_icon_object = new CW_Icon(NULL, NULL, $class_icon, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
             $features_icon =  $features_icon_object->final_icon;
          }
       } else {

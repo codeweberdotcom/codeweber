@@ -17,12 +17,15 @@ class CW_Icon
    public $id_icon;
    public $final_icon;
 
-   public function __construct($type_icon, $form_icon, $class_image, $size_icon, $unicons_icon, $lineal_icon, $image_icon, $color_icon, $number_icon, $class_icon, $id_icon, $final_icon)
+   public $style_icon;
+
+   public function __construct($type_icon, $form_icon, $class_image, $size_icon, $unicons_icon, $lineal_icon, $image_icon, $color_icon, $number_icon, $class_icon, $id_icon, $final_icon, $style_icon)
 
    {
       $this->class_icon = $this->cw_class_icon($class_icon, $class_image);
       $this->id_icon = $this->cw_id_icon();
       $this->type_icon = $this->cw_type_icon($type_icon);
+      $this->style_icon = $this->cw_style_icon($style_icon, $class_image);
       $this->color_icon = $this->cw_color_icon($color_icon);
       $this->form_icon = $this->cw_form_icon($form_icon);
       $this->size_icon = $this->cw_size_icon($size_icon);
@@ -32,6 +35,19 @@ class CW_Icon
       $this->number_icon = $this->cw_number_icon($number_icon, $class_image);
       $this->final_icon = $this->cw_final_icon($final_icon, $class_image);
    }
+
+   // Type
+   public function cw_style_icon($style_icon, $class_image)
+   {
+      if (have_rows('cw_icons')) {
+         while (have_rows('cw_icons')) {
+            the_row();
+            $cw_style_icon = get_sub_field('cw_icon_style');
+         }
+      }
+      return $cw_style_icon;
+   }
+
 
    // Type
    public function cw_type_icon($type_icon)
@@ -53,7 +69,7 @@ class CW_Icon
             the_row();
             $class_icon = get_sub_field('cw_class');
             if ($class_image !== NULL) {
-               $class_icon .= $class_image;
+               $class_icon .= ' ' . $class_image;
             }
          }
       }
@@ -88,9 +104,15 @@ class CW_Icon
             } else {
                $color_icon = $color->color;
             }
+
+            if ($this->style_icon == 'outline') {
+               $cw_color_icon = 'outline-' . $color_icon;
+            } else {
+               $cw_color_icon = $color_icon;
+            }
          }
       }
-      return $color_icon;
+      return $cw_color_icon;
    }
 
    //Form

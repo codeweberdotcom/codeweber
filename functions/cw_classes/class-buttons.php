@@ -27,7 +27,7 @@ class CW_Button
    public $link_type;
    public $ghligthbox;
 
-   public $button_data; //???
+   public $button_data;
 
    public $final_button;
 
@@ -208,7 +208,6 @@ class CW_Button
       } else {
          $cw_link_button = NULL;
       }
-
       return $cw_link_button;
    }
 
@@ -330,7 +329,7 @@ class CW_Button
             $icon_button = NULL;
          }
 
-         $final_button = '<a ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
+         $final_button = '<span ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</span>';
       } else {
          $final_button = NULL;
       }

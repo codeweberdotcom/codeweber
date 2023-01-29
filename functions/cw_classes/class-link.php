@@ -75,13 +75,13 @@ class CW_Link
                }
                $this->link_glightbox = 'data-glightbox';
             } else {
-               $cw_link_url = 'href="#"';
+               $cw_link_url = 'href="#" role="button"';
             }
          }
       } elseif ($link_url !== NULL) {
          $cw_link_url = $link_url;
       } else {
-         $cw_link_url = 'href="#"';
+         $cw_link_url = NULL;
       }
       return $cw_link_url;
    }

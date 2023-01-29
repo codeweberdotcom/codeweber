@@ -143,6 +143,39 @@
                     "placeholder": ""
                 },
                 {
+                    "key": "field_63d666ad81b46",
+                    "label": "Icon style",
+                    "name": "cw_icon_style",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6393a9cca3528",
+                                "operator": "==",
+                                "value": "Number"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "solid": "solid",
+                        "outline": "outline"
+                    },
+                    "default_value": "solid",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
                     "key": "field_63a61558071be",
                     "label": "Image",
                     "name": "cw_image",
@@ -1540,5 +1573,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1673777263
+    "modified": 1674995437
 }
