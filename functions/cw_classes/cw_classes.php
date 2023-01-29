@@ -25,3 +25,4 @@ include 'class-lists.php';
 include 'class-column.php';
 include 'class-columns_two.php';
 include 'class-border.php';
+include 'class-video.php';
