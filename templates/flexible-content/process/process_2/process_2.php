@@ -15,15 +15,6 @@ $block = new CW_Settings(
 
       'divider' => 'true',
 
-      'shapes' => array(
-         '<div class="shape bg-dot primary rellax w-17 h-21" data-rellax-speed="1" style="top: -2rem; left: -1.9rem;"></div>',
-         '<div class="shape rounded bg-soft-primary rellax d-md-block" data-rellax-speed="0" style="bottom: -1.8rem; right: -1.5rem; width: 85%; height: 90%; "></div>'
-      ),
-
-      'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; left: -2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
-
-      'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
-
       'features' => '<div class="col-md-6 col-lg-3"><span class="icon btn btn-circle btn-lg btn-primary pe-none mb-4"><span class="number">02</span></span><h4 class="mb-1">Prepare</h4><p class="mb-0">Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.</p></div><!--/column -->',
 
       'features_pattern' => '<div class="col-md-6 col-lg-3 %1$s">%2$s<h4 class="mb-1">%3$s</h4><p class="mb-3">%4$s</p>%5$s</div><!--/column -->',
