@@ -10,7 +10,6 @@ if (get_sub_field('title')) {
    $title_text = 'Here are 3 working steps to organize our business projects.';
 }
 
-
 //Icon
 $final_icon = '<img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/list.svg" class="svg-inject icon-svg icon-svg-md mb-4" alt="" />';
 $icon = new CW_Icon(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $final_icon, 'mb-4');
@@ -30,10 +29,6 @@ $block = new CW_Settings(
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
       'background_class_default' => 'wrapper bg-light',
-      //'background_data_default' => '/dist/img/photos/bg16.png',
-      //'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      //'background_video_url' => '/dist/media/movie2.mp4',
-      //'background_pattern_url' => '/dist/img/pattern.png',
 
       'divider' => true,
 

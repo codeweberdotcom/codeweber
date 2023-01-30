@@ -14,15 +14,15 @@ class CW_Feature
    public $features_item_final;
    public $features_list_final;
 
-   public function __construct($features_icon, $features_title, $features_paragraph, $features_link, $features_pattern, $demo, $class_image, $style)
+   public function __construct($features_icon, $features_title, $features_paragraph, $features_link, $features_pattern, $demo, $style, $num)
    {
-      $this->features_icon = $this->cw_features_icon($features_icon, $class_image);
+      $this->features_icon = $this->cw_features_icon($features_icon, $style);
       $this->features_style = $this->cw_features_style($style);
       $this->features_title = $this->cw_features_title($features_title);
       $this->features_border_class = $this->cw_features_border_class();
       $this->features_paragraph = $this->cw_features_paragraph($features_paragraph);
       $this->features_link = $this->cw_features_link($features_link);
-      $this->features_item_final = $this->cw_features_item_final($features_pattern, $features_title, $demo, $style);
+      $this->features_item_final = $this->cw_features_item_final($features_pattern, $features_title, $demo, $style, $num);
    }
 
    //Features_style
@@ -59,13 +59,13 @@ class CW_Feature
    }
 
    //Features_icon
-   public function cw_features_icon($features_icon, $class_image)
+   public function cw_features_icon($features_icon, $style)
    {
       if (have_rows('cw_features_item')) {
          while (have_rows('cw_features_item')) {
             the_row();
-            if ($class_image !== NULL) {
-               $class_icon = $class_image;
+            if ($style !== NULL) {
+               $class_icon = $style;
             } else {
                $class_icon = NULL;
             }
@@ -126,7 +126,7 @@ class CW_Feature
    }
 
    //Features_item
-   public function cw_features_item_final($features_pattern, $features_title, $demo, $style)
+   public function cw_features_item_final($features_pattern, $features_title, $demo, $style, $num)
    {
       $link = $this->features_link;
       $title = $this->features_title;
@@ -137,8 +137,8 @@ class CW_Feature
       if (have_rows('cw_features_item')) {
          while (have_rows('cw_features_item')) {
             the_row();
-            //Add default class
 
+            //Add default class
             if (get_sub_field('cw_class')) {
                $card_class_array[] = ' ' . get_sub_field('cw_class');
             }
@@ -153,7 +153,7 @@ class CW_Feature
                $features_item = $demo;
             } else {
                $features_item_pattern = $features_pattern;
-               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link, $card_class, $style);
+               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link, $card_class, $style, $num);
             }
          }
       } else {
@@ -180,8 +180,10 @@ class CW_Features
    {
       if (have_rows('cw_features')) {
          $cw_features_list = '';
+         $num = '1';
          while (have_rows('cw_features')) {
             the_row();
+            $num_s = $num . '.';
             $features_item = new CW_Feature(
                NULL,
                NULL,
@@ -190,9 +192,10 @@ class CW_Features
                $features_pattern,
                $demo,
                $style,
-               NULL
+               $num_s
             );
             $cw_features_list .= $features_item->features_item_final;
+            $num++;
          }
       } else {
          $cw_features_list = NULL;

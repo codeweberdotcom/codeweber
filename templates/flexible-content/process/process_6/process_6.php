@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Process 3
+ * Process 6
  */
 $block = new CW_Settings(
    $cw_settings = array(
