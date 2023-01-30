@@ -71,14 +71,21 @@
                         [
                             {
                                 "field": "field_6393a9cca3528",
-                                "operator": "!=",
-                                "value": "None"
+                                "operator": "==",
+                                "value": "Unicons"
                             }
                         ],
                         [
                             {
                                 "field": "field_6393a9cca3528",
-                                "operator": "!=",
+                                "operator": "==",
+                                "value": "Number"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6393a9cca3528",
+                                "operator": "==",
                                 "value": "Image"
                             }
                         ]
@@ -112,15 +119,29 @@
                         [
                             {
                                 "field": "field_6393a9cca3528",
-                                "operator": "!=",
-                                "value": "None"
+                                "operator": "==",
+                                "value": "SVG"
                             }
                         ],
                         [
                             {
                                 "field": "field_6393a9cca3528",
-                                "operator": "!=",
+                                "operator": "==",
+                                "value": "Number"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6393a9cca3528",
+                                "operator": "==",
                                 "value": "Image"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6393a9cca3528",
+                                "operator": "==",
+                                "value": "Unicons"
                             }
                         ]
                     ],
@@ -1573,5 +1594,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674995437
+    "modified": 1675080466
 }

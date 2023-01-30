@@ -31,7 +31,7 @@ class CW_Icon
       $this->size_icon = $this->cw_size_icon($size_icon);
       $this->unicons_icon = $this->cw_unicons_icon($unicons_icon, $class_image);
       $this->image_icon = $this->cw_image_icon($image_icon, $class_image);
-      $this->lineal_icon = $this->cw_lineal_icon($lineal_icon, $class_image);
+      $this->lineal_icon = $this->cw_lineal_icon($lineal_icon, $class_image, $style_icon);
       $this->number_icon = $this->cw_number_icon($number_icon, $class_image);
       $this->final_icon = $this->cw_final_icon($final_icon, $class_image);
    }
@@ -202,7 +202,7 @@ class CW_Icon
 
 
    //Lineal
-   public function cw_lineal_icon($lineal_icon, $class_image)
+   public function cw_lineal_icon($lineal_icon, $class_image, $style_icon)
    {
       if (have_rows('cw_icons')) {
          while (have_rows('cw_icons')) {
@@ -213,6 +213,9 @@ class CW_Icon
                $classes_icon[] = 'text-' . $this->color_icon;
                $classes_icon[] = 'svg-inject icon-svg';
                $classes_icon[] = $this->class_icon;
+               if ($style_icon !== NULL) {
+                  $classes_icon[] = $style_icon;
+               }
                $classes = 'class="' . implode(' ', $classes_icon) . '"';
             }
             if (get_sub_field('cw_lineal_svg')) {

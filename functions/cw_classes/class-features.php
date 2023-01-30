@@ -44,8 +44,12 @@ class CW_Feature
          while (have_rows('cw_features_item')) {
             the_row();
             $features_border_object = new CW_Border(NULL, NULL, NULL);
-            $features_border_class =
-               $features_border_object->final_border_class;
+            //Add border class
+            if ($features_border_object->border_position !== 'card-border-none') {
+               $features_border_class = $features_border_object->final_border_class;
+            } else {
+               $features_border_class = NULL;
+            }
          }
       } else {
          $features_border_class = NULL;
@@ -128,16 +132,28 @@ class CW_Feature
       $title = $this->features_title;
       $paragraph = $this->features_paragraph;
       $icon = $this->features_icon;
-      $border_class = $this->features_border_class;
+      $card_class_array = array();
 
       if (have_rows('cw_features_item')) {
          while (have_rows('cw_features_item')) {
             the_row();
+            //Add default class
+
+            if (get_sub_field('cw_class')) {
+               $card_class_array[] = ' ' . get_sub_field('cw_class');
+            }
+
+            if ($this->features_border_class !== NULL) {
+               $card_class_array[] = $this->features_border_class;
+            }
+
+            $card_class = implode(' ', $card_class_array);
+
             if (!$title && !$paragraph && !$icon) {
                $features_item = $demo;
             } else {
                $features_item_pattern = $features_pattern;
-               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link, $border_class, $style);
+               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link, $card_class, $style);
             }
          }
       } else {

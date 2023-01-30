@@ -6,6 +6,7 @@ class CW_Title
 {
    public $title_color;
    public $title_text;
+   public $title_pattern;
    public $title_tag;
    public $title_display;
    public $title_lead;
@@ -19,6 +20,7 @@ class CW_Title
    {
       $this->title_color = $this->cw_title_color($title_color);
       $this->title_text = $this->cw_title_text($title_text);
+      $this->title_pattern = $this->cw_title_pattern($title_pattern);
       $this->title_tag = $this->cw_title_tag($title_tag);
       $this->title_display = $this->cw_title_display($title_display);
       $this->title_lead = $this->cw_title_lead($title_lead);
@@ -28,6 +30,19 @@ class CW_Title
       $this->title_class = $this->cw_title_class($title_class, $title_text);
       $this->title_final = $this->cw_title_final($title_pattern, $typewriter);
    }
+
+
+   //Title_color
+   public function cw_title_pattern($title_pattern)
+   {
+      if ($title_pattern !== NULL) {
+         $cw_title_pattern = $title_pattern;
+      } else {
+         $cw_title_pattern = NULL;
+      }
+      return $cw_title_pattern;
+   }
+
 
    //Title_color
    public function cw_title_color($title_color)
@@ -234,12 +249,12 @@ class CW_Title
 
 
 
-      if ($title_pattern !== NULL && !$tag) {
+      if ($this->title_pattern !== NULL && !$tag) {
          $title_text = $this->title_text;
          if ($typewriter !== NULL) {
             $title_text .= ' <br>' . $typewriter;
          }
-         $text = sprintf($title_pattern, $title_text, $class_p);
+         $text = sprintf($this->title_pattern, $title_text, $class_p);
       } else {
          $text = $this->title_text;
          if ($typewriter !== NULL) {
@@ -251,11 +266,12 @@ class CW_Title
 
       if ($tag) {
          $cw_title_final = '<' . $tag . ' ' . $class .  $id . '>' . $text . '</' . $tag . '>';
-      } elseif ($title_pattern !== NULL) {
+      } elseif ($this->title_pattern !== NULL) {
          $cw_title_final = $text;
       } else {
          $cw_title_final = $text;
       }
+
       return $cw_title_final;
    }
 }

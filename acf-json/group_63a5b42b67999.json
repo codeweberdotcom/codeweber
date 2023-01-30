@@ -18,6 +18,23 @@
             "layout": "block",
             "sub_fields": [
                 {
+                    "key": "field_63d7bb855175e",
+                    "label": "Main Settings",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
                     "key": "field_63a5b455f0143",
                     "label": "Icon",
                     "name": "cw_icon",
@@ -102,6 +119,44 @@
                     "prefix_name": 0
                 },
                 {
+                    "key": "field_63d7bba55175f",
+                    "label": "Class & ID",
+                    "name": "cw_class_id",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_63828db183777"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                },
+                {
+                    "key": "field_63d7bb535175d",
+                    "label": "More",
+                    "name": "",
+                    "type": "accordion",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "open": 0,
+                    "multi_expand": 0,
+                    "endpoint": 0
+                },
+                {
                     "key": "field_63cae05702997",
                     "label": "Border",
                     "name": "cw_border",
@@ -143,5 +198,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674982412
+    "modified": 1675082790
 }
