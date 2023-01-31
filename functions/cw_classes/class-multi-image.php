@@ -68,6 +68,13 @@ class CW_MultiImage
             $image_demo = NULL;
          }
 
+
+         //Get Image Size
+         // $size = getimagesize(get_template_directory_uri() . $image_link);
+         // echo $size[3];
+
+
+
          $image_object = new CW_Image($image_thumb_size, $image_big_size, NULL, $image_link, NULL, NULL, NULL, NULL, $image_demo, $image_pattern, NULL);
 
          $demo_image_array[] = $image_object->final_image;

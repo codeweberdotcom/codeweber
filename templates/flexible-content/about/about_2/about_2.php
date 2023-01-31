@@ -36,20 +36,24 @@ $block = new CW_Settings(
       'multi_image' => array(
          array(
             '/dist/img/photos/ab1.jpg',
-            'sandbox_about_4', 'project_1',
+            NULL,
+            'project_1',
             '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
             '<figure class="rounded"><img src="' . get_template_directory_uri() . '/dist/img/photos/ab1.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/ab1.jpg" alt=""></figure>'
          ),
 
          array(
             '/dist/img/photos/ab2.jpg',
-            'sandbox_about_4', 'project_1',
+            NULL,
+            'project_1',
             '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
             '<figure class="rounded"><img src="' . get_template_directory_uri() . '/dist/img/photos/ab2.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/ab2.jpg" alt=""></figure>'
          ),
 
          array(
-            '/dist/img/photos/ab3.jpg', 'sandbox_about_4', 'project_1',
+            '/dist/img/photos/ab3.jpg',
+            NULL,
+            'project_1',
             '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
             '<figure class="rounded"><img src="' . get_template_directory_uri() . '/dist/img/photos/ab3.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/ab3.jpg" alt=""></figure>'
          ),
@@ -126,5 +130,9 @@ $block = new CW_Settings(
       <!--/.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

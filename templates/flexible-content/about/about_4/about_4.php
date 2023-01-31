@@ -81,6 +81,9 @@ $block = new CW_Settings(
       <!--/.row -->
    </div>
    <!-- /.container -->
-
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

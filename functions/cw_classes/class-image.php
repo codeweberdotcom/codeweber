@@ -172,7 +172,7 @@ class CW_Image
       if ($image_thumb_size !== NULL) {
          $this->image_thumb_size = $image_thumb_size;
       } else {
-         $this->image_thumb_size = 'sandbox_hero_1';
+         $this->image_thumb_size = NULL;
       }
       if ($image_big_size !== NULL) {
          $this->image_big_size = $image_big_size;
@@ -190,11 +190,15 @@ class CW_Image
          while (have_rows('cw_image1')) {
             the_row();
             $cw_image = get_sub_field('cw_image');
-
             if ($cw_image) {
+               if ($image_thumb_size == NULL) {
+                  $this->image_url_small = esc_url($cw_image['url']);
+               } else {
+                  $this->image_url_small = esc_url($cw_image['sizes'][$this->image_thumb_size]);
+               }
 
                $this->image_url_big = esc_url($cw_image['sizes'][$this->image_big_size]);
-               $this->image_url_small = esc_url($cw_image['sizes'][$this->image_thumb_size]);
+
                $this->image_alt = esc_attr($cw_image['alt']);
                $this->image_link_type = get_sub_field('cw_link_type');
             } else {
