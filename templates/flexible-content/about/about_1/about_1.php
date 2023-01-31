@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Hero 12
+ * About 1
  */
 $block = new CW_Settings(
    $cw_settings = array(
