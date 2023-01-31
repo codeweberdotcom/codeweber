@@ -24,8 +24,8 @@
                     "sub_fields": [
                         {
                             "key": "field_63d50e143238f",
-                            "label": "sdfs",
-                            "name": "sdfsfsdf",
+                            "label": "Multi_image",
+                            "name": "multi_image",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -36,7 +36,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_63d6bd55028d3"
+                                "group_63d13a6ce6879"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -5022,5 +5022,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675018439
+    "modified": 1675111524
 }

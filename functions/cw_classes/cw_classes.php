@@ -26,3 +26,4 @@ include 'class-column.php';
 include 'class-columns_two.php';
 include 'class-border.php';
 include 'class-video.php';
+include 'class-multi-image.php';

@@ -38,6 +38,9 @@ class CW_Settings
 
    public $shapes;
 
+   public $image;
+   public $multi_images;
+
    public $features;
 
    public $list;
@@ -62,20 +65,31 @@ class CW_Settings
       $this->background_object = $this->cw_background_data($cw_settings);
       $this->images = $this->cw_images($cw_settings);
 
+      $this->multi_images = $this->cw_multi_images($cw_settings);
+
       $this->features = $this->cw_features($cw_settings);
+      $this->column_class_two = $this->cw_column_class($cw_settings);
       $this->list = $this->cw_list($cw_settings);
 
       $this->swiper_final = $this->cw_swiper_final($cw_settings);
-      $this->column_class_two = $this->cw_column_class($cw_settings);
+
       $this->divider_class = $this->cw_divider_class($cw_settings);
       $this->divider_wave = $this->cw_divider_wave($cw_settings);
       $this->section_class = $this->cw_section_class($cw_settings);
    }
 
 
-   // public function cw_labels($cw_settings)
-   // {
-   // }
+   //MultiImage class
+   public function cw_multi_images($cw_settings)
+   {
+      if (isset($cw_settings['multi_image']) && !$cw_settings['multi_image'] == NULL) {
+         $cw_multi_images_obj = new CW_MultiImage($cw_settings['multi_image']);
+         $cw_multi_images = $cw_multi_images_obj->final_images_array;
+      } else {
+         $cw_multi_images = NULL;
+      }
+      return $cw_multi_images;
+   }
 
 
    //Column class
@@ -110,7 +124,7 @@ class CW_Settings
    //List
    public function cw_list($cw_settings)
    {
-      if (isset($cw_settings['list']) && $cw_settings['list'] == NULL) {
+      if (isset($cw_settings['list']) && $cw_settings['list'] !== NULL) {
          $list_object = new CW_ListCol(NUll, NULL, NULL, NULL, NULL, NULL, NULL);
          $cw_list = $list_object->listcol_final;
          if ($cw_list == NULL) {

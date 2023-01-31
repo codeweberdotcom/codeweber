@@ -12,7 +12,7 @@ if (!function_exists('brk_image_settings')) {
 	function brk_image_settings()
 	{
 		add_image_size('brk_big', 1400, 800, true);
-		add_image_size('brk_square', 400, 400, true);
+
 		add_image_size('brk_single', 800, 500, true);
 		add_image_size('brk_post_sm', 140, 140, true);
 
@@ -35,15 +35,13 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('sandbox_hero_10', 1200, 581, true);
 		add_image_size('sandbox_hero_18', 800, 800, true);
 		add_image_size('sandbox_hero_26', 800, 1080, true);
-
 		add_image_size('sandbox_hero_9', 285, 546, true);
 
-		add_image_size('sandbox_about_4', 335, 335, true);
+		add_image_size('sandbox_about_4', 450, 450, true);
 
 		add_image_size('sandbox_faq_1', 800, 590, true);
 
 		add_image_size('sandbox_features_1', 595, 507, true);
-
 		add_image_size('sandbox_slider_1', 560, 350, true);
 		add_image_size('sandbox_slider_2', 460, 307, true);
 
