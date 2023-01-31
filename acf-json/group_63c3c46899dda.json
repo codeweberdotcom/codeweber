@@ -63,7 +63,7 @@
         },
         {
             "key": "field_63c3ec6a86d7c",
-            "label": "List column",
+            "label": "List items",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -80,7 +80,7 @@
         },
         {
             "key": "field_63c3ebb71ee65",
-            "label": "List column",
+            "label": "List columns",
             "name": "cw_list_column",
             "type": "repeater",
             "instructions": "",
@@ -95,7 +95,7 @@
             "min": 0,
             "max": 0,
             "layout": "block",
-            "button_label": "",
+            "button_label": "Add List Column",
             "sub_fields": [
                 {
                     "key": "field_63c3ed1cd3472",
@@ -236,7 +236,7 @@
                 },
                 {
                     "key": "field_63c3c4f26ad36",
-                    "label": "List",
+                    "label": "list items",
                     "name": "cw_list",
                     "type": "repeater",
                     "instructions": "",
@@ -251,11 +251,11 @@
                     "min": 0,
                     "max": 0,
                     "layout": "table",
-                    "button_label": "",
+                    "button_label": "Add Item List",
                     "sub_fields": [
                         {
                             "key": "field_63c3c5e46ad3a",
-                            "label": "Text",
+                            "label": "list item",
                             "name": "cw_text",
                             "type": "text",
                             "instructions": "",
@@ -295,5 +295,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1673811887
+    "modified": 1675165263
 }
