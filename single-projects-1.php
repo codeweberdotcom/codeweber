@@ -14,24 +14,38 @@ if (have_rows('main_information')) :
       }
       if (get_sub_field('link')) {
          $project_link = get_sub_field('link');
+      } else {
+         $project_link = NULL;
       }
       if (get_sub_field('cms')) {
          $project_cms = get_sub_field('cms');
+      } else {
+         $project_cms = NULL;
       }
       if (get_sub_field('short_description')) {
          $project_short_description = get_sub_field('short_description');
+      } else {
+         $project_short_description = NULL;
       }
       if (get_sub_field('title_description')) {
          $project_title_description = get_sub_field('title_description');
+      } else {
+         $project_title_description = NULL;
       }
       if (get_sub_field('description')) {
          $project_description = get_sub_field('description');
+      } else {
+         $project_description = NULL;
       }
       if (get_sub_field('title_description_2')) {
          $project_title_description_2 = get_sub_field('title_description_2');
+      } else {
+         $project_title_description_2 = NULL;
       }
       if (get_sub_field('description_2')) {
          $project_description_2 = get_sub_field('description_2');
+      } else {
+         $project_description_ = NULL;
       }
    endwhile;
 endif; ?>
@@ -135,7 +149,7 @@ endif; ?>
                            </li>
                         <?php }; ?>
                      </ul>
-                     <?php if ($project_link !== "") { ?>
+                     <?php if ($project_link !== NULL) { ?>
                         <a href="<?php echo $project_link; ?>" class="more hover"><?php echo __('Go to the website', 'codeweber'); ?></a>
                      <?php }; ?>
                   </div>
