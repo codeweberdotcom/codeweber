@@ -159,14 +159,18 @@ class CW_Button
       if (have_rows('cw_buttons')) {
          while (have_rows('cw_buttons')) {
             the_row();
-            if (get_sub_field('button_size') == 'Lg') {
-               $size_button = 'btn-lg';
-            } elseif (get_sub_field('button_size') == 'Sm') {
-               $size_button = 'btn-sm';
-            } elseif (get_sub_field('button_size') == 'Md') {
-               $size_button = '';
-            } elseif (get_sub_field('button_size') == 'Theme') {
-               $size_button = get_theme_mod('codeweber_button_size');
+            if (get_sub_field('cw_button_type') !== 'Link') {
+               if (get_sub_field('button_size') == 'Lg') {
+                  $size_button = 'btn-lg';
+               } elseif (get_sub_field('button_size') == 'Sm') {
+                  $size_button = 'btn-sm';
+               } elseif (get_sub_field('button_size') == 'Md') {
+                  $size_button = '';
+               } elseif (get_sub_field('button_size') == 'Theme') {
+                  $size_button = get_theme_mod('codeweber_button_size');
+               }
+            } else {
+               $size_button = NULL;
             }
          }
       } else {

@@ -23,9 +23,9 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_63d50e143238f",
-                            "label": "Multi_image",
-                            "name": "multi_image",
+                            "key": "field_63d977b5de85b",
+                            "label": "accordeon",
+                            "name": "accordeon",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -36,7 +36,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_63d13a6ce6879"
+                                "group_63d924d430323"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -5022,5 +5022,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675111524
+    "modified": 1675196420
 }

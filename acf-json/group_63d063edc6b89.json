@@ -192,7 +192,7 @@
                         "img-mask mask-2": "Mask 2",
                         "img-mask mask-3": "Mask 3"
                     },
-                    "default_value": "none",
+                    "default_value": "theme",
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -559,5 +559,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674643093
+    "modified": 1675173831
 }
