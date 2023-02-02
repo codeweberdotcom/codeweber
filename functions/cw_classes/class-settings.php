@@ -45,6 +45,8 @@ class CW_Settings
 
    public $list;
 
+   public $accordeon;
+
    public $section_class;
 
    public $column_class_1;
@@ -70,6 +72,7 @@ class CW_Settings
       $this->features = $this->cw_features($cw_settings);
       $this->column_class_two = $this->cw_column_class($cw_settings);
       $this->list = $this->cw_list($cw_settings);
+      $this->accordeon = $this->cw_accordeon($cw_settings);
 
       $this->swiper_final = $this->cw_swiper_final($cw_settings);
 
@@ -78,6 +81,17 @@ class CW_Settings
       $this->section_class = $this->cw_section_class($cw_settings);
    }
 
+   //Accordeon class
+   public function cw_accordeon($cw_settings)
+   {
+      if (isset($cw_settings['accordeon_demo']) && !$cw_settings['accordeon_demo'] == NULL) {
+         $accordeon_object = new CW_Accordeon(NULL, NULL, NULL, NULL, NULL, NULL, $this->cw_settings['accordeon_demo']);
+         $cw_accordeon = $accordeon_object->accordeon_final;
+      } else {
+         $cw_accordeon = NULL;
+      }
+      return $cw_accordeon;
+   }
 
    //MultiImage class
    public function cw_multi_images($cw_settings)

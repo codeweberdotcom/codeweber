@@ -1235,6 +1235,44 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_63db789121ac6",
+                            "label": "Accordeon",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63db76104e244",
+                            "label": "Accordeon",
+                            "name": "accordeon",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63d924d430323"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_63d918bec0536",
                             "label": "Background",
                             "name": "",
@@ -1266,44 +1304,6 @@
                             },
                             "clone": [
                                 "group_6398d19d56ee1"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_63d918bec0538",
-                            "label": "Accordion List",
-                            "name": "",
-                            "type": "accordion",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "open": 0,
-                            "multi_expand": 0,
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_63d918bec0539",
-                            "label": "Accordion Items",
-                            "name": "cw_accordion_items",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_63d924d430323"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -2763,5 +2763,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675268241
+    "modified": 1675327655
 }

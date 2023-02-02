@@ -3,7 +3,7 @@
 /**
  *  About 5
  */
-$accordeon = new CW_Accordeon(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
 
 $block = new CW_Settings(
    $cw_settings = array(
@@ -50,36 +50,60 @@ $block = new CW_Settings(
          'autoplay_time' => '5000',
          'loop' => 'false',
          'autoheight' => 'false',
-
-         'label_demo' => '<div class="card shadow-lg" style="bottom: 5rem; right: 5rem;">
-   <div class="card-body py-4 px-5">
-      <div class="d-flex flex-row align-items-center">
-         <div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div>
-         <div>
-            <h3 class="counter mb-0 text-nowrap">250+</h3>
-            <p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p>
-         </div>
-      </div>
-   </div><!--/.card-body -->
-</div><!--/.card -->',
-
-         'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s>
-   <div class="card-body py-4 px-5">
-      <div class="d-flex flex-row align-items-center">
-         <div>%2$s</div>
-         <div>
-            <h3 class="counter mb-0 text-nowrap">%3$s</h3>
-            <p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s
-         </div>
-      </div>
-   </div><!--/.card-body -->
-</div><!--/.card -->'
       ),
 
-      // 'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),
+      'label_demo' => '<div class="card shadow-lg" style="bottom: 5rem; right: 5rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+
+      'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
       'column_class_1' => 'order-lg-2',
       'column_class_2' => '',
+
+      'accordeon_demo' => '<div class="accordion accordion-wrapper" id="accordionExample">
+          <div class="card plain accordion-item">
+            <div class="card-header" id="headingOne">
+              <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Professional Design </button>
+            </div>
+            <!--/.card-header -->
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="card-body">
+                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+              </div>
+              <!--/.card-body -->
+            </div>
+            <!--/.accordion-collapse -->
+          </div>
+          <!--/.accordion-item -->
+          <div class="card plain accordion-item">
+            <div class="card-header" id="headingTwo">
+              <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> Top-Notch Support </button>
+            </div>
+            <!--/.card-header -->
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="card-body">
+                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+              </div>
+              <!--/.card-body -->
+            </div>
+            <!--/.accordion-collapse -->
+          </div>
+          <!--/.accordion-item -->
+          <div class="card plain accordion-item">
+            <div class="card-header" id="headingThree">
+              <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> Header and Slider Options </button>
+            </div>
+            <!--/.card-header -->
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="card-body">
+                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel.</p>
+              </div>
+              <!--/.card-body -->
+            </div>
+            <!--/.accordion-collapse -->
+          </div>
+          <!--/.accordion-item -->
+        </div>
+        <!--/.accordion -->',
    )
 );
 ?>
@@ -99,7 +123,7 @@ $block = new CW_Settings(
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $accordeon->accordeon_custom; ?>
+            <?php echo $block->accordeon; ?>
             <!--/.accordion -->
          </div>
          <!--/column -->
