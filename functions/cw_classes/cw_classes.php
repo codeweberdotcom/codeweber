@@ -28,3 +28,4 @@ include 'class-border.php';
 include 'class-video.php';
 include 'class-multi-image.php';
 include 'class-accordeon.php';
+include 'class-progress.php';

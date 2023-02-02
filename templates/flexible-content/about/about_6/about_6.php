@@ -58,9 +58,18 @@ $block = new CW_Settings(
 
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',
+
+      'progress' => '<ul class="progress-list mt-3"><li><p>Marketing</p><div class="progressbar line blue" data-value="100"></div></li><li><p>Strategy</p><div class="progressbar line yellow" data-value="80"></div></li><li><p>Development</p><div class="progressbar line orange" data-value="85"></div></li><li><p>Data Analysis</p><div class="progressbar line green" data-value="90"></div></li></ul><!-- /.progress-list -->',
+
+      'progress_item_wrappers' => array('<div class="col-6">', '<div>'),
    )
 );
 ?>
+
+
+
+
+
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
@@ -72,24 +81,7 @@ $block = new CW_Settings(
          <div class="col-lg-5 <?php echo $block->column_class_2; ?>">
             <?php echo $block->title; ?>
             <!--/title -->
-            <ul class="progress-list mt-3">
-               <li>
-                  <p>Marketing</p>
-                  <div class="progressbar line blue" data-value="100"></div>
-               </li>
-               <li>
-                  <p>Strategy</p>
-                  <div class="progressbar line yellow" data-value="80"></div>
-               </li>
-               <li>
-                  <p>Development</p>
-                  <div class="progressbar line orange" data-value="85"></div>
-               </li>
-               <li>
-                  <p>Data Analysis</p>
-                  <div class="progressbar line green" data-value="90"></div>
-               </li>
-            </ul>
+            <?php echo $block->progress; ?>
             <!-- /.progress-list -->
          </div>
          <!--/column -->

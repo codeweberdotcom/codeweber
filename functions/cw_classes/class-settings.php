@@ -47,6 +47,8 @@ class CW_Settings
 
    public $accordeon;
 
+   public $progress;
+
    public $section_class;
 
    public $column_class_1;
@@ -74,11 +76,30 @@ class CW_Settings
       $this->list = $this->cw_list($cw_settings);
       $this->accordeon = $this->cw_accordeon($cw_settings);
 
+      $this->progress = $this->cw_progress($cw_settings);
+
       $this->swiper_final = $this->cw_swiper_final($cw_settings);
 
       $this->divider_class = $this->cw_divider_class($cw_settings);
       $this->divider_wave = $this->cw_divider_wave($cw_settings);
       $this->section_class = $this->cw_section_class($cw_settings);
+   }
+
+   //Accordeon class
+   public function cw_progress($cw_settings)
+   {
+      if (isset($cw_settings['progress']) && !$cw_settings['progress'] == NULL) {
+         if (isset($cw_settings['progress_item_wrappers']) && !$cw_settings['progress_item_wrappers'] == NULL) {
+            $pattern_array = $cw_settings['progress_item_wrappers'];
+         } else {
+            $pattern_array = NULL;
+         }
+         $cw_progress_object = new CW_ProgressList(NULL, $this->cw_settings['progress'], $pattern_array);
+         $cw_progress = $cw_progress_object->progress_final;
+      } else {
+         $cw_progress = NULL;
+      }
+      return $cw_progress;
    }
 
    //Accordeon class
