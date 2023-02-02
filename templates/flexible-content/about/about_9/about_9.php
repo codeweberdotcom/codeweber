@@ -48,13 +48,12 @@ $block = new CW_Settings(
          'autoplay_time' => '1500',
          'loop' => 'false',
          'autoheight' => 'false',
+      ),
 
-
-         'label_demo' => '<div class="card shadow-lg position-absolute d-none d-md-block" style="top: 15%%; left: -7%%;"> <div class="card-body py-4 px-5">
+      'label_demo' => '<div class="card shadow-lg position-absolute d-none d-md-block" style="top: 15%%; left: -7%%;"> <div class="card-body py-4 px-5">
       <div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/solid/cloud-group.svg" class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-3" alt="" /></div><div><h3 class="fs-25 counter mb-0 text-nowrap">25000+</h3><p class="fs-16 lh-sm mb-0 text-nowrap">Happy Clients</p></div></div></div><!--/.card-body --></div><!--/.card -->',
 
-         'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
-      ),
+      'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
 
       // 'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),

@@ -61,7 +61,7 @@ $block = new CW_Settings(
 
       'progress' => '<ul class="progress-list mt-3"><li><p>Marketing</p><div class="progressbar line blue" data-value="100"></div></li><li><p>Strategy</p><div class="progressbar line yellow" data-value="80"></div></li><li><p>Development</p><div class="progressbar line orange" data-value="85"></div></li><li><p>Data Analysis</p><div class="progressbar line green" data-value="90"></div></li></ul><!-- /.progress-list -->',
 
-      'progress_item_wrappers' => array('<div class="col-6">', '<div>'),
+      'progress_item_wrappers' => array('<div class="row gy-6 text-center">', '</div>', '<div class="col-6">', '</div>'),
    )
 );
 ?>

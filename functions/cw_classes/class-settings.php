@@ -85,7 +85,7 @@ class CW_Settings
       $this->section_class = $this->cw_section_class($cw_settings);
    }
 
-   //Accordeon class
+   //Progress class
    public function cw_progress($cw_settings)
    {
       if (isset($cw_settings['progress']) && !$cw_settings['progress'] == NULL) {
@@ -114,7 +114,7 @@ class CW_Settings
       return $cw_accordeon;
    }
 
-   //MultiImage class
+   //Multi Image class
    public function cw_multi_images($cw_settings)
    {
       if (isset($cw_settings['multi_image']) && !$cw_settings['multi_image'] == NULL) {

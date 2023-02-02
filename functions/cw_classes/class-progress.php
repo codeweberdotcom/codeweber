@@ -135,29 +135,50 @@ class CW_ProgressList
             the_row();
             $type_progress = get_sub_field('cw_progress_type');
 
+            $progress_list = '';
+
+            if ($pattern_array !== NULL && $type_progress !== 'line') {
+               $progress_list .= $pattern_array[0];
+            }
+
+
             if (have_rows('cw_progress_list')) {
-               $progress_list = '';
+
                if ($type_progress == 'line') {
                   $progress_list .= '<ul class="progress-list">';
                }
-               if ($pattern_array !== NULL && $type_progress !== 'line') {
-                  $progress_list .= $pattern_array[0];
-               }
+
                while (have_rows('cw_progress_list')) {
                   the_row();
+
+
+
                   if ($type_progress == 'line') {
                      $progress_list .= '<li>';
                   }
+
+                  if ($pattern_array !== NULL && $type_progress !== 'line') {
+                     $progress_list .= $pattern_array[2];
+                  }
+
+
                   $progress_item_object = new CW_ProgressItem($type_progress, NULL, NULL, NULL, NULL, NULL, $pattern_array);
                   $progress_list .=  $progress_item_object->progress_final;
+
+                  if ($pattern_array !== NULL && $type_progress !== 'line') {
+                     $progress_list .= $pattern_array[3];
+                  }
 
                   if ($type_progress == 'line' && $type_progress !== 'line') {
                      $progress_list .= '</li>';
                   }
                }
-               if ($pattern_array !== NULL) {
+
+               if ($pattern_array !== NULL && $type_progress !== 'line') {
                   $progress_list .= $pattern_array[1];
                }
+
+
                if ($type_progress == 'line') {
                   $progress_list .= '</ul>';
                }
