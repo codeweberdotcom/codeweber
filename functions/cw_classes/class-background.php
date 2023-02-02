@@ -5,24 +5,16 @@
 class CW_Background
 {
    public $root_theme;
-
    public $size_background;
    public $color_background;
-
    public $class_background;
    public $data_background;
-
    public $overlay_background;
    public $url_pattern_background;
-
    public $video_background;
    public $bool_video_background;
-
    public $url_video_background;
    public $preview_video_background;
-
-
-
    public function __construct($cw_settings)
    {
       $this->root_theme = get_template_directory_uri();
@@ -153,7 +145,7 @@ class CW_Background
             the_row();
             if (get_sub_field('cw_background_type') == 'Image') {
                $cw_image_background = get_sub_field('cw_image_background');
-
+               $background_data = '';
                if ($cw_image_background) {
                   $background_data = 'data-image-src="'  . esc_url($cw_image_background['url']) . '"';
                } elseif (isset($cw_settings['background_data_default'])) {
@@ -179,10 +171,15 @@ class CW_Background
             } else {
                $background_data = NULL;
             }
+
+            if (get_sub_field('data')) {
+               $background_data .= ' ' . get_sub_field('data');
+            }
          }
       } else {
          $background_data = NULL;
       }
+
       return $background_data;
    }
 

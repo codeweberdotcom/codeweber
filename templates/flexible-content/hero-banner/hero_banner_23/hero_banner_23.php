@@ -28,20 +28,7 @@ $block = new CW_Settings(
          'swiper_first_slide' => 'true', // нету
          'swiper_container_class' => 'swiper-thumbs-container swiper-fullscreen nav-dark',
          'swiper_container_data' => '',
-
-         'swiper_container_content' => '<div class="swiper-static">
-      <div class="container h-100 d-flex align-items-center justify-content-center">
-        <div class="row">
-          <div class="col-lg-8 mx-auto mt-n10 text-center">
-            ' . $block1->subtitle . $block1->title . $block1->buttons . '
-          </div>
-          <!-- /column -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container -->
-    </div>
-    <!-- /.swiper-static -->',
+         'swiper_container_content' => '<div class="swiper-static"><div class="container h-100 d-flex align-items-center justify-content-center"><div class="row"><div class="col-lg-8 mx-auto mt-n10 text-center">' . $block1->subtitle . $block1->title . $block1->buttons . '</div><!-- /column --></div><!-- /.row --></div><!-- /.container --></div><!-- /.swiper-static -->',
          'image_class' => '',
          'data_thumbs' => 'true',
          'wrapper_image_class' => '',
@@ -73,12 +60,8 @@ $block = new CW_Settings(
          'autoheight' => 'false',
          'image_shape' => 'rounded'
       ),
-
    )
 );
-
-
-
 ?>
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>

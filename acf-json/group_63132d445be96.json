@@ -1418,27 +1418,6 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63d984d421d49",
-                            "label": "Subtitle",
-                            "name": "cw_subtitle",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_6384afba2c502"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_63d984d421d4a",
                             "label": "Заголовок",
                             "name": "cw_title",
@@ -1453,27 +1432,6 @@
                             },
                             "clone": [
                                 "field_6383ec1d68ff4"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_63d984d421d4b",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_6384b03e2c507"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1765,7 +1723,7 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_63d98bdab132e",
+                            "key": "field_63dc24abf6692",
                             "label": "Progresst List",
                             "name": "",
                             "type": "accordion",
@@ -1782,7 +1740,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63d98bdab132f",
+                            "key": "field_63dc24d9f6693",
                             "label": "Progress List Items",
                             "name": "cw_progress_list_items",
                             "type": "clone",
@@ -1795,7 +1753,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_63acc08203fb5"
+                                "group_63db938de39af"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -2763,5 +2721,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675346030
+    "modified": 1675371761
 }

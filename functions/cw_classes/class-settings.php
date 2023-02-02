@@ -501,7 +501,7 @@ class CW_Settings
    }
 
    //Background Data
-   public function cw_background_data($cw_settings = NULL)
+   public function cw_background_data($cw_settings)
    {
       if (isset($this->cw_settings['background_class_default']) && !$this->cw_settings['background_class_default'] == NULL) {
          $background_object = new CW_Background($cw_settings = $cw_settings);

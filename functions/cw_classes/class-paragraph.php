@@ -32,103 +32,109 @@ class CW_Parargraph
    //Paragraph_color
    public function cw_paragraph_color($paragraph_color)
    {
-      if (have_rows('cw_paragraph')) :
-         while (have_rows('cw_paragraph')) : the_row();
+      if (have_rows('cw_paragraph')) {
+         while (have_rows('cw_paragraph')) {
+            the_row();
             $paragraph_color_object = new CW_Color(NULL, NULL);
             if ($paragraph_color_object->color !== 'none') {
                $cw_paragraph_color = 'text-' . $paragraph_color_object->color;
             } else {
                $cw_paragraph_color = $paragraph_color;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $cw_paragraph_color = NULL;
-      endif;
+      }
       return $cw_paragraph_color;
    }
 
    //Paragraph_text
    public function cw_paragraph_text($paragraph_text)
    {
-      if (have_rows('cw_paragraph')) :
-         while (have_rows('cw_paragraph')) : the_row();
+      if (have_rows('cw_paragraph')) {
+         while (have_rows('cw_paragraph')) {
+            the_row();
             if (get_sub_field('cw_paragraph')) {
                $cw_paragraph_text = get_sub_field('cw_paragraph');
             } else {
                $cw_paragraph_text = $paragraph_text;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $cw_paragraph_text = NULL;
-      endif;
+      }
       return $cw_paragraph_text;
    }
 
    //Paragraph_tag
    public function cw_paragraph_tag($paragraph_tag)
    {
-      if (have_rows('cw_paragraph')) :
-         while (have_rows('cw_paragraph')) : the_row();
+      if (have_rows('cw_paragraph')) {
+         while (have_rows('cw_paragraph')) {
+            the_row();
             if (get_sub_field('cw_tag')) {
                $cw_paragraph_tag = get_sub_field('cw_tag');
             } else {
                $cw_paragraph_tag = $paragraph_tag;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $cw_paragraph_tag = NULL;
-      endif;
+      }
       return $cw_paragraph_tag;
    }
 
    //Paragraph_display
    public function cw_paragraph_display($paragraph_display)
    {
-      if (have_rows('cw_paragraph')) :
-         while (have_rows('cw_paragraph')) : the_row();
+      if (have_rows('cw_paragraph')) {
+         while (have_rows('cw_paragraph')) {
+            the_row();
             if (get_sub_field('cw_class_display')) {
                $cw_paragraph_display = get_sub_field('cw_class_display');
             } else {
                $cw_paragraph_display = $paragraph_display;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $cw_paragraph_display = NULL;
-      endif;
+      }
       return $cw_paragraph_display;
    }
 
    //Paragraph_lead
    public function cw_paragraph_lead($paragraph_lead)
    {
-      if (have_rows('cw_paragraph')) :
-         while (have_rows('cw_paragraph')) : the_row();
+      if (have_rows('cw_paragraph')) {
+         while (have_rows('cw_paragraph')) {
+            the_row();
             if (get_sub_field('class_lead')) {
                $cw_paragraph_lead = get_sub_field('class_lead');
             } else {
                $cw_paragraph_lead = $paragraph_lead;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $cw_paragraph_lead = NULL;
-      endif;
+      }
       return $cw_paragraph_lead;
    }
 
    //Paragraph_fs
    public function cw_paragraph_fs($paragraph_fs)
    {
-      if (have_rows('cw_paragraph')) :
-         while (have_rows('cw_paragraph')) : the_row();
+      if (have_rows('cw_paragraph')) {
+         while (have_rows('cw_paragraph')) {
+            the_row();
             if (get_sub_field('class_fs')) {
                $cw_paragraph_fs = get_sub_field('class_fs');
             } else {
                $cw_paragraph_fs = $paragraph_fs;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $cw_paragraph_fs = NULL;
-      endif;
+      }
       return $cw_paragraph_fs;
    }
 
@@ -136,51 +142,54 @@ class CW_Parargraph
    public function cw_paragraph_align($paragraph_align)
    {
 
-      if (have_rows('cw_paragraph')) :
-         while (have_rows('cw_paragraph')) : the_row();
+      if (have_rows('cw_paragraph')) {
+         while (have_rows('cw_paragraph')) {
+            the_row();
             if (get_sub_field('text_align')) {
                $cw_paragraph_align = get_sub_field('text_align');
             } else {
                $cw_paragraph_align = $paragraph_align;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $cw_paragraph_align = NULL;
-      endif;
+      }
       return $cw_paragraph_align;
    }
 
    //Paragraph_id
    public function cw_paragraph_id($paragraph_id)
    {
-      if (have_rows('cw_paragraph')) :
-         while (have_rows('cw_paragraph')) : the_row();
+      if (have_rows('cw_paragraph')) {
+         while (have_rows('cw_paragraph')) {
+            the_row();
             if (get_sub_field('cw_id')) {
                $cw_paragraph_id = get_sub_field('cw_id');
             } else {
                $cw_paragraph_id = $paragraph_id;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $cw_paragraph_id = NULL;
-      endif;
+      }
       return $cw_paragraph_id;
    }
 
    //Paragraph_id
    public function cw_paragraph_class($paragraph_class)
    {
-      if (have_rows('cw_paragraph')) :
-         while (have_rows('cw_paragraph')) : the_row();
+      if (have_rows('cw_paragraph')) {
+         while (have_rows('cw_paragraph')) {
+            the_row();
             if (get_sub_field('cw_class')) {
                $cw_paragraph_class = get_sub_field('cw_class');
             } else {
                $cw_paragraph_class = $paragraph_class;
             }
-         endwhile;
-      else :
+         }
+      } else {
          $cw_paragraph_class = NULL;
-      endif;
+      }
       return $cw_paragraph_class;
    }
 

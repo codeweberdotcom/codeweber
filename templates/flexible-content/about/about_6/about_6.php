@@ -8,12 +8,6 @@ $block = new CW_Settings(
       'title' => 'We bring rapid solutions to make the life of our customers easier.',
       'patternTitle' => ' <h2 class="display-4 mb-6 pe-xxl-6">%s</h2>',
 
-      // 'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-      // 'patternParagraph' => '<p class="mb-6">%s</p>',
-
-      // 'subtitle' => 'Why Choose Us?',
-      // 'patternSubtitle' => '<p class="fs-15 text-uppercase text-line text-primary mb-3">%s</p>',
-
       'background_class_default' => 'wrapper bg-light',
 
       'divider' => true,
