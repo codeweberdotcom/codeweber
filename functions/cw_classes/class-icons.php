@@ -6,7 +6,7 @@ class CW_Icon
 {
    public $type_icon;
    public $form_icon;
-   // public $class;
+   public $class;
    public $size_icon;
    public $unicons_icon;
    public $lineal_icon;
@@ -66,13 +66,13 @@ class CW_Icon
    // Class
    public function cw_class_icon($class_icon, $class_image)
    {
-      printr($class_image);
+
       if (have_rows('cw_icons')) {
          while (have_rows('cw_icons')) {
             the_row();
-            $class_icon = get_sub_field('cw_class');
-            if ($class_image !== NULL) {
-               $class_icon .= ' ' . $class_image;
+            $cw_class_icon = get_sub_field('cw_class');
+            if ($class_icon !== NULL) {
+               $cw_class_icon .= ' ' . $class_icon;
             }
          }
       }

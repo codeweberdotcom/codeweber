@@ -39,9 +39,6 @@ $block = new CW_Settings(
 
    )
 );
-
-
-
 ?>
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>

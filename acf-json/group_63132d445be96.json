@@ -2139,26 +2139,9 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_63da904e6d012",
-                            "label": "Progresst List",
-                            "name": "",
-                            "type": "accordion",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "open": 0,
-                            "multi_expand": 0,
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_63da90526d013",
-                            "label": "Progress List Items",
-                            "name": "cw_progress_list_items",
+                            "key": "field_63dc31cc33124",
+                            "label": "List",
+                            "name": "cw_list",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -2169,7 +2152,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_63acc08203fb5"
+                                "group_63c3c46899dda"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -2255,6 +2238,25 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63dc31a833123",
+                            "label": "L",
+                            "name": "l",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -2721,5 +2723,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675371761
+    "modified": 1675375077
 }
