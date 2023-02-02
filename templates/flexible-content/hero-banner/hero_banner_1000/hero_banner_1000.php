@@ -1,6 +1,6 @@
 <?php
 
-$accordeon = new CW_Accordeon(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+$accordeon = new CW_Accordeon(NULL, NULL, NULL, NULL, NULL, NULL,  NULL);
 ?>
 
 <section class="wrapper bg-gradient-primary">
@@ -8,7 +8,7 @@ $accordeon = new CW_Accordeon(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NU
       <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
 
          <?php
-         echo $accordeon->accordeon_custom;
+         echo $accordeon->accordeon_final;
          ?>
 
       </div>

@@ -11,12 +11,11 @@ class CW_Accordeon
    public $icon_default;
    public $icon_bool;
    public $responsive_class;
-   public $accordeon_custom;
-   public $accordeon_posts;
+
    public $accordeon_final;
 
 
-   public function __construct($type_accordeon, $style_accordeon, $roll_down_type, $icon_default, $icon_bool, $responsive_class, $accordeon_custom, $accordeon_posts, $accordeon_final)
+   public function __construct($type_accordeon, $style_accordeon, $roll_down_type, $icon_default, $icon_bool, $responsive_class,  $accordeon_final)
    {
       $this->root_theme = get_template_directory_uri();
       $this->responsive_class = $this->cw_responsive_class($responsive_class);
@@ -25,8 +24,7 @@ class CW_Accordeon
       $this->roll_down_type = $this->cw_roll_down_type($roll_down_type);
       $this->icon_default = $this->cw_icon_default($icon_default);
       $this->icon_bool = $this->cw_icon_bool($icon_bool);
-      $this->accordeon_custom = $this->cw_accordeon_custom($accordeon_custom);
-      $this->accordeon_posts = $this->cw_accordeon_posts($accordeon_posts);
+
       $this->accordeon_final = $this->cw_accordeon_final($accordeon_final);
    }
 
@@ -128,15 +126,15 @@ class CW_Accordeon
       return $cw_responsive_class;
    }
 
-   //accordeon_custom
-   public function cw_accordeon_custom($accordeon_custom)
+   //cw_accordeon_final
+   public function cw_accordeon_final($accordeon_final)
    {
       if (have_rows('accordeon')) {
          while (have_rows('accordeon')) {
             the_row();
             if ($this->type_accordeon == 'post') {
                if (have_rows('accordeon_posts')) {
-                  $cw_accordeon_custom = '';
+                  $cw_accordeon_final = '';
                   if ($this->responsive_class !== NULL) {
                      $column_class = $this->responsive_class;
                   } else {
@@ -150,23 +148,17 @@ class CW_Accordeon
                   while (have_rows('accordeon_posts')) {
                      the_row();
                      $row_column = get_row_index();
-
                      if ($this->roll_down_type == 'type 3') {
                         $type_3 = '-1';
                      } else {
                         $type_3 = NULL;
                      }
-
-
-
                      $accordeon_posts = get_sub_field('accordeon_posts');
                      if ($accordeon_posts) {
-
                         $custom_accordeon_final = '<div class="' . $column_class . '">';
                         $custom_accordeon_final .= '<div class="accordion accordion-wrapper" id="accordionSimple' . $row_column . $type_3 . '">';
                         $row_index = 1;
                         foreach ($accordeon_posts as $post_ids) {
-
                            if ($row_index == '1' && $this->roll_down_type !== 'type 2' && $this->roll_down_type !== 'type 3') {
                               $show = 'show';
                               $collapsed_icon_class = NULL;
@@ -174,15 +166,9 @@ class CW_Accordeon
                               $show = NULL;
                               $collapsed_icon_class = ' collapsed';
                            }
-
                            $custom_accordeon_final .= '<div class="card ' . $this->style_accordeon . ' accordion-item' . $icon_true . '">';
                            $custom_accordeon_final .= '<div class="card-header" id="heading' . $row_index . $row_column . '">';
-
-
-
                            $custom_accordeon_final .= '<button class="accordion-button' . $collapsed_icon_class . '" data-bs-toggle="collapse" data-bs-target="#collapse' . $row_index . $row_column . '" aria-expanded="true" aria-controls="collapse' . $row_index . $row_column . '"></span>';
-
-
                            if (get_field('icon', $post_ids) && $this->icon_bool == 1) {
                               $icon_unicons  = '<span>' . get_field('icon', $post_ids) . '</span>';
                               $custom_accordeon_final .= $icon_unicons;
@@ -193,28 +179,25 @@ class CW_Accordeon
                               $icon_unicons = '<span><i class="uil uil-check-circle"></i></span>';
                               $custom_accordeon_final .= $icon_unicons;
                            }
-
                            $custom_accordeon_final .= get_the_title($post_ids);
                            $custom_accordeon_final .= '</button>';
-
                            $custom_accordeon_final .= '</div><!--/.card-header -->';
-
                            $custom_accordeon_final .= '<div id="collapse' . $row_index . $row_column . '" class="accordion-collapse collapse ' . $show . '" aria-labelledby="heading' . $row_index . $row_column . '" data-bs-parent="#accordionSimple' . $row_column . '">';
-
                            $custom_accordeon_final .= '<div class="card-body">';
                            $custom_accordeon_final .= '<p>' . get_field('paragraph', $post_ids) . '</p>';
                            $custom_accordeon_final .= ' </div><!--/.card-body --></div><!--/.accordion-collapse --></div><!--/.accordion-item -->';
+                           $row_index++;
                         }
                         $custom_accordeon_final .= '</div>';
                         $custom_accordeon_final .= '</div>';
-                        $cw_accordeon_custom .= $custom_accordeon_final;
+                        $cw_accordeon_final .= $custom_accordeon_final;
                      }
                   }
                } else {
                };
             } elseif ($this->type_accordeon == 'custom') {
                if (have_rows('accordeon_custom')) {
-                  $cw_accordeon_custom = '';
+                  $cw_accordeon_final = '';
                   if ($this->responsive_class !== NULL) {
                      $column_class = $this->responsive_class;
                   } else {
@@ -235,7 +218,6 @@ class CW_Accordeon
                         } else {
                            $type_3 = NULL;
                         }
-
                         $custom_accordeon_final = '<div class="' . $column_class . '">';
                         $custom_accordeon_final .= '<div class="accordion accordion-wrapper" id="accordionSimple' . $row_column . $type_3 . '">';
                         while (have_rows('cw_accordeon_column')) {
@@ -248,7 +230,6 @@ class CW_Accordeon
                               $show = NULL;
                               $collapsed_icon_class = ' collapsed';
                            }
-
                            $custom_accordeon_final .= '<div class="card ' . $this->style_accordeon . ' accordion-item' . $icon_true . '">';
                            $custom_accordeon_final .= '<div class="card-header" id="heading' . get_row_index() . $row_column . '">';
 
@@ -261,48 +242,29 @@ class CW_Accordeon
                               $icon_unicons = '<span>' . $this->icon_default . '</span>';
                               $custom_accordeon_final .= $icon_unicons;
                            }
-
                            $custom_accordeon_final .= get_sub_field('cw_question');
                            $custom_accordeon_final .= '</button>';
-
                            $custom_accordeon_final .= '</div><!--/.card-header -->';
-
                            $custom_accordeon_final .= '<div id="collapse' . get_row_index() . $row_column . '" class="accordion-collapse collapse ' . $show . '" aria-labelledby="heading' . get_row_index() . $row_column . '" data-bs-parent="#accordionSimple' . $row_column . '">';
-
                            $custom_accordeon_final .= '<div class="card-body">';
                            $custom_accordeon_final .= '<p>' . get_sub_field('cw_answer') . '</p>';
                            $custom_accordeon_final .= ' </div><!--/.card-body --></div><!--/.accordion-collapse --></div><!--/.accordion-item -->';
                         }
                         $custom_accordeon_final .= '</div>';
                         $custom_accordeon_final .= '</div>';
-                        $cw_accordeon_custom .= $custom_accordeon_final;
+                        $cw_accordeon_final .= $custom_accordeon_final;
                      } else {
                         $custom_accordeon_final = NULL;
                      }
                   }
                } else {
-                  $cw_accordeon_custom = NULL;
+                  $cw_accordeon_final = NULL;
                }
             }
          }
       } else {
-         $cw_accordeon_custom = NULL;
+         $cw_accordeon_final = NULL;
       }
-
-      return $cw_accordeon_custom;
-   }
-
-   //accordeon_posts
-   public function cw_accordeon_posts($accordeon_posts)
-   {
-      $cw_accordeon_posts = NULL;
-      return $cw_accordeon_posts;
-   }
-
-   //accordeon_final
-   public function cw_accordeon_final($accordeon_final)
-   {
-      $cw_accordeon_final = NULL;
       return $cw_accordeon_final;
    }
 }
