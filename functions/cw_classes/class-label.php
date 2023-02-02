@@ -40,10 +40,10 @@ class CW_Labels
    // Final_labels
    public function cw_final_labels($final_labels, $label_demo, $label_pattern)
    {
-      $class_image = 'me-3';
+      $style = 'me-3';
       $style_object = new CW_Position(NULL, NULL, NULL, NULL, NULL);
       $style = $style_object->position_final;
-      $features_item = new CW_Feature(NULL, NULL, NULL, NULL, $this->label_pattern, $this->label_demo, $class_image, $style, NULL);
+      $features_item = new CW_Feature(NULL, NULL, NULL, NULL, $this->label_pattern, $this->label_demo,  $style, NULL);
       $cw_final_label =  $features_item->features_item_final;
       return $cw_final_label;
    }

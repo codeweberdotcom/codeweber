@@ -66,6 +66,7 @@ class CW_Icon
    // Class
    public function cw_class_icon($class_icon, $class_image)
    {
+      printr($class_image);
       if (have_rows('cw_icons')) {
          while (have_rows('cw_icons')) {
             the_row();

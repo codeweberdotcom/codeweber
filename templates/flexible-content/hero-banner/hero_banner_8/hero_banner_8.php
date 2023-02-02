@@ -36,6 +36,7 @@ $block = new CW_Settings(
     'image_big_size' => 'project_1',
 
     'label_demo' => '<div data-cue="slideInRight" data-delay="300"><div class="card shadow-lg position-absolute zindex-1" style="bottom: 10%; right: -3%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><div class="icon btn btn-circle btn-md btn-soft-primary pe-none mx-auto me-3"> <i class="uil uil-users-alt"></i> </div></div><div><h3 class="counter mb-0 text-nowrap">25000+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Happy Clients</p></div></div></div><!--/.card-body --></div><!--/.card --></div><!--/div -->',
+    
     'label_pattern' => '<div data-cue="slideInRight" data-delay="300"><div class="card shadow-lg position-absolute zindex-1 %6$s"  %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card --></div><!--/div -->',
 
 
