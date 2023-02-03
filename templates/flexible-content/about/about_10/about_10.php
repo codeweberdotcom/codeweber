@@ -51,8 +51,8 @@ $block = new CW_Settings(
       'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
 
-      'column_class_1' => 'order-lg-2',
-      'column_class_2' => '',
+      'column_class_1' => '',
+      'column_class_2' => 'order-lg-2',
 
       'features' => '<div class="col-md-4"><h3 class="counter">500K+</h3><p>Shots Taken</p></div> <!--/column -->',
       'features_pattern' => '<div class="col-md-6"><div class="d-flex flex-row %6$s"><div>%2$s</div><div><h4 class="mb-1">%3$s</h4><p class="mb-0">%4$s</p></div></div></div><!--/column -->',
@@ -62,15 +62,15 @@ $block = new CW_Settings(
 ?>
 
 
-<section class="wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container pt-12 pt-md-14 pb-14 pb-md-16">
       <div class="row gx-md-8 gx-xl-12 gy-6 align-items-center">
-         <div class="col-md-8 col-lg-6 mx-auto">
+         <div class="col-md-8 col-lg-6 mx-auto <?php echo $block->column_class_1; ?>">
             <?php echo $block->swiper_final; ?>
             <!--/swiper -->
          </div>
          <!--/column -->
-         <div class="col-lg-6">
+         <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
             <?php echo $block->title; ?>
             <!--/title -->
             <?php echo $block->paragraph; ?>
@@ -86,5 +86,9 @@ $block = new CW_Settings(
       <!-- /.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->
