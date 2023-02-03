@@ -211,7 +211,6 @@ function wp_login_form_brk($args = array())
             ) : ''
         ) .
         sprintf(
-
             '<p class="login-submit">
 				<input type="submit" name="wp-submit" id="%1$s" class="btn btn-primary rounded-pill btn-login w-100 mb-2" value="%2$s" />
 				<input type="hidden" name="redirect_to" value="%3$s" />
@@ -222,7 +221,6 @@ function wp_login_form_brk($args = array())
         ) .
         $login_form_bottom .
         '</form>';
-
     if ($args['echo']) {
         echo $form;
     } else {
@@ -234,7 +232,9 @@ function wp_login_form_brk($args = array())
 function codeweber_page_title()
 {
     if (!is_front_page() || !is_home()) :
-        if (is_post_type_archive('projects') && get_theme_mod('project_title')) :
+        if (is_product()) :
+            woocommerce_page_title();
+        elseif (is_post_type_archive('projects') && get_theme_mod('project_title')) :
             echo get_theme_mod('project_title');
         elseif (is_tag() || is_category() || is_archive() || is_author()) :
             the_archive_title();
@@ -343,6 +343,7 @@ function auto_generate_post_title($title)
     /** Проверка на Post Type Testimonials*/
     if (isset($post->ID) && $post_type == 'testimonials') {
         if (have_rows('testimonials')) :
+            $value = 'Test';
             while (have_rows('testimonials')) : the_row();
                 $name = get_sub_field('name');
                 $city = get_sub_field('town') . ' ' . $value;

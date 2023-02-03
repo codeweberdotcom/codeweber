@@ -36,7 +36,6 @@ add_filter('wp_check_filetype_and_ext', 'brk_svg_mimetype', 10, 4);
 
 
 // --- Excerpt lenght ---
-
 function brk_excerpt_length($length)
 {
 	return 40;
@@ -45,7 +44,6 @@ function brk_excerpt_length($length)
 
 
 // --- Thumbnail alt ---
-
 // Echoes the "alt" value of a post thumbnail as inserted in the media gallery
 
 function brk_thumbnail_alt()
@@ -56,20 +54,15 @@ function brk_thumbnail_alt()
 
 
 // --- Breadcrumbs ---
-
 function brk_breadcrumbs()
 {
-
 	if (function_exists('yoast_breadcrumb')) {
 
 		// http://yoa.st/breadcrumbs
-
 		yoast_breadcrumb('<nav class="breadcrumb d-flex justify-content-center mt-3">', '</nav>');
 	} elseif (function_exists('rank_math_the_breadcrumbs')) {
 
 		// https://s.rankmath.com/breadcrumbs
-
-
 		add_filter(
 			'rank_math/frontend/breadcrumb/args',
 			function ($args) {
@@ -88,7 +81,6 @@ function brk_breadcrumbs()
 		seopress_display_breadcrumbs();
 	}
 }
-
 
 
 add_filter('woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs');
@@ -123,7 +115,6 @@ add_filter(
 
 
 // --- Nav Walker attributes fix for Bootstrap 5 ---
-
 function brk_bs5_toggle_fix($atts)
 {
 
@@ -144,7 +135,6 @@ function brk_is_active_nav_item($item, $args)
 	if (!$item->current && !$item->current_item_ancestor) {
 		return false;
 	}
-
 	return true;
 }
 
@@ -153,7 +143,6 @@ function brk_add_active_class_to_anchor($atts, $item, $args)
 	if (false === brk_is_active_nav_item($item, $args)) {
 		return $atts;
 	}
-
 	if (isset($atts['class'])) {
 		$atts['class'] .= ' active';
 	} else {
@@ -169,7 +158,6 @@ function brk_remove_active_class_from_li($classes, $item, $args)
 	if (false === brk_is_active_nav_item($item, $args)) {
 		return $classes;
 	}
-
 	return array_diff($classes, array('active'));
 }
 add_filter('nav_menu_css_class', 'brk_remove_active_class_from_li', 10, 3);

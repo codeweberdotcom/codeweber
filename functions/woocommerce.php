@@ -870,6 +870,8 @@ function postheaderblockbefore()
       } else {
          $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
       }
+   } else {
+      $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
    };
 
    echo $category_primary_col;
@@ -1296,3 +1298,10 @@ add_filter('woocommerce_get_image_size_gallery_thumbnail', function ($size) {
 });
 
 add_filter("woocommerce_reset_variations_link", "__return_false");
+
+
+
+// Disable Bredcrumbs
+
+add_filter('woocommerce_get_breadcrumb', '__return_false');
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
