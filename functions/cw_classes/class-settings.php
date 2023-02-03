@@ -180,11 +180,11 @@ class CW_Settings
          $demo = $this->cw_settings['features'];
 
          if (isset($this->cw_settings['features_style_icon']) && !$this->cw_settings['features_style_icon'] == NULL) {
-            $style = $this->cw_settings['features_style_icon'];
+            $class_icon = $this->cw_settings['features_style_icon'];
          } else {
-            $style = NULL;
+            $class_icon = NULL;
          }
-         $features_object = new CW_Features($features_pattern, $demo, $style);
+         $features_object = new CW_Features($features_pattern, $demo, $class_icon);
          $cw_features = $features_object->features_list_final;
 
          if ($cw_features == NULL) {

@@ -43,8 +43,14 @@ class CW_Labels
       $class_icon = 'me-3';
       $style_object = new CW_Position(NULL, NULL, NULL, NULL, NULL);
       $style = $style_object->position_final;
+
+
+
       $features_item = new CW_Feature(NULL, NULL, NULL, NULL, $this->label_pattern, $this->label_demo,  $style, NULL, $class_icon);
       $cw_final_label =  $features_item->features_item_final;
+
+
+
       return $cw_final_label;
    }
 }

@@ -18,14 +18,12 @@ $block = new CW_Settings(
 
       'divider' => true,
 
-
       'column_class_1' => 'order-lg-2 offset-lg-1',
       'column_class_2' => '',
 
-      'features' => '<div class="item col-md-6"><div class="card shadow-lg"><div class="card-body"><div class="d-flex d-lg-block d-xl-flex flex-row"><div><div class="icon btn btn-circle btn-lg btn-soft-purple pe-none mx-auto me-4 mb-lg-3 mb-xl-0"> <i class="uil uil-presentation-check"></i> </div></div><div>
-<h3 class="counter mb-1">7518</h3><p class="mb-0">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card --></div><!--/column -->',
+      'features' => '<div class="item col-md-6"><div class="card shadow-lg"><div class="card-body"><div class="d-flex d-lg-block d-xl-flex flex-row"><div><div class="icon btn btn-circle btn-lg btn-soft-purple pe-none mx-auto me-4 mb-lg-3 mb-xl-0"> <i class="uil uil-presentation-check"></i> </div></div><div><h3 class="counter mb-1">7518</h3><p class="mb-0">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card --></div><!--/column -->',
 
-      'features_pattern' => '<div class="item col-md-6"><div class="card shadow-lg"><div class="card-body"><div class="d-flex flex-row %6$s"><div>%2$s</div><div><h4 class="mb-1">%3$s</h4><p class="mb-0">%4$s</p></div></div></div></div></div><!--/column -->',
+      'features_pattern' => '<div class="item col-md-6"><div class="card shadow-lg %6$s"><div class="card-body"><div class="d-flex flex-row "><div>%2$s</div><div><h4 class="mb-1">%3$s</h4><p class="mb-0">%4$s</p></div></div></div></div></div><!--/column -->',
 
       'features_style_icon' => 'me-4'
    )

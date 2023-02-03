@@ -69,7 +69,7 @@ class CW_Feature
             } else {
                $style_icon = NULL;
             }
-            $features_icon_object = new CW_Icon(NULL, NULL, $style_icon, NULL, NULL, NULL, NULL, NULL, NULL, $class_icon, NULL, NULL, NULL);
+            $features_icon_object = new CW_Icon(NULL, NULL, $class_icon, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
             $features_icon =  $features_icon_object->final_icon;
          }
       } else {
@@ -77,7 +77,6 @@ class CW_Feature
       }
       return $features_icon;
    }
-
 
 
    //Features_title
@@ -128,6 +127,7 @@ class CW_Feature
    //Features_item
    public function cw_features_item_final($features_pattern, $features_title, $demo, $style, $num, $class_icon)
    {
+
       $link = $this->features_link;
       $title = $this->features_title;
       $paragraph = $this->features_paragraph;
@@ -148,7 +148,6 @@ class CW_Feature
             }
 
             $card_class = implode(' ', $card_class_array);
-
             if (!$title && !$paragraph && !$icon) {
                $features_item = $demo;
             } else {
@@ -170,13 +169,13 @@ class CW_Feature
 class CW_Features
 {
    public $features_list_final;
-   public function __construct($features_pattern, $demo, $style)
+   public function __construct($features_pattern, $demo, $class_icon)
    {
-      $this->features_list_final = $this->cw_features_list_final($features_pattern, $demo, $style);
+      $this->features_list_final = $this->cw_features_list_final($features_pattern, $demo, $class_icon);
    }
 
    //Features_list
-   public function cw_features_list_final($features_pattern, $demo, $style)
+   public function cw_features_list_final($features_pattern, $demo, $class_icon)
    {
       if (have_rows('cw_features')) {
          $cw_features_list = '';
@@ -191,9 +190,9 @@ class CW_Features
                NULL,
                $features_pattern,
                $demo,
-               $style,
+               NULL,
                $num_s,
-               NULL
+               $class_icon
             );
             $cw_features_list .= $features_item->features_item_final;
             $num++;
