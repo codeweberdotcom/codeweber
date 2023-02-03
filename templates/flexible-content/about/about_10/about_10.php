@@ -50,56 +50,12 @@ $block = new CW_Settings(
       'label_demo' => '<div class="card shadow-lg" style="bottom: 5rem; right: 5rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
       'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
-      'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),
 
       'column_class_1' => 'order-lg-2',
       'column_class_2' => '',
 
       'features' => '<div class="col-md-4"><h3 class="counter">500K+</h3><p>Shots Taken</p></div> <!--/column -->',
       'features_pattern' => '<div class="col-md-6"><div class="d-flex flex-row %6$s"><div>%2$s</div><div><h4 class="mb-1">%3$s</h4><p class="mb-0">%4$s</p></div></div></div><!--/column -->',
-
-      'list' => 'true',
-      'list_demo' => '<div class="row gy-3 gx-xl-8"><div class="col-xl-6"><ul class="icon-list bullet-bg bullet-soft-primary mb-0"><li><span><i class="uil uil-check"></i></span><span>Aenean eu leo quam ornare curabitur blandit tempus.</span></li><li class="mt-3"><span><i class="uil uil-check"></i></span><span>Nullam quis risus eget urna mollis ornare donec elit.</span></li></ul></div><!--/column --><div class="col-xl-6"><ul class="icon-list bullet-bg bullet-soft-primary mb-0"><li><span><i class="uil uil-check"></i></span><span>Etiam porta sem malesuada magna mollis euismod.</span></li><li class="mt-3"><span><i class="uil uil-check"></i></span><span>Fermentum massa vivamus faucibus amet euismod.</span></li></ul></div><!--/column --></div><!--/.row -->',
-
-   )
-);
-
-$column1 = new CW_Settings(
-   $cw_settings = array(
-      'title' => 'My Skills',
-      'patternTitle' => '<h3>%s</h3>',
-
-      'paragraph' => 'Etiam porta sem malesuada magna mollis euismod. Praesent commodo cursus magna vel consectetur purus sit amet fermentum.',
-      'patternParagraph' => '<p>%s</p>',
-
-      'progress' => '<ul class="progress-list"><li><p>Photoshop</p><div class="progressbar line soft-primary" data-value="100"></div></li><li><p>Final Cut</p><div class="progressbar line soft-primary" data-value="80"></div></li><li><p>Motion Video</p><div class="progressbar line soft-primary" data-value="85"></div></li><li><p>Manupilation</p><div class="progressbar line soft-primary" data-value="75"></div></li></ul><!-- /.progress-list -->',
-      'progress_item_wrappers' => array('<div class="row gy-6 text-center">', '</div>', '<div class="col-6">', '</div>'),
-
-   )
-);
-
-$column2 = new CW_Settings(
-   $cw_settings = array(
-      'title' => 'Why Choose Me?',
-      'patternTitle' => '<h3>%s</h3>',
-
-      'paragraph' => 'Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Nullam id dolor id nibh ultricies. Cras mattis consectetur purus amet fermentum.',
-      'patternParagraph' => '<p>%s</p>',
-
-      'list' => 'true',
-      'list_demo' => '<ul class="icon-list bullet-bg bullet-soft-primary"><li><i class="uil uil-check"></i>Aenean eu leo quam pellentesque.</li><li><i class="uil uil-check"></i>Nullam quis risus eget urna mollis.</li><li><i class="uil uil-check"></i>Donec id elit non mi porta gravida.</li><li><i class="uil uil-check"></i>Fusce dapibus tellus ac commodo.</li><li><i class="uil uil-check"></i>Cras justo odio dapibus ac facilisis in.</li></ul>',
-
-   )
-);
-
-$column3 = new CW_Settings(
-   $cw_settings = array(
-      'title' => 'My Process',
-      'patternTitle' => '<h3>%s</h3>',
-
-      'features' => '<div class="d-flex flex-row mb-5"><div><span class="icon btn btn-circle btn-soft-primary disabled mt-1 me-5"><span class="number fs-18">1</span></span></div><div><h5 class="mb-1">Collect Ideas</h5><p class="mb-0">Nulla vitae elit libero pharetra augue dapibus. Praesent commodo cursus.</p></div></div>',
-      'features_pattern' => '<div class="d-flex flex-row mb-5 %1$s"><div>%2$s</div><div><h4 class="mb-1">%3$s</h4><p class="mb-0">%4$s</p></div></div>',
-      'features_style_icon' => 'me-5',
 
    )
 );
@@ -126,34 +82,6 @@ $column3 = new CW_Settings(
             <!--/.row -->
          </div>
          <!--/column -->
-      </div>
-      <!-- /.row -->
-      <div class="row gx-md-8 gx-xl-12 gy-6 mt-8">
-         <div class="col-lg-4">
-            <?php echo $column1->title; ?>
-            <!--/title -->
-            <?php echo $column1->paragraph; ?>
-            <!--/pargraph -->
-            <?php echo $column1->progress; ?>
-            <!-- /.progress-list -->
-         </div>
-         <!-- /column -->
-         <div class="col-lg-4">
-            <?php echo $column2->title; ?>
-            <!--/title -->
-            <?php echo $column2->paragraph; ?>
-            <!--/pargraph -->
-            <?php echo $column1->list; ?>
-            <!-- /list -->
-         </div>
-         <!-- /column -->
-         <div class="col-lg-4">
-            <?php echo $column3->title; ?>
-            <!--/title -->
-            <?php echo $column3->features; ?>
-            <!--/features -->
-         </div>
-         <!-- /column -->
       </div>
       <!-- /.row -->
    </div>
