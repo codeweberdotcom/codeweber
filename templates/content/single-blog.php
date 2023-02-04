@@ -35,7 +35,7 @@ global $post;
 										<?php // https://github.com/ellisonleao/sharer.js  
 										?>
 										<div class="dropdown share-dropdown btn-group">
-											<button class="btn btn-sm btn-red <?php echo ButtonStyleCustomizer(); ?> btn-icon btn-icon-start dropdown-toggle mb-0 me-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<button class="btn btn-sm btn-red <?php echo GetThemeButton(); ?> btn-icon btn-icon-start dropdown-toggle mb-0 me-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 												<i class="uil uil-share-alt"></i> Поделиться </button>
 											<div class="dropdown-menu">
 												<button class="dropdown-item" data-sharer="twitter" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-twitter"></i>Twitter</button>
@@ -83,7 +83,7 @@ global $post;
 										</div>
 									</div>
 									<div class="mt-3 mt-md-0 ms-auto">
-										<a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="btn btn-sm btn-soft-ash <?php echo ButtonStyleCustomizer(); ?> btn-icon btn-icon-start mb-0"><i class="uil uil-file-alt"></i> <?php esc_html_e('All Posts', 'codeweber'); ?></a>
+										<a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="btn btn-sm btn-soft-ash <?php echo GetThemeButton(); ?> btn-icon btn-icon-start mb-0"><i class="uil uil-file-alt"></i> <?php esc_html_e('All Posts', 'codeweber'); ?></a>
 									</div>
 								</div>
 								<p><?php the_author_meta('description'); ?></p>

@@ -20,7 +20,7 @@ function codeweber_is_comment_by_post_author($comment = null)
  */
 function codeweber_filter_comment_reply_link($link)
 {
-   $link = str_replace('class=\'', 'class=\'do-not-scroll btn btn-soft-ash btn-sm ' . ButtonStyleCustomizer() . ' btn-icon btn-icon-start mb-0 ', $link);
+   $link = str_replace('class=\'', 'class=\'do-not-scroll btn btn-soft-ash btn-sm ' . GetThemeButton() . ' btn-icon btn-icon-start mb-0 ', $link);
    return $link;
 }
 add_filter('comment_reply_link', 'codeweber_filter_comment_reply_link');

@@ -35,7 +35,7 @@ function printr($data)
  * Customizer Style Button 
  */
 
-function ButtonStyleCustomizer()
+function GetThemeButton()
 {
     if (get_theme_mod('codeweber_button_form')) :
         $button_form = get_theme_mod('codeweber_button_form');

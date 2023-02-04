@@ -32,7 +32,7 @@ defined('ABSPATH') || exit;
 if (wc_get_page_id('shop') > 0) : ?>
 
 	<p class="return-to-shop text-center">
-		<a class="button wc-backward btn btn-primary <?php echo ButtonStyleCustomizer(); ?>" href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>">
+		<a class="button wc-backward btn btn-primary <?php echo GetThemeButton(); ?>" href="<?php echo esc_url(apply_filters('woocommerce_return_to_shop_redirect', wc_get_page_permalink('shop'))); ?>">
 			<?php
 			/**
 			 * Filter "Return To Shop" text.

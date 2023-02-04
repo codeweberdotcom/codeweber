@@ -50,9 +50,9 @@
               <form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank" novalidate>
                 <div id="mc_embed_signup_scroll2">
                   <div class="mc-field-group input-group form-floating">
-                    <input type="email" value="" name="EMAIL" class="required email form-control <?php echo ButtonStyleCustomizer(); ?>" placeholder="Email Address" id="mce-EMAIL2">
+                    <input type="email" value="" name="EMAIL" class="required email form-control <?php echo GetThemeButton(); ?>" placeholder="Email Address" id="mce-EMAIL2">
                     <label for="mce-EMAIL2"><?php esc_html_e('Email Address', 'codeweber'); ?></label>
-                    <input type="submit" value="<?php esc_html_e('Join', 'codeweber'); ?>" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary <?php echo ButtonStyleCustomizer(); ?>">
+                    <input type="submit" value="<?php esc_html_e('Join', 'codeweber'); ?>" name="subscribe" id="mc-embedded-subscribe2" class="btn btn-primary <?php echo GetThemeButton(); ?>">
                   </div>
                   <div id="mce-responses2" class="clear">
                     <div class="response" id="mce-error-response2" style="display:none"></div>

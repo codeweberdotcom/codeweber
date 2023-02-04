@@ -23,6 +23,6 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="checkout-button button alt wc-forward btn btn-primary <?php echo ButtonStyleCustomizer(); ?> w-100 mt-4">
+<a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="checkout-button button alt wc-forward btn btn-primary <?php echo GetThemeButton(); ?> w-100 mt-4">
    <?php esc_html_e('Proceed to checkout', 'woocommerce'); ?>
 </a>

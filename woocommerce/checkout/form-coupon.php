@@ -34,14 +34,14 @@ if (!wc_coupons_enabled()) { // @codingStandardsIgnoreLine.
 	<div class="row mb-5">
 		<span class="col-md-6 col-lg-3">
 			<p class="form-row form-row-first form-floating mb-4">
-				<input type="text" name="coupon_code" class="input-text form-control <?php echo ButtonStyleCustomizer(); ?>" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" id="coupon_code" value="" />
+				<input type="text" name="coupon_code" class="input-text form-control <?php echo GetThemeButton(); ?>" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" id="coupon_code" value="" />
 				<label for="coupon_code"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label>
 			</p>
 		</span>
 
 		<span class="col-md-6 col-lg-3">
 			<p class="form-row form-row-last">
-				<button type="submit" class="button btn btn-primary <?php echo ButtonStyleCustomizer(); ?> w-100 flex-grow-1" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_html_e('Apply coupon', 'woocommerce'); ?></button>
+				<button type="submit" class="button btn btn-primary <?php echo GetThemeButton(); ?> w-100 flex-grow-1" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'woocommerce'); ?>"><?php esc_html_e('Apply coupon', 'woocommerce'); ?></button>
 			</p>
 		</span>
 	</div>
