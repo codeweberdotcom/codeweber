@@ -22,7 +22,7 @@ $block = new CW_Settings(
       'column_class_2' => 'order-lg-2',
 
       'features' => '<div class="col-md-4"><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-lg text-primary mb-3" alt="" /><h3 class="counter">7518</h3><p class="mb-0">Completed Projects</p></div><!--/column -->',
-      'features_pattern' => '<div class="col-md-4">%2$s<h3 class="counter">%3$s</h3><p class="mb-0">%4$s</p></div><!--/column -->',
+      'features_pattern' => '<div class="col-md-4 %1$s">%2$s<h3 class="counter">%3$s</h3><p class="mb-0">%4$s</p></div><!--/column -->',
       'features_style_icon' => 'mb-3'
    )
 );

@@ -1,109 +1,32 @@
 <?php
-/* Add settings */
-$settings = new Settings();
-// адрес корня темы , обязательная переменная для демо
-$settings->title = 'Join Our Community'; // демо заголовок
-$settings->paragraph = 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.'; // демо параграф
-$settings->subtitle = 'We have considered our business solutions to support you on every stage of your growth.'; // демо подзаголовок
-// $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/bg11.jpg'; // демо фото
-// $settings->backgroundurl = $settings->root_theme . '/dist/img/photos/bg37.jpg';
-// $settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4'; // демо видео
-// $settings->typewriter = 'customer satisfaction,business needs,creative ideas'; // демо данные эффекта печатной машинки
-$settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
-//$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
-$settings->textcolor = 'light'; // цвет текста темной темы
-$settings->section_id = esc_html($args['block_id']); // присваиваем секции уникальный id
-$settings->GetDataACF(); // получаем занчения полей ACF
 
+/**
+ * Facts 5
+ */
+$block = new CW_Settings(
+   $cw_settings = array(
 
-/* Facts */
-$facts = new Faq;
-$facts->col_faq = NULL;
-$facts->text_color = $settings->textcolor;
-$facts->icon_classes = 'icon btn btn-circle btn-lg disabled mx-auto me-4 mb-lg-3 mb-xl-0';
-$facts->icon_svg_classes = 'svg-inject icon-svg icon-svg-lg mx-auto me-4 mb-lg-3 mb-xl-0';
-$facts->pattern = '<div class="col-md-6 col-lg-4">
-							<div class="card">
-								<div class="card-body">
-									<div class="d-flex flex-row align-items-center">
-										<div>
-										%3$s
-										</div>
-										<div>
-											<h3 class="counter mb-1">%1$s</h3>
-											<p class="mb-0">%2$s</p>
-										</div>
-									</div>
-								</div>
-								<!--/.card-body -->
-							</div>
-							<!--/.card -->
-						</div>
-						<!--/column -->';
-$facts->default_template = '<div class="col-md-6 col-lg-4">
-                  <div class="card">
-                     <div class="card-body">
-                        <div class="d-flex flex-row align-items-center">
-                           <div>
-                              <div class="icon btn btn-circle btn-lg btn-soft-red disabled mx-auto me-4 mb-lg-3 mb-xl-0"> <i class="uil uil-users-alt"></i> </div>
-                           </div>
-                           <div>
-                              <h3 class="counter mb-1">3472</h3>
-                              <p class="mb-0">Happy Customers</p>
-                           </div>
-                        </div>
-                     </div>
-                     <!--/.card-body -->
-                  </div>
-                  <!--/.card -->
-               </div>
-               <!--/column -->
-               <div class="col-md-6 col-lg-4">
-                  <div class="card">
-                     <div class="card-body">
-                        <div class="d-flex flex-row align-items-center">
-                           <div>
-                              <div class="icon btn btn-circle btn-lg btn-soft-leaf disabled mx-auto me-4 mb-lg-3 mb-xl-0"> <i class="uil uil-user-check"></i> </div>
-                           </div>
-                           <div>
-                              <h3 class="counter mb-1">4537</h3>
-                              <p class="mb-0">Expert Employees</p>
-                           </div>
-                        </div>
-                     </div>
-                     <!--/.card-body -->
-                  </div>
-                  <!--/.card -->
-               </div>
-               <!--/column -->
-               <div class="col-md-6 col-lg-4">
-                  <div class="card">
-                     <div class="card-body">
-                        <div class="d-flex flex-row align-items-center">
-                           <div>
-                              <div class="icon btn btn-circle btn-lg btn-soft-primary disabled mx-auto me-4 mb-lg-3 mb-xl-0"> <i class="uil uil-trophy"></i> </div>
-                           </div>
-                           <div>
-                              <h3 class="counter mb-1">2654</h3>
-                              <p class="mb-0">Awards Won</p>
-                           </div>
-                        </div>
-                     </div>
-                     <!--/.card-body -->
-                  </div>
-                  <!--/.card -->
-               </div>
-               <!--/column -->';
+      'background_class_default' => 'wrapper bg-light',
 
+      'divider' => true,
 
+      'features' => '<div class="col-md-6 col-lg-4"><div class="card"><div class="card-body"><div class="d-flex flex-row align-items-center"><div><div class="icon btn btn-circle btn-lg btn-soft-red pe-none mx-auto me-4 mb-lg-3 mb-xl-0"> <i class="uil uil-users-alt"></i> </div>
+       </div><div><h3 class="counter mb-1">3472</h3><p class="mb-0">Happy Customers</p></div></div></div><!--/.card-body --></div><!--/.card --></div><!--/column -->',
+
+      'features_pattern' => '<div class="col-md-6 col-lg-4 %1$s"><div class="card"><div class="card-body"><div class="d-flex flex-row align-items-center %6$s"><div>%2$s</div><div><h3 class="counter mb-1">%3$s</h3><p class="mb-0">%4$s</p></div></div></div></div></div><!--/column -->',
+
+      'features_style_icon' => 'me-4'
+   )
+);
 ?>
 
-<section class="wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-xl-10 col-xxl-9 mx-auto">
             <div class="row align-items-center justify-content-center counter-wrapper gy-6">
-               <?php echo $facts->Facts_3(); ?>
+               <?php echo $block->features; ?>
+               <!--/features -->
             </div>
             <!--/.row -->
          </div>
@@ -112,5 +35,9 @@ $facts->default_template = '<div class="col-md-6 col-lg-4">
       <!-- /.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->
