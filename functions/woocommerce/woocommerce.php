@@ -2,6 +2,7 @@
 
 include 'woocommerce-clean.php';
 include 'woocommerce-single-product.php';
+include 'woocommerce-archive.php';
 include 'woocommerce-cart.php';
 include 'woocommerce-checkout.php';
 include 'woocommerce-offcanvas-cart.php';
@@ -167,17 +168,6 @@ function woocommerce_widget_shopping_cart_subtotal()
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /**
  * Change number of related products output
  */
@@ -198,30 +188,7 @@ add_action('codeweber_footer_start', 'woocommerce_output_related_products', 1);
 
 
 
-/**
- * Remove result_count
- * https://wordpress.org/support/topic/remove-woocommerce-result-count/
- */
-remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
-remove_action('woocommerce_after_shop_loop', 'woocommerce_result_count', 20);
 
-/**
- * Move result count
- */
-add_action('codeweber_result_count', 'woocommerce_result_count', 20);
-
-
-
-/**
- * Logout redirect homepage
- */
-add_action('wp_logout', 'codeweber_homepage_logout_redirect');
-
-function codeweber_homepage_logout_redirect()
-{
-   wp_redirect(home_url());
-   exit;
-}
 
 
 
@@ -263,10 +230,11 @@ function my_custom_img_function($attachment_id, $main_image = false, $size = NUL
    );
 
    if ($size == 'full') {
-      return '<div data-thumb="' . esc_url($thumbnail_src[0]) . '" data-thumb-alt="' . esc_attr($alt_text) . '" class="woocommerce-product-gallery__image swiper-slide"><figure class="rounded">' . $image . '<a class="item-link" href="' . esc_url($full_src[0]) . '" data-glightbox data-gallery="product-group"><i class="uil uil-focus-add"></i></a></figure></div>';
+
+      return '<div data-thumb="' . esc_url($thumbnail_src[1]) . '" data-thumb-alt="' . esc_attr($alt_text) . '" class="woocommerce-product-gallery__image swiper-slide"><figure class="' . get_theme_mod('codeweber_image') . '">' . $image . '<a class="item-link" href="' . esc_url($full_src[0]) . '" data-glightbox data-gallery="product-group"><i class="uil uil-focus-add"></i></a></figure></div>';
    } elseif ($size == 'thumbnail') {
       return '
-      <div class="swiper-slide"><img src="' . esc_url($thumbnail_src[0]) . '" class="rounded" alt="" /></div>';
+      <div class="swiper-slide"><img src="' . esc_url($thumbnail_src[0]) . '" class="' . get_theme_mod('codeweber_image') . '" alt="" /></div>';
    }
 }
 
@@ -297,7 +265,32 @@ add_filter("woocommerce_reset_variations_link", "__return_false");
 
 
 
-// Disable Bredcrumbs
+/**
+ * Disable Bredcrumbs
+ */
 
 add_filter('woocommerce_get_breadcrumb', '__return_false');
 remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
+
+
+/**
+ * Change wrapper Woocommerce
+ */
+
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+
+function cw_woocommerce_output_content_wrapper()
+{
+   echo '<section class="wrapper bg-light">
+      <div class="container py-14 py-md-16">';
+}
+add_action('woocommerce_before_main_content', 'cw_woocommerce_output_content_wrapper', 10);
+
+
+function cw_woocommerce_output_content_wrapper_end()
+{
+   echo '</div></div>';
+}
+add_action('woocommerce_after_main_content', 'cw_woocommerce_output_content_wrapper_end', 10);

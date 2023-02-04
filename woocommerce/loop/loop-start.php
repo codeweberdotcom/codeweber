@@ -20,5 +20,5 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 ?>
-<div class="grid grid-view projects-masonry shop mb-13">
-	<div class="products row gx-md-8 gy-10 gy-md-13 isotope">
+<div class="shop mb-13">
+	<div class="products row gx-md-8 gy-10 gy-md-13 ">

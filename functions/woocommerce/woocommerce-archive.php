@@ -39,22 +39,54 @@ function postheaderblockbefore()
    global $woocommerce, $product;
    $product_id = $product->get_id();
 
-   echo '<div class="post-header"><div class="d-flex flex-row align-items-center justify-content-between mb-2">';
+   echo '<div ee class="post-header"><div class="d-flex flex-row align-items-center justify-content-between mb-2">';
    if (class_exists('RankMath')) {
       $primary_tax =  (get_post_meta($product_id, 'rank_math_primary_product_cat', true));
       if (!empty($primary_tax)) {
          $category_primary = get_term_by('id', $primary_tax, 'product_cat');
          if (!empty($category_primary->name)) {
             $link_category = get_category_link($primary_tax);
-            $category_primary_col = '<div class="post-category text-ash mb-0"><a href="' . $link_category . '" rel="tag">' . $category_primary->name . '</a></div>';
+            $category_primary_col = '<div class="post-category text-ash mb-0">' . $category_primary->name . '</div>';
+            //$category_primary_col = '<div class="post-category text-ash mb-0"><a href="' . $link_category . '" rel="tag">' . $category_primary->name . '</a></div>';
          } else {
-            $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
+
+            $terms = get_the_terms($product_id, 'product_cat');
+            if ($terms) {
+               $names = array();
+               foreach ($terms as $term) {
+                  $names[] = $term->name;
+               }
+               $category_primary_col = '<div class="post-category text-ash mb-0">' . join(', ', $names) . '</div>' . PHP_EOL;;
+            }
+
+
+            // $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
          }
       } else {
-         $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
+
+         $terms = get_the_terms($product_id, 'product_cat');
+         if ($terms) {
+            $names = array();
+            foreach ($terms as $term) {
+               $names[] = $term->name;
+            }
+            $category_primary_col = '<div class="post-category text-ash mb-0">' . join(', ', $names) . '</div>' . PHP_EOL;;
+         }
+
+
+         // $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
       }
    } else {
-      $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
+      $terms = get_the_terms($product_id, 'product_cat');
+      if ($terms) {
+         $names = array();
+         foreach ($terms as $term) {
+            $names[] = $term->name;
+         }
+         $category_primary_col = '<div class="post-category text-ash mb-0">' . join(', ', $names) . '</div>' . PHP_EOL;;
+      }
+
+      // $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
    };
    echo $category_primary_col;
 
@@ -86,14 +118,12 @@ function postheaderblockafter()
 }
 
 
-
-
 /**
  * Insert the opening anchor tag for products in the loop.
  */
 function woocommerce_template_loop_product_link_open()
 {
-   echo '<figure class="rounded mb-6">';
+   echo '<figure class="' . get_theme_mod('codeweber_image') . ' mb-6">';
 }
 
 
@@ -103,4 +133,30 @@ function woocommerce_template_loop_product_link_open()
 function woocommerce_template_loop_product_link_close()
 {
    echo '</figure>';
+}
+
+
+/**
+ * Remove result_count
+ * https://wordpress.org/support/topic/remove-woocommerce-result-count/
+ */
+remove_action('woocommerce_before_shop_loop', 'woocommerce_result_count', 20);
+remove_action('woocommerce_after_shop_loop', 'woocommerce_result_count', 20);
+
+/**
+ * Move result count
+ */
+add_action('codeweber_result_count', 'woocommerce_result_count', 20);
+
+
+
+/**
+ * Logout redirect homepage
+ */
+add_action('wp_logout', 'codeweber_homepage_logout_redirect');
+
+function codeweber_homepage_logout_redirect()
+{
+   wp_redirect(home_url());
+   exit;
 }

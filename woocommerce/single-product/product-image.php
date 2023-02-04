@@ -36,11 +36,15 @@ $wrapper_classes   = apply_filters(
       'images',
    )
 );
+
+
+
+
 ?>
 
 <div class="col-lg-6">
-   <div class="swiper-container swiper-thumbs-container" data-margin="10" data-dots="false" data-nav="true" data-thumbs="true">
-      <div class="swiper <?php echo esc_attr(implode(' ', array_map('sanitize_html_class', $wrapper_classes))); ?>"  style="opacity: 0; transition: opacity .25s ease-in-out;">
+   <div class="swiper-container swiper-thumbs-container " data-margin="10" data-dots="false" data-nav="true" data-thumbs="true">
+      <div class="swiper <?php echo esc_attr(implode(' ', array_map('sanitize_html_class', $wrapper_classes))); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
          <div class="woocommerce-product-gallery__wrapper swiper-wrapper">
             <?php
             if ($post_thumbnail_id) {

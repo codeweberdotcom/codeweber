@@ -231,9 +231,16 @@ function wp_login_form_brk($args = array())
 // Page title Function
 function codeweber_page_title()
 {
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    if ($paged !== 1) {
+        $page_num = '<span class="text-ash"> (Страница ' . $paged . ')</span>';
+    } else {
+        $page_num = NULL;
+    }
+
     if (!is_front_page() || !is_home()) :
         if (is_shop()) :
-            echo woocommerce_page_title();
+            echo woocommerce_page_title() . $page_num;
         elseif (is_post_type_archive('projects') && get_theme_mod('project_title')) :
             echo get_theme_mod('project_title');
         elseif (is_tag() || is_category() || is_archive() || is_author()) :
@@ -290,9 +297,14 @@ function sandbox_recent_post()
             setup_postdata($post);
             $id = $post->ID;
             $title = $post->post_title;
+            if (get_theme_mod('codeweber_image')) {
+                $theme_form_image = get_theme_mod('codeweber_image');
+            } else {
+                $theme_form_image = NULL;
+            }
         ?>
             <li>
-                <figure class="rounded"><a href="<?php the_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
+                <figure class="<?php echo $theme_form_image; ?>"><a href="<?php the_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
                 <div class="post-content">
                     <h5 class="h6 mb-2"> <a class="link-dark" href="<?php the_permalink($id); ?>"><?php echo $title; ?></a> </h6>
                         <ul class="post-meta">
@@ -386,24 +398,3 @@ function codeweber_logo_light_link()
     endif;
     return $codeweber_logo_light;
 };
-
-
-
-remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-
-remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-
-
-function cw_woocommerce_output_content_wrapper()
-{
-    echo '<div>';
-}
-add_action('woocommerce_before_main_content', 'cw_woocommerce_output_content_wrapper', 10);
-
-
-function cw_woocommerce_output_content_wrapper_end()
-{
-    echo '</div>';
-}
-add_action('woocommerce_after_main_content', 'cw_woocommerce_output_content_wrapper_end', 10);

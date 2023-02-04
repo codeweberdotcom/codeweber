@@ -23,7 +23,7 @@ if (!defined('ABSPATH')) {
 ?>
 
 <div class="row align-items-center mb-10 position-relative zindex-1">
-	<div class="col-md-7 col-xl-8 pe-xl-20">
+	<div class="col-md-7 col-xl-8 pe-xl-10">
 		<?php if (get_theme_mod('codeweber_page_header') == 'type_1') : ?>
 			<h1 class="display-6 mb-1 h2"><?php codeweber_page_title(); ?></h1>
 		<?php endif; ?>
