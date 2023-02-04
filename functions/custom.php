@@ -232,8 +232,8 @@ function wp_login_form_brk($args = array())
 function codeweber_page_title()
 {
     if (!is_front_page() || !is_home()) :
-        if (is_product()) :
-            woocommerce_page_title();
+        if (is_shop()) :
+            echo woocommerce_page_title();
         elseif (is_post_type_archive('projects') && get_theme_mod('project_title')) :
             echo get_theme_mod('project_title');
         elseif (is_tag() || is_category() || is_archive() || is_author()) :
@@ -386,3 +386,24 @@ function codeweber_logo_light_link()
     endif;
     return $codeweber_logo_light;
 };
+
+
+
+remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+
+remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+
+
+function cw_woocommerce_output_content_wrapper()
+{
+    echo '<div>';
+}
+add_action('woocommerce_before_main_content', 'cw_woocommerce_output_content_wrapper', 10);
+
+
+function cw_woocommerce_output_content_wrapper_end()
+{
+    echo '</div>';
+}
+add_action('woocommerce_after_main_content', 'cw_woocommerce_output_content_wrapper_end', 10);

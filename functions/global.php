@@ -62,13 +62,21 @@ function brk_breadcrumbs()
 		yoast_breadcrumb('<nav class="breadcrumb d-flex justify-content-center mt-3">', '</nav>');
 	} elseif (function_exists('rank_math_the_breadcrumbs')) {
 
+
 		// https://s.rankmath.com/breadcrumbs
 		add_filter(
 			'rank_math/frontend/breadcrumb/args',
 			function ($args) {
+
+				if (get_theme_mod('codeweber_page_header') == 'type_3') {
+					$align_breadcrumb = 'justify-content-center';
+				} else {
+					$align_breadcrumb = NULL;
+				}
+
 				$args = array(
 					'delimiter'   => '',
-					'wrap_before' => '<nav class="d-inline-block text-" aria-label="breadcrumb"><ol class="breadcrumb mb-0">',
+					'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0 ' . $align_breadcrumb . '">',
 					'wrap_after'  => '</ol></nav>',
 					'before'      => '<li class="breadcrumb-item text-muted">',
 					'after'       => '</li>',

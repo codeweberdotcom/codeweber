@@ -53,7 +53,7 @@ require_once get_template_directory() . '/functions/customize.php'; // --- Custo
 
 
 // --- Woocommerce ---//
-require_once get_template_directory() . '/functions/woocommerce.php'; // --- Woocommerce Functions ---
+require_once get_template_directory() . '/functions/woocommerce/woocommerce.php'; // --- Woocommerce Functions ---
 
 
 // --- Widgets ---//

@@ -1,0 +1,161 @@
+<?php
+
+/**
+ * WooCommerce Product Wrapper Class filter.
+ *
+ * https://stackoverflow.com/a/64805994/20374350
+ * 
+ * @since 3.6.2
+ * @param array      $classes Array of CSS classes.
+ * @param WC_Product $product Product object.
+ */
+
+function filter_woocommerce_post_class($classes, $product)
+{
+   // is_product() - Returns true on a single product page
+   // NOT single product page, so return
+   if (!is_product()) return $classes;
+
+   // Add wrapper product class
+   $classes[] = 'row gx-md-8 gx-xl-12 gy-8';
+   return $classes;
+}
+
+add_filter('woocommerce_post_class', 'filter_woocommerce_post_class', 10, 2);
+
+
+/**
+ * Change Title
+ */
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+function woocommerce_add_custom_text_after_product_title()
+{ ?>
+   <div class="post-header mb-5">
+      <h2 class="post-title display-5"><?php the_title(); ?></h2>
+   </div>
+<?php }
+add_action('woocommerce_single_product_summary', 'woocommerce_add_custom_text_after_product_title', 5);
+
+
+/**
+ * Remove 'p' tag from Short Description
+ * https://wpcommerce.ru/threads/kak-otkljuchit-formatirovanie-v-kratkom-opisanii-tovara.2866/post-15736
+ */
+
+remove_filter('woocommerce_short_description', 'wpautop');
+
+
+/**
+ * WooCommerce
+ * Override the quantity input with a bootstrap dropdown
+ * https://misha.agency/woocommerce/pole-kolichestva-tovara-v-vide-vypadayushhego-spiska.html
+ */
+
+function woocommerce_quantity_input($args = array(), $product = null, $echo = true)
+{
+   if (is_null($product)) {
+      $product = $GLOBALS['product'];
+   }
+
+   // Default values
+   $defaults = array(
+      'input_name' => 'quantity',
+      'input_value' => '1',
+      'max_value' => apply_filters('woocommerce_quantity_input_max', -1, $product),
+      'min_value' => apply_filters('woocommerce_quantity_input_min', 0, $product),
+      'step' => 1,
+   );
+   $args = apply_filters('woocommerce_quantity_input_args', wp_parse_args($args, $defaults), $product);
+   $args['min_value'] = max($args['min_value'], 0);
+   $args['max_value'] = 0 < $args['max_value'] ? $args['max_value'] : 10;
+   if (
+      '' !== $args['max_value'] && $args['max_value'] < $args['min_value']
+   ) {
+      $args['max_value'] = $args['min_value'];
+   }
+   $options = '';
+
+   // Add loop
+   for ($count = $args['min_value']; $count <= $args['max_value']; $count = $count + $args['step']) {
+
+      // Cart item quantity defined?
+      if ('' !== $args['input_value'] && $args['input_value'] >= 1 && $count == $args['input_value']) {
+         $selected = 'selected';
+      } else {
+         $selected = '';
+      }
+      $options .= '<option value="' . $count . '"' . $selected . '>' . $count . '</option>';
+   }
+   $html = '<div><div class="quantity form-select-wrapper"><select class="form-select" name="' . $args['input_name'] . '">' . $options . '</select></div><!--/.form-select-wrapper --></div>';
+   if ($echo) {
+      echo $html;
+   } else {
+      return $html;
+   }
+}
+
+
+/**
+ * WooCommerce: Add class to Dropdown Variation Product
+ * https://www.stackfinder.ru/questions/58594970/woocommerce-add-class-to-variation-dropdown
+ */
+add_filter('woocommerce_dropdown_variation_attribute_options_args', static function ($args) {
+   $args['class'] = 'form-control';
+   return $args;
+}, 2);
+
+
+/**
+ * Sale on Cart Page
+ * https://wpgid.ru/woocommerce/kak-v-korzine-woocommerce-poluchit-podytog-bez-skidki-po-aktsiyam.html
+ */
+
+function codeweber_get_cart_subtotal_and_discount()
+{
+   global $woocommerce;
+   $discount_total = 0;
+   // Перебираем товары по акции и суммируем скидку
+   foreach ($woocommerce->cart->get_cart() as $cart_item_key => $values) {
+      $_product = $values['data'];
+      if ($_product->is_on_sale() && !empty($_product->get_sale_price()) && is_numeric($_product->get_sale_price())) {
+         $regular_price = $_product->get_regular_price();
+         $sale_price = $_product->get_sale_price();
+         $discount = ($regular_price - $sale_price) * $values['quantity'];
+         $discount_total += $discount;
+      }
+   }
+   // Записываем значения в переменные в зависимости от того есть скидки или их нету
+   if ($discount_total > 0 || $woocommerce->cart->discount_cart > 0) {
+      $discount = $discount_total + $woocommerce->cart->discount_cart;
+      $discount_sale = $discount_total;
+      $subtotal = $discount_total + $woocommerce->cart->get_subtotal();
+   } else {
+      $discount = '';
+      $discount_sale = '';
+      $subtotal =  $woocommerce->cart->get_subtotal();
+   }
+
+   // Собираем значения в массив
+   $array = [
+      'subtotal'      => $subtotal,
+      'discount_all'  => $discount,
+      'discount_sale' => $discount_sale,
+
+   ];
+
+   return $array;
+}
+
+
+/**
+ * Transport Sale flash Single Product
+ */
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10, 3);
+add_action('woocommerce_before_product_gallery', 'woocommerce_show_product_sale_flash', 10);
+
+
+/**
+ * Transport Sale flash Loop Product
+ */
+remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10, 3);
+add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 1);
