@@ -284,7 +284,7 @@ remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrap
 function cw_woocommerce_output_content_wrapper()
 {
    echo '<section class="wrapper bg-light">
-      <div class="container py-14 py-md-16">';
+      <div class="shop-wrapper container py-14 py-md-16">';
 }
 add_action('woocommerce_before_main_content', 'cw_woocommerce_output_content_wrapper', 10);
 
