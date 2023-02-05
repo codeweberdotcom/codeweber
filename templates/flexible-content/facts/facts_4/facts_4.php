@@ -1,46 +1,39 @@
 <?php
-/* Add settings */
-$settings = new Settings();
-// адрес корня темы , обязательная переменная для демо
-$settings->title = 'We are trusted by over 5000+ clients. Join them now and grow your business.'; // демо заголовок
-// $settings->paragraph = ''; // демо параграф
-$settings->subtitle = 'Join Our Community'; // демо подзаголовок
-// $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/bg11.jpg'; // демо фото
-// $settings->backgroundurl = $settings->root_theme . '/dist/img/photos/bg37.jpg';
-// $settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4'; // демо видео
-// $settings->typewriter = 'customer satisfaction,business needs,creative ideas'; // демо данные эффекта печатной машинки
-$settings->backgroundcolor = 'light'; // цвет бэкгрануда темной темы
-//$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
-$settings->textcolor = 'light'; // цвет текста темной темы
-$settings->section_id = esc_html($args['block_id']); // присваиваем секции уникальный id
-$settings->GetDataACF(); // получаем занчения полей ACF
 
+/**
+ * Facts 4
+ */
+$block = new CW_Settings(
+   $cw_settings = array(
+      'title' => 'We are trusted by over 5000+ clients. Join them now and grow your business.',
+      'patternTitle' => '<h2 class="display-4 mb-8 px-lg-12">%s</h2>',
 
-$counter = new Counter;
-$counter->textcolor = 'primary';
-$counter->counters_default = '<div class="col-md-4 text-center">
-                  <h3 class="counter counter-lg text-primary">7518</h3>
-                  <p>Completed Projects</p>
-               </div>
-               <!--/column -->
-               <div class="col-md-4 text-center">
-                  <h3 class="counter counter-lg text-primary">5472</h3>
-                  <p>Happy Customers</p>
-               </div>
-               <!--/column -->
-               <div class="col-md-4 text-center">
-                  <h3 class="counter counter-lg text-primary">2184</h3>
-                  <p>Expert Employees</p>
-               </div>
-               <!--/column -->';
+      // 'paragraph' => 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.',
+      // 'patternParagraph' => '<p class="mb-0">%s</p>',
+
+      'subtitle' => 'Join Our Community',
+      'patternSubtitle' => '<p class="fs-15 text-uppercase text-muted mb-3">%s</p>',
+
+      'background_class_default' => 'wrapper image-wrapper bg-auto no-overlay bg-image text-center bg-map',
+      'background_data_default' => '/dist/img/map.png',
+
+      'divider' => true,
+
+      'features' => '<div class="col-md-4 text-center"><h3 class="counter counter-lg text-primary">7518</h3><p>Completed Projects</p></div><!--/column -->',
+      'features_pattern' => '<div class="col-md-4 text-center %1$s"><h3 class="counter counter-lg text-primary">%3$s</h3><p>%4$s</p></div><!--/column -->',
+   )
+);
 ?>
 
-<section class="wrapper image-wrapper bg-auto no-overlay bg-image text-center bg-<?php echo $settings->backgroundcolor; ?>" data-image-src="<?php echo $settings->root_theme; ?>/dist/img/map.png">
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 pt-md-16 pb-md-18">
       <div class="row pt-md-12">
          <div class="col-lg-10 col-xl-9 col-xxl-8 mx-auto">
-            <h2 class="fs-15 text-uppercase text-muted mb-3"><?php echo $settings->subtitle; ?></h2>
-            <h3 class="display-4 mb-8 px-lg-12"><?php echo $settings->title; ?></h3>
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
+            <?php echo $block->title; ?>
+            <!--/title -->
          </div>
          <!-- /.row -->
       </div>
@@ -48,7 +41,8 @@ $counter->counters_default = '<div class="col-md-4 text-center">
       <div class="row pb-md-12">
          <div class="col-md-10 col-lg-9 col-xl-7 mx-auto">
             <div class="row align-items-center counter-wrapper gy-4 gy-md-0">
-               <?php echo $counter->Counters_1(); ?>
+               <?php echo $block->features; ?>
+               <!--/features -->
             </div>
             <!--/.row -->
          </div>
@@ -57,5 +51,9 @@ $counter->counters_default = '<div class="col-md-4 text-center">
       <!-- /.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->
