@@ -240,11 +240,104 @@ function codeweber_register_theme_customizer($wp_customize)
 
 
    $wp_customize->add_setting(
+      'codeweber_header_style',
+      array(
+         'default' => 'solid',
+      )
+   );
+
+
+   $wp_customize->add_control(
+      'codeweber_header_style',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Style Main Header', 'codeweber'),
+         'section' => 'codeweber_header_options',
+         'choices' => array(
+            'solid' => esc_html__('Solid', 'codeweber'),
+            'transparent' => esc_html__('Transparent', 'codeweber'),
+         ),
+      )
+   );
+
+   // Header Control
+   $wp_customize->add_setting(
+      'woocommerce_header',
+      array(
+         'default'   => 'default',
+      )
+   );
+
+   $wp_customize->add_control(
+      'woocommerce_header',
+      array(
+         'section'  => 'codeweber_header_options',
+         'label'    => __('Woocommerce Header', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'default' => 'Default',
+            'sandbox-02'   => 'Header 02',
+            'sandbox-03'   => 'Header 03',
+            'sandbox-04'   => 'Header 04',
+            'sandbox-05'   => 'Header 05',
+            'sandbox-06'   => 'Header 06',
+            'sandbox-07'   => 'Header 07',
+            'sandbox-08'   => 'Header 08',
+            'sandbox-09'   => 'Header 09',
+            'sandbox-10'   => 'Header 10',
+            'sandbox-11'   => 'Header 11',
+            'sandbox-12'   => 'Header 12',
+            'sandbox-13'   => 'Header 13',
+            'sandbox-14'   => 'Header 14',
+            'sandbox-15'   => 'Header 15',
+            'sandbox-16'   => 'Header 16',
+            'sandbox-17'   => 'Header 17',
+            'sandbox-18'   => 'Header 18',
+            'sandbox-19'   => 'Header 19',
+            'sandbox-20'   => 'Header 20',
+            'sandbox-21'   => 'Header 21',
+            'sandbox-22'   => 'Header 22',
+            'sandbox-23'   => 'Header 23',
+            'sandbox-24'   => 'Header 24',
+            'sandbox-25'   => 'Header 25',
+            'sandbox-26'   => 'Header 26',
+            'sandbox-27'   => 'Header 27',
+            'sandbox-09_cw' => 'Header CW',
+            'sandbox-woo-01' => 'Header Woo 1'
+         )
+      )
+   );
+
+
+   $wp_customize->add_setting(
+      'codeweber_header_woocomerce_style',
+      array(
+         'default' => 'solid',
+      )
+   );
+
+
+   $wp_customize->add_control(
+      'codeweber_header_woocomerce_style',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Style Woocommerce Header', 'codeweber'),
+         'section' => 'codeweber_header_options',
+         'choices' => array(
+            'solid' => esc_html__('Solid', 'codeweber'),
+            'transparent' => esc_html__('Transparent', 'codeweber'),
+         ),
+      )
+   );
+
+
+   $wp_customize->add_setting(
       'codeweber_page_header',
       array(
          'default' => 'type_1',
       )
    );
+
 
    $wp_customize->add_control(
       'codeweber_page_header',

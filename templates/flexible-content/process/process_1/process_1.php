@@ -11,31 +11,14 @@ $block = new CW_Settings(
       'paragraph' => 'So here are three working steps why our valued customers choose us.',
       'patternParagraph' => '<p class="lead fs-lg mb-6">%s</p>',
 
-      // 'subtitle' => 'Grow Your Business with Our Solutions.',
-      // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
-
-      // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
-      // 'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900"><span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span><span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Free Trial</a></span></div>',
-
       'background_class_default' => 'wrapper bg-light wrapper-border',
-      //'background_data_default' => '/dist/img/photos/bg16.png',
-      //'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      //'background_video_url' => '/dist/media/movie2.mp4',
-      //'background_pattern_url' => '/dist/img/pattern.png',
 
       'divider' => 'true',
-      //'divider_angles' => 'upper-start',
-      //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
 
       'shapes' => array(
          '<div class="shape bg-dot primary rellax w-17 h-21" data-rellax-speed="1" style="top: -2rem; left: -1.9rem;"></div>',
          '<div class="shape rounded bg-soft-primary rellax d-md-block" data-rellax-speed="0" style="bottom: -1.8rem; right: -1.5rem; width: 85%; height: 90%; "></div>'
       ),
-
-      // 'image_pattern' => '<figure class="rounded"><img src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
-      // 'image_link' => '/dist/img/photos/about7.jpg',
-      // 'image_thumb_size' => 'sandbox_hero_18',
-      // 'image_big_size' => 'project_1',
 
       'swiper' => array(
          'swiper_container_class' => 'rounded overflow-hidden',

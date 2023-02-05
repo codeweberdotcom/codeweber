@@ -35,7 +35,7 @@ function printr($data)
  * Customizer Style Button 
  */
 
-function ButtonStyleCustomizer()
+function GetThemeButton()
 {
     if (get_theme_mod('codeweber_button_form')) :
         $button_form = get_theme_mod('codeweber_button_form');
@@ -211,7 +211,6 @@ function wp_login_form_brk($args = array())
             ) : ''
         ) .
         sprintf(
-
             '<p class="login-submit">
 				<input type="submit" name="wp-submit" id="%1$s" class="btn btn-primary rounded-pill btn-login w-100 mb-2" value="%2$s" />
 				<input type="hidden" name="redirect_to" value="%3$s" />
@@ -222,7 +221,6 @@ function wp_login_form_brk($args = array())
         ) .
         $login_form_bottom .
         '</form>';
-
     if ($args['echo']) {
         echo $form;
     } else {
@@ -233,8 +231,17 @@ function wp_login_form_brk($args = array())
 // Page title Function
 function codeweber_page_title()
 {
+    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+    if ($paged !== 1) {
+        $page_num = '<span class="text-ash"> (Страница ' . $paged . ')</span>';
+    } else {
+        $page_num = NULL;
+    }
+
     if (!is_front_page() || !is_home()) :
-        if (is_post_type_archive('projects') && get_theme_mod('project_title')) :
+        if (is_shop()) :
+            echo woocommerce_page_title() . $page_num;
+        elseif (is_post_type_archive('projects') && get_theme_mod('project_title')) :
             echo get_theme_mod('project_title');
         elseif (is_tag() || is_category() || is_archive() || is_author()) :
             the_archive_title();
@@ -290,9 +297,14 @@ function sandbox_recent_post()
             setup_postdata($post);
             $id = $post->ID;
             $title = $post->post_title;
+            if (get_theme_mod('codeweber_image')) {
+                $theme_form_image = get_theme_mod('codeweber_image');
+            } else {
+                $theme_form_image = NULL;
+            }
         ?>
             <li>
-                <figure class="rounded"><a href="<?php the_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
+                <figure class="<?php echo $theme_form_image; ?>"><a href="<?php the_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
                 <div class="post-content">
                     <h5 class="h6 mb-2"> <a class="link-dark" href="<?php the_permalink($id); ?>"><?php echo $title; ?></a> </h6>
                         <ul class="post-meta">
@@ -343,6 +355,7 @@ function auto_generate_post_title($title)
     /** Проверка на Post Type Testimonials*/
     if (isset($post->ID) && $post_type == 'testimonials') {
         if (have_rows('testimonials')) :
+            $value = 'Test';
             while (have_rows('testimonials')) : the_row();
                 $name = get_sub_field('name');
                 $city = get_sub_field('town') . ' ' . $value;

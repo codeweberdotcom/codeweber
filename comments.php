@@ -145,7 +145,7 @@ if (comments_open() || pings_open()) {
 
 			'label_submit'       => __("Submit", "codeweber"),
 			'title_reply'        => __('Would you like to share your thoughts?', 'codeweber'),
-			'class_submit'       => 'btn btn-primary ' . ButtonStyleCustomizer() . ' mb-0',
+			'class_submit'       => 'btn btn-primary ' . GetThemeButton() . ' mb-0',
 			'class_form'         => 'comment-form needs-validation',
 			'title_reply_before' => '<h3 id="reply-title" class="mb-3 me-2">',
 			'title_reply_after'  => '</h3>',

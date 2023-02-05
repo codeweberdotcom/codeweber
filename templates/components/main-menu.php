@@ -2,7 +2,7 @@
 wp_nav_menu(
           array(
               'theme_location'    => 'header',
-              'depth'             => 2,
+              'depth'             => 3,
               'container'         => '',
               'container_class'   => '',
               'container_id'      => '',
@@ -11,5 +11,3 @@ wp_nav_menu(
               'walker'            => new WP_Bootstrap_Navwalker(),
           )
       );
-      
-?>

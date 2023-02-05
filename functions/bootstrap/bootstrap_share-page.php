@@ -7,7 +7,7 @@
 function codeweber_share_page()
 { ?>
    <div class="dropdown share-dropdown btn-group">
-      <button class="btn btn-red <?php echo ButtonStyleCustomizer(); ?> btn-icon btn-icon-start dropdown-toggle mb-0 me-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button class="btn btn-red <?php echo GetThemeButton(); ?> btn-icon btn-icon-start dropdown-toggle mb-0 me-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <i class="uil uil-share-alt"></i> Поделиться </button>
       <div class="dropdown-menu">
          <button class="dropdown-item" data-sharer="twitter" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-twitter"></i>Twitter</button>

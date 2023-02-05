@@ -24,6 +24,9 @@ if (!function_exists('codeweber')) {
 			)
 		);
 
+		// Enable Woocommerce
+		add_theme_support('woocommerce');
+
 		// Enable RSS feeds
 		add_theme_support('automatic-feed-links');
 

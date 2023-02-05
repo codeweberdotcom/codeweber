@@ -155,15 +155,15 @@ do_action('woocommerce_before_cart'); ?>
             <div class="col-md-8 col-lg-7">
                <?php if (wc_coupons_enabled()) { ?>
                   <div class="form-floating input-group">
-                     <input type="text" name="coupon_code" class="input-text form-control <?php echo ButtonStyleCustomizer(); ?>" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
+                     <input type="text" name="coupon_code" class="input-text form-control <?php echo GetThemeButton(); ?>" id="coupon_code" value="" placeholder="<?php esc_attr_e('Coupon code', 'woocommerce'); ?>" />
                      <label for="coupon_code"><?php esc_html_e('Coupon:', 'woocommerce'); ?></label>
-                     <button type="submit" class="button btn btn-primary <?php echo ButtonStyleCustomizer(); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'codeweber'); ?>"><?php esc_attr_e('Apply coupon', 'codeweber'); ?></button>
+                     <button type="submit" class="button btn btn-primary <?php echo GetThemeButton(); ?>" name="apply_coupon" value="<?php esc_attr_e('Apply coupon', 'codeweber'); ?>"><?php esc_attr_e('Apply coupon', 'codeweber'); ?></button>
                      <?php do_action('woocommerce_cart_coupon'); ?>
                   </div>
                <?php } ?>
             </div>
             <div class="col-md-4 col-lg-5 ms-auto ms-lg-0 text-md-end">
-               <button type="submit" class="button btn btn-primary <?php echo ButtonStyleCustomizer(); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
+               <button type="submit" class="button btn btn-primary <?php echo GetThemeButton(); ?>" name="update_cart" value="<?php esc_attr_e('Update cart', 'woocommerce'); ?>"><?php esc_html_e('Update cart', 'woocommerce'); ?></button>
             </div>
             <?php do_action('woocommerce_cart_actions'); ?>
             <?php wp_nonce_field('woocommerce-cart', 'woocommerce-cart-nonce'); ?>

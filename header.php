@@ -12,14 +12,14 @@
 </head>
 
 <body <?php body_class(); ?> data-bs-spy="scroll" data-bs-target="#sidebar-nav">
-	<?php do_action('codeweber_start_body'); ?>
-	<?php wp_body_open(); ?>
-	<?php sandbox_frame_open(); ?>
+	<?php do_action('codeweber_start_body');
+	wp_body_open();
+	sandbox_frame_open(); ?>
 	<div id="content-wrapper" class="content-wrapper">
-		<?php do_action('codeweber_start_content_wrapper'); ?>
-		<?php $params = ['style_nav' => 'solid']; ?>
-		<?php if (get_field('header') && get_field('header') !== 'default') { ?>
-			<?php get_template_part('templates/header/header', get_field('header'), $params); ?>
-		<?php } else { ?>
-			<?php get_template_part('templates/header/header', get_theme_mod('codeweber_header'), $params); ?>
-		<?php } ?>
+		<?php do_action('codeweber_start_content_wrapper');
+		$params = ['style_nav' => get_theme_mod('codeweber_header_style')];
+		if (get_field('header') && get_field('header') !== 'default') {
+			get_template_part('templates/header/header', get_field('header'), $params);
+		} else {
+			get_template_part('templates/header/header', get_theme_mod('codeweber_header'), $params);
+		}
