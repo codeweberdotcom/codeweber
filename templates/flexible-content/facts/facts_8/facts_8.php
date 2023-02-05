@@ -19,30 +19,7 @@ $block = new CW_Settings(
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',
 
-      'progress' => '<div class="col-md-6 col-lg-3">
-              <div class="progressbar semi-circle purple" data-value="75"></div>
-              <h4>New Visitors</h4>
-              <p class="mb-0">Maecenas faucibus mollis interdum. Aenean eu leo.</p>
-            </div>
-            <!-- /column -->
-            <div class="col-md-6 col-lg-3">
-              <div class="progressbar semi-circle leaf" data-value="80"></div>
-              <h4>Social Media</h4>
-              <p class="mb-0">Maecenas faucibus mollis interdum. Aenean eu leo.</p>
-            </div>
-            <!-- /column -->
-            <div class="col-md-6 col-lg-3">
-              <div class="progressbar semi-circle pink" data-value="60"></div>
-              <h4>Referrals</h4>
-              <p class="mb-0">Maecenas faucibus mollis interdum. Aenean eu leo.</p>
-            </div>
-            <!-- /column -->
-            <div class="col-md-6 col-lg-3">
-              <div class="progressbar semi-circle yellow" data-value="90"></div>
-              <h4>Search Engines</h4>
-              <p class="mb-0">Maecenas faucibus mollis interdum. Aenean eu leo.</p>
-            </div>
-            <!-- /column -->',
+      'progress' => '<div class="row gy-6 text-center"><div class="col-md-6 col-lg-3"><div class="progressbar semi-circle purple" data-value="75"></div><h4>New Visitors</h4><p class="mb-0">Maecenas faucibus mollis interdum. Aenean eu leo.</p></div><!-- /column --></div><!-- /.row -->',
 
       'progress_item_wrappers' => array('<div class="row gy-6 text-center">', '</div>', '<div class="col-md-6 col-lg-3">', '</div>'),
    )

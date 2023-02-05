@@ -19,16 +19,7 @@ $block = new CW_Settings(
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',
 
-      'progress' => '<div class="col-md-6">
-                  <div class="progressbar semi-circle fuchsia" data-value="95"></div>
-                  <h4 class="mb-0">Customer Satisfaction</h4>
-               </div>
-               <!-- /column -->
-               <div class="col-md-6">
-                  <div class="progressbar semi-circle orange" data-value="80"></div>
-                  <h4 class="mb-0">Increased Revenue</h4>
-               </div>
-               <!-- /column -->',
+      'progress' => '<div class="row gy-6 text-center"><div class="col-md-6"><div class="progressbar semi-circle fuchsia" data-value="95"></div><h4 class="mb-0">Customer Satisfaction</h4></div><!-- /column --></div><!-- /.row -->',
 
       'progress_item_wrappers' => array('<div class="row gy-6 text-center">', '</div>', '<div class="col-6">', '</div>'),
    )
