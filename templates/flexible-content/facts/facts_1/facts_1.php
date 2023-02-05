@@ -45,7 +45,7 @@ $block = new CW_Settings(
             <?php echo $block->title; ?>
             <!--/title -->
             <?php echo $block->subtitle; ?>
-            <!--/title -->
+            <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/pargraph -->
          </div>
