@@ -39,11 +39,11 @@
          <!-- /.navbar-collapse -->
          <div class="navbar-other ms-lg-4">
             <ul class="navbar-nav flex-row align-items-center ms-auto">
-               <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
-               <li class="nav-item">
+
+               <li class="nav-item d-none d-lg-block">
                   <ul class="navbar-nav flex-row align-items-center ms-auto">
                      <li class="nav-item dropdown language-select">
-                        <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="uil uil-user-circle"></i></a>
+                        <a class="nav-link dropdown-item dropdown-toggle dropdown-toggle-split" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="uil uil-user-circle"></i></a>
                         <ul class="dropdown-menu">
                            <?php if (is_user_logged_in()) { ?>
                               <li class="nav-item">
@@ -81,7 +81,8 @@
                   </ul>
                   <!-- /.navbar-nav -->
                </li>
-               <li class="nav-item">
+               <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
+               <li class="nav-item d-none d-lg-block">
                   <a href="#" class="nav-link position-relative d-flex flex-row align-items-center" id="header-cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart">
                      <i class="uil uil-shopping-cart"></i>
                      <span class="badge badge-cart bg-primary"><?php echo WC()->cart->get_cart_contents_count(); ?></span>

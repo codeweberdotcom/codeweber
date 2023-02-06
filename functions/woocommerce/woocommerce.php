@@ -6,6 +6,7 @@ include 'woocommerce-archive.php';
 include 'woocommerce-cart.php';
 include 'woocommerce-checkout.php';
 include 'woocommerce-offcanvas-cart.php';
+include 'woocommerce-mobile-bottom-menu.php';
 
 /**
  * Display item meta data.
@@ -262,7 +263,6 @@ add_filter('woocommerce_get_image_size_gallery_thumbnail', function ($size) {
 });
 
 add_filter("woocommerce_reset_variations_link", "__return_false");
-
 
 
 /**

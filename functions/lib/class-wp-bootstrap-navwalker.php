@@ -207,6 +207,12 @@ if (!class_exists('WP_Bootstrap_Navwalker')) {
 				}
 			}
 
+			if ($args->has_children) {
+				$atts['data-toggle'] = 'dropdown';
+
+				$atts['aria-expanded'] = 'false';
+			}
+
 			if ($args->has_children && $depth > 0) {
 				$atts['class'] = 'dropdown-item dropdown-toggle';
 			}

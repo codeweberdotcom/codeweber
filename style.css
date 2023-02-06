@@ -221,20 +221,62 @@ ol.breadcrumb {
   background: #ddd !important;
 }
 
-ul .dropdown-menu .menu-item:hover {
+/* ul .dropdown-menu .menu-item:hover {
   background: rgb(221, 221, 221);
 }
 
 .dropdown-item {
   padding: 0.5rem 1.5rem;
-}
-
-.dropend > .dropdown-menu {
-  margin-top: -66px;
-}
+} */
 
 @media (min-width: 992px) {
-  .navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-toggle:after {
+  /* .navbar-expand-lg .navbar-nav .dropdown-menu .dropdown-toggle:after {
     top: 0.42rem;
+  } */
+
+  .navbar-expand-lg .dropend > .dropdown-menu {
+    margin-top: -53px;
   }
+
+  .vertival-menu ul.dropdown-menu {
+    margin-left: 100%;
+    margin-top: -54px !important;
+  }
+  #menu-woocommerce .nav-link {
+    padding-left: 0;
+    line-height: 2;
+  }
+}
+
+li.wpc-filter-chip a {
+  font-size: 0.6rem !important;
+  padding: 0.35rem 0.55rem !important;
+  border-radius: 50rem !important;
+  --bs-bg-opacity: 1;
+  background-color: rgba(
+    var(--bs-primary-rgb),
+    var(--bs-bg-opacity)
+  ) !important;
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+
+.widget-area .widget .wpc-filter-chips-list .wpc-chip-reset-all a,
+body .wpc-filter-chips-list li.wpc-chip-reset-all a {
+  background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
+  color: #fff !important;
+}
+
+.wpc-posts-found {
+  display: none;
+}
+
+.wpc-custom-selected-terms {
+  margin-top: 40px;
 }

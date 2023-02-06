@@ -112,6 +112,35 @@
                     "sub_fields": [],
                     "min": "",
                     "max": ""
+                },
+                "layout_63dfc34e43e92": {
+                    "key": "layout_63dfc34e43e92",
+                    "name": "widget_7",
+                    "label": "Menu",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_63e012c86858b",
+                            "label": "Title",
+                            "name": "title_widget",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Добавить",
@@ -137,5 +166,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661192699
+    "modified": 1675629281
 }
