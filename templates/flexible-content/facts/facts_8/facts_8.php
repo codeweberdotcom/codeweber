@@ -9,7 +9,7 @@ $block = new CW_Settings(
       'patternTitle' => '<h2 class="display-4 mb-10 px-lg-20 px-xl-20">%s</h2>',
 
       'subtitle' => 'Company Facts',
-      'patternSubtitle' => '<p class="fs-16 text-uppercase text-muted mb-3">%s</p>',
+      'patternSubtitle' => '<div class="fs-16 text-uppercase text-muted mb-3">%s</div>',
 
       'background_class_default' => 'wrapper bg-soft-primary',
 

@@ -12,7 +12,7 @@ $block = new CW_Settings(
       'patternParagraph' => ' <p class="mb-6">%s</p>',
 
       'subtitle' => 'Our Solutions',
-      'patternSubtitle' => '<p class="fs-16 text-uppercase text-primary mb-3">%s</p>',
+      'patternSubtitle' => '<div class="fs-16 text-uppercase text-primary mb-3">%s</div>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -24,7 +24,7 @@ $block = new CW_Settings(
          'data_thumbs' => NULL,
          'wrapper_image_class' => '',
          'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
-         'image_thumb_size' => 'sandbox_hero_11',
+         'image_thumb_size' => 'sandbox_hero_26',
          'image_demo' => '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/illustrations/3d5.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/3d5@2x.png 2x" alt="" /></figure>',
          'image_big_size' => 'project_1',
          'img_link' => '/dist/img/illustrations/3d5.png',
@@ -59,14 +59,9 @@ $block = new CW_Settings(
       'column_class_1' => 'order-lg-2',
       'column_class_2' => '',
 
-      'features' => '<div class="col-md-6">
-                  <h3 class="counter counter-lg mb-1">99.7%</h3>
-                  <h6 class="fs-17 mb-1">Customer Satisfaction</h6>
-                  <span class="ratings five"></span>
-               </div>
-               <!--/column -->',
+      'features' => '<div class="col-md-6"><h3 class="counter counter-lg mb-1">99.7%</h3><h6 class="fs-17 mb-1">Customer Satisfaction</h6><span class="ratings five"></span></div><!--/column -->',
 
-      'features_pattern' => '<div class="col-md-6"><div class="d-flex flex-row %6$s"><div>%2$s</div><div><h3 class="counter counter-lg mb-1">%3$s</h3><h6 class="fs-17 mb-1">%4$s</h6><span class="ratings five"></span></div></div></div><!--/column -->',
+      'features_pattern' => '<div class="col-md-6"><div class="d-flex flex-row %6$s"><div>%2$s</div><div><div class="h3 counter counter-lg mb-1">%3$s</div><div class="h6 fs-17 mb-1">%4$s</div><span class="ratings five"></span></div></div></div><!--/column -->',
 
       'features_style_icon' => 'me-4'
    )

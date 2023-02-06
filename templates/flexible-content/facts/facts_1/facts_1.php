@@ -12,7 +12,7 @@ $block = new CW_Settings(
       'patternParagraph' => '<p class="mb-0">%s</p>',
 
       'subtitle' => 'We have considered our business solutions to support you on every stage of your growth.',
-      'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+      'patternSubtitle' => '<div class="lead fs-lg">%s</div>',
 
       'background_class_default' => 'wrapper bg-light',
 
