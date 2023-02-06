@@ -2,7 +2,7 @@
 function add_mobile_bottom_menu()
 {
 ?>
-   <nav class="bg-light fixed-bottom d-lg-none rounded animate__animated animate__slideInDown animate__delay-1s zindex-20">
+   <nav class="bg-light fixed-bottom d-lg-none rounded  zindex-20">
       <div class="row text-center">
          <div class="col">
             <a class="nav-link pb-0" href="/"><i class="uil uil-home fs-20 text-ash"></i></a>
