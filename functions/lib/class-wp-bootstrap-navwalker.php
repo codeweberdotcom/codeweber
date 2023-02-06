@@ -140,7 +140,10 @@ if (!class_exists('WP_Bootstrap_Navwalker')) {
 				$classes[] = 'dropdown';
 			} elseif (isset($args->has_children) && $args->has_children && 1 === $depth) {
 				$classes[] = 'dropdown dropend';
+			} elseif (isset($args->has_children) && $args->has_children && 2 === $depth) {
+				$classes[] = 'dropdown dropend';
 			}
+
 
 			if (in_array('current-menu-item', $classes, true) || in_array('current-menu-parent', $classes, true)) {
 				$classes[] = 'active';
@@ -202,6 +205,10 @@ if (!class_exists('WP_Bootstrap_Navwalker')) {
 				} else {
 					$atts['class'] = 'nav-link';
 				}
+			}
+
+			if ($args->has_children && $depth > 0) {
+				$atts['class'] = 'dropdown-item dropdown-toggle';
 			}
 
 			$atts['aria-current'] = $item->current ? 'page' : '';
