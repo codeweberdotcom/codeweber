@@ -12,7 +12,7 @@ $block = new CW_Settings(
       // 'patternParagraph' => '<p class="mb-0">%s</p>',
 
       'subtitle' => 'Join Our Community',
-      'patternSubtitle' => '<p class="fs-15 text-uppercase text-muted mb-3">%s</p>',
+      'patternSubtitle' => '<div class="fs-15 text-uppercase text-muted mb-3">%s</div>',
 
       'background_class_default' => 'wrapper image-wrapper bg-auto no-overlay bg-image text-center bg-map',
       'background_data_default' => '/dist/img/map.png',
@@ -20,7 +20,7 @@ $block = new CW_Settings(
       'divider' => true,
 
       'features' => '<div class="col-md-4 text-center"><h3 class="counter counter-lg text-primary">7518</h3><p>Completed Projects</p></div><!--/column -->',
-      'features_pattern' => '<div class="col-md-4 text-center %1$s"><h3 class="counter counter-lg text-primary">%3$s</h3><p>%4$s</p></div><!--/column -->',
+      'features_pattern' => '<div class="col-md-4 text-center %1$s"><div class="h3 counter counter-lg text-primary">%3$s</div><p>%4$s</p></div><!--/column -->',
    )
 );
 ?>

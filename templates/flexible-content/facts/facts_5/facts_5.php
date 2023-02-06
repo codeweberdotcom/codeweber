@@ -13,7 +13,7 @@ $block = new CW_Settings(
       'features' => '<div class="col-md-6 col-lg-4"><div class="card"><div class="card-body"><div class="d-flex flex-row align-items-center"><div><div class="icon btn btn-circle btn-lg btn-soft-red pe-none mx-auto me-4 mb-lg-3 mb-xl-0"> <i class="uil uil-users-alt"></i> </div>
        </div><div><h3 class="counter mb-1">3472</h3><p class="mb-0">Happy Customers</p></div></div></div><!--/.card-body --></div><!--/.card --></div><!--/column -->',
 
-      'features_pattern' => '<div class="col-md-6 col-lg-4 %1$s"><div class="card"><div class="card-body"><div class="d-flex flex-row align-items-center %6$s"><div>%2$s</div><div><h3 class="counter mb-1">%3$s</h3><p class="mb-0">%4$s</p></div></div></div></div></div><!--/column -->',
+      'features_pattern' => '<div class="col-md-6 col-lg-4 %1$s"><div class="card"><div class="card-body"><div class="d-flex flex-row align-items-center %6$s"><div>%2$s</div><div><div class="h3 counter mb-1">%3$s</div><p class="mb-0">%4$s</p></div></div></div></div></div><!--/column -->',
 
       'features_style_icon' => 'me-4'
    )

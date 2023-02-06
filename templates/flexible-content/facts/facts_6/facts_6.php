@@ -11,7 +11,7 @@ $block = new CW_Settings(
       'divider' => true,
 
       'features' => '<div class="col-md-3"><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-lg text-primary mb-3" alt="" /><h3 class="counter">7518</h3><p class="mb-0">Completed Projects</p></div><!--/column -->',
-      'features_pattern' => '<div class="col-md-3 %1$s">%2$s<h3 class="counter">%3$s</h3><p>%4$s</p></div><!--/column -->',
+      'features_pattern' => '<div class="col-md-3 %1$s">%2$s<div class="h3 counter">%3$s</div><p>%4$s</p></div><!--/column -->',
       'features_style_icon' => 'mb-3'
    )
 );
