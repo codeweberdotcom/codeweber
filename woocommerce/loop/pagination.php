@@ -43,8 +43,8 @@ if ($total <= 1) {
 				'prev_text' => is_rtl() ? '&rarr;' : '&larr;',
 				'next_text' => is_rtl() ? '&larr;' : '&rarr;',
 				'type'      => 'array',
-				'end_size'  => 3,
-				'mid_size'  => 3,
+				'end_size'  => 1,
+				'mid_size'  => 1,
 				'prev_text'    => '<i class="uil uil-arrow-left"></i>',
 				'next_text'    => '<i class="uil uil-arrow-right"></i>'
 			)
@@ -52,25 +52,6 @@ if ($total <= 1) {
 	);
 
 	if (!empty($pagination)) : ?>
-		<ul class="pagination">
-			<?php foreach ($pagination as $key => $page_link) : ?>
-				<li class="page-item
-                  <?php
-						$link = htmlspecialchars($page_link);
-						$link = str_replace(' current', '', $link);
-						if (strpos($page_link, 'current') !== false) {
-							echo ' active';
-						}
-						?>
-                ">
-					<?php
-					if ($link) {
-						$link = str_replace('page-numbers', 'page-link', $link);
-					}
-					echo htmlspecialchars_decode($link);
-					?>
-				</li>
-			<?php endforeach ?>
-		</ul>
-	<?php endif ?>
+		<ul class="pagination"><?php foreach ($pagination as $key => $page_link) : ?><li class="page-item <?php $link = htmlspecialchars($page_link); $link = str_replace(' current', '', $link); if (strpos($page_link, 'current') !== false) { echo ' active'; } ?>"><?php
+					if ($link) { $link = str_replace('page-numbers', 'page-link', $link); } echo htmlspecialchars_decode($link); ?></li><?php endforeach ?></ul><?php endif ?>
 </nav>
