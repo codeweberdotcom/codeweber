@@ -1,25 +1,34 @@
 <?php
-/* Add settings */
-$settings = new Settings();
-// адрес корня темы , обязательная переменная для демо
-$settings->title = 'Frequently Asked Questions'; // демо заголовок
-$settings->paragraph = 'If you don\'t see an answer to your question, you can send us an email from our contact form.'; // демо параграф
-$settings->subtitle = 'FAQ'; // демо подзаголовок
-// $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/bg11.jpg'; // демо фото
-// $settings->backgroundurl = $settings->root_theme . '/dist/img/photos/bg37.jpg';
-// $settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4'; // демо видео
-// $settings->typewriter = 'customer satisfaction,business needs,creative ideas'; // демо данные эффекта печатной машинки
-$settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
-//$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
-$settings->textcolor = 'light'; // цвет текста темной темы
-$settings->section_id = esc_html($args['block_id']); // присваиваем секции уникальный id
-$settings->GetDataACF(); // получаем занчения полей ACF
+
+/**
+ *  FAQ 4
+ */
 
 
-/* Add FAQ */
-$faq_accordeon = new AccordeonS;
-$faq_accordeon->section_id = esc_html($args['block_id']); // присваиваем секции уникальный id
-$faq_accordeon->default_accordeon = '<div class="card plain accordion-item">
+$block = new CW_Settings(
+   $cw_settings = array(
+      // 'subtitle' => 'FAQ',
+      // 'patternSubtitle' => '<div class="fs-15 text-uppercase text-primary mb-3">%s</div>',
+
+      'title' => 'Frequently Asked Questions',
+      'patternTitle' => '<h2 class="display-4 mb-4">%s</h2>',
+
+      'paragraph' => 'If you don\'t see an answer to your question, you can send us an email from our contact form.',
+      'patternParagraph' => '<p class="lead fs-lg mb-0">%s</p>',
+
+      // 'buttons' => '<a href="#" class="btn btn-primary rounded-pill">All FAQ</a>',
+      // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+
+      'background_class_default' => 'wrapper bg-light',
+
+      'divider' => true,
+
+
+      'column_class_1' => '',
+      'column_class_2' => 'order-lg-2',
+
+      'accordeon_demo' => '<div class="accordion accordion-wrapper" id="accordionExample">
+                     <div class="card plain accordion-item">
                         <div class="card-header" id="headingOne">
                            <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">How do I get my subscription receipt?</button>
                         </div>
@@ -74,25 +83,29 @@ $faq_accordeon->default_accordeon = '<div class="card plain accordion-item">
                         </div>
                         <!--/.accordion-collapse -->
                      </div>
-                     <!--/.accordion-item -->';
-
+                     <!--/.accordion-item -->
+                  </div>
+                  <!--/.accordion -->',
+   )
+);
 ?>
 
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper bg-light <?php echo esc_html($args['block_class']); ?>">
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="card bg-soft-primary rounded-4">
          <div class="card-body p-md-10 p-xl-11">
             <div class="row gx-lg-8 gx-xl-12 gy-10">
-               <div class="col-lg-6">
-                  <h3 class="display-4 mb-4"><?php echo $settings->title; ?></h3>
-                  <p class="lead fs-lg mb-0"><?php echo $settings->paragraph; ?></p>
+               <div class="col-lg-6 <?php echo $block->column_class_1; ?>">
+                  <?php echo $block->title; ?>
+                  <!--/title -->
+                  <?php echo $block->paragraph; ?>
+                  <!--/paragraph -->
                </div>
                <!--/column -->
-               <div class="col-lg-6">
-                  <div class="accordion accordion-wrapper" id="<?php echo $faq_accordeon->section_id; ?>">
-                     <?php $faq_accordeon->accordeon(); ?>
-                  </div>
+               <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
+                  <?php echo $block->accordeon; ?>
                   <!--/.accordion -->
                </div>
                <!--/column -->
@@ -104,5 +117,9 @@ $faq_accordeon->default_accordeon = '<div class="card plain accordion-item">
       <!--/.card -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->
