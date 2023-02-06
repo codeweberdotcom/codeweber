@@ -1,7 +1,7 @@
 <?php
 wp_nav_menu(
     array(
-        'theme_location'    => 'header',
+        'theme_location'    => 'header_1',
         'depth'             => 4,
         'container'         => '',
         'container_class'   => '',

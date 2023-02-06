@@ -15,7 +15,7 @@ if (!function_exists('codeweber_sidebars')) {
 				'description' => esc_html__('Main Sidebar', 'codeweber'),
 				'before_widget' => '<div class="widget mt-8 %2$s clearfix">',
 				'after_widget' => '</div>',
-				'before_title' => '<div class="widget-title mb-3">',
+				'before_title' => '<div class="h4 widget-title mb-3">',
 				'after_title' => '</div>',
 				'before_sidebar' => '',
 			)
@@ -27,7 +27,7 @@ if (!function_exists('codeweber_sidebars')) {
 				'description' => esc_html__('Page Sidebar', 'codeweber'),
 				'before_widget' => '<div class="widget mt-8 %2$s clearfix">',
 				'after_widget' => '</div>',
-				'before_title' => '<div class="widget-title mb-3">',
+				'before_title' => '<div class="h4 widget-title mb-3">',
 				'after_title' => '</div>',
 				'before_sidebar' => '',
 			)
@@ -39,7 +39,7 @@ if (!function_exists('codeweber_sidebars')) {
 				'description' => esc_html__('Services Sidebar', 'codeweber'),
 				'before_widget' => '<div class="widget mt-8 %2$s clearfix">',
 				'after_widget' => '</div>',
-				'before_title' => '<div class="widget-title mb-3">',
+				'before_title' => '<div class="h4 widget-title mb-3">',
 				'after_title' => '</div>',
 				'before_sidebar' => '',
 			)
@@ -50,8 +50,8 @@ if (!function_exists('codeweber_sidebars')) {
 			'id'            => 'woocommerce_sidebar',
 			'before_widget' => '<div>',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="rounded">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<div class="h4 widget-title mb-3">',
+			'after_title'   => '</div>',
 		));
 	}
 }
