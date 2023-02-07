@@ -53,6 +53,15 @@ if (!function_exists('codeweber_sidebars')) {
 			'before_title'  => '<div class="h4 widget-title mb-3">',
 			'after_title'   => '</div>',
 		));
+
+		register_sidebar(array(
+			'name'          => __('Offcanvas right', 'codeweber'),
+			'id'            => 'offcanvas_right',
+			'before_widget' => '<div>',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="h4 widget-title mb-3">',
+			'after_title'   => '</div>',
+		));
 	}
 }
 

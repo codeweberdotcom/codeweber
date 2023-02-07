@@ -30,7 +30,6 @@ elseif (is_singular('product')) :
 	<?php endwhile;
 
 
-
 elseif (is_singular('post')) :
 
 	if (!is_front_page() && get_field('pageheader') && get_field('pageheader') !== 'disable') :

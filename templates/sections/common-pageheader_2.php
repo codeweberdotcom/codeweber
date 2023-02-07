@@ -2,7 +2,6 @@
 $user_id = get_the_author_meta('ID');
 global $post; ?>
 
-
 <section class="wrapper">
 	<?php
 	?>

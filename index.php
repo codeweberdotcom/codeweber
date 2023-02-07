@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
-<?php get_template_part('templates/sections/common', 'pageheader'); ?>
+<?php do_action('page_header'); ?>
+
 
 <section class="wrapper bg-light">
 	<div class="container py-14 py-md-16">

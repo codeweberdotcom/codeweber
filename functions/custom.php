@@ -238,26 +238,43 @@ function codeweber_page_title()
         $page_num = NULL;
     }
 
-    if (!is_front_page() || !is_home()) :
-        if (is_shop()) :
-            echo woocommerce_page_title() . $page_num;
-        elseif (is_post_type_archive('projects') && get_theme_mod('project_title')) :
-            echo get_theme_mod('project_title');
-        elseif (is_tag() || is_category() || is_archive() || is_author()) :
-            the_archive_title();
-        elseif (is_page()) :
-            the_title();
-        elseif (is_search()) :
-            esc_html_e('Results for: ', 'codeweber');
-            the_search_query();
-        elseif (is_single()) :
-            the_title();
-        else :
-            echo esc_html(get_the_title(get_option('page_for_posts', true)));
-        endif;
-    elseif (is_front_page() || is_home()) :
+    if (!is_front_page() || !is_home()) {
+        if (class_exists('WooCommerce')) {
+            if (is_shop()) {
+                echo woocommerce_page_title() . $page_num;
+            } elseif (is_post_type_archive('projects') && get_theme_mod('project_title')) {
+                echo get_theme_mod('project_title');
+            } elseif (is_tag() || is_category() || is_archive() || is_author()) {
+                the_archive_title();
+            } elseif (is_page()) {
+                the_title();
+            } elseif (is_search()) {
+                esc_html_e('Results for: ', 'codeweber');
+                the_search_query();
+            } elseif (is_single()) {
+                the_title();
+            } else {
+                echo esc_html(get_the_title(get_option('page_for_posts', true)));
+            }
+        } else {
+            if (is_post_type_archive('projects') && get_theme_mod('project_title')) {
+                echo get_theme_mod('project_title');
+            } elseif (is_tag() || is_category() || is_archive() || is_author()) {
+                the_archive_title();
+            } elseif (is_page()) {
+                the_title();
+            } elseif (is_search()) {
+                esc_html_e('Results for: ', 'codeweber');
+                the_search_query();
+            } elseif (is_single()) {
+                the_title();
+            } else {
+                echo esc_html(get_the_title(get_option('page_for_posts', true)));
+            }
+        }
+    } elseif (is_front_page() || is_home()) {
         echo esc_html(get_the_title(get_option('page_for_posts', true)));
-    endif;
+    }
 }
 
 

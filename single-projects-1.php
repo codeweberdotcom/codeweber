@@ -95,7 +95,7 @@ endif; ?>
                                        <?php if (get_sub_field('title')) { ?>
                                           <div class="caption-wrapper p-12">
                                              <div class="caption bg-white rounded px-4 py-3 ms-auto mt-auto animate__animated animate__slideInDown animate__delay-1s">
-                                                <h5 class="mb-0"><?php the_sub_field('title'); ?></h5>
+                                                <div class="h5 mb-0"><?php the_sub_field('title'); ?></div>
                                              </div>
                                              <!--/.caption -->
                                           </div>
@@ -138,13 +138,13 @@ endif; ?>
                      <ul class="list-unstyled">
                         <?php if (isset($project_date)) { ?>
                            <li>
-                              <h5 class="mb-1"><?php echo __('Date', 'codeweber'); ?></h5>
+                              <div class="h5 mb-1"><?php echo __('Date', 'codeweber'); ?></div>
                               <p><?php echo $project_date; ?></p>
                            </li>
                         <?php }; ?>
                         <?php if (isset($project_cms)) { ?>
                            <li>
-                              <h5 class="mb-1"><?php echo __('CMS', 'codeweber'); ?></h5>
+                              <div class="h5 mb-1"><?php echo __('CMS', 'codeweber'); ?></div>
                               <p><?php echo $project_cms; ?></p>
                            </li>
                         <?php }; ?>

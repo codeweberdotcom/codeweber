@@ -7,6 +7,8 @@ include 'woocommerce-cart.php';
 include 'woocommerce-checkout.php';
 include 'woocommerce-offcanvas-cart.php';
 include 'woocommerce-mobile-bottom-menu.php';
+//include 'woocommerce-category-banner.php';
+
 
 /**
  * Display item meta data.

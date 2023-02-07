@@ -52,8 +52,10 @@ if (!function_exists('get_field')) {
 require_once get_template_directory() . '/functions/customize.php'; // --- Customizer ---
 
 
-// --- Woocommerce ---//
-require_once get_template_directory() . '/functions/woocommerce/woocommerce.php'; // --- Woocommerce Functions ---
+if (class_exists('WooCommerce')) {
+	// --- Woocommerce ---//
+	require_once get_template_directory() . '/functions/woocommerce/woocommerce.php'; // --- Woocommerce Functions ---
+}
 
 
 // --- Widgets ---//

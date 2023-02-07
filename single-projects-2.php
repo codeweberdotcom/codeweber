@@ -100,13 +100,13 @@ endif; ?>
                      <ul class="list-unstyled">
                         <?php if (isset($project_date)) { ?>
                            <li>
-                              <h5 class="mb-1"><?php echo __('Date', 'codeweber'); ?></h5>
+                              <div class="h5 mb-1"><?php echo __('Date', 'codeweber'); ?></div>
                               <p><?php echo $project_date; ?></p>
                            </li>
                         <?php }; ?>
                         <?php if (isset($project_cms)) { ?>
                            <li>
-                              <h5 class="mb-1"><?php echo __('CMS', 'codeweber'); ?></h5>
+                              <div class="h5 mb-1"><?php echo __('CMS', 'codeweber'); ?></div>
                               <p><?php echo $project_cms; ?></p>
                            </li>
                         <?php }; ?>
