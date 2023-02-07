@@ -36,12 +36,12 @@ global $product;
 			<button type="submit" class="single_add_to_cart_button button alt btn btn-primary btn-icon btn-icon-start <?php echo GetThemeButton(); ?> w-100 flex-grow-1"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
 		</div>
 
-		<div>
+		<!-- <div>
 			<button class="btn btn-block btn-outline-red btn-icon <?php echo GetThemeButton(); ?> px-3 w-100 h-100"><i class="uil uil-heart"></i></button>
 		</div>
 		<div class="ps-1">
 			<button class="btn btn-block btn-outline-red btn-icon <?php echo GetThemeButton(); ?> px-3 w-100 h-100"><i class="uil uil-exchange"></i></i></button>
-		</div>
+		</div> -->
 
 		<?php do_action('woocommerce_after_add_to_cart_button'); ?>
 

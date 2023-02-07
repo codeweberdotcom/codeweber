@@ -42,6 +42,7 @@
 
                <li class="nav-item d-none d-lg-block">
                   <ul class="navbar-nav flex-row align-items-center ms-auto">
+                     <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search"><i class="uil uil-search"></i></a></li>
                      <li class="nav-item dropdown language-select">
                         <a class="nav-link dropdown-item dropdown-toggle dropdown-toggle-split" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="uil uil-user-circle"></i></a>
                         <ul class="dropdown-menu">
@@ -158,6 +159,14 @@
          <!-- /.widget -->
       </div>
       <!-- /.offcanvas-body -->
+   </div>
+   <!-- /.offcanvas -->
+   <div class="offcanvas offcanvas-top bg-light" id="offcanvas-search" data-bs-scroll="true">
+      <div class="container d-flex flex-row py-6">
+         <?php get_search_form(); ?>
+         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <!-- /.container -->
    </div>
    <!-- /.offcanvas -->
 </header>

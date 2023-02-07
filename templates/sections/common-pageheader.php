@@ -1,14 +1,19 @@
 <?php
 $user_id = get_the_author_meta('ID');
 global $post;
+$post_ID = get_the_ID();
+if ($post_ID !== NULL) {
+	if (get_the_post_thumbnail_url($post_ID, 'full', null) && is_singular('services')) { ?>
 
-if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services')) { ?>
-	<section class="wrapper image-wrapper bg-image bg-cover bg-overlay bg-overlay-500 overflow-hidden" data-image-src="<?php echo get_the_post_thumbnail_url($post->ID, 'full', null); ?>">
-	<?php } else { ?>
-		<section class="wrapper bg-soft-primary">
-		<?php }
+		<section class="wrapper image-wrapper bg-image bg-cover bg-overlay bg-overlay-500 overflow-hidden" data-image-src="<?php echo get_the_post_thumbnail_url($post_ID, 'full', null); ?>">
+		<?php } else { ?>
+			<section class="wrapper bg-soft-primary">
+			<?php }
+	}
 
-	if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services')) { ?>
+
+
+	if (get_the_post_thumbnail_url($post_ID, 'full', null) && is_singular('services')) { ?>
 			<div class="container pt-10 pb-12 pt-md-14 pb-md-14 text-left">
 				<div class="row">
 					<div class="col-md-10 col-xl-8 mx-0">
@@ -42,4 +47,4 @@ if (get_the_post_thumbnail_url($post->ID, 'full', null) && is_singular('services
 							<!-- /.row -->
 						</div>
 						<!-- /.container -->
-		</section>
+			</section>
