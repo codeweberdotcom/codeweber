@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-02-03 12:39+0000\n"
+"PO-Revision-Date: 2023-02-08 14:25+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -39,7 +39,11 @@ msgstr "<i class=\"uil uil-comments\"></i>Ответить"
 msgid "A modular WordPress theme powered by Bootstrap 5 and Gulp"
 msgstr "Модульный шаблон Wordpress на базе Bootstrap 5 и Gulp"
 
-#: functions/lib/class-wp-bootstrap-navwalker.php:383
+#: functions/woocommerce/woocommerce-mobile-bottom-menu.php:17
+msgid "Account"
+msgstr ""
+
+#: functions/lib/class-wp-bootstrap-navwalker.php:392
 msgid "Add a menu"
 msgstr "Добавить меню"
 
@@ -119,6 +123,10 @@ msgstr "Все права защищены"
 msgid "Already have an account?"
 msgstr "Уже есть аккаунт?"
 
+#: templates/content/single-faq.php:17
+msgid "Answer to the question:"
+msgstr "Ответ на вопрос:"
+
 #: woocommerce/cart/cart.php:160
 msgid "Apply coupon"
 msgstr "Применить"
@@ -131,15 +139,15 @@ msgstr "Статьи по месяцам"
 msgid "Back to top"
 msgstr "Вернуться наверх"
 
-#: functions/customize.php:383
+#: functions/customize.php:424
 msgid "Blog"
 msgstr "Блог"
 
-#: functions/customize.php:402
+#: functions/customize.php:443
 msgid "Blog archive template"
 msgstr "Шаблон главной страницы Блога"
 
-#: functions/customize.php:384
+#: functions/customize.php:425
 msgid "blog settings"
 msgstr "Настройки блога"
 
@@ -167,9 +175,8 @@ msgstr "Кнопка Маленькая"
 msgid "Button style"
 msgstr "Стиль кнопки"
 
-#: templates/content/loop.php:42 templates/sections/common-pageheader.php:26
-#: templates/sections/common-pageheader_1.php:26
-#: templates/sections/common-pageheader_2.php:18
+#: functions/global.php:107 functions/global.php:123
+#: templates/content/loop-faq.php:42 templates/content/loop.php:42
 msgid "By"
 msgstr "Автор"
 
@@ -187,7 +194,9 @@ msgstr ""
 "Используя эту форму для комментариев, вы соглашаетесь с нашей Политикой "
 "конфиденциальности"
 
-#: templates/header/header-sandbox-woo-01.php:70
+#: functions/woocommerce/woocommerce-mobile-bottom-menu.php:24
+#: templates/header/header-sandbox-woo-01.php:73
+#: templates/header/header-sandbox-woo-01.php:73
 msgid "Cart"
 msgstr "Корзина"
 
@@ -200,8 +209,8 @@ msgstr "Категории"
 msgid "CFollow Us"
 msgstr ""
 
-#: templates/header/header-sandbox-woo-01.php:73
 #: templates/header/header-sandbox-woo-01.php:76
+#: templates/header/header-sandbox-woo-01.php:79
 msgid "Checkout"
 msgstr "Оформить заказ"
 
@@ -233,9 +242,8 @@ msgstr "Цвет Темы"
 msgid "Comment *"
 msgstr "Комменатрий *"
 
-#: templates/content/loop.php:43 templates/sections/common-pageheader.php:27
-#: templates/sections/common-pageheader_1.php:27
-#: templates/sections/common-pageheader_2.php:19
+#: functions/global.php:108 functions/global.php:124
+#: templates/content/loop-faq.php:43 templates/content/loop.php:43
 msgid "Comments"
 msgstr "Комментарии"
 
@@ -281,7 +289,7 @@ msgstr "Контакт"
 #: templates/header/header-sandbox-23.php:60
 #: templates/header/header-sandbox-24.php:74
 #: templates/header/header-sandbox-27.php:64
-#: templates/header/header-sandbox-woo-01.php:130
+#: templates/header/header-sandbox-woo-01.php:144
 msgid "Contact Info"
 msgstr "Связаться с нами"
 
@@ -361,7 +369,7 @@ msgstr "Email *"
 msgid "Email Address"
 msgstr "Email Адрес"
 
-#: functions/cpt/cpt-faq.php:13
+#: functions/navmenus.php:21 functions/cpt/cpt-faq.php:13
 msgid "FAQ"
 msgstr "FAQ"
 
@@ -382,6 +390,11 @@ msgstr "Категория FAQ"
 msgid "FAQ Options"
 msgstr "Настройки FAQ"
 
+#: functions/cpt/taxonomy-faq.php:52 functions/cpt/taxonomy-faq.php:53
+#: functions/cpt/taxonomy-faq.php:58
+msgid "FAQ Tags"
+msgstr ""
+
 #: templates/header/header-sandbox-05.php:63
 #: templates/header/header-sandbox-08.php:61
 #: templates/header/header-sandbox-09.php:61
@@ -400,23 +413,31 @@ msgstr "Фильтр:"
 #: templates/header/header-sandbox-23.php:78
 #: templates/header/header-sandbox-24.php:92
 #: templates/header/header-sandbox-27.php:82
-#: templates/header/header-sandbox-woo-01.php:148
+#: templates/header/header-sandbox-woo-01.php:161
 msgid "Follow Us"
 msgstr "Или здесь"
 
-#: functions/customize.php:337
+#: functions/customize.php:378
 msgid "Footer"
 msgstr "Футер"
 
-#: functions/navmenus.php:15
+#: functions/navmenus.php:23
 msgid "Footer Menu"
 msgstr "Меню Футера"
 
-#: functions/navmenus.php:16
+#: functions/navmenus.php:24
 msgid "Footer Menu 1"
 msgstr "Меню Футера 1"
 
-#: functions/customize.php:320
+#: functions/navmenus.php:25
+msgid "Footer Menu 2"
+msgstr ""
+
+#: functions/navmenus.php:26
+msgid "Footer Menu 3"
+msgstr ""
+
+#: functions/customize.php:361
 msgid "Footer Options"
 msgstr "Настройки Футера"
 
@@ -514,8 +535,14 @@ msgid "Go to the website"
 msgstr "Перейти на сайт"
 
 #: functions/navmenus.php:14
-msgid "Header Menu"
+#, fuzzy
+#| msgid "Header Menu"
+msgid "Header Menu One"
 msgstr "Меню Хедера"
+
+#: functions/navmenus.php:15
+msgid "Header Menu Two"
+msgstr ""
 
 #: functions/customize.php:170
 msgid "Header Options"
@@ -525,19 +552,30 @@ msgstr "Настройки Хедера"
 msgid "Header right sidebar"
 msgstr "Хедер правый сайдбар"
 
+#: templates/header/header-sandbox-woo-01.php:54
+msgid "Hello"
+msgstr ""
+
 #. 1: user display name 2: logout url
 #: woocommerce/myaccount/dashboard.php:36
 #, php-format
+#| msgid ""
+#| "Hello %1$s (not %1$s? <a href=\"%2$s\" class=\"alert-link hover\">Log "
+#| "out</a>)"
 msgid ""
-"Hello %1$s (not %1$s? <a href=\"%2$s\" class=\"alert-link hover\">Log out</a>"
-")"
+"Hello, %1$s (not %1$s? <a href=\"%2$s\" class=\"alert-link hover\">Log "
+"out</a>)"
 msgstr ""
-"Здравствуйте %1$s (не %1$s? <a href=\"%2$s\" class=\"alert-link hover\">"
+"Здравствуйте, %1$s (вы не %1$s? <a href=\"%2$s\" class=\"alert-link hover\">"
 "Выйти</a>)"
 
 #: templates/header/header-sandbox-06.php:5
 msgid "here"
 msgstr "здесь"
+
+#: functions/woocommerce/woocommerce-mobile-bottom-menu.php:9
+msgid "Home"
+msgstr ""
 
 #. URI of the theme
 #. Author URI of the theme
@@ -639,7 +677,7 @@ msgstr "Присоедениться"
 #: templates/header/header-sandbox-22.php:68
 #: templates/header/header-sandbox-24.php:82
 #: templates/header/header-sandbox-27.php:72
-#: templates/header/header-sandbox-woo-01.php:138
+#: templates/header/header-sandbox-woo-01.php:154
 #| msgid "Read more"
 msgid "Learn More"
 msgstr "Информация"
@@ -661,17 +699,16 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
-#: templates/content/loop.php:47 templates/sections/common-pageheader.php:32
-#: templates/sections/common-pageheader_1.php:32
-#: templates/sections/common-pageheader_2.php:24
+#: functions/global.php:113 functions/global.php:129
+#: templates/content/loop-faq.php:47 templates/content/loop.php:47
 msgid "Likes"
 msgstr "Спасибо"
 
-#: templates/header/header-sandbox-woo-01.php:62
+#: templates/header/header-sandbox-woo-01.php:63
 msgid "Login / Register"
 msgstr "Войти / Регистрация"
 
-#: templates/header/header-sandbox-woo-01.php:76
+#: templates/header/header-sandbox-woo-01.php:79
 msgid "Logout"
 msgstr "Выйти"
 
@@ -733,7 +770,7 @@ msgstr "месяц"
 msgid "Monthly"
 msgstr "Месяц"
 
-#: templates/header/header-sandbox-woo-01.php:60
+#: templates/header/header-sandbox-woo-01.php:61
 msgid "My Account"
 msgstr "Личный кабинет"
 
@@ -776,6 +813,18 @@ msgstr "Новости"
 msgid "Next"
 msgstr "Следующий"
 
+#: functions/navmenus.php:19
+msgid "Offcanvas Menu Left"
+msgstr ""
+
+#: functions/navmenus.php:20
+msgid "Offcanvas Menu Right"
+msgstr ""
+
+#: functions/sidebars.php:58
+msgid "Offcanvas right"
+msgstr ""
+
 #: functions/cpt/cpt-office_address.php:12
 msgid "Office address"
 msgstr "Адрес Офиса"
@@ -802,7 +851,7 @@ msgstr "Опции Темы"
 msgid "or"
 msgstr "или"
 
-#: templates/header/header-sandbox-woo-01.php:66
+#: templates/header/header-sandbox-woo-01.php:69
 msgid "Orders"
 msgstr "Заказы"
 
@@ -893,11 +942,11 @@ msgstr "Конфиденциальность"
 msgid "Project"
 msgstr "Проект"
 
-#: functions/customize.php:459
+#: functions/customize.php:500
 msgid "Project Archive Description"
 msgstr "Описание главной страницы Проектов"
 
-#: functions/customize.php:475
+#: functions/customize.php:516
 msgid "Project Archive Title"
 msgstr "Заголовок главной страницы Проектов"
 
@@ -905,12 +954,12 @@ msgstr "Заголовок главной страницы Проектов"
 msgid "Project Category"
 msgstr "Категория Проекта"
 
-#: functions/customize.php:415
+#: functions/customize.php:456
 msgid "project settings"
 msgstr "Настройки проектов"
 
-#: functions/customize.php:414 functions/cpt/cpt-projects.php:10
-#: functions/cpt/cpt-projects.php:15
+#: functions/customize.php:455 functions/navmenus.php:17
+#: functions/cpt/cpt-projects.php:10 functions/cpt/cpt-projects.php:15
 msgid "Projects"
 msgstr "Проекты"
 
@@ -926,7 +975,7 @@ msgstr "Проекты 2"
 msgid "Projects 3"
 msgstr "Проекты 3"
 
-#: functions/customize.php:435
+#: functions/customize.php:476
 msgid "Projects archive template"
 msgstr "Шаблон основной страницы Проектов"
 
@@ -939,8 +988,8 @@ msgstr "Категории Проекта"
 msgid "Quantity"
 msgstr "Кол-во"
 
-#: templates/content/loop.php:14
-#: templates/flexible-content/sliders/slider_1/slider_1.php:45
+#: templates/content/loop-faq.php:14 templates/content/loop.php:14
+#: templates/flexible-content/sliders/slider_1/slider_1.php:36
 #: templates/flexible-content/sliders/slider_2/slider_2.php:26
 #: templates/flexible-content/sliders/slider_3/slider_3.php:26
 #: templates/flexible-content/sliders/slider_4/slider_4.php:28
@@ -963,7 +1012,7 @@ msgstr "Свежие статьи"
 msgid "Registration takes less than a minute."
 msgstr "Регистрация занимает менее минуты."
 
-#: functions/custom.php:244
+#: functions/custom.php:252 functions/custom.php:267
 msgid "Results for: "
 msgstr "Результаты для:"
 
@@ -998,7 +1047,7 @@ msgstr "Скидка!"
 #: templates/header/header-sandbox-23.php:56
 #: templates/header/header-sandbox-24.php:70
 #: templates/header/header-sandbox-27.php:60
-#: templates/header/header-sandbox-woo-01.php:126
+#: templates/header/header-sandbox-woo-01.php:140
 msgid ""
 "Sandbox is a multipurpose HTML5 template with various layouts which will be "
 "a great solution for your business."
@@ -1010,7 +1059,7 @@ msgstr ""
 msgid "says:"
 msgstr "говорит:"
 
-#: searchform.php:3
+#: searchform.php:2
 msgid "Search"
 msgstr "Поиск"
 
@@ -1018,7 +1067,7 @@ msgstr "Поиск"
 msgid "Search Price Package"
 msgstr "Найти Ценовой Пакет"
 
-#: functions/customize.php:305
+#: functions/customize.php:346
 msgid "Secondary Header"
 msgstr "Вторичный Хедер"
 
@@ -1044,18 +1093,18 @@ msgstr "Категория Услуги"
 msgid "Service Options"
 msgstr "Настройки Услуг"
 
-#: functions/customize.php:483 functions/cpt/cpt-services.php:11
-#: functions/cpt/cpt-services.php:16
+#: functions/customize.php:524 functions/navmenus.php:18
+#: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:16
 #: templates/footer/footer-sandbox-25_cw.php:28
 #: templates/sections/home-services.php:5
 msgid "Services"
 msgstr "Услуги"
 
-#: functions/customize.php:503
+#: functions/customize.php:544
 msgid "Services archive template"
 msgstr "Шаблон основной страницы Услуг"
 
-#: functions/customize.php:484
+#: functions/customize.php:525
 msgid "Services settings"
 msgstr "Настройки услуг"
 
@@ -1063,13 +1112,17 @@ msgstr "Настройки услуг"
 msgid "Services Sidebar"
 msgstr "Сайдбар Услуг"
 
-#: functions/customize.php:376
+#: functions/customize.php:417
 msgid "Settings CPT"
 msgstr "Настройки CPT"
 
-#: functions/customize.php:377
+#: functions/customize.php:418
 msgid "Settings Custom Post Type"
 msgstr "Настройки архивных страниц"
+
+#: functions/woocommerce/woocommerce-mobile-bottom-menu.php:13
+msgid "Shop"
+msgstr ""
 
 #: templates/header/header-sandbox-08.php:42
 #: templates/header/header-sandbox-08.php:72
@@ -1103,6 +1156,10 @@ msgstr "Регистрация"
 msgid "Sign up to"
 msgstr "Войти в "
 
+#: functions/customize.php:257 functions/customize.php:327
+msgid "Solid"
+msgstr ""
+
 #: templates/content/loop-none.php:4
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
@@ -1114,6 +1171,14 @@ msgstr ""
 #: functions/customize.php:67
 msgid "Squared"
 msgstr "Без Скругления"
+
+#: functions/customize.php:254
+msgid "Style Main Header"
+msgstr ""
+
+#: functions/customize.php:324
+msgid "Style Woocommerce Header"
+msgstr ""
 
 #: comments.php:146
 msgid "Submit"
@@ -1166,20 +1231,21 @@ msgstr "Метки"
 msgid "Test"
 msgstr "Тест"
 
-#: functions/custom.php:353 functions/cpt/cpt-testimonials.php:11
+#: functions/custom.php:382 functions/cpt/cpt-testimonials.php:11
 msgid "Testimonial"
 msgstr "Отзыв"
 
-#: functions/customize.php:516 functions/cpt/cpt-testimonials.php:10
-#: functions/cpt/cpt-testimonials.php:12 functions/cpt/cpt-testimonials.php:17
+#: functions/customize.php:557 functions/navmenus.php:22
+#: functions/cpt/cpt-testimonials.php:10 functions/cpt/cpt-testimonials.php:12
+#: functions/cpt/cpt-testimonials.php:17
 msgid "Testimonials"
 msgstr "Отзывы"
 
-#: functions/customize.php:536
+#: functions/customize.php:577
 msgid "Testimonials archive template"
 msgstr "Шаблон основной страницы Отзывов"
 
-#: functions/customize.php:517
+#: functions/customize.php:558
 msgid "Testimonials settings"
 msgstr "Настройки отзывов"
 
@@ -1218,6 +1284,10 @@ msgstr "Города"
 msgid "Translate"
 msgstr "Перевод"
 
+#: functions/customize.php:258 functions/customize.php:328
+msgid "Transparent"
+msgstr ""
+
 #: templates/footer/footer-sandbox-19.php:8
 msgid "trusted"
 msgstr ""
@@ -1234,15 +1304,15 @@ msgstr "Использовать Бесплатно"
 msgid "Type"
 msgstr "Тип"
 
-#: functions/customize.php:308
+#: functions/customize.php:349
 msgid "Type 1"
 msgstr "Тип 1"
 
-#: functions/customize.php:309
+#: functions/customize.php:350
 msgid "Type 2"
 msgstr "Тип 2"
 
-#: functions/customize.php:310
+#: functions/customize.php:351
 msgid "Type 3"
 msgstr "Тип 3"
 
@@ -1285,7 +1355,11 @@ msgstr ""
 msgid "Welcome Back"
 msgstr "Добро пожаловать"
 
-#: functions/customize.php:256
+#: functions/navmenus.php:16
+msgid "Woocommerce"
+msgstr ""
+
+#: functions/customize.php:275
 msgid "Woocommerce Header"
 msgstr "Woocommerce Хедер"
 
@@ -1308,12 +1382,12 @@ msgid "Yearly"
 msgstr "Год"
 
 #: woocommerce/single-product/related.php:26
-#: templates/flexible-content/sliders/slider_1/slider_1.php:5
+#: templates/flexible-content/sliders/slider_1/slider_1.php:15
 msgid "You Might Also Like"
 msgstr "Вам также может понравится"
 
-#: functions/woocommerce.php:1062
-#: templates/header/header-sandbox-woo-01.php:111
+#: functions/woocommerce/woocommerce-offcanvas-cart.php:53
+#: templates/header/header-sandbox-woo-01.php:124
 msgid "Your cart"
 msgstr "Ваша корзина"
 

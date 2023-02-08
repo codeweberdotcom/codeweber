@@ -324,3 +324,13 @@ input#dgwt-wcas-search-input-1 {
   padding-left: 2rem;
   padding-right: 0.75rem !important;
 }
+
+/*
+* Widget
+*/
+
+@media (min-width: 992px) {
+  .sticky-lg-top {
+    top: 100px !important;
+  }
+}

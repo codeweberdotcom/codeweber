@@ -28,4 +28,3 @@ function add_mobile_bottom_menu()
 <?php
 }
 add_action('codeweber_end_body', 'add_mobile_bottom_menu', 5);
-?>

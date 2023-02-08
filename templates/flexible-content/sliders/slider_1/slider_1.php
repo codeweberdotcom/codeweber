@@ -1,27 +1,18 @@
 <?php
-/* Add settings */
-$settings = new Settings();
-// адрес корня темы , обязательная переменная для демо
-$settings->title = __('You Might Also Like', 'codeweber'); // демо заголовок
-//$settings->paragraph = 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.'; // демо параграф
-//$settings->subtitle = 'We have considered our business solutions to support you on every stage of your growth.'; // демо подзаголовок
-// $settings->imageurl = get_template_directory_uri() . '/dist/img/photos/bg11.jpg'; // демо фото
-// $settings->backgroundurl = $settings->root_theme . '/dist/img/photos/bg37.jpg';
-// $settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4'; // демо видео
-// $settings->typewriter = 'customer satisfaction,business needs,creative ideas'; // демо данные эффекта печатной машинки
-//$settings->backgroundcolor = 'dark'; // цвет бэкгрануда темной темы
-//$settings->backgroundcolor_light = 'gray'; // если есть другой цвет бэкграунда, например soft-primary или gray
-//$settings->textcolor = 'light'; // цвет текста темной темы
-//$settings->section_id = esc_html($args['block_id']); // присваиваем секции уникальный id
-$settings->GetDataACF(); // получаем занчения полей ACF
+
+/**
+ * Slider 1
+ */
+
 ?>
+
 
 <?php
 $my_posts = new WP_Query;
 $myposts = $my_posts->query(array(
    'post_type' => 'post'
 )); ?>
-<h3 class="mb-6"><?php echo $settings->title; ?></h3>
+<h3 class="mb-6"><?php esc_html_e('You Might Also Like', 'codeweber'); ?></h3>
 <div class="swiper-container blog grid-view mb-16 swiper-container-0" data-margin="30" data-nav="false" data-dots="true" data-items-md="2" data-items-xs="1">
    <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events">
       <div class="swiper-wrapper" id="swiper-wrapper-b89a14f97e102ef7d" aria-live="off" style="cursor: grab; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">

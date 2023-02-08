@@ -20,16 +20,6 @@ defined('ABSPATH') || exit;
 
 get_header('shop');
 
-if (get_theme_mod('codeweber_page_header') == 'type_1') :
-	get_template_part('templates/sections/common', 'breadcrumb');
-endif;
-
-if (get_theme_mod('codeweber_page_header') == 'type_2') :
-	get_template_part('templates/sections/common', 'pageheader');
-elseif (get_theme_mod('codeweber_page_header') == 'type_3') :
-	get_template_part('templates/sections/common', 'pageheader_1');
-endif;
-
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -55,7 +45,6 @@ do_action('woocommerce_before_main_content');
 			do_action('woocommerce_before_shop_loop');
 
 			woocommerce_product_loop_start();
-			do_action('woocommerce_before_shop_loopsss');
 			if (wc_get_loop_prop('total')) {
 				while (have_posts()) {
 					the_post();
