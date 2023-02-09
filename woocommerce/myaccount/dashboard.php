@@ -33,8 +33,8 @@ $allowed_html = array(
 	<?php
 	printf(
 		/* translators: 1: user display name 2: logout url */
-		__('Hello %1$s (not %1$s? <a href="%2$s" class="alert-link hover">Log out</a>)', 'codeweber'),
-		'<strong>' . esc_html($current_user->display_name) . '</strong>',
+		__('Hello, %1$s (not %1$s? <a href="%2$s" class="alert-link hover">Log out</a>)', 'codeweber'),
+		' ' . esc_html($current_user->display_name) . ' ',
 		esc_url(wc_logout_url())
 	);
 	?>

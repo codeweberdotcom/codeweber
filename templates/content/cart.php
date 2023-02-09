@@ -9,4 +9,4 @@ global $post; ?>
       </div>
    <?php endif; ?>
    <?php the_content(); ?>
-</div>
+</div>Скорее всего удалить этот шаблон cart.php

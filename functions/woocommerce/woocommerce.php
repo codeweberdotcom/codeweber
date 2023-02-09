@@ -290,9 +290,40 @@ function cw_woocommerce_output_content_wrapper()
 }
 add_action('woocommerce_before_main_content', 'cw_woocommerce_output_content_wrapper', 10);
 
-
 function cw_woocommerce_output_content_wrapper_end()
 {
    echo '</div></div>';
 }
 add_action('woocommerce_after_main_content', 'cw_woocommerce_output_content_wrapper_end', 10);
+
+
+
+/**
+ * Set Cart/Checkout Wrapper
+ */
+
+function cart_checkout_wrapper_start()
+{
+   if (is_cart() || is_checkout() || is_privacy_policy()) {
+      echo '<section class="wrapper bg-light"><div class="container pt-12 pt-md-14 pb-14 pb-md-16">';
+   }
+}
+
+add_action('page_content_start', 'cart_checkout_wrapper_start', 10);
+
+
+function cart_checkout_wrapper_end()
+{
+   if (is_cart() || is_checkout() || is_privacy_policy()) {
+      echo '</div></section>';
+   }
+}
+
+add_action('page_content_end', 'cart_checkout_wrapper_end', 10);
+
+
+
+/**
+ * Remove Page Header
+ */
+//remove_action('codeweber_after_header', 'page_header', 5);

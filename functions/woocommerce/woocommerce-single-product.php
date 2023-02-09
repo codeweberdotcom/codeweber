@@ -34,6 +34,7 @@ function woocommerce_add_custom_text_after_product_title()
       <h2 class="post-title display-5"><?php the_title(); ?></h2>
    </div>
 <?php }
+
 add_action('woocommerce_single_product_summary', 'woocommerce_add_custom_text_after_product_title', 5);
 
 

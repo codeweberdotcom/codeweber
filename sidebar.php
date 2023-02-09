@@ -4,6 +4,7 @@ if (class_exists('WooCommerce')) {
 	if (is_shop() || is_product_tag() || is_product_category()) : ?>
 		<aside class="col-lg-3 sidebar">
 			<?php dynamic_sidebar('woocommerce_sidebar'); ?>
+			<?php do_action('widget_consultant'); ?>
 		</aside> <!-- #sidebar-main-wrapper -->
 	<?php elseif (is_page() && !dynamic_sidebar()) : ?>
 		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
@@ -14,8 +15,19 @@ if (class_exists('WooCommerce')) {
 			<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
 				<?php dynamic_sidebar('sidebar-services'); ?>
 			</aside> <!-- #sidebar-main-wrapper -->
-		<?php endif;
-	else : ?>
+		<?php endif; ?>
+	<?php elseif (is_post_type_archive('faq')) : ?>
+
+		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
+
+			<?php do_action('widget_consultant'); ?>
+		</aside> <!-- #sidebar-main-wrapper -->
+
+
+
+
+
+	<?php else : ?>
 		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
 			<?php dynamic_sidebar('sidebar-main'); ?>
 		</aside> <!-- #sidebar-main-wrapper -->

@@ -130,7 +130,7 @@ function codeweber_meta_blog()
 				</li>
 			</ul>
 			</p>
-<?php };
+	<?php };
 	}
 }
 
@@ -139,26 +139,79 @@ function codeweber_meta_blog()
  * Set Page Header
  */
 
-function set_page_header()
+function page_header()
 {
-	if (!is_front_page() && get_field('pageheader') && get_field('pageheader') !== 'disable') :
-		if (get_theme_mod('codeweber_page_header') == 'type_1') :
-			get_template_part('templates/sections/common', 'breadcrumb');
+	if (!is_post_type_archive('projects')) {
+		if (!is_front_page() && get_field('pageheader') && get_field('pageheader') !== 'disable') :
+			if (get_theme_mod('codeweber_page_header') == 'type_1') :
+				get_template_part('templates/sections/common', 'breadcrumb');
+			endif;
 		endif;
-	endif;
 
-	if (!is_front_page() && get_field('pageheader') && get_field('pageheader') !== 'disable') {
-		if (get_theme_mod('codeweber_page_header') == 'type_2') {
-			get_template_part('templates/sections/common', 'pageheader');
-		} elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
-			get_template_part('templates/sections/common', 'pageheader_1');
-		} elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
-			get_template_part('templates/sections/common', 'pageheader_2');
+		if (!is_front_page() && get_field('pageheader') && get_field('pageheader') !== 'disable') {
+			if (get_theme_mod('codeweber_page_header') == 'type_2') {
+				get_template_part('templates/sections/common', 'pageheader');
+			} elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
+				get_template_part('templates/sections/common', 'pageheader_1');
+			} elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+				get_template_part('templates/sections/common', 'pageheader_2');
+			}
 		}
 	}
 }
 
-add_action('page_header', 'set_page_header', 5);
+add_action('codeweber_after_header', 'page_header', 5);
+
+
+/**
+ * Consultant Widget
+ */
+function consultant_widget()
+{
+	?>
+	<div class="widget ">
+		<div class="card">
+			<div class="card-body">
+				<img class="rounded-circle w-15 mb-4" src="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3@2x.jpg 2x" alt="" />
+				<h4 class="mb-1">Алексей</h4>
+				<div class="meta mb-2">Консультант</div>
+				<p class="mb-3">Наши специалисты ответят на любой интересующий вопрос.</p>
+				<a href="#" class="btn btn-primary rounded w-100">Задать вопрос</a>
+				<!-- /.social -->
+			</div>
+			<!--/.card-body -->
+		</div>
+		<!-- /.card -->
+	</div>
+<?php
+}
+
+add_action('widget_consultant', 'consultant_widget', 10);
+
+
+/**
+ * Set Page Wrapper
+ */
+
+function page_wrapper_start()
+{
+	if (is_account_page()) {
+		echo '<section class="wrapper bg-light"><div class="container pt-12 pt-md-14 pb-14 pb-md-16">';
+	}
+}
+
+add_action('page_content_start', 'page_wrapper_start', 10);
+
+
+function page_wrapper_end()
+{
+	if (is_account_page()) {
+		echo '</div></section>';
+	}
+}
+
+add_action('page_content_end', 'page_wrapper_end', 10);
+
 
 
 /**
@@ -172,7 +225,7 @@ function set_page_content()
 		get_template_part('templates/content/page', '');
 	}
 }
-add_action('page_content_start', 'set_page_content', 5);
+add_action('page_content_body', 'set_page_content', 5);
 
 
 

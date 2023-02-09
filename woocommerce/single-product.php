@@ -21,19 +21,7 @@ if (!defined('ABSPATH')) {
 }
 
 get_header('shop'); ?>
-<?php
-if (get_field('pageheader') !== 'disable') :
-	if (get_theme_mod('codeweber_page_header') == 'type_1') :
-		get_template_part('templates/sections/common', 'breadcrumb');
-	endif;
-endif;
 
-if (get_theme_mod('codeweber_page_header') == 'type_2') :
-	get_template_part('templates/sections/common', 'pageheader');
-elseif (get_theme_mod('codeweber_page_header') == 'type_3') :
-	get_template_part('templates/sections/common', 'pageheader_1');
-endif;
-?>
 <?php
 /**
  * woocommerce_before_main_content hook.
