@@ -869,10 +869,10 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_62e0f1e60a79c",
-                            "label": "Dark or White?",
-                            "name": "dark_or_white",
-                            "type": "clone",
+                            "key": "field_63e3814aa0431",
+                            "label": "Image",
+                            "name": "",
+                            "type": "accordion",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -881,102 +881,14 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "clone": [
-                                "field_62d93856d15e2"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
                         },
                         {
-                            "key": "field_62e0f1e60e1b1",
-                            "label": "Title",
-                            "name": "title",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33.33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d88a70234a0"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        },
-                        {
-                            "key": "field_62e0f1e611d0b",
-                            "label": "Paragraph",
-                            "name": "paragraph",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "33.33",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d88aa4234a2"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        },
-                        {
-                            "key": "field_62e0f1e6157c9",
-                            "label": "Button",
-                            "name": "button",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d9aae8f37cc"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        },
-                        {
-                            "key": "field_62e0f1e61940f",
-                            "label": "Button 2",
-                            "name": "button_2",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_62d9aae8f37cc"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 1
-                        },
-                        {
-                            "key": "field_62e0f1e61cdb1",
+                            "key": "field_63e38153a0432",
                             "label": "Gallery",
-                            "name": "gallery",
+                            "name": "cw_slider",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -987,18 +899,18 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62daa88c03ddb"
+                                "group_63a2003c62223"
                             ],
                             "display": "seamless",
                             "layout": "block",
                             "prefix_label": 0,
-                            "prefix_name": 1
+                            "prefix_name": 0
                         },
                         {
-                            "key": "field_62e0f1e6209c2",
-                            "label": "Background",
-                            "name": "background",
-                            "type": "image",
+                            "key": "field_63e37f61a0429",
+                            "label": "Main Settings",
+                            "name": "",
+                            "type": "accordion",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1007,16 +919,152 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63e37fc3a042a",
+                            "label": "Title",
+                            "name": "cw_title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6383ec1d68ff4"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63e38017a042b",
+                            "label": "Paragraph",
+                            "name": "cw_paragraph",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6384b03e2c507"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63e3804aa042c",
+                            "label": "List",
+                            "name": "cw_list",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63c3c46899dda"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63e380bca042e",
+                            "label": "Background",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63e38086a042d",
+                            "label": "Background",
+                            "name": "cw_background",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6398d19d56ee1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63e38110a0430",
+                            "label": "Column",
+                            "name": "cw_column",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63c5b17b05bfa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63e380cfa042f",
+                            "label": "Divider",
+                            "name": "cw_divider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63a18f728079f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
                         }
                     ],
                     "min": "",
@@ -1277,5 +1325,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674854911
+    "modified": 1675866116
 }
