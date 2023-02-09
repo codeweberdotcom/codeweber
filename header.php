@@ -16,8 +16,22 @@
 	wp_body_open();
 	sandbox_frame_open(); ?>
 	<div id="content-wrapper" class="content-wrapper">
-		<?php do_action('codeweber_start_content_wrapper'); // Hook start content wrapper
-		$params = ['style_nav' => get_theme_mod('codeweber_header_style')];
+		<?php do_action('codeweber_start_content_wrapper'); // Hook start content wrapper 
+
+		if (get_field('cw_transparent_header') == 'default') {
+			$params = ['style_nav' => get_theme_mod('codeweber_header_style')];
+		} elseif (get_field('cw_transparent_header') == 'transparent') {
+			$params = ['style_nav' => 'transparent'];
+		} elseif ((get_field('cw_transparent_header') == 'solid')) {
+			$params = ['style_nav' => 'solid'];
+		}
+
+		if (get_field('navbar_color') == 'dark') {
+			$params['bg_nav'] = 'navbar-dark';
+		} elseif (get_field('navbar_color') == 'light') {
+			$params['bg_nav'] = 'navbar-light';
+		}
+
 		if (get_field('header') && get_field('header') !== 'default') {
 			get_template_part('templates/header/header', get_field('header'), $params);
 		} else {

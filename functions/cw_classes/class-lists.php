@@ -22,7 +22,7 @@ class CW_List
 
 
    //list_type
-   public function cw_list_type($list_type = NULL)
+   public function cw_list_type($list_type)
    {
       if (get_sub_field('cw_type_list')) {
          $cw_list_type = get_sub_field('cw_type_list');
@@ -37,7 +37,7 @@ class CW_List
 
 
    //list_color
-   public function cw_list_color($list_color = NULL)
+   public function cw_list_color($list_color)
    {
       $color_object = new CW_Color(NULL, NULL);
       $cw_list_color = $color_object->color;
@@ -48,7 +48,7 @@ class CW_List
    }
 
    //list_icon
-   public function cw_list_icon($list_icon = NULL)
+   public function cw_list_icon($list_icon)
    {
 
       if (get_sub_field('cw_icon') &&  get_sub_field('cw_type_list') !== 'type 1') {
@@ -63,7 +63,7 @@ class CW_List
    }
 
    //list_class
-   public function cw_list_class($list_class = NULL)
+   public function cw_list_class($list_class)
    {
       $color = $this->list_color;
       $list_class_array = array();
@@ -88,7 +88,7 @@ class CW_List
    }
 
    //list_final
-   public function cw_list_final($lists_final = NULL)
+   public function cw_list_final($lists_final)
    {
       //$count = count(get_sub_field('cw_list'));
       $cw_lists_final = '';
@@ -139,7 +139,7 @@ class CW_ListCol
 
 
    //list_col_final
-   public function cw_listcol_final($list_type = NULL, $list_color = NULL, $list_icon = NULL, $list_class = NULL,  $listcol_final = NULL, $row_class = NULL, $row_id = NULL)
+   public function cw_listcol_final($list_type, $list_color, $list_icon, $list_class,  $listcol_final, $row_class, $row_id)
    {
       $cw_listcol_final = '';
       if (is_array(get_sub_field('cw_list_column'))) {

@@ -326,6 +326,13 @@ input#dgwt-wcas-search-input-1 {
 }
 
 /*
+* Page Frame Swiper Class
+*/
+.page-frame .swiper-slide .rounded-4-lg-start {
+  border-radius: 0.8rem !important;
+}
+
+/*
 * Widget
 */
 

@@ -168,3 +168,33 @@ function recent_post_blog_widget()
 <?php  }
 
 add_action('sidebar_main_end', 'recent_post_blog_widget', 10);
+
+
+
+/**
+ * FAQ Cloud Links Widget
+ */
+
+function cloud_links_blog_widget()
+{
+   $args = [
+      'taxonomy'      => ['post_tag'], // название таксономии с WP 4.5
+      'orderby'       => 'name',
+      'order'         => 'ASC',
+      'hide_empty'    => true,
+      'update_term_meta_cache' => true, // подгружать метаданные в кэш
+   ];
+   $post_tags = get_terms($args); ?>
+   <div class="widget">
+      <h4 class="widget-title mb-3"><?php esc_html_e('Post tags', 'codeweber'); ?></h4>
+      <ul class="list-unstyled tag-list mb-0">
+         <?php foreach ($post_tags as $post_tag) {
+            $tag_link = get_tag_link($post_tag->term_id); ?>
+            <li><a href="<?php echo $tag_link; ?>" title='<?php echo $post_tag->name; ?>' class="btn btn-soft-ash btn-sm rounded-pill mb-0 <?php echo $post_tag->slug; ?>"><?php echo $post_tag->name; ?></a></li>
+         <?php } ?>
+      </ul>
+   </div>
+
+<?php }
+
+add_action('sidebar_main_end', 'cloud_links_blog_widget', 20);
