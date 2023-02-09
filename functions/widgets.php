@@ -154,7 +154,7 @@ function recent_post_blog_widget()
                   <h4 class="h6 mb-2"> <a class="link-dark" href="<?php the_permalink($id); ?>"><?php echo $title; ?></a> </h4>
                   <ul class="post-meta">
                      <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d F Y', $post); ?></span></li>
-                     <li class="post-comments"><a href="<?php echo get_post_permalink(); ?>/#comments"><i class="uil uil-comment"></i><?php echo get_comments_number(); ?></a></li>
+                     <li class="post-comments"><a href="<?php echo get_permalink($id); ?>/#comments"><i class="uil uil-comment"></i><?php echo get_comments_number($id); ?></a></li>
                   </ul>
                   <!-- /.post-meta -->
                </div>

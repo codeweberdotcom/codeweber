@@ -1,6 +1,3 @@
-<?php
-global $post;
-?>
 <div class="col-lg-8">
 	<div class="blog single">
 		<div class="card">
@@ -11,28 +8,22 @@ global $post;
 				<div class="classic-view">
 					<article class="post">
 						<div class="post-content mb-5">
-							<div class="post-header">
-								<h2 class="post-title mt-1 mb-0"><?php esc_html_e('Answer to the question:', 'codeweber') ?></h2>
-							</div>
-							<?php if (get_field('paragraph')) { ?>
-								<p>
-									<?php the_field('paragraph'); ?>
-								</p>
-							<?php	} ?>
+							<?php the_content(); ?>
 						</div>
 						<!-- /.post-content -->
 						<div class="post-footer d-md-flex flex-md-row justify-content-md-between align-items-center mt-8">
 							<div>
+								<?php $tags = get_tags([
+									'number'       => 4,
+									'order'        => 'ASC',
+									'hide_empty'   => true,
+								]);
+								?>
 								<ul class="list-unstyled tag-list mb-0">
-									<?php $tags_post = get_the_terms($post, 'faq_tag'); ?>
-									<?php if (is_array($tags_post)) {
-										foreach ($tags_post as $tag) {
-											$tag_link = get_tag_link($tag->term_id); ?>
-											<li><a href="<?php echo $tag_link; ?>" title='<?php echo $tag->name; ?>' class="btn btn-soft-ash btn-sm rounded-pill mb-0 <?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
-									<?php
-										}
-									}
-									?>
+									<?php foreach ($tags as $tag) {
+										$tag_link = get_tag_link($tag->term_id); ?>
+										<li><a href="<?php echo $tag_link; ?>" title='<?php echo $tag->name; ?>' class="btn btn-soft-ash btn-sm rounded-pill mb-0 <?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
+									<?php } ?>
 								</ul>
 							</div>
 							<div class="mb-0 mb-md-2">
@@ -56,11 +47,52 @@ global $post;
 							</div>
 						</div>
 						<!-- /.post-footer -->
+						<hr>
+						<div class="author-info d-md-flex align-items-center mb-3">
+							<div class="d-flex align-items-center">
+								<?php
+								$user_id = get_the_author_meta('ID');
+								$user_acf_prefix = 'user_';
+								$user_id_prefixed = $user_acf_prefix . $user_id;
+								$avatar = get_field('avatar', $user_id_prefixed);
+								if ($avatar) : ?>
+									<figure class="user-avatar">
+										<img src="<?php echo esc_url($avatar['sizes']['brk_post_sm']); ?>" class='rounded-circle' alt="<?php echo esc_attr($avatar['alt']); ?>" />
+									</figure>
+								<?php else : ?>
+									<figure class="user-avatar">
+										<?php
+										echo get_avatar(get_the_author_meta('user_email'), 32);
+										?>
+									</figure>
+								<?php endif; ?>
+								<div>
+									<div class="h6"><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="link-dark"><?php the_author_meta('first_name'); ?> <?php the_author_meta('last_name'); ?></a></div>
+									<?php
+									$job_title = __('Writer', 'codeweber');
+									if (get_field('job_title', $user_id_prefixed)) {
+										$job_title = get_field('job_title', $user_id_prefixed);
+									}
+									?>
+									<span class="post-meta fs-15"><?php echo $job_title; ?></span>
+								</div>
+							</div>
+							<div class="mt-3 mt-md-0 ms-auto">
+								<a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>" class="btn btn-sm btn-soft-ash <?php echo GetThemeButton(); ?> btn-icon btn-icon-start mb-0"><i class="uil uil-file-alt"></i> <?php esc_html_e('All Posts', 'codeweber'); ?></a>
+							</div>
+						</div>
+						<p><?php the_author_meta('description'); ?></p>
+						<nav class="nav social">
+							<?php get_template_part('templates/components/socialicons', ''); ?>
+						</nav>
 					</article>
 					<!-- /.post -->
 				</div>
 				<!-- /.classic-view -->
+				<hr />
+				<?php get_template_part("templates/flexible-content/sliders/slider_1/slider_1"); ?>
 				<?php
+
 				if (comments_open() || get_comments_number()) { ?>
 					<hr />
 				<?php
