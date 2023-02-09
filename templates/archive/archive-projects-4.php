@@ -8,7 +8,7 @@
                 <?php } else { ?>
                    <p class="lead fs-lg pe-lg-15 pe-xxl-12">Check out some of our awesome projects with creative ideas and great design.</p>
                 <?php }; ?>
-                <?php brk_breadcrumbs(); ?>
+                <?php codeweber_breadcrumbs(); ?>
              </div>
              <!-- /column -->
           </div>

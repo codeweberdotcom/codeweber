@@ -5,8 +5,9 @@
 		<div class="row gx-lg-8 gx-xl-12">
 
 			<?php
-			if (is_post_type_archive('faq')  || is_tax('faq_categories')) :
-				if (is_active_sidebar('sidebar-faq')) {
+			/** Faq Content */ ?>
+			<?php if (is_post_type_archive('faq')  || is_tax('faq_categories') || is_tax('faq_tag')) :
+				if (is_active_sidebar('sidebar-faq') || has_action('sidebar_faq_start') || has_action('sidebar_faq_end')) {
 					$class_faq_content = 'col-lg-8';
 				} else {
 					$class_faq_content = 'col';
@@ -21,9 +22,9 @@
 						<!-- /post pagination -->
 					</div>
 				</div>
-			<?php get_sidebar();
-
-			elseif (is_post_type_archive('services')  || is_tax('service_category')  || is_tax('types_of_services')) :
+				<?php get_sidebar(); ?>
+				<?php /** Services Content */ ?>
+			<?php elseif (is_post_type_archive('services')  || is_tax('service_category')  || is_tax('types_of_services')) :
 				if (is_active_sidebar('sidebar-services')) {
 					$class_service_content = 'col-lg-8';
 				} else {
@@ -41,8 +42,13 @@
 				</div>
 			<?php get_sidebar();
 
-			elseif (have_posts()) : ?>
-				<div class="col-lg-8">
+			elseif (have_posts()) :
+				if (is_active_sidebar('sidebar-main') || has_action('sidebar_main_start') || has_action('sidebar_main_end')) {
+					$class_content = 'col-lg-8';
+				} else {
+					$class_content = 'col';
+				} ?>
+				<div class="<?php echo $class_content; ?>">
 					<div class="blog classic-view">
 						<?php while (have_posts()) :
 							the_post();
@@ -53,8 +59,13 @@
 					</div>
 				</div>
 			<?php get_sidebar();
-			else : ?>
-				<div class="col-lg-8">
+			else :
+				if (is_active_sidebar('sidebar-main') || has_action('sidebar_main_start') || has_action('sidebar_main_end')) {
+					$class_content = 'col-lg-8';
+				} else {
+					$class_content = 'col';
+				} ?>
+				<div class="<?php echo $class_content; ?>">
 					<div class="blog classic-view">
 						<?php get_template_part('templates/content/loop', 'none'); ?>
 					</div>

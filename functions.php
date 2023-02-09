@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  *  https://developer.wordpress.org/themes/basics/theme-functions/
  */
@@ -65,4 +66,4 @@ require_once get_template_directory() . '/functions/widgets.php'; // --- Custom 
 // --- Classes --- //
 require_once get_template_directory() . '/functions/cw_classes/cw_classes.php'; // --- Classes CW ---
 
-//require_once get_template_directory() . '/functions/classes/classes.php'; // --- Classes OLD ---
+require_once get_template_directory() . '/functions/classes/classes.php'; // --- Classes OLD ---
