@@ -15,7 +15,7 @@ function ip_process_like()
    $redirect       = false;
 
    // Check if like or dislike
-   if (is_singular('post')) {
+   if (is_singular('post') || is_singular('faq')) {
       if (isset($_GET['post_action'])) {
          if ($_GET['post_action'] == 'like') {
             // Like

@@ -26,7 +26,6 @@
                   }
                   echo implode(',&nbsp', $array_cat_faq);
                }
-
                ?>
             </div>
             <!-- /.post-category -->
@@ -46,15 +45,21 @@
          $user_acf_prefix = 'user_';
          $user_id_prefixed = $user_acf_prefix . $user_id;
          ?>
-
          <ul class="post-meta d-flex mb-0">
             <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php the_time(get_option('date_format')); ?></span></li>
-            <li class="post-author"><a href="<?php echo get_author_posts_url($user_id, get_the_author_meta('user_nicename')); ?>"><i class="uil uil-user"></i><span><?php esc_html_e('By', 'codeweber'); ?> <?php the_author_meta('user_firstname'); ?></span></a></li>
             <li class="post-comments"><a href="<?php echo get_post_permalink(); ?>/#comments"><i class="uil uil-comment"></i><span><?php echo $post->comment_count; ?> <?php esc_html_e('Comments', 'codeweber'); ?></span></a></li>
             <li class="post-likes ms-auto">
-               <i class="uil uil-heart-alt"></i>
-               <?php echo ip_get_like_count('likes') ?>
-               <span><?php esc_html_e('Likes', 'codeweber'); ?></span>
+               <?php if (ip_get_like_count('likes') >= 1) { ?>
+                  <i class="text-red uil uil-heart-alt"></i>
+                  <?php echo ip_get_like_count('likes') ?>
+                  <span><?php esc_html_e('Likes', 'codeweber'); ?></span>
+               <?php } else { ?>
+                  <i class="uil uil-heart-alt"></i>
+                  <?php echo ip_get_like_count('likes') ?>
+                  <span><?php esc_html_e('Likes', 'codeweber'); ?></span>
+               <?php  }
+               ?>
+
             </li>
          </ul>
          <!-- /.post-meta -->
