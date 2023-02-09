@@ -124,17 +124,17 @@ add_filter(
 );
 
 
-// // --- Nav Walker attributes fix for Bootstrap 5 ---
-// function brk_bs5_toggle_fix($atts)
-// {
+// --- Nav Walker attributes fix for Bootstrap 5 ---
+function brk_bs5_toggle_fix($atts)
+{
 
-// 	if (array_key_exists('data-toggle', $atts)) {
-// 		unset($atts['data-toggle']);
-// 		$atts['data-bs-toggle'] = 'dropdown';
-// 	}
-// 	return $atts;
-// }
-// add_filter('nav_menu_link_attributes', 'brk_bs5_toggle_fix');
+	if (array_key_exists('data-toggle', $atts)) {
+		unset($atts['data-toggle']);
+		$atts['data-bs-toggle'] = 'dropdown';
+	}
+	return $atts;
+}
+add_filter('nav_menu_link_attributes', 'brk_bs5_toggle_fix');
 
 
 
