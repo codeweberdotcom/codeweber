@@ -8,32 +8,26 @@
 $block = new CW_Settings(
    $cw_settings = array(
 
-      'title' => 'We have considered our solutions to support every stage of growth.',
-      'patternTitle' => '<h2 class="display-4 mb-5">%s</h2>',
+      'title' => 'What We Do?',
+      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
 
-      'paragraph' => 'Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo.',
-      'patternParagraph' => '<p class="mb-5">%s</p>',
+      'subtitle' => 'The full service we are offering is specifically designed to meet your business needs.',
+      'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
 
-      // 'subtitle' => 'We are a digital and branding company that believes in the power of creative strategy and along with great design.',
-      // 'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+      'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis elit interdum. Duis mollis, est non commodo luctus, nisi erat ligula. ',
+      'patternParagraph' => '<p>%s</p>',
+
+      'buttons' => ' <a href="#" class="btn btn-purple rounded-pill mt-3">More Details</a>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
       'background_class_default' => 'wrapper bg-light',
-      // 'background_data_default' => '/dist/img/map.png',
-      //'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      //'background_video_url' => '/dist/media/movie2.mp4',
-      //'background_pattern_url' => '/dist/img/pattern.png',
 
       'divider' => true,
 
-
       'multi_image' => array(
-         array('/dist/img/photos/sa5.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="img-fluid rounded shadow-lg mb-5"><img src="' . get_template_directory_uri() . '/dist/img/photos/sa5.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/sa5@2x.jpg 2x" alt=""></figure>'),
+         array('/dist/img/photos/sa5.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="rounded mb-6"><img src="' . get_template_directory_uri() . '/dist/img/photos/se1.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/se1@2x.jpg 2x" alt=""></figure>'),
 
-         array('/dist/img/photos/sa6.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="img-fluid rounded shadow-lg d-flex col-10 ms-auto"><img src="' . get_template_directory_uri() . '/dist/img/photos/sa6.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/sa6@2x.jpg 2x" alt=""></figure>'),
-
-         array('/dist/img/photos/sa7.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="img-fluid rounded shadow-lg my-5"><img src="' . get_template_directory_uri() . '/dist/img/photos/sa7.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/sa7@2x.jpg 2x" alt=""></figure>'),
-
-         array('/dist/img/photos/sa8.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="img-fluid rounded shadow-lg d-flex col-10"><img src="' . get_template_directory_uri() . '/dist/img/photos/sa8.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/sa8@2x.jpg 2x" alt=""></figure>'),
+         array('/dist/img/photos/sa6.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="rounded mb-6 mb-md-0"><img src="' . get_template_directory_uri() . '/dist/img/photos/se2.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/se2@2x.jpg 2x" alt=""></figure>'),
       ),
 
       'features' => '<div class="col-md-6 col-lg-4"><div class="d-flex flex-row"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/target.svg" class="svg-inject icon-svg icon-svg-sm text-aqua me-4" alt="" /></div><div><h4 class="mb-1">Fitness Goal</h4><p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p></div></div></div><!--/column -->',
@@ -55,7 +49,9 @@ $block = new CW_Settings(
                <div class="col-md-6">
                   <div class="row">
                      <div class="col-lg-12">
-                        <figure class="rounded mb-6"><img src="./assets/img/photos/se1.jpg" srcset="./assets/img/photos/se1@2x.jpg 2x" alt=""></figure>
+                        <?php if (isset($block->multi_images[0])) {
+                           echo $block->multi_images[0];
+                        } ?>
                      </div>
                      <!-- /column -->
                      <div class="col-lg-12">
@@ -78,7 +74,9 @@ $block = new CW_Settings(
                <div class="col-md-6">
                   <div class="row">
                      <div class="col-lg-12 order-md-2">
-                        <figure class="rounded mb-6 mb-md-0"><img src="./assets/img/photos/se2.jpg" srcset="./assets/img/photos/se2@2x.jpg 2x" alt=""></figure>
+                        <?php if (isset($block->multi_images[1])) {
+                           echo $block->multi_images[1];
+                        } ?>
                      </div>
                      <!-- /column -->
                      <div class="col-lg-12">
@@ -103,10 +101,14 @@ $block = new CW_Settings(
          </div>
          <!-- /column -->
          <div class="col-lg-5 offset-lg-1">
-            <h2 class="display-4 mb-3">What We Do?</h2>
-            <p class="lead fs-lg">The full service we are offering is specifically designed to meet your business needs.</p>
-            <p>Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis elit interdum. Duis mollis, est non commodo luctus, nisi erat ligula. </p>
-            <a href="#" class="btn btn-purple rounded-pill mt-3">More Details</a>
+            <?php echo $block->title; ?>
+            <!--/title -->
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
+            <?php echo $block->paragraph; ?>
+            <!--/paragraph -->
+            <?php echo $block->buttons; ?>
+            <!--/buttons group -->
          </div>
          <!-- /column -->
       </div>

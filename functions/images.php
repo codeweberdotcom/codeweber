@@ -43,6 +43,7 @@ if (!function_exists('brk_image_settings')) {
 
 		add_image_size('sandbox_features_1', 595, 507, true);
 		add_image_size('sandbox_features_6', 800, 621, true);
+		add_image_size('sandbox_features_10', 350, 338, true);
 		add_image_size('sandbox_slider_1', 560, 350, true);
 		add_image_size('sandbox_slider_2', 460, 307, true);
 
