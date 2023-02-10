@@ -191,10 +191,6 @@ add_action('codeweber_footer_start', 'woocommerce_output_related_products', 1);
 
 
 
-
-
-
-
 /**
  * overwritten from https://woocommerce.wp-a2z.org/oik_api/wc_get_gallery_image_html/
  */
@@ -324,6 +320,30 @@ add_action('page_content_end', 'cart_checkout_wrapper_end', 10);
 
 
 /**
- * Remove Page Header
+ * Set Page Header
  */
-//remove_action('codeweber_after_header', 'page_header', 5);
+
+function woocommerce_page_header()
+{
+   if (is_shop() || is_product() || is_singular('product')) {
+      if (get_field('pageheader') && get_field('pageheader') !== 'disable') :
+         if (get_theme_mod('codeweber_page_header') == 'type_1') :
+            get_template_part('templates/sections/common', 'breadcrumb');
+         endif;
+      endif;
+
+      if (is_shop() && get_field('pageheader') && get_field('pageheader') !== 'disable') {
+         if (get_theme_mod('codeweber_page_header') == 'type_2') {
+            get_template_part('templates/sections/common', 'pageheader');
+         } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
+            get_template_part('templates/sections/common', 'pageheader_1');
+         } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+            get_template_part('templates/sections/common', 'pageheader_2');
+         }
+      }
+   }
+}
+?>
+<?php
+
+add_action('codeweber_after_header', 'woocommerce_page_header', 20);
