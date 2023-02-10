@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly
 }
 ?>
-<li class="comment" id="li-comment-<?php comment_ID(); ?>">
+<li class="comment card card-body" id="li-comment-<?php comment_ID(); ?>">
 
 	<div id="comment-<?php comment_ID(); ?>" class="comment-header d-md-flex align-items-center comment_container">
 		<figure class="user-avatar">
@@ -62,7 +62,6 @@ if (!defined('ABSPATH')) {
 
 		<?php
 
-
 		/**
 		 * The woocommerce_review_meta hook.
 		 *
@@ -83,13 +82,4 @@ if (!defined('ABSPATH')) {
 		?>
 
 	</div>
-
-	<div class="d-flex flex-row align-items-center pb-3">
-		<p class="text-muted fs-15 mb-0 me-5">Was this review helpful?</p>
-		<div>
-			<a href="#" class="link-dark me-3"><i class="uil uil-thumbs-up"></i> 5</a>
-			<a href="#" class="link-dark"><i class="uil uil-thumbs-down"></i> 5</a>
-		</div>
-	</div>
-
 </li>

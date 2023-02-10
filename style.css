@@ -380,3 +380,8 @@ input#dgwt-wcas-search-input-1 {
 .stars a.active {
   color: #ffca08;
 }
+
+.sticky-top {
+  top: 100px;
+  z-index: 1 !important;
+}
