@@ -1,11 +1,12 @@
 <?php if ($args['style_nav'] == 'transparent') {
-   $class_nav = 'position-absolute navbar-dark';
-} else {
-   $class_nav = 'navbar-light';
-};   ?>
+   $class_nav = 'position-absolute ';
+   $class_nav .= $args['bg_nav'];
+} elseif ($args['style_nav'] == 'solid') {
+   $class_nav = $args['bg_nav'];
+}; ?>
 
 <header class="wrapper">
-   <nav class="navbar navbar-expand-lg classic transparent navbar-light <?php echo $class_nav; ?>">
+   <nav class="navbar navbar-expand-lg classic transparent <?php echo $class_nav; ?>">
       <div class="container flex-lg-row flex-nowrap align-items-center">
          <div class="navbar-brand w-100 pe-3">
             <?php echo codeweber_logo_dark_link(); ?>

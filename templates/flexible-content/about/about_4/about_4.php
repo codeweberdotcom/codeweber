@@ -71,6 +71,7 @@ $block = new CW_Settings(
             <?php echo $block->paragraph; ?>
             <!--/pargraph -->
             <?php echo $block->list; ?>
+            <!--/list -->
          </div>
          <!--/column -->
       </div>

@@ -228,54 +228,7 @@ function wp_login_form_brk($args = array())
     }
 }
 
-// Page title Function
-function codeweber_page_title()
-{
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    if ($paged !== 1) {
-        $page_num = '<span class="text-ash"> (Страница ' . $paged . ')</span>';
-    } else {
-        $page_num = NULL;
-    }
 
-    if (!is_front_page() || !is_home()) {
-        if (class_exists('WooCommerce')) {
-            if (is_shop()) {
-                echo woocommerce_page_title() . $page_num;
-            } elseif (is_post_type_archive('projects') && get_theme_mod('project_title')) {
-                echo get_theme_mod('project_title');
-            } elseif (is_tag() || is_category() || is_archive() || is_author()) {
-                the_archive_title();
-            } elseif (is_page()) {
-                the_title();
-            } elseif (is_search()) {
-                esc_html_e('Results for: ', 'codeweber');
-                the_search_query();
-            } elseif (is_single()) {
-                the_title();
-            } else {
-                echo esc_html(get_the_title(get_option('page_for_posts', true)));
-            }
-        } else {
-            if (is_post_type_archive('projects') && get_theme_mod('project_title')) {
-                echo get_theme_mod('project_title');
-            } elseif (is_tag() || is_category() || is_archive() || is_author()) {
-                the_archive_title();
-            } elseif (is_page()) {
-                the_title();
-            } elseif (is_search()) {
-                esc_html_e('Results for: ', 'codeweber');
-                the_search_query();
-            } elseif (is_single()) {
-                the_title();
-            } else {
-                echo esc_html(get_the_title(get_option('page_for_posts', true)));
-            }
-        }
-    } elseif (is_front_page() || is_home()) {
-        echo esc_html(get_the_title(get_option('page_for_posts', true)));
-    }
-}
 
 
 /** Blog loop excerpt more link and 20 symbols */
@@ -338,26 +291,8 @@ function sandbox_recent_post()
 <?php
 }
 
-// Sandbox Frame Content Open Function 
-function sandbox_frame_open()
-{
-    if (get_theme_mod('codeweber_frame_content') == 1) :
-        echo '<div class="page-frame bg-light">';
-    else :
-        return;
-    endif;
-};
 
 
-// Sandbox Frame Content Close Function
-function sandbox_frame_close()
-{
-    if (get_theme_mod('codeweber_frame_content') == 1) :
-        echo '</div><style>.page-frame .swiper-slide .rounded-4-lg-start { border-radius: 0.8rem!important; }</style>';
-    else :
-        return;
-    endif;
-};
 
 
 

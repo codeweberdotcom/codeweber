@@ -6,7 +6,7 @@
 if (post_password_required()) {
 	return;
 }
-if ($comments) {
+if (have_comments()) {
 ?>
 	<div class="comments" id="comments" style="padding-top: 75px; margin-top: -75px;">
 		<?php

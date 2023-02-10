@@ -3,9 +3,7 @@
 /**
  * Slider 1
  */
-
 ?>
-
 
 <?php
 $my_posts = new WP_Query;
@@ -18,7 +16,7 @@ $myposts = $my_posts->query(array(
       <div class="swiper-wrapper" id="swiper-wrapper-b89a14f97e102ef7d" aria-live="off" style="cursor: grab; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
          <?php
          // обрабатываем результат
-         foreach ($myposts as $post) { ?>
+         foreach ($myposts as $post_single) { ?>
             <div class="swiper-slide">
                <article>
                   <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="<?php the_permalink(); ?>">
@@ -36,19 +34,18 @@ $myposts = $my_posts->query(array(
                         <div class="from-top mb-0 h5"><?php esc_html_e('Read More', 'codeweber'); ?></div>
                      </figcaption>
                   </figure>
-
                   <div class="post-header">
                      <div class="post-category text-line">
                         <?php the_category(', '); ?>
                      </div>
                      <!-- /.post-category -->
-                     <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="<?php the_permalink(); ?>"><?php echo esc_html($post->post_title); ?></a></h2>
+                     <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="<?php the_permalink(); ?>"><?php echo esc_html($post_single->post_title); ?></a></h2>
                   </div>
                   <!-- /.post-header -->
                   <div class="post-footer">
                      <ul class="post-meta mb-0">
                         <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php the_time(get_option('date_format')); ?></span></li>
-                        <li class="post-comments"><a href="<?php echo get_post_permalink(); ?>/#comments"><i class="uil uil-comment"></i><?php echo $post->comment_count; ?></a></li>
+                        <li class="post-comments"><a href="<?php echo get_post_permalink(); ?>/#comments"><i class="uil uil-comment"></i><?php echo $post_single->comment_count; ?></a></li>
                      </ul>
                      <!-- /.post-meta -->
                   </div>
