@@ -18,13 +18,13 @@
    <div id="content-wrapper" class="content-wrapper">
       <?php do_action('codeweber_start_content_wrapper'); // Hook start content wrapper
 
-
-
       if (get_field('cw_transparent_header') == 'default') {
-         $params = ['style_nav' => get_theme_mod('codeweber_header_woocomerce_style')];
+         $params = ['style_nav' => get_theme_mod('codeweber_header_style')];
       } elseif (get_field('cw_transparent_header') == 'transparent') {
          $params = ['style_nav' => 'transparent'];
       } elseif ((get_field('cw_transparent_header') == 'solid')) {
+         $params = ['style_nav' => 'solid'];
+      } else {
          $params = ['style_nav' => 'solid'];
       }
 
@@ -33,13 +33,13 @@
       } elseif (get_field('navbar_color') == 'light') {
          $params['bg_nav'] = 'navbar-light';
       } else {
-         $params['bg_nav'] = 'navbar-dark';
+         $params['bg_nav'] = 'navbar-light';
       }
-
 
       if (get_theme_mod('woocommerce_header') == 'default') {
          get_template_part('templates/header/header', get_theme_mod('codeweber_header'), $params);
       } else {
          get_template_part('templates/header/header', get_theme_mod('woocommerce_header'), $params);
       }
-      do_action('codeweber_after_header'); // Hook after header
+
+      do_action('woocommerce_after_header'); // Hook after header

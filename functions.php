@@ -52,13 +52,6 @@ if (!function_exists('get_field')) {
 // --- Customizer --- //
 require_once get_template_directory() . '/functions/customize.php'; // --- Customizer ---
 
-
-if (class_exists('WooCommerce')) {
-	// --- Woocommerce ---//
-	require_once get_template_directory() . '/functions/woocommerce/woocommerce.php'; // --- Woocommerce Functions ---
-}
-
-
 // --- Widgets ---//
 require_once get_template_directory() . '/functions/widgets.php'; // --- Custom Widgets ---
 
@@ -67,3 +60,9 @@ require_once get_template_directory() . '/functions/widgets.php'; // --- Custom 
 require_once get_template_directory() . '/functions/cw_classes/cw_classes.php'; // --- Classes CW ---
 
 require_once get_template_directory() . '/functions/classes/classes.php'; // --- Classes OLD ---
+
+
+if (class_exists('WooCommerce')) {
+	// --- Woocommerce ---//
+	require_once get_template_directory() . '/functions/woocommerce/woocommerce.php'; // --- Woocommerce Functions ---
+}

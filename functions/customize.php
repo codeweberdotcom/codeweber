@@ -349,6 +349,7 @@ function codeweber_register_theme_customizer($wp_customize)
             'type_1' => esc_html__('Type 1', 'codeweber'),
             'type_2' => esc_html__('Type 2', 'codeweber'),
             'type_3' => esc_html__('Type 3', 'codeweber'),
+            'type_4' => esc_html__('Type 4', 'codeweber'),
          ),
       )
    );

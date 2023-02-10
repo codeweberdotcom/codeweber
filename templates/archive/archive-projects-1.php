@@ -4,7 +4,7 @@
          <div class="row">
             <div class="col-lg-10 col-xxl-8 mx-auto">
                <h1 class="display-1 mb-3"><?php codeweber_page_title(); ?></h1>
-               <?php codeweber_breadcrumbs(); ?>
+               <?php codeweber_breadcrumbs(NULL); ?>
             </div>
             <!-- /column -->
          </div>

@@ -61,7 +61,7 @@ endif; ?>
                <?php if (isset($project_short_description)) { ?>
                   <p class="lead px-md-12 px-lg-12 px-xl-15 px-xxl-18"><?php echo $project_short_description;  ?></p>
                <?php } ?>
-               <?php codeweber_breadcrumbs(); ?>
+               <?php codeweber_breadcrumbs(NULL); ?>
             </div>
             <!-- /.post-header -->
          </div>
