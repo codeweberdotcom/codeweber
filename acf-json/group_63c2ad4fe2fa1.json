@@ -237,21 +237,14 @@
                     "type": "select",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_63c2ad5dc2dd3",
-                                "operator": "!=",
-                                "value": "Doodles"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
                     "choices": {
+                        "none": "none",
                         "1": "1",
                         "2": "2",
                         "3": "3",
@@ -300,6 +293,7 @@
                         "id": ""
                     },
                     "choices": {
+                        "none": "none",
                         "1": "1",
                         "2": "2",
                         "3": "3",
@@ -376,5 +370,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676112190
+    "modified": 1676113310
 }

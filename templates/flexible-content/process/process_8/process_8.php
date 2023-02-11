@@ -58,7 +58,7 @@ $block = new CW_Settings(
       // 'column_class_1' => '',
       // 'column_class_2' => 'order-lg-2',
 
-      'features' => ' <div class="col-md-6"><h4><span class="text-primary">1.</span> Creative Ideas</h4><p class="mb-0">Nulla vitae elit libero a augue donec id elit non mi porta.</p></div>',
+      'features' => '<div class="col-md-6"><h4><span class="text-primary">1.</span> Creative Ideas</h4><p class="mb-0">Nulla vitae elit libero a augue donec id elit non mi porta.</p></div>',
 
       'features_pattern' => '<div class="col-md-6"><h4><span class="text-primary">%8$s</span> %3$s</h4><p class="mb-0">%4$s</p></div>'
    )
