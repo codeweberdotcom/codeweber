@@ -55,7 +55,8 @@
                         "Dot": "Dot",
                         "Line": "Line",
                         "Solid": "Solid",
-                        "SVG": "SVG"
+                        "SVG": "SVG",
+                        "Doodles": "Doodles"
                     },
                     "default_value": "none",
                     "allow_null": 0,
@@ -106,6 +107,48 @@
                         "Rounded": "Rounded"
                     },
                     "default_value": "Restangle",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_63e766d586a13",
+                    "label": "Doodles",
+                    "name": "cw_doodles",
+                    "type": "select",
+                    "instructions": "doodle1",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63c2ad5dc2dd3",
+                                "operator": "==",
+                                "value": "Doodles"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "doodle1": "doodle1",
+                        "doodle2": "doodle2",
+                        "doodle3": "doodle3",
+                        "doodle4": "doodle4",
+                        "doodle5": "doodle5",
+                        "doodle6": "doodle6",
+                        "doodle7": "doodle7",
+                        "doodle8": "doodle8",
+                        "doodle9": "doodle9",
+                        "doodle10": "doodle10",
+                        "doodle11": "doodle11"
+                    },
+                    "default_value": false,
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -194,7 +237,15 @@
                     "type": "select",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63c2ad5dc2dd3",
+                                "operator": "!=",
+                                "value": "Doodles"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -325,5 +376,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675165350
+    "modified": 1676112190
 }

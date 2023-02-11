@@ -14,16 +14,13 @@ $block1 = new CW_Settings(
 
       'buttons_pattern' => '<div class="d-flex justify-content-center mt-5 animate__animated animate__zoomIn animate__delay-3s">%s</div>',
       'buttons' => ' <a href="' . get_template_directory_uri() . '/dist/media/movie.mp4" class="btn btn-circle btn-white btn-play ripple mx-auto mt-5 animate__animated animate__zoomIn animate__delay-3s" data-glightbox><i class="icn-caret-right"></i></a>',
+
    )
 );
 
 $block = new CW_Settings(
    $cw_settings = array(
       'background_class_default' => 'wrapper bg-dark',
-      //'background_data_default' => '/dist/img/photos/bg4.jpg',
-      //'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      //'background_video_url' => '/dist/media/movie2.mp4',
-      //'background_pattern_url' => '/dist/img/pattern.png',
       'swiper' => array(
          'swiper_first_slide' => 'true', // нету
          'swiper_container_class' => 'swiper-thumbs-container swiper-fullscreen nav-dark',

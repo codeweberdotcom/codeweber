@@ -1,9 +1,13 @@
-<?php if ($args['style_nav'] == 'transparent') {
+<?php
+
+if ($args['style_nav'] == 'transparent') {
    $class_nav = 'position-absolute ';
    $class_nav .= $args['bg_nav'];
 } elseif ($args['style_nav'] == 'solid') {
    $class_nav = $args['bg_nav'];
-}; ?>
+};
+
+?>
 
 <header class="wrapper">
    <nav class="navbar navbar-expand-lg classic transparent <?php echo $class_nav; ?>">
@@ -40,7 +44,6 @@
          <!-- /.navbar-collapse -->
          <div class="navbar-other ms-lg-4">
             <ul class="navbar-nav flex-row align-items-center ms-auto">
-
                <li class="nav-item d-none d-lg-block">
                   <ul class="navbar-nav flex-row align-items-center ms-auto">
                      <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search"><i class="uil uil-search"></i></a></li>

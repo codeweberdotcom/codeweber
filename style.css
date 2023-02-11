@@ -341,3 +341,47 @@ input#dgwt-wcas-search-input-1 {
     top: 100px !important;
   }
 }
+
+.starrating > input {
+  display: none;
+} /* Remove radio buttons */
+
+.starrating > label a:before {
+  content: "\eceb"; /* Star */
+  margin: 0;
+  padding: 0;
+  font-size: 1.6rem;
+  font-family: Unicons !important;
+  display: inline-block;
+}
+
+.starrating > label a {
+  color: #222222; /* Start color when not clicked */
+}
+
+.starrating > input:checked ~ label a {
+  color: #ffca08;
+} /* Set yellow color when star checked */
+
+.starrating > input:hover ~ label a {
+  color: #ffca08;
+} /* Set yellow color when star hover */
+
+.stars a:before {
+  content: "\eceb";
+  margin: 0;
+  padding: 0;
+  font-family: Unicons !important;
+  display: inline-block;
+  font-size: 1.6rem;
+}
+
+.stars a:hover,
+.stars a.active {
+  color: #ffca08;
+}
+
+.sticky-top {
+  top: 100px;
+  z-index: 1 !important;
+}

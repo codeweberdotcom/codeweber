@@ -73,6 +73,8 @@ class CW_Settings
 
       $this->features = $this->cw_features($cw_settings);
       $this->column_class_two = $this->cw_column_class($cw_settings);
+      $this->divider_class = $this->cw_divider_class($cw_settings);
+      $this->divider_wave = $this->cw_divider_wave($cw_settings);
       $this->list = $this->cw_list($cw_settings);
       $this->accordeon = $this->cw_accordeon($cw_settings);
 
@@ -80,8 +82,7 @@ class CW_Settings
 
       $this->swiper_final = $this->cw_swiper_final($cw_settings);
 
-      $this->divider_class = $this->cw_divider_class($cw_settings);
-      $this->divider_wave = $this->cw_divider_wave($cw_settings);
+
       $this->section_class = $this->cw_section_class($cw_settings);
    }
 
@@ -586,6 +587,7 @@ class CW_Settings
       } else {
          $divider_class = NULL;
       }
+
       return $divider_class;
    }
 

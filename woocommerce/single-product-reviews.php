@@ -29,53 +29,12 @@ if (!comments_open()) {
 
 <div class="row gx-md-8 gx-xl-12 gy-10">
 
-
-	<aside class="col-lg-4 sidebar">
-		<div class="widget mt-1">
-			<h4 class="widget-title mb-3">Ratings Distribution</h4>
-			<div class="mb-5"><span class="ratings four"></span><span>4.2 out of 5</span></div>
-			<ul class="progress-list">
-				<li>
-					<p>5 Stars</p>
-					<div class="progressbar line blue" data-value="82"></div>
-				</li>
-				<li>
-					<p>4 Stars</p>
-					<div class="progressbar line blue" data-value="8"></div>
-				</li>
-				<li>
-					<p>3 Stars</p>
-					<div class="progressbar line blue" data-value="5"></div>
-				</li>
-				<li>
-					<p>2 Stars</p>
-					<div class="progressbar line blue" data-value="3"></div>
-				</li>
-				<li>
-					<p>1 Star</p>
-					<div class="progressbar line blue" data-value="2"></div>
-				</li>
-			</ul>
-			<!-- /.progress-list -->
-		</div>
-		<!-- /.widget -->
-		<div class="widget mt-10">
-			<h4 class="widget-title mb-3">Review this product</h4>
-			<p class="mb-5">Aenean eu leo quam ornare sem lacinia quam.</p>
-			<a href="#" class="btn btn-primary rounded w-100">Write a Review</a>
-		</div>
-		<!-- /.widget -->
-	</aside>
-	<!-- /column .sidebar -->
-
-
-
-	<div class="col-lg-8">
+	<div class="col-lg-8 order-md-2">
 		<div id="reviews" class="woocommerce-Reviews">
 			<div id="comments">
 
 				<div class="row align-items-center mb-10 position-relative zindex-1">
-					<div class="col-md-7 col-xl-8 pe-xl-20">
+					<div class="col-md-12 pe-xl-20">
 						<h2 class="display-6 mb-0 woocommerce-Reviews-title">
 
 							<?php
@@ -88,29 +47,11 @@ if (!comments_open()) {
 								esc_html_e('Reviews', 'woocommerce');
 							}
 							?>
-
-
 						</h2>
-					</div>
-					<!--/column -->
-					<div class="col-md-5 col-xl-4 ms-md-auto text-md-end mt-5 mt-md-0">
-						<div class="form-select-wrapper">
-							<select class="form-select">
-								<option value="newest">Sort by newest</option>
-								<option value="oldest">Sort by oldest</option>
-								<option value="popular">Sort by popularity</option>
-								<option value="high-rating">Sort by high rating</option>
-								<option value="low-rating">Sort by low rating</option>
-							</select>
-						</div>
-						<!--/.form-select-wrapper -->
 					</div>
 					<!--/column -->
 				</div>
 				<!--/.row -->
-
-
-
 
 				<?php if (have_comments()) : ?>
 
@@ -138,6 +79,11 @@ if (!comments_open()) {
 					<p class="woocommerce-noreviews"><?php esc_html_e('There are no reviews yet.', 'woocommerce'); ?></p>
 				<?php endif; ?>
 			</div>
+		</div>
+	</div>
+
+	<aside class="col-lg-4 sidebar">
+		<div class="widget mt-1 sticky-top zindex-1">
 
 			<?php if (get_option('woocommerce_review_rating_verification_required') === 'no' || wc_customer_bought_product('', get_current_user_id(), $product->get_id())) : ?>
 				<div id="review_form_wrapper">
@@ -146,7 +92,7 @@ if (!comments_open()) {
 						$commenter    = wp_get_current_commenter();
 						$comment_form = array(
 							/* translators: %s is product title */
-							'title_reply'         => have_comments() ? esc_html__('Review this product', 'woocommerce') : sprintf(esc_html__('Be the first to review &ldquo;%s&rdquo;', 'woocommerce'), get_the_title()),
+							'title_reply'         => have_comments() ? esc_html__('Review this product', 'codeweber') : sprintf(esc_html__('Be the first to review &ldquo;%s&rdquo;', 'woocommerce'), get_the_title()),
 							/* translators: %s is product title */
 							'title_reply_to'      => esc_html__('Leave a Reply to %s', 'woocommerce'),
 							'title_reply_before'  => '<h4 id="reply-title" class="widget-title mb-3 comment-reply-title">',
@@ -195,7 +141,10 @@ if (!comments_open()) {
 						}
 
 						if (wc_review_ratings_enabled()) {
-							$comment_form['comment_field'] = '<div class="comment-form-rating"><label for="rating">' . esc_html__('Your rating', 'woocommerce') . (wc_review_ratings_required() ? '&nbsp;<span class="required">*</span>' : '') . '</label>
+
+							$comment_form['comment_field'] = '<div class="comment-form-rating">
+							
+							<label for="rating">' . esc_html__('Your rating', 'woocommerce') . (wc_review_ratings_required() ? '&nbsp;<span class="required">*</span>' : '') . '</label>
 							<select name="rating" id="rating" required>
 						<option value="">' . esc_html__('Rate&hellip;', 'woocommerce') . '</option>
 						<option value="5">' . esc_html__('Perfect', 'woocommerce') . '</option>
@@ -203,10 +152,24 @@ if (!comments_open()) {
 						<option value="3">' . esc_html__('Average', 'woocommerce') . '</option>
 						<option value="2">' . esc_html__('Not that bad', 'woocommerce') . '</option>
 						<option value="1">' . esc_html__('Very poor', 'woocommerce') . '</option>
-					</select></div>';
+					</select>
+					</div>';
 						}
 
-						$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__('Your review', 'woocommerce') . '&nbsp;<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" required></textarea></p>';
+						$comment_form['comment_field'] .= '<p class="form-floating mb-4 comment-form-comment"><textarea id="comment" class="form-control" name="comment" placeholder="' . esc_html__('Your review', 'woocommerce') . '" style="height: 150px" required></textarea><label for="comment">' . esc_html__('Your review', 'woocommerce') . '</label></p><!-- /.form-floating -->';
+
+						$comment_form['class_submit'] = GetThemeButton() . ' btn-primary btn w-100';
+
+
+						$comment_form['fields']['email'] = '<p class="comment-form-email form-floating mb-4"><input id="email" name="email" placeholder="E-Mail" class="form-control"  type="email"  value="' . esc_attr($commenter['comment_author_email']) . '" size="30" aria-describedby="email-notes"  required/><label for="email">' . __('Email') . ($req ? ' <span class="required">*</span>' : '') . '</label></p>';
+
+						$comment_form['fields']['author'] = '<p class="comment-form-author form-floating mb-4"><input id="author" placeholder="Имя" name="author" type="text" class="form-control" value="' . esc_attr($commenter['comment_author']) . '" size="30" required/><label for="author">' . __('Name') . '</label></p>';
+
+						$comment_form['fields']['cookies'] =
+							'<p class="comment-form-cookies-consent form-check mb-4"><input class="form-check-input" id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value=""><label for="wp-comment-cookies-consent">' . __('Save my name, email, and website in this browser for the next time I comment.') . '</label></p>';
+
+
+
 
 						comment_form(apply_filters('woocommerce_product_review_comment_form_args', $comment_form));
 						?>
@@ -219,9 +182,14 @@ if (!comments_open()) {
 			<div class="clear"></div>
 		</div>
 
+</div>
+<!-- /.widget -->
+</aside>
+<!-- /column .sidebar -->
 
 
 
 
 
-	</div>
+
+</div>

@@ -118,7 +118,8 @@
                 "disable": "disable",
                 "type_1": "type_1",
                 "type_2": "type_2",
-                "type_3": "type_3"
+                "type_3": "type_3",
+                "type_4": "type_4"
             },
             "default_value": "default",
             "allow_null": 0,
@@ -318,6 +319,20 @@
                 "operator": "==",
                 "value": "types_of_services"
             }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "faq_tag"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "faq_categories"
+            }
         ]
     ],
     "menu_order": 0,
@@ -329,5 +344,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675980798
+    "modified": 1676050095
 }

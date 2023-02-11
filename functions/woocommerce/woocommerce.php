@@ -325,14 +325,33 @@ add_action('page_content_end', 'cart_checkout_wrapper_end', 10);
 
 function woocommerce_page_header()
 {
-   if (is_shop() || is_product() || is_singular('product')) {
-      if (get_field('pageheader') && get_field('pageheader') !== 'disable') :
-         if (get_theme_mod('codeweber_page_header') == 'type_1') :
-            get_template_part('templates/sections/common', 'breadcrumb');
-         endif;
-      endif;
+   if (is_tax()) {
+      $taxonomy_prefix = 'product_cat';
+      $term_id = get_queried_object_id();
+      $term_id_prefixed = $taxonomy_prefix . '_' . $term_id;
+   } else {
+      $term_id_prefixed = NULL;
+   }
 
-      if (is_shop() && get_field('pageheader') && get_field('pageheader') !== 'disable') {
+
+   if (get_field('pageheader', $term_id_prefixed) && get_field('pageheader', $term_id_prefixed) !== 'disable') {
+      if (get_field('pageheader', $term_id_prefixed) == 'default') {
+         if (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
+            get_template_part('templates/sections/common', 'breadcrumb');
+         }
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_1' || get_field('pageheader', $term_id_prefixed) == 'type_4') {
+         get_template_part('templates/sections/common', 'breadcrumb');
+      }
+
+      if (get_field('pageheader', $term_id_prefixed) == 'type_1') {
+         get_template_part('templates/sections/common', 'pageheader_2');
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_2') {
+         get_template_part('templates/sections/common', 'pageheader');
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_3') {
+         get_template_part('templates/sections/common', 'pageheader_1');
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_4') {
+         return;
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'default') {
          if (get_theme_mod('codeweber_page_header') == 'type_2') {
             get_template_part('templates/sections/common', 'pageheader');
          } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
@@ -346,4 +365,4 @@ function woocommerce_page_header()
 ?>
 <?php
 
-add_action('codeweber_after_header', 'woocommerce_page_header', 20);
+add_action('woocommerce_after_header', 'woocommerce_page_header', 20);
