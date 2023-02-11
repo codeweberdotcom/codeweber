@@ -97,8 +97,14 @@ class CW_Shape
       } elseif (get_sub_field('cw_width') && get_sub_field('cw_height')) {
          $cw_shape_width = get_sub_field('cw_width');
          $cw_shape_height = get_sub_field('cw_height');
-         $cw_shape_size = 'w-' . $cw_shape_width . ' ' . 'h-' . $cw_shape_height;
-         $this->size_height = 'h-' . $cw_shape_height;
+         $cw_shape_size_array = array();
+         if ($cw_shape_width !== 'none') {
+            $cw_shape_size_array[] = 'w-' . $cw_shape_width;
+         }
+         if ($cw_shape_height !== 'none') {
+            $cw_shape_size_array[] = 'h-' . $cw_shape_height;
+         }
+         $cw_shape_size = implode(' ', $cw_shape_size_array);
       } else {
          $cw_shape_size = NULL;
       }
@@ -219,7 +225,7 @@ class CW_Shape
 
 
       if ($this->shape_type == 'Doodles') {
-         $cw_shape_final = '<img src="' . $link_doodle . '" class="' . $size_height . ' d-none d-lg-block" alt="" ' . $position . '>';
+         $cw_shape_final = '<img src="' . $link_doodle . '" class="position-absolute ' . $size . ' d-none d-lg-block" alt="" ' . $position . '>';
       } elseif ($this->shape_type !== 'SVG') {
          $cw_shape_final = '<div class="shape rellax ' . $final_settings . ' ' . $size . '" data-rellax-speed="1" ' . $position . '></div>';
       } elseif ($this->shape_type == NULL) {
