@@ -169,6 +169,8 @@ class CW_Feature
 class CW_Features
 {
    public $features_list_final;
+   public $features_array_final;
+
    public function __construct($features_pattern, $demo, $class_icon)
    {
       $this->features_list_final = $this->cw_features_list_final($features_pattern, $demo, $class_icon);
@@ -178,6 +180,7 @@ class CW_Features
    public function cw_features_list_final($features_pattern, $demo, $class_icon)
    {
       if (have_rows('cw_features')) {
+         $cw_features_array = array();
          $cw_features_list = '';
          $num = '1';
          while (have_rows('cw_features')) {
@@ -194,12 +197,14 @@ class CW_Features
                $num_s,
                $class_icon
             );
+            $cw_features_array[] = $features_item->features_item_final;
             $cw_features_list .= $features_item->features_item_final;
             $num++;
          }
       } else {
          $cw_features_list = NULL;
       }
+      $this->features_array_final = $cw_features_array;
       return $cw_features_list;
    }
 }

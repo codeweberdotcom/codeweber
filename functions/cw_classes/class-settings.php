@@ -42,6 +42,7 @@ class CW_Settings
    public $multi_images;
 
    public $features;
+   public $features_array;
 
    public $list;
 
@@ -188,7 +189,7 @@ class CW_Settings
          }
          $features_object = new CW_Features($features_pattern, $demo, $class_icon);
          $cw_features = $features_object->features_list_final;
-
+         $this->features_array =  $features_object->features_array_final;
          if ($cw_features == NULL) {
             $cw_features = $this->cw_settings['features'];
          }
