@@ -13,8 +13,9 @@ class CW_Divider
 
    public function __construct($type_divider, $class_divider, $div_wave, $div_color, $div_border)
    {
-      $this->type_divider = $this->cw_type_divider($type_divider);
+
       $this->div_color = $this->cw_div_color($div_color);
+      $this->type_divider = $this->cw_type_divider($type_divider);
       $this->class_divider = $this->cw_class_divider($class_divider);
       $this->div_wave = $this->cw_div_wave($div_wave);
       $this->div_border = $this->cw_div_border($div_border);
@@ -31,6 +32,8 @@ class CW_Divider
       } else {
          $type_divider = NULL;
       }
+
+
       return $type_divider;
    }
 

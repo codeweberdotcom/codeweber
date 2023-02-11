@@ -1,6 +1,6 @@
 <?php
 
-//* ---Lists---
+//---Lists---
 
 class CW_List
 {
@@ -141,7 +141,7 @@ class CW_ListCol
    //list_col_final
    public function cw_listcol_final($list_type, $list_color, $list_icon, $list_class,  $listcol_final, $row_class, $row_id)
    {
-      $cw_listcol_final = '';
+      $cw_listcol_final = array();
       if (is_array(get_sub_field('cw_list_column'))) {
          $count_col = count(get_sub_field('cw_list_column'));
       }
@@ -164,23 +164,26 @@ class CW_ListCol
       }
 
       if (have_rows('cw_list_column') && $count_col >= 1) {
-         $cw_listcol_final .= '<div class="row' . $class_row . '" ' . $id_row . '>';
+         $cw_listcol_final[] = '<div class="row' . $class_row . '" ' . $id_row . '>';
       }
 
       if (have_rows('cw_list_column')) {
          while (have_rows('cw_list_column')) {
             the_row();
-            $cw_listcol_final .= '<div class="' . $this->list_responsive_class . '">';
+            $cw_listcol_final[] = '<div class="' . $this->list_responsive_class . '">';
             $cw_list_object = new CW_List($list_type, $list_color, $list_icon, $list_class,  $listcol_final);
-            $cw_listcol_final .= $cw_list_object->lists_final;
-            $cw_listcol_final .= '</div>';
+            $cw_listcol_final[] = $cw_list_object->lists_final;
+            $cw_listcol_final[] = '</div>';
          }
       }
 
       if (have_rows('cw_list_column') && $count_col >= 1) {
-         $cw_listcol_final .= '</div>';
+         $cw_listcol_final[] = '</div>';
       }
 
-      return $cw_listcol_final;
+      $cw_listcol_finals = implode('', $cw_listcol_final);
+
+
+      return $cw_listcol_finals;
    }
 }
