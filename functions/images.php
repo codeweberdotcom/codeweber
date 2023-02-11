@@ -41,6 +41,8 @@ if (!function_exists('brk_image_settings')) {
 
 		add_image_size('sandbox_faq_1', 800, 590, true);
 
+		add_image_size('sandbox_process_8', 373, 682, true);
+
 		add_image_size('sandbox_features_1', 595, 507, true);
 		add_image_size('sandbox_features_6', 800, 621, true);
 		add_image_size('sandbox_features_10', 350, 338, true);
