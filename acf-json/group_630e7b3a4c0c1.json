@@ -1849,6 +1849,44 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_63e77ab68407a",
+                            "label": "Features",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63e77ab68407b",
+                            "label": "Features",
+                            "name": "cw_features",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63acc08203fb5"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_63e77ab684076",
                             "label": "Background",
                             "name": "",
@@ -1887,27 +1925,6 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_63e77ab684078",
-                            "label": "Column",
-                            "name": "cw_column",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_63c5b17b05bfa"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_63e77ab684079",
                             "label": "Divider",
                             "name": "cw_divider",
@@ -1922,44 +1939,6 @@
                             },
                             "clone": [
                                 "group_63a18f728079f"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_63e77ab68407a",
-                            "label": "Features",
-                            "name": "",
-                            "type": "accordion",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "open": 0,
-                            "multi_expand": 0,
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_63e77ab68407b",
-                            "label": "Features",
-                            "name": "cw_features",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_63acc08203fb5"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1994,5 +1973,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676117489
+    "modified": 1676120751
 }

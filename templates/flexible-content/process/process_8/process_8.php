@@ -58,9 +58,9 @@ $block = new CW_Settings(
       // 'column_class_1' => '',
       // 'column_class_2' => 'order-lg-2',
 
-      'features' => '<div class="col-md-6"><h4><span class="text-primary">1.</span> Creative Ideas</h4><p class="mb-0">Nulla vitae elit libero a augue donec id elit non mi porta.</p></div>',
+      'features' => '<span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">01</span><h4 class="fs-20">Download Application</h4><p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>',
 
-      'features_pattern' => '<div class="col-md-6"><h4><span class="text-primary">%8$s</span> %3$s</h4><p class="mb-0">%4$s</p></div>'
+      'features_pattern' => '%2$s<h4 class="fs-20">%3$s</h4><p class="mb-0 px-xl-7">%4$s</p>'
    )
 );
 ?>
@@ -93,9 +93,8 @@ $block = new CW_Settings(
                <div class="w-100 d-lg-none"></div>
                <div class="col-md-6 col-lg-4 order-lg-first">
                   <div class="mb-8">
-                     <span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">01</span>
-                     <h4 class="fs-20">Download Application</h4>
-                     <p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+                     <?php echo $block->features; ?>
+                     <!--/features -->
                   </div>
                   <!-- /div -->
                   <div>
