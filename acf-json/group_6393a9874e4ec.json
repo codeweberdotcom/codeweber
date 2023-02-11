@@ -143,6 +143,13 @@
                                 "operator": "==",
                                 "value": "Unicons"
                             }
+                        ],
+                        [
+                            {
+                                "field": "field_6393aa55a3529",
+                                "operator": "==",
+                                "value": "none"
+                            }
                         ]
                     ],
                     "wrapper": {
@@ -1594,5 +1601,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675080466
+    "modified": 1676120687
 }
