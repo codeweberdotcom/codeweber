@@ -201,10 +201,11 @@ class CW_Features
             $cw_features_list .= $features_item->features_item_final;
             $num++;
          }
+         $this->features_array_final = $cw_features_array;
       } else {
          $cw_features_list = NULL;
       }
-      $this->features_array_final = $cw_features_array;
+
       return $cw_features_list;
    }
 }

@@ -93,29 +93,48 @@ $block = new CW_Settings(
                <div class="w-100 d-lg-none"></div>
                <div class="col-md-6 col-lg-4 order-lg-first">
                   <div class="mb-8">
-                     <?php echo $block->features; ?>
+                     <?php if (isset($block->features_array[0])) {
+                        echo $block->features_array[0];
+                     } else { ?>
+                        <span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">01</span>
+                        <h4 class="fs-20">Download Application</h4>
+                        <p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+                        <!-- /div -->
+                     <?php } ?>
                      <!--/features -->
                   </div>
                   <!-- /div -->
                   <div>
-                     <span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">02</span>
-                     <h4 class="fs-20">Quick Registration</h4>
-                     <p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+                     <?php if (isset($block->features_array[1])) {
+                        echo $block->features_array[1];
+                     } else { ?>
+                        <span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">02</span>
+                        <h4 class="fs-20">Quick Registration</h4>
+                        <p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+                     <?php } ?>
                   </div>
                   <!-- /div -->
                </div>
                <!-- /column -->
                <div class="col-md-6 col-lg-4">
                   <div class="mb-8">
-                     <span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">03</span>
-                     <h4 class="fs-20">Track Your Spending</h4>
-                     <p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+                     <?php if (isset($block->features_array[2])) {
+                        echo $block->features_array[2];
+                     } else { ?>
+                        <span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">03</span>
+                        <h4 class="fs-20">Track Your Spending</h4>
+                        <p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+                     <?php } ?>
                   </div>
                   <!-- /div -->
                   <div>
-                     <span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">04</span>
-                     <h4 class="fs-20">Have Total Control</h4>
-                     <p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+                     <?php if (isset($block->features_array[3])) {
+                        echo $block->features_array[3];
+                     } else { ?>
+                        <span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">04</span>
+                        <h4 class="fs-20">Have Total Control</h4>
+                        <p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+                     <?php } ?>
                   </div>
                   <!-- /div -->
                </div>

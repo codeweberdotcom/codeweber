@@ -14,14 +14,7 @@ $block = new CW_Settings(
       'paragraph' => 'Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo.',
       'patternParagraph' => '<p class="mb-5">%s</p>',
 
-      // 'subtitle' => 'We are a digital and branding company that believes in the power of creative strategy and along with great design.',
-      // 'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
-
       'background_class_default' => 'wrapper bg-light',
-      // 'background_data_default' => '/dist/img/map.png',
-      //'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      //'background_video_url' => '/dist/media/movie2.mp4',
-      //'background_pattern_url' => '/dist/img/pattern.png',
 
       'divider' => true,
 
