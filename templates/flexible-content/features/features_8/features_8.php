@@ -1,89 +1,54 @@
-<section class="wrapper bg-light">
+<?php
+
+/**
+ * Features 8
+ */
+
+
+$block = new CW_Settings(
+   $cw_settings = array(
+
+      'subtitle' => 'App Features',
+      'patternSubtitle' => '<div class="h2 fs-15 text-uppercase text-muted mb-3">%s</div>',
+
+      'title' => 'Sandbox is the only app you need to track your goals for better health.',
+      'patternTitle' => '<h2 class="display-4 mb-9 px-xl-11">%s</h2>',
+
+      'background_class_default' => 'wrapper bg-light',
+
+      'divider' => true,
+
+      'features' => '<div class="col-md-6 col-lg-4"><div class="d-flex flex-row"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/target.svg" class="svg-inject icon-svg icon-svg-sm text-aqua me-4" alt="" /></div><div><h4 class="mb-1">Fitness Goal</h4><p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p></div></div></div><!--/column -->',
+      'features_pattern' => '<div class="col-md-6 col-lg-4 %1$s"><div class="d-flex flex-row"><div>%2$s</div><div><h4>%3$s</h4><p class="mb-2">%4$s</p>%5$s</div></div></div><!--/column -->',
+      'features_style_icon' => 'me-4',
+
+
+   )
+);
+?>
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row text-center">
          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <h2 class="fs-15 text-uppercase text-muted mb-3">App Features</h2>
-            <h3 class="display-4 mb-9 px-xl-11">Sandbox is the only app you need to track your goals for better health.</h3>
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
+            <?php echo $block->title; ?>
+            <!--/title -->
          </div>
          <!-- /column -->
       </div>
       <!-- /.row -->
       <div class="row gx-lg-8 gx-xl-12 gy-8">
-         <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row">
-               <div>
-                  <img src="./assets/img/icons/lineal/target.svg" class="svg-inject icon-svg icon-svg-sm text-aqua me-4" alt="" />
-               </div>
-               <div>
-                  <h4 class="mb-1">Fitness Goal</h4>
-                  <p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p>
-               </div>
-            </div>
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row">
-               <div>
-                  <img src="./assets/img/icons/lineal/medal.svg" class="svg-inject icon-svg icon-svg-sm text-yellow me-4" alt="" />
-               </div>
-               <div>
-                  <h4 class="mb-1">Activity Tracking</h4>
-                  <p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p>
-               </div>
-            </div>
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row">
-               <div>
-                  <img src="./assets/img/icons/lineal/clock-3.svg" class="svg-inject icon-svg icon-svg-sm text-red me-4" alt="" />
-               </div>
-               <div>
-                  <h4 class="mb-1">Sleep Analysis</h4>
-                  <p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p>
-               </div>
-            </div>
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row">
-               <div>
-                  <img src="./assets/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-pink me-4" alt="" />
-               </div>
-               <div>
-                  <h4 class="mb-1">Workout Report</h4>
-                  <p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p>
-               </div>
-            </div>
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row">
-               <div>
-                  <img src="./assets/img/icons/lineal/shop-2.svg" class="svg-inject icon-svg icon-svg-sm text-green me-4" alt="" />
-               </div>
-               <div>
-                  <h4 class="mb-1">Nutritional Analysis</h4>
-                  <p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p>
-               </div>
-            </div>
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-4">
-            <div class="d-flex flex-row">
-               <div>
-                  <img src="./assets/img/icons/lineal/team.svg" class="svg-inject icon-svg icon-svg-sm text-purple me-4" alt="" />
-               </div>
-               <div>
-                  <h4 class="mb-1">Activity Sharing</h4>
-                  <p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p>
-               </div>
-            </div>
-         </div>
-         <!--/column -->
+         <?php echo $block->features; ?>
+         <!--/features -->
       </div>
       <!--/.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->
