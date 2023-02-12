@@ -563,7 +563,7 @@ var theme = {
             ).src;
             slider.slideTo(slider.activeIndex + 1, 1, true);
             slider.slideTo(0, 500, true);
-            theme.lightbox.reload();
+            // theme.lightbox.reload();
           };
         }
       }
