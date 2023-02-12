@@ -11,8 +11,8 @@ if (!function_exists('brk_styles_scripts')) {
 
 		// --- CSS ---
 		wp_enqueue_style('google-fonts', get_template_directory_uri() . '/dist/css/fonts/urbanist.css', false, $theme_version, 'all');
-		wp_enqueue_style('plugin-styles', get_template_directory_uri() . '/dist/css/plugins.min.css', false, $theme_version, 'all');
-		wp_enqueue_style('theme-styles', get_template_directory_uri() . '/dist/css/style.min.css', false, $theme_version, 'all');
+		wp_enqueue_style('plugin-styles', get_template_directory_uri() . '/dist/css/plugins.css', false, $theme_version, 'all');
+		wp_enqueue_style('theme-styles', get_template_directory_uri() . '/dist/css/style.css', false, $theme_version, 'all');
 
 		// --- Change Theme Color
 		if (get_theme_mod('codeweber_color') == 'custom') :
@@ -29,9 +29,17 @@ if (!function_exists('brk_styles_scripts')) {
 		//* add comment reply script */
 		if (is_singular() and comments_open() and (get_option('thread_comments') == 1)) wp_enqueue_script('comment-reply');
 
-		/*add codeweber theme scripts */
-		wp_enqueue_script('plugins-scripts', get_template_directory_uri() . '/dist/js/plugins.min.js', false, $theme_version, true);
+		/*dist add codeweber theme scripts */
+		wp_enqueue_script('plugins-scripts', get_template_directory_uri() . '/dist/js/plugins.js', false, $theme_version, true);
 		wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/dist/js/theme.js', false, $theme_version, true);
+
+
+		// /*dev add codeweber theme scripts */
+		// wp_enqueue_script('plugins-scripts', get_template_directory_uri() . '/dev/js/plugins.js', false, $theme_version, true);
+		// wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/dev/js/theme.js', false, $theme_version, true);
+
+
+
 
 		//wp_enqueue_script('theme-scripts1', get_template_directory_uri() . '/dist/js/cf7-generate-forms.js', false, $theme_version, true);
 	}

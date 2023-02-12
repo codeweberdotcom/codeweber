@@ -67,10 +67,3 @@ if (!empty($product_tabs)) : ?>
       <?php do_action('woocommerce_product_after_tabs'); ?>
    </div>
 <?php endif; ?>
-<script>
-   setTimeout(function() {
-      var test = document.querySelector(".nav-tabs li a");
-
-      test.classList.add("active");
-   }, 400);
-</script>

@@ -13,9 +13,28 @@
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/colors/yellow.css">
   <link rel="preload" href="./assets/css/fonts/urbanist.css" as="style" onload="this.rel='stylesheet'">
+  <style>
+    @media (min-width: 992px) {
+      .navbar-nav>.nav-item>.nav-link {
+        position: relative;
+      }
+
+      .navbar-nav>.nav-item+.nav-item>.nav-link:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        top: 50%;
+        left: -2px;
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 50%;
+      }
+    }
+  </style>
 </head>
 
-<body class="onepage" data-bs-spy="scroll" data-bs-target=".navbar-collapse .navbar-nav">
+<body class="onepage">
   <div class="content-wrapper">
     <header class="wrapper bg-gray">
       <nav class="navbar navbar-expand-lg extended extended-alt navbar-light navbar-bg-light">
@@ -142,7 +161,7 @@
     <section id="home">
       <div class="wrapper bg-gray overflow-hidden">
         <div class="container-fluid px-xl-0 pt-6 pb-10">
-          <div class="swiper-container" data-margin="30" data-dots="true" data-nav="true" data-centered="true" data-loop="true" data-items-xxl="2" data-items-xl="2" data-items-lg="2" data-items-md="1" data-items-xs="1">
+          <div class="swiper-container swiper-auto" data-margin="30" data-dots="true" data-nav="true" data-centered="true" data-loop="true" data-items-auto="true">
             <div class="swiper overflow-visible">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -587,7 +606,7 @@
                 <div class="col-md-6">
                   <div class="d-flex flex-row">
                     <div>
-                      <span class="icon btn btn-circle btn-primary disabled me-4"><span class="number fs-18">1</span></span>
+                      <span class="icon btn btn-circle btn-primary pe-none me-4"><span class="number fs-18">1</span></span>
                     </div>
                     <div>
                       <h4 class="mb-1">Concept</h4>
@@ -599,7 +618,7 @@
                 <div class="col-md-6">
                   <div class="d-flex flex-row">
                     <div>
-                      <span class="icon btn btn-circle btn-primary disabled me-4"><span class="number fs-18">2</span></span>
+                      <span class="icon btn btn-circle btn-primary pe-none me-4"><span class="number fs-18">2</span></span>
                     </div>
                     <div>
                       <h4 class="mb-1">Prepare</h4>
@@ -611,7 +630,7 @@
                 <div class="col-md-6">
                   <div class="d-flex flex-row">
                     <div>
-                      <span class="icon btn btn-circle btn-primary disabled me-4"><span class="number fs-18">3</span></span>
+                      <span class="icon btn btn-circle btn-primary pe-none me-4"><span class="number fs-18">3</span></span>
                     </div>
                     <div>
                       <h4 class="mb-1">Retouch</h4>
@@ -623,7 +642,7 @@
                 <div class="col-md-6">
                   <div class="d-flex flex-row">
                     <div>
-                      <span class="icon btn btn-circle btn-primary disabled me-4"><span class="number fs-18">4</span></span>
+                      <span class="icon btn btn-circle btn-primary pe-none me-4"><span class="number fs-18">4</span></span>
                     </div>
                     <div>
                       <h4 class="mb-1">Finalize</h4>
@@ -754,7 +773,7 @@
       <!--/.row -->
       <hr class="mt-11 mt-md-12 mb-7" />
       <div class="d-md-flex align-items-center justify-content-between">
-        <p class="mb-2 mb-lg-0">© 2022 Sandbox. All rights reserved.</p>
+        <p class="mb-2 mb-lg-0">© 2023 Sandbox. All rights reserved.</p>
         <nav class="nav social social-muted mb-0 text-md-end">
           <a href="#"><i class="uil uil-twitter"></i></a>
           <a href="#"><i class="uil uil-facebook-f"></i></a>
