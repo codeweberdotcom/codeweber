@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 
+ * Share Page
  */
 
 function codeweber_share_page()
