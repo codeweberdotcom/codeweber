@@ -60,7 +60,7 @@ $block = new CW_Settings(
 
       'features' => '<span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">01</span><h4 class="fs-20">Download Application</h4><p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>',
 
-      'features_pattern' => '%2$s<h4 class="fs-20">%3$s</h4><p class="mb-0 px-xl-7">%4$s</p>%5$s'
+      'features_pattern' => '%2$s<h4 class="fs-20">%3$s</h4><p class="mb-3 px-xl-7">%4$s</p>%5$s'
    )
 );
 ?>
@@ -98,7 +98,7 @@ $block = new CW_Settings(
                      } else { ?>
                         <span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">01</span>
                         <h4 class="fs-20">Download Application</h4>
-                        <p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
+                        <p class="mb-3 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>
                         <!-- /div -->
                      <?php } ?>
                      <!--/features -->

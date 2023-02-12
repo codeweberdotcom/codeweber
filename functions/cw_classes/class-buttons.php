@@ -332,8 +332,11 @@ class CW_Button
             $button_classes = implode(' ', $button_classes_array);
             $icon_button = NULL;
          }
-
-         $final_button = '<span ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</span>';
+         if ($type_button == 'Link') {
+            $final_button = '<a ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
+         } else {
+            $final_button = '<span ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</span>';
+         }
       } else {
          $final_button = NULL;
       }
