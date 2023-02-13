@@ -25,14 +25,14 @@ $block = new CW_Settings(
       'divider' => true,
 
       'multi_image' => array(
-         array('/dist/img/photos/sa5.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="rounded mb-6"><img src="' . get_template_directory_uri() . '/dist/img/photos/se1.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/se1@2x.jpg 2x" alt=""></figure>'),
+         array('/dist/img/photos/se1.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="rounded mb-6"><img src="' . get_template_directory_uri() . '/dist/img/photos/se1.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/se1@2x.jpg 2x" alt=""></figure>'),
 
-         array('/dist/img/photos/sa6.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="rounded mb-6 mb-md-0"><img src="' . get_template_directory_uri() . '/dist/img/photos/se2.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/se2@2x.jpg 2x" alt=""></figure>'),
+         array('/dist/img/photos/se2.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="rounded mb-6 mb-md-0"><img src="' . get_template_directory_uri() . '/dist/img/photos/se2.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/se2@2x.jpg 2x" alt=""></figure>'),
       ),
 
-      'features' => '<div class="col-md-6 col-lg-4"><div class="d-flex flex-row"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/target.svg" class="svg-inject icon-svg icon-svg-sm text-aqua me-4" alt="" /></div><div><h4 class="mb-1">Fitness Goal</h4><p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p></div></div></div><!--/column -->',
-      'features_pattern' => '<div class="col-md-6 col-lg-4 %1$s"><div class="d-flex flex-row"><div>%2$s</div><div><h4>%3$s</h4><p class="mb-2">%4$s</p>%5$s</div></div></div><!--/column -->',
-      'features_style_icon' => 'me-4',
+      'features' => '<div class="icon btn btn-circle btn-lg btn-soft-purple disabled mb-3"> <i class="uil uil-mobile-android"></i> </div><h4>Mobile Design</h4><p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida.</p><a href="#" class="more hover link-purple">Learn More</a>',
+      'features_pattern' => '%2$s<h4>%3$s</h4><p class="mb-2">%4$s</p>%5$s',
+      // 'features_style_icon' => 'mb-3',
 
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',
@@ -57,10 +57,19 @@ $block = new CW_Settings(
                      <div class="col-lg-12">
                         <div class="card">
                            <div class="card-body">
-                              <div class="icon btn btn-circle btn-lg btn-soft-purple disabled mb-3"> <i class="uil uil-monitor"></i> </div>
-                              <h4>Web Design</h4>
-                              <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida.</p>
-                              <a href="#" class="more hover link-purple">Learn More</a>
+
+                              <?php if (isset($block->features_array[0])) {
+                                 echo $block->features_array[0];
+                              } else { ?>
+                                 <div class="icon btn btn-circle btn-lg btn-soft-purple disabled mb-3"> <i class="uil uil-monitor"></i> </div>
+                                 <h4>Web Design</h4>
+                                 <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida.</p>
+                                 <a href="#" class="more hover link-purple">Learn More</a>
+                                 <!-- /div -->
+                              <?php } ?>
+                              <!--/features -->
+
+
                            </div>
                            <!--/.card-body -->
                         </div>
@@ -82,10 +91,16 @@ $block = new CW_Settings(
                      <div class="col-lg-12">
                         <div class="card mb-md-6 mt-lg-6">
                            <div class="card-body">
-                              <div class="icon btn btn-circle btn-lg btn-soft-purple disabled mb-3"> <i class="uil uil-mobile-android"></i> </div>
-                              <h4>Mobile Design</h4>
-                              <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida.</p>
-                              <a href="#" class="more hover link-purple">Learn More</a>
+                              <?php if (isset($block->features_array[1])) {
+                                 echo $block->features_array[1];
+                              } else { ?>
+                                 <div class="icon btn btn-circle btn-lg btn-soft-purple disabled mb-3"> <i class="uil uil-mobile-android"></i> </div>
+                                 <h4>Mobile Design</h4>
+                                 <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida.</p>
+                                 <a href="#" class="more hover link-purple">Learn More</a>
+                                 <!-- /div -->
+                              <?php } ?>
+                              <!--/features -->
                            </div>
                            <!--/.card-body -->
                         </div>
