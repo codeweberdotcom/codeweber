@@ -3,6 +3,25 @@
     "title": "CW Section",
     "fields": [
         {
+            "key": "field_63e9701aa6bd3",
+            "label": "dsdsads",
+            "name": "dsdsads",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_63a18f9f2a21e",
             "label": "Dividers",
             "name": "cw_dividers",
@@ -63,5 +82,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671536818
+    "modified": 1676243050
 }

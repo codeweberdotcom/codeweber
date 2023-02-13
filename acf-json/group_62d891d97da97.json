@@ -23,9 +23,9 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_63d977b5de85b",
-                            "label": "accordeon",
-                            "name": "accordeon",
+                            "key": "field_63e95aa062932",
+                            "label": "Tabs",
+                            "name": "tabs",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -36,7 +36,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "group_63d924d430323"
+                                "field_63e90708eb068"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -5043,5 +5043,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676067745
+    "modified": 1676237511
 }
