@@ -183,7 +183,6 @@ class CW_ListCol
 
       $cw_listcol_finals = implode('', $cw_listcol_final);
 
-
       return $cw_listcol_finals;
    }
 }

@@ -210,6 +210,8 @@ class CW_Tabs
 
                while (have_rows('cw_tabs_repeater')) {
                   the_row();
+                  $row_num =  get_row_index();
+
                   if (get_row_index() == '1') {
                      $active_class = ' active';
                   } else {
@@ -219,22 +221,20 @@ class CW_Tabs
                   $tab_object = new CW_Tab($this->type_tabs, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $class_icon, NULL, NULL, NULL);
 
                   if ($this->type_tabs == 'type 1') {
-                     $cw_tabs_nav .= ' <li class="nav-item"><a class="nav-link' . $active_class . '" data-bs-toggle="tab" href="#tab3-' . get_row_index() . '">' . $tab_object->tab_title . '</a>';
+                     $cw_tabs_nav .= ' <li class="nav-item"><a class="nav-link' . $active_class . '" data-bs-toggle="tab" href="#tab3-' . $row_num . '">' . $tab_object->tab_title . '</a>';
                   } elseif ($this->type_tabs == 'type 2') {
-                     $cw_tabs_nav .= '<li class="nav-item"><a class="nav-link' . $active_class . '" data-bs-toggle="tab" href="#tab3-' . get_row_index() . '">' . $tab_object->tab_icon . '<span>' . $tab_object->tab_title . '</span></a></li>';
+                     $cw_tabs_nav .= '<li class="nav-item"><a class="nav-link' . $active_class . '" data-bs-toggle="tab" href="#tab3-' . $row_num . '">' . $tab_object->tab_icon . '<span>' . $tab_object->tab_title . '</span></a></li>';
                   } elseif ($this->type_tabs == 'type 3') {
-                     $cw_tabs_nav .= '<li class="nav-item"><a class="nav-link d-flex h-100 flex-row' . $active_class . '" data-bs-toggle="tab" href="#tab3-' . get_row_index() . '"><div>' . $tab_object->tab_icon . '</div><div><h4 class="mb-1">' . $tab_object->tab_title . '</h4><p>' . $tab_object->tab_description . '</p></div></a> </li>';
+                     $cw_tabs_nav .= '<li class="nav-item"><a class="nav-link d-flex h-100 flex-row' . $active_class . '" data-bs-toggle="tab" href="#tab3-' . $row_num . '"><div>' . $tab_object->tab_icon . '</div><div><h4 class="mb-1">' . $tab_object->tab_title . '</h4><p>' . $tab_object->tab_description . '</p></div></a> </li>';
                   }
 
-                  $cw_tabs_content .= '<div class="tab-pane fade show' . $active_class . '" id="tab3-' . get_row_index() . '">';
+                  $cw_tabs_content .= '<div class="tab-pane fade show' . $active_class . '" id="tab3-' . $row_num . '">';
 
                   if ($tab_object) {
                      $cw_tabs_content .= NULL;
                   }
 
-
                   $cw_tabs_content .= $tab_object->tab_content;
-
 
                   $cw_tabs_content .= '</div><!--/.tab-pane -->';
                }
