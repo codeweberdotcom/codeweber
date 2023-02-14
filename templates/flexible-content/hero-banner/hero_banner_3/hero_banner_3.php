@@ -43,7 +43,7 @@ $block = new CW_Settings(
       'swiper_container_class' => 'rounded shadow-lg',
       'image_class' => 'rounded shadow-lg',
       'wrapper_image_class' => 'rounded shadow-lg',
-      'image_pattern' => '<figure %5$s><img %4$s src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
+      'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
       'image_thumb_size' => 'sandbox_hero_3',
       'image_demo' => '<figure class="rounded shadow-lg"><img  src="' . get_template_directory_uri() . '/dist/img/photos/about13.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about13@2x.jpg 2x" alt="" /></figure>',
       'image_big_size' => 'project_1',

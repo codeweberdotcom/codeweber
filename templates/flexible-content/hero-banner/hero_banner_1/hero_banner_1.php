@@ -32,22 +32,20 @@ $block = new CW_Settings(
     // 'image_thumb_size' => 'sandbox_hero_1',
     // 'image_big_size' => 'project_1',
 
-
     'swiper' => array(
-      'swiper_container_class' => '',
+      'swiper_container_class' => 'rounded overflow-hidden',
       'image_class' => 'w-auto',
       'wrapper_image_class' => '',
-      'swiper-slide_class' => NULL,
-      'image_pattern' => '<figure %5$s %9$s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" />%7$s %10$s %11$s</figure>',
+      'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
       'image_thumb_size' => 'sandbox_hero_1',
       'image_demo' => '<figure><img %4$s src="' . get_template_directory_uri() . '/dist/img/illustrations/i2.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i2@2x.png 2x" alt="" /></figure>',
       'image_big_size' => 'project_1',
       'img_link' => '/dist/img/illustrations/i2.png',
       'data_margin' => '30',
-      'nav' => 'true',
+      'nav' => 'false',
       'nav_color' => 'nav-light',
       'nav_position' => 'nav-start',
-      'dots' => 'false',
+      'dots' => 'true',
       'dots_color' => 'nav-start',
       'dots_position' => 'dots-over',
       'swiper_effect' => 'slide',
@@ -62,8 +60,9 @@ $block = new CW_Settings(
       'autoplay_time' => '3000',
       'loop' => 'loop',
       'autoheight' => 'false',
-      'image_shape' => 'rounded'
+      'image_shape' => 'rounded',
     ),
+
 
     'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; right: 2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
 

@@ -794,12 +794,13 @@ class CW_Swiper
 
             $final_slider .= '</div>';
          } elseif ($type_gallery == 'Tiles 8') {
-
             if (have_rows('cw_images')) {
+               $image_thumb_size = 'sandbox_about_4';
+               $image_big_size = 'project_1';
                $objects_array = array();
                while (have_rows('cw_images')) {
                   the_row();
-                  $objects_image = new CW_Image('sandbox_about_4', NULL, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
+                  $objects_image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
                   $objects_array[] = $objects_image->final_image;
                }
             }

@@ -65,7 +65,6 @@ $block = new CW_Settings(
          'loop' => 'loop',
          'autoheight' => 'false',
          'image_shape' => 'rounded',
-
       ),
 
       'features' => '<div class="col-6 col-lg-3"><h3 class="counter counter-lg text-white">7518</h3><p>Completed Projects</p></div><!--/column -->',
