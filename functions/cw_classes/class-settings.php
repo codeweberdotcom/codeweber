@@ -82,9 +82,6 @@ class CW_Settings
 
       $this->progress = $this->cw_progress($cw_settings);
 
-
-
-
       $this->section_class = $this->cw_section_class($cw_settings);
    }
 
@@ -162,12 +159,15 @@ class CW_Settings
    //List
    public function cw_list($cw_settings)
    {
-      if (isset($cw_settings['list']) && $cw_settings['list'] !== NULL) {
+      if (isset($cw_settings['list']) && $cw_settings['list'] !== NULL && $cw_settings['list'] !== false) {
          $list_object = new CW_ListCol(NUll, NULL, NULL, NULL, NULL, NULL, NULL);
          $cw_list = $list_object->listcol_final;
          if ($cw_list == NULL) {
             $cw_list = $this->cw_settings['list_demo'];
          }
+      } elseif ($cw_settings['list'] == false) {
+         $list_object = new CW_ListCol(NUll, NULL, NULL, NULL, NULL, NULL, NULL);
+         $cw_list = $list_object->listcol_final;
       } else {
          $cw_list = NULL;
       }
@@ -613,7 +613,7 @@ class CW_Settings
    //Title text
    public function cw_get_title($cw_settings)
    {
-      if (isset($this->cw_settings['title']) && !$this->cw_settings['title'] == NULL) {
+      if (isset($this->cw_settings['title']) && !$this->cw_settings['title'] == NULL && $this->cw_settings['title'] !== false) {
          if ($cw_settings['patternTitle'] !== NULL) {
             $title_pattern = $cw_settings['patternTitle'];
          } else {
@@ -626,6 +626,15 @@ class CW_Settings
          }
          $typewriter = $this->typewriter;
          $title_object = new CW_Title(NULL, $title_text, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $title_pattern, $typewriter);
+         $title = $title_object->title_final;
+      } elseif ($this->cw_settings['title'] == false) {
+         if ($cw_settings['patternTitle'] !== NULL) {
+            $title_pattern = $cw_settings['patternTitle'];
+         } else {
+            $title_pattern = NULL;
+         }
+         $typewriter = $this->typewriter;
+         $title_object = new CW_Title(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $title_pattern, $typewriter);
          $title = $title_object->title_final;
       } else {
          if (isset($this->cw_settings['title'])) {
@@ -640,7 +649,7 @@ class CW_Settings
    //Paragraph text
    public function cw_get_paragraph($cw_settings)
    {
-      if (isset($cw_settings['paragraph']) && !$cw_settings['paragraph'] == NULL) {
+      if (isset($cw_settings['paragraph']) && !$cw_settings['paragraph'] == NULL && $this->cw_settings['paragraph'] !== false) {
          if ($cw_settings['patternParagraph'] !== NULL) {
             $pattern = $cw_settings['patternParagraph'];
          } else {
@@ -652,6 +661,14 @@ class CW_Settings
             $pargraph_text = NULL;
          }
          $paragraph_object = new CW_Parargraph(NULL, $pargraph_text, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $pattern);
+         $paragraph = $paragraph_object->paragraph_final;
+      } elseif ($this->cw_settings['paragraph'] == false) {
+         if ($cw_settings['patternParagraph'] !== NULL) {
+            $pattern = $cw_settings['patternParagraph'];
+         } else {
+            $pattern = NULL;
+         }
+         $paragraph_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $pattern);
          $paragraph = $paragraph_object->paragraph_final;
       } else {
          if (isset($cw_settings['paragraph'])) {

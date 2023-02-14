@@ -246,6 +246,7 @@ class CW_Icon
    //Final Icon
    public function cw_final_icon($final_icon, $class_icon)
    {
+
       if (have_rows('cw_icons')) {
          while (have_rows('cw_icons')) {
             the_row();
@@ -254,7 +255,12 @@ class CW_Icon
                   if ($this->form_icon !== 'none') {
                      $cw_final_icon = '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '>' . $this->unicons_icon . '</div>';
                   } else {
-                     $cw_final_icon = $this->unicons_icon;
+                     $cw_unicons_icon = $this->unicons_icon;
+                     $string = $cw_unicons_icon;
+                     $patterns = '/">/';
+                     $replacements = ' ' . $this->class_icon . '">';
+                     $str =  preg_replace($patterns, $replacements, $string);
+                     $cw_final_icon = $str;
                   }
                } elseif ($this->type_icon == 'SVG') {
                   $cw_final_icon =  $this->lineal_icon;

@@ -563,7 +563,7 @@ var theme = {
             ).src;
             slider.slideTo(slider.activeIndex + 1, 1, true);
             slider.slideTo(0, 500, true);
-            // theme.lightbox.reload();
+            theme.lightbox.reload();
           };
         }
       }
@@ -574,42 +574,41 @@ var theme = {
    * Enables lightbox functionality
    * Requires assets/js/vendor/glightbox.js
    */
-  lightbox: () => {
-    const lightbox = GLightbox({
-      selector: "*[data-glightbox]",
-      touchNavigation: true,
-      loop: false,
-      zoomable: false,
-      autoplayVideos: true,
-      moreLength: 0,
-      slideExtraAttributes: {
-        poster: "",
-      },
-      plyr: {
-        css: "",
-        js: "",
-        config: {
-          ratio: "",
-          fullscreen: {
-            enabled: false,
-            iosNative: false,
-          },
-          youtube: {
-            noCookie: true,
-            rel: 0,
-            showinfo: 0,
-            iv_load_policy: 3,
-          },
-          vimeo: {
-            byline: false,
-            portrait: false,
-            title: false,
-            transparent: false,
-          },
+  lightbox: GLightbox({
+    selector: "*[data-glightbox]",
+    touchNavigation: true,
+    loop: false,
+    zoomable: false,
+    autoplayVideos: true,
+    moreLength: 0,
+    slideExtraAttributes: {
+      poster: "",
+    },
+    plyr: {
+      css: "",
+      js: "",
+      config: {
+        ratio: "",
+        fullscreen: {
+          enabled: false,
+          iosNative: false,
+        },
+        youtube: {
+          noCookie: true,
+          rel: 0,
+          showinfo: 0,
+          iv_load_policy: 3,
+        },
+        vimeo: {
+          byline: false,
+          portrait: false,
+          title: false,
+          transparent: false,
         },
       },
-    });
-  },
+    },
+  }),
+
   /**
    * Plyr
    * Enables media player
