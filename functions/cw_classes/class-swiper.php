@@ -5,6 +5,7 @@
 class CW_Swiper
 {
    public $root_theme;
+   public $type_gallery;
    public $data_margin;
    public $caption_bool;
 
@@ -83,6 +84,10 @@ class CW_Swiper
       $swiper_container_content
    ) {
       $this->root_theme = get_template_directory_uri();
+
+      $this->type_gallery = $this->cw_type_gallery();
+
+
       $this->custom_settings_bool = $this->cw_custom_settings_bool($data_thumbs);
       $this->count_image = $this->cw_count_image();
       $this->image_shape = $this->cw_image_shape($image_shape);
@@ -131,6 +136,13 @@ class CW_Swiper
          $data_thumbs,
          $swiper_container_content
       );
+   }
+
+   //Image demo
+   public function cw_type_gallery()
+   {
+      $cw_type_gallery = get_sub_field('type_gallery');
+      return $cw_type_gallery;
    }
 
 
@@ -702,8 +714,10 @@ class CW_Swiper
    {
       $count_image = $this->count_image;
       $final_slider = '';
+      $type_gallery = $this->type_gallery;
       $data = $this->swiper_data;
       $class = $this->swiper_container_class;
+
       if ($this->image_shape !== NULL) {
          $image_shape = $this->image_shape;
       } else {
@@ -715,71 +729,85 @@ class CW_Swiper
       }
 
       if ($count_image >= 2 || $swiper_first_slide == 'true') {
-         $final_slider .= '<div class="swiper-container ' . $class . '" ' . $data . '>
+
+         if ($type_gallery == 'Swiper') {
+            $final_slider .= '<div class="swiper-container ' . $class . '" ' . $data . '>
             <div class="swiper">
                <div class="swiper-wrapper">';
-         if (have_rows('cw_images')) {
-            while (have_rows('cw_images')) {
-               the_row();
+            if (have_rows('cw_images')) {
+               while (have_rows('cw_images')) {
+                  the_row();
 
-               if ($image_pattern !== NULL) {
-                  $cw_image_pattern = $image_pattern;
-               } else {
-                  $cw_image_pattern = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>';
-               }
-
-               $image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, $image_class, NULL, NULL, $cw_image_pattern, NULL);
-
-               if ($data_thumbs == 'true') {
-                  $thumbnail_swiper_array[] = $image->image_url_small;
-               };
-
-               if ($image->image_clean_title) {
-                  $caption_image = '<div class="caption-wrapper p-8"><div class="caption bg-white rounded px-4 py-3 mt-auto animate__animated animate__slideInDown animate__delay-1s"><div class="mb-0 h5">' . $image->image_clean_title . '</div></div><!--/.caption --></div><!--/.caption-wrapper -->';
-               } else {
-                  $caption_image = NULL;
-               }
-
-               if ($swiper_slide_class !== NULL) {
-                  $swiper_slide_class = ' ' . $swiper_slide_class;
-               } else {
-                  $swiper_slide_class = NULL;
-               }
-
-               if ($swiper_slide_data !== NULL) {
-                  if ($image->image_url_big) {
-                     $cw_swiper_slide_data = 'data-image-src="' . $image->image_url_big . '"';
+                  if ($image_pattern !== NULL) {
+                     $cw_image_pattern = $image_pattern;
                   } else {
-                     $cw_swiper_slide_data = $swiper_slide_data;
+                     $cw_image_pattern = '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>';
                   }
-                  $final_slider .= '<div class="swiper-slide' . $swiper_slide_class . '" ' . $cw_swiper_slide_data . ' ></div>';
-               } else {
-                  $final_slider .= '<div class="swiper-slide' . $swiper_slide_class . '">' . $image->final_image . $caption_image . '</div>';
+
+                  $image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, $image_class, NULL, NULL, $cw_image_pattern, NULL);
+
+                  if ($data_thumbs == 'true') {
+                     $thumbnail_swiper_array[] = $image->image_url_small;
+                  };
+
+                  if ($image->image_clean_title) {
+                     $caption_image = '<div class="caption-wrapper p-8"><div class="caption bg-white rounded px-4 py-3 mt-auto animate__animated animate__slideInDown animate__delay-1s"><div class="mb-0 h5">' . $image->image_clean_title . '</div></div><!--/.caption --></div><!--/.caption-wrapper -->';
+                  } else {
+                     $caption_image = NULL;
+                  }
+
+                  if ($swiper_slide_class !== NULL) {
+                     $swiper_slide_class = ' ' . $swiper_slide_class;
+                  } else {
+                     $swiper_slide_class = NULL;
+                  }
+
+                  if ($swiper_slide_data !== NULL) {
+                     if ($image->image_url_big) {
+                        $cw_swiper_slide_data = 'data-image-src="' . $image->image_url_big . '"';
+                     } else {
+                        $cw_swiper_slide_data = $swiper_slide_data;
+                     }
+                     $final_slider .= '<div class="swiper-slide' . $swiper_slide_class . '" ' . $cw_swiper_slide_data . ' ></div>';
+                  } else {
+                     $final_slider .= '<div class="swiper-slide' . $swiper_slide_class . '">' . $image->final_image . $caption_image . '</div>';
+                  }
                }
             }
-         }
-         $final_slider .= '</div>';
-         $final_slider .= '</div>';
+            $final_slider .= '</div>';
+            $final_slider .= '</div>';
 
+            //Thumbs
+            if ($data_thumbs == 'true') {
+               $final_slider .= '<div class="swiper swiper-thumbs"><div class="swiper-wrapper">';
+               if (isset($thumbnail_swiper_array)) {
+                  foreach ($thumbnail_swiper_array as $slide) {
+                     $final_slider .= ' <div class="swiper-slide"><img src="' . $slide . '" alt="" /></div>';
+                  }
+               }
+               $final_slider .= '</div><!--/.swiper-wrapper --></div>';
+            }
+            //Content
+            if ($swiper_container_content !== NULL) {
+               $final_slider .= $swiper_container_content;
+            }
 
-         //Thumbs
-         if ($data_thumbs == 'true') {
-            $final_slider .= '<div class="swiper swiper-thumbs"><div class="swiper-wrapper">';
-            if (isset($thumbnail_swiper_array)) {
-               foreach ($thumbnail_swiper_array as $slide) {
-                  $final_slider .= ' <div class="swiper-slide"><img src="' . $slide . '" alt="" /></div>';
+            $final_slider .= '</div>';
+         } elseif ($type_gallery == 'Tiles 8') {
+
+            if (have_rows('cw_images')) {
+               $objects_array = array();
+               while (have_rows('cw_images')) {
+                  the_row();
+                  $objects_image = new CW_Image('sandbox_about_4', NULL, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
+                  $objects_array[] = $objects_image->final_image;
                }
             }
-            $final_slider .= '</div><!--/.swiper-wrapper --></div>';
+
+            $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL);
+
+            $final_slider = $tiles_object->final_tiles;
          }
-
-
-         //Content
-         if ($swiper_container_content !== NULL) {
-            $final_slider .= $swiper_container_content;
-         }
-
-         $final_slider .= '</div>';
       } elseif ($count_image == 1) {
 
          if (have_rows('cw_images')) {

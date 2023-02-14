@@ -10,10 +10,8 @@ class CW_Divider
    public $div_border;
    public $div_color;
 
-
    public function __construct($type_divider, $class_divider, $div_wave, $div_color, $div_border)
    {
-
       $this->div_color = $this->cw_div_color($div_color);
       $this->type_divider = $this->cw_type_divider($type_divider);
       $this->class_divider = $this->cw_class_divider($class_divider);
@@ -32,8 +30,6 @@ class CW_Divider
       } else {
          $type_divider = NULL;
       }
-
-
       return $type_divider;
    }
 
@@ -61,13 +57,19 @@ class CW_Divider
    public function cw_class_divider($class_divider)
    {
       $type_divider = $this->type_divider;
+      $cw_class_divider = '';
       if (have_rows('cw_divider') && $type_divider == 'angle' && $type_divider !== 'none') {
          while (have_rows('cw_divider')) {
             the_row();
-            $cw_class_divider = 'wrapper angled ' . get_sub_field('cw_start_angle');
+            //$cw_class_divider = 'wrapper angled ' . get_sub_field('cw_start_angle');
+            $cw_class_divider = 'angled ' . get_sub_field('cw_start_angle');
          }
       } else {
-         $cw_class_divider = 'wrapper angled ' . $class_divider;
+         $cw_class_divider = NULL;
+      }
+
+      if ($class_divider !== NULL) {
+         $cw_class_divider .= $class_divider;
       }
       return $cw_class_divider;
    }

@@ -44,6 +44,8 @@ class CW_Settings
    public $features;
    public $features_array;
 
+   public $tabs;
+
    public $list;
 
    public $accordeon;
@@ -70,6 +72,8 @@ class CW_Settings
       $this->background_object = $this->cw_background_data($cw_settings);
       $this->images = $this->cw_images($cw_settings);
 
+      $this->tabs = $this->cw_tabs($cw_settings);
+
       $this->multi_images = $this->cw_multi_images($cw_settings);
 
       $this->features = $this->cw_features($cw_settings);
@@ -84,6 +88,44 @@ class CW_Settings
 
       $this->section_class = $this->cw_section_class($cw_settings);
    }
+
+   //Tabs Class
+   public function cw_tabs($cw_settings)
+   {
+      if (isset($cw_settings['tabs']) && !$cw_settings['tabs'] == NULL) {
+
+         if (isset($cw_settings['tabs_col-1']) && !$cw_settings['tabs_col-1'] == NULL) {
+            $tabs_col_1 = $cw_settings['tabs_col-1'];
+         } else {
+            $tabs_col_1 = NULL;
+         }
+
+         if (isset($cw_settings['tabs_col-2']) && !$cw_settings['tabs_col-2'] == NULL) {
+            $tabs_col_2 = $cw_settings['tabs_col-2'];
+         } else {
+            $tabs_col_2 = NULL;
+         }
+
+         if (isset($cw_settings['tabs_demo']) && !$cw_settings['tabs_demo'] == NULL) {
+            $tabs_demo = $cw_settings['tabs_demo'];
+         } else {
+            $tabs_demo = NULL;
+         }
+
+         if (isset($cw_settings['tabs_type']) && !$cw_settings['tabs_type'] == NULL) {
+            $tabs_type = $cw_settings['tabs_type'];
+         } else {
+            $tabs_type = NULL;
+         }
+
+         $tabs_object = new CW_Tabs($tabs_type, $tabs_demo, $tabs_col_1, $tabs_col_2);
+         $cw_tabs = $tabs_object->tabs_final;
+      } else {
+         $cw_tabs = NULL;
+      }
+      return $cw_tabs;
+   }
+
 
    //Progress class
    public function cw_progress($cw_settings)
@@ -165,9 +207,9 @@ class CW_Settings
          if ($cw_list == NULL) {
             $cw_list = $this->cw_settings['list_demo'];
          }
-      } elseif ($cw_settings['list'] == false) {
-         $list_object = new CW_ListCol(NUll, NULL, NULL, NULL, NULL, NULL, NULL);
-         $cw_list = $list_object->listcol_final;
+         // } elseif ($cw_settings['list'] == false) {
+         //    $list_object = new CW_ListCol(NUll, NULL, NULL, NULL, NULL, NULL, NULL);
+         //    $cw_list = $list_object->listcol_final;
       } else {
          $cw_list = NULL;
       }
@@ -662,14 +704,14 @@ class CW_Settings
          }
          $paragraph_object = new CW_Parargraph(NULL, $pargraph_text, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $pattern);
          $paragraph = $paragraph_object->paragraph_final;
-      } elseif ($this->cw_settings['paragraph'] == false) {
-         if ($cw_settings['patternParagraph'] !== NULL) {
-            $pattern = $cw_settings['patternParagraph'];
-         } else {
-            $pattern = NULL;
-         }
-         $paragraph_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $pattern);
-         $paragraph = $paragraph_object->paragraph_final;
+         // } elseif ($this->cw_settings['paragraph'] == false) {
+         //    if ($cw_settings['patternParagraph'] !== NULL) {
+         //       $pattern = $cw_settings['patternParagraph'];
+         //    } else {
+         //       $pattern = NULL;
+         //    }
+         //    $paragraph_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $pattern);
+         //    $paragraph = $paragraph_object->paragraph_final;
       } else {
          if (isset($cw_settings['paragraph'])) {
             $paragraph = $cw_settings['paragraph'];

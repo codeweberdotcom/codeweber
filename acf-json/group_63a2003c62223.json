@@ -45,13 +45,68 @@
             ]
         },
         {
+            "key": "field_63eb64125475c",
+            "label": "Type gallery",
+            "name": "type_gallery",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63a21c1110373",
+                        "operator": ">",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Swiper": "Swiper",
+                "Tiles 1": "Tiles 1",
+                "Tiles 2": "Tiles 2",
+                "Tiles 3": "Tiles 3",
+                "Tiles 4": "Tiles 4",
+                "Tiles 5": "Tiles 5",
+                "Tiles 6": "Tiles 6",
+                "Tiles 7": "Tiles 7",
+                "Tiles 8": "Tiles 8",
+                "Tiles 9": "Tiles 9",
+                "Tiles 10": "Tiles 10"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_63cb22c99c62e",
             "label": "Custom Gallery",
             "name": "custom_gallery",
             "type": "true_false",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63a21c1110373",
+                        "operator": ">",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_63eb64125475c",
+                        "operator": "==",
+                        "value": "Swiper"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -76,6 +131,11 @@
                         "field": "field_63a21c1110373",
                         "operator": ">",
                         "value": "1"
+                    },
+                    {
+                        "field": "field_63eb64125475c",
+                        "operator": "==",
+                        "value": "Swiper"
                     }
                 ]
             ],
@@ -713,5 +773,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674605944
+    "modified": 1676371280
 }

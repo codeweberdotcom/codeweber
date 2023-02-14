@@ -30,3 +30,4 @@ include 'class-multi-image.php';
 include 'class-accordeon.php';
 include 'class-progress.php';
 include 'class-tabs.php';
+include 'class-tiles.php';

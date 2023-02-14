@@ -20,7 +20,7 @@ class CW_Tab
    public $tab_content_col_bool;
    public $tab_id;
 
-   public function __construct($type_tab, $tab_id, $tab_title, $tab_description, $tab_icon, $tab_button, $tab_content, $tab_final, $icon_class, $image_thumb_size, $image_big_size, $image_link_default)
+   public function __construct($type_tab, $tab_id, $tab_title, $tab_description, $tab_icon, $tab_button, $tab_content, $tab_final, $icon_class, $image_thumb_size, $image_big_size, $image_link_default, $class_col_1, $class_col_2)
    {
       $this->root_theme = get_template_directory_uri();
       $this->type_tab = $this->cw_type_tab($type_tab);
@@ -28,7 +28,7 @@ class CW_Tab
       $this->tab_title = $this->cw_tab_title($tab_title);
       $this->tab_description = $this->cw_tab_description($tab_description);
       $this->tab_icon = $this->cw_tab_icon($tab_icon, $icon_class);
-      $this->tab_content = $this->cw_tab_content($image_thumb_size, $image_big_size, $image_link_default);
+      $this->tab_content = $this->cw_tab_content($image_thumb_size, $image_big_size, $image_link_default, $class_col_1, $class_col_2);
       $this->tab_final = $this->cw_tab_final($tab_final);
    }
 
@@ -56,7 +56,7 @@ class CW_Tab
       return $cw_tab_description;
    }
 
-   public function cw_tab_content($image_thumb_size, $image_big_size, $image_link_default)
+   public function cw_tab_content($image_thumb_size, $image_big_size, $image_link_default, $class_col_1, $class_col_2)
    {
       $cw_tab_content = '';
       $swiper_content_object = new CW_Swiper('overflow-hidden rounded', NULL, NULL, 'sandbox_about_4', 'project_1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', NULL, NULL, NULL, NULL, NULL);
@@ -102,8 +102,6 @@ class CW_Tab
          $this->tab_content_col_2_bool = false;
       }
 
-
-
       if ($this->tab_content_col_1_bool == true && $this->tab_content_col_2_bool == true) {
          $this->tab_content_col_bool = true;
       } else {
@@ -113,9 +111,13 @@ class CW_Tab
       if ($this->tab_content_col_bool == true) {
          $cw_tab_content .= '<div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">';
       }
-
+      if ($class_col_1 !== NULL) {
+         $cw_class_col_1 = $class_col_1;
+      } else {
+         $cw_class_col_1 = 'col-md-6';
+      }
       if ($this->tab_content_col_bool == true) {
-         $cw_tab_content .= '<div class="col-md-4">';
+         $cw_tab_content .= '<div class="' . $cw_class_col_1 . '">';
       }
 
       $cw_tab_content .= $swiper_content;
@@ -124,8 +126,14 @@ class CW_Tab
          $cw_tab_content .= '</div>';
       }
 
+      if ($class_col_2 !== NULL) {
+         $cw_class_col_2 = $class_col_2;
+      } else {
+         $cw_class_col_2 = 'col-md-6';
+      }
+
       if ($this->tab_content_col_bool == true) {
-         $cw_tab_content .= '<div class="col-md-8">';
+         $cw_tab_content .= '<div class="' . $cw_class_col_2 . '">';
       }
 
       $cw_tab_content .= $title_content;
@@ -166,11 +174,11 @@ class CW_Tabs
    public $type_tabs;
    public $tabs_final;
 
-   public function __construct($type_tabs, $tabs_final)
+   public function __construct($type_tabs, $tabs_final, $class_col_1, $class_col_2)
    {
       $this->root_theme = get_template_directory_uri();
       $this->type_tabs = $this->cw_type_tabs($type_tabs);
-      $this->tabs_final = $this->cw_tabs_final($tabs_final);
+      $this->tabs_final = $this->cw_tabs_final($tabs_final, $class_col_1, $class_col_2);
    }
 
    public function cw_type_tabs($type_tabs)
@@ -178,7 +186,11 @@ class CW_Tabs
       if (have_rows('cw_tabs')) {
          while (have_rows('cw_tabs')) {
             the_row();
-            $cw_type_tabs = get_sub_field('cw_type_tabs');
+            if ($type_tabs !== NULL) {
+               $cw_type_tabs = $type_tabs;
+            } else {
+               $cw_type_tabs = get_sub_field('cw_type_tabs');
+            }
          }
       } else {
          $cw_type_tabs = NULL;
@@ -186,7 +198,7 @@ class CW_Tabs
       return $cw_type_tabs;
    }
 
-   public function cw_tabs_final($tabs_final)
+   public function cw_tabs_final($tabs_final, $class_col_1, $class_col_2)
    {
       $cw_tabs_nav = '';
       $cw_tabs_content = '';
@@ -204,6 +216,8 @@ class CW_Tabs
                } elseif ($this->type_tabs == 'type 3') {
                   $class_icon = 'me-4';
                   $cw_tabs_nav .= '<ul class="nav nav-tabs nav-tabs-bg nav-tabs-shadow-lg d-flex justify-content-between nav-justified flex-lg-row flex-column">';
+               } else {
+                  $class_icon = NULL;
                }
 
                $cw_tabs_content .= '<div class="tab-content mt-6 mt-lg-8">';
@@ -218,7 +232,7 @@ class CW_Tabs
                      $active_class = NULL;
                   }
 
-                  $tab_object = new CW_Tab($this->type_tabs, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $class_icon, NULL, NULL, NULL);
+                  $tab_object = new CW_Tab($this->type_tabs, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $class_icon, NULL, NULL, NULL, $class_col_1, $class_col_2);
 
                   if ($this->type_tabs == 'type 1') {
                      $cw_tabs_nav .= ' <li class="nav-item"><a class="nav-link' . $active_class . '" data-bs-toggle="tab" href="#tab3-' . $row_num . '">' . $tab_object->tab_title . '</a>';
@@ -331,6 +345,10 @@ class CW_Tabs
                 </div>';
             }
          }
+      } elseif ($tabs_final !== NULL) {
+         $cw_tabs_final =  $tabs_final;
+      } else {
+         $cw_tabs_final  = NULL;
       }
       return $cw_tabs_final;
    }
