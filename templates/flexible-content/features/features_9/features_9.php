@@ -14,10 +14,10 @@ $block = new CW_Settings(
       'subtitle' => 'The full service we are offering is specifically designed to meet your business needs.',
       'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
 
-      'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis elit interdum. Duis mollis, est non commodo luctus, nisi erat ligula. ',
+      'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis elit interdum. Duis mollis, est non commodo luctus, nisi erat ligula.',
       'patternParagraph' => '<p>%s</p>',
 
-      'buttons' => ' <a href="#" class="btn btn-purple rounded-pill mt-3">More Details</a>',
+      'buttons' => '<a href="#" class="btn btn-purple rounded-pill mt-3">More Details</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
       'background_class_default' => 'wrapper bg-light',
