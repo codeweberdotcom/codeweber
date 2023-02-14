@@ -15,7 +15,7 @@ $block = new CW_Settings(
 
     'background_class_default' => 'wrapper bg-light',
 
-    'divider' => true,
+    //'divider' => true,
 
     'swiper' => array(
       'swiper_container_class' => 'overflow-hidden',

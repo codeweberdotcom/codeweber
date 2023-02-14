@@ -155,7 +155,7 @@ class CW_Accordeon
                   }
                   while (have_rows('accordeon_posts')) {
                      the_row();
-                     $row_column = get_row_index();
+                     $row_column = '-' . rand(10000, 99999);
                      if ($this->roll_down_type == 'type 3') {
                         $type_3 = '-1';
                      } else {
