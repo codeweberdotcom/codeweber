@@ -333,9 +333,9 @@ class CW_Button
             $icon_button = NULL;
          }
          if ($type_button == 'Link') {
-            $final_button = '<a ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
+            $final_button = '<a role="button" ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
          } else {
-            $final_button = '<span ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</span>';
+            $final_button = '<a  role="button" ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
          }
       } else {
          $final_button = NULL;

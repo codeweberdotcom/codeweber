@@ -69,12 +69,13 @@ class CW_Icon
          while (have_rows('cw_icons')) {
             the_row();
             $cw_class_icon_array = array();
-            if (get_sub_field('cw_class')) {
-               $cw_class_icon_array[] = get_sub_field('cw_class');
-            }
             if ($class_icon !== NULL) {
                $cw_class_icon_array[] =  $class_icon;
             }
+            if (get_sub_field('cw_class')) {
+               $cw_class_icon_array[] = get_sub_field('cw_class');
+            }
+
             $cw_class_icon = implode(' ', $cw_class_icon_array);
          }
       }
@@ -268,7 +269,7 @@ class CW_Icon
                   if ($this->form_icon !== 'none') {
                      $cw_final_icon =  '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '><span class="number">' . $this->number_icon . '</span></div>';
                   } else {
-                     $cw_final_icon =  '<span class="' . $this->class_icon . ' fs-60 lh-1 mb-3 fw-normal ' . $this->color_icon . '" ' . $this->id_icon . '>' . $this->number_icon . '</span>';
+                     $cw_final_icon =  '<span class="fs-60 lh-1 mb-3 d-block fw-normal ' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '>' . $this->number_icon . '</span>';
                   }
                } elseif ($this->type_icon == 'Image') {
                   $cw_final_icon =  $this->image_icon;

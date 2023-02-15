@@ -74,6 +74,8 @@ class CW_Link
                   $cw_link_url =  'href="' . esc_url($cw_image['sizes']['brk_big']) . '"';
                }
                $this->link_glightbox = 'data-glightbox';
+            } elseif ($this->link_type == 'Tooltip') {
+               $cw_link_url =  NULL;
             } else {
                $cw_link_url = 'href="#" role="button"';
             }
