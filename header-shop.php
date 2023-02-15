@@ -11,7 +11,7 @@
    <?php $forms = array(); ?>
 </head>
 
-<body <?php body_class(); ?> data-bs-spy="scroll" data-bs-target="#sidebar-nav">
+<body <?php body_class(); ?>>
    <?php do_action('codeweber_start_body'); // Hook start body
    wp_body_open();
    sandbox_frame_open(); ?>
