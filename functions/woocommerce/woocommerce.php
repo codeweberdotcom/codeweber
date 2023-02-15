@@ -366,3 +366,28 @@ function woocommerce_page_header()
 <?php
 
 add_action('woocommerce_after_header', 'woocommerce_page_header', 20);
+
+
+
+/**
+ * Set Account Page Wrapper
+ */
+
+function page_wrapper_start()
+{
+   if (is_account_page()) {
+      echo '<section class="wrapper bg-light"><div class="container pt-12 pt-md-14 pb-14 pb-md-16">';
+   }
+}
+
+add_action('page_content_start', 'page_wrapper_start', 10);
+
+
+function page_wrapper_end()
+{
+   if (is_account_page()) {
+      echo '</div></section>';
+   }
+}
+
+add_action('page_content_end', 'page_wrapper_end', 10);
