@@ -6,7 +6,7 @@
 function consultant_widget()
 {
 ?>
-   <div class="widget sticky-top mb-md-8">
+   <div class="widget sticky-top mb-md-0">
       <div class="card">
          <div class="card-body">
             <img class="rounded-circle w-15 mb-4" src="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3@2x.jpg 2x" alt="" />

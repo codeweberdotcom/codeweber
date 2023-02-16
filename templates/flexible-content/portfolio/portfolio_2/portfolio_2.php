@@ -1,95 +1,105 @@
-<section class="wrapper bg-light">
+<?php
+
+/**
+ * Portfolio 2
+ */
+
+$argss = array(
+   'posts_per_page' => 10,
+   'post_type' => 'projects',
+);
+
+$portfolio = get_sub_field('posts');
+if ($portfolio) {
+   $cw_post_ids = array();
+   foreach ($portfolio as $post_ids) {
+      $cw_post_ids[] = $post_ids;
+   }
+   $cw_post_idsd = implode(',', $portfolio);
+   $argss['post__in'] = $cw_post_ids;
+}
+
+$categories = get_sub_field('categories');
+if ($categories) {
+   $get_terms_args = array(
+      'taxonomy' => 'projects_category',
+      'include' => $categories,
+   );
+
+   $argss['tax_query'] = array(
+      array(
+         'taxonomy' => 'projects_category',
+         'field' => 'id',
+         'terms' => $categories
+      )
+   );
+}
+$block = new CW_Settings(
+   $cw_settings = array(
+      'title' => 'Download the app, create your profile and <span class="text-gradient gradient-7">voilà</span>, you\'re all set!',
+      'patternTitle' => '<h2 class="h3 display-3 mb-8 px-xl-6">%s</h2>',
+      'subtitle' => 'Latest Projects',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+      'background_class_default' => 'wrapper',
+      'divider' => true,
+   )
+);
+?>
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-lg-9 col-xl-8 col-xxl-7 mx-auto text-center">
-            <h2 class="fs-15 text-uppercase text-muted mb-3">Latest Projects</h2>
-            <h3 class="display-4 mb-10">Check out some of our awesome projects with <span class="underline-3 style-2 yellow">creative</span> ideas and great design.</h3>
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
+            <?php echo $block->title; ?>
+            <!--/title -->
          </div>
          <!-- /column -->
       </div>
       <!-- /.row -->
-      <div class="swiper-container grid-view mb-6" data-margin="30" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
-         <div class="swiper">
-            <div class="swiper-wrapper">
-               <div class="swiper-slide">
-                  <figure class="rounded mb-6"><img src="./assets/img/photos/pd7.jpg" srcset="./assets/img/photos/pd7@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd7-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-                  <div class="project-details d-flex justify-content-center flex-column">
-                     <div class="post-header">
-                        <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Cras Fermentum Sem</a></h2>
-                        <div class="post-category text-ash">Stationary</div>
+      <?php
+      $query = new WP_Query($argss);
+
+      if ($query->have_posts()) { ?>
+         <div class="swiper-container grid-view mb-6" data-margin="30" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
+            <div class="swiper">
+               <div class="swiper-wrapper">
+                  <?php
+                  while ($query->have_posts()) {
+                     $query->the_post();
+                     $post_id =  get_the_id();
+                  ?>
+                     <div class="swiper-slide">
+                        <figure class="<?php echo get_theme_mod('codeweber_image'); ?> mb-6"><img src="<?php echo get_the_post_thumbnail_url($post_id, 'archive_4_2'); ?>" srcset="<?php echo get_the_post_thumbnail_url($post_id, 'archive_4_2'); ?>" alt="" /><a class="item-link" href="<?php echo get_the_post_thumbnail_url($post_id, 'sandbox_hero_6'); ?>" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
+                        <div class="project-details d-flex justify-content-center flex-column">
+                           <div class="post-header">
+                              <h2 class="post-title h3"><a href="<?php echo the_permalink(); ?>" class="link-dark"><?php echo get_the_title(); ?></a></h2>
+                              <div class="post-category text-ash"><?php echo get_the_term_list($post_id, 'projects_category', NULL, ',', ''); ?></div>
+                           </div>
+                           <!-- /.post-header -->
+                        </div>
+                        <!-- /.project-details -->
                      </div>
-                     <!-- /.post-header -->
-                  </div>
-                  <!-- /.project-details -->
+                     <!--/.swiper-slide -->
+                  <?php
+                  }
+                  ?>
                </div>
-               <!--/.swiper-slide -->
-               <div class="swiper-slide">
-                  <figure class="rounded mb-6"><img src="./assets/img/photos/pd8.jpg" srcset="./assets/img/photos/pd8@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd8-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-                  <div class="project-details d-flex justify-content-center flex-column">
-                     <div class="post-header">
-                        <h2 class="post-title h3"><a href="./single-project2.html" class="link-dark">Mollis Ipsum Mattis</a></h2>
-                        <div class="post-category text-ash">Magazine, Book</div>
-                     </div>
-                     <!-- /.post-header -->
-                  </div>
-                  <!-- /.project-details -->
-               </div>
-               <!--/.swiper-slide -->
-               <div class="swiper-slide">
-                  <figure class="rounded mb-6"><img src="./assets/img/photos/pd9.jpg" srcset="./assets/img/photos/pd9@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd9-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-                  <div class="project-details d-flex justify-content-center flex-column">
-                     <div class="post-header">
-                        <h2 class="post-title h3"><a href="./single-project3.html" class="link-dark">Ipsum Ultricies Cursus</a></h2>
-                        <div class="post-category text-ash">Packaging</div>
-                     </div>
-                     <!-- /.post-header -->
-                  </div>
-                  <!-- /.project-details -->
-               </div>
-               <!--/.swiper-slide -->
-               <div class="swiper-slide">
-                  <figure class="rounded mb-6"><img src="./assets/img/photos/pd10.jpg" srcset="./assets/img/photos/pd10@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd10-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-                  <div class="project-details d-flex justify-content-center flex-column">
-                     <div class="post-header">
-                        <h2 class="post-title h3"><a href="./single-project.html" class="link-dark">Inceptos Euismod Egestas</a></h2>
-                        <div class="post-category text-ash">Stationary, Branding</div>
-                     </div>
-                     <!-- /.post-header -->
-                  </div>
-                  <!-- /.project-details -->
-               </div>
-               <!--/.swiper-slide -->
-               <div class="swiper-slide">
-                  <figure class="rounded mb-6"><img src="./assets/img/photos/pd11.jpg" srcset="./assets/img/photos/pd11@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd11-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-                  <div class="project-details d-flex justify-content-center flex-column">
-                     <div class="post-header">
-                        <h2 class="post-title h3"><a href="./single-project2.html" class="link-dark">Ipsum Mollis Vulputate</a></h2>
-                        <div class="post-category text-ash">Packaging</div>
-                     </div>
-                     <!-- /.post-header -->
-                  </div>
-                  <!-- /.project-details -->
-               </div>
-               <!--/.swiper-slide -->
-               <div class="swiper-slide">
-                  <figure class="rounded mb-6"><img src="./assets/img/photos/pd12.jpg" srcset="./assets/img/photos/pd12@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd12-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-                  <div class="project-details d-flex justify-content-center flex-column">
-                     <div class="post-header">
-                        <h2 class="post-title h3"><a href="./single-project3.html" class="link-dark">Porta Ornare Cras</a></h2>
-                        <div class="post-category text-ash">Branding</div>
-                     </div>
-                     <!-- /.post-header -->
-                  </div>
-                  <!-- /.project-details -->
-               </div>
-               <!--/.swiper-slide -->
+               <!--/.swiper-wrapper -->
             </div>
-            <!--/.swiper-wrapper -->
+            <!-- /.swiper -->
          </div>
-         <!-- /.swiper -->
-      </div>
-      <!-- /.swiper-container -->
+         <!-- /.swiper-container -->
+      <?php
+      }
+      wp_reset_postdata();
+      ?>
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

@@ -1,92 +1,101 @@
-<section class="wrapper bg-light">
+<?php
+
+/**
+ * Portfolio 5
+ */
+
+$argss = array(
+   'posts_per_page' => 6,
+   'post_type' => 'projects',
+);
+$portfolio = get_sub_field('posts');
+if ($portfolio) {
+   $cw_post_ids = array();
+   foreach ($portfolio as $post_ids) {
+      $cw_post_ids[] = $post_ids;
+   }
+   $cw_post_idsd = implode(',', $portfolio);
+   $argss['post__in'] = $cw_post_ids;
+}
+$categories = get_sub_field('categories');
+if ($categories) {
+   $get_terms_args = array(
+      'taxonomy' => 'projects_category',
+      'include' => $categories,
+   );
+   $argss['tax_query'] = array(
+      array(
+         'taxonomy' => 'projects_category',
+         'field' => 'id',
+         'terms' => $categories
+      )
+   );
+}
+
+$block = new CW_Settings(
+   $cw_settings = array(
+      'title' => 'Check out some of our awesome projects with creative ideas and great design.',
+      'patternTitle' => '<h2 class="display-4 text-center">%s</h2>',
+      'subtitle' => 'Our Projects',
+      'patternSubtitle' => '<div class="fs-15 text-uppercase text-muted text-center mb-3">%s</div>',
+      'background_class_default' => 'wrapper bg-light',
+      'divider' => true,
+   )
+);
+?>
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-lg-9 col-xl-8 col-xxl-7 mx-auto mb-8">
-            <h2 class="fs-15 text-uppercase text-muted text-center mb-3">Our Projects</h2>
-            <h3 class="display-4 text-center">Check out some of our awesome projects with creative ideas and great design.</h3>
+            <?php echo $block->subtitle; ?>
+            <?php echo $block->title; ?>
          </div>
          <!-- /column -->
       </div>
       <!-- /.row -->
       <div class="grid grid-view projects-masonry">
          <div class="row gx-md-8 gy-10 gy-md-13 isotope">
-            <div class="project item col-md-6 col-xl-4 product">
-               <figure class="lift rounded mb-6"><a href="./single-project.html"> <img src="./assets/img/photos/cs16.jpg" alt="" /></a></figure>
-               <div class="project-details d-flex justify-content-center flex-column">
-                  <div class="post-header">
-                     <div class="post-category text-line mb-3 text-purple">Cosmetic</div>
-                     <h2 class="post-title h3">Cras Fermentum Sem</h2>
+            <?php
+
+            $querys = new WP_Query($argss);
+            if ($querys->have_posts()) {
+               $num = 0;
+               while ($querys->have_posts()) {
+                  $querys->the_post();
+                  $post_id =  get_the_id();
+                  $color = array('text-purple', 'text-leaf', 'text-violet', 'text-orange', 'text-yellow', 'text-green');
+                  $size_img = array('archive_4', 'archive_4_1', 'archive_4_2', 'archive_4', 'archive_4_2', 'archive_4_1');
+            ?>
+                  <div class="project item col-md-6 col-xl-4 product">
+                     <figure class="lift <?php echo get_theme_mod('codeweber_image'); ?> mb-6"><a href="<?php echo the_permalink(); ?>"><img src="<?php echo get_the_post_thumbnail_url($post_id, $size_img[$num]); ?>" alt="" /></a></figure>
+                     <div class="project-details d-flex justify-content-center flex-column">
+                        <div class="post-header">
+                           <div class="post-category text-line mb-3 <?php echo $color[$num] ?>"><?php echo strip_tags(get_the_term_list($post_id, 'projects_category', NULL, ',', '')); ?></div>
+                           <h2 class="post-title h3"><?php echo get_the_title(); ?></h2>
+                        </div>
+                        <!-- /.post-header -->
+                     </div>
+                     <!-- /.project-details -->
                   </div>
-                  <!-- /.post-header -->
-               </div>
-               <!-- /.project-details -->
-            </div>
-            <!-- /.project -->
-            <div class="project item col-md-6 col-xl-4 workshop">
-               <figure class="lift rounded mb-6"><a href="./single-project2.html"> <img src="./assets/img/photos/cs17.jpg" alt="" /></a></figure>
-               <div class="project-details d-flex justify-content-center flex-column">
-                  <div class="post-header">
-                     <div class="post-category text-line mb-3 text-leaf">Coffee</div>
-                     <h2 class="post-title h3">Mollis Ipsum Mattis</h2>
-                  </div>
-                  <!-- /.post-header -->
-               </div>
-               <!-- /.project-details -->
-            </div>
-            <!-- /.project -->
-            <div class="project item col-md-6 col-xl-4 still-life">
-               <figure class="lift rounded mb-6"><a href="./single-project3.html"> <img src="./assets/img/photos/cs18.jpg" alt="" /></a></figure>
-               <div class="project-details d-flex justify-content-center flex-column">
-                  <div class="post-header">
-                     <div class="post-category text-line mb-3 text-violet">Still Life</div>
-                     <h2 class="post-title h3">Ipsum Ultricies Cursus</h2>
-                  </div>
-                  <!-- /.post-header -->
-               </div>
-               <!-- /.project-details -->
-            </div>
-            <!-- /.project -->
-            <div class="project item col-md-6 col-xl-4 product">
-               <figure class="lift rounded mb-6"><a href="./single-project2.html"> <img src="./assets/img/photos/cs20.jpg" alt="" /></a></figure>
-               <div class="project-details d-flex justify-content-center flex-column">
-                  <div class="post-header">
-                     <div class="post-category text-line mb-3 text-orange">Product</div>
-                     <h2 class="post-title h3">Inceptos Euismod Egestas</h2>
-                  </div>
-                  <!-- /.post-header -->
-               </div>
-               <!-- /.project-details -->
-            </div>
-            <!-- /.project -->
-            <div class="project item col-md-6 col-xl-4 product">
-               <figure class="lift rounded mb-6"><a href="./single-project.html"> <img src="./assets/img/photos/cs19.jpg" alt="" /></a></figure>
-               <div class="project-details d-flex justify-content-center flex-column">
-                  <div class="post-header">
-                     <div class="post-category text-line mb-3 text-yellow">Product</div>
-                     <h2 class="post-title h3">Sollicitudin Ornare Porta</h2>
-                  </div>
-                  <!-- /.post-header -->
-               </div>
-               <!-- /.project-details -->
-            </div>
-            <!-- /.project -->
-            <div class="project item col-md-6 col-xl-4 workshop">
-               <figure class="lift rounded mb-6"><a href="./single-project3.html"> <img src="./assets/img/photos/cs21.jpg" alt="" /></a></figure>
-               <div class="project-details d-flex justify-content-center flex-column">
-                  <div class="post-header">
-                     <div class="post-category text-line mb-3 text-green">Workshop</div>
-                     <h2 class="post-title h3">Ipsum Mollis Vulputate</h2>
-                  </div>
-                  <!-- /.post-header -->
-               </div>
-               <!-- /.project-details -->
-            </div>
-            <!-- /.project -->
+                  <!-- /.project -->
+            <?php $num++;
+               }
+            }
+            ?>
+            <?php
+            wp_reset_postdata();
+            ?>
          </div>
          <!-- /.row -->
       </div>
       <!-- /.grid -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

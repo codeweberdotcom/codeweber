@@ -344,5 +344,24 @@ function my_acf_blocks_init()
          )
 
       );
+
+
+      // Register a Portfolio block.
+      acf_register_block_type(
+         array(
+            'name'              => 'portfolio',
+            'title'             => __('Portfolio'),
+            'description'       => __('Portfolio.'),
+            'render_template'   => 'templates/flexible-content/portfolio.php',
+            'category'          => 'codeweber',
+            'mode'                    => 'auto',
+            'align'           => 'full',
+            'supports'        => array(
+               'align'        => array('full'),
+               'align'        => true,
+            ),
+            'mode' => 'preview',
+         )
+      );
    }
 }
