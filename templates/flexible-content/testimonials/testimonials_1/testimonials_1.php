@@ -1,146 +1,189 @@
 <?php
-/* Add settings */
-$settings = new Settings();
-$settings->title = "Our Community";
-$settings->subtitle = 'Customer satisfaction is our major goal. See what our customers are saying about us.';
-$settings->paragraph = 'Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.';
-//$settings->imageurl = get_template_directory_uri() . '/dist/img/illustrations/i2.png';
-//$settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4';
-//$settings->typewriter = 'customer satisfaction,business needs,creative ideas';
-//$settings->backgroundcolor = 'dark';
-//$settings->backgroundcolor_light = 'light';
-//$settings->textcolor = 'white';
-$settings->GetDataACF();
 
-/* Add buttons */
-$button = new Buttons();
-$button->form_button = "rounded-pill mt-3";
-$button->button_size = NULL;
-$button->class_button_wrapper = "d-flex justify-content-center flex-wrap justify-content-lg-start";
-$button->data_cues = "slideInDown";
-$button->data_group = "page-title-buttons";
-$button->data_delay = "900";
-$button->default_button = ' <a href="#" class="btn btn-navy rounded-pill mt-3">All Testimonials</a>';
+/**
+ * Testimonial 1
+ */
 
-/* Add Features */
-$features = new Features();
-$features->root_theme = get_template_directory_uri();
-$features->title = 'Coriss Ambady';
-$features->paragraph = 'Cum sociis natoque penatibus et magnis dis parturient montes.';
-$features->pattern = '<div class="col-md-6 align-self-end">
-                  <div class="card bg-pale-yellow">
-                     <div class="card-body">
-                        <blockquote class="icon mb-0">
-                           <p>“%2$s”</p>
-                           <div class="blockquote-details">
-                              <div class="info p-0">
-                                 <h5 class="mb-1">%1$s</h5>
-                                 <p class="mb-0">%3$s</p>
-                              </div>
-                           </div>
-                        </blockquote>
-                     </div>
-                     <!--/.card-body -->
-                  </div>
-                  <!--/.card -->
-               </div>
-               <!--/column -->';
-$features->default_features = '<div class="col-md-6 col-xl-5 align-self-end">
-                  <div class="card bg-pale-yellow">
-                     <div class="card-body">
-                        <blockquote class="icon mb-0">
-                           <p>“Cum sociis natoque penatibus et magnis dis parturient montes.”</p>
-                           <div class="blockquote-details">
-                              <div class="info p-0">
-                                 <h5 class="mb-1">Coriss Ambady</h5>
-                                 <p class="mb-0">Financial Analyst</p>
-                              </div>
-                           </div>
-                        </blockquote>
-                     </div>
-                     <!--/.card-body -->
-                  </div>
-                  <!--/.card -->
-               </div>
-               <!--/column -->
-               <div class="col-md-6 align-self-end">
-                  <div class="card bg-pale-red">
-                     <div class="card-body">
-                        <blockquote class="icon mb-0">
-                           <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.”</p>
-                           <div class="blockquote-details">
-                              <div class="info p-0">
-                                 <h5 class="mb-1">Cory Zamora</h5>
-                                 <p class="mb-0">Marketing Specialist</p>
-                              </div>
-                           </div>
-                        </blockquote>
-                     </div>
-                     <!--/.card-body -->
-                  </div>
-                  <!--/.card -->
-               </div>
-               <!--/column -->
-               <div class="col-md-6 col-xl-5 offset-xl-1">
-                  <div class="card bg-pale-leaf">
-                     <div class="card-body">
-                        <blockquote class="icon mb-0">
-                           <p>“Donec id elit non porta gravida at eget metus. Duis mollis est commodo luctus, nisi erat porttitor.”</p>
-                           <div class="blockquote-details">
-                              <div class="info p-0">
-                                 <h5 class="mb-1">Barclay Widerski</h5>
-                                 <p class="mb-0">Sales Specialist</p>
-                              </div>
-                           </div>
-                        </blockquote>
-                     </div>
-                     <!--/.card-body -->
-                  </div>
-                  <!--/.card -->
-               </div>
-               <!--/column -->
-               <div class="col-md-6 align-self-start">
-                  <div class="card bg-pale-blue">
-                     <div class="card-body">
-                        <blockquote class="icon mb-0">
-                           <p>“Nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo pellentesque ornare.”</p>
-                           <div class="blockquote-details">
-                              <div class="info p-0">
-                                 <h5 class="mb-1">Jackie Sanders</h5>
-                                 <p class="mb-0">Investment Planner</p>
-                              </div>
-                           </div>
-                        </blockquote>
-                     </div>
-                     <!--/.card-body -->
-                  </div>
-                  <!--/.card -->
-               </div>
-               <!--/column -->';
+$argss = array(
+   'posts_per_page' => 4,
+   'post_type' => 'testimonials',
+);
+
+$testimonials = get_sub_field('posts');
+if ($testimonials) {
+   $cw_post_ids = array();
+   foreach ($testimonials as $post_ids) {
+      $cw_post_ids[] = $post_ids;
+   }
+   $cw_post_idsd = implode(',', $testimonials);
+   $argss['post__in'] = $cw_post_ids;
+}
+
+// $categories = get_sub_field('categories');
+// if ($categories) {
+//    $get_terms_args = array(
+//       'taxonomy' => 'projects_category',
+//       'include' => $categories,
+//    );
+
+//    $argss['tax_query'] = array(
+//       array(
+//          'taxonomy' => 'projects_category',
+//          'field' => 'id',
+//          'terms' => $categories
+//       )
+//    );
+// }
+
+$block = new CW_Settings(
+   $cw_settings = array(
+
+      'title' => 'Our Community',
+      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+
+      'subtitle' => 'Customer satisfaction is our major goal. See what our customers are saying about us.',
+      'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+
+      'paragraph' => 'Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.',
+      'patternParagraph' => '<p>%s</p>',
+
+      'buttons' => '<a href="#" class="btn btn-navy rounded-pill mt-3">All Testimonials</a>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+
+      'background_class_default' => 'wrapper bg-light',
+
+      'divider' => true,
+
+
+   )
+);
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper bg-light">
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
          <div class="col-lg-7">
-            <div class="row gx-md-5 gy-5">
-               <?php echo $features->Testimonials_01(); ?>
-            </div>
-            <!--/.row -->
+
+            <?php
+            $query = new WP_Query($argss);
+            if ($query->have_posts()) { ?>
+
+               <div class="row gx-md-5 gy-5">
+                  <?php
+                  $row_num = 0;
+                  while ($query->have_posts()) {
+                     $query->the_post();
+                     $post_id =  get_the_id();
+                     if ($row_num == 0) { ?>
+                        <div class="col-md-6 col-xl-5 align-self-end">
+                           <div class="card bg-pale-yellow">
+                              <div class="card-body">
+
+                                 <blockquote class="icon mb-0">
+                                    <p>“<?php the_sub_field('testimonial', $post_id); ?>”</p>
+                                    <div class="blockquote-details">
+                                       <div class="info p-0">
+                                          <h5 class="mb-1"><?php the_sub_field('name', $post_id); ?></h5>
+                                          <p class="mb-0">Financial Analyst</p>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+
+                              </div>
+                              <!--/.card-body -->
+                           </div>
+                           <!--/.card -->
+                        </div>
+                        <!--/column -->
+                     <?php } elseif ($row_num == 1) { ?>
+                        <div class="col-md-6 align-self-end">
+                           <div class="card bg-pale-red">
+                              <div class="card-body">
+                                 <blockquote class="icon mb-0">
+                                    <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.”</p>
+                                    <div class="blockquote-details">
+                                       <div class="info p-0">
+                                          <h5 class="mb-1">Cory Zamora</h5>
+                                          <p class="mb-0">Marketing Specialist</p>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!--/.card-body -->
+                           </div>
+                           <!--/.card -->
+                        </div>
+                        <!--/column -->
+                     <?php } elseif ($row_num == 2) { ?>
+                        <div class="col-md-6 col-xl-5 offset-xl-1">
+                           <div class="card bg-pale-leaf">
+                              <div class="card-body">
+                                 <blockquote class="icon mb-0">
+                                    <p>“Donec id elit non porta gravida at eget metus. Duis mollis est commodo luctus, nisi erat porttitor.”</p>
+                                    <div class="blockquote-details">
+                                       <div class="info p-0">
+                                          <h5 class="mb-1">Barclay Widerski</h5>
+                                          <p class="mb-0">Sales Specialist</p>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!--/.card-body -->
+                           </div>
+                           <!--/.card -->
+                        </div>
+                        <!--/column -->
+                     <?php } elseif ($row_num == 3) { ?>
+                        <div class="col-md-6 align-self-start">
+                           <div class="card bg-pale-blue">
+                              <div class="card-body">
+                                 <blockquote class="icon mb-0">
+                                    <p>“Nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo pellentesque ornare.”</p>
+                                    <div class="blockquote-details">
+                                       <div class="info p-0">
+                                          <h5 class="mb-1">Jackie Sanders</h5>
+                                          <p class="mb-0">Investment Planner</p>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!--/.card-body -->
+                           </div>
+                           <!--/.card -->
+                        </div>
+                        <!--/column -->
+                  <?php  }
+                     $row_num++;
+                  }
+                  ?>
+               <?php
+            }
+            wp_reset_postdata();
+               ?>
+               </div>
+               <!--/.row -->
          </div>
          <!--/column -->
          <div class="col-lg-5">
-            <h2 class="display-4 mb-3"><?php echo $settings->title; ?></h2>
-            <p class="lead fs-lg"><?php echo $settings->subtitle; ?></p>
-            <p><?php echo $settings->paragraph; ?></p>
-            <!--  buttons group -->
-            <?php $button->showbuttons(); ?>
+            <?php echo $block->title; ?>
+            <!--/title -->
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
+            <?php echo $block->paragraph; ?>
+            <!--/paragraph -->
+            <?php echo $block->buttons; ?>
             <!--/buttons group -->
+
          </div>
          <!--/column -->
       </div>
       <!--/.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->
