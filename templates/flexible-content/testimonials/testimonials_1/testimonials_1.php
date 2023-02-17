@@ -53,8 +53,6 @@ $block = new CW_Settings(
       'background_class_default' => 'wrapper bg-light',
 
       'divider' => true,
-
-
    )
 );
 ?>
@@ -68,24 +66,33 @@ $block = new CW_Settings(
             <?php
             $query = new WP_Query($argss);
             if ($query->have_posts()) { ?>
-
                <div class="row gx-md-5 gy-5">
                   <?php
                   $row_num = 0;
                   while ($query->have_posts()) {
                      $query->the_post();
                      $post_id =  get_the_id();
+
+                     if (have_rows('testimonials', $post_id)) :
+                        while (have_rows('testimonials', $post_id)) : the_row();
+                           $name = get_sub_field('name');
+                           $testimonial = get_sub_field('testimonial');
+                           $job_title = get_sub_field('job_title');
+                        endwhile;
+                     endif;
+
                      if ($row_num == 0) { ?>
                         <div class="col-md-6 col-xl-5 align-self-end">
                            <div class="card bg-pale-yellow">
                               <div class="card-body">
-
                                  <blockquote class="icon mb-0">
-                                    <p>“<?php the_sub_field('testimonial', $post_id); ?>”</p>
+                                    <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
                                        <div class="info p-0">
-                                          <h5 class="mb-1"><?php the_sub_field('name', $post_id); ?></h5>
-                                          <p class="mb-0">Financial Analyst</p>
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
                                        </div>
                                     </div>
                                  </blockquote>
@@ -101,7 +108,7 @@ $block = new CW_Settings(
                            <div class="card bg-pale-red">
                               <div class="card-body">
                                  <blockquote class="icon mb-0">
-                                    <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper.”</p>
+                                    <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
                                        <div class="info p-0">
                                           <h5 class="mb-1">Cory Zamora</h5>
@@ -120,7 +127,7 @@ $block = new CW_Settings(
                            <div class="card bg-pale-leaf">
                               <div class="card-body">
                                  <blockquote class="icon mb-0">
-                                    <p>“Donec id elit non porta gravida at eget metus. Duis mollis est commodo luctus, nisi erat porttitor.”</p>
+                                    <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
                                        <div class="info p-0">
                                           <h5 class="mb-1">Barclay Widerski</h5>
@@ -139,7 +146,7 @@ $block = new CW_Settings(
                            <div class="card bg-pale-blue">
                               <div class="card-body">
                                  <blockquote class="icon mb-0">
-                                    <p>“Nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo pellentesque ornare.”</p>
+                                    <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
                                        <div class="info p-0">
                                           <h5 class="mb-1">Jackie Sanders</h5>
