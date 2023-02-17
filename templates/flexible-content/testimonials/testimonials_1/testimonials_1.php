@@ -36,10 +36,10 @@ $block = new CW_Settings(
 
       'background_class_default' => 'wrapper bg-light',
 
-      //'divider' => true,
+      'divider' => true,
    )
 );
-echo $block->title;
+
 ?>
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
@@ -95,8 +95,10 @@ echo $block->title;
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
                                        <div class="info p-0">
-                                          <h5 class="mb-1">Cory Zamora</h5>
-                                          <p class="mb-0">Marketing Specialist</p>
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
                                        </div>
                                     </div>
                                  </blockquote>
@@ -114,8 +116,10 @@ echo $block->title;
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
                                        <div class="info p-0">
-                                          <h5 class="mb-1">Barclay Widerski</h5>
-                                          <p class="mb-0">Sales Specialist</p>
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
                                        </div>
                                     </div>
                                  </blockquote>
@@ -133,8 +137,10 @@ echo $block->title;
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
                                        <div class="info p-0">
-                                          <h5 class="mb-1">Jackie Sanders</h5>
-                                          <p class="mb-0">Investment Planner</p>
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
                                        </div>
                                     </div>
                                  </blockquote>
