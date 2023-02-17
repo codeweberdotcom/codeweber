@@ -27,8 +27,8 @@ if (!empty($block['align'])) {
 }
 ?>
 
-<?php if (have_rows('testimonials')) : ?>
-   <?php while (have_rows('testimonials')) : the_row(); ?>
+<?php if (have_rows('testimonials_template')) : ?>
+   <?php while (have_rows('testimonials_template')) : the_row(); ?>
       <?php $layout = get_row_layout(); ?>
       <?php $block_id = esc_attr($id); ?>
       <?php $layout_path = 'templates/flexible-content/testimonials/' . $layout . '/' . $layout; ?>

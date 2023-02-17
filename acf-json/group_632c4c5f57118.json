@@ -5,7 +5,7 @@
         {
             "key": "field_632c4c7aa5b22",
             "label": "Testimonials",
-            "name": "testimonials",
+            "name": "testimonials_post_field",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -176,5 +176,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676631109
+    "modified": 1676639623
 }
