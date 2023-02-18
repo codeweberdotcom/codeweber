@@ -669,15 +669,15 @@ class CW_Settings
          $typewriter = $this->typewriter;
          $title_object = new CW_Title(NULL, $title_text, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $title_pattern, $typewriter);
          $title = $title_object->title_final;
-      } elseif ($this->cw_settings['title'] == false) {
-         if ($cw_settings['patternTitle'] !== NULL) {
-            $title_pattern = $cw_settings['patternTitle'];
-         } else {
-            $title_pattern = NULL;
-         }
-         $typewriter = $this->typewriter;
-         $title_object = new CW_Title(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $title_pattern, $typewriter);
-         $title = $title_object->title_final;
+         // } elseif ($this->cw_settings['title'] == false) {
+         //    if ($cw_settings['patternTitle'] !== NULL) {
+         //       $title_pattern = $cw_settings['patternTitle'];
+         //    } else {
+         //       $title_pattern = NULL;
+         //    }
+         //    $typewriter = $this->typewriter;
+         //    $title_object = new CW_Title(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $title_pattern, $typewriter);
+         //    $title = $title_object->title_final;
       } else {
          if (isset($this->cw_settings['title'])) {
             $title = $this->cw_settings['title'];

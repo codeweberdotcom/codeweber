@@ -73,39 +73,44 @@ $block = new CW_Settings(
                               if (have_rows('testimonials_post_field', $post_id)) :
                                  while (have_rows('testimonials_post_field', $post_id)) : the_row();
                                     $photo = get_sub_field('photo');
-                                    if ($photo) : ?>
-                                       <img src="<?php echo esc_url($photo['url']); ?>" alt="<?php echo esc_attr($photo['alt']); ?>" />
-                              <?php endif;
+                                    if ($photo) {
+                                       $avatar_url = esc_url($photo['sizes']['cw_icon_lg']);
+                                    } else {
+                                       $avatar_url = '#';
+                                    }
                                     $name = get_sub_field('name');
                                     $testimonial = get_sub_field('testimonial');
-                                    $job_title = get_sub_field('job_title');
+                                    $job_title = get_sub_field('job_title'); ?>
+
+                                    <div class="swiper-slide">
+                                       <div class="item-inner">
+                                          <div class="card">
+                                             <div class="card-body">
+                                                <blockquote class="icon mb-0">
+                                                   <p>“<?php echo $testimonial; ?>”</p>
+                                                   <div class="blockquote-details">
+                                                      <img class="rounded-circle w-12" src="<?php echo $avatar_url; ?>" alt="" />
+                                                      <div class="info">
+                                                         <h5 class="mb-1"><?php echo $name ?></h5>
+                                                         <?php if ($job_title) { ?>
+                                                            <p class="mb-0"><?php echo $job_title ?></p>
+                                                         <?php } ?>
+                                                      </div>
+                                                   </div>
+                                                </blockquote>
+                                             </div>
+                                             <!--/.card-body -->
+                                          </div>
+                                          <!-- /.card -->
+                                       </div>
+                                       <!-- /.item-inner -->
+                                    </div>
+                                    <!--/.swiper-slide -->
+                              <?php
                                  endwhile;
                               endif;
                               ?>
-                              <div class="swiper-slide">
-                                 <div class="item-inner">
-                                    <div class="card">
-                                       <div class="card-body">
-                                          <blockquote class="icon mb-0">
-                                             <p>“<?php echo $testimonial; ?>”</p>
-                                             <div class="blockquote-details">
-                                                <img class="rounded-circle w-12" src="<?php echo esc_url($photo['url']); ?>" alt="" />
-                                                <div class="info">
-                                                   <h5 class="mb-1"><?php echo $name ?></h5>
-                                                   <?php if ($job_title) { ?>
-                                                      <p class="mb-0"><?php echo $job_title ?></p>
-                                                   <?php } ?>
-                                                </div>
-                                             </div>
-                                          </blockquote>
-                                       </div>
-                                       <!--/.card-body -->
-                                    </div>
-                                    <!-- /.card -->
-                                 </div>
-                                 <!-- /.item-inner -->
-                              </div>
-                              <!--/.swiper-slide -->
+
                            <?php
                            }
                            ?>

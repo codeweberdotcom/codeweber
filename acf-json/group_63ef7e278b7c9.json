@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_63ef7e65d0b5e",
-            "label": "testimonials_template",
+            "label": "Testimonials",
             "name": "testimonials_template",
             "type": "flexible_content",
             "instructions": "",
@@ -22,82 +22,6 @@
                     "label": "testimonials_1",
                     "display": "block",
                     "sub_fields": [
-                        {
-                            "key": "field_63ef856b9507b",
-                            "label": "Posts",
-                            "name": "",
-                            "type": "accordion",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "open": 0,
-                            "multi_expand": 0,
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_63ef865ff6882",
-                            "label": "Select type",
-                            "name": "select_type",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "post": "post",
-                                "category": "category"
-                            },
-                            "default_value": "post",
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_63ef85799507c",
-                            "label": "Posts",
-                            "name": "posts",
-                            "type": "relationship",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_63ef865ff6882",
-                                        "operator": "==",
-                                        "value": "post"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "post_type": [
-                                "testimonials"
-                            ],
-                            "taxonomy": "",
-                            "filters": [
-                                "search",
-                                "taxonomy"
-                            ],
-                            "elements": "",
-                            "min": "",
-                            "max": "",
-                            "return_format": "id"
-                        },
                         {
                             "key": "field_63ef83363ffe2",
                             "label": "Main Settings",
@@ -177,6 +101,83 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63ef856b9507b",
+                            "label": "Posts",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63f0d868683ac",
+                            "label": "Select type",
+                            "name": "select_type",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "City": "City",
+                                "Job": "Job",
+                                "Company name": "Company name"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_63ef85799507c",
+                            "label": "Posts",
+                            "name": "posts",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_63ef865ff6882",
+                                        "operator": "==",
+                                        "value": "post"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "testimonials"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
                         },
                         {
                             "key": "field_63ef84deb5ee5",
@@ -303,7 +304,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63eff79a85236",
+                            "key": "field_63f0da312dec9",
                             "label": "Select type",
                             "name": "select_type",
                             "type": "select",
@@ -316,15 +317,16 @@
                                 "id": ""
                             },
                             "choices": {
-                                "post": "post",
-                                "category": "category"
+                                "City": "City",
+                                "Job": "Job",
+                                "Company name": "Company name"
                             },
-                            "default_value": "post",
+                            "default_value": false,
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
-                            "ajax": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -334,15 +336,7 @@
                             "type": "relationship",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_63eff79a85236",
-                                        "operator": "==",
-                                        "value": "post"
-                                    }
-                                ]
-                            ],
+                            "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -353,8 +347,7 @@
                             ],
                             "taxonomy": "",
                             "filters": [
-                                "search",
-                                "taxonomy"
+                                "search"
                             ],
                             "elements": "",
                             "min": "",
@@ -1115,5 +1108,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676672872
+    "modified": 1676728893
 }
