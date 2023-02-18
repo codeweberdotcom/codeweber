@@ -1,9 +1,64 @@
+<?php
+
+/**
+ * About 1
+ */
+
+$argss = array(
+   'posts_per_page' => 10,
+   'post_type' => 'staff',
+);
+
+$team = get_sub_field('custom_post');
+if ($team) {
+   $cw_post_ids = array();
+   foreach ($team as $team) {
+      $cw_post_ids[] = $team;
+   }
+   $cw_post_idsd = implode(',', $cw_post_ids);
+   $argss['post__in'] = $cw_post_ids;
+}
+
+$block = new CW_Settings(
+   $cw_settings = array(
+      'title' => 'Our Team',
+      'patternTitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+
+      'subtitle' => 'Think unique and be innovative. Make a difference with Sandbox.',
+      'patternSubtitle' => '<h3 class="display-4 mb-7 px-lg-19 px-xl-18">%s</h3>',
+
+      // 'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
+      // 'patternParagraph' => ' <p class="mb-6">%s</p>',
+
+      'background_class_default' => 'wrapper bg-light',
+
+      'divider' => true,
+
+      //'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),
+   )
+);
+$query = new WP_Query($argss);
+if ($query->have_posts()) {
+
+   while ($query->have_posts()) {
+      $query->the_post();
+      $post_id =  get_the_id();
+      the_title();
+   }
+}
+
+?>
+
+
+
 <section class="wrapper bg-light">
    <div class="container py-14 py-md-16">
       <div class="row mb-3">
          <div class="col-md-10 col-lg-12 col-xl-10 col-xxl-9 mx-auto text-center">
-            <h2 class="fs-15 text-uppercase text-muted mb-3">Our Team</h2>
-            <h3 class="display-4 mb-7 px-lg-19 px-xl-18">Think unique and be innovative. Make a difference with Sandbox.</h3>
+            <?php echo $block->title; ?>
+            <!--/title -->
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
          </div>
          <!--/column -->
       </div>

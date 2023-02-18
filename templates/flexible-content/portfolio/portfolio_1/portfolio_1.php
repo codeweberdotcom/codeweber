@@ -56,7 +56,6 @@ $block = new CW_Settings(
          <!--/column -->
       </div>
       <!--/.row -->
-
       <?php
       $query = new WP_Query($argss);
       if ($query->have_posts()) { ?>

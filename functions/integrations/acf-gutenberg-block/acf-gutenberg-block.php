@@ -363,5 +363,24 @@ function my_acf_blocks_init()
             'mode' => 'preview',
          )
       );
+
+
+      // Register a Team block.
+      acf_register_block_type(
+         array(
+            'name'              => 'team',
+            'title'             => __('Team'),
+            'description'       => __('Team.'),
+            'render_template'   => 'templates/flexible-content/team.php',
+            'category'          => 'codeweber',
+            'mode'                    => 'auto',
+            'align'           => 'full',
+            'supports'        => array(
+               'align'        => array('full'),
+               'align'        => true,
+            ),
+            'mode' => 'preview',
+         )
+      );
    }
 }
