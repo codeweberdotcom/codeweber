@@ -61,7 +61,6 @@ $block = new CW_Settings(
                <!--/shape -->
                <?php
                $query = new WP_Query($argss);
-
                if ($query->have_posts()) { ?>
                   <div class="swiper-container dots-closer mb-6" data-margin="0" data-dots="true" data-items-md="2" data-items-xs="1">
                      <div class="swiper">
@@ -81,7 +80,6 @@ $block = new CW_Settings(
                                     $name = get_sub_field('name');
                                     $testimonial = get_sub_field('testimonial');
                                     $job_title = get_sub_field('job_title'); ?>
-
                                     <div class="swiper-slide">
                                        <div class="item-inner">
                                           <div class="card">
@@ -110,11 +108,9 @@ $block = new CW_Settings(
                                  endwhile;
                               endif;
                               ?>
-
                            <?php
                            }
                            ?>
-
                         </div>
                         <!--/.swiper-wrapper -->
                      </div>

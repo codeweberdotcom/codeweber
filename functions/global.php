@@ -288,3 +288,14 @@ function brk_remove_active_class_from_li($classes, $item, $args)
 	return array_diff($classes, array('active'));
 }
 add_filter('nav_menu_css_class', 'brk_remove_active_class_from_li', 10, 3);
+
+/**
+ * Is Post Type
+ */
+function is_post_type($type)
+{
+	global $wp_query;
+	if ($type == get_post_type($wp_query->post->ID))
+		return true;
+	return false;
+}

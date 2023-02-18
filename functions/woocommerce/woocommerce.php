@@ -334,32 +334,38 @@ function woocommerce_page_header()
    }
 
 
-   if (get_field('pageheader', $term_id_prefixed) && get_field('pageheader', $term_id_prefixed) !== 'disable') {
-      if (get_field('pageheader', $term_id_prefixed) == 'default') {
-         if (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
-            get_template_part('templates/sections/common', 'breadcrumb');
-         }
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_1' || get_field('pageheader', $term_id_prefixed) == 'type_4') {
+   if (get_field('pageheader', $term_id_prefixed) == 'default') {
+      if (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
          get_template_part('templates/sections/common', 'breadcrumb');
       }
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'type_1' || get_field('pageheader', $term_id_prefixed) == 'type_4') {
+      get_template_part('templates/sections/common', 'breadcrumb');
+   } elseif (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
+      get_template_part('templates/sections/common', 'breadcrumb');
+   }
 
-      if (get_field('pageheader', $term_id_prefixed) == 'type_1') {
-         get_template_part('templates/sections/common', 'pageheader_2');
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_2') {
+   if (get_field('pageheader', $term_id_prefixed) == 'type_1') {
+      get_template_part('templates/sections/common', 'pageheader_2');
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'type_2') {
+      get_template_part('templates/sections/common', 'pageheader');
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'type_3') {
+      get_template_part('templates/sections/common', 'pageheader_1');
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'type_4') {
+      return;
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'default') {
+      if (get_theme_mod('codeweber_page_header') == 'type_2') {
          get_template_part('templates/sections/common', 'pageheader');
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_3') {
+      } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
          get_template_part('templates/sections/common', 'pageheader_1');
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_4') {
-         return;
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'default') {
-         if (get_theme_mod('codeweber_page_header') == 'type_2') {
-            get_template_part('templates/sections/common', 'pageheader');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
-            get_template_part('templates/sections/common', 'pageheader_1');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
-            get_template_part('templates/sections/common', 'pageheader_2');
-         }
+      } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+         get_template_part('templates/sections/common', 'pageheader_2');
       }
+   } elseif (get_theme_mod('codeweber_page_header') == 'type_2') {
+      get_template_part('templates/sections/common', 'pageheader');
+   } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
+      get_template_part('templates/sections/common', 'pageheader_1');
+   } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+      get_template_part('templates/sections/common', 'pageheader_2');
    }
 }
 ?>

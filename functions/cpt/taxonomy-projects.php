@@ -3,17 +3,17 @@ function cptui_register_my_taxes_projects_category()
 {
 
 	/**
-	 * Taxonomy: Projects Categories
+	 * Taxonomy: Категории проектов.
 	 */
 
 	$labels = [
-		"name" => esc_html__("Projects Categories", "codeweber"),
+		"name" => esc_html__("Project Categories", "codeweber"),
 		"singular_name" => esc_html__("Project Category", "codeweber"),
 	];
 
 
 	$args = [
-		"label" => esc_html__("Projects Categories", "codeweber"),
+		"label" => esc_html__("Project Categories", "codeweber"),
 		"labels" => $labels,
 		"public" => true,
 		"publicly_queryable" => true,
