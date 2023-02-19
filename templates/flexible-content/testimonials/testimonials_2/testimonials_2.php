@@ -26,11 +26,11 @@ $block = new CW_Settings(
          'swiper_container_class' => 'overflow-hidden',
          'image_class' => '',
          'data_thumbs' => NULL,
-         'wrapper_image_class' => '',
-         'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
-         'image_thumb_size' => 'sandbox_hero_11',
-         'image_demo' => '<figure class="rounded"><img src="' . get_template_directory_uri() . '/dist/img/photos/about7.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about7@2x.jpg 2x" alt=""></figure>',
-         'image_big_size' => 'sandbox_hero_6',
+         'wrapper_image_class' => 'position-absolute d-none d-lg-block',
+         'image_pattern' => '<figure %5$s %9$s style="top: 50%%; right:0; width: 45%%; height: auto; transform: translateY(-50%%); z-index:2">%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
+         'image_thumb_size' => 'testimonial_2',
+         'image_demo' => '<figure class="' . get_theme_mod('codeweber_image') . ' position-absolute d-none d-lg-block" style="top: 50%; right:0; width: 45%; height: auto; transform: translateY(-50%); z-index:2"><img src="' . get_template_directory_uri() . '/dist/img/photos/tei1.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/tei1@2x.jpg 2x" alt=""></figure>',
+         'image_big_size' => 'project_1',
          'img_link' => '/dist/img/photos/about7.jpg',
       ),
       'background_class_default' => 'wrapper bg-light',
@@ -42,7 +42,8 @@ $block = new CW_Settings(
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row position-relative">
-         <figure class="<?php echo get_theme_mod('codeweber_image'); ?> position-absolute d-none d-lg-block" style="top: 50%; right:0; width: 45%; height: auto; transform: translateY(-50%); z-index:2"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/tei1.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/tei1@2x.jpg 2x" alt=""></figure>
+         <?php echo $block->swiper_final; ?>
+         <!--/swiper -->
          <div class="col-lg-9 text-center">
             <div class="card bg-gray">
                <div class="card-body p-md-10 py-xxl-16">

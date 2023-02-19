@@ -355,6 +355,44 @@
                             "return_format": "id"
                         },
                         {
+                            "key": "field_63f211b6e1fee",
+                            "label": "Image",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63f212cbe1fef",
+                            "label": "Gallery",
+                            "name": "cw_slider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63a2003c62223"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_63eff79a8523e",
                             "label": "Background",
                             "name": "",
@@ -441,7 +479,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63ef9a4922faf",
+                            "key": "field_63f20ad100ad4",
                             "label": "Select type",
                             "name": "select_type",
                             "type": "select",
@@ -454,15 +492,16 @@
                                 "id": ""
                             },
                             "choices": {
-                                "post": "post",
-                                "category": "category"
+                                "City": "City",
+                                "Job": "Job",
+                                "Company name": "Company name"
                             },
-                            "default_value": "post",
+                            "default_value": false,
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
-                            "ajax": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -704,6 +743,44 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_63f2487ba519a",
+                            "label": "Image",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_63f2487fa519b",
+                            "label": "Gallery",
+                            "name": "cw_slider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63a2003c62223"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_63efff43459f9",
                             "label": "Posts",
                             "name": "",
@@ -721,7 +798,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63efff43459fa",
+                            "key": "field_63f249a2c0be8",
                             "label": "Select type",
                             "name": "select_type",
                             "type": "select",
@@ -734,15 +811,16 @@
                                 "id": ""
                             },
                             "choices": {
-                                "post": "post",
-                                "category": "category"
+                                "City": "City",
+                                "Job": "Job",
+                                "Company name": "Company name"
                             },
-                            "default_value": "post",
+                            "default_value": false,
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
-                            "ajax": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -818,6 +896,27 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_63f2490da519c",
+                            "label": "Column",
+                            "name": "cw_column",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63c5b17b05bfa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_63efff43459fe",
                             "label": "Divider",
                             "name": "cw_divider",
@@ -866,7 +965,7 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63efb552ccd6e",
+                            "key": "field_63f253fdeb629",
                             "label": "Select type",
                             "name": "select_type",
                             "type": "select",
@@ -879,15 +978,16 @@
                                 "id": ""
                             },
                             "choices": {
-                                "post": "post",
-                                "category": "category"
+                                "City": "City",
+                                "Job": "Job",
+                                "Company name": "Company name"
                             },
-                            "default_value": "post",
+                            "default_value": false,
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
-                            "ajax": 0,
                             "return_format": "value",
+                            "ajax": 0,
                             "placeholder": ""
                         },
                         {
@@ -1108,5 +1208,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676728893
+    "modified": 1676825630
 }
