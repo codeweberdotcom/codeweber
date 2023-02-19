@@ -4,24 +4,52 @@
  * Consultant Widget
  */
 function consultant_widget()
-{
-?>
-   <div class="widget sticky-top mb-md-0">
-      <div class="card">
-         <div class="card-body">
-            <img class="rounded-circle w-15 mb-4" src="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3@2x.jpg 2x" alt="" />
-            <h4 class="mb-1">Алексей</h4>
-            <div class="meta mb-2">Консультант</div>
-            <p class="mb-3">Наши специалисты ответят на любой интересующий вопрос.</p>
-            <a href="#" class="btn btn-primary rounded w-100">Задать вопрос</a>
-            <!-- /.social -->
+{ ?>
+   <?php if (get_field('show_consultant_widget', 'option') == 1) : ?>
+      <div class="widget sticky-top mb-md-0">
+         <div class="card">
+            <div class="card-body">
+
+               <?php $photo_consultant = get_field('photo_consultant', 'option'); ?>
+               <?php if ($photo_consultant) { ?>
+                  <img class="rounded-circle w-15 mb-4" src="<?php echo esc_url($photo_consultant['sizes']['cw_icon_lg']); ?>" srcset="<?php echo esc_url($photo_consultant['sizes']['cw_icon_lg']); ?>" alt="" />
+               <?php } else { ?>
+                  <img class="rounded-circle w-15 mb-4" src="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3.jpg" srcset="<?php echo    get_template_directory_uri(); ?>/dist/img/avatars/te3@2x.jpg 2x" alt="" />
+               <?php }; ?>
+
+
+
+               <?php if (get_field('consultant_name', 'option')) { ?>
+                  <h4 class="mb-1"><?php echo get_field('consultant_name', 'option'); ?></h4>
+               <?php } else { ?>
+                  <h4 class="mb-1"><?php echo esc_html_e('Alexey', 'codeweber'); ?></h4>
+               <?php } ?>
+
+               <?php if (get_field('job_title', 'option')) { ?>
+                  <div class="meta mb-2"><?php echo get_field('job_title', 'option'); ?></div>
+               <?php } else { ?>
+                  <div class="meta mb-2"><?php echo esc_html_e('Consultant', 'codeweber'); ?></div>
+               <?php } ?>
+
+               <?php if (get_field('description', 'option')) { ?>
+                  <p class="mb-3"><?php echo get_field('description', 'option'); ?></p>
+               <?php } else { ?>
+                  <p class="mb-3"><?php echo esc_html_e('Our specialists will answer any question of interest.', 'codeweber'); ?></p>
+               <?php } ?>
+
+               <a href="#" class="btn btn-primary rounded w-100">Ask a question</a>
+
+
+               <!-- /.social -->
+            </div>
+            <!--/.card-body -->
          </div>
-         <!--/.card-body -->
+         <!-- /.card -->
       </div>
-      <!-- /.card -->
-   </div>
+   <?php endif; ?>
 <?php
 }
+
 
 add_action('sidebar_faq_end', 'consultant_widget', 100);
 add_action('sidebar_main_end', 'consultant_widget', 100);
