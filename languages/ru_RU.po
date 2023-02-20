@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-02-20 11:00+0000\n"
+"PO-Revision-Date: 2023-02-20 11:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -64,7 +64,6 @@ msgid "Add Client"
 msgstr "Добавить Клиента"
 
 #: functions/cpt/cpt-clients.php:15 functions/cpt/cpt-projects.php:14
-#: functions/cpt/cpt-staff.php:15
 msgid "Add New"
 msgstr ""
 
@@ -79,6 +78,10 @@ msgstr "Добавить Сотрудника"
 #: functions/cpt/cpt-price_package.php:15
 msgid "Add Price Packages"
 msgstr "Добавить Пакет"
+
+#: functions/cpt/cpt-staff.php:15
+msgid "Add Staff"
+msgstr "Добавить Сотрудника"
 
 #: templates/footer/footer-sandbox-24.php:36
 #: templates/footer/footer-sandbox-26.php:36
