@@ -8,8 +8,33 @@ function cptui_register_my_cpts_services()
 	 */
 
 	$labels = [
-		"name" => __("Services", "codeweber"),
-		"singular_name" => __("Service", "codeweber"),
+		"name" => esc_html__("Services", "codeweber"),
+		"singular_name" => esc_html__("Service", "codeweber"),
+		"menu_name" => esc_html__("Staff", "codeweber"),
+		"all_items" => esc_html__("Services", "codeweber"),
+		"add_new" => esc_html__("Add Service", "codeweber"),
+		"add_new_item" => esc_html__("Add New Service", "codeweber"),
+		"edit_item" => esc_html__("Edit Service", "codeweber"),
+		"new_item" => esc_html__("New Service", "codeweber"),
+		"view_item" => esc_html__("View Service", "codeweber"),
+		"view_items" => esc_html__("View Services", "codeweber"),
+		"search_items" => esc_html__("Search Service", "codeweber"),
+		"not_found" => esc_html__("(e.g. No Service found)", "codeweber"),
+		"not_found_in_trash" => esc_html__("(e.g. No Service found in Trash)", "codeweber"),
+		"parent" => esc_html__("Parent Service", "codeweber"),
+		"featured_image" => esc_html__("Featured Image for this service", "codeweber"),
+		"set_featured_image" => esc_html__("Set featured Image for this service", "codeweber"),
+		"remove_featured_image" => esc_html__("Remove featured Image for this service", "codeweber"),
+		"use_featured_image" => esc_html__("Use as featured image", "codeweber"),
+		"archives" => esc_html__("Service archive", "codeweber"),
+		"items_list" => esc_html__("Service list", "codeweber"),
+		"name_admin_bar" => esc_html__("Service", "codeweber"),
+		"item_published" => esc_html__("Service published", "codeweber"),
+		"item_reverted_to_draft" => esc_html__("Service reverted to draft", "codeweber"),
+		"item_scheduled" => esc_html__("Service scheduled", "codeweber"),
+		"item_updated" => esc_html__("Service updated", "codeweber"),
+		"parent_item_colon" => esc_html__("Parent Service", "codeweber"),
+
 	];
 
 	$args = [
