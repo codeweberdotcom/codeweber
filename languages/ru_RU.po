@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-02-20 11:12+0000\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2023-02-20 11:28+0000\n"
+"Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Loco-Version: 2.6.2; wp-6.0.2"
+"X-Loco-Version: 2.6.3; wp-6.1.1"
 
 #. 1: Comment date, 2: Comment time.
 #: functions/lib/comments-helper.php:50
@@ -126,7 +126,7 @@ msgstr "Все Ценовые Пакеты"
 
 #: functions/cpt/cpt-projects.php:12
 msgid "All Projects"
-msgstr ""
+msgstr "Все Проекты"
 
 #: templates/footer/footer-sandbox-1.php:15
 #: templates/footer/footer-sandbox-10.php:10
@@ -410,7 +410,7 @@ msgstr "Редактировать Пакет"
 
 #: functions/cpt/cpt-projects.php:15
 msgid "Edit Project"
-msgstr ""
+msgstr "Редактировать Проект"
 
 #: functions/cpt/cpt-staff.php:17
 msgid "Edit Staff"
@@ -905,7 +905,7 @@ msgstr "Новый Пакет"
 
 #: functions/cpt/cpt-projects.php:16
 msgid "New Project"
-msgstr ""
+msgstr "Новый Проект"
 
 #: functions/cpt/cpt-staff.php:18
 msgid "New Staff"
@@ -1002,7 +1002,7 @@ msgstr "Страницы"
 
 #: functions/cpt/cpt-projects.php:22 functions/cpt/cpt-projects.php:25
 msgid "Parent Project"
-msgstr ""
+msgstr "Родительский Проект"
 
 #: functions/cpt/cpt-staff.php:24 functions/cpt/cpt-staff.php:36
 msgid "Parent Staff"
@@ -1093,7 +1093,7 @@ msgstr "Настройки проектов"
 
 #: functions/cpt/cpt-projects.php:24
 msgid "Project Update"
-msgstr ""
+msgstr "Проект Обновлен"
 
 #: functions/customize.php:456 functions/navmenus.php:17
 #: functions/cpt/cpt-projects.php:9 functions/cpt/cpt-projects.php:11
@@ -1119,11 +1119,11 @@ msgstr "Шаблон основной страницы Проектов"
 
 #: functions/cpt/cpt-projects.php:20
 msgid "Projects Not found"
-msgstr ""
+msgstr "Нет Проектов"
 
 #: functions/cpt/cpt-projects.php:21
 msgid "Projects not found in Trash"
-msgstr ""
+msgstr "Нет Проектов в Корзине"
 
 #: woocommerce/cart/cart.php:38
 msgid "Quantity"
@@ -1224,7 +1224,7 @@ msgstr "Найти Ценовой Пакет"
 
 #: functions/cpt/cpt-projects.php:19
 msgid "Search Projects"
-msgstr ""
+msgstr "Поиск Проекта"
 
 #: functions/cpt/cpt-staff.php:21
 msgid "Search Staff"
@@ -1544,11 +1544,11 @@ msgstr "Показать Ценовые Пакеты"
 
 #: functions/cpt/cpt-projects.php:17
 msgid "View Project"
-msgstr ""
+msgstr "Показать Проект"
 
 #: functions/cpt/cpt-projects.php:18
 msgid "View Projects"
-msgstr ""
+msgstr "Показать Проект"
 
 #: functions/cpt/cpt-staff.php:19 functions/cpt/cpt-staff.php:20
 msgid "View Staff"
