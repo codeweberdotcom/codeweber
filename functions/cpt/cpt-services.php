@@ -10,7 +10,7 @@ function cptui_register_my_cpts_services()
 	$labels = [
 		"name" => esc_html__("Services", "codeweber"),
 		"singular_name" => esc_html__("Service", "codeweber"),
-		"menu_name" => esc_html__("Staff", "codeweber"),
+		"menu_name" => esc_html__("Services", "codeweber"),
 		"all_items" => esc_html__("Services", "codeweber"),
 		"add_new" => esc_html__("Add Service", "codeweber"),
 		"add_new_item" => esc_html__("Add New Service", "codeweber"),
