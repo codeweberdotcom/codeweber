@@ -12,7 +12,7 @@ function cptui_register_my_cpts_clients()
 		"singular_name" => esc_html__("Client", "codeweber"),
 		"menu_name" => esc_html__("Clients", "codeweber"),
 		"all_items" => esc_html__("All Clients", "codeweber"),
-		"add_new" => esc_html__("Add New", "codeweber"),
+		"add_new" => esc_html__("Add New Client", "codeweber"),
 		"add_new_item" => esc_html__("Add Client", "codeweber"),
 		"edit_item" => esc_html__("Edit Client", "codeweber"),
 		"new_item" => esc_html__("New Client", "codeweber"),

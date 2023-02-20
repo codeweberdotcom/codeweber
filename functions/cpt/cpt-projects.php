@@ -10,7 +10,7 @@ function cptui_register_my_cpts_projects()
 		"singular_name" => esc_html__("Project", "codeweber"),
 		"menu_name" => esc_html__("Projects", "codeweber"),
 		"all_items" => esc_html__("All Projects", "codeweber"),
-		"add_new" => esc_html__("Add", "codeweber"),
+		"add_new" => esc_html__("Add Project", "codeweber"),
 		"add_new_item" => esc_html__("Add New", "codeweber"),
 		"edit_item" => esc_html__("Edit Project", "codeweber"),
 		"new_item" => esc_html__("New Project", "codeweber"),
