@@ -1,140 +1,277 @@
-<section class="wrapper bg-light">
+<?php
+
+/**
+ * Testimonial 2
+ */
+
+$argss = array(
+   'posts_per_page' => 10,
+   'post_type' => 'testimonials',
+   'orderby' => 'rand',
+);
+
+$testimonials = get_sub_field('posts');
+if ($testimonials) {
+   $cw_post_ids = array();
+   foreach ($testimonials as $post_ids) {
+      $cw_post_ids[] = $post_ids;
+   }
+   $cw_post_idsd = implode(',', $testimonials);
+   $argss['post__in'] = $cw_post_ids;
+}
+
+$block = new CW_Settings(
+   $cw_settings = array(
+
+      'title' => 'Happy Customers',
+      'patternTitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+
+      'subtitle' => 'Don\'t take our word for it. See what customers are saying about us.',
+      'patternSubtitle' => '<h3 class="display-4 mb-10 px-xl-10 px-xxl-15">%s</h3>',
+
+      'background_class_default' => 'wrapper bg-light',
+      // 'divider' => 'true', // не работает
+   )
+);
+?>
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mx-auto text-center">
-            <h2 class="fs-15 text-uppercase text-muted mb-3">Happy Customers</h2>
-            <h3 class="display-4 mb-10 px-xl-10 px-xxl-15">Don't take our word for it. See what customers are saying about us.</h3>
+            <?php echo $block->title; ?>
+            <!--/title -->
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
       </div>
       <!-- /.row -->
       <div class="grid">
          <div class="row isotope gy-6">
-            <div class="item col-md-6 col-xl-4">
-               <div class="card">
-                  <div class="card-body">
-                     <span class="ratings five mb-3"></span>
-                     <blockquote class="icon mb-0">
-                        <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio dapibus facilisis sociis natoque penatibus.”</p>
-                        <div class="blockquote-details">
-                           <img class="rounded-circle w-12" src="./assets/img/avatars/te1.jpg" srcset="./assets/img/avatars/te1@2x.jpg 2x" alt="" />
-                           <div class="info">
-                              <h5 class="mb-1">Coriss Ambady</h5>
-                              <p class="mb-0">Financial Analyst</p>
+            <?php
+            $query = new WP_Query($argss);
+            if ($query->have_posts()) { ?>
+               <div class="row gx-md-5 gy-5">
+                  <?php
+                  $row_num = 0;
+                  while ($query->have_posts()) {
+                     $query->the_post();
+                     $post_id =  get_the_id();
+                     $type_field = get_sub_field('select_type');
+                     if (have_rows('testimonials_post_field', $post_id)) :
+                        while (have_rows('testimonials_post_field', $post_id)) : the_row();
+                           if (get_sub_field('status') == 1) {
+                              if (get_sub_field('name')) {
+                                 $name = get_sub_field('name');
+                              } else {
+                                 $name = NULL;
+                              }
+
+                              $photo = get_sub_field('photo');
+                              if (get_sub_field('photo')) {
+                                 $avatar_url = esc_url($photo['sizes']['cw_icon_lg']);;
+                              } else {
+                                 $avatar_url = '#';
+                              }
+
+                              if (get_sub_field('testimonial')) {
+                                 $testimonial = get_sub_field('testimonial');
+                              } else {
+                                 $testimonial = NULL;
+                              }
+
+                              if ($type_field == 'Job') {
+                                 if (get_sub_field('job_title')) {
+                                    $job_title = get_sub_field('job_title');
+                                 } else {
+                                    $job_title  = NULL;
+                                 }
+                              } elseif ($type_field == 'City') {
+                                 if (get_sub_field('job_title')) {
+                                    $job_title = get_sub_field('town');
+                                 } else {
+                                    $job_title  = NULL;
+                                 }
+                              } elseif ($type_field == 'Company name') {
+                                 if (get_sub_field('job_title')) {
+                                    $job_title = get_sub_field('company');
+                                 } else {
+                                    $job_title  = NULL;
+                                 }
+                              } else {
+                                 $job_title  = NULL;
+                              }
+
+                              if (get_sub_field('rate') == 1) {
+                                 $rate_num = 'one';
+                              } elseif (get_sub_field('rate') == 2) {
+                                 $rate_num = 'two';
+                              } elseif (get_sub_field('rate') == 3) {
+                                 $rate_num = 'three';
+                              } elseif (get_sub_field('rate') == 4) {
+                                 $rate_num = 'four';
+                              } elseif (get_sub_field('rate') == 5) {
+                                 $rate_num = 'five';
+                              }
+                           }
+                        endwhile;
+                     endif;
+                     if ($row_num == 0) { ?>
+                        <div class="item col-md-6 col-xl-4">
+                           <div class="card">
+                              <div class="card-body">
+                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <blockquote class="icon mb-0">
+                                    <p>“<?php echo $testimonial; ?>”</p>
+                                    <div class="blockquote-details">
+                                       <img class="rounded-circle w-12" src="<?php echo $avatar_url; ?>" alt="" />
+                                       <div class="info">
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- /.card-body -->
                            </div>
+                           <!-- /.card -->
                         </div>
-                     </blockquote>
-                  </div>
-                  <!-- /.card-body -->
-               </div>
-               <!-- /.card -->
-            </div>
-            <!--/column -->
-            <div class="item col-md-6 col-xl-4">
-               <div class="card">
-                  <div class="card-body">
-                     <span class="ratings five mb-3"></span>
-                     <blockquote class="icon mb-0">
-                        <p>“Fusce dapibus, tellus ac cursus tortor mauris condimentum fermentum massa justo sit amet. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.”</p>
-                        <div class="blockquote-details">
-                           <img class="rounded-circle w-12" src="./assets/img/avatars/te2.jpg" srcset="./assets/img/avatars/te2@2x.jpg 2x" alt="" />
-                           <div class="info">
-                              <h5 class="mb-1">Cory Zamora</h5>
-                              <p class="mb-0">Marketing Specialist</p>
+                        <!--/column -->
+                     <?php } elseif ($row_num == 1) { ?>
+                        <div class="item col-md-6 col-xl-4">
+                           <div class="card">
+                              <div class="card-body">
+                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <blockquote class="icon mb-0">
+                                    <p>“<?php echo $testimonial; ?>”</p>
+                                    <div class="blockquote-details">
+                                       <img class="rounded-circle w-12" src="<?php echo $avatar_url; ?>" alt="" />
+                                       <div class="info">
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- /.card-body -->
                            </div>
+                           <!-- /.card -->
                         </div>
-                     </blockquote>
-                  </div>
-                  <!-- /.card-body -->
-               </div>
-               <!-- /.card -->
-            </div>
-            <!--/column -->
-            <div class="item col-md-6 col-xl-4">
-               <div class="card">
-                  <div class="card-body">
-                     <span class="ratings five mb-3"></span>
-                     <blockquote class="icon mb-0">
-                        <p>“Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget porta ac consectetur vestibulum. Donec sed odio dui consectetur adipiscing elit.”</p>
-                        <div class="blockquote-details">
-                           <img class="rounded-circle w-12" src="./assets/img/avatars/te3.jpg" srcset="./assets/img/avatars/te3@2x.jpg 2x" alt="" />
-                           <div class="info">
-                              <h5 class="mb-1">Nikolas Brooten</h5>
-                              <p class="mb-0">Sales Manager</p>
+                        <!--/column -->
+                     <?php } elseif ($row_num == 2) { ?>
+                        <div class="item col-md-6 col-xl-4">
+                           <div class="card">
+                              <div class="card-body">
+                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <blockquote class="icon mb-0">
+                                    <p>“<?php echo $testimonial; ?>”</p>
+                                    <div class="blockquote-details">
+                                       <img class="rounded-circle w-12" src="<?php echo $avatar_url; ?>" alt="" />
+                                       <div class="info">
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- /.card-body -->
                            </div>
+                           <!-- /.card -->
                         </div>
-                     </blockquote>
-                  </div>
-                  <!-- /.card-body -->
-               </div>
-               <!-- /.card -->
-            </div>
-            <!--/column -->
-            <div class="item col-md-6 col-xl-4">
-               <div class="card">
-                  <div class="card-body">
-                     <span class="ratings five mb-3"></span>
-                     <blockquote class="icon mb-0">
-                        <p>“Etiam adipiscing tincidunt elit convallis felis suscipit ut. Phasellus rhoncus tincidunt auctor. Nullam eu sagittis mauris. Donec non dolor ac elit aliquam tincidunt at at sapien. Aenean tortor libero condimentum ac laoreet vitae.”</p>
-                        <div class="blockquote-details">
-                           <img class="rounded-circle w-12" src="./assets/img/avatars/te4.jpg" srcset="./assets/img/avatars/te4@2x.jpg 2x" alt="" />
-                           <div class="info">
-                              <h5 class="mb-1">Coriss Ambady</h5>
-                              <p class="mb-0">Financial Analyst</p>
+                        <!--/column -->
+                     <?php } elseif ($row_num == 3) { ?>
+                        <div class="item col-md-6 col-xl-4">
+                           <div class="card">
+                              <div class="card-body">
+                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <blockquote class="icon mb-0">
+                                    <p>“<?php echo $testimonial; ?>”</p>
+                                    <div class="blockquote-details">
+                                       <img class="rounded-circle w-12" src="<?php echo $avatar_url; ?>" alt="" />
+                                       <div class="info">
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- /.card-body -->
                            </div>
+                           <!-- /.card -->
                         </div>
-                     </blockquote>
-                  </div>
-                  <!-- /.card-body -->
-               </div>
-               <!-- /.card -->
-            </div>
-            <!--/column -->
-            <div class="item col-md-6 col-xl-4">
-               <div class="card">
-                  <div class="card-body">
-                     <span class="ratings five mb-3"></span>
-                     <blockquote class="icon mb-0">
-                        <p>“Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus magnis dis montes, nascetur ridiculus mus. Donec sed odio dui. Nulla vitae elit libero a pharetra.”</p>
-                        <div class="blockquote-details">
-                           <img class="rounded-circle w-12" src="./assets/img/avatars/te5.jpg" srcset="./assets/img/avatars/te5@2x.jpg 2x" alt="" />
-                           <div class="info">
-                              <h5 class="mb-1">Jackie Sanders</h5>
-                              <p class="mb-0">Investment Planner</p>
+                        <!--/column -->
+                     <?php } elseif ($row_num == 4) { ?>
+                        <div class="item col-md-6 col-xl-4">
+                           <div class="card">
+                              <div class="card-body">
+                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <blockquote class="icon mb-0">
+                                    <p>“<?php echo $testimonial; ?>”</p>
+                                    <div class="blockquote-details">
+                                       <img class="rounded-circle w-12" src="<?php echo $avatar_url; ?>" alt="" />
+                                       <div class="info">
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- /.card-body -->
                            </div>
+                           <!-- /.card -->
                         </div>
-                     </blockquote>
-                  </div>
-                  <!-- /.card-body -->
-               </div>
-               <!-- /.card -->
-            </div>
-            <!--/column -->
-            <div class="item col-md-6 col-xl-4">
-               <div class="card">
-                  <div class="card-body">
-                     <span class="ratings five mb-3"></span>
-                     <blockquote class="icon mb-0">
-                        <p>“Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.”</p>
-                        <div class="blockquote-details">
-                           <img class="rounded-circle w-12" src="./assets/img/avatars/te6.jpg" srcset="./assets/img/avatars/te6@2x.jpg 2x" alt="" />
-                           <div class="info">
-                              <h5 class="mb-1">Laura Widerski</h5>
-                              <p class="mb-0">Sales Specialist</p>
+                        <!--/column -->
+                     <?php } elseif ($row_num == 5) { ?>
+                        <div class="item col-md-6 col-xl-4">
+                           <div class="card">
+                              <div class="card-body">
+                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <blockquote class="icon mb-0">
+                                    <p>“<?php echo $testimonial; ?>”</p>
+                                    <div class="blockquote-details">
+                                       <img class="rounded-circle w-12" src="<?php echo $avatar_url; ?>" alt="" />
+                                       <div class="info">
+                                          <h5 class="mb-1"><?php echo $name ?></h5>
+                                          <?php if ($job_title) { ?>
+                                             <p class="mb-0"><?php echo $job_title ?></p>
+                                          <?php } ?>
+                                       </div>
+                                    </div>
+                                 </blockquote>
+                              </div>
+                              <!-- /.card-body -->
                            </div>
+                           <!-- /.card -->
                         </div>
-                     </blockquote>
-                  </div>
-                  <!-- /.card-body -->
+                        <!--/column -->
+                  <?php  }
+                     $row_num++;
+                  }
+                  ?>
+               <?php
+            }
+            wp_reset_postdata();
+               ?>
                </div>
-               <!-- /.card -->
-            </div>
-            <!--/column -->
+               <!-- /.row -->
          </div>
-         <!-- /.row -->
+         <!-- /.grid-view -->
       </div>
-      <!-- /.grid-view -->
-   </div>
-   <!-- /.container -->
+      <!-- /.container -->
+      <?php if ($block->divider_wave) {
+         echo $block->divider_wave;
+      } ?>
+      <!-- /divider -->
 </section>
 <!-- /section -->
