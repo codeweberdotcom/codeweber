@@ -12,7 +12,7 @@ function cptui_register_my_cpts_staff()
 		"singular_name" => esc_html__("Staff", "codeweber"),
 		"menu_name" => esc_html__("Staff", "codeweber"),
 		"all_items" => esc_html__("All Staff", "codeweber"),
-		"add_new" => esc_html__("Add New", "codeweber"),
+		"add_new" => esc_html__("Add Staff", "codeweber"),
 		"add_new_item" => esc_html__("Add New Staff", "codeweber"),
 		"edit_item" => esc_html__("Edit Staff", "codeweber"),
 		"new_item" => esc_html__("New Staff", "codeweber"),
