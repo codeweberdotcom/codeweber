@@ -350,12 +350,13 @@ class CW_Buttons
    public $final_buttons;
    public $buttons_pattern;
    public $buttons_items;
+   public $button_item_class;
 
-   public function __construct($buttons_pattern, $buttons_items)
+   public function __construct($buttons_pattern, $buttons_items, $button_item_class)
    {
-      $this->final_buttons = $this->cw_final_buttons($buttons_pattern, $buttons_items);
+      $this->final_buttons = $this->cw_final_buttons($buttons_pattern, $buttons_items, $button_item_class);
    }
-   public function cw_final_buttons($buttons_pattern, $buttons_items)
+   public function cw_final_buttons($buttons_pattern, $buttons_items, $button_item_class)
    {
       $buttons_array = array();
       if (is_array(get_sub_field('cw_buttons_repeater'))) {
@@ -368,10 +369,10 @@ class CW_Buttons
          while (have_rows('cw_buttons_repeater')) {
             the_row();
             if ($count == 1) {
-               $button = new CW_Button(NULL);
+               $button = new CW_Button($button_item_class);
                $buttons_array[] = '<div>' . $button->final_button . '</div>';
             } else {
-               $button = new CW_Button($import_class = 'me-2');
+               $button = new CW_Button($button_item_class . ' me-2');
                $buttons_array[] = '<span>' . $button->final_button . '</span>';
             }
          }

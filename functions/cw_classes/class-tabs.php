@@ -69,7 +69,7 @@ class CW_Tab
       $paragraph_content_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>%s</p>');
       $paragraph_content = $paragraph_content_object->paragraph_final;
 
-      $button_content_object = new CW_Buttons('<div class="d-flex">%s</div>', NULL);
+      $button_content_object = new CW_Buttons('<div class="d-flex">%s</div>', NULL, NULL);
       $button_content = $button_content_object->final_buttons;
 
       $list_content_object = new CW_ListCol(NULL, NULL, NULL, NULL, NULL, NULL, NULL);

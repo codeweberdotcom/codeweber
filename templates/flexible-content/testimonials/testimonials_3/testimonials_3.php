@@ -61,7 +61,6 @@ $block = new CW_Settings(
                <!--/shape -->
                <?php
                $query = new WP_Query($argss);
-
                if ($query->have_posts()) { ?>
                   <div class="swiper-container dots-closer mb-6" data-margin="0" data-dots="true" data-items-md="2" data-items-xs="1">
                      <div class="swiper">
@@ -146,9 +145,6 @@ $block = new CW_Settings(
                               endif;
                            }
                            ?>
-
-
-
                         </div>
                         <!--/.swiper-wrapper -->
                      </div>

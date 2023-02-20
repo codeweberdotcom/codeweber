@@ -334,32 +334,38 @@ function woocommerce_page_header()
    }
 
 
-   if (get_field('pageheader', $term_id_prefixed) && get_field('pageheader', $term_id_prefixed) !== 'disable') {
-      if (get_field('pageheader', $term_id_prefixed) == 'default') {
-         if (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
-            get_template_part('templates/sections/common', 'breadcrumb');
-         }
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_1' || get_field('pageheader', $term_id_prefixed) == 'type_4') {
+   if (get_field('pageheader', $term_id_prefixed) == 'default') {
+      if (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
          get_template_part('templates/sections/common', 'breadcrumb');
       }
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'type_1' || get_field('pageheader', $term_id_prefixed) == 'type_4') {
+      get_template_part('templates/sections/common', 'breadcrumb');
+   } elseif (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
+      get_template_part('templates/sections/common', 'breadcrumb');
+   }
 
-      if (get_field('pageheader', $term_id_prefixed) == 'type_1') {
-         get_template_part('templates/sections/common', 'pageheader_2');
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_2') {
+   if (get_field('pageheader', $term_id_prefixed) == 'type_1') {
+      get_template_part('templates/sections/common', 'pageheader_2');
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'type_2') {
+      get_template_part('templates/sections/common', 'pageheader');
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'type_3') {
+      get_template_part('templates/sections/common', 'pageheader_1');
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'type_4') {
+      return;
+   } elseif (get_field('pageheader', $term_id_prefixed) == 'default') {
+      if (get_theme_mod('codeweber_page_header') == 'type_2') {
          get_template_part('templates/sections/common', 'pageheader');
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_3') {
+      } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
          get_template_part('templates/sections/common', 'pageheader_1');
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_4') {
-         return;
-      } elseif (get_field('pageheader', $term_id_prefixed) == 'default') {
-         if (get_theme_mod('codeweber_page_header') == 'type_2') {
-            get_template_part('templates/sections/common', 'pageheader');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
-            get_template_part('templates/sections/common', 'pageheader_1');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
-            get_template_part('templates/sections/common', 'pageheader_2');
-         }
+      } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+         get_template_part('templates/sections/common', 'pageheader_2');
       }
+   } elseif (get_theme_mod('codeweber_page_header') == 'type_2') {
+      get_template_part('templates/sections/common', 'pageheader');
+   } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
+      get_template_part('templates/sections/common', 'pageheader_1');
+   } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+      get_template_part('templates/sections/common', 'pageheader_2');
    }
 }
 ?>
@@ -391,3 +397,25 @@ function page_wrapper_end()
 }
 
 add_action('page_content_end', 'page_wrapper_end', 10);
+
+
+/**
+ * Woocommerce flip image
+ */
+
+
+add_action('woocommerce_before_shop_loop_item_title', 'add_on_hover_shop_loop_image');
+
+function add_on_hover_shop_loop_image()
+{
+   if (isset(wc_get_product()->get_gallery_image_ids()[0])) {
+      $image_id = wc_get_product()->get_gallery_image_ids()[0];
+
+      if ($image_id) {
+         echo wp_get_attachment_image($image_id, 'archive_4');
+      } else {  //assuming not all products have galleries set
+
+         echo wp_get_attachment_image(wc_get_product()->get_image_id());
+      }
+   }
+}

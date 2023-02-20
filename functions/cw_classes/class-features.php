@@ -115,7 +115,7 @@ class CW_Feature
       if (have_rows('cw_features_item')) {
          while (have_rows('cw_features_item')) {
             the_row();
-            $features_link_object =  new CW_Buttons($buttons_pattern = NULL, $buttons_items = NULL);
+            $features_link_object =  new CW_Buttons($buttons_pattern = NULL, $buttons_items = NULL, NULL);
             $features_link = $features_link_object->final_buttons;
          }
       } else {

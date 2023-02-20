@@ -1,7 +1,6 @@
 <?php
 function cptui_register_my_cpts_projects()
 {
-
 	/**
 	 * Post Type: Projects.
 	 */
@@ -9,12 +8,27 @@ function cptui_register_my_cpts_projects()
 	$labels = [
 		"name" => esc_html__("Projects", "codeweber"),
 		"singular_name" => esc_html__("Project", "codeweber"),
+		"menu_name" => esc_html__("Projects", "codeweber"),
+		"all_items" => esc_html__("All Projects", "codeweber"),
+		"add_new" => esc_html__("Add Project", "codeweber"),
+		"add_new_item" => esc_html__("Add New", "codeweber"),
+		"edit_item" => esc_html__("Edit Project", "codeweber"),
+		"new_item" => esc_html__("New Project", "codeweber"),
+		"view_item" => esc_html__("View Project", "codeweber"),
+		"view_items" => esc_html__("View Projects", "codeweber"),
+		"search_items" => esc_html__("Search Projects", "codeweber"),
+		"not_found" => esc_html__("Projects Not found", "codeweber"),
+		"not_found_in_trash" => esc_html__("Projects not found in Trash", "codeweber"),
+		"parent" => esc_html__("Parent Project", "codeweber"),
+		"archives" => esc_html__("Projects", "codeweber"),
+		"item_updated" => esc_html__("Project Update", "codeweber"),
+		"parent_item_colon" => esc_html__("Parent Project", "codeweber"),
 	];
 
 	$args = [
 		"label" => esc_html__("Projects", "codeweber"),
 		"labels" => $labels,
-		"description" => "",
+		"description" => "Этот модуль позволяет вывести ваши работы или кейсы на сайте",
 		"public" => true,
 		"publicly_queryable" => true,
 		"show_ui" => true,
@@ -33,7 +47,7 @@ function cptui_register_my_cpts_projects()
 		"can_export" => true,
 		"rewrite" => ["slug" => "projects", "with_front" => true],
 		"query_var" => true,
-		"supports" => ["title", "editor", "thumbnail"],
+		"supports" => ["title", "editor", "thumbnail", "comments", "revisions", "author"],
 		"taxonomies" => ["projects_category"],
 		"show_in_graphql" => false,
 	];

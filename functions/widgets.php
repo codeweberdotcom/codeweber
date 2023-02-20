@@ -4,24 +4,65 @@
  * Consultant Widget
  */
 function consultant_widget()
-{
-?>
-   <div class="widget sticky-top mb-md-0">
-      <div class="card">
-         <div class="card-body">
-            <img class="rounded-circle w-15 mb-4" src="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3@2x.jpg 2x" alt="" />
-            <h4 class="mb-1">Алексей</h4>
-            <div class="meta mb-2">Консультант</div>
-            <p class="mb-3">Наши специалисты ответят на любой интересующий вопрос.</p>
-            <a href="#" class="btn btn-primary rounded w-100">Задать вопрос</a>
-            <!-- /.social -->
-         </div>
-         <!--/.card-body -->
-      </div>
-      <!-- /.card -->
-   </div>
-<?php
+{ ?>
+   <?php if (get_field('show_consultant_widget', 'option') == 1) {
+      if (have_rows('consultant_widget', 'option')) {
+         while (have_rows('consultant_widget', 'option')) {
+            the_row(); ?>
+            <div class="widget sticky-top mb-md-0">
+               <div class="card">
+                  <div class="card-body">
+                     <?php $photo_consultant = get_sub_field('photo_consultant');
+                     if ($photo_consultant) { ?>
+                        <img class="rounded-circle w-15 mb-4" src="<?php echo esc_url($photo_consultant['sizes']['cw_icon_lg']); ?>" srcset="<?php echo esc_url($photo_consultant['sizes']['cw_icon_lg']); ?>" alt="" />
+                     <?php } else { ?>
+                        <img class="rounded-circle w-15 mb-4" src="<?php echo get_template_directory_uri(); ?>/dist/img/avatars/te3.jpg" srcset="<?php echo    get_template_directory_uri(); ?>/dist/img/avatars/te3@2x.jpg 2x" alt="" />
+                     <?php };
+
+                     if (get_sub_field('consultant_name')) { ?>
+                        <h4 class="mb-1"><?php echo get_sub_field('consultant_name'); ?></h4>
+                     <?php } else { ?>
+                        <h4 class="mb-1"><?php echo esc_html_e('Alexey', 'codeweber'); ?></h4>
+                     <?php }
+
+                     if (get_sub_field('job_title')) { ?>
+                        <div class="meta mb-2"><?php echo get_sub_field('job_title'); ?></div>
+                     <?php } else { ?>
+                        <div class="meta mb-2"><?php echo esc_html_e('Consultant'); ?></div>
+                     <?php }
+
+
+
+                     if (get_sub_field('description')) { ?>
+                        <p class="mb-3"><?php echo get_sub_field('description'); ?></p>
+                     <?php } else { ?>
+                        <p class="mb-3"><?php echo esc_html_e('Our specialists will answer any question of interest.'); ?></p>
+                     <?php }
+
+
+                     if (get_field('show_social', 'option') == 1) { ?>
+                        <nav class="nav social mb-3">
+                           <?php get_template_part('templates/components/socialicons', '');  ?>
+                        </nav>
+                     <?php }
+
+
+                     $button = new CW_Buttons('<div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>', '<a href="#" class="btn btn-primary rounded w-100">Ask a question</a>', 'w-100'); ?>
+
+                     <?php
+                     echo $button->final_buttons; ?>
+                     <!-- /.social -->
+                  </div>
+                  <!--/.card-body -->
+               </div>
+               <!-- /.card -->
+            </div>
+   <?php
+         }
+      }
+   }
 }
+
 
 add_action('sidebar_faq_end', 'consultant_widget', 100);
 add_action('sidebar_main_end', 'consultant_widget', 100);

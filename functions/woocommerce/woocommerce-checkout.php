@@ -186,11 +186,11 @@ function woocommerce_form_field($key, $args, $value = null)
       case 'email':
       case 'url':
       case 'tel':
-         $field .= '<input type="' . esc_attr($args['type']) . '" class="input-text form-control ' . esc_attr(implode(' ', $args['input_class'])) . '" name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" placeholder="' . esc_attr($args['id']) . '"  value="' . esc_attr($value) . '" ' . implode(' ', $custom_attributes) . ' />';
+         $field .= '<input type="' . esc_attr($args['type']) . '" class="input-text form-control ' . esc_attr(implode(' ', $args['input_class'])) . '" name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" placeholder="' . esc_attr($args['id']) . '"  value="' . esc_attr($value) . '" ' . implode(' ', $custom_attributes) . ' required />';
 
          break;
       case 'hidden':
-         $field .= '<input type="' . esc_attr($args['type']) . '" class="input-hidden form-control ' . esc_attr(implode(' ', $args['input_class'])) . '" name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" value="' . esc_attr($value) . '" ' . implode(' ', $custom_attributes) . ' />';
+         $field .= '<input type="' . esc_attr($args['type']) . '" class="input-hidden form-control ' . esc_attr(implode(' ', $args['input_class'])) . '" name="' . esc_attr($key) . '" id="' . esc_attr($args['id']) . '" value="' . esc_attr($value) . '" ' . implode(' ', $custom_attributes) . ' required />';
 
          break;
       case 'select':
