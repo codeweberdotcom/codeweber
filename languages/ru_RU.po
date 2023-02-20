@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-02-20 10:58+0000\n"
+"PO-Revision-Date: 2023-02-20 11:00+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -61,7 +61,7 @@ msgstr "Добавить меню"
 
 #: functions/cpt/cpt-clients.php:16
 msgid "Add Client"
-msgstr ""
+msgstr "Добавить Клиента"
 
 #: functions/cpt/cpt-clients.php:15 functions/cpt/cpt-projects.php:14
 #: functions/cpt/cpt-staff.php:15
@@ -111,7 +111,7 @@ msgstr "Все"
 
 #: functions/cpt/cpt-clients.php:14
 msgid "All Clients"
-msgstr ""
+msgstr "Все Клиенты"
 
 #: templates/content/single-post.php:81
 msgid "All Posts"
@@ -267,24 +267,24 @@ msgstr "Нажмите , чтобы ввести код купона"
 
 #: functions/cpt/cpt-clients.php:12 functions/cpt/cpt-clients.php:24
 msgid "Client"
-msgstr ""
+msgstr "Клиент"
 
 #: functions/cpt/cpt-clients.php:25
 msgid "Client puplished"
-msgstr ""
+msgstr "Клиент опубликован"
 
 #: functions/cpt/cpt-clients.php:26
 msgid "Client updated"
-msgstr ""
+msgstr "Клиент обновлен"
 
 #: functions/cpt/cpt-clients.php:11 functions/cpt/cpt-clients.php:13
 #: functions/cpt/cpt-clients.php:30
 msgid "Clients"
-msgstr ""
+msgstr "Клиенты"
 
 #: functions/cpt/cpt-clients.php:23
 msgid "Clients list"
-msgstr ""
+msgstr "Список Клиентов"
 
 #: single-projects-1.php:147 single-projects-2.php:109 single-projects-3.php:92
 #: single-projects.php:111
@@ -399,7 +399,7 @@ msgstr "Редактировать"
 
 #: functions/cpt/cpt-clients.php:17
 msgid "Edit Client"
-msgstr ""
+msgstr "Редактировать Клиентов"
 
 #: functions/cpt/cpt-price_package.php:17
 msgid "Edit Price Package"
@@ -894,7 +894,7 @@ msgstr "Нужна помощь?"
 
 #: functions/cpt/cpt-clients.php:18
 msgid "New Client"
-msgstr ""
+msgstr "Новый Клиент"
 
 #: functions/cpt/cpt-price_package.php:18
 msgid "New Price Package"
@@ -926,7 +926,7 @@ msgstr "Следующий"
 
 #: functions/cpt/cpt-clients.php:22
 msgid "No Client"
-msgstr ""
+msgstr "Нет Клиентов"
 
 #: functions/navmenus.php:19
 msgid "Offcanvas Menu Left"
@@ -1213,7 +1213,7 @@ msgstr "Поиск"
 
 #: functions/cpt/cpt-clients.php:21
 msgid "Search Client"
-msgstr ""
+msgstr "Поиск Клиента"
 
 #: functions/cpt/cpt-price_package.php:21
 msgid "Search Price Package"
@@ -1525,11 +1525,11 @@ msgstr ""
 
 #: functions/cpt/cpt-clients.php:19
 msgid "View Client"
-msgstr ""
+msgstr "Показать Клиента"
 
 #: functions/cpt/cpt-clients.php:20
 msgid "View Clients"
-msgstr ""
+msgstr "Показать Клиентов"
 
 #: functions/cpt/cpt-price_package.php:19
 msgid "View Price Package"
