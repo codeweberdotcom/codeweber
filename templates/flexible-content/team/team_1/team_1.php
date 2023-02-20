@@ -37,21 +37,11 @@ $block = new CW_Settings(
       //'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),
    )
 );
-$query = new WP_Query($argss);
-if ($query->have_posts()) {
-
-   while ($query->have_posts()) {
-      $query->the_post();
-      $post_id =  get_the_id();
-      the_title();
-   }
-}
-
 ?>
 
 
 
-<section class="wrapper bg-light">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row mb-3">
          <div class="col-md-10 col-lg-12 col-xl-10 col-xxl-9 mx-auto text-center">
@@ -64,73 +54,38 @@ if ($query->have_posts()) {
       </div>
       <!--/.row -->
       <div class="row grid-view gx-md-8 gx-xl-10 gy-8 gy-lg-0">
-         <div class="col-md-6 col-lg-3">
-            <div class="position-relative">
-               <div class="shape rounded bg-soft-blue rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index:0"></div>
-               <div class="card">
-                  <figure class="card-img-top"><img class="img-fluid" src="./assets/img/avatars/t1.jpg" srcset="./assets/img/avatars/t1@2x.jpg 2x" alt="" /></figure>
-                  <div class="card-body px-6 py-5">
-                     <h4 class="mb-1">Coriss Ambady</h4>
-                     <p class="mb-0">Financial Analyst</p>
+         <?php $query = new WP_Query($argss);
+         if ($query->have_posts()) {
+            while ($query->have_posts()) {
+               $query->the_post();
+               $post_id =  get_the_id(); ?>
+               <div class="col-md-6 col-lg-3">
+                  <div class="position-relative">
+
+                     <div class="shape rounded bg-soft-blue rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index:0"></div>
+
+                     <div class="card">
+                        <figure class="card-img-top"><img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($post_id, 'team-1'); ?>" srcset="<?php echo get_the_post_thumbnail_url($post_id, 'team-1'); ?>" alt="" /></figure>
+                        <div class="card-body px-6 py-5">
+                           <h4 class="mb-1"><?php the_title(); ?></h4>
+                           <p class="mb-0"><?php the_field('job_title', $post_id); ?></p>
+                        </div>
+                        <!--/.card-body -->
+                     </div>
+                     <!-- /.card -->
                   </div>
-                  <!--/.card-body -->
+                  <!-- /div -->
                </div>
-               <!-- /.card -->
-            </div>
-            <!-- /div -->
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-3">
-            <div class="position-relative">
-               <div class="shape rounded bg-soft-red rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index:0"></div>
-               <div class="card">
-                  <figure class="card-img-top"><img class="img-fluid" src="./assets/img/avatars/t2.jpg" srcset="./assets/img/avatars/t2@2x.jpg 2x" alt="" /></figure>
-                  <div class="card-body px-6 py-5">
-                     <h4 class="mb-1">Cory Zamora</h4>
-                     <p class="mb-0">Marketing Specialist</p>
-                  </div>
-                  <!--/.card-body -->
-               </div>
-               <!-- /.card -->
-            </div>
-            <!-- /div -->
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-3">
-            <div class="position-relative">
-               <div class="shape rounded bg-soft-green rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index:0"></div>
-               <div class="card">
-                  <figure class="card-img-top"><img class="img-fluid" src="./assets/img/avatars/t3.jpg" srcset="./assets/img/avatars/t3@2x.jpg 2x" alt="" /></figure>
-                  <div class="card-body px-6 py-5">
-                     <h4 class="mb-1">Nikolas Brooten</h4>
-                     <p class="mb-0">Sales Manager</p>
-                  </div>
-                  <!--/.card-body -->
-               </div>
-               <!-- /.card -->
-            </div>
-            <!-- /div -->
-         </div>
-         <!--/column -->
-         <div class="col-md-6 col-lg-3">
-            <div class="position-relative">
-               <div class="shape rounded bg-soft-violet rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index:0"></div>
-               <div class="card">
-                  <figure class="card-img-top"><img class="img-fluid" src="./assets/img/avatars/t4.jpg" srcset="./assets/img/avatars/t4@2x.jpg 2x" alt="" /></figure>
-                  <div class="card-body px-6 py-5">
-                     <h4 class="mb-1">Jackie Sanders</h4>
-                     <p class="mb-0">Investment Planner</p>
-                  </div>
-                  <!--/.card-body -->
-               </div>
-               <!-- /.card -->
-            </div>
-            <!-- /div -->
-         </div>
-         <!--/column -->
+               <!--/column -->
+         <?php }
+         } ?>
       </div>
       <!--/.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

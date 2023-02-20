@@ -74,6 +74,7 @@ if (!function_exists('brk_image_settings')) {
 
 
 
+		add_image_size('team-1', 300, 300, true);
 
 		add_image_size('archive_4', 410, 410, true);
 		add_image_size('archive_4_2', 410, 445, true);

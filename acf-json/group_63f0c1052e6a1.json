@@ -82,27 +82,6 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_63f0c1054431e",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_6384b03e2c507"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_63f0c1968d897",
                             "label": "Buttons",
                             "name": "",
@@ -245,5 +224,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676722871
+    "modified": 1676888221
 }
