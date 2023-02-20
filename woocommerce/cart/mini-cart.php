@@ -93,7 +93,10 @@ do_action('woocommerce_before_mini_cart'); ?>
 				do_action('woocommerce_widget_shopping_cart_total');
 				?>
 			</div>
-			<p class="fs-14 mb-3">Free shipping on all orders over $50</p>
+			<?php
+			if (get_field('sidepanel_text_delivery', 'option')) { ?>
+				<p class="fs-14 mb-3"><?php echo get_field('sidepanel_text_delivery', 'option'); ?></p>
+			<?php } ?>
 			<?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>
 			<?php do_action('woocommerce_widget_shopping_cart_buttons'); ?>
 			<?php do_action('woocommerce_widget_shopping_cart_after_buttons'); ?>

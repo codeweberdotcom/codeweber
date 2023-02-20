@@ -26,19 +26,19 @@ if ($related_products) : ?>
 			<h3 class="h2 mb-6 text-center"><?php echo esc_html__('You Might Also Like', 'codeweber'); ?></h3>
 			<div class="swiper-container blog grid-view shop mb-6" data-margin="30" data-dots="true" data-items-xl="4" data-items-md="2" data-items-xs="1">
 				<div class="swiper">
-					<div class="swiper-wrapper">
+					<ul class="swiper-wrapper list-unstyled products">
 
 						<?php foreach ($related_products as $related_product) : ?>
 							<?php $post_object = get_post($related_product->get_id());
 							setup_postdata($GLOBALS['post'] = &$post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 							?>
-							<div class="swiper-slide project item">
+							<li class="swiper-slide project item product">
 								<?php wc_get_template_part('content', 'related-product'); ?>
-							</div>
+							</li>
 							<!--/.swiper-slide -->
 						<?php endforeach; ?>
 
-					</div>
+					</ul>
 					<!--/.swiper-wrapper -->
 				</div>
 				<!-- /.swiper -->

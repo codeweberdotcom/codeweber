@@ -385,3 +385,20 @@ input#dgwt-wcas-search-input-1 {
   top: 100px;
   z-index: 1 !important;
 }
+
+/*Woocommerce flip image*/
+ul.products li.product figure img.attachment-archive_4.size-archive_4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+ul.products li.product figure img.attachment-archive_4.size-archive_4 {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+ul.products li.product figure img.attachment-archive_4.size-archive_4:hover {
+  opacity: 1;
+  transition: opacity 0.5s;
+}

@@ -397,3 +397,25 @@ function page_wrapper_end()
 }
 
 add_action('page_content_end', 'page_wrapper_end', 10);
+
+
+/**
+ * Woocommerce flip image
+ */
+
+
+add_action('woocommerce_before_shop_loop_item_title', 'add_on_hover_shop_loop_image');
+
+function add_on_hover_shop_loop_image()
+{
+   if (isset(wc_get_product()->get_gallery_image_ids()[0])) {
+      $image_id = wc_get_product()->get_gallery_image_ids()[0];
+
+      if ($image_id) {
+         echo wp_get_attachment_image($image_id, 'archive_4');
+      } else {  //assuming not all products have galleries set
+
+         echo wp_get_attachment_image(wc_get_product()->get_image_id());
+      }
+   }
+}

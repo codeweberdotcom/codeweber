@@ -21,4 +21,4 @@ if (!defined('ABSPATH')) {
 }
 ?>
 <div class="shop mb-13">
-	<div class="products row gx-md-8 gy-10 gy-md-13 ">
+	<ul class="products list-unstyled row gx-md-8 gy-10 gy-md-13">
