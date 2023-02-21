@@ -144,3 +144,19 @@ body {
 }   
   </style>';
 }
+
+
+/**
+ * New Column THumb Post Image in admin
+ */
+function posts_custom_columns($column_name, $id)
+{
+    if ($column_name === 'riv_post_thumbs') {
+        if (has_post_thumbnail()) {
+            echo the_post_thumbnail('cw_icon_lg');
+        } else {
+            _e('No Thumbnail For Post', 'codeweber');
+        }
+        echo "<style> .column-riv_post_thumbs img{ max-height: 100px; max-width: 100px;} </style>";
+    }
+}

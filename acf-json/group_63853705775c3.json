@@ -1,6 +1,6 @@
 {
     "key": "group_63853705775c3",
-    "title": "CPT Portfolio",
+    "title": "CPT Portfolio Fields",
     "fields": [
         {
             "key": "field_638a503b43697",
@@ -266,5 +266,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676897557
+    "modified": 1676899530
 }

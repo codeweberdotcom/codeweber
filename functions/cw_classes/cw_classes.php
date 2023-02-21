@@ -31,3 +31,4 @@ include 'class-accordeon.php';
 include 'class-progress.php';
 include 'class-tabs.php';
 include 'class-tiles.php';
+include 'class-social.php';

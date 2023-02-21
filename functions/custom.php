@@ -350,3 +350,16 @@ function codeweber_logo_light_link()
     endif;
     return $codeweber_logo_light;
 };
+
+
+add_filter('manage_posts_columns', 'posts_columns', 5);
+add_action('manage_posts_custom_column', 'posts_custom_columns', 5, 2);
+
+add_filter('manage_post-type_posts_columns', 'posts_columns', 5);
+add_action('manage_post-type_posts_custom_column', 'posts_custom_columns', 5, 2);
+
+function posts_columns($defaults)
+{
+    $defaults['riv_post_thumbs'] = __('Post Image', 'codeweber');
+    return $defaults;
+}

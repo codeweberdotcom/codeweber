@@ -73,14 +73,6 @@ $block = new CW_Settings(
                   ?>
                      <div class="swiper-slide">
                         <figure class="<?php echo get_theme_mod('codeweber_image'); ?> mb-6"><img src="<?php echo get_the_post_thumbnail_url($post_id, 'project_1_1'); ?>" srcset="<?php echo get_the_post_thumbnail_url($post_id, 'project_1_1'); ?>" alt="" /><a class="item-link" href="<?php echo get_the_post_thumbnail_url($post_id, 'sandbox_hero_6'); ?>" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-                        <div class="project-details d-flex justify-content-center flex-column">
-                           <div class="post-header">
-                              <h2 class="post-title h3"><a href="<?php echo the_permalink(); ?>" class="link-dark"><?php echo get_the_title(); ?></a></h2>
-                              <div class="post-category text-ash"><?php echo strip_tags(get_the_term_list($post_id, 'projects_category', NULL, ',', '')); ?></div>
-                           </div>
-                           <!-- /.post-header -->
-                        </div>
-                        <!-- /.project-details -->
                      </div>
                      <!--/.swiper-slide -->
                   <?php

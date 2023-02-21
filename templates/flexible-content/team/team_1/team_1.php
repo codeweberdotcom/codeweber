@@ -56,13 +56,24 @@ $block = new CW_Settings(
       <div class="row grid-view gx-md-8 gx-xl-10 gy-8 gy-lg-0">
          <?php $query = new WP_Query($argss);
          if ($query->have_posts()) {
+            $num = 0;
             while ($query->have_posts()) {
                $query->the_post();
                $post_id =  get_the_id(); ?>
                <div class="col-md-6 col-lg-3">
                   <div class="position-relative">
-
-                     <div class="shape rounded bg-soft-blue rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index:0"></div>
+                     <?php if ($num == 0 || $num == 4) {
+                        $color_shape = 'blue';
+                     } elseif ($num == 1 || $num == 5) {
+                        $color_shape = 'red';
+                     } elseif ($num == 2 || $num == 6) {
+                        $color_shape = 'green';
+                     } elseif ($num == 3 || $num == 7) {
+                        $color_shape = 'violet';
+                     } else {
+                        $color_shape = 'blue';
+                     } ?>
+                     <div class="shape rounded bg-soft-<?php echo $color_shape; ?> rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index:0"></div>
 
                      <div class="card">
                         <figure class="card-img-top"><img class="img-fluid" src="<?php echo get_the_post_thumbnail_url($post_id, 'team-1'); ?>" srcset="<?php echo get_the_post_thumbnail_url($post_id, 'team-1'); ?>" alt="" /></figure>
@@ -77,7 +88,8 @@ $block = new CW_Settings(
                   <!-- /div -->
                </div>
                <!--/column -->
-         <?php }
+         <?php $num++;
+            }
          } ?>
       </div>
       <!--/.row -->

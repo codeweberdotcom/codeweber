@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-02-20 12:39+0000\n"
+"PO-Revision-Date: 2023-02-20 13:34+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -963,6 +963,10 @@ msgstr "Следующий"
 msgid "No Client"
 msgstr "Нет Клиентов"
 
+#: functions/custom.php:373
+msgid "No Thumbnail For Post"
+msgstr "Нет превью"
+
 #: functions/navmenus.php:19
 msgid "Offcanvas Menu Left"
 msgstr ""
@@ -1072,6 +1076,10 @@ msgstr "Введите ваше имя, пожалуйста."
 #: templates/footer/footer-sandbox-25_cw.php:43
 msgid "Popular Posts"
 msgstr "Популярные статьи"
+
+#: functions/custom.php:363
+msgid "Post Image"
+msgstr "Фото записи"
 
 #: functions/widgets.php:230
 msgid "Post tags"

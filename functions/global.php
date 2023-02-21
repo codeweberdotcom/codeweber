@@ -289,6 +289,7 @@ function brk_remove_active_class_from_li($classes, $item, $args)
 }
 add_filter('nav_menu_css_class', 'brk_remove_active_class_from_li', 10, 3);
 
+
 /**
  * Is Post Type
  */
