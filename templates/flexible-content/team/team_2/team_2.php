@@ -1,7 +1,7 @@
 <?php
 
 /**
- * About 1
+ * Team 2
  */
 
 $argss = array(
@@ -70,11 +70,13 @@ $block = new CW_Settings(
                                     <img class="rounded-circle w-15 mb-4" src="<?php echo get_the_post_thumbnail_url($post_id, 'cw_icon_lg'); ?>" srcset="<?php echo get_the_post_thumbnail_url($post_id, 'cw_icon_lg'); ?>" alt="" />
                                     <h4 class="mb-1"><?php the_title(); ?></h4>
                                     <div class="meta mb-2"><?php the_field('job_title', $post_id); ?></div>
+                                    <!-- /.job title -->
                                     <?php if (get_the_excerpt()) { ?>
                                        <p class="mb-2"><?php the_excerpt(); ?></p>
                                     <?php } else { ?>
                                        <p class="mb-2">Fermentum massa justo sit amet risus morbi leo.</p>
                                     <?php } ?>
+                                    <!-- /.excerpt -->
                                     <?php $demo = '<nav class="nav social mb-0">
                                        <a href="#"><i class="uil uil-twitter"></i></a>
                                        <a href="#"><i class="uil uil-facebook-f"></i></a>

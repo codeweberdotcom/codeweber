@@ -31,7 +31,7 @@ $block = new CW_Settings(
          'image_thumb_size' => 'testimonial_2',
          'image_demo' => '<figure class="' . get_theme_mod('codeweber_image') . ' position-absolute d-none d-lg-block" style="top: 50%; right:0; width: 45%; height: auto; transform: translateY(-50%); z-index:2"><img src="' . get_template_directory_uri() . '/dist/img/photos/tei1.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/tei1@2x.jpg 2x" alt=""></figure>',
          'image_big_size' => 'project_1',
-         'img_link' => '/dist/img/photos/about7.jpg',
+         'img_link' => '/dist/img/photos/tei1.jpg',
       ),
       'background_class_default' => 'wrapper bg-light',
       // 'divider' => 'true', // не работает

@@ -36,7 +36,7 @@ $block = new CW_Settings(
 
       'background_class_default' => 'wrapper bg-light',
 
-      // 'divider' => true,
+      'divider' => true,
    )
 );
 
@@ -46,7 +46,6 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
          <div class="col-lg-7">
-
             <?php
             $query = new WP_Query($argss);
             if ($query->have_posts()) { ?>

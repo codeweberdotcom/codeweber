@@ -58,8 +58,6 @@ $block = new CW_Settings(
             <!-- /column -->
          </div>
          <!-- /.row -->
-
-
          <div class="container-fluid px-md-6">
             <?php
             $query = new WP_Query($argss);

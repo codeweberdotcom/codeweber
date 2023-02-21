@@ -58,6 +58,7 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('sandbox_clients_logo_2', 140, 90, true);
 
 		add_image_size('testimonial_2', 575, 383, true);
+		add_image_size('testimonial_8', 455, 655, true);
 
 		add_image_size('cart_checkout', 90, 100, true);
 
@@ -72,16 +73,11 @@ if (!function_exists('brk_image_settings')) {
 
 		add_image_size('process_3', 650, 874, true);
 
-
-
 		add_image_size('team-1', 300, 300, true);
 
 		add_image_size('archive_4', 410, 410, true);
 		add_image_size('archive_4_2', 410, 445, true);
 		add_image_size('archive_4_1', 410, 310, true);
-
-
-
 
 
 		remove_image_size('large');
