@@ -35,7 +35,7 @@ $block = new CW_Settings(
 
       'background_class_default' => 'wrapper bg-light',
 
-      'divider' => true,
+      // 'divider' => true,
 
       'shapes' => array('<div class="shape rounded-circle bg-soft-yellow rellax w-16 h-16" data-rellax-speed="1" style="bottom: 0.5rem; right: -1.7rem;"></div>', '<div class="shape bg-dot primary rellax w-16 h-16" data-rellax-speed="1" style="top: -1rem; left: -1.7rem;"></div>'),
 
@@ -63,43 +63,78 @@ $block = new CW_Settings(
                      while ($query->have_posts()) {
                         $query->the_post();
                         $post_id =  get_the_id();
+                        $type_field = get_sub_field('select_type');
                         if (have_rows('testimonials_post_field', $post_id)) :
                            while (have_rows('testimonials_post_field', $post_id)) : the_row();
-                              $photo = get_sub_field('photo');
-                              if ($photo) :  ?>
-                                 <img src="<?php echo esc_url($photo['url']); ?>" alt="<?php echo esc_attr($photo['alt']); ?>" />
-                        <?php endif;
-                              $name = get_sub_field('name');
-                              $testimonial = get_sub_field('testimonial');
-                              $job_title = get_sub_field('job_title');
+                              if (get_sub_field('status') == 1) {
+                                 if (get_sub_field('name')) {
+                                    $name = get_sub_field('name');
+                                 } else {
+                                    $name = NULL;
+                                 }
+
+                                 $photo = get_sub_field('photo');
+                                 if (get_sub_field('photo')) {
+                                    $avatar_url = esc_url($photo['sizes']['cw_icon_lg']);;
+                                 } else {
+                                    $avatar_url = '#';
+                                 }
+
+                                 if (get_sub_field('testimonial')) {
+                                    $testimonial = get_sub_field('testimonial');
+                                 } else {
+                                    $testimonial = NULL;
+                                 }
+
+                                 if ($type_field == 'Job') {
+                                    if (get_sub_field('job_title')) {
+                                       $job_title = get_sub_field('job_title');
+                                    } else {
+                                       $job_title  = NULL;
+                                    }
+                                 } elseif ($type_field == 'City') {
+                                    if (get_sub_field('job_title')) {
+                                       $job_title = get_sub_field('town');
+                                    } else {
+                                       $job_title  = NULL;
+                                    }
+                                 } elseif ($type_field == 'Company name') {
+                                    if (get_sub_field('job_title')) {
+                                       $job_title = get_sub_field('company');
+                                    } else {
+                                       $job_title  = NULL;
+                                    }
+                                 } else {
+                                    $job_title  = NULL;
+                                 } ?>
+                                 <div class="swiper-slide">
+                                    <div class="item-inner">
+                                       <div class="card">
+                                          <div class="card-body">
+                                             <blockquote class="icon mb-0">
+                                                <p>“<?php echo $testimonial; ?>”</p>
+                                                <div class="blockquote-details">
+                                                   <img class="rounded-circle w-12" src="<?php echo $avatar_url; ?>" alt="" />
+                                                   <div class="info">
+                                                      <h5 class="mb-1"><?php echo $name ?></h5>
+                                                      <?php if ($job_title) { ?>
+                                                         <p class="mb-0"><?php echo $job_title ?></p>
+                                                      <?php } ?>
+                                                   </div>
+                                                </div>
+                                             </blockquote>
+                                          </div>
+                                          <!-- /.card-body -->
+                                       </div>
+                                       <!-- /.card -->
+                                    </div>
+                                    <!-- /.item-inner -->
+                                 </div>
+                                 <!--/.swiper-slide -->
+                     <?php
+                              }
                            endwhile;
                         endif;
-                        ?>
-                        <div class="swiper-slide">
-                           <div class="item-inner">
-                              <div class="card">
-                                 <div class="card-body">
-                                    <blockquote class="icon mb-0">
-                                       <p>“<?php echo $testimonial; ?>”</p>
-                                       <div class="blockquote-details">
-                                          <img class="rounded-circle w-12" src="<?php echo esc_url($photo['url']); ?>" alt="" />
-                                          <div class="info">
-                                             <h5 class="mb-1"><?php echo $name ?></h5>
-                                             <?php if ($job_title) { ?>
-                                                <p class="mb-0"><?php echo $job_title ?></p>
-                                             <?php } ?>
-                                          </div>
-                                       </div>
-                                    </blockquote>
-                                 </div>
-                                 <!-- /.card-body -->
-                              </div>
-                              <!-- /.card -->
-                           </div>
-                           <!-- /.item-inner -->
-                        </div>
-                        <!--/.swiper-slide -->
-                     <?php
                      }
                      ?>
                   </div>

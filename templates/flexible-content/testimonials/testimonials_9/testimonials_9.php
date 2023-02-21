@@ -1,22 +1,146 @@
-<section class="wrapper bg-light">
+<?php
+
+/**
+ * Testimonial 9
+ */
+
+$argss = array(
+   'posts_per_page' => 10,
+   'post_type' => 'testimonials',
+   'orderby' => 'rand',
+);
+
+$testimonials = get_sub_field('posts');
+if ($testimonials) {
+   $cw_post_ids = array();
+   foreach ($testimonials as $post_ids) {
+      $cw_post_ids[] = $post_ids;
+   }
+   $cw_post_idsd = implode(',', $testimonials);
+   $argss['post__in'] = $cw_post_ids;
+}
+
+$block = new CW_Settings(
+   $cw_settings = array(
+      'swiper' => array(
+         'swiper_container_class' => 'overflow-hidden',
+         'image_class' => '',
+         'data_thumbs' => NULL,
+         'wrapper_image_class' => '',
+         'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
+         'image_thumb_size' => 'sandbox_process_8',
+         'image_demo' => '<figure><img src="' . get_template_directory_uri() . '/dist/img/photos/co2.png" srcset="' . get_template_directory_uri() . '/dist/img/photos/co2@2x.png 2x" alt=""></figure>',
+         'image_big_size' => 'project_1',
+         'img_link' => '/dist/img/photos/about7.jpg',
+      ),
+      'background_class_default' => 'wrapper bg-light',
+      // 'divider' => 'true', // не работает
+   )
+);
+?>
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16 pt-md-20">
       <div class="card bg-soft-primary">
          <div class="card-body p-md-10 py-xxl-16 position-relative">
             <div class="position-absolute d-none d-lg-block" style="bottom:0; left:10%; width: 28%; z-index:2">
-               <figure><img src="./assets/img/photos/co2.png" srcset="./assets/img/photos/co2@2x.png 2x" alt=""></figure>
+               <?php echo $block->swiper_final; ?>
+               <!--/swiper -->
             </div>
             <div class="row gx-md-0 gx-xl-12 text-center">
                <div class="col-lg-7 offset-lg-5 col-xl-6">
-                  <span class="ratings five mb-3"></span>
-                  <blockquote class="border-0 fs-lg mb-0">
-                     <p>“Fusce dapibus tellus ac cursus commodo, tortor mauris condimentum nibh ut fermentum massa, justo sit amet vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed”</p>
-                     <div class="blockquote-details justify-content-center text-center">
-                        <div class="info p-0">
-                           <h5 class="mb-1">Coriss Ambady</h5>
-                           <div class="meta mb-0">Financial Analyst</div>
+
+                  <?php
+                  $query = new WP_Query($argss);
+                  if ($query->have_posts()) { ?>
+                     <div class="swiper-container dots-closer mb-6" data-margin="30" data-dots="true">
+                        <div class="swiper">
+                           <div class="swiper-wrapper">
+                              <?php
+                              while ($query->have_posts()) {
+                                 $query->the_post();
+                                 $post_id =  get_the_id();
+                                 $type_field = get_sub_field('select_type');
+                                 if (have_rows('testimonials_post_field', $post_id)) :
+                                    while (have_rows('testimonials_post_field', $post_id)) : the_row();
+                                       if (get_sub_field('status') == 1) {
+                                          if (get_sub_field('name')) {
+                                             $name = get_sub_field('name');
+                                          } else {
+                                             $name = NULL;
+                                          }
+
+                                          if (get_sub_field('testimonial')) {
+                                             $testimonial = get_sub_field('testimonial');
+                                          } else {
+                                             $testimonial = NULL;
+                                          }
+
+                                          if ($type_field == 'Job') {
+                                             if (get_sub_field('job_title')) {
+                                                $job_title = get_sub_field('job_title');
+                                             } else {
+                                                $job_title  = NULL;
+                                             }
+                                          } elseif ($type_field == 'City') {
+                                             if (get_sub_field('job_title')) {
+                                                $job_title = get_sub_field('town');
+                                             } else {
+                                                $job_title  = NULL;
+                                             }
+                                          } elseif ($type_field == 'Company name') {
+                                             if (get_sub_field('job_title')) {
+                                                $job_title = get_sub_field('company');
+                                             } else {
+                                                $job_title  = NULL;
+                                             }
+                                          } else {
+                                             $job_title  = NULL;
+                                          } ?>
+
+                                          <div class="swiper-slide">
+                                             <?php if (get_sub_field('rate') == 1) {
+                                                $rate_num = 'one';
+                                             } elseif (get_sub_field('rate') == 2) {
+                                                $rate_num = 'two';
+                                             } elseif (get_sub_field('rate') == 3) {
+                                                $rate_num = 'three';
+                                             } elseif (get_sub_field('rate') == 4) {
+                                                $rate_num = 'four';
+                                             } elseif (get_sub_field('rate') == 5) {
+                                                $rate_num = 'five';
+                                             }
+                                             ?>
+                                             <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                             <blockquote class="border-0 fs-lg mb-0">
+                                                <p>“<?php echo $testimonial; ?>”</p>
+                                                <div class="blockquote-details justify-content-center text-center">
+                                                   <div class="info p-0">
+                                                      <h5 class="mb-1"><?php echo $name ?></h5>
+                                                      <?php if ($job_title) { ?>
+                                                         <div class="meta mb-0"><?php echo $job_title ?></div>
+                                                      <?php } ?>
+                                                   </div>
+                                                </div>
+                                             </blockquote>
+                                          </div>
+                                          <!--/.swiper-slide -->
+                              <?php
+                                       }
+                                    endwhile;
+                                 endif;
+                              }
+                              ?>
+                           </div>
+                           <!--/.swiper-wrapper -->
                         </div>
+                        <!-- /.swiper -->
                      </div>
-                  </blockquote>
+                     <!-- /.swiper-container -->
+                  <?php
+                  }
+                  wp_reset_postdata();
+                  ?>
                </div>
                <!-- /column -->
             </div>
@@ -27,5 +151,9 @@
       <!--/.card -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

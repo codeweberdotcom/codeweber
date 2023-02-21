@@ -31,12 +31,12 @@ $block = new CW_Settings(
       'paragraph' => 'Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.',
       'patternParagraph' => '<p>%s</p>',
 
-      'buttons' => '<a href="#" class="btn btn-navy rounded-pill mt-3">All Testimonials</a>',
+      'buttons' => '<a href="/testimonials/" class="btn btn-navy rounded-pill mt-3">All Testimonials</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
       'background_class_default' => 'wrapper bg-light',
 
-      'divider' => true,
+      // 'divider' => true,
    )
 );
 
@@ -56,12 +56,51 @@ $block = new CW_Settings(
                   while ($query->have_posts()) {
                      $query->the_post();
                      $post_id =  get_the_id();
-
+                     $type_field = get_sub_field('select_type');
                      if (have_rows('testimonials_post_field', $post_id)) :
                         while (have_rows('testimonials_post_field', $post_id)) : the_row();
-                           $name = get_sub_field('name');
-                           $testimonial = get_sub_field('testimonial');
-                           $job_title = get_sub_field('job_title');
+                           if (get_sub_field('status') == 1) {
+                              if (get_sub_field('name')) {
+                                 $name = get_sub_field('name');
+                              } else {
+                                 $name = NULL;
+                              }
+
+                              $photo = get_sub_field('photo');
+                              if (get_sub_field('photo')) {
+                                 $avatar_url = esc_url($photo['sizes']['cw_icon_lg']);;
+                              } else {
+                                 $avatar_url = '#';
+                              }
+
+                              if (get_sub_field('testimonial')) {
+                                 $testimonial = get_sub_field('testimonial');
+                              } else {
+                                 $testimonial = NULL;
+                              }
+
+                              if ($type_field == 'Job') {
+                                 if (get_sub_field('job_title')) {
+                                    $job_title = get_sub_field('job_title');
+                                 } else {
+                                    $job_title  = NULL;
+                                 }
+                              } elseif ($type_field == 'City') {
+                                 if (get_sub_field('job_title')) {
+                                    $job_title = get_sub_field('town');
+                                 } else {
+                                    $job_title  = NULL;
+                                 }
+                              } elseif ($type_field == 'Company name') {
+                                 if (get_sub_field('job_title')) {
+                                    $job_title = get_sub_field('company');
+                                 } else {
+                                    $job_title  = NULL;
+                                 }
+                              } else {
+                                 $job_title  = NULL;
+                              }
+                           }
                         endwhile;
                      endif;
 
