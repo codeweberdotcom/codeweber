@@ -363,3 +363,26 @@ function posts_columns($defaults)
     $defaults['riv_post_thumbs'] = __('Post Image', 'codeweber');
     return $defaults;
 }
+
+
+/**
+ * Get Star Rate - Rating - ACF
+ */
+
+function acf_rating()
+{
+    if (get_sub_field('rate') == 1) {
+        $rate_num = 'one';
+    } elseif (get_sub_field('rate') == 2) {
+        $rate_num = 'two';
+    } elseif (get_sub_field('rate') == 3) {
+        $rate_num = 'three';
+    } elseif (get_sub_field('rate') == 4) {
+        $rate_num = 'four';
+    } elseif (get_sub_field('rate') == 5) {
+        $rate_num = 'five';
+    } else {
+        $rate_num = 'five';
+    }
+    return $rate_num;
+}

@@ -91,19 +91,7 @@ $block = new CW_Settings(
                                                 } ?>
 
                                                 <div class="swiper-slide">
-                                                   <?php if (get_sub_field('rate') == 1) {
-                                                      $rate_num = 'one';
-                                                   } elseif (get_sub_field('rate') == 2) {
-                                                      $rate_num = 'two';
-                                                   } elseif (get_sub_field('rate') == 3) {
-                                                      $rate_num = 'three';
-                                                   } elseif (get_sub_field('rate') == 4) {
-                                                      $rate_num = 'four';
-                                                   } elseif (get_sub_field('rate') == 5) {
-                                                      $rate_num = 'five';
-                                                   }
-                                                   ?>
-                                                   <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                                   <span class="ratings <?php echo acf_rating(); ?> mb-3"></span>
                                                    <blockquote class="border-0 fs-lg mb-2">
                                                       <p>“<?php echo $testimonial; ?>”</p>
                                                       <div class="blockquote-details justify-content-center text-center">
@@ -117,8 +105,7 @@ $block = new CW_Settings(
                                                    </blockquote>
                                                 </div>
                                                 <!--/.swiper-slide -->
-                                    <?php
-                                             }
+                                    <?php }
                                           endwhile;
                                        endif;
                                     }
