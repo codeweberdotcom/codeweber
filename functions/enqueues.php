@@ -34,6 +34,9 @@ if (!function_exists('brk_styles_scripts')) {
 		wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/dist/js/theme.js', false, $theme_version, true);
 
 
+
+
+		
 		// /*dev add codeweber theme scripts */
 		// wp_enqueue_script('plugins-scripts', get_template_directory_uri() . '/dev/js/plugins.js', false, $theme_version, true);
 		// wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/dev/js/theme.js', false, $theme_version, true);

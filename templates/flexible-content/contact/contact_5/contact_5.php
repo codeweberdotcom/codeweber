@@ -4,7 +4,7 @@
          <div class="col-xl-10 mx-auto">
             <div class="row gy-10 gx-lg-8 gx-xl-12">
                <div class="col-lg-8">
-                  <form class="contact-form needs-validation" method="post" action="./assets/php/contact.php" novalidate>
+                  <form class="contact-form needs-validation" method="post" action="<?php echo get_template_directory_uri(); ?>/dist/php/contact.php" novalidate>
                      <div class="messages"></div>
                      <div class="row gx-4">
                         <div class="col-md-6">

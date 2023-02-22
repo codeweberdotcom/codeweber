@@ -27,6 +27,9 @@ require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup
 require_once get_template_directory() . '/functions/custom.php'; // --- Custom user functions ---
 require_once get_template_directory() . '/functions/admin.php'; // --- Custom user functions ---
 
+// --- Contact Mail PHP --- //
+//require_once get_template_directory() . '/dist/php/contact.php'; // --- Custom user functions ---
+
 
 // --- ACF Gutenberg Blocks --- //
 require_once get_template_directory() . '/functions/integrations/acf-gutenberg-block/acf-gutenberg-block.php'; // --- Custom user functions ---
