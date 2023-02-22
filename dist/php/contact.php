@@ -13,36 +13,79 @@ require 'PHPMailer/src/SMTP.php';
 */
 
 // Recipients
-$fromEmail = 'info@codeweber.com'; // Email address that will be in the from field of the message.
-$fromName = 'Codeweber'; // Name that will be in the from field of the message.
-$sendToEmail = 'gigamarket24@yandex.ru'; // Email address that will receive the message with the output of the form
-$sendToName = 'Вася'; // Name that will receive the message with the output of the form
+if (have_rows('recipients')) :
+  while (have_rows('recipients')) : the_row();
+    $fromEmail = get_sub_field('from_email');
+    $fromName = get_sub_field('from_name');
+    $sendToEmail = get_sub_field('send_to_email');
+    $sendToName = get_sub_field('send_to_name');
+  endwhile;
+endif;
+
+// Recipients
+// $fromEmail = 'info@codeweber.com'; // Email address that will be in the from field of the message.
+// $fromName = 'Codeweber'; // Name that will be in the from field of the message.
+// $sendToEmail = 'gigamarket24@yandex.ru'; // Email address that will receive the message with the output of the form
+// $sendToName = 'Вася'; // Name that will receive the message with the output of the form
+
+
+if (have_rows('settings')) :
+  while (have_rows('settings')) : the_row();
+    $subject = get_sub_field('subject');
+    $okMessage = get_sub_field('ok_message');
+    $errorMessage = get_sub_field('error_message');
+  endwhile;
+endif;
 
 
 // Subject
-$subject = 'Message from Sandbox contact form';
+// $subject = 'Message from Sandbox contact form';
 
 // Fields - Value of attribute name => Text to appear in the email
 $fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message', 'department' => 'Department');
 
 // Success and error alerts
-$okMessage = 'We have received your inquiry. Stay tuned, we’ll get back to you very soon.';
-$errorMessage = 'There was an error while submitting the form. Please try again later';
+// $okMessage = 'We have received your inquiry. Stay tuned, we’ll get back to you very soon.';
+// $errorMessage = 'There was an error while submitting the form. Please try again later';
+
 
 // SMTP settings
-$smtpUse = false; // Set to true to enable SMTP authentication
-$smtpHost = 'smtp@yandex.ru'; // Enter SMTP host ie. smtp.gmail.com
-$smtpUsername = 'info@codeweber.com'; // SMTP username ie. gmail address
-$smtpPassword = 'yGLX9gly!'; // SMTP password ie gmail password
-$smtpSecure = 'tls'; // Enable TLS or SSL encryption
-$smtpAutoTLS = true; // Enable Auto TLS
-$smtpPort = 587; // TCP port to connect to
+if (have_rows('smtp')) :
+  while (have_rows('smtp')) : the_row();
+    $smtpUse = get_sub_field('smtp_use');
+    $smtpHost = get_sub_field('smtp_host');
+    $smtpUsername = get_sub_field('smtp_username');
+    $smtpPassword = get_sub_field('smtp_password');
+    $smtpSecure = get_sub_field('smtp_secure');
+    $smtpAutoTLS = get_sub_field('smtp_autotls');
+    $smtpPort = get_sub_field('smtp_port');
+  endwhile;
+endif;
 
+
+// SMTP settings
+// $smtpUse = false; // Set to true to enable SMTP authentication
+// $smtpHost = 'smtp@yandex.ru'; // Enter SMTP host ie. smtp.gmail.com
+// $smtpUsername = 'info@codeweber.com'; // SMTP username ie. gmail address
+// $smtpPassword = 'yGLX9gly!'; // SMTP password ie gmail password
+// $smtpSecure = 'tls'; // Enable TLS or SSL encryption
+// $smtpAutoTLS = true; // Enable Auto TLS
+// $smtpPort = 587; // TCP port to connect to
 
 
 // reCAPTCHA settings
-$recaptchaUse = false; // Set to true to enable reCAPTHCA
-$recaptchaSecret = 'YOUR_SECRET_KEY'; // enter your secret key from https://www.google.com/recaptcha/admin
+if (have_rows('recaptcha')) :
+  while (have_rows('recaptcha')) : the_row();
+    $recaptchaUse = get_sub_field('recaptcha_use');
+    $recaptchaSecret = get_sub_field('recaptcha_secret');
+  endwhile;
+endif;
+
+
+// reCAPTCHA settings
+// $recaptchaUse = false; // Set to true to enable reCAPTHCA
+// $recaptchaSecret = 'YOUR_SECRET_KEY'; // enter your secret key from https://www.google.com/recaptcha/admin
+
 
 /*
 *  LET'S DO THE SENDING
@@ -72,7 +115,7 @@ try {
       $emailTextHtml .= "<tr><th><b>$fields[$key]</b></th><td>$value</td></tr>";
     }
   }
-  $from = 'test@mail.ru';
+  $from = $fromEmail;
 
   $emailTextHtml .= "</table>";
   $mail = new PHPMailer;
