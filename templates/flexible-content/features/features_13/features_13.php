@@ -29,12 +29,9 @@ $block = new CW_Settings(
             <!--/.px -->
          </div>
          <!--/column -->',
-      'features_pattern' => '<div class="col-lg-4 %1$s"><div class="px-md-15 px-lg-3">%2$s<h3>%3$s</h3><p class="mb-2">%4$s</p>%5$s</div></div><!--/column -->',
-      'features_style_icon' => 'me-4',
-
-      'column_class_1' => '',
-      'column_class_2' => 'order-lg-2',
-
+      'features_pattern' => '<div class="col-lg-4 %1$s"><div class="px-md-15 px-lg-3"><figure class="mb-6">%2$s</figure><h3>%3$s</h3><p class="mb-2">%4$s</p>%5$s</div></div><!--/column -->',
+      'features_style_icon' => 'img-fluid',
+      'features_image_size' => 'archive_4_1',
    )
 );
 ?>

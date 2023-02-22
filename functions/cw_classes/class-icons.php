@@ -18,7 +18,7 @@ class CW_Icon
 
    public $style_icon;
 
-   public function __construct($type_icon, $form_icon, $class_icon, $size_icon, $unicons_icon, $lineal_icon, $image_icon, $color_icon, $number_icon, $id_icon, $final_icon)
+   public function __construct($type_icon, $form_icon, $class_icon, $size_icon, $unicons_icon, $lineal_icon, $image_icon, $color_icon, $number_icon, $id_icon, $final_icon, $fetures_image_size)
 
    {
       $this->class_icon = $this->cw_class_icon($class_icon);
@@ -29,7 +29,7 @@ class CW_Icon
       $this->form_icon = $this->cw_form_icon($form_icon);
       $this->size_icon = $this->cw_size_icon($size_icon);
       $this->unicons_icon = $this->cw_unicons_icon($unicons_icon, $class_icon);
-      $this->image_icon = $this->cw_image_icon($image_icon, $class_icon);
+      $this->image_icon = $this->cw_image_icon($image_icon, $class_icon, $fetures_image_size);
       $this->lineal_icon = $this->cw_lineal_icon($lineal_icon, $class_icon);
       $this->number_icon = $this->cw_number_icon($number_icon, $class_icon);
       $this->final_icon = $this->cw_final_icon($final_icon, $class_icon);
@@ -155,8 +155,9 @@ class CW_Icon
    }
 
    // Image
-   public function cw_image_icon($image_icon, $class_icon)
+   public function cw_image_icon($image_icon, $class_icon, $fetures_image_size)
    {
+
       if (have_rows('cw_icons')) {
          while (have_rows('cw_icons')) {
             the_row();
@@ -165,32 +166,49 @@ class CW_Icon
                $form = $this->form_icon;
                $size = $this->size_icon;
                $classes_icon = array();
-               if ($form == 'btn-circle')
-                  $classes_icon[] = 'rounded-pill';
-               elseif ($form == 'btn-block') {
-                  $classes_icon[] = 'rounded';
-               } else {
-                  $classes_icon[] = NULL;
+
+               if ($size !== 'none') {
+                  if ($form == 'btn-circle')
+                     $classes_icon[] = 'rounded-pill';
+                  elseif ($form == 'btn-block') {
+                     $classes_icon[] = 'rounded';
+                  } else {
+                     $classes_icon[] = NULL;
+                  }
                }
+
                $classes_icon[] = $class_icon;
-               if ($size == 'sm') {
-                  $size = 'cw_icon_sm';
-                  $classes_icon[] = 'w-10';
-               } elseif ($size == 'md') {
-                  $size = 'cw_icon_md';
-                  $classes_icon[] = 'w-12';
-               } elseif ($size == 'lg') {
-                  $size = 'cw_icon_lg';
-                  $classes_icon[] = 'w-15';
+
+               if ($size !== 'none') {
+                  if ($size == 'sm') {
+                     $size = 'cw_icon_sm';
+                     $classes_icon[] = 'w-10';
+                  } elseif ($size == 'md') {
+                     $size = 'cw_icon_md';
+                     $classes_icon[] = 'w-12';
+                  } elseif ($size == 'lg') {
+                     $size = 'cw_icon_lg';
+                     $classes_icon[] = 'w-15';
+                  }
+               } elseif ($size == 'none' && $fetures_image_size !== NULL) {
+                  $size = $fetures_image_size;
+               } else {
+                  $size = NULL;
                }
+
                $class = 'class="' . implode(' ', $classes_icon) . '"';
-               $image_icon = '<img ' . $class . ' src="' . $image['sizes'][$size] . '"/>';
+
+               if ($size !== NULL) {
+                  $image_icon = '<img ' . $class . ' src="' . $image['sizes'][$size] . '"/>';
+               } else {
+                  $image_icon = NULL;
+               }
             } else {
                $image_icon = NULL;
             }
          }
       } else {
-         $image_icon = 'NULL';
+         $image_icon = NULL;
       }
       return $image_icon;
    }

@@ -154,7 +154,7 @@ class CW_Tab
 
    public function cw_tab_icon($tab_icon, $icon_class)
    {
-      $cw_tab_icon_object = new CW_Icon(NULL, NULL, $icon_class, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+      $cw_tab_icon_object = new CW_Icon(NULL, NULL, $icon_class, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
       $cw_tab_icon = $cw_tab_icon_object->cw_final_icon(NULL, NULL);
       return $cw_tab_icon;
    }

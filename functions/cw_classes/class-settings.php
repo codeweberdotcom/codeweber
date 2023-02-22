@@ -229,7 +229,15 @@ class CW_Settings
          } else {
             $class_icon = NULL;
          }
-         $features_object = new CW_Features($features_pattern, $demo, $class_icon);
+
+         if (isset($this->cw_settings['features_image_size']) && !$this->cw_settings['features_image_size'] == NULL) {
+            $fetures_image_size = $this->cw_settings['features_image_size'];
+         } else {
+            $fetures_image_size = NULL;
+         }
+
+
+         $features_object = new CW_Features($features_pattern, $demo, $class_icon, $fetures_image_size);
          $cw_features = $features_object->features_list_final;
          $this->features_array =  $features_object->features_array_final;
          if ($cw_features == NULL) {

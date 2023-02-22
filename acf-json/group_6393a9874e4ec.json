@@ -158,6 +158,7 @@
                         "id": ""
                     },
                     "choices": {
+                        "none": "none",
                         "sm": "sm",
                         "md": "md",
                         "lg": "lg"
@@ -1601,5 +1602,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676120687
+    "modified": 1677063621
 }

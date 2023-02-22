@@ -5,7 +5,7 @@
  */
 
 $final_icon = '<img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/megaphone.svg" class="svg-inject icon-svg icon-svg-md mb-4" alt="" />';
-$icon = new CW_Icon(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $final_icon, 'mb-4');
+$icon = new CW_Icon(NULL, NULL, 'mb-4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, $final_icon, NULL);
 
 
 $block = new CW_Settings(

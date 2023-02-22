@@ -14,9 +14,9 @@ class CW_Feature
    public $features_item_final;
    public $features_list_final;
 
-   public function __construct($features_icon, $features_title, $features_paragraph, $features_link, $features_pattern, $demo, $style, $num, $class_icon)
+   public function __construct($features_icon, $features_title, $features_paragraph, $features_link, $features_pattern, $demo, $style, $num, $class_icon, $fetures_image_size)
    {
-      $this->features_icon = $this->cw_features_icon($features_icon, $style, $class_icon);
+      $this->features_icon = $this->cw_features_icon($features_icon, $style, $class_icon, $fetures_image_size);
       $this->features_style = $this->cw_features_style($style);
       $this->features_title = $this->cw_features_title($features_title);
       $this->features_border_class = $this->cw_features_border_class();
@@ -59,8 +59,9 @@ class CW_Feature
    }
 
    //Features_icon
-   public function cw_features_icon($features_icon, $style, $class_icon)
+   public function cw_features_icon($features_icon, $style, $class_icon, $fetures_image_size)
    {
+
       if (have_rows('cw_features_item')) {
          while (have_rows('cw_features_item')) {
             the_row();
@@ -69,12 +70,13 @@ class CW_Feature
             } else {
                $style_icon = NULL;
             }
-            $features_icon_object = new CW_Icon(NULL, NULL, $class_icon, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+            $features_icon_object = new CW_Icon(NULL, NULL, $class_icon, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $fetures_image_size);
             $features_icon =  $features_icon_object->final_icon;
          }
       } else {
          $features_icon = NULL;
       }
+
       return $features_icon;
    }
 
@@ -171,13 +173,13 @@ class CW_Features
    public $features_list_final;
    public $features_array_final;
 
-   public function __construct($features_pattern, $demo, $class_icon)
+   public function __construct($features_pattern, $demo, $class_icon, $fetures_image_size)
    {
-      $this->features_list_final = $this->cw_features_list_final($features_pattern, $demo, $class_icon);
+      $this->features_list_final = $this->cw_features_list_final($features_pattern, $demo, $class_icon, $fetures_image_size);
    }
 
    //Features_list
-   public function cw_features_list_final($features_pattern, $demo, $class_icon)
+   public function cw_features_list_final($features_pattern, $demo, $class_icon, $fetures_image_size)
    {
       if (have_rows('cw_features')) {
          $cw_features_array = array();
@@ -195,7 +197,8 @@ class CW_Features
                $demo,
                NULL,
                $num_s,
-               $class_icon
+               $class_icon,
+               $fetures_image_size
             );
             $cw_features_array[] = $features_item->features_item_final;
             $cw_features_list .= $features_item->features_item_final;
