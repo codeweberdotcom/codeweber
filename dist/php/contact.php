@@ -13,8 +13,8 @@ require 'PHPMailer/src/SMTP.php';
 */
 
 // Recipients
-if (have_rows('recipients')) :
-  while (have_rows('recipients')) : the_row();
+if (have_rows('recipients', 'option')) :
+  while (have_rows('recipients', 'option')) : the_row();
     $fromEmail = get_sub_field('from_email');
     $fromName = get_sub_field('from_name');
     $sendToEmail = get_sub_field('send_to_email');
@@ -29,8 +29,8 @@ endif;
 // $sendToName = 'Вася'; // Name that will receive the message with the output of the form
 
 
-if (have_rows('settings')) :
-  while (have_rows('settings')) : the_row();
+if (have_rows('settings', 'option')) :
+  while (have_rows('settings', 'option')) : the_row();
     $subject = get_sub_field('subject');
     $okMessage = get_sub_field('ok_message');
     $errorMessage = get_sub_field('error_message');
@@ -50,8 +50,8 @@ $fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'e
 
 
 // SMTP settings
-if (have_rows('smtp')) :
-  while (have_rows('smtp')) : the_row();
+if (have_rows('smtp', 'option')) :
+  while (have_rows('smtp', 'option')) : the_row();
     $smtpUse = get_sub_field('smtp_use');
     $smtpHost = get_sub_field('smtp_host');
     $smtpUsername = get_sub_field('smtp_username');
@@ -74,8 +74,8 @@ endif;
 
 
 // reCAPTCHA settings
-if (have_rows('recaptcha')) :
-  while (have_rows('recaptcha')) : the_row();
+if (have_rows('recaptcha', 'option')) :
+  while (have_rows('recaptcha', 'option')) : the_row();
     $recaptchaUse = get_sub_field('recaptcha_use');
     $recaptchaSecret = get_sub_field('recaptcha_secret');
   endwhile;
