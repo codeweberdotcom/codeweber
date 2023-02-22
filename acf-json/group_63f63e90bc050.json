@@ -363,7 +363,7 @@
                     "name": "recaptcha_use",
                     "type": "true_false",
                     "instructions": "Set to true to enable reCAPTHCA",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "30",
@@ -414,5 +414,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677083661
+    "modified": 1677085936
 }
