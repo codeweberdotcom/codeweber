@@ -382,5 +382,23 @@ function my_acf_blocks_init()
             'mode' => 'preview',
          )
       );
+
+      // Register a Modal block.
+      acf_register_block_type(
+         array(
+            'name'              => 'modal',
+            'title'             => __('Modal'),
+            'description'       => __('Modal.'),
+            'render_template'   => 'templates/flexible-content/modal.php',
+            'category'          => 'codeweber',
+            'mode'                    => 'auto',
+            'align'           => 'full',
+            'supports'        => array(
+               'align'        => array('full'),
+               'align'        => true,
+            ),
+            'mode' => 'preview',
+         )
+      );
    }
 }

@@ -300,3 +300,162 @@ function is_post_type($type)
 		return true;
 	return false;
 }
+
+
+/**
+ * Modal Post to footer
+ */
+
+function add_modal_to_footer()
+{
+	$top_posts = get_posts([
+		'posts_per_page' => -1,
+		'post_type' => 'modal',
+	]);
+
+	if ($top_posts) {
+		foreach ($top_posts as $item) {
+			setup_postdata($item);
+			$post_id = $item->ID;
+			if (get_field('type_modal', $post_id) == 'Type 1') {
+				if (have_rows('cw_modal_settings', $post_id)) {
+					while (have_rows('cw_modal_settings', $post_id)) {
+						the_row();
+						$title_object = new CW_Title(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+						$title = $title_object->title_text;
+
+						$paragraph_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+						$paragraph = $paragraph_object->paragraph_text;
+
+						$button_pattern = '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>';
+						$button_demo = '<a href="#" class="btn btn-primary rounded-pill" data-bs-dismiss="modal" aria-label="Close">I Understand</a>';
+						$button_object = new CW_Buttons($button_pattern, $button_demo, 'cookie_accept', 'data-bs-dismiss="modal"');
+						$button = $button_object->final_buttons;
+					}
+				} ?>
+				<div id="cookie_notification" class="modal fade modal-bottom-center" id="modal-<?php $post_id; ?>" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel">
+					<div class="modal-dialog modal-xl">
+						<div class="modal-content">
+							<div class="modal-body p-6">
+								<div class="row">
+									<div class="col-md-12 col-lg-8 mb-4 mb-lg-0 my-auto align-items-center">
+										<h4 class="mb-2"><?php echo $title; ?></h4>
+										<p class="mb-0"><?php echo $paragraph; ?></p>
+									</div>
+									<!--/column -->
+									<div class="col-md-5 col-lg-4 text-lg-end my-auto">
+										<?php echo $button; ?>
+									</div>
+									<!--/column -->
+								</div>
+								<!--/.row -->
+							</div>
+							<!--/.modal-body -->
+						</div>
+						<!--/.modal-content -->
+					</div>
+					<!--/.modal-dialog -->
+				</div>
+				<!--/.modal -->
+				<script type="text/javascript">
+					function checkCookies() {
+						let cookieDate = localStorage.getItem('cookieDate');
+						let cookieNotification = document.getElementById('cookie_notification');
+						let cookieBtn = cookieNotification.querySelector('.cookie_accept');
+
+						// Если записи про кукисы нет или она просрочена на 1 год, то показываем информацию про кукисы
+						if (!cookieDate || (+cookieDate + 31536000000) < Date.now()) {
+							cookieNotification.classList.add('modal-popup');
+						}
+
+						// При клике на кнопку, в локальное хранилище записывается текущая дата в системе UNIX
+						cookieBtn.addEventListener('click', function() {
+							localStorage.setItem('cookieDate', Date.now());
+							cookieNotification.classList.remove('modal-popup');
+						})
+					}
+					checkCookies();
+				</script>
+			<?php
+			} elseif (get_field('type_modal', $post_id) == 'Type 2') {
+
+				if (have_rows('cw_modal_settings', $post_id)) {
+					while (have_rows('cw_modal_settings', $post_id)) {
+						the_row();
+						$title_object = new CW_Title(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+						$title = $title_object->title_text;
+
+						$paragraph_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+						$paragraph = $paragraph_object->paragraph_text;
+
+						$button_pattern = '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>';
+						$button_demo = '<a href="#" class="btn btn-primary rounded-pill" data-bs-dismiss="modal" aria-label="Close">I Understand</a>';
+						$button_object = new CW_Buttons($button_pattern, $button_demo, 'cookie_accept', 'data-bs-dismiss="modal"');
+						$button = $button_object->final_buttons;
+						$cw_image = get_sub_field('cw_image', $post_id);
+						if ($cw_image) :
+							$image_url =  esc_url($cw_image['sizes']['project_1_1']);
+						endif;
+					}
+				}
+
+			?>
+				<div class="modal fade modal-popup" id="modal-<?php $post_id; ?>" tabindex="-1">
+					<div class="modal-dialog modal-dialog-centered modal-md">
+						<div class="modal-content text-center">
+							<div class="modal-body">
+								<button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								<div class="row">
+									<div class="col-md-10 offset-md-1">
+										<figure class="mb-6"><img src="<?php echo $image_url; ?>" srcset="<?php echo $image_url; ?>" alt="" /></figure>
+									</div>
+									<!-- /column -->
+								</div>
+								<!-- /.row -->
+								<h3><?php echo $title; ?></h3>
+								<p class="mb-6"><?php echo $paragraph; ?></p>
+								<div class="newsletter-wrapper">
+									<div class="row">
+										<div class="col-md-10 offset-md-1">
+											<!-- Begin Mailchimp Signup Form -->
+											<div id="mc_embed_signup">
+												<form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+													<div id="mc_embed_signup_scroll">
+														<div class="mc-field-group input-group form-floating">
+															<input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Email Address" id="mce-EMAIL">
+															<label for="mce-EMAIL">Email Address</label>
+															<input type="submit" value="Join" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary">
+														</div>
+														<div id="mce-responses" class="clear">
+															<div class="response" id="mce-error-response" style="display:none"></div>
+															<div class="response" id="mce-success-response" style="display:none"></div>
+														</div> <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+														<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_ddc180777a163e0f9f66ee014_4b1bcfa0bc" tabindex="-1" value=""></div>
+														<div class="clear"></div>
+													</div>
+												</form>
+											</div>
+											<!--End mc_embed_signup-->
+										</div>
+										<!-- /.newsletter-wrapper -->
+									</div>
+									<!-- /column -->
+								</div>
+								<!-- /.row -->
+							</div>
+							<!--/.modal-body -->
+						</div>
+						<!--/.modal-content -->
+					</div>
+					<!--/.modal-dialog -->
+				</div>
+				<!--/.modal -->
+
+<?php
+			}
+		}
+	}
+	wp_reset_postdata();
+}
+
+add_action('codeweber_footer_start', 'add_modal_to_footer', 150);

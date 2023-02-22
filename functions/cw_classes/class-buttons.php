@@ -31,7 +31,7 @@ class CW_Button
 
    public $final_button;
 
-   public function __construct($import_class)
+   public function __construct($import_class, $data)
    {
       $this->text_button = $this->cw_text_button();
       $this->type_button = $this->cw_type_button();
@@ -45,7 +45,7 @@ class CW_Button
       $this->id_button = $this->cw_id_button();
       $this->classes_button  = $this->cw_button_classes($import_class);
 
-      $this->final_button = $this->cw_final_button($import_class);
+      $this->final_button = $this->cw_final_button($import_class, $data);
    }
 
 
@@ -266,7 +266,7 @@ class CW_Button
    }
 
    //Final Button
-   public function cw_final_button($import_class)
+   public function cw_final_button($import_class, $data)
    {
 
       if (have_rows('cw_buttons')) {
@@ -278,6 +278,9 @@ class CW_Button
                $button_data = $cw_link_object->link_data;
             } else {
                $button_data = NULL;
+            }
+            if ($data !== NULL) {
+               $button_data = $data;
             }
             $ghligthbox = $cw_link_object->link_glightbox;
             $button_url = $cw_link_object->link_url;
@@ -352,11 +355,11 @@ class CW_Buttons
    public $buttons_items;
    public $button_item_class;
 
-   public function __construct($buttons_pattern, $buttons_items, $button_item_class)
+   public function __construct($buttons_pattern, $buttons_items, $button_item_class, $data)
    {
-      $this->final_buttons = $this->cw_final_buttons($buttons_pattern, $buttons_items, $button_item_class);
+      $this->final_buttons = $this->cw_final_buttons($buttons_pattern, $buttons_items, $button_item_class, $data);
    }
-   public function cw_final_buttons($buttons_pattern, $buttons_items, $button_item_class)
+   public function cw_final_buttons($buttons_pattern, $buttons_items, $button_item_class, $data)
    {
       $buttons_array = array();
       if (is_array(get_sub_field('cw_buttons_repeater'))) {
@@ -369,10 +372,10 @@ class CW_Buttons
          while (have_rows('cw_buttons_repeater')) {
             the_row();
             if ($count == 1) {
-               $button = new CW_Button($button_item_class);
+               $button = new CW_Button($button_item_class, $data);
                $buttons_array[] = '<div>' . $button->final_button . '</div>';
             } else {
-               $button = new CW_Button($button_item_class . ' me-2');
+               $button = new CW_Button($button_item_class . ' me-2', NULL);
                $buttons_array[] = '<span>' . $button->final_button . '</span>';
             }
          }

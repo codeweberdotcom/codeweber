@@ -607,7 +607,7 @@ class CW_Settings
    public function cw_buttons()
    {
       if (isset($this->cw_settings['buttons_pattern']) && !$this->cw_settings['buttons_pattern'] == NULL) {
-         $buttons_object = new CW_Buttons($this->cw_settings['buttons_pattern'], $this->cw_settings['buttons'], NULL);
+         $buttons_object = new CW_Buttons($this->cw_settings['buttons_pattern'], $this->cw_settings['buttons'], NULL, NULL);
          if ($buttons_object->final_buttons !== false) {
             $buttons = $buttons_object->final_buttons;
          }
