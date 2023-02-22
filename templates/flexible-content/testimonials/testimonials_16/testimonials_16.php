@@ -35,10 +35,10 @@ $block = new CW_Settings(
          'data_thumbs' => NULL,
          'wrapper_image_class' => '',
          'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
-         'image_thumb_size' => 'sandbox_about_4',
-         'image_demo' => '<div class="img-mask mask-3"><img src="' . get_template_directory_uri() . '/dist/img/photos/about31.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about31@2x.jpg 2x" alt="" /></div>',
+         'image_thumb_size' => 'testimonial_16',
+         'image_demo' => '<div class="img-mask mask-3"><img src="' . get_template_directory_uri() . '/dist/img/photos/about28.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about28@2x.jpg 2x" alt="" /></div>',
          'image_big_size' => 'project_1',
-         'img_link' => '/dist/img/photos/about7.jpg',
+         'img_link' => '/dist/img/photos/about28.jpg',
          'image_shape' => 'img-mask mask-3',
       ),
       'background_class_default' => 'wrapper bg-light',
@@ -115,21 +115,8 @@ $block = new CW_Settings(
                                           } else {
                                              $job_title  = NULL;
                                           } ?>
-
                                           <div class="swiper-slide">
-                                             <?php if (get_sub_field('rate') == 1) {
-                                                $rate_num = 'one';
-                                             } elseif (get_sub_field('rate') == 2) {
-                                                $rate_num = 'two';
-                                             } elseif (get_sub_field('rate') == 3) {
-                                                $rate_num = 'three';
-                                             } elseif (get_sub_field('rate') == 4) {
-                                                $rate_num = 'four';
-                                             } elseif (get_sub_field('rate') == 5) {
-                                                $rate_num = 'five';
-                                             }
-                                             ?>
-                                             <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                             <span class="ratings <?php echo acf_rating(); ?> mb-3"></span>
                                              <blockquote class="border-0 fs-lg mb-0">
                                                 <p>“<?php echo $testimonial; ?>”</p>
                                                 <div class="blockquote-details">

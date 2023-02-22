@@ -65,7 +65,6 @@ $block = new CW_Settings(
                   <div class="swiper-container dots-closer mb-6" data-margin="0" data-dots="true" data-items-md="2" data-items-xs="1">
                      <div class="swiper">
                         <div class="swiper-wrapper">
-
                            <?php
                            while ($query->have_posts()) {
                               $query->the_post();
@@ -114,7 +113,6 @@ $block = new CW_Settings(
                                        } else {
                                           $job_title  = NULL;
                                        } ?>
-
                                        <div class="swiper-slide">
                                           <div class="item-inner">
                                              <div class="card">

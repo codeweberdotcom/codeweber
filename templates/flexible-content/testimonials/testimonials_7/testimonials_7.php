@@ -102,18 +102,6 @@ $block = new CW_Settings(
                               } else {
                                  $job_title  = NULL;
                               }
-
-                              if (get_sub_field('rate') == 1) {
-                                 $rate_num = 'one';
-                              } elseif (get_sub_field('rate') == 2) {
-                                 $rate_num = 'two';
-                              } elseif (get_sub_field('rate') == 3) {
-                                 $rate_num = 'three';
-                              } elseif (get_sub_field('rate') == 4) {
-                                 $rate_num = 'four';
-                              } elseif (get_sub_field('rate') == 5) {
-                                 $rate_num = 'five';
-                              }
                            }
                         endwhile;
                      endif;
@@ -121,7 +109,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-4">
                            <div class="card">
                               <div class="card-body">
-                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <span class="ratings <?php echo acf_rating(); ?> mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
@@ -144,7 +132,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-4">
                            <div class="card">
                               <div class="card-body">
-                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <span class="ratings <?php echo acf_rating(); ?> mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
@@ -167,7 +155,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-4">
                            <div class="card">
                               <div class="card-body">
-                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <span class="ratings <?php echo acf_rating(); ?> mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
@@ -190,7 +178,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-4">
                            <div class="card">
                               <div class="card-body">
-                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <span class="ratings <?php echo acf_rating(); ?> mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
@@ -213,7 +201,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-4">
                            <div class="card">
                               <div class="card-body">
-                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <span class="ratings <?php echo acf_rating(); ?> mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
@@ -236,7 +224,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-4">
                            <div class="card">
                               <div class="card-body">
-                                 <span class="ratings <?php echo $rate_num; ?> mb-3"></span>
+                                 <span class="ratings <?php echo acf_rating(); ?> mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">

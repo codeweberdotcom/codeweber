@@ -19,20 +19,27 @@ if ($testimonials) {
    $argss['post__in'] = $cw_post_ids;
 }
 
+$bg_image = '' . get_template_directory_uri() . '/dist/img/photos/tm1.jpg';
+
+if (get_sub_field('cw_image_bg')) {
+   $bg_image = get_sub_field('cw_image_bg');
+}
+
+
 $block = new CW_Settings(
    $cw_settings = array(
 
-      'swiper' => array(
-         'swiper_container_class' => 'overflow-hidden',
-         'image_class' => 'w-auto',
-         'data_thumbs' => NULL,
-         'wrapper_image_class' => '',
-         'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
-         'image_thumb_size' => 'sandbox_process_8',
-         'image_demo' => '<figure><img src="' . get_template_directory_uri() . '/dist/img/photos/co1.png" srcset="' . get_template_directory_uri() . '/dist/img/photos/co1@2x.png 2x" alt=""></figure>',
-         'image_big_size' => 'project_1',
-         'img_link' => '/dist/img/photos/about7.jpg',
-      ),
+      // 'swiper' => array(
+      //    'swiper_container_class' => 'overflow-hidden',
+      //    'image_class' => 'w-auto',
+      //    'data_thumbs' => NULL,
+      //    'wrapper_image_class' => '',
+      //    'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
+      //    'image_thumb_size' => 'sandbox_process_8',
+      //    'image_demo' => '<figure><img src="' . get_template_directory_uri() . '/dist/img/photos/co1.png" srcset="' . get_template_directory_uri() . '/dist/img/photos/co1@2x.png 2x" alt=""></figure>',
+      //    'image_big_size' => 'sandbox_process_8',
+      //    'img_link' => '/dist/img/photos/co1.png',
+      // ),
 
       'shapes' => array('<div class="shape rounded-circle bg-line primary rellax w-18 h-18" data-rellax-speed="1" style="top: -2rem; right: -2.7rem; z-index:0;"></div>', '<div class="shape rounded-circle bg-soft-primary rellax w-18 h-18" data-rellax-speed="1" style="bottom: -1rem; left: -3rem; z-index:0;"></div>'),
 
@@ -55,7 +62,7 @@ $block = new CW_Settings(
          <!--/shape -->
          <div class="card shadow-lg">
             <div class="row gx-0">
-               <div class="col-lg-6 image-wrapper bg-image bg-cover rounded-top rounded-lg-start" data-image-src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/tm1.jpg">
+               <div class="col-lg-6 image-wrapper bg-image bg-cover rounded-top rounded-lg-start" data-image-src="<?php echo $bg_image; ?>">
                   <?php //echo $block->swiper_final; 
                   ?>
                   <!--/swiper -->

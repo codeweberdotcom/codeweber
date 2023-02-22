@@ -25,9 +25,6 @@ $block = new CW_Settings(
 
       'background_class_default' => 'card image-wrapper bg-full bg-image bg-overlay bg-overlay-400',
       'background_data_default' => '/dist/img/photos/bg2.jpg',
-      //'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      //'background_video_url' => '/dist/media/movie2.mp4',
-      //'background_pattern_url' => '/dist/img/pattern.png',
 
       // 'divider' => true,
    )

@@ -19,8 +19,6 @@ if ($testimonials) {
    $argss['post__in'] = $cw_post_ids;
 }
 
-
-
 $block = new CW_Settings(
    $cw_settings = array(
 
@@ -31,15 +29,11 @@ $block = new CW_Settings(
    )
 );
 
-$final_icon = '<i class="icn-flower text-white fs-30 opacity-50"></i>';
-$icon = new CW_Icon(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $final_icon, NULL);
-
 ?>
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16 text-center">
-      <?php echo $icon->final_icon; ?>
-      <!--/final_icon -->
+      <i class="icn-flower text-white fs-30 opacity-50"></i>
       <div class="row mt-3">
          <div class="col-xl-9 col-xxl-8 mx-auto">
             <?php
