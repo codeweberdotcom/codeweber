@@ -30,8 +30,8 @@ $block = new CW_Settings(
          'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
          'image_thumb_size' => 'sandbox_hero_1',
          'image_demo' => '<figure><img class="w-auto" src="' . get_template_directory_uri() . '/dist/img/illustrations/i4.png" srcset="' . get_template_directory_uri() . '/dist/img/illustrations/i4@2x.png 2x" alt="" /></figure>',
-         'image_big_size' => 'project_1',
-         'img_link' => '/dist/img/photos/about7.jpg',
+         'image_big_size' => 'sandbox_process_8',
+         'img_link' => '/dist/img/illustrations/i4.png',
       ),
 
       'background_class_default' => 'wrapper bg-light',
@@ -40,7 +40,6 @@ $block = new CW_Settings(
       'column_class_2' => '',
 
       // 'divider' => true,
-
 
    )
 );

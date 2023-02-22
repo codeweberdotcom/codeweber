@@ -59,6 +59,7 @@ if (!function_exists('brk_image_settings')) {
 
 		add_image_size('testimonial_2', 575, 383, true);
 		add_image_size('testimonial_8', 455, 655, true);
+		add_image_size('testimonial_16', 385, 360, true);
 
 		add_image_size('cart_checkout', 90, 100, true);
 

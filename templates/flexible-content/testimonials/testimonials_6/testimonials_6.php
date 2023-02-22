@@ -18,6 +18,24 @@ if ($testimonials) {
    $argss['post__in'] = $cw_post_ids;
 }
 
+$counter_title = 'Satisfied Customers';
+$counter_color = 'primary';
+$counter_number = '5000+';
+
+if (have_rows('counter_item')) {
+   while (have_rows('counter_item')) {
+      the_row();
+      if (get_sub_field('counter_number')) {
+         $counter_number = get_sub_field('counter_number');
+      }
+      if (get_sub_field('counter_title')) {
+         $btn_title = get_sub_field('counter_title');
+      }
+      $btn_color_object = new CW_Color(NULL, NULL);
+      $counter_color = $btn_color_object->color;
+   }
+}
+
 $block = new CW_Settings(
    $cw_settings = array(
 
@@ -76,10 +94,10 @@ $block = new CW_Settings(
                      </div>
                      <!--/column -->
                      <div class="col-md-10">
-                        <div class="card bg-pale-primary text-center">
+                        <div class="card bg-<?php echo $counter_color; ?> text-center">
                            <div class="card-body py-11 counter-wrapper">
-                              <?php echo $block->features; ?>
-                              <!--/features -->
+                              <h3 class="counter text-nowrap"><?php echo $counter_number; ?></h3>
+                              <p class="mb-0"><?php echo $counter_title; ?></p>
                            </div>
                            <!--/.card-body -->
                         </div>

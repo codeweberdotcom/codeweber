@@ -1212,8 +1212,8 @@
                             "prefix_name": 0
                         },
                         {
-                            "key": "field_63f286a0eac5f",
-                            "label": "Features",
+                            "key": "field_63f4e7577c778",
+                            "label": "Counter",
                             "name": "",
                             "type": "accordion",
                             "instructions": "",
@@ -1229,10 +1229,10 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63f28715eac60",
-                            "label": "Features",
-                            "name": "cw_features",
-                            "type": "clone",
+                            "key": "field_63f4f3459d502",
+                            "label": "Counter Item",
+                            "name": "counter_item",
+                            "type": "group",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -1241,13 +1241,68 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "clone": [
-                                "group_63acc08203fb5"
-                            ],
-                            "display": "seamless",
                             "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
+                            "sub_fields": [
+                                {
+                                    "key": "field_63f4e8937c779",
+                                    "label": "Number",
+                                    "name": "counter_number",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_63f4e9bf7c77a",
+                                    "label": "Title",
+                                    "name": "counter_title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_63f4efec66aaa",
+                                    "label": "Color",
+                                    "name": "cw_color",
+                                    "type": "clone",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "clone": [
+                                        "group_6391c29e6e4b9"
+                                    ],
+                                    "display": "seamless",
+                                    "layout": "block",
+                                    "prefix_label": 0,
+                                    "prefix_name": 0
+                                }
+                            ]
                         },
                         {
                             "key": "field_63f2720dd0f24",
@@ -2066,9 +2121,9 @@
                         },
                         {
                             "key": "field_63f2914420199",
-                            "label": "Gallery",
-                            "name": "cw_slider",
-                            "type": "clone",
+                            "label": "Image",
+                            "name": "cw_image_bg",
+                            "type": "image",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -2077,13 +2132,16 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "clone": [
-                                "group_63a2003c62223"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
                         },
                         {
                             "key": "field_63f2923f201a1",
@@ -2796,44 +2854,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_63f37efe79bb1",
-                            "label": "Icon",
-                            "name": "",
-                            "type": "accordion",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "open": 0,
-                            "multi_expand": 0,
-                            "endpoint": 0
-                        },
-                        {
-                            "key": "field_63f37ec579bb0",
-                            "label": "Icon",
-                            "name": "cw_icon",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "group_6393a9874e4ec"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_63f379f5950a0",
                             "label": "Posts",
                             "name": "",
@@ -3424,5 +3444,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676907145
+    "modified": 1677057634
 }
