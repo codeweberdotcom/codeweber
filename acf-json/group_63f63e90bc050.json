@@ -279,7 +279,7 @@
                     "name": "smtp_secure",
                     "type": "radio",
                     "instructions": "Enable TLS or SSL encryption",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "33.33",
@@ -303,7 +303,7 @@
                     "name": "smtp_autotls",
                     "type": "true_false",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "33.33",
@@ -322,7 +322,7 @@
                     "name": "smtp_port",
                     "type": "radio",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "33.33",
@@ -414,5 +414,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677085936
+    "modified": 1677099954
 }

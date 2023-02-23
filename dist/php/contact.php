@@ -4,10 +4,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
+// require_once('../../../../../wp-load.php');
+
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
+require_once $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php';
 /*
 *  CONFIGURATION
 */
@@ -137,7 +140,7 @@ try {
     $mail->Debugoutput = function ($str, $level) use (&$mailerErrors) {
       $mailerErrors[] = ['str' => $str, 'level' => $level];
     };
-    $mail->SMTPDebug = 3;
+    $mail->SMTPDebug = 0;
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = $smtpSecure;
     $mail->SMTPAutoTLS = $smtpAutoTLS;

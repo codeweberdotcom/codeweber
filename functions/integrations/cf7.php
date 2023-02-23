@@ -22,8 +22,49 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 
 
 
+/**
+ * Modal after sent CF7
+ */
+add_action('wp_footer', 'сf7_modal_after_sent');
 
-/* --- Contact form 7  Template Floating Plaeholder
+function сf7_modal_after_sent()
+{
+    echo '<div class="modal fade" id="modal-0166" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-body p-6">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <p class="mb-0">Спасибо за Ваше сообщение.<br>Оно успешно отправлено.</p>
+        </div>
+        <!--/.row -->
+      </div>
+      <!--/.modal-body -->
+    </div>
+    <!--/.modal-content -->
+  </div>
+  <!--/.modal-dialog -->
+</div>
+<!--/.modal -->';
+?>
+
+    <script type="text/javascript">
+        document.addEventListener('wpcf7mailsent', function(event) {
+            var myModal = new bootstrap.Modal(document.getElementById('modal-0166'), {
+                keyboard: false
+            })
+            myModal.show();
+
+            function sayHi() {
+                myModal.hide();
+            }
+            setTimeout(sayHi, 5000);
+        }, false);
+    </script>
+<?php
+}
+
+
+/* --- Contact form 7  Demo Template Floating Plaeholder
 
 /* <h2 class="mb-3 text-start">Form order</h2>
 <p class="lead mb-6 text-start">Fill your email and password to sign in.</p>

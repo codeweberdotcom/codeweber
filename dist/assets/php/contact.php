@@ -48,8 +48,8 @@ $recaptchaSecret = 'YOUR_SECRET_KEY'; // enter your secret key from https://www.
 // if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);
 try {
-  if(count($_POST) == 0) throw new \Exception('Form is empty');
-  if($recaptchaUse == true) {
+  if (count($_POST) == 0) throw new \Exception('Form is empty');
+  if ($recaptchaUse == true) {
     require('recaptcha/src/autoload.php');
     if (!isset($_POST['g-recaptcha-response'])) {
       throw new \Exception('ReCaptcha is not set.');
@@ -78,7 +78,7 @@ try {
   $mail->Subject = $subject;
   $mail->Body    = $emailTextHtml;
   $mail->msgHTML($emailTextHtml);
-  if($smtpUse == true) {
+  if ($smtpUse == true) {
     // Tell PHPMailer to use SMTP
     $mail->isSMTP();
     // Enable SMTP debugging
@@ -86,9 +86,9 @@ try {
     // 1 = client messages
     // 2 = client and server messages
     $mail->Debugoutput = function ($str, $level) use (&$mailerErrors) {
-      $mailerErrors[] = [ 'str' => $str, 'level' => $level ];
+      $mailerErrors[] = ['str' => $str, 'level' => $level];
     };
-    $mail->SMTPDebug = 3;
+    $mail->SMTPDebug = 0;
     $mail->SMTPAuth = true;
     $mail->SMTPSecure = $smtpSecure;
     $mail->SMTPAutoTLS = $smtpAutoTLS;
@@ -97,17 +97,16 @@ try {
     $mail->Username = $smtpUsername;
     $mail->Password = $smtpPassword;
   }
-  if(!$mail->send()) {
+  if (!$mail->send()) {
     throw new \Exception('I could not send the email.' . $mail->ErrorInfo);
   }
   $responseArray = array('type' => 'success', 'message' => $okMessage);
-}
-catch (\Exception $e) {
+} catch (\Exception $e) {
   $responseArray = array('type' => 'danger', 'message' => $e->getMessage());
 }
 // if requested by AJAX request return JSON response
 if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-  $encoded = json_encode($responseArray); 
+  $encoded = json_encode($responseArray);
   header('Content-Type: application/json');
   echo $encoded;
 }
