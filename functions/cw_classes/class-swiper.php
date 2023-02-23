@@ -38,7 +38,10 @@ class CW_Swiper
    public $image_url_small;
    public $image_shape;
    public $image_demo;
+   public $data_drag;
+   public $data_speed;
 
+   public $smooth_scroll;
    public $swiper_data;
 
    public $custom_settings_bool = 'false';
@@ -81,7 +84,10 @@ class CW_Swiper
       $swiper_slide_class,
       $swiper_slide_data,
       $data_thumbs,
-      $swiper_container_content
+      $swiper_container_content,
+      $swiper_data_drag,
+      $smooth_scroll,
+      $data_speed
    ) {
       $this->root_theme = get_template_directory_uri();
 
@@ -92,8 +98,14 @@ class CW_Swiper
       $this->count_image = $this->cw_count_image();
       $this->image_shape = $this->cw_image_shape($image_shape);
       $this->image_demo = $this->cw_image_demo($image_demo);
+      $this->smooth_scroll = $this->cw_smooth_scroll($smooth_scroll);
       $this->data_margin = $this->cw_data_margin($data_margin);
       $this->caption_bool = $this->cw_caption_bool();
+
+
+
+      $this->data_drag = $this->cw_data_drag($swiper_data_drag);
+      $this->data_speed = $this->cw_data_speed($data_speed);
 
       $this->nav = $this->cw_nav($nav);
       $this->nav_color = $this->cw_nav_color($nav_color);
@@ -143,6 +155,71 @@ class CW_Swiper
    {
       $cw_type_gallery = get_sub_field('type_gallery');
       return $cw_type_gallery;
+   }
+
+   //Data speed
+   public function cw_data_speed($data_speed)
+   {
+      if ($this->custom_settings_bool == 'true') {
+         if (have_rows('gallery')) {
+            while (have_rows('gallery')) {
+               the_row();
+               $cw_data_speed = get_sub_field('data_speed');
+            }
+         } else {
+            $cw_data_speed = NULL;
+         }
+      } else {
+         $cw_data_speed = $data_speed;
+      }
+      return $cw_data_speed;
+   }
+
+
+   //Data drag
+   public function cw_data_drag($swiper_data_drag)
+   {
+
+      if ($this->custom_settings_bool == 'true') {
+         if (have_rows('gallery')) {
+            while (have_rows('gallery')) {
+               the_row();
+               if (get_sub_field('drag') == 1) {
+                  $cw_data_drag = 'true';
+               } else {
+                  $cw_data_drag =  'false';
+               }
+            }
+         } else {
+            $cw_data_drag = NULL;
+         }
+      } else {
+         $cw_data_drag = $swiper_data_drag;
+      }
+      return $cw_data_drag;
+   }
+
+   //Smooth_scroll
+   public function cw_smooth_scroll($smooth_scroll)
+   {
+
+      if ($this->custom_settings_bool == 'true') {
+         if (have_rows('gallery')) {
+            while (have_rows('gallery')) {
+               the_row();
+               if (get_sub_field('smooth_scrolling') == 1) {
+                  $cw_smooth_scroll = 'ticker';
+               } else {
+                  $cw_smooth_scroll = NULL;
+               }
+            }
+         } else {
+            $cw_smooth_scroll = NULL;
+         }
+      } else {
+         $cw_smooth_scroll = $smooth_scroll;
+      }
+      return $cw_smooth_scroll;
    }
 
 
@@ -607,6 +684,7 @@ class CW_Swiper
    {
       $data_array = array();
       $data_margin = $this->data_margin;
+      $data_speed = $this->data_speed;
       $nav = $this->nav;
       $dots = $this->dots;
       $effect = $this->effect;
@@ -620,10 +698,19 @@ class CW_Swiper
       $autoplay = $this->autoplay;
       $autoplay_time = $this->autoplay_time;
       $loop = $this->loop;
+      $data_drag = $this->data_drag;
 
 
       if ($data_margin) {
          $data_array[] = 'data-margin="' . $data_margin . '"';
+      }
+
+      if ($data_speed) {
+         $data_array[] = 'data-speed="' . $data_speed . '"';
+      }
+
+      if ($data_drag) {
+         $data_array[] = 'data-drag="' . $data_drag . '"';
       }
 
       if ($dots) {
@@ -718,6 +805,12 @@ class CW_Swiper
       $data = $this->swiper_data;
       $class = $this->swiper_container_class;
 
+      if ($this->smooth_scroll !== NULL) {
+         $smooth_scroll = $this->smooth_scroll;
+      } else {
+         $smooth_scroll = NULL;
+      }
+
       if ($this->image_shape !== NULL) {
          $image_shape = $this->image_shape;
       } else {
@@ -733,7 +826,7 @@ class CW_Swiper
          if ($type_gallery == 'Swiper') {
             $final_slider .= '<div class="swiper-container ' . $class . '" ' . $data . '>
             <div class="swiper">
-               <div class="swiper-wrapper">';
+               <div class="swiper-wrapper ' . $smooth_scroll . '">';
             if (have_rows('cw_images')) {
                while (have_rows('cw_images')) {
                   the_row();

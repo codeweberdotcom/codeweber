@@ -694,6 +694,63 @@
                     "endpoint": 0
                 },
                 {
+                    "key": "field_63f7db1651502",
+                    "label": "Smooth Scrolling",
+                    "name": "smooth_scrolling",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_63a2191b00174",
+                    "label": "Loop",
+                    "name": "cw_loop",
+                    "type": "true_false",
+                    "instructions": "Set to true to enable continuous loop mode.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_63f7db6d51503",
+                    "label": "Drag",
+                    "name": "drag",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_63a218e500172",
                     "label": "Autoplay",
                     "name": "cw_autoplay",
@@ -711,6 +768,27 @@
                     "ui": 1,
                     "ui_on_text": "",
                     "ui_off_text": ""
+                },
+                {
+                    "key": "field_63f7e265947ce",
+                    "label": "Data speed",
+                    "name": "data_speed",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "step": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_63a218fb00173",
@@ -732,25 +810,6 @@
                     "min": "",
                     "max": "",
                     "step": ""
-                },
-                {
-                    "key": "field_63a2191b00174",
-                    "label": "Loop",
-                    "name": "cw_loop",
-                    "type": "true_false",
-                    "instructions": "Set to true to enable continuous loop mode.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
                 }
             ]
         }
@@ -773,5 +832,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676371280
+    "modified": 1677190989
 }
