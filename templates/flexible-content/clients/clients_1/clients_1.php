@@ -43,6 +43,9 @@ $block = new CW_Settings(
          'loop' => 'loop',
          'autoheight' => 'false',
          'image_shape' => NULL,
+         'data-drag' => false,
+         'smooth-scroll' => true,
+         'data-speed' => '5000',
       ),
    )
 );

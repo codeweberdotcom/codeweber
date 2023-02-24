@@ -65,7 +65,7 @@ $terms = get_terms([
                <div class="project item col-md-6 col-xl-4 <?php echo implode(' ', $taxonomy_list_slug); ?>">
                   <figure class="overlay overlay-1 <?php echo get_theme_mod('codeweber_image'); ?>"><a href="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID), 'sandbox_hero_6'); ?>" data-glightbox data-gallery="shots-group"> <?php echo get_the_post_thumbnail($post->ID, $size_img[$size_finish]); ?></a>
                      <figcaption>
-                        <h5 class="from-top mb-0"><?php echo esc_html($post->post_title); ?></h5>
+                        <h3 class="h5 from-top mb-0"><?php echo esc_html($post->post_title); ?></h3>
                      </figcaption>
                   </figure>
                </div>

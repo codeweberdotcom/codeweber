@@ -681,6 +681,27 @@
             ]
         },
         {
+            "key": "field_63f642fee7b56",
+            "label": "PHP Mail",
+            "name": "php_mail",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_63f63e90bc050"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
+        },
+        {
             "key": "field_63853063c772e",
             "label": "Counters",
             "name": "",
@@ -768,6 +789,41 @@
             "maxlength": "",
             "rows": 3,
             "new_lines": ""
+        },
+        {
+            "key": "field_63f64727f96ed",
+            "label": "Subscribe Maichimp",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_63f64749f96ee",
+            "label": "Subscribe",
+            "name": "subscribe",
+            "type": "text",
+            "instructions": "After creating your own custom newsletter form through Signup Forms - Embedded Forms in Mailchimp website, replacing the newsletter form action with the one in your generated newsletter code should be enough to personalize the existing subscription forms in Sandbox.\r\n\r\nExample\r\n<form action=\"\/\/mc.us12.list-manage.com\/subscribe\/form-post?u=49ed0266759d57fc70b5d5514&amp;id=b31f56fcf5&amp;popup=true\" ...",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -788,5 +844,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676851188
+    "modified": 1677084676
 }

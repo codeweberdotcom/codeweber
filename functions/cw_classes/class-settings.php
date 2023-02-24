@@ -284,6 +284,13 @@ class CW_Settings
       // Check for Swiper
       if (isset($this->cw_settings['swiper']) && !$this->cw_settings['swiper'] == NULL) {
 
+         // Check for array ['swiper']['data-drag']
+         if (isset($cw_settings['swiper']['data-drag']) && !$cw_settings['swiper']['data-drag'] == NULL) {
+            $swiper_data_drag =  $cw_settings['swiper']['data-drag'];
+         } else {
+            $swiper_data_drag = NULL;
+         }
+
          // Check for array ['swiper']['swiper_container_class']
          if (isset($cw_settings['swiper']['swiper_container_class']) && !$cw_settings['swiper']['swiper_container_class'] == NULL) {
             $swiper_container_class =  $cw_settings['swiper']['swiper_container_class'];
@@ -508,6 +515,18 @@ class CW_Settings
          } else {
             $swiper_label_pattern = NULL;
          }
+         // Check for array ['swiper']['smooth-scroll']
+         if (isset($cw_settings['swiper']['smooth-scroll']) && !$cw_settings['swiper']['smooth-scroll'] == NULL) {
+            $smooth_scroll =  $cw_settings['swiper']['smooth-scroll'];
+         } else {
+            $smooth_scroll = NULL;
+         }
+         // Check for array ['swiper']['data_speed']
+         if (isset($cw_settings['swiper']['data_speed']) && !$cw_settings['swiper']['data_speed'] == NULL) {
+            $data_speed =  $cw_settings['swiper']['data_speed'];
+         } else {
+            $data_speed = NULL;
+         }
 
          $swiper = new CW_Swiper(
             $swiper_container_class,
@@ -544,7 +563,10 @@ class CW_Settings
             $swiper_slide_class,
             $swiper_slide_data,
             $data_thumbs,
-            $swiper_container_content
+            $swiper_container_content,
+            $swiper_data_drag,
+            $smooth_scroll,
+            $data_speed
          );
          $swiper_final = $swiper->final_swiper;
       } else {

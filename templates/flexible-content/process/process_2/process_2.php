@@ -17,7 +17,7 @@ $block = new CW_Settings(
 
       'features' => '<div class="col-md-6 col-lg-3"><span class="icon btn btn-circle btn-lg btn-primary pe-none mb-4"><span class="number">02</span></span><h4 class="mb-1">Prepare</h4><p class="mb-0">Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.</p></div><!--/column -->',
 
-      'features_pattern' => '<div class="col-md-6 col-lg-3 %1$s">%2$s<h4 class="mb-1">%3$s</h4><p class="mb-3">%4$s</p>%5$s</div><!--/column -->',
+      'features_pattern' => '<div class="col-md-6 col-lg-3 %1$s">%2$s<h3 class="mb-1">%3$s</h3><p class="mb-3">%4$s</p>%5$s</div><!--/column -->',
       'features_style_icon' => 'mb-4',
    )
 );

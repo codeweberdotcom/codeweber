@@ -59,7 +59,7 @@ class CW_Tab
    public function cw_tab_content($image_thumb_size, $image_big_size, $image_link_default, $class_col_1, $class_col_2)
    {
       $cw_tab_content = '';
-      $swiper_content_object = new CW_Swiper('overflow-hidden rounded', NULL, NULL, 'sandbox_about_4', 'sandbox_hero_6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', NULL, NULL, NULL, NULL, NULL, NULL);
+      $swiper_content_object = new CW_Swiper('overflow-hidden rounded', NULL, NULL, 'sandbox_about_4', 'sandbox_hero_6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
       $swiper_content = $swiper_content_object->final_swiper;
 
