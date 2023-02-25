@@ -166,9 +166,9 @@ class CW_Typewriter
          if ($this->typewriter_effect == 'cursor') {
             $final_typewriter = '<span class="' . $class_typewriter . ' typer text-' . $color_typewriter->color . '" ' . $data_typewriter . '></span><span class="' . $class_typewriter . ' cursor text-' . $color_typewriter->color . '" data-owner="typer"></span>';
          } elseif ($this->typewriter_effect == 'rotator-zoom') {
-            $final_typewriter = '<span class="rotator-zoom">' . $this->typewriter_clean_text . '</span>';
+            $final_typewriter = '<span class="rotator-zoom text-' . $color_typewriter->color . '">' . $this->typewriter_clean_text . '</span>';
          } elseif ($this->typewriter_effect == 'rotator-fade') {
-            $final_typewriter = '<span class="rotator-fade">' . $this->typewriter_clean_text . '</span>';
+            $final_typewriter = '<span class="rotator-fade text-' . $color_typewriter->color . '">' . $this->typewriter_clean_text . '</span>';
          } else {
             $final_typewriter = NULL;
          }

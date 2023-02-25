@@ -3,6 +3,7 @@
     <div class="swiper-wrapper">
       <?php if (have_rows('cw_slider_full')) : ?>
         <?php while (have_rows('cw_slider_full')) : the_row();
+
           $block = new CW_Settings(
             $cw_settings = array(
               'title' => 'We bring solutions to make life easier.',

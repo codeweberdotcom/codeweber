@@ -46,7 +46,7 @@ class CW_Labels
 
 
 
-      $features_item = new CW_Feature(NULL, NULL, NULL, NULL, $this->label_pattern, $this->label_demo,  $style, NULL, $class_icon);
+      $features_item = new CW_Feature(NULL, NULL, NULL, NULL, $this->label_pattern, $this->label_demo,  $style, NULL, $class_icon, NULL);
       $cw_final_label =  $features_item->features_item_final;
 
 
