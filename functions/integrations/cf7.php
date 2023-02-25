@@ -66,20 +66,26 @@ function сf7_modal_after_sent()
 
 /* --- Contact form 7  Demo Template Floating Plaeholder
 
-/* <h2 class="mb-3 text-start">Form order</h2>
-<p class="lead mb-6 text-start">Fill your email and password to sign in.</p>
+<h2 class="mb-3 text-start">Заказ звонка</h2>
+<p class="lead mb-6 text-start">Перезвоним в течение 15 минут</p>
 
 <div class="form-floating mb-3"> 
-[text text-name id:floatingName class:form-control placeholder "Name"]
-<label for="floatingName">Name</label>
+[text* text-name id:floatingName class:form-control placeholder "Ваше Имя"]
+<label for="floatingName">Ваше Имя</label>
 </div>
 
 <div class="form-floating mb-3"> 
-[email email id:floatingEmail class:form-control placeholder "Email"]
-<label for="floatingEmail">Email</label>
+[tel* tel-463 id:floatingTel class:form-control placeholder "+7(000) 123 45 67"]
+<label for="floatingTel">+7(000) 123 45 67</label>
 </div>
 
-<button type="submit" class="btn btn-primary rounded-pill btn-login">Submit</button>
+<div class="text-start mb-3 fs-13">
+Этот сайт защищен reCAPTCHA, и к нему применяется 
+    <a href="https://policies.google.com/privacy">Политика конфиденциальности</a> Google и
+    <a href="https://policies.google.com/terms">Условия предоставления услуг</a>.
+</div>
+<button type="submit" class="btn btn-primary rounded-pill btn-login">Отправить</button>
+
 
 
 /*  Function floating CF7

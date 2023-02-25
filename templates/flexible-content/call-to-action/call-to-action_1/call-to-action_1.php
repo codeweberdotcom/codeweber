@@ -7,8 +7,6 @@
 
 $block = new CW_Settings(
    $cw_settings = array(
-      // 'subtitle' => 'FAQ',
-      // 'patternSubtitle' => '<div class="fs-15 text-uppercase text-primary mb-3">%s</div>',
 
       'title' => 'Join Our Community',
       'patternTitle' => '<h2 class="display-4 mb-3 text-center">%s</h2>',
@@ -21,9 +19,6 @@ $block = new CW_Settings(
 
       'background_class_default' => 'wrapper image-wrapper bg-auto no-overlay bg-image text-center py-14 py-md-16 bg-map',
       'background_data_default' => '/dist/img/map.png',
-      //'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      //'background_video_url' => '/dist/media/movie2.mp4',
-      //'background_pattern_url' => '/dist/img/pattern.png',
 
       'divider' => true,
 

@@ -6,19 +6,15 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Trusted by over 300+ clients',
-      'patternTitle' => ' <h2 class="display-4 mb-3 pe-xxl-5">%s</h2>',
+      'patternTitle' => ' <h3 class="display-4 mb-3 pe-xxl-5">%s</h3>',
 
       'paragraph' => 'We bring solutions to make life easier for our customers.',
       'patternParagraph' => '<p class="lead fs-lg mb-0 pe-xxl-5">%s</p>',
 
       'subtitle' => 'Our Clients',
-      'patternSubtitle' => '<div class="h2 fs-15 text-uppercase text-muted mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="h2 fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
       'background_class_default' => 'wrapper bg-light',
-      // 'background_data_default' => '/dist/img/photos/bg16.png',
-      // 'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      // 'background_video_url' => '/dist/media/movie2.mp4',
-      // 'background_pattern_url' => '/dist/img/pattern.png',
 
       'swiper' => array(
          'swiper_container_class' => 'clients',
@@ -50,6 +46,7 @@ $block = new CW_Settings(
          'autoheight' => 'false',
          'image_shape' => NULL,
       ),
+      // 'divider' => true,
    )
 );
 ?>
