@@ -37,7 +37,7 @@ $block = new CW_Settings(
          'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
          'image_thumb_size' => 'testimonial_16',
          'image_demo' => '<div class="img-mask mask-3"><img src="' . get_template_directory_uri() . '/dist/img/photos/about28.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about28@2x.jpg 2x" alt="" /></div>',
-         'image_big_size' => 'project_1',
+         'image_big_size' => 'sandbox_hero_6',
          'img_link' => '/dist/img/photos/about28.jpg',
          'image_shape' => 'img-mask mask-3',
       ),
