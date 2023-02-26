@@ -3,7 +3,7 @@
         <div class="row gx-lg-0 gy-6">
            <div class="col-lg-4">
               <div class="widget">
-                 <?php echo codeweber_logo_dark_link(); ?>
+                 <?php echo codeweber_logo(NULL); ?>
                  <p class="lead mb-0"><?php esc_html_e('We are trusted by over 5000+ clients. Join them by using our services and grow your business.', 'codeweber'); ?></p>
               </div>
               <!-- /.widget -->

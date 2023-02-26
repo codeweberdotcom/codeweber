@@ -10,7 +10,7 @@
                  </div>
                  <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                     <div class="offcanvas-header d-lg-none">
-                       <?php echo codeweber_logo_light_link(); ?>
+                       <?php echo codeweber_logo(NULL); ?>
                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
@@ -136,7 +136,7 @@
            <!--/.modal -->
            <div class="offcanvas offcanvas-end text-inverse" id="offcanvas-info" data-bs-scroll="true">
               <div class="offcanvas-header">
-                 <?php echo codeweber_logo_light_link(); ?>
+                 <?php echo codeweber_logo(NULL); ?>
                  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body pb-6">

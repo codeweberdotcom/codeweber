@@ -13,11 +13,11 @@ if ($args['style_nav'] == 'transparent') {
    <nav class="navbar navbar-expand-lg classic transparent <?php echo $class_nav; ?>">
       <div class="container flex-lg-row flex-nowrap align-items-center">
          <div class="navbar-brand w-100 pe-3">
-            <?php echo codeweber_logo_dark_link(); ?>
+            <?php echo codeweber_logo(NULL); ?>
          </div>
          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">
-               <?php echo codeweber_logo_light_link(); ?>
+               <?php echo codeweber_logo('light'); ?>
                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
@@ -136,7 +136,7 @@ if ($args['style_nav'] == 'transparent') {
 
    <div class="offcanvas offcanvas-end text-dark bg-light" id="offcanvas-info" data-bs-scroll="true">
       <div class="offcanvas-header">
-         <?php echo codeweber_logo_light_link(); ?>
+         <?php echo codeweber_logo('dark'); ?>
          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body pb-6">
