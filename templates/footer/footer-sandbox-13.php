@@ -47,7 +47,7 @@
                  <div class="newsletter-wrapper">
                     <!-- Begin Mailchimp Signup Form -->
                     <div id="mc_embed_signup2">
-                       <form action="https://elemisfreebies.us20.list-manage.com/subscribe/post?u=aa4947f70a475ce162057838d&amp;id=b49ef47a9a" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank" novalidate>
+                       <form action="<?php the_field('subscribe', 'option'); ?>" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate dark-fields" target="_blank" novalidate>
                           <div id="mc_embed_signup_scroll2">
                              <div class="mc-field-group input-group form-floating">
                                 <input type="email" value="" name="EMAIL" class="required email form-control <?php echo GetThemeButton(); ?>" placeholder="Email Address" id="mce-EMAIL2">
