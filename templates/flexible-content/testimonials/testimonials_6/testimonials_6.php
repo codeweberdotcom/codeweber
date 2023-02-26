@@ -63,8 +63,6 @@ $block = new CW_Settings(
       // 'divider' => true,
 
       'shapes' => array('<div class="shape bg-dot primary rellax w-18 h-18" data-rellax-speed="1" style="top: 0; left: -1.4rem; z-index: 0;"></div>'),
-
-
    )
 );
 ?>
