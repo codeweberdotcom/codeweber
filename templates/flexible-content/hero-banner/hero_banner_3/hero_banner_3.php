@@ -14,7 +14,7 @@ $block = new CW_Settings(
     // 'subtitle' => 'Grow Your Business with Our Solutions.',
     // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
-    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    'buttons_pattern' => '<div class="d-flex flex-wrap justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
     'buttons' => '<div><a class="btn btn-lg btn-primary rounded">Get Started</a></div>',
 
     'background_class_default' => 'wrapper bg-dark',
