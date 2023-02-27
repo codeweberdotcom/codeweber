@@ -1,12 +1,35 @@
+<?php
+
+/**
+ * Contact 11
+ */
+
+$block = new CW_Settings(
+   $cw_settings = array(
+      'title' => 'Request Photography Pricing',
+      'patternTitle' => '<h2 class="display-5 mb-3 text-center">%s</h2>',
+
+      'paragraph' => 'For more information please get in touch using the form below:',
+      'patternParagraph' => '<p class="lead fs-lg text-center mb-10">%s</p>',
+
+      'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay',
+      'background_data_default' => '/dist/img/photos/bg36.jpg',
+
+   )
+);
+?>
+
 <section>
-   <div class="wrapper image-wrapper bg-image bg-overlay" data-image-src="./assets/img/photos/bg36.jpg">
+   <div id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
       <div class="container py-15 py-md-17">
          <div class="row">
             <div class="col-xl-9 mx-auto">
                <div class="card border-0 bg-white-900">
                   <div class="card-body py-lg-13 px-lg-16">
-                     <h2 class="display-5 mb-3 text-center">Request Photography Pricing</h2>
-                     <p class="lead fs-lg text-center mb-10">For more information please get in touch using the form below:</p>
+                     <?php echo $block->title; ?>
+                     <!--/title -->
+                     <?php echo $block->paragraph; ?>
+                     <!--/paragraph -->
                      <form class="contact-form needs-validation" method="post" action="./assets/php/contact.php" novalidate>
                         <div class="messages"></div>
                         <div class="row gx-4">

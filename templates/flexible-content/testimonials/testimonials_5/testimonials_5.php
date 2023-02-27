@@ -27,9 +27,6 @@ $block = new CW_Settings(
       'subtitle' => 'Customer satisfaction is our major goal. See what our customers are saying about us.',
       'patternSubtitle' => '<p class="lead text-center mb-6 px-md-16 px-lg-0">%s</p>',
 
-      // 'paragraph' => 'Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.',
-      // 'patternParagraph' => '<p>%s</p>',
-
       'buttons' => '<a href="#" class="btn btn-primary rounded-pill">All Testimonials</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 

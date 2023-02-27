@@ -60,6 +60,8 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('sandbox_clients_logo_1-1', 272, 80, false);
 		add_image_size('sandbox_clients_logo_2', 140, 90, true);
 
+		add_image_size('contact_2', 480, 550, true);
+
 		add_image_size('testimonial_2', 575, 383, true);
 		add_image_size('testimonial_8', 455, 655, true);
 		add_image_size('testimonial_16', 385, 360, true);

@@ -1,10 +1,38 @@
-<section class="wrapper bg-light">
+<?php
+
+/**
+ * Contact 7
+ */
+
+$final_icon = '<img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/puzzle-2.svg" class="svg-inject icon-svg icon-svg-md mb-4" alt="" />';
+$icon = new CW_Icon(NULL, NULL, 'mb-4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, $final_icon, NULL);
+
+$block = new CW_Settings(
+   $cw_settings = array(
+      'title' => 'Join Our Community',
+      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+
+      'subtitle' => 'We are trusted by over 5000+ clients. Join them by using our services and grow your business.',
+      'patternSubtitle' => '<p class="lead fs-lg mb-6 px-xl-10 px-xxl-15">%s</p>',
+
+      'background_class_default' => 'wrapper bg-light',
+      'divider' => true,
+
+   )
+);
+?>
+
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16 text-center">
       <div class="row">
          <div class="col-md-9 col-lg-7 col-xl-7 mx-auto text-center">
-            <img src="./assets/img/icons/lineal/puzzle-2.svg" class="svg-inject icon-svg icon-svg-md mb-4" alt="" />
-            <h2 class="display-4 mb-3">Join Our Community</h2>
-            <p class="lead fs-lg mb-6 px-xl-10 px-xxl-15">We are trusted by over 5000+ clients. Join them by using our services and grow your business.</p>
+            <?php echo $icon->final_icon; ?>
+            <!--/final_icon -->
+            <?php echo $block->title; ?>
+            <!--/title -->
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
       </div>
@@ -39,5 +67,9 @@
       <!-- /.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

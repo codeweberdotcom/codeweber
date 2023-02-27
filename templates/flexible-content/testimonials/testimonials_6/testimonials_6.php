@@ -43,7 +43,7 @@ $block = new CW_Settings(
          array(
             '/dist/img/photos/g5.jpg',
             NULL,
-            'project_1',
+            'sandbox_hero_6',
             '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
             '<figure class="rounded mt-md-10 position-relative"><img src="' . get_template_directory_uri() . '/dist/img/photos/g5.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/g5@2x.jpg 2x" alt=""></figure>'
          ),
@@ -51,7 +51,7 @@ $block = new CW_Settings(
          array(
             '/dist/img/photos/g6.jpg',
             NULL,
-            'project_1',
+            'sandbox_hero_6',
             '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
             '<figure class="rounded"><img src="' . get_template_directory_uri() . '/dist/img/photos/g6.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/g6@2x.jpg 2x" alt=""></figure>'
          ),
@@ -63,10 +63,6 @@ $block = new CW_Settings(
       // 'divider' => true,
 
       'shapes' => array('<div class="shape bg-dot primary rellax w-18 h-18" data-rellax-speed="1" style="top: 0; left: -1.4rem; z-index: 0;"></div>'),
-
-      'features' => '<h3 class="counter text-nowrap">5000+</h3><p class="mb-0">Satisfied Customers</p>',
-      'features_pattern' => '<h3 class="counter text-nowrap">%3$s</h3><p class="mb-0">%4$s</p>',
-
    )
 );
 ?>
