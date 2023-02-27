@@ -351,7 +351,7 @@ function codeweber_logo($color, $footer, $transparent)
     }
 
 
-    if ($transparent == true) {
+    if ($transparent == 'transparent') {
         if (get_custom_logo()) {
             $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';
         } else {
@@ -363,7 +363,7 @@ function codeweber_logo($color, $footer, $transparent)
         } else {
             $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_template_directory_uri() . '/dist/img/logo-light.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-light@2x.png 2x" alt="" />';
         }
-    } elseif ($transparent !== true) {
+    } else {
         if ($color == 'dark') {
             if (get_custom_logo()) {
                 $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';

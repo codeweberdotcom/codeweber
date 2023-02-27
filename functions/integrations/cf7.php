@@ -9,9 +9,6 @@
 // https://orbitingweb.com/blog/prevent-cf7-from-loading-css-js/
 
 
-
-
-
 add_filter('wpcf7_form_elements', function ($content) {
     $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
     $content = str_replace('<br />', '', $content);
@@ -63,6 +60,29 @@ function сf7_modal_after_sent()
 <?php
 }
 
+
+
+add_filter('wpcf7_form_class_attr', 'custom_custom_form_class_attr');
+
+function custom_custom_form_class_attr($class)
+{
+    $class .= ' needs-validation';
+    return $class;
+}
+
+
+// Filter Form Elements
+// Include in your child theme/theme's functions.php
+add_filter('wpcf7_form_elements', 'dd_wpcf7_form_elements_replace');
+function dd_wpcf7_form_elements_replace($content)
+{
+
+
+    $content = preg_replace('/aria-required="true"/', 'aria-required="true"  required', $content);
+
+
+    return $content;
+}
 
 /* --- Contact form 7  Demo Template Floating Plaeholder
 

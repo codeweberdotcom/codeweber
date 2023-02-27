@@ -1,13 +1,14 @@
 <?php
 
 if ($args['style_nav'] == 'transparent') {
+   echo $args["style_nav"];
    $class_nav = 'position-absolute ';
    $class_nav .= $args['bg_nav'];
-   $bool_transparent = true;
 } elseif ($args['style_nav'] == 'solid') {
    $class_nav = $args['bg_nav'];
-   $bool_transparent = NULL;
 };
+
+$transparent_style = $args['style_nav'];
 
 if ($args['bg_nav'] == 'nav-dark') {
    $color_logo = 'light';
@@ -22,7 +23,7 @@ if ($args['bg_nav'] == 'nav-dark') {
    <nav class="navbar navbar-expand-lg classic transparent <?php echo $class_nav; ?>">
       <div class="container flex-lg-row flex-nowrap align-items-center">
          <div class="navbar-brand w-100 pe-3">
-            <?php echo codeweber_logo($color_logo, NULL, $bool_transparent); ?>
+            <?php echo codeweber_logo($color_logo, NULL, $transparent_style); ?>
          </div>
          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">

@@ -406,3 +406,14 @@ ul.products li.product figure img.attachment-archive_4.size-archive_4:hover {
 .col-lg-5.mb-n18.offset-lg-1.order-lg-2 {
   margin-bottom: 0 !important;
 }
+
+/*
+* CF7
+*/
+form.wpcf7-form label {
+  left: 10px;
+}
+
+.wpcf7 .wpcf7-response-output {
+  display: none;
+}
