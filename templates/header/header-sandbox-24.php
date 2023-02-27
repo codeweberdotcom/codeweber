@@ -3,7 +3,7 @@
           <div class="container flex-lg-column">
              <div class="topbar d-flex flex-row justify-content-lg-center align-items-center">
                 <div class="navbar-brand">
-                   <?php echo codeweber_logo(NULL); ?>
+                   <?php echo codeweber_logo(NULL, NULL, NULL); ?>
                 </div>
              </div>
              <!-- /.d-flex -->
@@ -19,7 +19,7 @@
                 <!-- /.navbar-other -->
                 <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                    <div class="offcanvas-header d-lg-none">
-                      <?php echo codeweber_logo(NULL); ?>
+                      <?php echo codeweber_logo(NULL, NULL, NULL); ?>
                       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                    </div>
                    <div class="offcanvas-body d-flex flex-column h-100">
@@ -62,7 +62,7 @@
        <!-- /.navbar -->
        <div class="offcanvas offcanvas-end text-inverse" id="offcanvas-info" data-bs-scroll="true">
           <div class="offcanvas-header">
-             <?php echo codeweber_logo(NULL); ?>
+             <?php echo codeweber_logo(NULL, NULL, NULL); ?>
              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body pb-6">

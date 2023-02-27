@@ -3,7 +3,7 @@
         <div class="row gx-lg-0 gy-6">
            <div class="col-lg-4">
               <div class="widget">
-                 <?php echo codeweber_logo(NULL); ?>
+                 <?php echo codeweber_logo(NULL, NULL, NULL); ?>
                  <p class="lead mb-0"><?php esc_html_e("I'm Caitlyn Sandbox, a photographer specializing in food, drink and product photography.", 'codeweber'); ?></p>
               </div>
               <!-- /.widget -->

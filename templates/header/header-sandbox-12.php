@@ -28,7 +28,7 @@
              <div class="navbar-collapse-wrapper bg-white d-flex flex-row align-items-center">
                 <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                    <div class="offcanvas-header d-lg-none">
-                      <?php echo codeweber_logo(NULL); ?>
+                      <?php echo codeweber_logo(NULL, NULL, NULL); ?>
                       <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                    </div>
                    <div class="offcanvas-body d-flex flex-column h-100">
@@ -69,7 +69,7 @@
        <!-- /.navbar -->
        <div class="offcanvas offcanvas-end text-inverse" id="offcanvas-info" data-bs-scroll="true">
           <div class="offcanvas-header">
-             <?php echo codeweber_logo(NULL); ?>
+             <?php echo codeweber_logo(NULL, NULL, NULL); ?>
              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body pb-6">

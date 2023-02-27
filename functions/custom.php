@@ -327,44 +327,61 @@ add_filter('title_save_pre', 'auto_generate_post_title');
 
 // --- Logo Dark && Light ---
 
-function codeweber_logo($color)
+function codeweber_logo($color, $footer, $transparent)
+
 {
     $logo = get_theme_mod('custom_logo');
     $image = wp_get_attachment_image_src($logo, 'full');
-    $logo_main_url = $image[0];
+
+    if (isset($image[0])) {
+        $logo_main_url = $image[0];
+    } else {
+        $logo_main_url = get_template_directory_uri() . '/dist/img/logo-dark.png"';
+    }
 
 
     $codeweber_logo = '<a href="' . get_home_url() . '">';
 
-    if ($color == NULL) {
-        if (get_theme_mod('dark_logo')) {
-            $codeweber_logo .= '<img class="logo-dark" src="' . get_theme_mod('dark_logo') . '" srcset="' . get_theme_mod('dark_logo') . '" alt="" />';
-        } else {
-            $codeweber_logo .= '<img class="logo-dark" src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
-        }
-
-
-        if (get_custom_logo()) {
-            $codeweber_logo .= '<img class="logo-light" src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';
-        } else {
-            $codeweber_logo .= '<img class="logo-light" src="' . get_template_directory_uri() . '/dist/img/logo-light.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-light@2x.png 2x" alt="" />';
-        }
+    if ($footer == true) {
+        $class_logo_dark = ' class="mb-4" ';
+        $class_logo_light = ' class="mb-4" ';
+    } elseif ($footer == NULL) {
+        $class_logo_dark = ' class="logo-dark" ';
+        $class_logo_light = ' class="logo-light" ';
     }
 
 
-    if ($color == 'dark') {
-        if (get_theme_mod('dark_logo')) {
-            $codeweber_logo .= '<img class="mb-4" src="' . get_theme_mod('dark_logo') . '" srcset="' . get_theme_mod('dark_logo') . '" alt="" />';
-        } else {
-            $codeweber_logo .= '<img class="mb-4" src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
-        }
-    }
-
-    if ($color == 'light') {
+    if ($transparent == true) {
         if (get_custom_logo()) {
-            $codeweber_logo .= '<img class="mb-4" src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';
+            $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';
         } else {
-            $codeweber_logo .= '<img class="mb-4" src="' . get_template_directory_uri() . '/dist/img/logo-light.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-light@2x.png 2x" alt="" />';
+            $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
+        }
+
+        if (get_theme_mod('dark_logo')) {
+            $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_theme_mod('dark_logo') . '" srcset="' . get_theme_mod('dark_logo') . '" alt="" />';
+        } else {
+            $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_template_directory_uri() . '/dist/img/logo-light.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-light@2x.png 2x" alt="" />';
+        }
+    } elseif ($transparent !== true) {
+        if ($color == 'dark') {
+            if (get_custom_logo()) {
+                $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';
+            } else {
+                $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
+            }
+        } elseif ($color == 'light') {
+            if (get_theme_mod('dark_logo')) {
+                $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_theme_mod('dark_logo') . '" srcset="' . get_theme_mod('dark_logo') . '" alt="" />';
+            } else {
+                $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_template_directory_uri() . '/dist/img/logo-light.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-light@2x.png 2x" alt="" />';
+            }
+        } else {
+            if (get_custom_logo()) {
+                $codeweber_logo .= '<img src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';
+            } else {
+                $codeweber_logo .= '<img src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
+            }
         }
     }
 
@@ -372,32 +389,6 @@ function codeweber_logo($color)
 
     return $codeweber_logo;
 };
-
-
-// // --- Logo Dark Link ---
-
-// function codeweber_logod()
-// {
-//     if (get_theme_mod('dark_logo')) :
-//         $codeweber_logo_header_dark = '<a href="' . get_home_url() . '" class="dark-logo-link" rel="home" aria-current="page"><img class="img-fluid" src="' . get_theme_mod('dark_logo') . '"/></a>';
-//     else :
-//         $codeweber_logo_header_dark = '<img src="' . get_template_directory_uri() . '/dist/img/logo-dark.png">';
-//     endif;
-//     return $codeweber_logo_header_dark;
-// };
-
-
-// // --- Logo Light Link ---
-
-// function codeweber_logos()
-// {
-//     if (get_custom_logo()) :
-//         $codeweber_logo_light = get_custom_logo();
-//     else :
-//         $codeweber_logo_light = '<img src="' . get_template_directory_uri() . '/dist/img/logo-light.png">';
-//     endif;
-//     return $codeweber_logo_light;
-// };
 
 
 add_filter('manage_posts_columns', 'posts_columns', 5);
@@ -411,7 +402,6 @@ function posts_columns($defaults)
     $defaults['riv_post_thumbs'] = __('Post Image', 'codeweber');
     return $defaults;
 }
-
 
 /**
  * Get Star Rate - Rating - ACF
