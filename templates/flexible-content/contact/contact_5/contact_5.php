@@ -11,6 +11,8 @@ $e_mail_address_1 = '';
 $phone_number = '00 (123) 456 78 90';
 $phone_number_1 = '';
 
+$cf_form = '';
+
 if (get_field('address_1', 'option')) {
    $address_line_1 = get_field('address_1', 'option');
 }
@@ -28,6 +30,13 @@ if (get_field('phone', 'option')) {
 }
 if (get_field('phone_1', 'option')) {
    $phone_number_1 = get_field('phone_1', 'option');
+}
+$contact_form = get_sub_field('contact_form');
+if ($contact_form) {
+   foreach ($contact_form as $post_ids) {
+      $contact_link =  do_shortcode('[contact-form-7 id="' . $post_ids . '"]');
+   }
+   $cf_form = $contact_link;
 }
 
 
@@ -49,10 +58,8 @@ $block = new CW_Settings(
          <div class="col-xl-10 mx-auto">
             <div class="row gy-10 gx-lg-8 gx-xl-12">
                <div class="col-lg-8 <?php echo $block->column_class_1; ?>">
-
-                  [contact-form-7 id="3646" title="Contact demo 5"]
+                  <?php echo $cf_form; ?>
                   <!-- /form -->
-
                </div>
                <!--/column -->
                <div class="col-lg-4 <?php echo $block->column_class_2; ?>">
