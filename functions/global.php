@@ -182,6 +182,31 @@ function sandbox_frame_close()
 };
 
 
+// Sandbox Container Content Open Function
+
+// function codeweber_container_start()
+// {
+// 	if (is_page(array(sanitize_title('cookie-policy'), sanitize_title('terms-and-conditions')))) {
+// 		echo '<div class="container py-14 py-md-16">';
+// 	}
+// }
+
+// add_action('page_content_start', 'codeweber_container_start', 0);
+
+
+// // Sandbox Container Content Close Function
+
+// function codeweber_container_end()
+// {
+// 	if (is_page(sanitize_title('cookie-policy'), sanitize_title('terms-and-conditions'))) {
+// 		echo '</div>';
+// 	}
+// }
+
+// add_action('page_content_end', 'codeweber_container_end', 0);
+
+
+
 /**
  * Page title Function 
  */
