@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-02-20 11:40+0000\n"
+"PO-Revision-Date: 2023-02-27 10:58+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -59,10 +59,6 @@ msgstr "Модульный шаблон Wordpress на базе Bootstrap 5 и G
 msgid "Account"
 msgstr ""
 
-#: functions/cpt/cpt-projects.php:13
-msgid "Add"
-msgstr ""
-
 #: functions/lib/class-wp-bootstrap-navwalker.php:392
 msgid "Add a menu"
 msgstr "Добавить меню"
@@ -71,9 +67,13 @@ msgstr "Добавить меню"
 msgid "Add Client"
 msgstr "Добавить Клиента"
 
-#: functions/cpt/cpt-clients.php:15 functions/cpt/cpt-projects.php:14
+#: functions/cpt/cpt-projects.php:14
 msgid "Add New"
 msgstr "Добавить "
+
+#: functions/cpt/cpt-clients.php:15
+msgid "Add New Client"
+msgstr "Добавить Клиента"
 
 #: functions/cpt/cpt-price_package.php:16
 msgid "Add New Price Package"
@@ -90,6 +90,10 @@ msgstr "Добавить Сотрудника"
 #: functions/cpt/cpt-price_package.php:15
 msgid "Add Price Packages"
 msgstr "Добавить Пакет"
+
+#: functions/cpt/cpt-projects.php:13
+msgid "Add Project"
+msgstr "Добавить Проект"
 
 #: functions/cpt/cpt-services.php:15
 msgid "Add Service"
@@ -395,7 +399,7 @@ msgstr "Информация о покупателе"
 
 #: functions/customize.php:31
 msgid "Dark Logo"
-msgstr "Темный Логотип"
+msgstr "Светлый Логотип"
 
 #: single-projects-1.php:141 single-projects-2.php:103 single-projects-3.php:86
 #: single-projects.php:105
@@ -959,6 +963,10 @@ msgstr "Следующий"
 msgid "No Client"
 msgstr "Нет Клиентов"
 
+#: functions/custom.php:373
+msgid "No Thumbnail For Post"
+msgstr "Нет превью"
+
 #: functions/navmenus.php:19
 msgid "Offcanvas Menu Left"
 msgstr ""
@@ -1068,6 +1076,10 @@ msgstr "Введите ваше имя, пожалуйста."
 #: templates/footer/footer-sandbox-25_cw.php:43
 msgid "Popular Posts"
 msgstr "Популярные статьи"
+
+#: functions/custom.php:363
+msgid "Post Image"
+msgstr "Фото записи"
 
 #: functions/widgets.php:230
 msgid "Post tags"
@@ -1325,8 +1337,8 @@ msgid "Service updated"
 msgstr "Услуга обновлена"
 
 #: functions/customize.php:525 functions/navmenus.php:18
-#: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:14
-#: functions/cpt/cpt-services.php:41
+#: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:13
+#: functions/cpt/cpt-services.php:14 functions/cpt/cpt-services.php:41
 #: templates/footer/footer-sandbox-25_cw.php:28
 #: templates/sections/home-services.php:5
 msgid "Services"
@@ -1412,9 +1424,9 @@ msgstr ""
 msgid "Squared"
 msgstr "Без Скругления"
 
-#: functions/cpt/cpt-services.php:13 functions/cpt/cpt-staff.php:11
-#: functions/cpt/cpt-staff.php:12 functions/cpt/cpt-staff.php:13
-#: functions/cpt/cpt-staff.php:31 functions/cpt/cpt-staff.php:40
+#: functions/cpt/cpt-staff.php:11 functions/cpt/cpt-staff.php:12
+#: functions/cpt/cpt-staff.php:13 functions/cpt/cpt-staff.php:31
+#: functions/cpt/cpt-staff.php:40
 msgid "Staff"
 msgstr "Сотрудники"
 

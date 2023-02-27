@@ -1,28 +1,31 @@
 <?php
 // --- New Gutenberg Block Layout Codeweber---
-function checkCategoryOrder($categories)
-{
-   //custom category array
-   $temp = array(
-      'slug'  => 'codeweber',
-      'title' => 'Codeweber Blocks'
-   );
-   $temp_1 = array(
-      'slug'  => 'codeweber_elements',
-      'title' => 'Codeweber Elements'
-   );
-   //new categories array and adding new custom category at first location
-   $newCategories = array();
-   $newCategories[0] = $temp;
-   $newCategories[1] = $temp_1;
-   //appending original categories in the new array
-   foreach ($categories as $category) {
-      $newCategories[] = $category;
+if (!function_exists('checkCategoryOrder')) {
+   function checkCategoryOrder($categories)
+   {
+      //custom category array
+      $temp = array(
+         'slug'  => 'codeweber',
+         'title' => 'Codeweber Blocks'
+      );
+      $temp_1 = array(
+         'slug'  => 'codeweber_elements',
+         'title' => 'Codeweber Elements'
+      );
+      //new categories array and adding new custom category at first location
+      $newCategories = array();
+      $newCategories[0] = $temp;
+      $newCategories[1] = $temp_1;
+      //appending original categories in the new array
+      foreach ($categories as $category) {
+         $newCategories[] = $category;
+      }
+      //return new categories
+      return $newCategories;
    }
-   //return new categories
-   return $newCategories;
 }
 add_filter('block_categories_all', 'checkCategoryOrder', 99, 1);
+
 
 
 

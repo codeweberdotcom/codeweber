@@ -375,7 +375,7 @@ class CW_Buttons
                $button = new CW_Button($button_item_class, $data);
                $buttons_array[] = '<div>' . $button->final_button . '</div>';
             } else {
-               $button = new CW_Button($button_item_class . ' me-2', NULL);
+               $button = new CW_Button($button_item_class . 'mb-2 me-2', NULL);
                $buttons_array[] = '<span>' . $button->final_button . '</span>';
             }
          }

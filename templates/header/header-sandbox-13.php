@@ -3,7 +3,7 @@
           <div class="container justify-content-between align-items-center">
              <div class="d-flex flex-row w-100 justify-content-between align-items-center d-lg-none">
                 <div class="navbar-brand">
-                   <?php echo codeweber_logo_light_link(); ?>
+                   <?php echo codeweber_logo(NULL, NULL, NULL); ?>
                 </div>
                 <div class="navbar-other ms-auto">
                    <ul class="navbar-nav flex-row align-items-center">
@@ -19,8 +19,8 @@
              <div class="navbar-collapse-wrapper d-flex flex-row align-items-center w-100">
                 <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                    <div class="offcanvas-header mx-lg-auto order-0 order-lg-1 d-lg-flex px-lg-15">
-                      <?php echo codeweber_logo_light_link(); ?>
-                     
+                      <?php echo codeweber_logo(NULL, NULL, NULL); ?>
+
                       <button type="button" class="btn-close btn-close-white d-lg-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                    </div>
                    <div class="w-100 order-1 order-lg-0 d-lg-flex offcanvas-body">

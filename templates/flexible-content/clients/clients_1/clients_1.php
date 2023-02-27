@@ -9,10 +9,6 @@ $block = new CW_Settings(
       'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted text-center mb-8">%s</h2>',
 
       'background_class_default' => 'wrapper wrapper-border bg-light',
-      // 'background_data_default' => '/dist/img/photos/bg16.png',
-      // 'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      // 'background_video_url' => '/dist/media/movie2.mp4',
-      // 'background_pattern_url' => '/dist/img/pattern.png',
 
       'swiper' => array(
          'swiper_container_class' => 'clients',
@@ -47,6 +43,7 @@ $block = new CW_Settings(
          'smooth-scroll' => true,
          'data-speed' => '5000',
       ),
+      //'divider' => true,
    )
 );
 ?>

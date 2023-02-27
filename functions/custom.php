@@ -325,30 +325,69 @@ function auto_generate_post_title($title)
 add_filter('title_save_pre', 'auto_generate_post_title');
 
 
+// --- Logo Dark && Light ---
 
-// --- Logo Dark Link ---
+function codeweber_logo($color, $footer, $transparent)
 
-function codeweber_logo_dark_link()
 {
-    if (get_theme_mod('dark_logo')) :
-        $codeweber_logo_header_dark = '<a href="' . get_home_url() . '" class="dark-logo-link" rel="home" aria-current="page"><img class="img-fluid" src="' . get_theme_mod('dark_logo') . '"/></a>';
-    else :
-        $codeweber_logo_header_dark = get_template_directory_uri() . '/dist/img/logo-dark.png';
-    endif;
-    return $codeweber_logo_header_dark;
-};
+    $logo = get_theme_mod('custom_logo');
+    $image = wp_get_attachment_image_src($logo, 'full');
+
+    if (isset($image[0])) {
+        $logo_main_url = $image[0];
+    } else {
+        $logo_main_url = get_template_directory_uri() . '/dist/img/logo-dark.png"';
+    }
 
 
-// --- Logo Light Link ---
+    $codeweber_logo = '<a href="' . get_home_url() . '">';
 
-function codeweber_logo_light_link()
-{
-    if (get_custom_logo()) :
-        $codeweber_logo_light = get_custom_logo();
-    else :
-        $codeweber_logo_light = get_template_directory_uri() . '/dist/img/logo-light.png';
-    endif;
-    return $codeweber_logo_light;
+    if ($footer == true) {
+        $class_logo_dark = ' class="mb-4" ';
+        $class_logo_light = ' class="mb-4" ';
+    } elseif ($footer == NULL) {
+        $class_logo_dark = ' class="logo-dark" ';
+        $class_logo_light = ' class="logo-light" ';
+    }
+
+
+    if ($transparent == true) {
+        if (get_custom_logo()) {
+            $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';
+        } else {
+            $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
+        }
+
+        if (get_theme_mod('light_logo')) {
+            $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_theme_mod('light_logo') . '" srcset="' . get_theme_mod('light_logo') . '" alt="" />';
+        } else {
+            $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_template_directory_uri() . '/dist/img/logo-light.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-light@2x.png 2x" alt="" />';
+        }
+    } elseif ($transparent !== true) {
+        if ($color == 'dark') {
+            if (get_custom_logo()) {
+                $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';
+            } else {
+                $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
+            }
+        } elseif ($color == 'light') {
+            if (get_theme_mod('light_logo')) {
+                $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_theme_mod('light_logo') . '" srcset="' . get_theme_mod('light_logo') . '" alt="" />';
+            } else {
+                $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_template_directory_uri() . '/dist/img/logo-light.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-light@2x.png 2x" alt="" />';
+            }
+        } else {
+            if (get_custom_logo()) {
+                $codeweber_logo .= '<img src="' . $logo_main_url . '" srcset="' . $logo_main_url . '" alt="" />';
+            } else {
+                $codeweber_logo .= '<img src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
+            }
+        }
+    }
+
+    $codeweber_logo .= '</a>';
+
+    return $codeweber_logo;
 };
 
 
@@ -363,7 +402,6 @@ function posts_columns($defaults)
     $defaults['riv_post_thumbs'] = __('Post Image', 'codeweber');
     return $defaults;
 }
-
 
 /**
  * Get Star Rate - Rating - ACF

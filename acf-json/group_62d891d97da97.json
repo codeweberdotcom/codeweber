@@ -3184,6 +3184,27 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_63f921624c7cf",
+                            "label": "Swiper Settings",
+                            "name": "swiper_settings",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_63a20057fc723"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_63d247a43246c",
                             "label": "Gallery",
                             "name": "gallery",
@@ -5043,5 +5064,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677195970
+    "modified": 1677271501
 }

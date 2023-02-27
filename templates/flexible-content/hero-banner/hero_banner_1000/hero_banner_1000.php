@@ -4,12 +4,12 @@
  * Features 11
  */
 $block = new CW_Settings(
-   $cw_settings = array(
-      'tabs' => true,
-      'tabs_type' => 'Type 8',
-      'tabs_col-1' => 'col-md-6',
-      'tabs_col-2' => 'col-md-6',
-      'tab_demo' => '<div class="row">
+  $cw_settings = array(
+    'tabs' => true,
+    'tabs_type' => 'Type 8',
+    'tabs_col-1' => 'col-md-6',
+    'tabs_col-2' => 'col-md-6',
+    'tab_demo' => '<div class="row">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mx-auto text-center">
         <h2 class="fs-15 text-uppercase text-muted mb-3">Why Choose Sandbox?</h2>
         <h3 class="display-4 mb-10 px-xl-10 px-xxl-15">Here are a few reasons why our customers choose Sandbox.</h3>
@@ -142,54 +142,66 @@ $block = new CW_Settings(
       <!--/.tab-pane -->
     </div>
     <!-- /.tab-content -->'
-   )
+  )
 )
 ?>
 
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+  <div class="row">
+
+
+    <div class="col-12 col-md-4">
+
+      <div class="grid grid-view projects-masonry">
+        <div class="row  isotope">
+          <div class="project item col-md-6 col-xl-6">
+            <figure class="rounded "><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd7.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd7@2x.jpg 2x" alt="" /><a class="item-link" href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd7-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
+
+          </div>
+          <!-- /.item -->
+          <div class="project item col-md-6 col-xl-6">
+            <figure class="rounded "><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd8.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd8@2x.jpg 2x" alt="" /><a class="item-link" href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd8-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
+
+          </div>
+          <!-- /.item -->
+          <div class="project item col-md-6 col-xl-6">
+            <figure class="rounded "><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd7.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd7@2x.jpg 2x" alt="" /><a class="item-link" href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd7-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
+
+          </div>
+          <!-- /.item -->
+          <div class="project item col-md-6 col-xl-6">
+            <figure class="rounded "><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd7.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd7@2x.jpg 2x" alt="" /><a class="item-link" href="<?php echo get_template_directory_uri(); ?>/dist/img/photos/pd7-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
+
+          </div>
+          <!-- /.item -->
 
 
 
-   <?php if ($block->background_video_bool == true) { ?>
-      <video poster="<?php echo $block->background_video_preview; ?>" src="<?php echo $block->background_video_url; ?>" autoplay loop playsinline muted></video>
-      <div class="video-content">
-      <?php } ?>
-      <!-- /video background -->
-      <div class="container pt-10 pt-md-14 pb-8 text-center">
-         <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
-            <div class="col-lg-7 <?php echo $block->column_class_1; ?>">
-               <?php echo $block->swiper_final; ?>
-               <!--/swiper -->
-            </div>
-            <!-- /column -->
-            <div class="col-md-10 col-lg-5 offset-md-1 offset-lg-0 text-center text-lg-start <?php echo $block->column_class_2; ?>">
-               <?php echo $block->title; ?>
-               <!--/title -->
-               <?php echo $block->paragraph; ?>
-               <!--/pargraph -->
-               <?php echo $block->buttons; ?>
-               <!--/buttons group -->
-            </div>
-            <!-- /column -->
-         </div>
-         <!-- /.row -->
+        </div>
+        <!-- /.row -->
       </div>
-      <!-- /.container -->
-      <?php if ($block->background_video_bool == true) { ?>
-      </div>
-      </video>
-   <?php } ?>
-   <!-- /video background -->
-   <?php if ($block->divider_wave) {
-      echo $block->divider_wave;
-   } ?>
-   <!-- /divider -->
-</section>
-<!-- /section -->
+      <!-- /.grid -->
 
-<section class="wrapper bg-gradient-primary">
-   <div class="container pt-10 pt-md-14 pb-8 ">
-      <?php echo $block->tabs; ?>
-   </div>
+    </div>
+    <div class="col-12 col-md-8">
+
+      <div class="swiper-container dots-over shadow-lg" data-margin="5" data-nav="true" data-dots="true">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/bg7.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos/bg7.jpg" class="rounded" alt="" /></div>
+
+            <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/dist/img/photos/bg8.jpg" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/photos//bg8.jpg" class="rounded" alt="" /></div>
+          </div>
+          <!--/.swiper-wrapper -->
+        </div>
+        <!--/.swiper -->
+      </div>
+      <!-- /.swiper-container -->
+
+
+    </div>
+
+  </div>
+
 </section>

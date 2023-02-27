@@ -402,3 +402,7 @@ ul.products li.product figure img.attachment-archive_4.size-archive_4:hover {
   opacity: 1;
   transition: opacity 0.5s;
 }
+
+.col-lg-5.mb-n18.offset-lg-1.order-lg-2 {
+  margin-bottom: 0 !important;
+}

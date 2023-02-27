@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-02-20 13:34+0000\n"
+"PO-Revision-Date: 2023-02-27 11:08+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -57,7 +57,7 @@ msgstr "Модульный шаблон Wordpress на базе Bootstrap 5 и G
 
 #: functions/woocommerce/woocommerce-mobile-bottom-menu.php:17
 msgid "Account"
-msgstr ""
+msgstr "Кабинет"
 
 #: functions/lib/class-wp-bootstrap-navwalker.php:392
 msgid "Add a menu"
@@ -265,8 +265,8 @@ msgstr ""
 "конфиденциальности"
 
 #: functions/woocommerce/woocommerce-mobile-bottom-menu.php:24
-#: templates/header/header-sandbox-woo-01.php:77
-#: templates/header/header-sandbox-woo-01.php:77
+#: templates/header/header-sandbox-woo-01.php:86
+#: templates/header/header-sandbox-woo-01.php:86
 msgid "Cart"
 msgstr "Корзина"
 
@@ -279,8 +279,8 @@ msgstr "Категории"
 msgid "CFollow Us"
 msgstr ""
 
-#: templates/header/header-sandbox-woo-01.php:80
-#: templates/header/header-sandbox-woo-01.php:83
+#: templates/header/header-sandbox-woo-01.php:89
+#: templates/header/header-sandbox-woo-01.php:92
 msgid "Checkout"
 msgstr "Оформить заказ"
 
@@ -381,7 +381,7 @@ msgstr "Контакт"
 #: templates/header/header-sandbox-23.php:60
 #: templates/header/header-sandbox-24.php:74
 #: templates/header/header-sandbox-27.php:64
-#: templates/header/header-sandbox-woo-01.php:148
+#: templates/header/header-sandbox-woo-01.php:157
 msgid "Contact Info"
 msgstr "Связаться с нами"
 
@@ -396,10 +396,6 @@ msgstr "Контент с отступом?"
 #: woocommerce/order/order-details-customer.php:32
 msgid "Customer details"
 msgstr "Информация о покупателе"
-
-#: functions/customize.php:31
-msgid "Dark Logo"
-msgstr "Темный Логотип"
 
 #: single-projects-1.php:141 single-projects-2.php:103 single-projects-3.php:86
 #: single-projects.php:105
@@ -541,7 +537,7 @@ msgstr "Фильтр:"
 #: templates/header/header-sandbox-23.php:78
 #: templates/header/header-sandbox-24.php:92
 #: templates/header/header-sandbox-27.php:82
-#: templates/header/header-sandbox-woo-01.php:165
+#: templates/header/header-sandbox-woo-01.php:174
 msgid "Follow Us"
 msgstr "Или здесь"
 
@@ -680,7 +676,7 @@ msgstr "Настройки Хедера"
 msgid "Header right sidebar"
 msgstr "Хедер правый сайдбар"
 
-#: templates/header/header-sandbox-woo-01.php:58
+#: templates/header/header-sandbox-woo-01.php:67
 msgid "Hello"
 msgstr ""
 
@@ -703,7 +699,7 @@ msgstr "здесь"
 
 #: functions/woocommerce/woocommerce-mobile-bottom-menu.php:9
 msgid "Home"
-msgstr ""
+msgstr "Главная"
 
 #. URI of the theme
 #. Author URI of the theme
@@ -805,7 +801,7 @@ msgstr "Присоедениться"
 #: templates/header/header-sandbox-22.php:68
 #: templates/header/header-sandbox-24.php:82
 #: templates/header/header-sandbox-27.php:72
-#: templates/header/header-sandbox-woo-01.php:158
+#: templates/header/header-sandbox-woo-01.php:167
 #| msgid "Read more"
 msgid "Learn More"
 msgstr "Информация"
@@ -827,6 +823,10 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
+#: functions/customize.php:31
+msgid "Light Logo"
+msgstr "Светлый Логотип"
+
 #: functions/global_function/page_functions.php:20
 #: functions/global_function/page_functions.php:36
 #: templates/content/loop-faq.php:55 templates/content/loop-faq.php:59
@@ -834,11 +834,11 @@ msgstr ""
 msgid "Likes"
 msgstr "Спасибо"
 
-#: templates/header/header-sandbox-woo-01.php:67
+#: templates/header/header-sandbox-woo-01.php:76
 msgid "Login / Register"
 msgstr "Войти / Регистрация"
 
-#: templates/header/header-sandbox-woo-01.php:83
+#: templates/header/header-sandbox-woo-01.php:92
 msgid "Logout"
 msgstr "Выйти"
 
@@ -900,7 +900,7 @@ msgstr "месяц"
 msgid "Monthly"
 msgstr "Месяц"
 
-#: templates/header/header-sandbox-woo-01.php:65
+#: templates/header/header-sandbox-woo-01.php:74
 msgid "My Account"
 msgstr "Личный кабинет"
 
@@ -963,7 +963,7 @@ msgstr "Следующий"
 msgid "No Client"
 msgstr "Нет Клиентов"
 
-#: functions/custom.php:373
+#: functions/admin.php:159
 msgid "No Thumbnail For Post"
 msgstr "Нет превью"
 
@@ -1005,7 +1005,7 @@ msgstr "Опции Темы"
 msgid "or"
 msgstr "или"
 
-#: templates/header/header-sandbox-woo-01.php:73
+#: templates/header/header-sandbox-woo-01.php:82
 msgid "Orders"
 msgstr "Заказы"
 
@@ -1077,7 +1077,7 @@ msgstr "Введите ваше имя, пожалуйста."
 msgid "Popular Posts"
 msgstr "Популярные статьи"
 
-#: functions/custom.php:363
+#: functions/custom.php:402
 msgid "Post Image"
 msgstr "Фото записи"
 
@@ -1246,7 +1246,7 @@ msgstr "Скидка!"
 #: templates/header/header-sandbox-23.php:56
 #: templates/header/header-sandbox-24.php:70
 #: templates/header/header-sandbox-27.php:60
-#: templates/header/header-sandbox-woo-01.php:144
+#: templates/header/header-sandbox-woo-01.php:153
 msgid ""
 "Sandbox is a multipurpose HTML5 template with various layouts which will be "
 "a great solution for your business."
@@ -1374,7 +1374,7 @@ msgstr "Настройки архивных страниц"
 
 #: functions/woocommerce/woocommerce-mobile-bottom-menu.php:13
 msgid "Shop"
-msgstr ""
+msgstr "Магазин"
 
 #: templates/header/header-sandbox-08.php:42
 #: templates/header/header-sandbox-08.php:72
@@ -1535,7 +1535,7 @@ msgstr ""
 "Страница, которую вы ищете, недоступна или была перемещена. Перейдите на "
 "главную страницу с помощью кнопки ниже."
 
-#: functions.php:48
+#: functions.php:51
 #, php-format
 msgid ""
 "This theme can't work without ACF PRO plugin. <a href=\"%s\">Please login to "
@@ -1697,7 +1697,7 @@ msgid "You Might Also Like"
 msgstr "Вам также может понравится"
 
 #: functions/woocommerce/woocommerce-offcanvas-cart.php:53
-#: templates/header/header-sandbox-woo-01.php:128
+#: templates/header/header-sandbox-woo-01.php:137
 msgid "Your cart"
 msgstr "Ваша корзина"
 

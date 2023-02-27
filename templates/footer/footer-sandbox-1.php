@@ -9,7 +9,7 @@
         <div class="row gy-6 gy-lg-0">
            <div class="col-md-4 col-lg-3">
               <div class="widget">
-                 <?php echo codeweber_logo_light_link(); ?>
+                 <?php echo codeweber_logo(NULL, NULL); ?>
                  <p class="mb-4"><a class="text-white-50" href="<?php echo esc_attr(wp_get_theme()->get('ThemeURI')); ?>" target="_blank">
                        © <?php echo date("Y"); ?> <?php esc_html_e('Made with', 'codeweber'); ?> Codeweber</a>
                     <br class="d-none d-lg-block" /><?php esc_html_e('All rights reserved.', 'codeweber'); ?>

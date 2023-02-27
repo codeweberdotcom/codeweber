@@ -14,7 +14,7 @@ $block = new CW_Settings(
     // 'subtitle' => 'Grow Your Business with Our Solutions.',
     // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
-    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    'buttons_pattern' => '<div class="d-flex flex-wrap justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
     'buttons' => '<div><a class="btn btn-lg btn-primary rounded">Get Started</a></div>',
 
     'background_class_default' => 'wrapper bg-dark',
@@ -40,9 +40,9 @@ $block = new CW_Settings(
     //'image_big_size' => 'project_1',
 
     'swiper' => array(
-      'swiper_container_class' => 'rounded shadow-lg',
-      'image_class' => 'rounded shadow-lg',
-      'wrapper_image_class' => 'rounded shadow-lg',
+      'swiper_container_class' => 'rounded',
+      'image_class' => 'rounded',
+      'wrapper_image_class' => 'rounded',
       'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
       'image_thumb_size' => 'sandbox_hero_3',
       'image_demo' => '<figure class="rounded shadow-lg"><img  src="' . get_template_directory_uri() . '/dist/img/photos/about13.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about13@2x.jpg 2x" alt="" /></figure>',
