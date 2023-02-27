@@ -26,18 +26,18 @@ function codeweber_register_theme_customizer($wp_customize)
       );
    }
 
-   $wp_customize->add_setting('dark_logo');
-   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'dark_logo', array(
-      'label' => __('Dark Logo', 'codeweber'),
+   $wp_customize->add_setting('light_logo');
+   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'light_logo', array(
+      'label' => __('Light Logo', 'codeweber'),
       'section' => 'title_tagline',
-      'settings' => 'dark_logo',
+      'settings' => 'light_logo',
       'render_callback' => 'mytheme_customize_partial_blogname',
       'priority' => 8
    )));
 
 
    /*  <?php the_custom_logo(); ?>
-       <img src="<?php echo get_theme_mod('dark_logo') ?>" class="dark-logo" alt="logo codeweber"> */
+       <img src="<?php echo get_theme_mod('light_logo') ?>" class="dark-logo" alt="logo codeweber"> */
    ///
 
 

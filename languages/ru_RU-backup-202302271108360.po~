@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-02-20 11:38+0000\n"
+"PO-Revision-Date: 2023-02-27 11:07+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -31,6 +31,14 @@ msgstr ""
 msgid "%1$s "
 msgstr "%1$s "
 
+#: functions/cpt/cpt-services.php:23
+msgid "(e.g. No Service found in Trash)"
+msgstr ""
+
+#: functions/cpt/cpt-services.php:22
+msgid "(e.g. No Service found)"
+msgstr ""
+
 #: functions/cpt/cpt-staff.php:23
 msgid "(e.g. No Staff found in Trash)"
 msgstr "Нет сотрудников в Корзине"
@@ -49,11 +57,7 @@ msgstr "Модульный шаблон Wordpress на базе Bootstrap 5 и G
 
 #: functions/woocommerce/woocommerce-mobile-bottom-menu.php:17
 msgid "Account"
-msgstr ""
-
-#: functions/cpt/cpt-projects.php:13
-msgid "Add"
-msgstr ""
+msgstr "Кабинет"
 
 #: functions/lib/class-wp-bootstrap-navwalker.php:392
 msgid "Add a menu"
@@ -63,13 +67,21 @@ msgstr "Добавить меню"
 msgid "Add Client"
 msgstr "Добавить Клиента"
 
-#: functions/cpt/cpt-clients.php:15 functions/cpt/cpt-projects.php:14
+#: functions/cpt/cpt-projects.php:14
 msgid "Add New"
 msgstr "Добавить "
+
+#: functions/cpt/cpt-clients.php:15
+msgid "Add New Client"
+msgstr "Добавить Клиента"
 
 #: functions/cpt/cpt-price_package.php:16
 msgid "Add New Price Package"
 msgstr "Добавить Новый Пакет"
+
+#: functions/cpt/cpt-services.php:16
+msgid "Add New Service"
+msgstr "Добавить Новую Услугу"
 
 #: functions/cpt/cpt-staff.php:16
 msgid "Add New Staff"
@@ -78,6 +90,14 @@ msgstr "Добавить Сотрудника"
 #: functions/cpt/cpt-price_package.php:15
 msgid "Add Price Packages"
 msgstr "Добавить Пакет"
+
+#: functions/cpt/cpt-projects.php:13
+msgid "Add Project"
+msgstr "Добавить Проект"
+
+#: functions/cpt/cpt-services.php:15
+msgid "Add Service"
+msgstr "Добавить Услугу"
 
 #: functions/cpt/cpt-staff.php:15
 msgid "Add Staff"
@@ -379,7 +399,7 @@ msgstr "Информация о покупателе"
 
 #: functions/customize.php:31
 msgid "Dark Logo"
-msgstr "Темный Логотип"
+msgstr "Светлый Логотип"
 
 #: single-projects-1.php:141 single-projects-2.php:103 single-projects-3.php:86
 #: single-projects.php:105
@@ -411,6 +431,10 @@ msgstr "Редактировать Пакет"
 #: functions/cpt/cpt-projects.php:15
 msgid "Edit Project"
 msgstr "Редактировать Проект"
+
+#: functions/cpt/cpt-services.php:17
+msgid "Edit Service"
+msgstr "Редактировать Услугу"
 
 #: functions/cpt/cpt-staff.php:17
 msgid "Edit Staff"
@@ -490,6 +514,10 @@ msgstr ""
 #: functions/widgets.php:116
 msgid "FAQ tags"
 msgstr ""
+
+#: functions/cpt/cpt-services.php:25
+msgid "Featured Image for this service"
+msgstr "Изображение для этой услуги"
 
 #: functions/cpt/cpt-staff.php:25
 msgid "Featured Image for this staff"
@@ -675,7 +703,7 @@ msgstr "здесь"
 
 #: functions/woocommerce/woocommerce-mobile-bottom-menu.php:9
 msgid "Home"
-msgstr ""
+msgstr "Главная"
 
 #. URI of the theme
 #. Author URI of the theme
@@ -907,6 +935,10 @@ msgstr "Новый Пакет"
 msgid "New Project"
 msgstr "Новый Проект"
 
+#: functions/cpt/cpt-services.php:18
+msgid "New Service"
+msgstr "Новая Услуга"
+
 #: functions/cpt/cpt-staff.php:18
 msgid "New Staff"
 msgstr "Новый Сотрудник"
@@ -930,6 +962,10 @@ msgstr "Следующий"
 #: functions/cpt/cpt-clients.php:22
 msgid "No Client"
 msgstr "Нет Клиентов"
+
+#: functions/custom.php:373
+msgid "No Thumbnail For Post"
+msgstr "Нет превью"
 
 #: functions/navmenus.php:19
 msgid "Offcanvas Menu Left"
@@ -1004,6 +1040,10 @@ msgstr "Страницы"
 msgid "Parent Project"
 msgstr "Родительский Проект"
 
+#: functions/cpt/cpt-services.php:24 functions/cpt/cpt-services.php:36
+msgid "Parent Service"
+msgstr "Родительская Услуга"
+
 #: functions/cpt/cpt-staff.php:24 functions/cpt/cpt-staff.php:36
 msgid "Parent Staff"
 msgstr "Родительский Сотрудник"
@@ -1036,6 +1076,10 @@ msgstr "Введите ваше имя, пожалуйста."
 #: templates/footer/footer-sandbox-25_cw.php:43
 msgid "Popular Posts"
 msgstr "Популярные статьи"
+
+#: functions/custom.php:363
+msgid "Post Image"
+msgstr "Фото записи"
 
 #: functions/widgets.php:230
 msgid "Post tags"
@@ -1154,6 +1198,10 @@ msgstr "Свежие статьи"
 msgid "Registration takes less than a minute."
 msgstr "Регистрация занимает менее минуты."
 
+#: functions/cpt/cpt-services.php:27
+msgid "Remove featured Image for this service"
+msgstr "Удалить изображение из услуги"
+
 #: functions/cpt/cpt-staff.php:27
 msgid "Remove featured Image for this staff"
 msgstr "Удалить фото сотрудника"
@@ -1226,6 +1274,10 @@ msgstr "Найти Ценовой Пакет"
 msgid "Search Projects"
 msgstr "Поиск Проекта"
 
+#: functions/cpt/cpt-services.php:21
+msgid "Search Service"
+msgstr "Найти Услугу"
+
 #: functions/cpt/cpt-staff.php:21
 msgid "Search Staff"
 msgstr "Поиск Сотрудника"
@@ -1243,9 +1295,13 @@ msgstr "Вторичный Хедер"
 msgid "See Project"
 msgstr "Показать Проект"
 
-#: functions/cpt/cpt-services.php:12
+#: functions/cpt/cpt-services.php:12 functions/cpt/cpt-services.php:31
 msgid "Service"
 msgstr "Услуга"
+
+#: functions/cpt/cpt-services.php:29
+msgid "Service archive"
+msgstr "Архи Услуг"
 
 #: functions/cpt/taxonomy-services.php:11
 #: functions/cpt/taxonomy-services.php:17
@@ -1256,12 +1312,33 @@ msgstr "Категории Услуг"
 msgid "Service Category"
 msgstr "Категория Услуги"
 
-#: functions/cpt/cpt-services.php:56 functions/cpt/cpt-services.php:57
+#: functions/cpt/cpt-services.php:30
+msgid "Service list"
+msgstr "Список услуг"
+
+#: functions/cpt/cpt-services.php:81 functions/cpt/cpt-services.php:82
 msgid "Service Options"
 msgstr "Настройки Услуг"
 
+#: functions/cpt/cpt-services.php:32
+msgid "Service published"
+msgstr "Услуга Опубликована"
+
+#: functions/cpt/cpt-services.php:33
+msgid "Service reverted to draft"
+msgstr "Услуга Восстановлена"
+
+#: functions/cpt/cpt-services.php:34
+msgid "Service scheduled"
+msgstr "Услуга Запланирована"
+
+#: functions/cpt/cpt-services.php:35
+msgid "Service updated"
+msgstr "Услуга обновлена"
+
 #: functions/customize.php:525 functions/navmenus.php:18
-#: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:16
+#: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:13
+#: functions/cpt/cpt-services.php:14 functions/cpt/cpt-services.php:41
 #: templates/footer/footer-sandbox-25_cw.php:28
 #: templates/sections/home-services.php:5
 msgid "Services"
@@ -1279,6 +1356,10 @@ msgstr "Настройки услуг"
 msgid "Services Sidebar"
 msgstr "Сайдбар Услуг"
 
+#: functions/cpt/cpt-services.php:26
+msgid "Set featured Image for this service"
+msgstr "Установить фото для этой услуги"
+
 #: functions/cpt/cpt-staff.php:26
 msgid "Set featured Image for this staff"
 msgstr "Назначить фото для сотрудника"
@@ -1293,7 +1374,7 @@ msgstr "Настройки архивных страниц"
 
 #: functions/woocommerce/woocommerce-mobile-bottom-menu.php:13
 msgid "Shop"
-msgstr ""
+msgstr "Магазин"
 
 #: templates/header/header-sandbox-08.php:42
 #: templates/header/header-sandbox-08.php:72
@@ -1522,7 +1603,7 @@ msgstr "Типы"
 msgid "Update"
 msgstr "Обновить"
 
-#: functions/cpt/cpt-staff.php:28
+#: functions/cpt/cpt-services.php:28 functions/cpt/cpt-staff.php:28
 msgid "Use as featured image"
 msgstr ""
 
@@ -1549,6 +1630,14 @@ msgstr "Показать Проект"
 #: functions/cpt/cpt-projects.php:18
 msgid "View Projects"
 msgstr "Показать Проект"
+
+#: functions/cpt/cpt-services.php:19
+msgid "View Service"
+msgstr "Показать Услугу"
+
+#: functions/cpt/cpt-services.php:20
+msgid "View Services"
+msgstr "Показать Услуги"
 
 #: functions/cpt/cpt-staff.php:19 functions/cpt/cpt-staff.php:20
 msgid "View Staff"

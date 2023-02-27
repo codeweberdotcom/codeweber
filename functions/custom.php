@@ -358,8 +358,8 @@ function codeweber_logo($color, $footer, $transparent)
             $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
         }
 
-        if (get_theme_mod('dark_logo')) {
-            $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_theme_mod('dark_logo') . '" srcset="' . get_theme_mod('dark_logo') . '" alt="" />';
+        if (get_theme_mod('light_logo')) {
+            $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_theme_mod('light_logo') . '" srcset="' . get_theme_mod('light_logo') . '" alt="" />';
         } else {
             $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_template_directory_uri() . '/dist/img/logo-light.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-light@2x.png 2x" alt="" />';
         }
@@ -371,8 +371,8 @@ function codeweber_logo($color, $footer, $transparent)
                 $codeweber_logo .= '<img ' . $class_logo_dark . 'src="' . get_template_directory_uri() . '/dist/img/logo-dark.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-dark@2x.png 2x" alt="" />';
             }
         } elseif ($color == 'light') {
-            if (get_theme_mod('dark_logo')) {
-                $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_theme_mod('dark_logo') . '" srcset="' . get_theme_mod('dark_logo') . '" alt="" />';
+            if (get_theme_mod('light_logo')) {
+                $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_theme_mod('light_logo') . '" srcset="' . get_theme_mod('light_logo') . '" alt="" />';
             } else {
                 $codeweber_logo .= '<img ' . $class_logo_light . 'src="' . get_template_directory_uri() . '/dist/img/logo-light.png" srcset="' . get_template_directory_uri() . '/dist/img/logo-light@2x.png 2x" alt="" />';
             }
