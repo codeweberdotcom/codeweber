@@ -4,32 +4,130 @@
  * Contact 5
  */
 
-$address_line_1 = 'Moonshine St. 14/05 Light City,';
-$address_line_2 = 'London, United Kingdom';
-$e_mail_address = 'info@codeweber.com';
-$e_mail_address_1 = '';
-$phone_number = '00 (123) 456 78 90';
-$phone_number_1 = '';
+$demo_form = '<form class="contact-form needs-validation" method="post" action="./assets/php/contact.php" novalidate>
+              <div class="messages"></div>
+              <div class="row gx-4">
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Jane" required>
+                    <label for="form_name">First Name *</label>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter your first name.
+                    </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Doe" required>
+                    <label for="form_lastname">Last Name *</label>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter your last name.
+                    </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-floating mb-4">
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="jane.doe@example.com" required>
+                    <label for="form_email">Email *</label>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid email address.
+                    </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-md-6">
+                  <div class="form-select-wrapper mb-4">
+                    <select class="form-select" id="form-select" name="department" required>
+                      <option selected disabled value="">Select a department</option>
+                      <option value="Sales">Sales</option>
+                      <option value="Marketing">Marketing</option>
+                      <option value="Customer Support">Customer Support</option>
+                    </select>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please select a department.
+                    </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-12">
+                  <div class="form-floating mb-4">
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Your message" style="height: 150px" required></textarea>
+                    <label for="form_message">Message *</label>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please enter your messsage.
+                    </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-12">
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                      I agree to <a href="#" class="hover">terms and policy</a>.
+                    </label>
+                    <div class="invalid-feedback">
+                      You must agree before submitting.
+                    </div>
+                  </div>
+                </div>
+                <!-- /column -->
+                <div class="col-12">
+                  <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value="Send message">
+                  <p class="text-muted"><strong>*</strong> These fields are required.</p>
+                </div>
+                <!-- /column -->
+              </div>
+              <!-- /.row -->
+            </form>
+            <!-- /form -->';
 
-$cf_form = '';
 
 if (get_field('address_1', 'option')) {
    $address_line_1 = get_field('address_1', 'option');
+} else {
+   $address_line_1 = 'Moonshine St. 14/05 Light City,';
 }
 if (get_field('address_2', 'option')) {
    $address_line_2 = get_field('address_2', 'option');
+} else {
+   $address_line_2 = 'London, United Kingdom';
 }
 if (get_field('email', 'option')) {
    $e_mail_address = get_field('email', 'option');
+} else {
+   $e_mail_address = 'info@codeweber.com';
 }
 if (get_field('email_1', 'option')) {
    $e_mail_address_1 = get_field('email_1', 'option');
+} else {
+   $e_mail_address_1 = '';
 }
 if (get_field('phone', 'option')) {
    $phone_number = get_field('phone', 'option');
+} else {
+   $phone_number = '00 (123) 456 78 90';
 }
 if (get_field('phone_1', 'option')) {
    $phone_number_1 = get_field('phone_1', 'option');
+} else {
+   $phone_number_1 = '';
 }
 $contact_form = get_sub_field('contact_form');
 if ($contact_form) {
@@ -37,6 +135,8 @@ if ($contact_form) {
       $contact_link =  do_shortcode('[contact-form-7 id="' . $post_ids . '"]');
    }
    $cf_form = $contact_link;
+} else {
+   $cf_form = $demo_form;
 }
 
 

@@ -76,10 +76,8 @@ function custom_custom_form_class_attr($class)
 add_filter('wpcf7_form_elements', 'dd_wpcf7_form_elements_replace');
 function dd_wpcf7_form_elements_replace($content)
 {
-
-
     $content = preg_replace('/aria-required="true"/', 'aria-required="true"  required', $content);
-
+    $content = preg_replace('/checked="checked"/', 'checked="checked" aria-required="true"  required', $content);
 
     return $content;
 }

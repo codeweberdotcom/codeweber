@@ -53,7 +53,7 @@ $block = new CW_Settings(
                <div class="row gx-0">
                   <div class="col-lg-6 align-self-stretch">
                      <div class="map map-full rounded-top rounded-lg-start">
-                        <iframe src="<?php echo $map_url; ?>" style="width:100%; height: 100%; border:0" allowfullscreen></iframe>
+                        <iframe src="<?php echo $map_url; ?>" style="width:100%; height: 480px; border:0" allowfullscreen></iframe>
                      </div>
                      <!-- /.map -->
                   </div>
