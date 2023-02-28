@@ -4,35 +4,42 @@
  * Contact 6
  */
 
-$address_line_1 = 'Moonshine St. 14/05 Light City,';
-$address_line_2 = 'London, United Kingdom';
-$e_mail_address = 'info@codeweber.com';
-$e_mail_address_1 = '';
-$phone_number = '00 (123) 456 78 90';
-$phone_number_1 = '';
-$map_url = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25387.23478654725!2d-122.06115399490332!3d37.309248660190086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb4571bd377ab%3A0x394d3fe1a3e178b4!2sCupertino%2C%20CA%2C%20USA!5e0!3m2!1sen!2str!4v1645437305701!5m2!1sen!2str';
-
 if (get_field('address_1', 'option')) {
    $address_line_1 = get_field('address_1', 'option');
+} else {
+   $address_line_1 = 'Moonshine St. 14/05 Light City,';
 }
 if (get_field('address_2', 'option')) {
    $address_line_2 = get_field('address_2', 'option');
+} else {
+   $address_line_2 = 'London, United Kingdom';
 }
 if (get_field('email', 'option')) {
    $e_mail_address = get_field('email', 'option');
+} else {
+   $e_mail_address = 'info@codeweber.com';
 }
 if (get_field('email_1', 'option')) {
    $e_mail_address_1 = get_field('email_1', 'option');
+} else {
+   $e_mail_address_1 = '';
 }
 if (get_field('phone', 'option')) {
    $phone_number = get_field('phone', 'option');
+} else {
+   $phone_number = '00 (123) 456 78 90';
 }
 if (get_field('phone_1', 'option')) {
    $phone_number_1 = get_field('phone_1', 'option');
+} else {
+   $phone_number_1 = '';
 }
 if (get_field('map_url', 'option')) {
    $map_url = get_field('map_url', 'option');
+} else {
+   $map_url = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25387.23478654725!2d-122.06115399490332!3d37.309248660190086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb4571bd377ab%3A0x394d3fe1a3e178b4!2sCupertino%2C%20CA%2C%20USA!5e0!3m2!1sen!2str!4v1645437305701!5m2!1sen!2str';
 }
+
 
 
 $block = new CW_Settings(

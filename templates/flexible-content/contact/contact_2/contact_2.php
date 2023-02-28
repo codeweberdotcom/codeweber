@@ -7,22 +7,25 @@
 $final_icon = '<img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/telemarketer.svg" class="svg-inject icon-svg icon-svg-md mb-4" alt="" />';
 $icon = new CW_Icon(NULL, NULL, 'mb-4', NULL, NULL, NULL, NULL, NULL, NULL, NULL, $final_icon, NULL);
 
-$address_line_1 = 'Moonshine St. 14/05 Light City,';
-$address_line_2 = 'London, United Kingdom';
-$e_mail_address = 'info@codeweber.com';
-$phone_number = '00 (123) 456 78 90';
-
 if (get_field('address_1', 'option')) {
    $address_line_1 = get_field('address_1', 'option');
+} else {
+   $address_line_1 = 'Moonshine St. 14/05 Light City,';
 }
 if (get_field('address_2', 'option')) {
    $address_line_2 = get_field('address_2', 'option');
+} else {
+   $address_line_2 = 'London, United Kingdom';
 }
 if (get_field('email', 'option')) {
    $e_mail_address = get_field('email', 'option');
+} else {
+   $e_mail_address = 'info@codeweber.com';
 }
 if (get_field('phone', 'option')) {
    $phone_number = get_field('phone', 'option');
+} else {
+   $phone_number = '00 (123) 456 78 90';
 }
 
 $block = new CW_Settings(
