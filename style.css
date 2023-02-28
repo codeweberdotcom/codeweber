@@ -417,3 +417,11 @@ form.wpcf7-form label {
 .wpcf7 .wpcf7-response-output {
   display: none;
 }
+
+/*
+*Compilianze
+*/
+#cmplz-document,
+.editor-styles-wrapper .cmplz-unlinked-mode {
+  max-width: 100%;
+}
