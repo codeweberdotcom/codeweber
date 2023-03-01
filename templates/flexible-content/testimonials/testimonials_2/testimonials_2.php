@@ -20,6 +20,8 @@ if ($testimonials) {
    $argss['post__in'] = $cw_post_ids;
 }
 
+$type_field = get_sub_field('select_type');
+
 $block = new CW_Settings(
    $cw_settings = array(
       'swiper' => array(
@@ -34,7 +36,7 @@ $block = new CW_Settings(
          'img_link' => '/dist/img/photos/tei1.jpg',
       ),
       'background_class_default' => 'wrapper bg-light',
-      // 'divider' => 'true', // не работает
+      'divider' => 'true', // не работает
    )
 );
 ?>
@@ -59,7 +61,6 @@ $block = new CW_Settings(
                                     while ($query->have_posts()) {
                                        $query->the_post();
                                        $post_id =  get_the_id();
-                                       $type_field = get_sub_field('select_type');
                                        if (have_rows('testimonials_post_field', $post_id)) :
                                           while (have_rows('testimonials_post_field', $post_id)) : the_row();
                                              if (get_sub_field('status') == 1) {
