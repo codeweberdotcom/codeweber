@@ -4,22 +4,25 @@
  * Contact 4
  */
 
-$address_line_1 = 'Moonshine St. 14/05 Light City,';
-$address_line_2 = 'London, United Kingdom';
-$e_mail_address = 'info@codeweber.com';
-$phone_number = '00 (123) 456 78 90';
-
 if (get_field('address_1', 'option')) {
    $address_line_1 = get_field('address_1', 'option');
+} else {
+   $address_line_1 = 'Moonshine St. 14/05 Light City,';
 }
 if (get_field('address_2', 'option')) {
    $address_line_2 = get_field('address_2', 'option');
+} else {
+   $address_line_2 = 'London, United Kingdom';
 }
 if (get_field('email', 'option')) {
    $e_mail_address = get_field('email', 'option');
+} else {
+   $e_mail_address = 'info@codeweber.com';
 }
 if (get_field('phone', 'option')) {
    $phone_number = get_field('phone', 'option');
+} else {
+   $phone_number = '00 (123) 456 78 90';
 }
 
 

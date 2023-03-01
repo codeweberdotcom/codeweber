@@ -4,13 +4,50 @@
  * Contact 10
  */
 
-$cf_form = '';
+$demo_form = '<form class="contact-form needs-validation" method="post" action="./assets/php/contact.php" novalidate>
+          <div class="messages"></div>
+          <div class="form-floating mb-4">
+            <input id="form_name2" type="text" name="name" class="form-control" placeholder="Jane" required="required" data-error="Name is required.">
+            <label for="form_name2">Name *</label>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please enter your name.
+            </div>
+          </div>
+          <div class="form-floating mb-4">
+            <input id="form_email2" type="email" name="email" class="form-control" placeholder="jane.doe@example.com" required="required" data-error="Valid email is required.">
+            <label for="form_email2">Email *</label>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please provide a valid email address.
+            </div>
+          </div>
+          <div class="form-floating mb-4">
+            <textarea id="form_message2" name="message" class="form-control" placeholder="Your message" style="height: 150px" required></textarea>
+            <label for="form_message2">Message *</label>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please enter your messsage.
+            </div>
+          </div>
+          <input type="submit" class="btn btn-primary rounded-pill btn-send mb-3" value="Send message">
+          <p class="text-muted"><strong>*</strong> These fields are required.</p>
+        </form>
+        <!-- /form -->';
 $contact_form = get_sub_field('contact_form');
 if ($contact_form) {
    foreach ($contact_form as $post_ids) {
       $contact_link =  do_shortcode('[contact-form-7 id="' . $post_ids . '"]');
    }
    $cf_form = $contact_link;
+} else {
+   $cf_form = $demo_form;
 }
 
 $block = new CW_Settings(

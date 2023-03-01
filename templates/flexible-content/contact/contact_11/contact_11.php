@@ -4,14 +4,66 @@
  * Contact 11
  */
 
-$cf_form = '';
+$demo_form = '<form class="contact-form needs-validation" method="post" action="./assets/php/contact.php" novalidate>
+                    <div class="messages"></div>
+                    <div class="row gx-4">
+                      <div class="col-md-6">
+                        <div class="form-floating mb-4">
+                          <input id="form_name" type="text" name="name" class="form-control bg-white-700 border-0" placeholder="Name" required>
+                          <label for="form_name">Name *</label>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            Please enter your name.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /column -->
+                      <div class="col-md-6">
+                        <div class="form-floating mb-4">
+                          <input id="form_email" type="email" name="email" class="form-control bg-white-700 border-0" placeholder="jane.doe@example.com" required>
+                          <label for="form_email">Email *</label>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            Please provide a valid email address.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /column -->
+                      <div class="col-12">
+                        <div class="form-floating mb-4">
+                          <textarea id="form_message" name="message" class="form-control bg-white-700 border-0" placeholder="Your message" style="height: 150px" required></textarea>
+                          <label for="form_message">Message *</label>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                          <div class="invalid-feedback">
+                            Please enter your messsage.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /column -->
+                      <div class="col-12 text-center">
+                        <input type="submit" class="btn btn-primary rounded-pill btn-send" value="Send message">
+                      </div>
+                      <!-- /column -->
+                    </div>
+                    <!-- /.row -->
+                  </form>
+                  <!-- /form -->';
 $contact_form = get_sub_field('contact_form');
 if ($contact_form) {
    foreach ($contact_form as $post_ids) {
       $contact_link =  do_shortcode('[contact-form-7 id="' . $post_ids . '"]');
    }
    $cf_form = $contact_link;
+} else {
+   $cf_form = $demo_form;
 }
+
 
 $block = new CW_Settings(
    $cw_settings = array(
