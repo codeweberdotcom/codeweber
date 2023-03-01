@@ -28,7 +28,7 @@ require_once get_template_directory() . '/functions/custom.php'; // --- Custom u
 require_once get_template_directory() . '/functions/admin.php'; // --- Custom user functions ---
 
 // --- Contact Mail PHP --- //
-//require_once get_template_directory() . '/dist/php/contact.php'; // --- Custom user functions ---
+//require_once get_template_directory() . '/dist/assets/php/contact.php'; // --- Custom user functions ---
 
 
 // --- ACF Gutenberg Blocks --- //

@@ -46,7 +46,6 @@ function consultant_widget()
                         </nav>
                      <?php }
 
-
                      $button = new CW_Buttons('<div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>', '<a href="#" class="btn btn-primary rounded w-100">Ask a question</a>', 'w-100', NULL); ?>
 
                      <?php
@@ -57,7 +56,7 @@ function consultant_widget()
                </div>
                <!-- /.card -->
             </div>
-   <?php
+      <?php
          }
       }
    }
@@ -66,6 +65,25 @@ function consultant_widget()
 
 add_action('sidebar_faq_end', 'consultant_widget', 100);
 add_action('sidebar_main_end', 'consultant_widget', 100);
+add_action('sidebar_testimonials_end', 'consultant_widget', 100);
+
+
+/**
+ * Testimonial Widget - Add Review
+ */
+
+function testimonial_yandex()
+{
+   if (get_field('yandex_testimonials_code', 'option')) {
+      ?>
+      <div class="widget">
+         <?php echo get_field('yandex_testimonials_code', 'option'); ?>
+      </div>
+   <?php
+   }
+}
+
+add_action('sidebar_testimonials_start', 'testimonial_yandex', 10);
 
 
 /**
@@ -75,10 +93,10 @@ add_action('sidebar_main_end', 'consultant_widget', 100);
 function categories_menu_faq_widget()
 {
    $args = [
-      'taxonomy'      => ['faq_categories'], // название таксономии с WP 4.5
-      'orderby'       => 'name',
-      'order'         => 'ASC',
-      'hide_empty'    => true,
+      'taxonomy' => ['faq_categories'], // название таксономии с WP 4.5
+      'orderby' => 'name',
+      'order' => 'ASC',
+      'hide_empty' => true,
       'update_term_meta_cache' => true, // подгружать метаданные в кэш
    ];
    $categories = get_terms($args); ?>

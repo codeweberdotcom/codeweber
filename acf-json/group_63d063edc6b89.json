@@ -544,9 +544,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_format",
                 "operator": "==",
-                "value": "post"
+                "value": "audio"
             }
         ]
     ],
@@ -559,5 +559,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675173831
+    "modified": 1677615960
 }

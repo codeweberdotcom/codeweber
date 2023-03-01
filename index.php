@@ -23,7 +23,7 @@
 				<?php get_sidebar(); ?>
 				<?php /** Services Content */ ?>
 			<?php elseif (is_post_type_archive('services')  || is_tax('service_category')  || is_tax('types_of_services')) :
-				if (is_active_sidebar('sidebar-services')) {
+				if (is_active_sidebar('sidebar-testimonials')) {
 					$class_service_content = 'col-lg-8';
 				} else {
 					$class_service_content = 'col';
@@ -38,9 +38,26 @@
 						<!-- /post pagination -->
 					</div>
 				</div>
-			<?php get_sidebar();
+				<?php get_sidebar(); ?>
+			<?php elseif (is_post_type_archive('testimonials')) :
+				if (is_active_sidebar('sidebar-testimonials')) {
+					$class_service_content = 'col-lg-8';
+				} else {
+					$class_service_content = 'col';
+				} ?>
+				<div class="<?php echo $class_service_content; ?>">
+					<div class="blog classic-view">
+						<?php while (have_posts()) :
+							the_post();
+							get_template_part('templates/content/loop', 'testimonials');
+						endwhile;
+						codeweber_pagination(); ?>
+						<!-- /post pagination -->
+					</div>
+				</div>
+				<?php get_sidebar(); ?>
 
-			elseif (have_posts()) :
+			<?php elseif (have_posts()) :
 				if (is_active_sidebar('sidebar-main') || has_action('sidebar_main_start') || has_action('sidebar_main_end')) {
 					$class_content = 'col-lg-8';
 				} else {

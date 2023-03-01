@@ -1,6 +1,5 @@
 <?php
 
-
 if (is_shop() || is_product_tag() || is_product_category()) : ?>
 	<?php if (is_active_sidebar('woocommerce_sidebar') || has_action('woocommerce_sidebar_start') || has_action('woocommerce_sidebar_end')) : ?>
 		<aside class="col-lg-3 sidebar">
@@ -33,6 +32,14 @@ if (is_shop() || is_product_tag() || is_product_category()) : ?>
 			<?php do_action('sidebar_faq_start'); ?>
 			<?php dynamic_sidebar('sidebar_faq'); ?>
 			<?php do_action('sidebar_faq_end'); ?>
+		</aside> <!-- #sidebar-main-wrapper -->
+	<?php endif; ?>
+<?php elseif (is_post_type_archive('testimonials')) :  ?>
+	<?php if (is_active_sidebar('sidebar-testimonials') || has_action('sidebar_testimonials_start') || has_action('sidebar_testimonials_end')) : ?>
+		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
+			<?php do_action('sidebar_testimonials_start'); ?>
+			<?php dynamic_sidebar('sidebar-testimonials'); ?>
+			<?php do_action('sidebar_testimonials_end'); ?>
 		</aside> <!-- #sidebar-main-wrapper -->
 	<?php endif; ?>
 <?php else : ?>

@@ -49,9 +49,9 @@
     "location": [
         [
             {
-                "param": "user_form",
+                "param": "post_format",
                 "operator": "==",
-                "value": "all"
+                "value": "audio"
             }
         ]
     ],
@@ -64,5 +64,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661115829
+    "modified": 1677615685
 }

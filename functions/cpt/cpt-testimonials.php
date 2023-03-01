@@ -23,7 +23,7 @@ function cptui_register_my_cpts_testimonials()
         "show_in_rest" => true,
         "rest_base" => "",
         "rest_controller_class" => "WP_REST_Posts_Controller",
-        "has_archive" => "testimonials",
+        "has_archive" => true,
         "show_in_menu" => true,
         "show_in_nav_menus" => true,
         "delete_with_user" => false,
@@ -34,7 +34,7 @@ function cptui_register_my_cpts_testimonials()
         "can_export" => true,
         "rewrite" => ["slug" => "testimonials", "with_front" => true],
         "query_var" => true,
-        "supports" => ["title"],
+        "supports" => ["title", "comments"],
         "show_in_graphql" => false,
     ];
 
@@ -42,7 +42,6 @@ function cptui_register_my_cpts_testimonials()
 }
 
 add_action('init', 'cptui_register_my_cpts_testimonials');
-
 
 
 /**

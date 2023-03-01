@@ -176,12 +176,11 @@ function wp_login_form_brk($args = array())
      */
     $login_form_bottom = apply_filters('login_form_bottom', '', $args);
 
-    $form =
-        sprintf(
-            '<form name="%1$s" id="%1$s" action="%2$s" method="post">',
-            esc_attr($args['form_id']),
-            esc_url(site_url('wp-login.php', 'login_post'))
-        ) .
+    $form = sprintf(
+        '<form name="%1$s" id="%1$s" action="%2$s" method="post">',
+        esc_attr($args['form_id']),
+        esc_url(site_url('wp-login.php', 'login_post'))
+    ) .
         $login_form_top .
         sprintf(
             '<div class="form-floating mb-4 login-username">
@@ -292,41 +291,7 @@ function sandbox_recent_post()
 }
 
 
-
-
-
-
-
-function auto_generate_post_title($title)
-{
-    global $post;
-    /** Проверка на Post Type */
-    if (isset($post->post_type)) {
-        $post_type = $post->post_type;
-    }
-    /** Проверка на Post Type Testimonials*/
-    if (isset($post->ID) && $post_type == 'testimonials') {
-        if (have_rows('testimonials')) :
-            $value = 'Test';
-            while (have_rows('testimonials')) : the_row();
-                $name = get_sub_field('name');
-                $city = get_sub_field('town') . ' ' . $value;
-            endwhile;
-        endif;
-        $id = get_the_ID();
-        $prefix = __('Testimonial', 'codeweber');
-
-        /** Формирование Title*/
-        $title = $prefix . ' - ' . $name . ' - ' . $city . ' - ' . $id;
-    }
-    return $title;
-}
-
-add_filter('title_save_pre', 'auto_generate_post_title');
-
-
 // --- Logo Dark && Light ---
-
 function codeweber_logo($color, $footer, $transparent)
 
 {
@@ -339,7 +304,6 @@ function codeweber_logo($color, $footer, $transparent)
         $logo_main_url = get_template_directory_uri() . '/dist/img/logo-dark.png"';
     }
 
-
     $codeweber_logo = '<a href="' . get_home_url() . '">';
 
     if ($footer == true) {
@@ -349,7 +313,6 @@ function codeweber_logo($color, $footer, $transparent)
         $class_logo_dark = ' class="logo-dark" ';
         $class_logo_light = ' class="logo-light" ';
     }
-
 
     if ($transparent == 'transparent') {
         if (get_custom_logo()) {
@@ -386,7 +349,6 @@ function codeweber_logo($color, $footer, $transparent)
     }
 
     $codeweber_logo .= '</a>';
-
     return $codeweber_logo;
 };
 

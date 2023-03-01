@@ -368,9 +368,9 @@
     "location": [
         [
             {
-                "param": "user_role",
+                "param": "post_format",
                 "operator": "==",
-                "value": "administrator"
+                "value": "audio"
             }
         ]
     ],
@@ -383,5 +383,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676936750
+    "modified": 1677615727
 }
