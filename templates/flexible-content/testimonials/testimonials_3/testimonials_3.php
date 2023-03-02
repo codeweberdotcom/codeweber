@@ -60,9 +60,6 @@ $block = new CW_Settings(
                <!--/shape -->
                <?php
                $query = new WP_Query($argss);
-               global $post;
-               setup_postdata($post);
-
                if ($query->have_posts()) { ?>
                   <div class="swiper-container dots-closer mb-6" data-margin="0" data-dots="true" data-items-md="2" data-items-xs="1">
                      <div class="swiper">
@@ -145,7 +142,6 @@ $block = new CW_Settings(
                                  endwhile;
                               endif;
                            }
-                           wp_reset_postdata();
                            ?>
                         </div>
                         <!--/.swiper-wrapper -->
@@ -155,7 +151,6 @@ $block = new CW_Settings(
                   <!-- /.swiper-container -->
                <?php
                }
-               wp_reset_postdata();
                ?>
             </div>
             <!-- /.position-relative -->
