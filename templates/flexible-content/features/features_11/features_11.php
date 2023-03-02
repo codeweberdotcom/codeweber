@@ -4,10 +4,8 @@
  * Features 11
  */
 
-
 $block = new CW_Settings(
    $cw_settings = array(
-
       'subtitle' => 'Why Choose Sandbox?',
       'patternSubtitle' => ' <h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 

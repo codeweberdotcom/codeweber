@@ -74,7 +74,7 @@ $block = new CW_Settings(
 <!-- /section -->
 <section class="wrapper bg-light angled upper-end lower-start">
    <div class="container py-16 py-md-18 position-relative">
-      <div class="position-relative mt-n18 mt-md-n23 mb-16 mb-md-18">
+      <div class="position-relative mt-n18 mt-md-n23">
          <?php echo $block->shapes; ?>
          <!--/shape -->
          <div class="card shadow-lg">

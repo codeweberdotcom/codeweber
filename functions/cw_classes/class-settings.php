@@ -783,15 +783,15 @@ class CW_Settings
 
    // Finish Title, Subtitle, Paragraph
    public function cw_the_title(
-      $title = NULL,
-      $tag = NULL,
-      $class = NULL,
-      $display = NULL,
-      $lead = NULL,
-      $fs = NULL,
-      $textalign = NULL,
-      $cw_id = NULL,
-      $cw_color = NULL,
+      $title,
+      $tag,
+      $class,
+      $display,
+      $lead,
+      $fs,
+      $textalign,
+      $cw_id,
+      $cw_color,
       $echo = false
    ) {
       if (
@@ -835,9 +835,7 @@ class CW_Settings
       } else {
          $title =  $title;
       }
-      if (
-         $echo
-      ) {
+      if ($echo) {
          echo $title;
       } else {
          return $title;
