@@ -74,8 +74,9 @@ $block = new CW_Settings(
                                  $avatar_url = '#';
                               }
 
+                              $link = '/testimonials/';
                               if (get_sub_field('testimonial')) {
-                                 $testimonial = get_sub_field('testimonial');
+                                 $testimonial = ReadMore(get_sub_field('testimonial'), $link, 70);
                               } else {
                                  $testimonial = NULL;
                               }
@@ -87,13 +88,13 @@ $block = new CW_Settings(
                                     $job_title  = NULL;
                                  }
                               } elseif ($type_field == 'City') {
-                                 if (get_sub_field('job_title')) {
+                                 if (get_sub_field('town')) {
                                     $job_title = get_sub_field('town');
                                  } else {
                                     $job_title  = NULL;
                                  }
                               } elseif ($type_field == 'Company name') {
-                                 if (get_sub_field('job_title')) {
+                                 if (get_sub_field('company')) {
                                     $job_title = get_sub_field('company');
                                  } else {
                                     $job_title  = NULL;
