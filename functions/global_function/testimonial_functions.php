@@ -28,3 +28,21 @@ function auto_generate_post_title($title)
 }
 
 add_filter('title_save_pre', 'auto_generate_post_title');
+
+
+
+function ReadMore($string, $link)
+{
+   $string = strip_tags($string);
+   if (strlen($string) > 120) {
+
+      // truncate string
+      $stringCut = substr($string, 0, 120);
+      $endPoint = strrpos($stringCut, ' ');
+
+      //if the string doesn't contain any space then it will cut without word basis.
+      $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+      $string .= '... <a href="' . $link . '">' . esc_html__('Read More', 'codeweber') . '</a>';
+   }
+   return $string;
+}

@@ -88,8 +88,9 @@ $block = new CW_Settings(
                                           $avatar_url = '#';
                                        }
 
+                                       $link = '/testimonials/';
                                        if (get_sub_field('testimonial')) {
-                                          $testimonial = get_sub_field('testimonial');
+                                          $testimonial = ReadMore(get_sub_field('testimonial'), $link);
                                        } else {
                                           $testimonial = NULL;
                                        }

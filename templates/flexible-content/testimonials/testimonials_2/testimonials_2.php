@@ -71,7 +71,7 @@ $block = new CW_Settings(
                                                 }
 
                                                 if (get_sub_field('testimonial')) {
-                                                   $testimonial = get_sub_field('testimonial');
+                                                   $testimonial = substr(get_sub_field('testimonial'), 0, 200);
                                                 } else {
                                                    $testimonial = NULL;
                                                 }
