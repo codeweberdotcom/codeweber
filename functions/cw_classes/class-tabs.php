@@ -69,38 +69,32 @@ class CW_Tab
       $paragraph_content_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>%s</p>');
       $paragraph_content = $paragraph_content_object->paragraph_final;
 
+
       $button_content_object = new CW_Buttons('<div class="d-flex">%s</div>', NULL, NULL, NULL);
       $button_content = $button_content_object->final_buttons;
 
       $list_content_object = new CW_ListCol(NULL, NULL, NULL, NULL, NULL, NULL, NULL);
       $list_content = $list_content_object->listcol_final;
 
+
       $this->tab_content_title = $title_content;
       $this->tab_content_paragraph = $paragraph_content;
       $this->tab_content_list = $list_content;
       $this->tab_content_button = $button_content;
 
-      if ($swiper_content !== NULL) {
+      if ($swiper_content) {
          $this->tab_content_col_1_bool = true;
+         echo 'swiper<br>';
       } else {
          $this->tab_content_col_1_bool = false;
       }
 
-      if ($title_content !== NULL) {
+      if ($title_content_object->title_text !== NULL || $paragraph_content_object->paragraph_text !== NULL || $list_content !== NULL) {
          $this->tab_content_col_2_bool = true;
       } else {
          $this->tab_content_col_2_bool = false;
       }
-      if ($paragraph_content !== NULL) {
-         $this->tab_content_col_2_bool = true;
-      } else {
-         $this->tab_content_col_2_bool = false;
-      }
-      if ($list_content !== NULL) {
-         $this->tab_content_col_2_bool = true;
-      } else {
-         $this->tab_content_col_2_bool = false;
-      }
+
 
       if ($this->tab_content_col_1_bool == true && $this->tab_content_col_2_bool == true) {
          $this->tab_content_col_bool = true;
@@ -113,9 +107,12 @@ class CW_Tab
       }
       if ($class_col_1 !== NULL) {
          $cw_class_col_1 = $class_col_1;
-      } else {
+      } elseif ($this->tab_content_col_bool == true) {
          $cw_class_col_1 = 'col-md-6';
+      } else {
+         $cw_class_col_1 = 'col-md-12';
       }
+
       if ($this->tab_content_col_bool == true) {
          $cw_tab_content .= '<div class="' . $cw_class_col_1 . '">';
       }
@@ -128,16 +125,23 @@ class CW_Tab
 
       if ($class_col_2 !== NULL) {
          $cw_class_col_2 = $class_col_2;
-      } else {
+      } elseif ($this->tab_content_col_bool == true) {
          $cw_class_col_2 = 'col-md-6';
+      } else {
+         $cw_class_col_2 = 'col-md-12';
       }
 
       if ($this->tab_content_col_bool == true) {
          $cw_tab_content .= '<div class="' . $cw_class_col_2 . '">';
       }
 
-      $cw_tab_content .= $title_content;
-      $cw_tab_content .= $paragraph_content;
+      if ($title_content !== '<h4 class="h2 mb-3"></h4>') {
+         $cw_tab_content .= $title_content;
+      }
+
+      if ($paragraph_content !== '<p></p>') {
+         $cw_tab_content .= $paragraph_content;
+      }
       $cw_tab_content .= $list_content;
       $cw_tab_content .= $button_content;
 
@@ -231,7 +235,6 @@ class CW_Tabs
                   }
 
                   $tab_object = new CW_Tab($this->type_tabs, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $class_icon, NULL, NULL, NULL, $class_col_1, $class_col_2);
-
                   if ($this->type_tabs == 'type 1') {
                      $cw_tabs_nav .= ' <li class="nav-item"><a class="nav-link' . $active_class . '" data-bs-toggle="tab" href="#tab3-' . $row_num . '">' . $tab_object->tab_title . '</a>';
                   } elseif ($this->type_tabs == 'type 2') {
