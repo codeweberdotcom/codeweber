@@ -72,7 +72,7 @@ $block = new CW_Settings(
    <!-- /.container -->
 </section>
 <!-- /section -->
-<section class="wrapper bg-light angled upper-end lower-start">
+<section class="wrapper bg-light angled lower-start">
    <div class="container py-16 py-md-18 position-relative">
       <div class="position-relative mt-n18 mt-md-n23">
          <?php echo $block->shapes; ?>
