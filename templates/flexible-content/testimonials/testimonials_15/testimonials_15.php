@@ -20,7 +20,7 @@ if ($testimonials) {
    $argss['post__in'] = $cw_post_ids;
 }
 
-
+$type_field = get_sub_field('select_type');
 
 $block = new CW_Settings(
    $cw_settings = array(
@@ -31,7 +31,7 @@ $block = new CW_Settings(
       'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay',
       'background_data_default' => '/dist/img/photos/bg35.jpg',
 
-      // 'divider' => true,
+      'divider' => true,
    )
 );
 
@@ -51,7 +51,6 @@ $block = new CW_Settings(
                   while ($query->have_posts()) {
                      $query->the_post();
                      $post_id =  get_the_id();
-                     $type_field = get_sub_field('select_type');
                      if (have_rows('testimonials_post_field', $post_id)) :
                         while (have_rows('testimonials_post_field', $post_id)) : the_row();
                            if (get_sub_field('status') == 1) {
@@ -61,8 +60,9 @@ $block = new CW_Settings(
                                  $name = NULL;
                               }
 
+                              $link = '/testimonials/';
                               if (get_sub_field('testimonial')) {
-                                 $testimonial = get_sub_field('testimonial');
+                                 $testimonial = ReadMore(get_sub_field('testimonial'), $link, 175);
                               } else {
                                  $testimonial = NULL;
                               }
@@ -74,13 +74,13 @@ $block = new CW_Settings(
                                     $job_title  = NULL;
                                  }
                               } elseif ($type_field == 'City') {
-                                 if (get_sub_field('job_title')) {
+                                 if (get_sub_field('town')) {
                                     $job_title = get_sub_field('town');
                                  } else {
                                     $job_title  = NULL;
                                  }
                               } elseif ($type_field == 'Company name') {
-                                 if (get_sub_field('job_title')) {
+                                 if (get_sub_field('company')) {
                                     $job_title = get_sub_field('company');
                                  } else {
                                     $job_title  = NULL;
