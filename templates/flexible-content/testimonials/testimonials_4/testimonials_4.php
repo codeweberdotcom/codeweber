@@ -19,6 +19,8 @@ if ($testimonials) {
    $argss['post__in'] = $cw_post_ids;
 }
 
+$type_field = get_sub_field('select_type');
+
 $block = new CW_Settings(
    $cw_settings = array(
 
@@ -64,7 +66,6 @@ $block = new CW_Settings(
                         while ($query->have_posts()) {
                            $query->the_post();
                            $post_id =  get_the_id();
-                           $type_field = get_sub_field('select_type');
                            if (have_rows('testimonials_post_field', $post_id)) :
                               while (have_rows('testimonials_post_field', $post_id)) : the_row();
                                  if (get_sub_field('status') == 1) {
@@ -74,8 +75,9 @@ $block = new CW_Settings(
                                        $name = NULL;
                                     }
 
+                                    $link = '/testimonials/';
                                     if (get_sub_field('testimonial')) {
-                                       $testimonial = get_sub_field('testimonial');
+                                       $testimonial = ReadMore(get_sub_field('testimonial'), $link, 120);
                                     } else {
                                        $testimonial = NULL;
                                     }

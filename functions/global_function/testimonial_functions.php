@@ -31,13 +31,13 @@ add_filter('title_save_pre', 'auto_generate_post_title');
 
 
 
-function ReadMore($string, $link)
+function ReadMore($string, $link, $quantity_symbol)
 {
    $string = strip_tags($string);
-   if (strlen($string) > 120) {
+   if (strlen($string) > $quantity_symbol) {
 
       // truncate string
-      $stringCut = substr($string, 0, 120);
+      $stringCut = substr($string, 0, $quantity_symbol);
       $endPoint = strrpos($stringCut, ' ');
 
       //if the string doesn't contain any space then it will cut without word basis.

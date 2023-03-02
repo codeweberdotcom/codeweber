@@ -87,7 +87,7 @@ $block = new CW_Settings(
 
                                        $link = '/testimonials/';
                                        if (get_sub_field('testimonial')) {
-                                          $testimonial = ReadMore(get_sub_field('testimonial'), $link);
+                                          $testimonial = ReadMore(get_sub_field('testimonial'), $link, 120);
                                        } else {
                                           $testimonial = NULL;
                                        }
