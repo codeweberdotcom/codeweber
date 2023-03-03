@@ -268,14 +268,11 @@ class CW_Button
    //Final Button
    public function cw_final_button($import_class, $data)
    {
-
       if (have_rows('cw_buttons')) {
          while (have_rows('cw_buttons')) {
             the_row();
             $cw_link_object = new CW_Link(NULL, NULL, NULL);
             $button_url = $cw_link_object->link_url;
-
-
 
             if ($cw_link_object->link_type == 'Tooltip' || $cw_link_object->link_type == 'Popover') {
                $button_data = $cw_link_object->link_data;
