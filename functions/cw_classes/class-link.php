@@ -60,6 +60,7 @@ class CW_Link
       if (have_rows('cw_links')) {
          while (have_rows('cw_links')) {
             the_row();
+
             $cw_url = get_sub_field('cw_url');
             if ($cw_url && $this->link_type == 'URL') {
                $cw_link_url =  'href="' . esc_url($cw_url['url']) . '"';

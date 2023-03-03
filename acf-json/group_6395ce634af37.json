@@ -84,7 +84,7 @@
                 },
                 {
                     "key": "field_6395cf91bc2dd",
-                    "label": "Url",
+                    "label": "URL",
                     "name": "cw_url",
                     "type": "link",
                     "instructions": "",
@@ -347,5 +347,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677616033
+    "modified": 1677885390
 }

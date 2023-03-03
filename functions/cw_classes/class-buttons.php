@@ -273,6 +273,9 @@ class CW_Button
          while (have_rows('cw_buttons')) {
             the_row();
             $cw_link_object = new CW_Link(NULL, NULL, NULL);
+            $button_url = $cw_link_object->link_url;
+
+
 
             if ($cw_link_object->link_type == 'Tooltip' || $cw_link_object->link_type == 'Popover') {
                $button_data = $cw_link_object->link_data;
@@ -283,7 +286,7 @@ class CW_Button
                $button_data = $data;
             }
             $ghligthbox = $cw_link_object->link_glightbox;
-            $button_url = $cw_link_object->link_url;
+
             $button_link_url_target = $cw_link_object->link_url_target;
             $button_title_link = $cw_link_object->link_url_title;
             $button_bs_target = $cw_link_object->link_form;
@@ -335,10 +338,14 @@ class CW_Button
             $button_classes = implode(' ', $button_classes_array);
             $icon_button = NULL;
          }
+
+
          if ($type_button == 'Link') {
             $final_button = '<a role="button" ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
+         } elseif ($button_url !== 'href="#" role="button"') {
+            $final_button = '<a role="button" ' . $button_url . ' ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
          } else {
-            $final_button = '<a  role="button" ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
+            $final_button = '<a role="button" ' . $button_link_url_target . ' ' . $button_title_link . ' class="' . $button_classes . '"' .  $button_id . ' ' . $ghligthbox . ' ' . $button_bs_target . ' ' . $button_data . '>' . $icon_button . $text_button . '</a>';
          }
       } else {
          $final_button = NULL;
