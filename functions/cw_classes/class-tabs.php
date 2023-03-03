@@ -84,7 +84,6 @@ class CW_Tab
 
       if ($swiper_content) {
          $this->tab_content_col_1_bool = true;
-         echo 'swiper<br>';
       } else {
          $this->tab_content_col_1_bool = false;
       }
