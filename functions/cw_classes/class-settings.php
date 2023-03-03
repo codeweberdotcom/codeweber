@@ -107,7 +107,7 @@ class CW_Settings
          } else {
             $tabs_col_2 = NULL;
          }
-
+ 
          if (isset($cw_settings['tabs_demo']) && !$cw_settings['tabs_demo'] == NULL) {
             $tabs_demo = $cw_settings['tabs_demo'];
          } else {
@@ -120,7 +120,13 @@ class CW_Settings
             $tabs_type = NULL;
          }
 
-         $tabs_object = new CW_Tabs($tabs_type, $tabs_demo, $tabs_col_1, $tabs_col_2);
+         if (isset($cw_settings['tabs_id']) && !$cw_settings['tabs_id'] == NULL) {
+            $tabs_id = $cw_settings['tabs_id'];
+         } else {
+            $tabs_id =  NULL;
+         }
+
+         $tabs_object = new CW_Tabs($tabs_type, $tabs_demo, $tabs_col_1, $tabs_col_2, $tabs_id);
          $cw_tabs = $tabs_object->tabs_final;
       } else {
          $cw_tabs = NULL;

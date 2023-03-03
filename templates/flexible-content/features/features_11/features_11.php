@@ -4,6 +4,7 @@
  * Features 11
  */
 
+
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Why Choose Sandbox?',
@@ -17,6 +18,7 @@ $block = new CW_Settings(
       'divider' => true,
 
       'tabs' => true,
+      'tabs_id' => esc_html($args['block_id']),
       // 'tabs_type' => 'type 3',
       //'tabs_col-1' => 'col-md-6',
       //'tabs_col-2' => 'col-md-6',

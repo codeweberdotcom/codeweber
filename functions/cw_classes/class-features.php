@@ -6,8 +6,10 @@ class CW_Feature
 {
    public $features_icon;
    public $features_title;
+   public $features_title_class;
    public $features_style;
    public $features_paragraph;
+   public $features_paragraph_class;
    public $features_link;
    public $features_border_class;
    public $features_pattern;
@@ -89,6 +91,10 @@ class CW_Feature
             the_row();
             $features_object = new CW_Title(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
             $features_title =  $features_object->title_text;
+            $features_title_class = array();
+            $features_title_class[] = $features_object->title_class;
+            $features_title_class[] = $features_object->title_color;
+            $this->features_title_class = implode(' ', $features_title_class);
          }
       } else {
          $features_title = NULL;
@@ -104,6 +110,10 @@ class CW_Feature
             the_row();
             $features_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
             $features_paragraph =  $features_object->paragraph_text;
+            $features_paragraph_class = array();
+            $features_paragraph_class[] = $features_object->paragraph_class;
+            $features_paragraph_class[] = $features_object->paragraph_color;
+            $this->features_paragraph_class = implode(' ', $features_paragraph_class);
          }
       } else {
          $features_paragraph = NULL;
@@ -132,7 +142,9 @@ class CW_Feature
 
       $link = $this->features_link;
       $title = $this->features_title;
+      $title_class = $this->features_title_class;
       $paragraph = $this->features_paragraph;
+      $paragraph_class = $this->features_paragraph_class;
       $icon = $this->features_icon;
       $card_class_array = array();
 
@@ -154,7 +166,7 @@ class CW_Feature
                $features_item = $demo;
             } else {
                $features_item_pattern = $features_pattern;
-               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link, $card_class, $style, $num);
+               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link, $card_class, $style, $num, $title_class, $paragraph_class);
             }
          }
       } else {
