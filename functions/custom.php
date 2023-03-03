@@ -386,3 +386,17 @@ function acf_rating()
     }
     return $rate_num;
 }
+
+
+/**
+ * Shortcode Image Price CPT
+ */
+add_shortcode('price', 'shortcode_priceimage');
+
+function shortcode_priceimage($atts)
+{
+    ob_start(); ?>
+    <img class="w-100" src="<?php the_field('price_image', $atts['id']); ?>">
+<?php
+    return ob_get_clean();
+}
