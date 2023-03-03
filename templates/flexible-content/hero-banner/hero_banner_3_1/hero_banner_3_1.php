@@ -24,10 +24,10 @@ $block = new CW_Settings(
 
     'swiper' => array(
       'swiper_container_class' => 'w-100',
-      'image_class' => '',
-      'wrapper_image_class' => NULL,
-      'image_pattern' => '<figure %5$s %9$s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" />%7$s %10$s %11$s</figure>',
-      'image_thumb_size' => 'sandbox_hero_16',
+      'image_class' => 'w-auto',
+      'wrapper_image_class' => '',
+      'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
+      'image_thumb_size' => 'sandbox_hero_3',
       'image_demo' => '<div class="img-mask mask-1"><img src="' . get_template_directory_uri() . '/dist/img/photos/about17.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about17@2x.jpg 2x" alt="" /></div><div class="card shadow-lg position-absolute" style="bottom: 10%; right: 2%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
       'image_big_size' => 'project_1',
       'img_link' => '/dist/img/photos/about17.jpg',
