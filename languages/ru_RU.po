@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-02-27 11:08+0000\n"
+"PO-Revision-Date: 2023-03-04 10:54+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -71,9 +71,17 @@ msgstr "Добавить Клиента"
 msgid "Add New"
 msgstr "Добавить "
 
+#: functions/cpt/cpt-price_table.php:14
+msgid "Add new"
+msgstr ""
+
 #: functions/cpt/cpt-clients.php:15
 msgid "Add New Client"
 msgstr "Добавить Клиента"
+
+#: functions/cpt/cpt-price_table.php:15
+msgid "Add new Price list"
+msgstr "Добавить Прайс-лист"
 
 #: functions/cpt/cpt-price_package.php:16
 msgid "Add New Price Package"
@@ -106,6 +114,10 @@ msgstr "Добавить Сотрудника"
 #: templates/footer/footer-sandbox-24.php:36
 #: templates/footer/footer-sandbox-26.php:36
 #: templates/footer/footer-sandbox-4.php:30
+#: templates/flexible-content/contact/contact_2/contact_2.php:80
+#: templates/flexible-content/contact/contact_4/contact_4.php:77
+#: templates/flexible-content/contact/contact_5/contact_5.php:171
+#: templates/flexible-content/contact/contact_6/contact_6.php:75
 msgid "Address"
 msgstr "Адрес"
 
@@ -139,6 +151,10 @@ msgstr "Все Клиенты"
 #: templates/content/single-post.php:81
 msgid "All Posts"
 msgstr "Все Статьи"
+
+#: functions/cpt/cpt-price_table.php:13
+msgid "All Price lists"
+msgstr "Все Прайс-листы"
 
 #: functions/cpt/cpt-price_package.php:14
 msgid "All Price Packages"
@@ -212,7 +228,7 @@ msgstr "Блог"
 msgid "Blog archive template"
 msgstr "Шаблон главной страницы Блога"
 
-#: functions/widgets.php:145
+#: functions/widgets.php:163
 msgid "Blog categories"
 msgstr ""
 
@@ -409,6 +425,10 @@ msgid "Don't have an account?"
 msgstr "Еще нет аккаунта?"
 
 #: templates/footer/footer-sandbox-4.php:47
+#: templates/flexible-content/contact/contact_2/contact_2.php:98
+#: templates/flexible-content/contact/contact_4/contact_4.php:95
+#: templates/flexible-content/contact/contact_5/contact_5.php:189
+#: templates/flexible-content/contact/contact_6/contact_6.php:95
 msgid "E-mail"
 msgstr "E-Mail"
 
@@ -419,6 +439,10 @@ msgstr "Редактировать"
 #: functions/cpt/cpt-clients.php:17
 msgid "Edit Client"
 msgstr "Редактировать Клиентов"
+
+#: functions/cpt/cpt-price_table.php:16
+msgid "Edit Price list"
+msgstr "Редактировать Прайс-лист"
 
 #: functions/cpt/cpt-price_package.php:17
 msgid "Edit Price Package"
@@ -482,7 +506,7 @@ msgstr "FAQ"
 msgid "Faq"
 msgstr "Faq"
 
-#: functions/widgets.php:86
+#: functions/widgets.php:104
 msgid "FAQ categories"
 msgstr ""
 
@@ -498,7 +522,7 @@ msgstr "Категория FAQ"
 msgid "FAQ Options"
 msgstr "Настройки FAQ"
 
-#: functions/sidebars.php:67
+#: functions/sidebars.php:80
 msgid "FAQ Sidebar"
 msgstr ""
 
@@ -507,8 +531,12 @@ msgstr ""
 msgid "FAQ Tags"
 msgstr ""
 
-#: functions/widgets.php:116
+#: functions/widgets.php:134
 msgid "FAQ tags"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:24
+msgid "Featured image for this Price list"
 msgstr ""
 
 #: functions/cpt/cpt-services.php:25
@@ -524,6 +552,10 @@ msgstr "Основное изображение для сотрудника"
 #: templates/header/header-sandbox-09.php:61
 msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
+
+#: functions/cpt/cpt-price_table.php:31
+msgid "Filter Price lists list"
+msgstr ""
 
 #: templates/archive/archive-projects-3.php:31
 #: templates/archive/archive-projects-4.php:31
@@ -672,7 +704,7 @@ msgstr ""
 msgid "Header Options"
 msgstr "Настройки Хедера"
 
-#: functions/sidebars.php:76
+#: functions/sidebars.php:89
 msgid "Header right sidebar"
 msgstr "Хедер правый сайдбар"
 
@@ -730,6 +762,10 @@ msgstr "Форма Изображения"
 #: functions/customize.php:137
 msgid "Image Options"
 msgstr "Настройки Изображений"
+
+#: functions/cpt/cpt-price_table.php:29
+msgid "Insert into Price list"
+msgstr ""
 
 #: templates/content/loop-none.php:6
 msgid ""
@@ -904,6 +940,10 @@ msgstr "Месяц"
 msgid "My Account"
 msgstr "Личный кабинет"
 
+#: functions/cpt/cpt-price_table.php:12
+msgid "My Price lists"
+msgstr ""
+
 #: templates/header/header-sandbox-05.php:96
 #: templates/header/header-sandbox-08.php:102
 #: templates/header/header-sandbox-09.php:102
@@ -926,6 +966,10 @@ msgstr "Нужна помощь?"
 #: functions/cpt/cpt-clients.php:18
 msgid "New Client"
 msgstr "Новый Клиент"
+
+#: functions/cpt/cpt-price_table.php:17
+msgid "New Price list"
+msgstr ""
 
 #: functions/cpt/cpt-price_package.php:18
 msgid "New Price Package"
@@ -963,6 +1007,14 @@ msgstr "Следующий"
 msgid "No Client"
 msgstr "Нет Клиентов"
 
+#: functions/cpt/cpt-price_table.php:21
+msgid "No Price lists found"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:22
+msgid "No Price lists found in trash"
+msgstr ""
+
 #: functions/admin.php:159
 msgid "No Thumbnail For Post"
 msgstr "Нет превью"
@@ -975,7 +1027,7 @@ msgstr ""
 msgid "Offcanvas Menu Right"
 msgstr ""
 
-#: functions/sidebars.php:58
+#: functions/sidebars.php:71
 msgid "Offcanvas right"
 msgstr ""
 
@@ -1036,6 +1088,10 @@ msgstr "Сайдбар Страницы"
 msgid "Pages"
 msgstr "Страницы"
 
+#: functions/cpt/cpt-price_table.php:23 functions/cpt/cpt-price_table.php:41
+msgid "Parent Price list:"
+msgstr ""
+
 #: functions/cpt/cpt-projects.php:22 functions/cpt/cpt-projects.php:25
 msgid "Parent Project"
 msgstr "Родительский Проект"
@@ -1057,6 +1113,10 @@ msgid "Password"
 msgstr "Пароль"
 
 #: templates/footer/footer-sandbox-4.php:38
+#: templates/flexible-content/contact/contact_2/contact_2.php:89
+#: templates/flexible-content/contact/contact_4/contact_4.php:86
+#: templates/flexible-content/contact/contact_5/contact_5.php:180
+#: templates/flexible-content/contact/contact_6/contact_6.php:85
 msgid "Phone"
 msgstr "Телефон"
 
@@ -1077,17 +1137,65 @@ msgstr "Введите ваше имя, пожалуйста."
 msgid "Popular Posts"
 msgstr "Популярные статьи"
 
-#: functions/custom.php:402
+#: functions/custom.php:364
 msgid "Post Image"
 msgstr "Фото записи"
 
-#: functions/widgets.php:230
+#: functions/widgets.php:248
 msgid "Post tags"
 msgstr ""
 
 #: functions/bootstrap/bootstrap_post-nav.php:13
 msgid "Prev"
 msgstr "Предыдущий"
+
+#: functions/cpt/cpt-price_table.php:11
+msgid "Price List"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:35
+msgid "Price list"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:28
+msgid "Price list archives"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:36
+msgid "Price list published"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:37
+msgid "Price list published privately."
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:38
+msgid "Price list reverted to draft."
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:39
+msgid "Price list scheduled"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:40
+msgid "Price list updated."
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:10 functions/cpt/cpt-price_table.php:45
+msgid "Price Lists"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:34
+msgid "Price lists attributes"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:33
+msgid "Price lists list"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:32
+msgid "Price lists list navigation"
+msgstr ""
 
 #: functions/cpt/cpt-price_package.php:65
 #: functions/cpt/cpt-price_package.php:66
@@ -1173,6 +1281,7 @@ msgstr "Нет Проектов в Корзине"
 msgid "Quantity"
 msgstr "Кол-во"
 
+#: functions/global_function/testimonial_functions.php:45
 #: templates/content/loop-faq.php:14 templates/content/loop.php:14
 #: templates/flexible-content/sliders/slider_1/slider_1.php:34
 #: templates/flexible-content/sliders/slider_2/slider_2.php:26
@@ -1187,7 +1296,7 @@ msgstr "Читать далее"
 msgid "Read more"
 msgstr "Читать еще"
 
-#: functions/widgets.php:183
+#: functions/widgets.php:201
 #: templates/flexible-content/widgets/widget_1/widget_1.php:17
 msgid "Recent Posts"
 msgstr "Свежие статьи"
@@ -1198,6 +1307,10 @@ msgstr "Свежие статьи"
 msgid "Registration takes less than a minute."
 msgstr "Регистрация занимает менее минуты."
 
+#: functions/cpt/cpt-price_table.php:26
+msgid "Remove featured image for this Price list"
+msgstr ""
+
 #: functions/cpt/cpt-services.php:27
 msgid "Remove featured Image for this service"
 msgstr "Удалить изображение из услуги"
@@ -1206,11 +1319,11 @@ msgstr "Удалить изображение из услуги"
 msgid "Remove featured Image for this staff"
 msgstr "Удалить фото сотрудника"
 
-#: functions/global.php:208 functions/global.php:223
+#: functions/global.php:233 functions/global.php:248
 msgid "Results for: "
 msgstr "Результаты для:"
 
-#: functions/cpt/cpt-testimonials.php:56 functions/cpt/cpt-testimonials.php:57
+#: functions/cpt/cpt-testimonials.php:55 functions/cpt/cpt-testimonials.php:56
 msgid "Review Options"
 msgstr "Настройки Отзывов"
 
@@ -1265,6 +1378,10 @@ msgstr "Поиск"
 #: functions/cpt/cpt-clients.php:21
 msgid "Search Client"
 msgstr "Поиск Клиента"
+
+#: functions/cpt/cpt-price_table.php:20
+msgid "Search Price lists"
+msgstr ""
 
 #: functions/cpt/cpt-price_package.php:21
 msgid "Search Price Package"
@@ -1355,6 +1472,10 @@ msgstr "Настройки услуг"
 #: functions/sidebars.php:37 functions/sidebars.php:39
 msgid "Services Sidebar"
 msgstr "Сайдбар Услуг"
+
+#: functions/cpt/cpt-price_table.php:25
+msgid "Set featured image for this Price list"
+msgstr ""
 
 #: functions/cpt/cpt-services.php:26
 msgid "Set featured Image for this service"
@@ -1509,7 +1630,7 @@ msgstr "Всего"
 msgid "Tags"
 msgstr "Метки"
 
-#: functions/custom.php:317 functions/cpt/cpt-testimonials.php:11
+#: functions/cpt/cpt-testimonials.php:11
 msgid "Testimonial"
 msgstr "Отзыв"
 
@@ -1526,6 +1647,10 @@ msgstr "Шаблон основной страницы Отзывов"
 #: functions/customize.php:559
 msgid "Testimonials settings"
 msgstr "Настройки отзывов"
+
+#: functions/sidebars.php:50 functions/sidebars.php:52
+msgid "Testimonials Sidebar"
+msgstr ""
 
 #: 404.php:12
 msgid ""
@@ -1603,8 +1728,16 @@ msgstr "Типы"
 msgid "Update"
 msgstr "Обновить"
 
+#: functions/cpt/cpt-price_table.php:30
+msgid "Upload to this Price list"
+msgstr ""
+
 #: functions/cpt/cpt-services.php:28 functions/cpt/cpt-staff.php:28
 msgid "Use as featured image"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:27
+msgid "Use as featured image for this Price list"
 msgstr ""
 
 #: functions/cpt/cpt-clients.php:19
@@ -1614,6 +1747,14 @@ msgstr "Показать Клиента"
 #: functions/cpt/cpt-clients.php:20
 msgid "View Clients"
 msgstr "Показать Клиентов"
+
+#: functions/cpt/cpt-price_table.php:18
+msgid "View Price list"
+msgstr ""
+
+#: functions/cpt/cpt-price_table.php:19
+msgid "View Price lists"
+msgstr ""
 
 #: functions/cpt/cpt-price_package.php:19
 msgid "View Price Package"
@@ -1673,7 +1814,7 @@ msgstr ""
 msgid "Woocommerce Header"
 msgstr "Woocommerce Хедер"
 
-#: functions/sidebars.php:49
+#: functions/sidebars.php:62
 msgid "Woocommerce sidebar"
 msgstr "Woocommerce сайдбар"
 
@@ -1691,7 +1832,7 @@ msgstr "Писатель"
 msgid "Yearly"
 msgstr "Год"
 
-#: woocommerce/single-product/related.php:26
+#: woocommerce/single-product/related.php:55
 #: templates/flexible-content/sliders/slider_1/slider_1.php:13
 msgid "You Might Also Like"
 msgstr "Вам также может понравится"
