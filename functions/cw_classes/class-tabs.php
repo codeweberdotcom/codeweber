@@ -247,7 +247,7 @@ class CW_Tabs
                   } elseif ($this->type_tabs == 'type 2') {
                      $cw_tabs_nav .= '<li class="nav-item"><a class="nav-link' . $active_class . '" data-bs-toggle="tab" href="#tab' . $tabs_id . '-' . $row_num . '">' . $tab_object->tab_icon . '<span>' . $tab_object->tab_title . '</span></a></li>';
                   } elseif ($this->type_tabs == 'type 3') {
-                     $cw_tabs_nav .= '<li class="nav-item"><a class="nav-link d-flex h-100 flex-row' . $active_class . '" data-bs-toggle="tab" href="#tab3-' . $row_num . '"><div>' . $tab_object->tab_icon . '</div><div><h4 class="mb-1">' . $tab_object->tab_title . '</h4><p>' . $tab_object->tab_description . '</p></div></a> </li>';
+                     $cw_tabs_nav .= '<li class="nav-item"><a class="nav-link d-flex h-100 flex-row' . $active_class . '" data-bs-toggle="tab" href="#tab' . $tabs_id . '-' . $row_num . '"><div>' . $tab_object->tab_icon . '</div><div><h4 class="mb-1">' . $tab_object->tab_title . '</h4><p>' . $tab_object->tab_description . '</p></div></a> </li>';
                   }
 
                   $cw_tabs_content .= '<div class="tab-pane fade show' . $active_class . '" id="tab' . $tabs_id . '-' . $row_num . '">';
