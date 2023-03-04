@@ -894,6 +894,7 @@ class CW_Swiper
                while (have_rows('cw_images')) {
                   the_row();
                   $objects_image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
+
                   $objects_array[] = $objects_image->final_image;
                }
             }

@@ -87,7 +87,8 @@ class CW_Image
             if (get_sub_field('cw_link_type') == 'image') {
                $cw_image_link =  $this->image_url_big;
             } elseif (get_sub_field('cw_link_type') == 'link') {
-               $cw_image_link = $this->image_link;
+
+               $cw_image_link = get_sub_field('cw_link');
             } elseif (get_sub_field('cw_link_type') == 'video') {
                $cw_image_link = get_sub_field('media');
             } elseif (get_sub_field('cw_link_type') == 'youtube') {
@@ -387,8 +388,11 @@ class CW_Image
             if (have_rows('cw_image1')) {
                while (have_rows('cw_image1')) {
                   the_row();
-                  if ($cursor_effect == 'video_button') {
+                  if ($cursor_effect == 'video_button' && $this->image_link_type !== 'link') {
                      $image_link_open = '<a href="' . $img_link . '" class="btn btn-circle btn-light btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" data-glightbox  ' . $image_description_1 . ' data-title="' . $image_title . '" data-gallery="hero"><i class="icn-caret-right text-dark"></i></a>';
+                     $image_link_close = NULL;
+                  } elseif ($cursor_effect == 'video_button' && $this->image_link_type == 'link') {
+                     $image_link_open = '<a href="' . $img_link . '" class="btn btn-circle btn-light btn-play ripple mx-auto mb-5 position-absolute" style="top:50%; left: 50%; transform: translate(-50%,-50%); z-index:3;" target="blank"><i class="icn-caret-right text-dark"></i></a>';
                      $image_link_close = NULL;
                   } elseif (get_sub_field('cw_cursor_effect') == 'itooltip itooltip-light' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-dark' || get_sub_field('cw_cursor_effect') == 'itooltip itooltip-primary') {
                      $image_link_open = '<a href="' . $img_link . '" data-glightbox="title: ' . get_sub_field('cw_caption_image') . '; description: ' .  $image_description_simple . '" data-gallery="g1">';
