@@ -4,22 +4,21 @@ function cptui_register_my_cpts_documents()
 {
 
    /**
-    * Post Type: Documents.
+    * Post Type: Docs.
     */
 
    $labels = [
-      "name" => esc_html__("Documents", "codeweber"),
-      "singular_name" => esc_html__("Document", "codeweber"),
-      "menu_name" => esc_html__("Documents", "codeweber"),
+      "name" => esc_html__("Docs", "codeweber"),
+      "singular_name" => esc_html__("Doc", "codeweber"),
    ];
 
    $args = [
-      "label" => esc_html__("Documents", "codeweber"),
+      "label" => esc_html__("Docs", "codeweber"),
       "labels" => $labels,
       "description" => "",
-      "public" => false,
-      "publicly_queryable" => false,
-      "show_ui" => false,
+      "public" => true,
+      "publicly_queryable" => true,
+      "show_ui" => true,
       "show_in_rest" => true,
       "rest_base" => "",
       "rest_controller_class" => "WP_REST_Posts_Controller",
@@ -28,15 +27,14 @@ function cptui_register_my_cpts_documents()
       "show_in_menu" => true,
       "show_in_nav_menus" => true,
       "delete_with_user" => false,
-      "exclude_from_search" => false,
+      "exclude_from_search" => true,
       "capability_type" => "post",
       "map_meta_cap" => true,
       "hierarchical" => false,
-      "can_export" => false,
+      "can_export" => true,
       "rewrite" => ["slug" => "documents", "with_front" => true],
       "query_var" => true,
       "supports" => ["title"],
-      "taxonomies" => ["category"],
       "show_in_graphql" => false,
    ];
 
