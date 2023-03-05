@@ -24,65 +24,56 @@ $block = new CW_Settings(
 );
 
 
-$argss = array(
-   'post_type' => 'product',
-   'posts_per_page' => 10,
-   //'product_cat' => 'hoodies'
-);
-
-$loop = new WP_Query($argss); ?>
+?>
 
 
 <section class="wrapper bg-gray related products">
    <div class="container py-14 py-md-16">
-      <?php echo $block->title; ?>
-
-
-      <div class="swiper-container grid-view mb-6" data-margin="30" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1" data-nav="true">
-
-         <div class="swiper">
-            <div class="swiper-wrapper">
-               <?php while ($loop->have_posts()) {
-                  $loop->the_post();
-               ?>
-
-                  <div class="swiper-slide">
-                     <figure class="rounded mb-6">
-
-                        <?php
-                        $id = wc_get_product($product_id);
-                        $image = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'single-post-thumbnail');
-                        ?>
-                        <?php echo $image[0]; ?>
-
-
-                        <img src="<?php echo $image[0]; ?>" srcset="<?php echo $image[0]; ?>" alt="" /><a class="item-link" href="<?php echo $image[0]; ?>" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a>
+      <?php echo $block->title;
 
 
 
-                     </figure>
-                     <div class="project-details d-flex justify-content-center flex-column">
-                        <div class="post-header">
-                           <h2 class="post-title h3"><a href="./single-project.html" class="link-dark"><?php echo get_the_title(); ?></a></h2>
-                        </div>
-                        <!-- /.post-header -->
+      $products = get_sub_field('products');
+      if ($products) { ?>
+         <div class="swiper-container grid-view mb-6" data-margin="30" data-dots="true" data-items-xl="4" data-items-md="2" data-items-xs="1" data-nav="true">
+
+            <div class="swiper">
+               <div class="swiper-wrapper">
+                  <?php
+                  foreach ($products as $post_ids) { ?>
+
+                     <div class="swiper-slide">
+                        <a href="<?php echo get_permalink($post_ids); ?>">
+                           <figure class="rounded mb-6">
+                              <?php
+                              $image = wp_get_attachment_image_src(get_post_thumbnail_id($post_ids), 'single-post-thumbnail');
+                              ?>
+                              <img src="<?php echo $image[0]; ?>" srcset="<?php echo $image[0]; ?>" alt="" />
+                              <a class="item-link" href="<?php echo $image[0]; ?>" data-glightbox="title: <?php echo get_the_title($post_ids); ?>;" data-gallery="projects-group"><i class="uil uil-focus-add"></i></a>
+                           </figure>
+                           <div class="project-details d-flex justify-content-center flex-column">
+                              <div class="post-header">
+                                 <h2 class="post-title h3"><a href="<?php echo get_permalink($post_ids); ?>" class="link-dark"><?php echo get_the_title($post_ids); ?></a></h2>
+                              </div>
+                              <!-- /.post-header -->
+                           </div>
+                           <!-- /.project-details -->
+
+                        </a>
                      </div>
-                     <!-- /.project-details -->
-
-
-
-                  </div>
-                  <!--/.swiper-slide -->
-               <?php }; ?>
-               </ul>
+                     <!--/.swiper-slide -->
+                  <?php }
+                  ?>
+               </div>
                <!--/.swiper-wrapper -->
             </div>
             <!-- /.swiper -->
          </div>
          <!-- /.swiper-container -->
-      </div>
-      <!-- /.container -->
+      <?php
+      }; ?>
+
+   </div>
+   <!-- /.container -->
 </section>
 <!-- /section -->
-<?php
-wp_reset_query();

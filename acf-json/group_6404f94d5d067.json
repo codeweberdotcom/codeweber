@@ -1,6 +1,6 @@
 {
     "key": "group_6404f94d5d067",
-    "title": "CW Woocommerce",
+    "title": "CW Woocommerce Templates",
     "fields": [
         {
             "key": "field_6404f94d67e7c",
@@ -59,6 +59,49 @@
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6405103266601",
+                            "label": "Products",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_64050ffa66600",
+                            "label": "Products",
+                            "name": "products",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "product"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
                         },
                         {
                             "key": "field_6404f94d85bd7",
@@ -126,5 +169,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678047898
+    "modified": 1678053454
 }
