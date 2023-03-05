@@ -72,7 +72,8 @@
                         "Form": "Form",
                         "Image": "Image",
                         "Tooltip": "Tooltip",
-                        "Modal": "Modal"
+                        "Modal": "Modal",
+                        "Docs": "Docs"
                     },
                     "default_value": false,
                     "allow_null": 0,
@@ -203,6 +204,38 @@
                     "multiple": 0,
                     "return_format": "id",
                     "ui": 1
+                },
+                {
+                    "key": "field_6404dc8268764",
+                    "label": "Docs",
+                    "name": "docs",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6395ce75bc2da",
+                                "operator": "==",
+                                "value": "Docs"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": "",
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": "",
+                    "min": "",
+                    "max": 1,
+                    "return_format": "object"
                 },
                 {
                     "key": "field_63d4e9be1beec",
@@ -347,5 +380,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677885390
+    "modified": 1678040277
 }
