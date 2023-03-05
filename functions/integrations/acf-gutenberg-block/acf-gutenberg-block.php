@@ -327,6 +327,28 @@ function my_acf_blocks_init()
 
       );
 
+
+      // Register a Section.
+      acf_register_block_type(
+         array(
+            'name'              => 'woocommerce',
+            'title'             => __('Woocommerce'),
+            'description'       => __('Woocommerce.'),
+            'render_template'   => 'templates/flexible-content/woocommerce.php',
+            'category'          => 'codeweber_elements',
+            'mode'                    => 'auto',
+            'align'           => 'full',
+            'supports'        => array(
+               'align'        => array('full'),
+               'align'        => true,
+               'jsx' => true,
+            ),
+            'mode' => 'preview',
+
+         )
+
+      );
+
       // Register a Icon.
       acf_register_block_type(
          array(
