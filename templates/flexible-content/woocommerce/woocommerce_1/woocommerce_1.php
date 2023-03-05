@@ -8,15 +8,12 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Our Models',
-      'patternTitle' => ' <h2 class="mb-6">%s</h2>',
+      'patternTitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3">%s<?h2>',
 
-      'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius.',
-      'patternParagraph' => '<p class="mb-5">%s</p>',
+      'subtitle' => 'Check out some of our awesome projects with creative ideas and great design.',
+      'patternSubtitle' => ' <h3 class="display-4 mb-9">%s</h3>',
 
-      // 'buttons' => '<a href="#" class="btn btn-soft-leaf rounded-pill mt-6 mb-0">More Details</a>',
-      // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
-
-      'background_class_default' => 'wrapper bg-light',
+      'background_class_default' => 'wrapper bg-gray',
       'divider' => true,
 
       'shapes' => array('<div class="shape bg-line leaf rounded-circle rellax w-17 h-17" data-rellax-speed="1" style="top: -2rem; right: -0.6rem;"></div>', '<div class="shape bg-pale-violet rounded-circle rellax w-17 h-17" data-rellax-speed="1" style="bottom: -2rem; left: -0.4rem;"></div>'),
@@ -27,13 +24,18 @@ $block = new CW_Settings(
 ?>
 
 
-<section class="wrapper bg-gray related products">
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
-      <?php echo $block->title;
-
-
-
-      $products = get_sub_field('products');
+      <div class="row">
+         <div class="col-lg-9 col-xl-8 col-xxl-7">
+            <?php echo $block->title; ?>
+            <!--/title -->
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
+         </div>
+      </div>
+      <?php $products = get_sub_field('products');
       if ($products) { ?>
          <div class="swiper-container grid-view mb-6" data-margin="30" data-dots="true" data-items-xl="4" data-items-md="2" data-items-xs="1" data-nav="true">
 
