@@ -35,7 +35,7 @@ $block = new CW_Settings(
       'divider' => true,
 
       'buttons' => '<a href="#" class="btn btn-primary rounded-pill mt-3">See All Members</a>',
-      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
    )
 );
 ?>

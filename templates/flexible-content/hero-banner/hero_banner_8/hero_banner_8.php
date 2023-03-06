@@ -14,11 +14,11 @@ $block = new CW_Settings(
     // 'subtitle' => 'Grow Your Business with Our Solutions.',
     // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
-    'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
+    'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
               <span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span>
               <span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Contact Us</a></span>
             </div>',
-    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
     'background_class_default' => 'wrapper bg-light',
     'background_data_default' => '/dist/img/photos/bg16.png',
@@ -36,7 +36,7 @@ $block = new CW_Settings(
     'image_big_size' => 'project_1',
 
     'label_demo' => '<div data-cue="slideInRight" data-delay="300"><div class="card shadow-lg position-absolute zindex-1" style="bottom: 10%; right: -3%;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><div class="icon btn btn-circle btn-md btn-soft-primary pe-none mx-auto me-3"> <i class="uil uil-users-alt"></i> </div></div><div><h3 class="counter mb-0 text-nowrap">25000+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Happy Clients</p></div></div></div><!--/.card-body --></div><!--/.card --></div><!--/div -->',
-    
+
     'label_pattern' => '<div data-cue="slideInRight" data-delay="300"><div class="card shadow-lg position-absolute zindex-1 %6$s"  %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card --></div><!--/div -->',
 
 

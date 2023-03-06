@@ -19,7 +19,7 @@ $block = new CW_Settings(
 
 
     // 'buttons' => '<a href="#" class="btn btn-lg btn-gradient gradient-1 rounded">Explore Now</a>',
-    // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
     'background_class_default' => 'video-wrapper bg-overlay bg-overlay-gradient px-0 mt-0 min-vh-80',
     //'background_data_default' => '/dist/img/photos/movie2.jpg',
