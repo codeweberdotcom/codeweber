@@ -1,0 +1,50 @@
+<?php
+
+/**
+ *  Call to Action 1_1
+ */
+
+
+$block = new CW_Settings(
+   $cw_settings = array(
+
+      'title' => 'Join Our Community',
+      'patternTitle' => '<h2 class="fs-16 text-uppercase text-line text-white mb-3">%s</h2>',
+
+      'subtitle' => 'We are trusted by over 5000+ clients. Join them by using our services and grow your business.',
+      'patternSubtitle' => '<h3 class="display-4 mb-6 text-white pe-xxl-18">%s</h3>',
+
+      'buttons' => '<a href="#" class="btn btn-white rounded mb-0 text-nowrap">Join Us</a>',
+      'buttons_pattern' => '<div class="d-flex justify-content-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+
+      'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay',
+      'background_data_default' => '/dist/img/photos/bg1.jpg',
+
+      'divider' => true,
+
+   )
+);
+?>
+
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+   <div class="container py-18">
+      <div class="row">
+         <div class="col-lg-8">
+            <?php echo $block->title; ?>
+            <!--/title -->
+            <?php echo $block->subtitle; ?>
+            <!--/paragraph -->
+            <?php echo $block->buttons; ?>
+            <!--/buttons group -->
+         </div>
+         <!-- /column -->
+      </div>
+      <!-- /.row -->
+   </div>
+   <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
+</section>
+<!-- /section -->
