@@ -33,7 +33,7 @@
                     "default_value": "",
                     "placeholder": "",
                     "maxlength": "",
-                    "rows": "",
+                    "rows": 3,
                     "new_lines": ""
                 },
                 {
@@ -209,7 +209,7 @@
                     "key": "field_6404dc8268764",
                     "label": "Docs",
                     "name": "docs",
-                    "type": "relationship",
+                    "type": "post_object",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -226,16 +226,47 @@
                         "class": "",
                         "id": ""
                     },
-                    "post_type": "",
-                    "taxonomy": "",
-                    "filters": [
-                        "search",
-                        "taxonomy"
+                    "post_type": [
+                        "documents"
                     ],
-                    "elements": "",
-                    "min": "",
-                    "max": 1,
-                    "return_format": "object"
+                    "taxonomy": "",
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "return_format": "object",
+                    "ui": 1
+                },
+                {
+                    "key": "field_6405e57186470",
+                    "label": "Docs Click Type",
+                    "name": "docs_click",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6395ce75bc2da",
+                                "operator": "==",
+                                "value": "Docs"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "download": "download",
+                        "open": "open"
+                    },
+                    "default_value": "open",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 1,
+                    "return_format": "value",
+                    "placeholder": ""
                 },
                 {
                     "key": "field_63d4e9be1beec",
@@ -380,5 +411,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678040277
+    "modified": 1678108203
 }

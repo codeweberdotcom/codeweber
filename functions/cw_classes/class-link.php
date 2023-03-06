@@ -77,6 +77,21 @@ class CW_Link
                $this->link_glightbox = 'data-glightbox';
             } elseif ($this->link_type == 'Tooltip') {
                $cw_link_url =  NULL;
+            } elseif ($this->link_type == 'Docs') {
+               $docs = get_sub_field('docs');
+               if ($docs) {
+                  $post = $docs;
+                  setup_postdata($post);
+                  $file = get_field('file', $post->ID);
+                  if ($file) {
+                     if (get_sub_field('docs_click') == 'open') {
+                        $cw_link_url =  'href="' . esc_url($file['url']) . '" target="_blank"';
+                     } elseif (get_sub_field('docs_click') == 'download') {
+                        $cw_link_url =  'href="' . esc_url($file['url']) . '" download';
+                     }
+                  }
+                  wp_reset_postdata();
+               }
             } else {
                $cw_link_url = 'href="#" role="button"';
             }
