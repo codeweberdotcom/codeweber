@@ -14,9 +14,9 @@ $block = new CW_Settings(
     // 'subtitle' => 'Grow Your Business with Our Solutions.',
     // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
-    'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
+    'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
     <span><a class="btn btn-primary rounded me-2">See Projects</a></span><span><a class="btn btn-yellow rounded">Learn More</a></span></div>',
-    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
     'background_class_default' => 'wrapper bg-soft-primary',
     'background_data_default' => '/dist/img/photos/bg16.png',

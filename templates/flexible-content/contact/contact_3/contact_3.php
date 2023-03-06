@@ -35,7 +35,7 @@ $block = new CW_Settings(
       'patternParagraph' => '<p>%s</p>',
 
       'buttons' => '<a href="#" class="btn btn-primary rounded-pill mt-2">Join Us</a>',
-      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
       'multi_image' => array(
          array(

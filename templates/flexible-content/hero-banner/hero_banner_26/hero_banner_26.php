@@ -16,7 +16,7 @@ $block = new CW_Settings(
 
     'buttons' => '<div class="d-inline-flex me-2"><a href="#" class="btn btn-lg btn-grape rounded">Try it for Free</a></div>
           <div class="d-inline-flex"><a href="#" class="btn btn-lg btn-outline-grape rounded">Explore Now</a></div>',
-    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
     'background_class_default' => 'wrapper bg-soft-primary',
     //'background_data_default' => '/dist/img/photos/bg16.png',

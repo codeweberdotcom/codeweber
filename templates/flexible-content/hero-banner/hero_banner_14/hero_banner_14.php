@@ -15,7 +15,7 @@ $block = new CW_Settings(
       // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
 
       'buttons' => '<a href="#" class="more hover">Learn More</a>',
-      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
       'background_class_default' => 'wrapper bg-soft-primary',
       'background_data_default' => '/dist/img/photos/bg16.png',
