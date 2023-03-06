@@ -397,6 +397,19 @@ function shortcode_priceimage($atts)
 {
     ob_start(); ?>
     <img class="w-100" src="<?php the_field('price_image', $atts['id']); ?>">
+
+    <?php $price_document = get_field('price_document', $atts['id']);
+    if ($price_document) :
+        $post = $price_document;
+        setup_postdata($post);
+        $file = get_field('file', $post->ID);
+        if ($file) : ?>
+            <div class="justify-content-center d-flex mt-5"><a role="button" href="<?php echo esc_url($file['url']); ?>" target="" title="" class="btn rounded-pill btn-lg btn-outline-primary mb-2 me-2" download>Скачать прайс-лист</a></div>
+        <?php endif;
+        ?>
 <?php
+        wp_reset_postdata();
+    endif;
+
     return ob_get_clean();
 }
