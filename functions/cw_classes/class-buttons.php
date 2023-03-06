@@ -248,7 +248,7 @@ class CW_Button
       if ($this->shape_button) {
          $button_classes_array[] = $this->shape_button;
       }
-      if ($this->size_button) {
+      if ($this->size_button && $this->type_button !== "Expand") {
          $button_classes_array[] = $this->size_button;
       }
       if ($this->color_button) {
