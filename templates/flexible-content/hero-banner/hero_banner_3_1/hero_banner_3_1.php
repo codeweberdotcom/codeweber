@@ -74,7 +74,7 @@ $block = new CW_Settings(
         <?php // echo $block->paragraph; 
         ?>
         <!--/pargraph -->
-        <div class="row gx-xl-10 gy-6 mb-6">
+        <div class="row gx-xl-10 gy-6 mb-6 text-start">
           <?php echo $block->features; ?>
           <!--/features -->
         </div>
