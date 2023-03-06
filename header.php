@@ -12,6 +12,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div class="page-loader"></div>
 	<?php do_action('codeweber_start_body'); // Hook start body
 	wp_body_open();
 	sandbox_frame_open(); ?>

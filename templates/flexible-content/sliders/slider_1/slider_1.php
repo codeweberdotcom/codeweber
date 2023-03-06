@@ -16,20 +16,14 @@ $myposts = $my_posts->query(array(
       <div class="swiper-wrapper" id="swiper-wrapper-b89a14f97e102ef7d" aria-live="off" style="cursor: grab; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
          <?php
          // обрабатываем результат
-         foreach ($myposts as $post_single) { ?>
+         foreach ($myposts as $post_single) {
+            setup_postdata($post_single);
+         ?>
             <div class="swiper-slide">
                <article>
-                  <figure class="overlay overlay-1 hover-scale rounded mb-5"><a href="<?php the_permalink(); ?>">
-                        <?php
-                        the_post_thumbnail(
-                           'sandbox_slider_1',
-                           array(
-                              'class' => '',
-                              'alt' => get_the_title(),
-                           )
-                        );
-                        ?>
-                     </a>
+                  <figure class="overlay overlay-1 hover-scale rounded mb-5">
+                     <a href="<?php the_permalink($post_single->ID); ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url($post_single->ID, 'sandbox_slider_1'); ?>" alt=""><span class="bg"></span></a>
                      <figcaption>
                         <div class="from-top mb-0 h5"><?php esc_html_e('Read More', 'codeweber'); ?></div>
                      </figcaption>
@@ -39,13 +33,13 @@ $myposts = $my_posts->query(array(
                         <?php the_category(', '); ?>
                      </div>
                      <!-- /.post-category -->
-                     <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="<?php the_permalink(); ?>"><?php echo esc_html($post_single->post_title); ?></a></h2>
+                     <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="<?php the_permalink($post_single->ID); ?>"><?php echo esc_html($post_single->post_title); ?></a></h2>
                   </div>
                   <!-- /.post-header -->
                   <div class="post-footer">
                      <ul class="post-meta mb-0">
                         <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php the_time(get_option('date_format')); ?></span></li>
-                        <li class="post-comments"><a href="<?php echo get_post_permalink(); ?>/#comments"><i class="uil uil-comment"></i><?php echo $post_single->comment_count; ?></a></li>
+                        <li class="post-comments"><a href="<?php echo get_post_permalink($post_single->ID); ?>/#comments"><i class="uil uil-comment"></i><?php echo $post_single->comment_count; ?></a></li>
                      </ul>
                      <!-- /.post-meta -->
                   </div>
@@ -54,8 +48,8 @@ $myposts = $my_posts->query(array(
                <!-- /article -->
             </div>
             <!--/.swiper-slide -->
-         <?php }
-         ?>
+         <?php } ?>
+         <?php wp_reset_postdata(); ?>
       </div>
       <!--/.swiper-wrapper -->
       <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
