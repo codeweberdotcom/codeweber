@@ -16,7 +16,7 @@ function cptui_register_my_taxes_category_doc()
    $args = [
       "label" => esc_html__("Category Docs", "codeweber"),
       "labels" => $labels,
-      "public" => true,
+      "public" => false,
       "publicly_queryable" => true,
       "hierarchical" => false,
       "show_ui" => true,

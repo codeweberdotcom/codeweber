@@ -16,7 +16,7 @@ function cptui_register_my_cpts_documents()
       "label" => esc_html__("Docs", "codeweber"),
       "labels" => $labels,
       "description" => "",
-      "public" => true,
+      "public" => false,
       "publicly_queryable" => true,
       "show_ui" => true,
       "show_in_rest" => true,
