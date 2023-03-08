@@ -405,11 +405,34 @@ function shortcode_priceimage($atts)
         $file = get_field('file', $post->ID);
         if ($file) : ?>
             <div class="justify-content-center d-flex mt-5"><a role="button" href="<?php echo esc_url($file['url']); ?>" target="" title="" class="btn rounded-pill btn-lg btn-outline-primary mb-2 me-2" download>Скачать прайс-лист</a></div>
-        <?php endif;
-        ?>
-<?php
+<?php endif;
+
         wp_reset_postdata();
     endif;
 
     return ob_get_clean();
 }
+
+function social_icons()
+{
+    $social = '';
+    // --- Single icon -----
+    printr(codeweber_socialicons());
+    foreach (codeweber_socialicons() as $key => $value) {
+        if (get_field('social_' . $key, 'option')) {
+            $social .= '<a href="' . esc_attr(get_field('social_' . $key, 'option')) . '" title="' . esc_attr($value['social-name']) . '" target="_blank">
+                <i class="fs-36 lh-1 ' . esc_attr($value['icon-style']) . ' ' . esc_attr($value['icon-name']) . '"></i>
+            </a>';
+        };
+    };
+    return $social;
+}
+
+add_filter('wpcf7_form_elements', function ($html) {
+    $html = $html;
+    $dsdsds = social_icons();
+    $html .= '<div class="divider-icon my-4">' . esc_html__('or', 'codeweber') . '</div>';
+    $html .= '<nav class="nav social justify-content-center text-center">' . $dsdsds . '</nav>';
+
+    return $html;
+});
