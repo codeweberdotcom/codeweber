@@ -289,6 +289,25 @@ function my_acf_blocks_init()
          )
       );
 
+      // Register a Page Header.
+      acf_register_block_type(
+         array(
+            'name'                => 'page_header',
+            'title'                => 'Page Header',
+            'description'        => 'A page header content block.',
+            'render_template'   => 'templates/flexible-content/page_header.php',
+            'category'          => 'codeweber',
+            'mode'                    => 'auto',
+            'align'           => 'full',
+            'supports'        => array(
+               'align'        => array('full'),
+               'align'        => true,
+            ),
+            'mode' => 'preview',
+         )
+      );
+
+
 
       // Register a Restricted block.
       acf_register_block_type(array(
