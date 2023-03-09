@@ -37,19 +37,20 @@ class CW_Background
             $color = $this->color_background;
             $overlay = $this->overlay_background;
             $size = $this->size_background;
-            if ($overlay !== 'none') {
-               $class_background[] = $overlay;
-            }
-            if ($size !== 'none') {
-               $class_background[] = $size;
-            }
-            if ($color !== 'none') {
-               $class_background[] = $color;
-            }
-            if (get_sub_field('cw_class')) {
-               $class_background[] = get_sub_field('cw_class');
-            }
+
             if ($color) {
+               if ($overlay !== 'none') {
+                  $class_background[] = $overlay;
+               }
+               if ($size !== 'none') {
+                  $class_background[] = $size;
+               }
+               if ($color !== 'none') {
+                  $class_background[] = $color;
+               }
+               if (get_sub_field('cw_class')) {
+                  $class_background[] = get_sub_field('cw_class');
+               }
                $final_class_background = implode(' ', $class_background);
             } else {
                $class_background[] = $cw_settings['background_class_default'];
