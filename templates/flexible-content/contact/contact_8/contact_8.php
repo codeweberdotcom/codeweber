@@ -3,6 +3,11 @@
 /**
  * Contact 8
  */
+if (get_sub_field('class_div')) {
+   $class_cust = get_sub_field('class_div');
+} else {
+   $class_cust = '';
+}
 
 $bg_image = '' . get_template_directory_uri() . '/dist/img/photos/tm1.jpg';
 

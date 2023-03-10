@@ -6,7 +6,7 @@
 if (get_sub_field('class_div')) {
    $class_cust = get_sub_field('class_div');
 } else {
-   $class_cust = 'g';
+   $class_cust = '';
 }
 
 if (get_field('address_1', 'option')) {
