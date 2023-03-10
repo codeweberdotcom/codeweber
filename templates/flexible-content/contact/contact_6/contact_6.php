@@ -3,6 +3,11 @@
 /**
  * Contact 6
  */
+if (get_sub_field('class_div')) {
+   $class_cust = get_sub_field('class_div');
+} else {
+   $class_cust = 'g';
+}
 
 if (get_field('address_1', 'option')) {
    $address_line_1 = get_field('address_1', 'option');
@@ -55,7 +60,7 @@ $block = new CW_Settings(
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row">
-         <div class="col-xl-10 mx-auto">
+         <div class="col-xl-10 mx-auto <?php echo $class_cust; ?>">
             <div class="card">
                <div class="row gx-0">
                   <div class="col-lg-6 align-self-stretch">
