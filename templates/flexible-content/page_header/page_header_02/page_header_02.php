@@ -1,15 +1,17 @@
 <?php
 
 /**
- * Page Header 01
+ * Page Header 02
  */
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Get in Touch',
-      'patternTitle' => '<h1 class="display-1 mb-3 text-white">%s</h1>',
+      'patternTitle' => '<h1 class="display-1 text-white mb-3">%s</h1>',
 
-      'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white',
-      'background_data_default' => '/dist/img/photos/bg3.jpg',
+      'paragraph' => 'Have any questions? Reach out to us from our contact form and we will get back to you shortly.',
+      'patternParagraph' => '<p class="lead px-xl-10 px-xxl-10">%s</p>',
+
+      'background_class_default' => 'wrapper bg-dark text-white',
 
       'divider' => true,
 
@@ -21,12 +23,13 @@ $block = new CW_Settings(
 ?>
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
-   <div class="container pt-17 pb-20 pt-md-19 pb-md-21 text-center">
+   <div class="container pt-18 pt-md-20 pb-21 pb-md-21 text-center">
       <div class="row">
-         <div class="col-lg-8 mx-auto">
+         <div class="col-sm-10 col-md-8 col-lg-6 col-xl-6 col-xxl-5 mx-auto">
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php codeweber_breadcrumbs(NULL); ?>
+            <?php echo $block->paragraph; ?>
+            <!--/paragraph -->
          </div>
          <!-- /column -->
       </div>
@@ -38,4 +41,3 @@ $block = new CW_Settings(
    } ?>
    <!-- /divider -->
 </section>
-<!-- /section -->
