@@ -1,14 +1,19 @@
 <?php
 
-if (is_shop() || is_product_tag() || is_product_category()) : ?>
-	<?php if (is_active_sidebar('woocommerce_sidebar') || has_action('woocommerce_sidebar_start') || has_action('woocommerce_sidebar_end')) : ?>
-		<aside class="col-lg-3 sidebar">
-			<?php do_action('woocommerce_sidebar_start'); ?>
-			<?php dynamic_sidebar('woocommerce_sidebar'); ?>
-			<?php do_action('woocommerce_sidebar_end'); ?>
-		</aside> <!-- #sidebar-main-wrapper -->
-	<?php endif; ?>
-<?php elseif (is_page() && !dynamic_sidebar()) : ?>
+if (class_exists('WooCommerce')) {
+	if (is_shop() || is_product_tag() || is_product_category()) {
+		if (is_active_sidebar('woocommerce_sidebar') || has_action('woocommerce_sidebar_start') || has_action('woocommerce_sidebar_end')) { ?>
+			<aside class="col-lg-3 sidebar">
+				<?php do_action('woocommerce_sidebar_start');
+				dynamic_sidebar('woocommerce_sidebar');
+				do_action('woocommerce_sidebar_end'); ?>
+			</aside> <!-- #sidebar-main-wrapper -->
+	<?php }
+	}
+}
+
+
+if (is_page() && !dynamic_sidebar()) : ?>
 	<?php if (is_active_sidebar('sidebar-page') || has_action('sidebar_page_start') || has_action('sidebar_page_end')) : ?>
 		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
 			<?php do_action('sidebar_page_start'); ?>
