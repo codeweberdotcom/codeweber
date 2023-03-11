@@ -425,3 +425,10 @@ form.wpcf7-form label {
 .editor-styles-wrapper .cmplz-unlinked-mode {
   max-width: 100%;
 }
+
+/*
+* Color Hover Border
+*/
+.border-hover-fuchsia:hover {
+  border-color: #e668b3 !important;
+}
