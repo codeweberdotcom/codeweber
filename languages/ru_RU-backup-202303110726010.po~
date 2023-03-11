@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-03-04 10:54+0000\n"
+"PO-Revision-Date: 2023-03-06 09:18+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -230,7 +230,7 @@ msgstr "Шаблон главной страницы Блога"
 
 #: functions/widgets.php:163
 msgid "Blog categories"
-msgstr ""
+msgstr "Категории Блога"
 
 #: functions/customize.php:426
 msgid "blog settings"
@@ -290,6 +290,15 @@ msgstr "Корзина"
 #: templates/flexible-content/widgets/widget_4/widget_4.php:1
 msgid "Categories"
 msgstr "Категории"
+
+#: functions/cpt/taxonomy-documents.php:12
+msgid "Category Doc"
+msgstr "Категория Документа"
+
+#: functions/cpt/taxonomy-documents.php:11
+#: functions/cpt/taxonomy-documents.php:17
+msgid "Category Docs"
+msgstr "Категория Документов"
 
 #: templates/header/header-sandbox-12.php:99
 msgid "CFollow Us"
@@ -418,6 +427,14 @@ msgstr "Информация о покупателе"
 msgid "Date"
 msgstr "Дата"
 
+#: functions/cpt/cpt-documents.php:12
+msgid "Doc"
+msgstr "Документ"
+
+#: functions/cpt/cpt-documents.php:11 functions/cpt/cpt-documents.php:16
+msgid "Docs"
+msgstr "Документы"
+
 #: templates/header/header-sandbox-05.php:70
 #: templates/header/header-sandbox-08.php:76
 #: templates/header/header-sandbox-09.php:76
@@ -508,7 +525,7 @@ msgstr "Faq"
 
 #: functions/widgets.php:104
 msgid "FAQ categories"
-msgstr ""
+msgstr "Категории FAQ"
 
 #: functions/cpt/taxonomy-faq.php:11 functions/cpt/taxonomy-faq.php:17
 msgid "Faq categories"
@@ -524,20 +541,20 @@ msgstr "Настройки FAQ"
 
 #: functions/sidebars.php:80
 msgid "FAQ Sidebar"
-msgstr ""
+msgstr "FAQ сайдбар"
 
 #: functions/cpt/taxonomy-faq.php:52 functions/cpt/taxonomy-faq.php:53
 #: functions/cpt/taxonomy-faq.php:58
 msgid "FAQ Tags"
-msgstr ""
+msgstr "FAQ Метки"
 
 #: functions/widgets.php:134
 msgid "FAQ tags"
-msgstr ""
+msgstr "FAQ метки"
 
 #: functions/cpt/cpt-price_table.php:24
 msgid "Featured image for this Price list"
-msgstr ""
+msgstr "Изображение прайс-листа"
 
 #: functions/cpt/cpt-services.php:25
 msgid "Featured Image for this service"
@@ -587,11 +604,11 @@ msgstr "Меню Футера 1"
 
 #: functions/navmenus.php:25
 msgid "Footer Menu 2"
-msgstr ""
+msgstr "Меню Футера 2"
 
 #: functions/navmenus.php:26
 msgid "Footer Menu 3"
-msgstr ""
+msgstr "Меню Футера 3"
 
 #: functions/customize.php:362
 msgid "Footer Options"
@@ -691,14 +708,13 @@ msgid "Go to the website"
 msgstr "Перейти на сайт"
 
 #: functions/navmenus.php:14
-#, fuzzy
 #| msgid "Header Menu"
 msgid "Header Menu One"
-msgstr "Меню Хедера"
+msgstr "Меню Хедера 1"
 
 #: functions/navmenus.php:15
 msgid "Header Menu Two"
-msgstr ""
+msgstr "Меню Хедера 2"
 
 #: functions/customize.php:170
 msgid "Header Options"
@@ -710,7 +726,7 @@ msgstr "Хедер правый сайдбар"
 
 #: templates/header/header-sandbox-woo-01.php:67
 msgid "Hello"
-msgstr ""
+msgstr "Привет"
 
 #. 1: user display name 2: logout url
 #: woocommerce/myaccount/dashboard.php:36
@@ -857,7 +873,7 @@ msgstr ""
 
 #: templates/footer/footer-sandbox-4.php:10
 msgid "Let’s Talk"
-msgstr ""
+msgstr "Обсудим ваш проект?"
 
 #: functions/customize.php:31
 msgid "Light Logo"
@@ -942,7 +958,7 @@ msgstr "Личный кабинет"
 
 #: functions/cpt/cpt-price_table.php:12
 msgid "My Price lists"
-msgstr ""
+msgstr "Прайс-листы"
 
 #: templates/header/header-sandbox-05.php:96
 #: templates/header/header-sandbox-08.php:102
@@ -969,7 +985,7 @@ msgstr "Новый Клиент"
 
 #: functions/cpt/cpt-price_table.php:17
 msgid "New Price list"
-msgstr ""
+msgstr "Новый Прайс-лист"
 
 #: functions/cpt/cpt-price_package.php:18
 msgid "New Price Package"
@@ -1009,11 +1025,11 @@ msgstr "Нет Клиентов"
 
 #: functions/cpt/cpt-price_table.php:21
 msgid "No Price lists found"
-msgstr ""
+msgstr "Нет Прайс-листов"
 
 #: functions/cpt/cpt-price_table.php:22
 msgid "No Price lists found in trash"
-msgstr ""
+msgstr "Нет Прайс-листов в корзине"
 
 #: functions/admin.php:159
 msgid "No Thumbnail For Post"
@@ -1021,15 +1037,15 @@ msgstr "Нет превью"
 
 #: functions/navmenus.php:19
 msgid "Offcanvas Menu Left"
-msgstr ""
+msgstr "Выпадающее Левое Меню"
 
 #: functions/navmenus.php:20
 msgid "Offcanvas Menu Right"
-msgstr ""
+msgstr "Выпадающее Правое Меню"
 
 #: functions/sidebars.php:71
 msgid "Offcanvas right"
-msgstr ""
+msgstr "Выпадающее Правое"
 
 #: functions/cpt/cpt-office_address.php:12
 msgid "Office address"
@@ -1090,7 +1106,7 @@ msgstr "Страницы"
 
 #: functions/cpt/cpt-price_table.php:23 functions/cpt/cpt-price_table.php:41
 msgid "Parent Price list:"
-msgstr ""
+msgstr "Родительский Прайс-лист"
 
 #: functions/cpt/cpt-projects.php:22 functions/cpt/cpt-projects.php:25
 msgid "Parent Project"
@@ -1143,7 +1159,7 @@ msgstr "Фото записи"
 
 #: functions/widgets.php:248
 msgid "Post tags"
-msgstr ""
+msgstr "Облако меток"
 
 #: functions/bootstrap/bootstrap_post-nav.php:13
 msgid "Prev"
@@ -1151,11 +1167,11 @@ msgstr "Предыдущий"
 
 #: functions/cpt/cpt-price_table.php:11
 msgid "Price List"
-msgstr ""
+msgstr "Прайс-лист"
 
 #: functions/cpt/cpt-price_table.php:35
 msgid "Price list"
-msgstr ""
+msgstr "Прайс-лист"
 
 #: functions/cpt/cpt-price_table.php:28
 msgid "Price list archives"
@@ -1163,11 +1179,11 @@ msgstr ""
 
 #: functions/cpt/cpt-price_table.php:36
 msgid "Price list published"
-msgstr ""
+msgstr "Прайс-лист опубликован"
 
 #: functions/cpt/cpt-price_table.php:37
 msgid "Price list published privately."
-msgstr ""
+msgstr "Прайс-лист опубликован приватно"
 
 #: functions/cpt/cpt-price_table.php:38
 msgid "Price list reverted to draft."
@@ -1183,7 +1199,7 @@ msgstr ""
 
 #: functions/cpt/cpt-price_table.php:10 functions/cpt/cpt-price_table.php:45
 msgid "Price Lists"
-msgstr ""
+msgstr "Прайс-листы"
 
 #: functions/cpt/cpt-price_table.php:34
 msgid "Price lists attributes"
@@ -1283,7 +1299,7 @@ msgstr "Кол-во"
 
 #: functions/global_function/testimonial_functions.php:45
 #: templates/content/loop-faq.php:14 templates/content/loop.php:14
-#: templates/flexible-content/sliders/slider_1/slider_1.php:34
+#: templates/flexible-content/sliders/slider_1/slider_1.php:28
 #: templates/flexible-content/sliders/slider_2/slider_2.php:26
 #: templates/flexible-content/sliders/slider_3/slider_3.php:26
 #: templates/flexible-content/sliders/slider_4/slider_4.php:28
@@ -1309,7 +1325,7 @@ msgstr "Регистрация занимает менее минуты."
 
 #: functions/cpt/cpt-price_table.php:26
 msgid "Remove featured image for this Price list"
-msgstr ""
+msgstr "Удалить фото из Прайс-листа"
 
 #: functions/cpt/cpt-services.php:27
 msgid "Remove featured Image for this service"
@@ -1381,7 +1397,7 @@ msgstr "Поиск Клиента"
 
 #: functions/cpt/cpt-price_table.php:20
 msgid "Search Price lists"
-msgstr ""
+msgstr "Найти Прайс-лист"
 
 #: functions/cpt/cpt-price_package.php:21
 msgid "Search Price Package"
@@ -1577,11 +1593,11 @@ msgstr "Сотрудник Обновлен"
 
 #: functions/customize.php:254
 msgid "Style Main Header"
-msgstr ""
+msgstr "Стиль Основного Хедера"
 
 #: functions/customize.php:324
 msgid "Style Woocommerce Header"
-msgstr ""
+msgstr "Стиль Woocommerce Хедера"
 
 #: comments.php:146
 msgid "Submit"
@@ -1650,7 +1666,7 @@ msgstr "Настройки отзывов"
 
 #: functions/sidebars.php:50 functions/sidebars.php:52
 msgid "Testimonials Sidebar"
-msgstr ""
+msgstr "Сайдбар Отзывов"
 
 #: 404.php:12
 msgid ""
@@ -1685,11 +1701,11 @@ msgstr "Города"
 
 #: functions/customize.php:258 functions/customize.php:328
 msgid "Transparent"
-msgstr ""
+msgstr "Прозрачный"
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "trusted"
-msgstr ""
+msgstr "проверенный"
 
 #: templates/footer/footer-sandbox-1.php:5
 #: templates/footer/footer-sandbox-11.php:5
@@ -1717,7 +1733,7 @@ msgstr "Тип 3"
 
 #: functions/customize.php:352
 msgid "Type 4"
-msgstr ""
+msgstr "Тип 4"
 
 #: functions/cpt/taxonomy-services.php:51
 #: functions/cpt/taxonomy-services.php:57
@@ -1750,11 +1766,11 @@ msgstr "Показать Клиентов"
 
 #: functions/cpt/cpt-price_table.php:18
 msgid "View Price list"
-msgstr ""
+msgstr "Показать Прайс-лист"
 
 #: functions/cpt/cpt-price_table.php:19
 msgid "View Price lists"
-msgstr ""
+msgstr "Показать Прайс-листы"
 
 #: functions/cpt/cpt-price_package.php:19
 msgid "View Price Package"
@@ -1808,7 +1824,7 @@ msgstr "Добро пожаловать"
 
 #: functions/navmenus.php:16
 msgid "Woocommerce"
-msgstr ""
+msgstr "Woocommerce"
 
 #: functions/customize.php:275
 msgid "Woocommerce Header"
@@ -1832,7 +1848,7 @@ msgstr "Писатель"
 msgid "Yearly"
 msgstr "Год"
 
-#: woocommerce/single-product/related.php:55
+#: woocommerce/single-product/related.php:26
 #: templates/flexible-content/sliders/slider_1/slider_1.php:13
 msgid "You Might Also Like"
 msgstr "Вам также может понравится"

@@ -58,30 +58,24 @@ function brk_thumbnail_alt()
 }
 
 
-// --- Breadcrumbs ---
-function codeweber_breadcrumbs($align)
+/*
+ Breadcrumbs 
+ *
+ * $color: 'text-white', 'text-muted', NULL;
+ * $align: 'center', 'right';
+ * 
+ */
+
+function codeweber_breadcrumbs($align, $color)
 {
 	if (function_exists('yoast_breadcrumb')) {
 
-		// http://yoa.st/breadcrumbs
+		// http://yoast/breadcrumbs
 		yoast_breadcrumb('<nav class="breadcrumb d-flex justify-content-center mt-3">', '</nav>');
 	} elseif (function_exists('rank_math_the_breadcrumbs')) {
 
 		if ($align == 'center') {
-			// https://s.rankmath.com/breadcrumbs
-			add_filter(
-				'rank_math/frontend/breadcrumb/args',
-				function ($args) {
-					$args = array(
-						'delimiter'   => '',
-						'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0 justify-content-center">',
-						'wrap_after'  => '</ol></nav>',
-						'before'      => '<li class="breadcrumb-item text-muted">',
-						'after'       => '</li>',
-					);
-					return $args;
-				}
-			);
+			// https://s.rankmath.com/breadcrumbs		
 		} elseif ($align == 'right') {
 			// https://s.rankmath.com/breadcrumbs
 			add_filter(
@@ -113,6 +107,19 @@ function codeweber_breadcrumbs($align)
 				}
 			);
 		}
+		if ($color !== NULL && $color == 'text-white') {
+			add_filter(
+				'rank_math/frontend/breadcrumb/html',
+				function ($html, $crumbs, $class) {
+					$html = str_replace('<li class="breadcrumb-item text-muted">', '<li class="breadcrumb-item text-white">', $html);
+					$html = str_replace('<span class="text-muted">dasas</span>', '<span class="text-white">dasas</span>', $html);
+					return $html;
+				},
+				10,
+				3
+			);
+		}
+
 		rank_math_the_breadcrumbs();
 	} elseif (function_exists("seopress_display_breadcrumbs")) {
 		seopress_display_breadcrumbs();
@@ -147,6 +154,18 @@ add_filter(
 	10,
 	3
 );
+
+
+// Sandbox Page Loader Function 
+function sandbox_page_loader()
+{
+	if (get_theme_mod('codeweber_page_loader') == 1) {
+		echo '<div class="page-loader"></div>';
+	} else {
+		return;
+	}
+};
+
 
 // Sandbox Frame Content Open Function 
 function sandbox_frame_open()

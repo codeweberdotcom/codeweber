@@ -178,7 +178,6 @@ class CW_Icon
                }
 
                $classes_icon[] = $class_icon;
-
                if ($size !== 'none') {
                   if ($size == 'sm') {
                      $size = 'cw_icon_sm';
@@ -199,7 +198,7 @@ class CW_Icon
                $class = 'class="' . implode(' ', $classes_icon) . '"';
 
                if ($size !== NULL) {
-                  $image_icon = '<img ' . $class . ' src="' . $image['sizes'][$size] . '"/>';
+                  $image_icon = '<img ' . $class . ' src="' . get_sub_field('cw_image') . '"/>';
                } else {
                   $image_icon = NULL;
                }
