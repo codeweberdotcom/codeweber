@@ -20,7 +20,7 @@ if (get_the_post_thumbnail_url($post_id, 'full', null) && is_singular('services'
 									<h1 class="display-1 mb-3"><?php codeweber_page_title(); ?></h1>
 								<?php }
 							codeweber_meta_blog(); // Blog Meta Data
-							codeweber_breadcrumbs('center'); // Breadcrumbs
+							codeweber_breadcrumbs('center', NULL); // Breadcrumbs
 								?>
 								</div>
 								<!-- /column -->

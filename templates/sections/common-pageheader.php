@@ -22,7 +22,7 @@ if ($post_id !== NULL) {
 									<h1 class="display-1 mb-3"><?php codeweber_page_title(); ?></h1>
 								<?php }
 							codeweber_meta_blog(); // Blog Meta Data
-							codeweber_breadcrumbs('left'); // Breadcrumbs
+							codeweber_breadcrumbs('left', NULL); // Breadcrumbs
 								?>
 								</div>
 								<!-- /column -->

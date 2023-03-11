@@ -130,6 +130,59 @@ function codeweber_register_theme_customizer($wp_customize)
    );
 
 
+   // Title Section
+   $wp_customize->add_section(
+      'codeweber_title_options',
+      array(
+         'title'     => __('Title Options', 'codeweber'),
+         'priority'  => 2
+      )
+   );
+
+   // Title Control
+   $wp_customize->add_setting(
+      'codeweber_title',
+      array(
+         'default'   => 'standart',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_title',
+      array(
+         'section'  => 'codeweber_title_options',
+         'label'    => __('Title Theme Style', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'standart'    => 'Standart',
+            'line'      => 'With Line',
+         )
+      )
+   );
+
+   // Color Control
+   $wp_customize->add_setting(
+      'codeweber_title_color',
+      array(
+         'default'   => 'text-muted',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_title_color',
+      array(
+         'section'  => 'codeweber_title_options',
+         'label'    => __('Title Theme Color', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'text-muted'    => 'Muted',
+            'text-dark'      => 'Dark',
+            'text-light'      => 'Light',
+         )
+      )
+   );
+
+
    // Image Section
    $wp_customize->add_section(
       'codeweber_image_options',
@@ -186,6 +239,23 @@ function codeweber_register_theme_customizer($wp_customize)
       array(
          'section'   => 'codeweber_header_options',
          'label'     => __('Content Frame?', 'codeweber'),
+         'type'      => 'checkbox',
+      )
+   );
+
+   // page_loader
+   $wp_customize->add_setting(
+      'codeweber_page_loader',
+      array(
+         'default'    =>  'true',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_page_loader',
+      array(
+         'section'   => 'codeweber_header_options',
+         'label'     => __('Page Loader?', 'codeweber'),
          'type'      => 'checkbox',
       )
    );

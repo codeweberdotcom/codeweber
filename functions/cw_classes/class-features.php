@@ -79,6 +79,7 @@ class CW_Feature
          $features_icon = NULL;
       }
 
+
       return $features_icon;
    }
 

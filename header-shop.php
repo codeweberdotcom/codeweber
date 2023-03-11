@@ -12,9 +12,11 @@
 </head>
 
 <body <?php body_class(); ?>>
-   <?php do_action('codeweber_start_body'); // Hook start body
-   wp_body_open();
-   sandbox_frame_open(); ?>
+   <?php sandbox_page_loader(); ?>
+   <?php do_action('codeweber_start_body'); // Hook start body  
+   ?>
+   <?php wp_body_open(); ?>
+   <? phpsandbox_frame_open(); ?>
    <div id="content-wrapper" class="content-wrapper">
       <?php do_action('codeweber_start_content_wrapper'); // Hook start content wrapper
 

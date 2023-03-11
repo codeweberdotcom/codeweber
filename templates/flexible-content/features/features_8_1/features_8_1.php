@@ -4,15 +4,13 @@
  * Features 8
  */
 
-
 $block = new CW_Settings(
    $cw_settings = array(
-
       'subtitle' => 'App Features',
       'patternSubtitle' => '<div class="h2 fs-15 text-uppercase text-muted mb-3">%s</div>',
 
       'title' => 'Sandbox is the only app you need to track your goals for better health.',
-      'patternTitle' => '<h2 class="display-4 mb-9 px-xl-11">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-9">%s</h2>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -22,16 +20,14 @@ $block = new CW_Settings(
 
       'features_pattern' => '<div class="col-md-6 col-lg-4 %1$s"><div class="d-flex flex-row %6$s"><div>%2$s</div><div><h4>%3$s</h4><p class="mb-2">%4$s</p>%5$s</div></div></div><!--/column -->',
       'features_style_icon' => 'me-4',
-
-
    )
 );
 ?>
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
-      <div class="row text-center">
-         <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="row">
+         <div class="col-md-10 col-lg-8 ">
             <?php echo $block->subtitle; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
@@ -40,7 +36,7 @@ $block = new CW_Settings(
          <!-- /column -->
       </div>
       <!-- /.row -->
-      <div class="row gx-lg-8 gx-xl-12 gy-8">
+      <div class="row gx-lg-8 gx-xl-8 gy-8">
          <?php echo $block->features; ?>
          <!--/features -->
       </div>
