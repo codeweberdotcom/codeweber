@@ -1,5 +1,4 @@
 <header class="wrapper bg-light">
-
   <div class="bg-primary text-white fw-bold fs-15">
     <div class="container py-2 d-md-flex flex-md-row">
       <div class="d-flex flex-row align-items-center">

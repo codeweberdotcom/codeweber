@@ -40,9 +40,15 @@
                <li class="nav-item">
                   <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#modal-signin">Sign In</a>
                </li>
-               <li class="nav-item d-none d-md-block">
-                  <a href="#" class="btn btn-sm btn-primary rounded" data-bs-toggle="modal" data-bs-target="#modal-signup"><?php esc_html_e('Sign Up', 'codeweber'); ?></a>
-               </li>
+               <?php if (have_rows('cw_buttons', 'option')) {
+                  while (have_rows('cw_buttons', 'option')) {
+                     the_row();
+                     $buttons_object = new CW_Buttons('<div class="d-flex justify-content-center">%s</div>', '<a href="#" class="btn btn-sm btn-primary rounded" data-bs-toggle="modal" data-bs-target="#modal-signup">' . esc_html__('Sign Up', 'codeweber') . '</a>', NULL, NULL); ?>
+                     <li class="nav-item d-none d-md-block">
+                        <?php echo $buttons_object->final_buttons; ?>
+                     </li>
+                  <?php } ?>
+               <?php } ?>
                <li class="nav-item d-lg-none ms-0">
                   <button class="hamburger offcanvas-nav-btn"><span></span></button>
                </li>

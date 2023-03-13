@@ -38,9 +38,15 @@
                  <div class="navbar-other ms-lg-4">
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
                        <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
-                       <li class="nav-item d-none d-md-block">
-                          <a href="#" class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-signin"><?php esc_html_e('Sign In', 'codeweber'); ?></a>
-                       </li>
+                       <?php if (have_rows('cw_buttons', 'option')) {
+                           while (have_rows('cw_buttons', 'option')) {
+                              the_row();
+                              $buttons_object = new CW_Buttons('<div class="d-flex justify-content-center">%s</div>', '<a href="#" class="btn btn-sm btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modal-signin">' . esc_html__('Sign In', 'codeweber') . '</a>', NULL, NULL); ?>
+                             <li class="nav-item d-none d-md-block">
+                                <?php echo $buttons_object->final_buttons; ?>
+                             </li>
+                          <?php } ?>
+                       <?php } ?> 
                        <li class="nav-item d-lg-none ms-0">
                           <button class="hamburger offcanvas-nav-btn"><span></span></button>
                        </li>
