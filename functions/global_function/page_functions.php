@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Blog Pageheader Meta (Переписать, слишком сложно)
+ * Blog Pageheader Meta (Переписать этот код, слишком сложные условия, нужно упростить)
  */
 
 function codeweber_meta_blog()
@@ -50,16 +50,23 @@ function codeweber_meta_blog()
 function page_header()
 {
    if (is_tax()) {
-      $taxonomy_prefix = 'product_cat';
+      $taxonomy = get_queried_object();
+      $taxonomy_prefix = $taxonomy->taxonomy;
       $term_id = get_queried_object_id();
       $term_id_prefixed = $taxonomy_prefix . '_' . $term_id;
    } else {
       $term_id_prefixed = NULL;
    }
 
-   if (get_field('pageheader', $term_id_prefixed) && get_field('pageheader', $term_id_prefixed) !== 'disable') {
+   global $wp_query;
+   if (isset($wp_query->query['pagename'])) {
+      if ($wp_query->query['pagename'] == 'blog') {
+         $blog =  true;
+      }
+   }
 
-      if (!is_post_type('projects')) {
+   if (get_field('pageheader', $term_id_prefixed) && get_field('pageheader', $term_id_prefixed) !== 'disable' && !is_post_type('post')) {
+      if (!is_post_type('projects') && !is_404()) {
 
          if (get_field('pageheader', $term_id_prefixed) == 'default') {
             if (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
@@ -87,6 +94,41 @@ function page_header()
             }
          }
       }
+   } elseif ($blog = true && !is_404()) {
+
+      if (get_field('pageheader', $term_id_prefixed) == 'default') {
+         if (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
+            get_template_part('templates/sections/common', 'breadcrumb');
+         }
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_1' || get_field('pageheader', $term_id_prefixed) == 'type_4') {
+         get_template_part('templates/sections/common', 'breadcrumb');
+      } else {
+         get_template_part('templates/sections/common', 'breadcrumb');
+      }
+
+      if (get_field('pageheader', $term_id_prefixed) == 'type_1') {
+         get_template_part('templates/sections/common', 'pageheader_2');
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_2') {
+         get_template_part('templates/sections/common', 'pageheader');
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_3') {
+         get_template_part('templates/sections/common', 'pageheader_1');
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'type_4') {
+         return;
+      } elseif (get_field('pageheader', $term_id_prefixed) == 'default') {
+         if (get_theme_mod('codeweber_page_header') == 'type_2') {
+            get_template_part('templates/sections/common', 'pageheader');
+         } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
+            get_template_part('templates/sections/common', 'pageheader_1');
+         } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+            get_template_part('templates/sections/common', 'pageheader_2');
+         }
+      } else {
+         get_template_part('templates/sections/common', 'pageheader_2');
+      }
+   } elseif (!is_404()) {
+      get_template_part('templates/sections/common', 'breadcrumb');
+      get_template_part('templates/sections/common', 'pageheader_2');
+   } elseif (is_404()) {
    }
 }
 

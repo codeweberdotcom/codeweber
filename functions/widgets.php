@@ -50,7 +50,7 @@ function consultant_widget()
 
                      <?php
                      echo $button->final_buttons; ?>
-                     <!-- /.social -->
+                     <!-- /.buttons -->
                   </div>
                   <!--/.card-body -->
                </div>

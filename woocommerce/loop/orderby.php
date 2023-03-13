@@ -19,7 +19,6 @@
 if (!defined('ABSPATH')) {
 	exit;
 }
-
 ?>
 
 <div class="row align-items-center mb-10 position-relative zindex-1">
@@ -44,3 +43,5 @@ if (!defined('ABSPATH')) {
 	</div>
 	<!--/column -->
 </div>
+<?php
+do_action('codeweber_after_orderby');

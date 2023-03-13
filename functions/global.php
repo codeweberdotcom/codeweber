@@ -503,3 +503,14 @@ function add_modal_to_footer()
 }
 
 add_action('codeweber_footer_start', 'add_modal_to_footer', 150);
+
+
+/**
+ * Negative margin for Hero banner if Page Frame enabled
+ */
+function page_frame_banner()
+{
+	if (get_theme_mod('codeweber_frame_content') == true) {
+		echo 'mt-0';
+	}
+}

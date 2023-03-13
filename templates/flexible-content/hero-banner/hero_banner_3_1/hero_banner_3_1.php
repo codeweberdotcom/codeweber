@@ -60,7 +60,7 @@ $block = new CW_Settings(
 );
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php page_frame_banner(); ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
   <div class="container pt-12 pt-md-14 pb-14 pb-md-16">
     <div class="row gy-10 gy-md-13 gy-lg-0 align-items-center">
       <div class="col-md-8 col-lg-5 d-flex position-relative mx-auto <?php echo $block->column_class_1; ?>" data-cues="slideInDown" data-group="header">

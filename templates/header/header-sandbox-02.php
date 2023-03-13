@@ -1,4 +1,5 @@
 <header class="wrapper bg-light">
+
   <div class="bg-primary text-white fw-bold fs-15">
     <div class="container py-2 d-md-flex flex-md-row">
       <div class="d-flex flex-row align-items-center">
@@ -58,9 +59,17 @@
               <li class="nav-item"><a class="dropdown-item" href="#">Es</a></li>
             </ul>
           </li>
-          <li class="nav-item d-none d-md-block">
-            <a href="./contact.html" class="btn btn-sm btn-primary rounded-pill"><?php esc_html_e('Contact', 'codeweber'); ?></a>
-          </li>
+
+          <?php if (have_rows('cw_buttons', 'option')) {
+            while (have_rows('cw_buttons', 'option')) {
+              the_row();
+              $buttons_object = new CW_Buttons('<div class="d-flex justify-content-center">%s</div>', '<a href="#" class="btn btn-sm btn-primary rounded-pill">' . esc_html__('Contact', 'codeweber') . '</a>', NULL, NULL); ?>
+              <li class="nav-item d-none d-md-block">
+                <?php echo $buttons_object->final_buttons; ?>
+              </li>
+            <?php } ?>
+          <?php } ?>
+
           <li class="nav-item d-lg-none">
             <button class="hamburger offcanvas-nav-btn"><span></span></button>
           </li>

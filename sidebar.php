@@ -46,13 +46,5 @@ if (is_page() && !dynamic_sidebar()) : ?>
 			<?php dynamic_sidebar('sidebar-testimonials'); ?>
 			<?php do_action('sidebar_testimonials_end'); ?>
 		</aside> <!-- #sidebar-main-wrapper -->
-	<?php endif; ?>
-<?php else : ?>
-	<?php if (is_active_sidebar('sidebar-main') || has_action('sidebar_main_start') || has_action('sidebar_main_end')) : ?>
-		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
-			<?php do_action('sidebar_main_start'); ?>
-			<?php dynamic_sidebar('sidebar-main'); ?>
-			<?php do_action('sidebar_main_end'); ?>
-		</aside> <!-- #sidebar-main-wrapper -->
 <?php endif;
 endif;
