@@ -86,7 +86,7 @@ function dd_wpcf7_form_elements_replace($content)
  * Add social icons to footer CF7
  */
 
-function cf7_social_icons()
+function social_icons()
 {
     $social = '';
     // --- Single icon -----
@@ -102,11 +102,11 @@ function cf7_social_icons()
 
 add_filter('wpcf7_form_elements', function ($html) {
 
-    if (!empty(cf7_social_icons())) {
+    if (!empty(social_icons())) {
         $html = $html;
-        $dsdsds = social_icons();
+        $icons_cf7 = social_icons();
         $html .= '<div class="divider-icon my-4">' . esc_html__('or', 'codeweber') . '</div>';
-        $html .= '<nav class="nav social justify-content-center text-center">' . $dsdsds . '</nav>';
+        $html .= '<nav class="nav social justify-content-center text-center">' . $icons_cf7 . '</nav>';
     } else {
         $html = $html;
     }
