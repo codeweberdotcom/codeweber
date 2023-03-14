@@ -64,7 +64,7 @@ function page_header()
          $blog =  true;
       }
    }
-   if (!is_post_type('projects')) {
+   if (!is_post_type_archive('projects') && !is_singular('projects') && !is_tax('projects_category')) {
       if (get_field('pageheader', $term_id_prefixed) !== NULL) {
 
          if (get_field('pageheader', $term_id_prefixed) !== 'disable' && get_field('pageheader', $term_id_prefixed) !== 'default') {

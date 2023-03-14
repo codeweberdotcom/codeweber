@@ -12,6 +12,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+
    <?php sandbox_page_loader(); ?>
    <?php do_action('codeweber_start_body'); // Hook start body  
    ?>
