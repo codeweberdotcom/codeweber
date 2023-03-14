@@ -281,7 +281,7 @@ function codeweber_page_title()
  *  Nav Walker attributes fix for Bootstrap 5
  */
 
-function brk_bs5_toggle_fix($atts)
+function codeweber_bs5_toggle_fix($atts)
 {
 
 	if (array_key_exists('data-toggle', $atts)) {
@@ -290,7 +290,7 @@ function brk_bs5_toggle_fix($atts)
 	}
 	return $atts;
 }
-add_filter('nav_menu_link_attributes', 'brk_bs5_toggle_fix');
+add_filter('nav_menu_link_attributes', 'codeweber_bs5_toggle_fix');
 
 
 
