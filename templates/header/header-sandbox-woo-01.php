@@ -26,7 +26,8 @@ if ($args['bg_nav'] == 'nav-dark') {
          </div>
          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">
-               <?php echo codeweber_logo('dark', NULL, NULL); ?>
+               <?php echo codeweber_logo('light', NULL, NULL); ?>
+
                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
@@ -79,7 +80,6 @@ if ($args['bg_nav'] == 'nav-dark') {
                                  <?php } ?>
                               </li>
 
-
                               <?php if (class_exists('WooCommerce')) {
                                  if (is_user_logged_in()) { ?>
                                     <li class="nav-item"><a class="dropdown-item" href="<?php echo wc_get_account_endpoint_url('orders'); ?>" title="<?php _e('Orders', 'codeweber'); ?>"><?php _e('Orders', 'codeweber'); ?></a></li>
@@ -100,13 +100,10 @@ if ($args['bg_nav'] == 'nav-dark') {
                            </ul>
                         </li>
                      <?php } ?>
-
-
                   </ul>
                   <!-- /.navbar-nav -->
                </li>
                <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
-
 
                <?php if (class_exists('WooCommerce')) { ?>
                   <li class="nav-item d-none d-lg-block">
@@ -149,46 +146,27 @@ if ($args['bg_nav'] == 'nav-dark') {
       </div>
    <?php } ?>
 
+
+
    <div class="offcanvas offcanvas-end text-dark bg-light" id="offcanvas-info" data-bs-scroll="true">
       <div class="offcanvas-header">
-         <?php echo codeweber_logo('light', NULL, NULL); ?>
+         <?php echo codeweber_logo($color_logo, NULL, NULL); ?>
          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body pb-6">
-         <div class="widget mb-8">
-            <p><?php esc_html_e('Sandbox is a multipurpose HTML5 template with various layouts which will be a great solution for your business.', 'codeweber'); ?></p>
-         </div>
+         <?php echo about_company_option(); ?>
          <!-- /.widget -->
-         <div class="widget mb-8">
-            <div class="widget-title mb-3 h4"><?php esc_html_e('Contact Info', 'codeweber'); ?></div>
-            <address> <?php echo brk_adress(); ?> </address>
-            <a href="mailto:<?php brk_email(); ?>"><?php echo brk_email(); ?></a><br />
-            <?php echo brk_phone_one(); ?><br />
-            <?php echo brk_phone_two(); ?><br />
-         </div>
+         <?php offcanvas_contact_option(); ?>
          <!-- /.widget -->
-
-         <?php if (is_active_sidebar('offcanvas_right')) : ?>
-            <div class="widget mb-8">
-               <div class="widget-title mb-3 h4"><?php esc_html_e('Learn More', 'codeweber'); ?></div>
-               <?php get_template_part('templates/components/offcanvas-right-menu', ''); ?>
-            </div>
-         <?php endif; ?>
-
+         <?php offcanvas_menu_option(); ?>
          <!-- /.widget -->
-         <div class="widget">
-            <div class="widget-title mb-3 h4"><?php esc_html_e('Follow Us', 'codeweber'); ?></div>
-            <nav class="nav social">
-               <?php if (class_exists('ACF')) {
-                  get_template_part('templates/components/socialicons', '');
-               }; ?>
-            </nav>
-            <!-- /.social -->
-         </div>
+         <?php social_icons_option(); ?>
          <!-- /.widget -->
       </div>
       <!-- /.offcanvas-body -->
    </div>
+
+
    <!-- /.offcanvas -->
    <div class="offcanvas offcanvas-top bg-light" id="offcanvas-search" data-bs-scroll="true">
       <div class="container d-flex flex-row py-6">
