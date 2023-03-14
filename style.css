@@ -432,3 +432,10 @@ form.wpcf7-form label {
 .border-hover-fuchsia:hover {
   border-color: #e668b3 !important;
 }
+
+/*
+*Offcanvas right menu Font Weight
+*/
+#menu-offcanvas-right a.nav-link {
+  font-weight: 500 !important;
+}

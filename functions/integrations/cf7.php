@@ -86,7 +86,7 @@ function dd_wpcf7_form_elements_replace($content)
  * Add social icons to footer CF7
  */
 
-function social_icons()
+function cf7_social_icons()
 {
     $social = '';
     // --- Single icon -----
@@ -102,7 +102,7 @@ function social_icons()
 
 add_filter('wpcf7_form_elements', function ($html) {
 
-    if (!empty(social_icons())) {
+    if (!empty(cf7_social_icons())) {
         $html = $html;
         $dsdsds = social_icons();
         $html .= '<div class="divider-icon my-4">' . esc_html__('or', 'codeweber') . '</div>';
