@@ -20,7 +20,7 @@
                           <div>
                              <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
                              <br />
-                             <?php echo brk_phone_one(); ?><br />
+                             <?php echo brk_phone_one(NULL); ?><br />
                              <?php echo brk_phone_two(); ?><br />
                              <nav class="nav social social-white mt-4">
                                 <?php if (class_exists('ACF')) {
@@ -154,7 +154,7 @@
                     <h4 class="widget-title text-white mb-3"><?php esc_html_e('Contact Info', 'codeweber'); ?></h4>
                     <address> <?php echo brk_adress(); ?> </address>
                     <a href="mailto:<?php brk_email(); ?>"><?php echo brk_email(); ?></a><br />
-                    <?php echo brk_phone_one(); ?><br />
+                    <?php echo brk_phone_one(NULL); ?><br />
                     <?php echo brk_phone_two(); ?><br />
                  </div>
                  <!-- /.widget -->

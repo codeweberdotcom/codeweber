@@ -30,7 +30,7 @@
                             <div>
                                <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
                                <br />
-                               <?php echo brk_phone_one(); ?><br />
+                               <?php echo brk_phone_one(NULL); ?><br />
                                <?php echo brk_phone_two(); ?><br />
                                <nav class="nav social social-white mt-4">
                                   <?php if (class_exists('ACF')) {

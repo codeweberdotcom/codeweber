@@ -1,4 +1,3 @@
-
 <header class="wrapper bg-light">
   <div class="bg-primary text-white fw-bold fs-15">
     <div class="container py-2 d-md-flex flex-md-row">
@@ -8,7 +7,7 @@
       </div>
       <div class="d-flex flex-row align-items-center me-6 ms-auto">
         <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-phone"></i></div>
-        <p class="mb-0"> <?php echo brk_phone_one(); ?></p>
+        <p class="mb-0"> <?php echo brk_phone_one('dark'); ?></p>
       </div>
       <div class="d-flex flex-row align-items-center">
         <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-envelope"></i></div>

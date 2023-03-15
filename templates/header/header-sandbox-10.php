@@ -7,7 +7,7 @@
              </div>
              <div class="d-flex flex-row align-items-center me-6 ms-auto">
                 <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-phone-volume"></i></div>
-                <p class="mb-0"> <?php echo brk_phone_one(); ?> </p>
+                <p class="mb-0"> <?php echo brk_phone_one(NULL); ?> </p>
              </div>
              <div class="d-flex flex-row align-items-center">
                 <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-message"></i></div>
@@ -33,7 +33,7 @@
                       <div>
                          <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
                          <br />
-                         <?php echo brk_phone_one(); ?><br />
+                         <?php echo brk_phone_one(NULL); ?><br />
                          <?php echo brk_phone_two(); ?><br />
                          <nav class="nav social social-white mt-4">
                             <?php if (class_exists('ACF')) {

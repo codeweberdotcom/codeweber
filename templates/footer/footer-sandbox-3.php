@@ -23,7 +23,7 @@
         <div class="widget">
           <h4 class="widget-title text-white mb-3"><?php esc_html_e('Get in Touch', 'codeweber'); ?></h4>
           <address class="pe-xl-15 pe-xxl-17"><?php echo brk_adress(); ?></address>
-          <?php echo brk_phone_one(); ?><br />
+          <?php echo brk_phone_one(NULL); ?><br />
           <?php echo brk_phone_two(); ?><br />
           <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
         </div>

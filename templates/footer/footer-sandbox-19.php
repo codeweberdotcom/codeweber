@@ -41,7 +41,7 @@
                  <h4 class="widget-title  mb-3"><?php esc_html_e('Get in Touch ', 'codeweber'); ?></h4>
                  <address class="pe-xl-15 pe-xxl-17"><?php echo brk_adress(); ?></address>
                  <a href="mailto:<?php echo brk_email(); ?>" class="link-body"><?php echo brk_email(); ?></a><br />
-                 <?php echo brk_phone_one(); ?><br />
+                 <?php echo brk_phone_one(NULL); ?><br />
                  <?php echo brk_phone_two(); ?><br />
               </div>
               <!-- /.widget -->

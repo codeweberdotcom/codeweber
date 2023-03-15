@@ -36,7 +36,7 @@
                  <div class="col-md-4">
                     <div class="widget">
                        <h4 class="widget-title"><?php esc_html_e('Phone', 'codeweber'); ?></h4>
-                       <p><?php echo brk_phone_one(); ?><br />
+                       <p><?php echo brk_phone_one(NULL); ?><br />
                           <?php echo brk_phone_two(); ?><br /></p>
                     </div>
                     <!-- /.widget -->

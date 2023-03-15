@@ -84,11 +84,17 @@ function codeweber_socialicons()
 
 // --- Phone 1 ---
 
-function brk_phone_one()
+function brk_phone_one($color)
 {
+	if ($color == 'light') {
+		$class_link = 'class="link-white hover"';
+	} else {
+		$class_link = NULL;
+	}
+
 	if (get_field('phone', 'option')) :
 		$phone_acf_1 = get_field('phone', 'option');
-		$brk_phone_one = '<a href="tel:' . $phone_acf_1 . '">' . $phone_acf_1 . '</a>';
+		$brk_phone_one = '<a ' . $class_link . ' href="tel:' . $phone_acf_1 . '">' . $phone_acf_1 . '</a>';
 	else :
 		$brk_phone_one = '+00 (123) 456 78 90';
 	endif;
