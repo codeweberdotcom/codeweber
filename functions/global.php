@@ -76,7 +76,19 @@ function codeweber_breadcrumbs($align, $color)
 	} elseif (function_exists('rank_math_the_breadcrumbs')) {
 
 		if ($align == 'center') {
-			// https://s.rankmath.com/breadcrumbs		
+			add_filter(
+				'rank_math/frontend/breadcrumb/args',
+				function ($args) {
+					$args = array(
+						'delimiter'   => '',
+						'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0 justify-content-center">',
+						'wrap_after'  => '</ol></nav>',
+						'before'      => '<li class="breadcrumb-item text-muted">',
+						'after'       => '</li>',
+					);
+					return $args;
+				}
+			);
 		} elseif ($align == 'right') {
 			// https://s.rankmath.com/breadcrumbs
 			add_filter(
@@ -171,13 +183,19 @@ function sandbox_page_loader()
 // Sandbox Frame Content Open Function 
 function sandbox_frame_open()
 {
-	if (get_field('cw_frame_content') == 'default') {
-		if (get_theme_mod('codeweber_frame_content') == 1) {
+	if (get_field('cw_frame_content')) {
+		if (get_field('cw_frame_content') == 'default') {
+			if (get_theme_mod('codeweber_frame_content') == 1) {
+				echo '<div class="page-frame bg-light">';
+			} else {
+				return;
+			}
+		} elseif (get_field('cw_frame_content') == 'frame') {
 			echo '<div class="page-frame bg-light">';
 		} else {
 			return;
 		}
-	} elseif (get_field('cw_frame_content') == 'frame') {
+	} elseif (get_theme_mod('codeweber_frame_content') == 1) {
 		echo '<div class="page-frame bg-light">';
 	} else {
 		return;
@@ -188,13 +206,19 @@ function sandbox_frame_open()
 // Sandbox Frame Content Close Function
 function sandbox_frame_close()
 {
-	if (get_field('cw_frame_content') == 'default') {
-		if (get_theme_mod('codeweber_frame_content') == 1) {
+	if (get_field('cw_frame_content')) {
+		if (get_field('cw_frame_content') == 'default') {
+			if (get_theme_mod('codeweber_frame_content') == 1) {
+				echo '</div>';
+			} else {
+				return;
+			}
+		} elseif (get_field('cw_frame_content') == 'frame') {
 			echo '</div>';
 		} else {
 			return;
 		}
-	} elseif (get_field('cw_frame_content') == 'frame') {
+	} elseif (get_theme_mod('codeweber_frame_content') == 1) {
 		echo '</div>';
 	} else {
 		return;
@@ -338,13 +362,15 @@ add_filter('nav_menu_css_class', 'brk_remove_active_class_from_li', 10, 3);
 /**
  * Is Post Type
  */
-function is_post_type($type)
-{
-	global $wp_query;
-	if ($type == get_post_type($wp_query->post->ID))
-		return true;
-	return false;
-}
+// function is_post_type($type)
+// {
+// 	global $wp_query;
+// 	if ($type == get_post_type($wp_query->post->ID)) {
+// 		return true;
+// 	} else {
+// 		return false;
+// 	}
+// }
 
 
 /**
