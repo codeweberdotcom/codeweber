@@ -6,7 +6,7 @@
    <nav class="navbar navbar-expand-lg center-nav transparent navbar-light caret-none <?php echo $class_nav; ?>">
       <div class="container flex-lg-row flex-nowrap align-items-center">
          <div class="navbar-brand w-100 pe-3">
-            <?php echo codeweber_logo_dark_link(); ?>
+            <?php echo codeweber_logo(NULL, NULL, NULL); ?>
          </div>
          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">

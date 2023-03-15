@@ -6,7 +6,7 @@
            <nav class="navbar navbar-expand-lg classic transparent navbar-light <?php echo $class_nav; ?>">
               <div class="container flex-lg-row flex-nowrap align-items-center">
                  <div class="navbar-brand w-100 pe-3">
-                    <?php echo codeweber_logo_dark_link(); ?>
+                    <?php echo codeweber_logo(NULL, NULL, NULL); ?>
                  </div>
                  <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                     <div class="offcanvas-header d-lg-none">
@@ -46,7 +46,7 @@
                                 <?php echo $buttons_object->final_buttons; ?>
                              </li>
                           <?php } ?>
-                       <?php } ?> 
+                       <?php } ?>
                        <li class="nav-item d-lg-none ms-0">
                           <button class="hamburger offcanvas-nav-btn"><span></span></button>
                        </li>

@@ -60,43 +60,19 @@
           <!-- /.container -->
        </nav>
        <!-- /.navbar -->
-       <div class="offcanvas offcanvas-end text-inverse" id="offcanvas-info" data-bs-scroll="true">
+       <div class="offcanvas offcanvas-end text-dark bg-light" id="offcanvas-info" data-bs-scroll="true">
           <div class="offcanvas-header">
-             <?php echo codeweber_logo(NULL, NULL, NULL); ?>
-             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+             <?php echo codeweber_logo($color_logo, NULL, NULL); ?>
+             <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body pb-6">
-             <div class="widget mb-8">
-                <p><?php esc_html_e('Sandbox is a multipurpose HTML5 template with various layouts which will be a great solution for your business.', 'codeweber'); ?></p>
-             </div>
+             <?php echo about_company_option(); ?>
              <!-- /.widget -->
-             <div class="widget mb-8">
-                <h4 class="widget-title text-white mb-3"><?php esc_html_e('Contact Info', 'codeweber'); ?></h4>
-                <address> <?php echo brk_adress(); ?> </address>
-                <a href="mailto:<?php brk_email(); ?>"><?php echo brk_email(); ?></a><br />
-                <?php echo brk_phone_one(); ?><br />
-                <?php echo brk_phone_two(); ?><br />
-             </div>
+             <?php offcanvas_contact_option(); ?>
              <!-- /.widget -->
-             <div class="widget mb-8">
-                <h4 class="widget-title text-white mb-3"><?php esc_html_e('Learn More', 'codeweber'); ?></h4>
-                <ul class="list-unstyled">
-                   <li><a href="#">Our Story</a></li>
-                   <li><a href="#">Terms of Use</a></li>
-                   <li><a href="#">Privacy Policy</a></li>
-                   <li><a href="#">Contact Us</a></li>
-                </ul>
-             </div>
+             <?php offcanvas_menu_option(); ?>
              <!-- /.widget -->
-             <div class="widget">
-                <h4 class="widget-title text-white mb-3"><?php esc_html_e('Follow Us', 'codeweber'); ?></h4>
-                <nav class="nav social social-white">
-                   <?php if (class_exists('ACF')) {
-                        get_template_part('templates/components/socialicons', '');
-                     }; ?>
-                </nav>
-                <!-- /.social -->
-             </div>
+             <?php social_icons_option(); ?>
              <!-- /.widget -->
           </div>
           <!-- /.offcanvas-body -->
