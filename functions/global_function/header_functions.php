@@ -87,7 +87,7 @@ function offcanvas_contact_option()
       <div class="widget-title mb-3 h4"><?php esc_html_e('Contact Info', 'codeweber'); ?></div>
       <address> <?php echo brk_adress(); ?> </address>
       <a href="mailto:<?php brk_email(); ?>"><?php echo brk_email(); ?></a><br />
-      <?php echo brk_phone_one(); ?><br />
+      <?php echo brk_phone_one(NULL); ?><br />
       <?php echo brk_phone_two(); ?><br />
    </div>
 <?php
@@ -101,7 +101,7 @@ function md_offcanvas_contact_option()
 { ?>
    <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
    <br />
-   <?php echo brk_phone_one(); ?><br />
+   <?php echo brk_phone_one(NULL); ?><br />
    <?php echo brk_phone_two(); ?><br />
    <?php
 }
