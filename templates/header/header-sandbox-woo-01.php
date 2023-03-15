@@ -1,11 +1,6 @@
-<?php
-
-if ($args['style_nav'] == 'transparent') {
-   $class_nav = 'position-absolute ';
-   $class_nav .= $args['bg_nav'];
-} elseif ($args['style_nav'] == 'solid') {
-   $class_nav = $args['bg_nav'];
-};
+<?php if ($args['style_nav'] == 'transparent') {
+   $class_nav = 'position-absolute navbar-dark';
+}
 
 $transparent_style = $args['style_nav'];
 
@@ -151,7 +146,7 @@ if ($args['bg_nav'] == 'nav-dark') {
    <div class="offcanvas offcanvas-end text-dark bg-light" id="offcanvas-info" data-bs-scroll="true">
       <div class="offcanvas-header">
          <?php echo codeweber_logo($color_logo, NULL, NULL); ?>
-         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body pb-6">
          <?php echo about_company_option(); ?>
@@ -165,8 +160,6 @@ if ($args['bg_nav'] == 'nav-dark') {
       </div>
       <!-- /.offcanvas-body -->
    </div>
-
-
    <!-- /.offcanvas -->
    <div class="offcanvas offcanvas-top bg-light" id="offcanvas-search" data-bs-scroll="true">
       <div class="container d-flex flex-row py-6">

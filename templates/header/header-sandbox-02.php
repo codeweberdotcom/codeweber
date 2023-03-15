@@ -1,5 +1,5 @@
-<header class="wrapper bg-light">
 
+<header class="wrapper bg-light">
   <div class="bg-primary text-white fw-bold fs-15">
     <div class="container py-2 d-md-flex flex-md-row">
       <div class="d-flex flex-row align-items-center">
@@ -32,15 +32,8 @@
           <!-- /.navbar-nav -->
           <div class="offcanvas-footer d-lg-none">
             <div>
-              <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
-              <br />
-              <?php echo brk_phone_one(); ?><br />
-              <?php echo brk_phone_two(); ?><br />
-              <nav class="nav social social-white mt-4">
-                <?php if (class_exists('ACF')) {
-                  get_template_part('templates/components/socialicons', '');
-                }; ?>
-              </nav>
+              <?php md_offcanvas_contact_option(); ?>
+              <?php md_social_icons_option(); ?>
               <!-- /.social -->
             </div>
           </div>

@@ -58,9 +58,15 @@
                          <li class="nav-item"><a class="dropdown-item" href="#">Es</a></li>
                       </ul>
                    </li>
-                   <li class="nav-item d-none d-md-block">
-                      <a href="./contact.html" class="btn btn-sm btn-primary rounded"><?php esc_html_e('Contact', 'codeweber'); ?></a>
-                   </li>
+                   <?php if (have_rows('cw_buttons', 'option')) {
+                        while (have_rows('cw_buttons', 'option')) {
+                           the_row();
+                           $buttons_object = new CW_Buttons('<div class="d-flex justify-content-center">%s</div>', '<a href="#" class="btn btn-sm btn-primary rounded">' . esc_html__('Contact', 'codeweber') . '</a>', NULL, NULL); ?>
+                         <li class="nav-item d-none d-md-block">
+                            <?php echo $buttons_object->final_buttons; ?>
+                         </li>
+                      <?php } ?>
+                   <?php } ?>
                    <li class="nav-item d-lg-none ms-0">
                       <button class="hamburger offcanvas-nav-btn"><span></span></button>
                    </li>

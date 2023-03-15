@@ -3,7 +3,7 @@
           <div class="container flex-lg-column">
              <div class="topbar d-flex flex-row w-100 justify-content-between align-items-center">
                 <div class="navbar-brand">
-                   <?php echo codeweber_logo_dark_link(); ?>
+                   <?php echo codeweber_logo(NULL, NULL, NULL); ?>
                 </div>
                 <div class="navbar-other ms-auto">
                    <ul class="navbar-nav flex-row align-items-center">
