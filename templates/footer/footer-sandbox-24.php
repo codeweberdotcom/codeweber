@@ -18,7 +18,7 @@
                     <div>
                        <h5 class="mb-1">Phone</h5>
                        <p class="mb-0"><?php echo brk_phone_one(NULL); ?><br />
-                          <?php echo brk_phone_two(); ?><br /></p>
+                          <?php echo brk_phone_two(NULL); ?><br /></p>
                     </div>
                  </div>
                  <!--/div -->
