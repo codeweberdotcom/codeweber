@@ -28,15 +28,8 @@
                          <!-- /.navbar-nav -->
                          <div class="offcanvas-footer d-lg-none">
                             <div>
-                               <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
-                               <br />
-                               <?php echo brk_phone_one(NULL); ?><br />
-                               <?php echo brk_phone_two(); ?><br />
-                               <nav class="nav social social-white mt-4">
-                                  <?php if (class_exists('ACF')) {
-                                       get_template_part('templates/components/socialicons', '');
-                                    }; ?>
-                               </nav>
+                               <?php md_offcanvas_contact_option(); ?>
+                               <?php md_social_icons_option(); ?>
                                <!-- /.social -->
                             </div>
                          </div>
@@ -62,7 +55,7 @@
              <!-- /.navbar -->
              <div class="offcanvas offcanvas-end text-dark bg-light" id="offcanvas-info" data-bs-scroll="true">
                 <div class="offcanvas-header">
-                   <?php echo codeweber_logo($color_logo, NULL, NULL); ?>
+                   <?php echo codeweber_logo('dark', NULL, NULL); ?>
                    <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body pb-6">

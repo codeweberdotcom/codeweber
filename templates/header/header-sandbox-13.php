@@ -3,7 +3,7 @@
           <div class="container justify-content-between align-items-center">
              <div class="d-flex flex-row w-100 justify-content-between align-items-center d-lg-none">
                 <div class="navbar-brand">
-                   <?php echo codeweber_logo(NULL, NULL, NULL); ?>
+                   <?php echo codeweber_logo('light', NULL, NULL); ?>
                 </div>
                 <div class="navbar-other ms-auto">
                    <ul class="navbar-nav flex-row align-items-center">
@@ -19,8 +19,7 @@
              <div class="navbar-collapse-wrapper d-flex flex-row align-items-center w-100">
                 <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                    <div class="offcanvas-header mx-lg-auto order-0 order-lg-1 d-lg-flex px-lg-15">
-                      <?php echo codeweber_logo(NULL, NULL, NULL); ?>
-
+                      <?php echo codeweber_logo('light', NULL, NULL); ?>
                       <button type="button" class="btn-close btn-close-white d-lg-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                    </div>
                    <div class="w-100 order-1 order-lg-0 d-lg-flex offcanvas-body">
@@ -416,15 +415,8 @@
                    <div class="offcanvas-body d-lg-none order-4 mt-auto">
                       <div class="offcanvas-footer">
                          <div>
-                            <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
-                            <br />
-                            <?php echo brk_phone_one(NULL); ?><br />
-                            <?php echo brk_phone_two(); ?><br />
-                            <nav class="nav social social-white mt-4">
-                               <?php if (class_exists('ACF')) {
-                                    get_template_part('templates/components/socialicons', '');
-                                 }; ?>
-                            </nav>
+                            <?php md_offcanvas_contact_option(); ?>
+                            <?php md_social_icons_option(); ?>
                             <!-- /.social -->
                          </div>
                       </div>
