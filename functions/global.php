@@ -5,6 +5,7 @@ include 'global_function/services_functions.php';
 include 'global_function/project_functions.php';
 include 'global_function/testimonial_functions.php';
 include 'global_function/header_functions.php';
+include 'global_function/footer_functions.php';
 
 
 /**
