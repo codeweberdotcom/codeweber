@@ -104,13 +104,19 @@ function brk_phone_one($color)
 
 // --- Phone 2 ---
 
-function brk_phone_two()
+function brk_phone_two($color)
 {
+	if ($color == 'light') {
+		$class_link = 'class="link-white hover"';
+	} else {
+		$class_link = NULL;
+	}
+
 	if (get_field('phone_1', 'option')) :
 		$phone_acf_2 = get_field('phone_1', 'option');
-		$brk_phone_two = '<a href="tel:' . $phone_acf_2 . '">' . $phone_acf_2 . '</a>';
+		$brk_phone_two = '<a ' . $class_link . ' href="tel:' . $phone_acf_2 . '">' . $phone_acf_2 . '</a>';
 	else :
-		$brk_phone_two = '00 (123) 456 78 91';
+		$brk_phone_two = '+00 (123) 456 78 91';
 	endif;
 	return $brk_phone_two;
 };

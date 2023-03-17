@@ -1,5 +1,20 @@
+    <?php
+      if ($args['style_nav'] == 'transparent') {
+         $class_nav = 'position-absolute navbar-dark';
+      }
+
+      $transparent_style = $args['style_nav'];
+
+      if ($args['bg_nav'] == 'nav-dark') {
+         $color_logo = 'light';
+      } elseif ($args['bg_nav'] == 'nav-light') {
+         $color_logo = 'dark';
+      } else {
+         $color_logo = NULL;
+      }
+      ?>
     <header class="wrapper bg-light">
-       <div class="bg-navy text-white fw-bold fs-15 mb-2">
+       <div class="bg-navy text-white fw-bold fs-15">
           <div class="container py-2 d-md-flex flex-md-row">
              <div class="d-flex flex-row align-items-center">
                 <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-location-pin-alt"></i></div>
@@ -7,7 +22,7 @@
              </div>
              <div class="d-flex flex-row align-items-center me-6 ms-auto">
                 <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-phone-volume"></i></div>
-                <p class="mb-0"> <?php echo brk_phone_one(NULL); ?> </p>
+                <p class="mb-0"> <?php echo brk_phone_one('light'); ?> </p>
              </div>
              <div class="d-flex flex-row align-items-center">
                 <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-message"></i></div>
@@ -16,14 +31,14 @@
           </div>
           <!-- /.container -->
        </div>
-       <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+       <nav class="navbar navbar-expand-lg center-nav transparent <?php echo $class_nav; ?>">
           <div class="container flex-lg-row flex-nowrap align-items-center">
              <div class="navbar-brand w-100 pe-3">
-                <?php echo codeweber_logo(NULL, NULL, NULL); ?>
+                <?php echo codeweber_logo($color_logo, NULL, $transparent_style); ?>
              </div>
              <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                 <div class="offcanvas-header d-lg-none">
-                   <?php echo codeweber_logo(NULL, NULL, NULL); ?>
+                   <?php echo codeweber_logo('light', NULL, NULL); ?>
                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
@@ -31,15 +46,8 @@
                    <!-- /.navbar-nav -->
                    <div class="offcanvas-footer d-lg-none">
                       <div>
-                         <a href="mailto:<?php echo brk_email(); ?>" class="link-inverse"><?php echo brk_email(); ?></a>
-                         <br />
-                         <?php echo brk_phone_one(NULL); ?><br />
-                         <?php echo brk_phone_two(); ?><br />
-                         <nav class="nav social social-white mt-4">
-                            <?php if (class_exists('ACF')) {
-                                 get_template_part('templates/components/socialicons', '');
-                              }; ?>
-                         </nav>
+                         <?php md_offcanvas_contact_option(); ?>
+                         <?php md_social_icons_option(); ?>
                          <!-- /.social -->
                       </div>
                    </div>
