@@ -48,34 +48,52 @@ class CW_Tiles
          $cw_final_tiles .= '</div><!--/.overlap-grid -->';
       } elseif ($this->type_tiles == 'Tiles 2') {
 
-
-
-
-
-
-         $cw_final_tiles = ' <div class="row gx-md-5 gy-5">';
+         $cw_final_tiles = '<div class="row gx-md-5 gy-5">';
          $num_row = 0;
          foreach ($this->tiles_object_array as $tiles_object) {
             if ($num_row == 0) {
-               $cw_final_tiles .= '<div class="col-md-4 offset-md-1 align-self-end"><figure class="rounded">' . $tiles_object . '</figure></div><!--/column -->';
+               $cw_final_tiles .= '<div class="col-md-4 offset-md-1 align-self-end">' . $tiles_object . '</div><!--/column -->';
             } elseif ($num_row == 1) {
-               $cw_final_tiles .= '<div class="col-md-6 align-self-end">
-    <figure class="rounded">' . $tiles_object . '</figure>
-  </div>
-  <!--/column -->';
+               $cw_final_tiles .= '<div class="col-md-6 align-self-end">' . $tiles_object . '</div><!--/column -->';
             } elseif ($num_row == 2) {
-               $cw_final_tiles .= '<div class="col-md-6">
-    <figure class="rounded">' . $tiles_object . '</figure>
-  </div>
-  <!--/column -->';
+               $cw_final_tiles .= '<div class="col-md-6">' . $tiles_object . '</div><!--/column -->';
             } elseif ($num_row == 3) {
-               $cw_final_tiles .= '<div class="col-md-4 align-self-start">
-    <figure class="rounded">' . $tiles_object . '</figure>
-  </div>
-  <!--/column -->';
+               $cw_final_tiles .= '<div class="col-md-4 align-self-start">' . $tiles_object . '</div><!--/column -->';
             }
             $num_row++;
          }
+         $cw_final_tiles .= '</div><!--/.row -->';
+      } elseif ($this->type_tiles == 'Tiles 1') {
+
+         $cw_final_tiles = '<div class="row gx-md-5 gy-5 align-items-center">';
+         $num_row = 0;
+         foreach ($this->tiles_object_array as $tiles_object) {
+
+
+            if ($num_row == 0) {
+               $cw_final_tiles .= '<div class="col-md-6">';
+               $cw_final_tiles .= '<div class="row gx-md-5 gy-5">';
+               $cw_final_tiles .= '<div class="col-md-10 offset-md-2">' . $tiles_object;
+               $cw_final_tiles .= '</div><!--/column -->';
+            } elseif ($num_row == 1) {
+               $cw_final_tiles .= '<div class="col-md-12">' . $tiles_object;
+               $cw_final_tiles .= '</div><!--/column -->';
+               $cw_final_tiles .= '</div>';
+               $cw_final_tiles .= '</div>';
+            }
+
+
+
+
+            if ($num_row == 2) {
+               $cw_final_tiles .= '<div class="col-md-6">' . $tiles_object;
+               $cw_final_tiles .= '</div>';
+            }
+
+
+            $num_row++;
+         }
+
          $cw_final_tiles .= '</div><!--/.row -->';
       } else {
          $cw_final_tiles = NULL;

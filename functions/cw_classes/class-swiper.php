@@ -887,14 +887,17 @@ class CW_Swiper
 
             $final_slider .= '</div>';
          } elseif ($type_gallery == 'Tiles 8') {
+            $objects_array = array();
+            $image_thumb_size = 'sandbox_about_4';
+            $image_big_size = 'project_1';
             if (have_rows('cw_images')) {
-               $image_thumb_size = 'sandbox_about_4';
-               $image_big_size = 'project_1';
-               $objects_array = array();
                while (have_rows('cw_images')) {
                   the_row();
-                  $objects_image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
-                  $objects_array[] = $objects_image->final_image;
+                  $num_row = get_row_index();
+                  if ($num_row <= 2) {
+                     $objects_image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
+                     $objects_array[] = $objects_image->final_image;
+                  }
                }
             }
 
@@ -918,13 +921,36 @@ class CW_Swiper
                   }
 
                   $image_big_size = 'project_1';
-                  $objects_image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
-                  $objects_array[] = $objects_image->final_image;
+                  if ($num_row <= 4) {
+                     $objects_image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
+                     $objects_array[] = $objects_image->final_image;
+                  }
                }
             }
-
             $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL);
+            $final_slider = $tiles_object->final_tiles;
+         } elseif ($type_gallery == 'Tiles 1') {
+            if (have_rows('cw_images')) {
+               $objects_array = array();
+               while (have_rows('cw_images')) {
+                  $num_row = get_row_index();
+                  the_row();
+                  if ($num_row == 0) {
+                     $image_thumb_size = 'team-1';
+                  } elseif ($num_row == 1) {
+                     $image_thumb_size = 'team-1';
+                  } elseif ($num_row == 2) {
+                     $image_thumb_size = 'sandbox_process_8';
+                  }
 
+                  $image_big_size = 'project_1';
+                  if ($num_row <= 2) {
+                     $objects_image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
+                     $objects_array[] = $objects_image->final_image;
+                  }
+               }
+            }
+            $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL);
             $final_slider = $tiles_object->final_tiles;
          }
       } elseif ($count_image == 1) {
