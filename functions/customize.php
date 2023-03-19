@@ -452,6 +452,7 @@ function codeweber_register_theme_customizer($wp_customize)
          'type'     => 'select',
          'choices'  => array(
             'sandbox-1'   => 'Footer 01',
+            'sandbox-1-1'   => 'Footer 01-1',
             'sandbox-2-6'   => 'Footer 02-06',
             'sandbox-3'   => 'Footer 03',
             'sandbox-4'   => 'Footer 04',
