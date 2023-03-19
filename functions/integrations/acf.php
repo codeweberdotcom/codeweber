@@ -96,7 +96,7 @@ function brk_phone_one($color)
 		$phone_acf_1 = get_field('phone', 'option');
 		$brk_phone_one = '<a ' . $class_link . ' href="tel:' . $phone_acf_1 . '">' . $phone_acf_1 . '</a>';
 	else :
-		$brk_phone_one = '+00 (123) 456 78 90';
+		$brk_phone_one = NULL;
 	endif;
 	return $brk_phone_one;
 };
@@ -116,11 +116,21 @@ function brk_phone_two($color)
 		$phone_acf_2 = get_field('phone_1', 'option');
 		$brk_phone_two = '<a ' . $class_link . ' href="tel:' . $phone_acf_2 . '">' . $phone_acf_2 . '</a>';
 	else :
-		$brk_phone_two = '+00 (123) 456 78 91';
+		$brk_phone_two = NULL;
 	endif;
 	return $brk_phone_two;
 };
 
+
+
+function brk_phones($color)
+{
+	$phones_array = array();
+	$phones_array[] = brk_phone_one($color);
+	$phones_array[] = brk_phone_two($color);
+	$phones = implode('<br>', $phones_array);
+	return $phones;
+}
 
 // --- E-Mail 1 ---
 

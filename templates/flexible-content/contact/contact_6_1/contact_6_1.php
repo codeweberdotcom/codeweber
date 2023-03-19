@@ -91,16 +91,7 @@ if (get_field('email_1', 'option')) {
 } else {
    $e_mail_address_1 = '';
 }
-if (get_field('phone', 'option')) {
-   $phone_number = get_field('phone', 'option');
-} else {
-   $phone_number = '00 (123) 456 78 90';
-}
-if (get_field('phone_1', 'option')) {
-   $phone_number_1 = get_field('phone_1', 'option');
-} else {
-   $phone_number_1 = '';
-}
+
 if (get_field('map_url', 'option')) {
    $map_url = get_field('map_url', 'option');
 } else {
@@ -173,7 +164,7 @@ $block = new CW_Settings(
                            </div>
                            <div>
                               <h5 class="mb-1"><?php esc_html_e('Phone', 'codeweber'); ?></h5>
-                              <p><?php echo $phone_number; ?> <?php if ($phone_number_1) { ?><br><?php echo $phone_number_1; ?><?php } ?></p>
+                              <p><?php echo brk_phones(NULL); ?></p>
                            </div>
                         </div>
                         <!--/div -->

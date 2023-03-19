@@ -105,7 +105,7 @@ add_filter('wpcf7_form_elements', function ($html) {
     if (!empty(social_icons())) {
         $html = $html;
         $icons_cf7 = social_icons();
-        $html .= '<div class="divider-icon my-4">' . esc_html__('or', 'codeweber') . '</div>';
+        $html .= '<div class="divider-icon my-4 text-center">' . esc_html__('or', 'codeweber') . '</div>';
         $html .= '<nav class="nav social justify-content-center text-center">' . $icons_cf7 . '</nav>';
     } else {
         $html = $html;
