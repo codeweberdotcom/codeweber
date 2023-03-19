@@ -8,11 +8,11 @@
 $block = new CW_Settings(
    $cw_settings = array(
 
-      'title' => 'Join Our Community',
-      'patternTitle' => '<h2 class="fs-16 text-uppercase text-line text-white mb-3">%s</h2>',
+      'title' => 'We are trusted by over 5000+ clients. Join them by using our services and grow your business.',
+      'patternTitle' => '<h3 class="display-4 mb-6 text-white pe-xxl-18">%s</h3>',
 
-      'subtitle' => 'We are trusted by over 5000+ clients. Join them by using our services and grow your business.',
-      'patternSubtitle' => '<h3 class="display-4 mb-6 text-white pe-xxl-18">%s</h3>',
+      'subtitle' => 'Join Our Community',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-line text-white mb-3">%s</h2>',
 
       'buttons' => '<a href="#" class="btn btn-white rounded mb-0 text-nowrap">Join Us</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
@@ -30,10 +30,10 @@ $block = new CW_Settings(
    <div class="container py-18">
       <div class="row">
          <div class="col-lg-8">
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
-            <!--/paragraph -->
             <?php echo $block->buttons; ?>
             <!--/buttons group -->
          </div>

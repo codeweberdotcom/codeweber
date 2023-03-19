@@ -6,10 +6,10 @@
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'My Selected Shots',
-      'patternTitle' => ' <h2 class="display-5 mb-3">%s</h2>',
-      'subtitle' => 'Photography is my passion and I love to turn ideas into beautiful things.',
-      'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+      'title' => 'Photography is my passion and I love to turn ideas into beautiful things.',
+      'patternTitle' => '<p class="lead fs-lg">%s</p>',
+      'subtitle' => 'My Selected Shots',
+      'patternSubtitle' => '<h2 class="display-5 mb-3">%s</h2>',
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,
    )
@@ -25,8 +25,10 @@ $terms = get_terms([
    <div class="container py-14 py-md-16 text-center">
       <div class="row">
          <div class="col-lg-10 col-xl-8 col-xxl-7 mx-auto mb-8">
-            <?php echo $block->title; ?>
             <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
+            <?php echo $block->title; ?>
+            <!--/title -->
          </div>
          <!-- /column -->
       </div>
