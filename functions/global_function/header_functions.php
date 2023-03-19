@@ -133,3 +133,6 @@ function md_social_icons_option()
       }
    }
 }
+
+
+add_filter('get_the_archive_title_prefix', '__return_empty_string');
