@@ -11,7 +11,7 @@ $block = new CW_Settings(
       'paragraph' => 'Have any questions? Reach out to us from our contact form and we will get back to you shortly.',
       'patternParagraph' => '<p class="lead px-xl-10 px-xxl-10">%s</p>',
 
-      'background_class_default' => 'wrapper bg-dark text-white',
+      'background_class_default' => 'wrapper bg-dark text-white overflow-hidden',
 
       'divider' => true,
 
