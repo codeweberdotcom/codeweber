@@ -50,7 +50,7 @@ $block = new CW_Settings(
 
     'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><div class="counter mb-0 text-nowrap h3">%3$s</div><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
-    'features' => '<div class="col-12"><div class="d-flex flex-row"><div><div class="icon btn btn-circle btn-lg btn-soft-primary disabled me-5"><i class="uil uil-phone-volume"></i> </div></div><div><h4 class="mb-1">24/7 Support</h4><p class="mb-0">Nulla vitae elit libero pharetra augue dapibus.</p></div></div></div><!--/column -->',
+    'features' => '<div class="col-12"><div class="d-flex flex-row"><div><div class="icon btn btn-circle btn-lg btn-soft-primary disabled me-5"><i class="uil uil-phone-volume"></i> </div></div><div><div class="mb-1 h4">24/7 Support</div><p class="mb-0">Nulla vitae elit libero pharetra augue dapibus.</p></div></div></div><!--/column -->',
     'features_pattern' => '<div class="col-12 %1$s"><div class="d-flex flex-row"><div>%2$s</div><div><h4 class="mb-1%9$s">%3$s</h4><p class="mb-0%10$s">%4$s</p>%5$s</div></div></div><!--/column -->',
     'features_style_icon' => 'disabled me-5',
 
