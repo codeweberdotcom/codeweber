@@ -5,11 +5,11 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'About Me',
-      'patternTitle' => '<h2 class="display-5 mb-3">%s</h2>',
+      'title' => 'I\'m Caitlyn Sandbox, a photographer specializing in food, drink and product photography.',
+      'patternTitle' => '<p class="lead fs-lg">%s</p>',
 
-      'subtitle' => 'I\'m Caitlyn Sandbox, a photographer specializing in food, drink and product photography.',
-      'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+      'subtitle' => 'About Me',
+      'patternSubtitle' => '<h2 class="display-5 mb-3">%s</h2>',
 
       'paragraph' => 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula.<br>
       Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur.',
@@ -75,10 +75,10 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
-            <?php echo $block->title; ?>
-            <!--/title -->
             <?php echo $block->subtitle; ?>
             <!--/subtitle -->
+            <?php echo $block->title; ?>
+            <!--/title -->
             <?php echo $block->paragraph; ?>
             <!--/pargraph -->
             <?php echo $block->buttons; ?>
