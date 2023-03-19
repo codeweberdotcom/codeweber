@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-03-19 14:04+0000\n"
+"PO-Revision-Date: 2023-03-19 14:13+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -135,14 +135,10 @@ msgid ""
 "cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit "
 "amet risus."
 msgstr ""
-"Энейская футбольная команда. Дети украшают ту же лацинию, что и венецианский "
-"вестибюль. У Мецената временами мягкое небо. Fusce dapibus, terus ac curso "
-"commodo, tortor mauris condimentum nibh, так что квасная масса просто сидит "
-"amet risus."
 
 #: functions/widgets.php:25
 msgid "Alexey"
-msgstr "Алексей"
+msgstr ""
 
 #: templates/archive/archive-projects-3.php:33
 #: templates/archive/archive-projects-4.php:33
@@ -275,13 +271,11 @@ msgstr "Автор"
 
 #: templates/sections/home-news.php:40
 msgid "By "
-msgstr "Автор"
+msgstr ""
 
 #: templates/footer/footer-sandbox-19.php:8
 msgid "by over 5000+ clients. Join them now and grow your business."
 msgstr ""
-"Более чем 5000 клиентов. Присоединяйтесь к ним сейчас и развивайте свой "
-"бизнес."
 
 #: comments.php:129
 msgid "By using this comment form you agree with our Privacy Policy"
@@ -1051,7 +1045,6 @@ msgstr "Ой! Страница не найдена."
 msgid "Options"
 msgstr "Опции Темы"
 
-#: functions/integrations/cf7.php:108
 #: templates/header/header-sandbox-05.php:122
 #: templates/header/header-sandbox-08.php:86
 #: templates/header/header-sandbox-08.php:131
@@ -1063,6 +1056,10 @@ msgstr "или"
 #: templates/header/header-sandbox-woo-01.php:75
 msgid "Orders"
 msgstr "Заказы"
+
+#: functions/integrations/cf7.php:108
+msgid "ors"
+msgstr "или"
 
 #: templates/footer/footer-sandbox-10.php:43
 #: templates/footer/footer-sandbox-11.php:48

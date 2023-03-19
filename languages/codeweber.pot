@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codeweber\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-19 13:59+0000\n"
+"POT-Creation-Date: 2023-03-19 14:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -1013,7 +1013,6 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: functions/integrations/cf7.php:108
 #: templates/header/header-sandbox-05.php:122
 #: templates/header/header-sandbox-08.php:86
 #: templates/header/header-sandbox-08.php:131
