@@ -119,16 +119,7 @@ if (get_field('email_1', 'option')) {
 } else {
    $e_mail_address_1 = '';
 }
-if (get_field('phone', 'option')) {
-   $phone_number = get_field('phone', 'option');
-} else {
-   $phone_number = '00 (123) 456 78 90';
-}
-if (get_field('phone_1', 'option')) {
-   $phone_number_1 = get_field('phone_1', 'option');
-} else {
-   $phone_number_1 = '';
-}
+
 $contact_form = get_sub_field('contact_form');
 if ($contact_form) {
    foreach ($contact_form as $post_ids) {
@@ -178,7 +169,7 @@ $block = new CW_Settings(
                      </div>
                      <div>
                         <h5 class="mb-1"><?php esc_html_e('Phone', 'codeweber'); ?></h5>
-                        <p><?php echo $phone_number; ?> <?php if ($phone_number_1) { ?><br /><?php echo $phone_number_1; ?><?php } ?></p>
+                        <p><?php echo brk_phones(NULL); ?></p>
                      </div>
                   </div>
                   <div class="d-flex flex-row">
