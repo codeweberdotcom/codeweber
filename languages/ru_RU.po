@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-03-19 09:49+0000\n"
+"PO-Revision-Date: 2023-03-19 11:04+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Loco-Version: 2.6.3; wp-6.1.1"
+"X-Loco-Version: 2.6.4; wp-6.1.1"
 
 #. 1: Comment date, 2: Comment time.
 #: functions/lib/comments-helper.php:50
@@ -508,12 +508,12 @@ msgstr "Email Адрес"
 
 #: functions/navmenus.php:21 functions/cpt/cpt-faq.php:13
 msgid "FAQ"
-msgstr "FAQ"
+msgstr "Вопросы и ответы"
 
 #: functions/cpt/cpt-faq.php:11 functions/cpt/cpt-faq.php:12
 #: functions/cpt/cpt-faq.php:17
 msgid "Faq"
-msgstr "Faq"
+msgstr "Вопросы и ответы"
 
 #: functions/widgets.php:104
 msgid "FAQ categories"
