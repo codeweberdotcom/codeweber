@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Woocommerce 1
  */
@@ -8,10 +7,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Our Models',
-      'patternTitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3">%s<?h2>',
+      'patternTitle' => '<h3 class="display-4 mb-9">%s</h3>',
 
       'subtitle' => 'Check out some of our awesome projects with creative ideas and great design.',
-      'patternSubtitle' => ' <h3 class="display-4 mb-9">%s</h3>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3">%s<?h2>',
 
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,
@@ -19,20 +18,16 @@ $block = new CW_Settings(
       'shapes' => array('<div class="shape bg-line leaf rounded-circle rellax w-17 h-17" data-rellax-speed="1" style="top: -2rem; right: -0.6rem;"></div>', '<div class="shape bg-pale-violet rounded-circle rellax w-17 h-17" data-rellax-speed="1" style="bottom: -2rem; left: -0.4rem;"></div>'),
    )
 );
-
-
 ?>
-
-
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-lg-9 col-xl-8 col-xxl-7">
-            <?php echo $block->title; ?>
-            <!--/title -->
             <?php echo $block->subtitle; ?>
             <!--/subtitle -->
+            <?php echo $block->title; ?>
+            <!--/title -->
          </div>
       </div>
       <?php $products = get_sub_field('products');
