@@ -8,7 +8,7 @@ $block = new CW_Settings(
       'title' => 'Get in Touch',
       'patternTitle' => '<h1 class="display-1 mb-3 text-white">%s</h1>',
 
-      'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white overflow-hidden mt-0',
+      'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white overflow-hidden',
       'background_data_default' => '/dist/img/photos/bg3.jpg',
 
       'divider' => true,
