@@ -53,10 +53,10 @@ $block = new CW_Settings(
    <div class="container py-14 pt-md-17 pb-md-21">
       <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0 mb-2 align-items-end">
          <div class="col-lg-4">
-            <?php echo $block->title; ?>
-            <!--/title -->
             <?php echo $block->subtitle; ?>
             <!--/subtitle -->
+            <?php echo $block->title; ?>
+            <!--/title -->
          </div>
          <!-- /column -->
          <div class="col-lg-8 mt-lg-2">
