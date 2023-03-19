@@ -19,11 +19,7 @@ if (get_field('email', 'option')) {
 } else {
    $e_mail_address = 'info@codeweber.com';
 }
-if (get_field('phone', 'option')) {
-   $phone_number = get_field('phone', 'option');
-} else {
-   $phone_number = '00 (123) 456 78 90';
-}
+
 
 
 $block = new CW_Settings(
@@ -84,7 +80,7 @@ $block = new CW_Settings(
                </div>
                <div>
                   <h5 class="mb-1"><?php esc_html_e('Phone', 'codeweber'); ?></h5>
-                  <p><?php echo $phone_number; ?></p>
+                  <p><?php echo brk_phones(NULL); ?></p>
                </div>
             </div>
             <div class="d-flex flex-row">
