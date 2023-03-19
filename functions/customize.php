@@ -132,7 +132,7 @@ function codeweber_register_theme_customizer($wp_customize)
 
    // Title Section
    $wp_customize->add_section(
-      'codeweber_title_options',
+      'codeweber_sub_title_options',
       array(
          'title'     => __('Title Options', 'codeweber'),
          'priority'  => 2
@@ -141,20 +141,20 @@ function codeweber_register_theme_customizer($wp_customize)
 
    // Title Control
    $wp_customize->add_setting(
-      'codeweber_title',
+      'codeweber_sub_title',
       array(
-         'default'   => 'standart',
+         'default'   => 'default',
       )
    );
 
    $wp_customize->add_control(
-      'codeweber_title',
+      'codeweber_sub_title',
       array(
-         'section'  => 'codeweber_title_options',
+         'section'  => 'codeweber_sub_title_options',
          'label'    => __('Title Theme Style', 'codeweber'),
          'type'     => 'select',
          'choices'  => array(
-            'standart'    => 'Standart',
+            'default'    => 'Default',
             'line'      => 'With Line',
          )
       )
@@ -162,22 +162,24 @@ function codeweber_register_theme_customizer($wp_customize)
 
    // Color Control
    $wp_customize->add_setting(
-      'codeweber_title_color',
+      'codeweber_sub_title_color',
       array(
-         'default'   => 'text-muted',
+         'default'   => 'default',
       )
    );
 
    $wp_customize->add_control(
-      'codeweber_title_color',
+      'codeweber_sub_title_color',
       array(
-         'section'  => 'codeweber_title_options',
+         'section'  => 'codeweber_sub_title_options',
          'label'    => __('Title Theme Color', 'codeweber'),
          'type'     => 'select',
          'choices'  => array(
+            'default'    => 'Default',
             'text-muted'    => 'Muted',
             'text-dark'      => 'Dark',
             'text-light'      => 'Light',
+            'text-primary'      => 'Primary',
          )
       )
    );

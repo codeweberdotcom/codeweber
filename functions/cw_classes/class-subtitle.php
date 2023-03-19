@@ -233,6 +233,18 @@ class CW_SubTitle
       } else {
          $tag = NULL;
       }
+      if (get_theme_mod('codeweber_sub_title_color') !== 'default') {
+         $sub_title_pattern = '<h2 class="fs-16 text-uppercase ' . get_theme_mod('codeweber_sub_title_color') . ' mb-3">%s</h2>';
+      }
+
+      if (get_theme_mod('codeweber_sub_title') !== 'default') {
+         $sub_title_pattern = '<h2 class="fs-16 text-uppercase text-line mb-3">%s</h2>';
+      }
+
+      if (get_theme_mod('codeweber_sub_title_color') !== 'default' && get_theme_mod('codeweber_sub_title') !== 'default') {
+         $sub_title_pattern = '<h2 class="fs-16 text-uppercase text-line mb-3 ' . get_theme_mod('codeweber_sub_title_color') . '">%s</h2>';
+      }
+
       if ($sub_title_pattern !== NULL) {
          $text = sprintf($sub_title_pattern, $this->sub_title_text, $class_p);
       }
