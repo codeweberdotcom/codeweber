@@ -419,7 +419,7 @@ class CW_Image
                the_row();
                if (get_sub_field('cw_show') == 0) :
                   $label_object = new CW_Labels(
-                     '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap text-dark">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap text-dark">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
+                     '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><p class="counter mb-0 text-nowrap text-dark h3">%3$s</p><p class="fs-14 lh-sm mb-0 text-nowrap text-dark">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
                      '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 0rem; left: 0rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
                      NULL
