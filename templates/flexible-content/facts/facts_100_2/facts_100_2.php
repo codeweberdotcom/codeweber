@@ -29,17 +29,17 @@ $type_field = get_sub_field('select_type');
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Company Facts',
-      'patternTitle' => '<h2 class="fs-16 text-uppercase text-line text-primary mb-3">%s</h2>',
+      'title' => 'We are proud of our works',
+      'patternTitle' => '<h3 class="display-4 mb-0 pe-xxl-15">%s</h3>',
 
-      'subtitle' => 'We are proud of our works',
-      'patternSubtitle' => '<h3 class="display-4 mb-0 pe-xxl-15">%s</h3>',
+      'subtitle' => 'Company Facts',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-line text-primary mb-3">%s</h2>',
 
       'background_class_default' => 'wrapper bg-soft-primary',
 
       // 'divider' => true,
 
-      'features' => '<div class="col-md-4"><h3 class="counter counter-lg" style="visibility: visible;">1000+</h3><p>Completed Projects</p></div><!--/column -->',
+      'features' => '<div class="col-md-4"><div class="counter counter-lg h3" style="visibility: visible;">1000+</div><p>Completed Projects</p></div><!--/column -->',
       'features_pattern' => '<div class="col-md-4 %1$s">%2$s<div class="h3 counter counter-lg" style="visibility: visible;">%3$s</div><p">%4$s</p></div><!--/column -->',
 
       'shapes' => array('<div class="shape rounded-circle bg-line primary rellax w-18 h-18" data-rellax-speed="1" style="top: -2rem; right: -2.7rem; z-index:0;"></div>', '<div class="shape rounded-circle bg-soft-primary rellax w-18 h-18" data-rellax-speed="1" style="bottom: -1rem; left: -3rem; z-index:0;"></div>'),
@@ -137,7 +137,7 @@ $block = new CW_Settings(
                                                    <p>“<?php echo $testimonial; ?>”</p>
                                                    <div class="blockquote-details justify-content-center text-center">
                                                       <div class="info ps-0">
-                                                         <h5 class="mb-1"><?php echo $name ?></h5>
+                                                         <div class="mb-1 h5"><?php echo $name ?></div>
                                                          <?php if ($job_title) { ?>
                                                             <p class="mb-0"><?php echo $job_title ?></p>
                                                          <?php } ?>
