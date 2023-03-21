@@ -3,6 +3,7 @@
 /**
  * Testimonial 3
  */
+
 $argss = array(
    'posts_per_page' => 10,
    'post_type' => 'testimonials',
@@ -24,10 +25,10 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'Our Community',
-      'patternTitle' => '<h2 class="display-4 mt-10 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
 
-      'subtitle' => 'Customer satisfaction is our major goal. See what our clients are saying about our services.',
-      'patternSubtitle' => '<p class="lead fs-lg mb-6">%s</p>',
+      'paragraph' => 'Customer satisfaction is our major goal. See what our clients are saying about our services.',
+      'patternParagraph' => '<p class="lead fs-lg mb-6">%s</p>',
 
       'buttons' => '<a href="/testimonials/" class="btn btn-primary rounded-pill">All Testimonials</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
@@ -48,7 +49,7 @@ $block = new CW_Settings(
          <div class="col-xl-4">
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->paragraph; ?>
             <!--/subtitle -->
             <?php echo $block->buttons; ?>
             <!--/buttons group -->
@@ -68,8 +69,9 @@ $block = new CW_Settings(
                            while ($query->have_posts()) {
                               $query->the_post();
                               $post_id =  $post->ID;
-                              if (have_rows('testimonials_post_field', $post_id)) :
-                                 while (have_rows('testimonials_post_field', $post_id)) : the_row();
+                              if (have_rows('testimonials_post_field', $post_id)) {
+                                 while (have_rows('testimonials_post_field', $post_id)) {
+                                    the_row();
 
                                     if (get_sub_field('status') == 1) {
                                        if (get_sub_field('name')) {
@@ -139,8 +141,8 @@ $block = new CW_Settings(
                                        <!--/.swiper-slide -->
                            <?php
                                     }
-                                 endwhile;
-                              endif;
+                                 };
+                              };
                            }
                            ?>
                         </div>

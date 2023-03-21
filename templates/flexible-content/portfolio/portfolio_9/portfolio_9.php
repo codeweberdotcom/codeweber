@@ -73,7 +73,6 @@ $terms = get_terms([
                </div>
                <!-- /.project -->
             <?php } ?>
-
          </div>
          <!-- /.row -->
       </div>
