@@ -578,8 +578,8 @@
                         },
                         {
                             "key": "field_63ef9a4922fb3",
-                            "label": "SubTitle",
-                            "name": "cw_subtitle",
+                            "label": "Paragraph",
+                            "name": "cw_paragraph",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -590,7 +590,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6384afba2c502"
+                                "field_6384b03e2c507"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -3444,5 +3444,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677057634
+    "modified": 1679392786
 }
