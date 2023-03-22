@@ -16,14 +16,14 @@ $icon = new CW_Icon(NULL, NULL, 'mb-4', NULL, NULL, NULL, NULL, NULL, NULL, NULL
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'How It Works?',
-      'patternTitle' => '<h2 class="display-6 mb-3">%s</h2>',
+      'title' => 'Find out everything you need to know and more about how we create our business process models.',
+      'patternTitle' => '<p class="lead fs-lg pe-lg-5">%s</p>',
+
+      'subtitle' => 'How It Works?',
+      'patternSubtitle' => '<h2 class="display-6 mb-3">%s</h2>',
 
       'paragraph' => 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare.</p><p class="mb-6">Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Aenean lacinia bibendum nulla sed consectetur. Sed posuere consectetur est at lobortis. Vestibulum id ligula porta felis.',
       'patternParagraph' => '<p>%s</p>',
-
-      'subtitle' => 'Find out everything you need to know and more about how we create our business process models.',
-      'patternSubtitle' => '<p class="lead fs-lg pe-lg-5">%s</p>',
 
       'buttons' => ' <a href="#" class="btn btn-primary rounded-pill mb-0">Learn More</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
@@ -42,9 +42,6 @@ $block = new CW_Settings(
       'features_style_icon' => 'me-4',
    )
 );
-
-
-
 ?>
 
 
@@ -70,10 +67,10 @@ $block = new CW_Settings(
             </div>
             <!--/column -->
             <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
-               <?php echo $block->title; ?>
-               <!--/title -->
                <?php echo $block->subtitle; ?>
                <!--/subtitle -->
+               <?php echo $block->title; ?>
+               <!--/title -->
                <?php echo $block->paragraph; ?>
                <!--/pargraph -->
                <?php echo $block->buttons; ?>
