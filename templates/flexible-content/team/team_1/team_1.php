@@ -28,7 +28,7 @@ $block = new CW_Settings(
       'patternSubtitle' => '<h3 class="display-4 mb-7 px-lg-19 px-xl-18">%s</h3>',
 
       // 'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-      // 'patternParagraph' => ' <p class="mb-6">%s</p>',
+      // 'patternParagraph' => '<p class="mb-6">%s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 

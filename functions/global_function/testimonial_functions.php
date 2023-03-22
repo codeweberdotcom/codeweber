@@ -42,7 +42,7 @@ function ReadMore($string, $link, $quantity_symbol)
 
       //if the string doesn't contain any space then it will cut without word basis.
       $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
-      $string .= '... <a href="' . $link . '">' . esc_html__('Read More', 'codeweber') . '</a>';
+      $string .= '... <a href="' . $link . '" class="text-nowrap">' . esc_html__('Read More', 'codeweber') . '</a>';
    }
    return $string;
 }

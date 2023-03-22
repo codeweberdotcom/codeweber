@@ -37,7 +37,7 @@ if ($categories) {
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'We love to turn ideas into beautiful things.',
-      'patternTitle' => ' <p class="lead fs-lg">%s</p>',
+      'patternTitle' => '<p class="lead fs-lg">%s</p>',
       'subtitle' => 'Recent Projects',
       'patternSubtitle' => '<h2 class="display-4 mb-3">%s</h2>',
       'background_class_default' => 'wrapper bg-light',

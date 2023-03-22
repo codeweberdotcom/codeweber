@@ -8,7 +8,7 @@ $block = new CW_Settings(
       'title' => 'Get in Touch',
       'patternTitle' => '<h1 class="display-1 mb-3 text-white">%s</h1>',
 
-      'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white overflow-hidden',
+      'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white',
       'background_data_default' => '/dist/img/photos/bg3.jpg',
 
       'divider' => true,
@@ -20,7 +20,7 @@ $block = new CW_Settings(
 
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?> overflow-hidden" <?php echo $block->background_data; ?>>
    <div class="container pt-17 pb-20 pt-md-19 pb-md-21 text-center">
       <div class="row">
          <div class="col-lg-8 mx-auto">

@@ -1,8 +1,9 @@
 <?php
 
 /**
- * Clients 1
+ * Clients 2
  */
+
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Trusted by over 300+ clients',
@@ -46,7 +47,7 @@ $block = new CW_Settings(
          'autoheight' => 'false',
          'image_shape' => NULL,
       ),
-      // 'divider' => true,
+      //'divider' => true,
    )
 );
 ?>
@@ -59,8 +60,11 @@ $block = new CW_Settings(
       <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0">
          <div class="col-lg-4 mt-lg-2">
             <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
+            <!--/title -->
             <?php echo $block->paragraph; ?>
+            <!--/pargraph -->
          </div>
          <!-- /column -->
          <div class="col-lg-8">
@@ -106,5 +110,9 @@ $block = new CW_Settings(
    <!-- /.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

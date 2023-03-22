@@ -107,7 +107,7 @@ class CW_Settings
          } else {
             $tabs_col_2 = NULL;
          }
- 
+
          if (isset($cw_settings['tabs_demo']) && !$cw_settings['tabs_demo'] == NULL) {
             $tabs_demo = $cw_settings['tabs_demo'];
          } else {
@@ -770,12 +770,23 @@ class CW_Settings
          } else {
             $pattern = NULL;
          }
+
+         if (isset($cw_settings['subtitle_lead']) && !$cw_settings['subtitle_lead'] == NULL) {
+            if ($cw_settings['subtitle_lead'] == 'true') {
+               $lead =  'true';
+            } else {
+               $lead =  NULL;
+            }
+         } else {
+            $lead =  NULL;
+         }
          if ($cw_settings['subtitle'] !== NULL) {
             $subtitle_text = $cw_settings['subtitle'];
          } else {
             $subtitle_text = NULL;
          }
-         $subtitle_object = new CW_SubTitle(NULL, $subtitle_text, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $pattern);
+
+         $subtitle_object = new CW_SubTitle(NULL, $subtitle_text, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $pattern, $lead);
          $subtitle = $subtitle_object->sub_title_final;
       } else {
          if (isset($cw_settings['subtitle'])) {
