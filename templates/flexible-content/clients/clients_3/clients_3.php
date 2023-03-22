@@ -1,8 +1,9 @@
 <?php
 
 /**
- * Clients 1
+ * Clients 3
  */
+
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'We are trusted by over 300+ clients. Join them by using our services and grow your business.',
@@ -58,6 +59,7 @@ $block = new CW_Settings(
       <div class="row gx-lg-8 mb-10 gy-5">
          <div class="col-lg-6">
             <?php echo $block->title; ?>
+            <!--/title -->
          </div>
          <!-- /column -->
          <div class="col-lg-6">
@@ -115,5 +117,9 @@ $block = new CW_Settings(
       <!--/.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->

@@ -3,12 +3,13 @@
 /**
  * Clients 1
  */
+
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Trusted by Over 5000 Clients',
       'patternSubtitle' => '<p class="text-center mb-8">%s</p>',
 
-      'background_class_default' => 'wrapper wrapper-border bg-light',
+      'background_class_default' => 'wrapper bg-light',
 
       'swiper' => array(
          'swiper_container_class' => 'clients',
@@ -43,7 +44,7 @@ $block = new CW_Settings(
          'smooth-scroll' => true,
          'data-speed' => '5000',
       ),
-      //'divider' => true,
+      'divider' => true,
    )
 );
 ?>
@@ -51,12 +52,16 @@ $block = new CW_Settings(
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <?php echo $block->subtitle; ?>
-      <!--/title -->
+      <!--/subtitle -->
       <div data-cues="fadeIn" data-group="page-title-buttons" data-delay="100">
          <?php echo $block->swiper_final; ?> <!--/swiper -->
       </div>
       <!--/swiper -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->
