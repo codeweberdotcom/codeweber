@@ -29,6 +29,7 @@ $block = new CW_Settings(
 
       'subtitle' => 'We bring solutions to make life easier for our customers.',
       'patternSubtitle' => '<p class="lead fs-lg mb-0 pe-xxl-10">%s</p>',
+      'subtitle_lead' => 'true',
 
       'features' => '<div class="col-md-4"><img src="' . get_template_directory_uri() . '/dist/img/icons/solid/target.svg" class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia mb-3" alt="" /><h3 class="counter">1000+</h3><p class="mb-0">Completed Projects</p></div><!-- /column -->',
       'features_pattern' => '<div class="col-md-4 %1$s">%2$s<h3 class="counter">%3$s</h3><p class="mb-0">%4$s</p>%5$s</div><!--/column -->',
