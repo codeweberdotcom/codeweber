@@ -6,7 +6,7 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Trusted by Over 5000 Clients',
-      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted text-center mb-8">%s</h2>',
+      'patternSubtitle' => '<p class="text-center mb-8">%s</p>',
 
       'background_class_default' => 'wrapper wrapper-border bg-light',
 
