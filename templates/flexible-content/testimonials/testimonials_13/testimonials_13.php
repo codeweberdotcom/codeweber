@@ -139,6 +139,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-3">
                            <div class="card shadow-lg card-border-bottom border-soft-primary">
                               <div class="card-body">
+                                 <span class="ratings <?php echo acf_rating(); ?> fs-20 mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
@@ -160,6 +161,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-3">
                            <div class="card shadow-lg card-border-bottom border-soft-primary">
                               <div class="card-body">
+                                 <span class="ratings <?php echo acf_rating(); ?> fs-20 mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
@@ -181,6 +183,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-3">
                            <div class="card shadow-lg card-border-bottom border-soft-primary">
                               <div class="card-body">
+                                 <span class="ratings <?php echo acf_rating(); ?> fs-20 mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
@@ -202,6 +205,7 @@ $block = new CW_Settings(
                         <div class="item col-md-6 col-xl-3">
                            <div class="card shadow-lg card-border-bottom border-soft-primary">
                               <div class="card-body">
+                                 <span class="ratings <?php echo acf_rating(); ?> fs-20 mb-3"></span>
                                  <blockquote class="icon mb-0">
                                     <p>“<?php echo $testimonial; ?>”</p>
                                     <div class="blockquote-details">
