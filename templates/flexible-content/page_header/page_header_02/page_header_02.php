@@ -11,7 +11,7 @@ $block = new CW_Settings(
       'paragraph' => 'Have any questions? Reach out to us from our contact form and we will get back to you shortly.',
       'patternParagraph' => '<p class="lead px-xl-10 px-xxl-10">%s</p>',
 
-      'background_class_default' => 'wrapper bg-dark text-white overflow-hidden',
+      'background_class_default' => 'wrapper bg-dark text-white',
 
       'divider' => true,
 
@@ -22,7 +22,7 @@ $block = new CW_Settings(
 
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?> overflow-hidden" <?php echo $block->background_data; ?>>
    <div class="container pt-18 pt-md-20 pb-21 pb-md-21 text-center">
       <div class="row">
          <div class="col-sm-10 col-md-8 col-lg-6 col-xl-6 col-xxl-5 mx-auto">
