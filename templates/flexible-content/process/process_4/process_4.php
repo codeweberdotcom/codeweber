@@ -9,7 +9,7 @@ $block = new CW_Settings(
       'patternTitle' => ' <h3 class="display-4 mb-0 text-center px-xl-10 px-xxl-15">%s</h3>',
 
       // 'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo.',
-      // 'patternParagraph' => ' <p class="mb-8">%s</p>',
+      // 'patternParagraph' => '<p class="mb-8">%s</p>',
 
       'subtitle' => 'Our Process',
       'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 mt-12">%s</h2>',
