@@ -5,14 +5,14 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
+      'subtitle' => 'What Makes Us Different?',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-gradient gradient-1 mb-3">%s</h2>',
+
       'title' => 'We make spending stress free so you have the perfect control.',
-      'patternTitle' => '<h2 class="display-4 mb-4 me-lg-n5">%s</h2>',
+      'patternTitle' => '<h3 class="display-4 mb-4 me-lg-n5">%s</h3>',
 
       'paragraph' => 'Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus. Integer posuere erat a ante venenatis dapibus posuere velit.',
       'patternParagraph' => '<p class="mb-6">%s</p>',
-
-      'subtitle' => 'What Makes Us Different?',
-      'patternSubtitle' => '<p class="fs-16 text-uppercase text-gradient gradient-1 mb-3">%s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -60,6 +60,9 @@ $block = new CW_Settings(
       <li><i class="uil uil-check"></i>Nullam quis risus eget urna mollis ornare.</li><li><i class="uil uil-check"></i>Donec id elit non mi porta gravida at eget.</li>
       </ul>',
 
+      'progress' => '<div class="card-body p-6"><div class="progressbar semi-circle fuchsia mb-3" data-value="80"></div><h4 class="mb-0">Time Saved</h4></div>',
+      'progress_item_wrappers' => array('<div class="card-body p-6">', '</div>'),
+
       'column_class_1' => 'offset-lg-1 order-lg-2',
       'column_class_2' => '',
    )
@@ -73,10 +76,8 @@ $block = new CW_Settings(
             <?php echo $block->swiper_final; ?>
             <!--/swiper -->
             <div class="card shadow-lg position-absolute text-center d-none d-md-block" style="bottom: 10%; left: -10%;">
-               <div class="card-body p-6">
-                  <div class="progressbar semi-circle fuchsia mb-3" data-value="80"></div>
-                  <h4 class="mb-0">Time Saved</h4>
-               </div>
+               <?php echo $block->progress; ?>
+               <!-- /.progress-list -->
                <!--/.card-body -->
             </div>
             <!--/.card -->
@@ -87,7 +88,6 @@ $block = new CW_Settings(
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <p class="mb-6"></p>
             <?php echo $block->paragraph; ?>
             <!--/pargraph -->
             <?php echo $block->list; ?>

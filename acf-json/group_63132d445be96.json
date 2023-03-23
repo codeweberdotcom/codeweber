@@ -2313,6 +2313,44 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_641c99486a459",
+                            "label": "Progresst List",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_641c99596a45a",
+                            "label": "Progress List Items",
+                            "name": "cw_progress_list_items",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63db938de39af"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_63da8fef6d00a",
                             "label": "Background",
                             "name": "",
@@ -3310,5 +3348,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679574833
+    "modified": 1679595993
 }

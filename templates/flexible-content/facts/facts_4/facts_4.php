@@ -5,14 +5,11 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'We are trusted by over 5000+ clients. Join them now and grow your business.',
-      'patternTitle' => '<h2 class="display-4 mb-8 px-lg-12">%s</h2>',
-
-      // 'paragraph' => 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.',
-      // 'patternParagraph' => '<p class="mb-0">%s</p>',
-
       'subtitle' => 'Join Our Community',
-      'patternSubtitle' => '<div class="fs-15 text-uppercase text-muted mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+
+      'title' => 'We are trusted by over 5000+ clients. Join them now and grow your business.',
+      'patternTitle' => '<h3 class="display-4 mb-8 px-lg-12">%s</h3>',
 
       'background_class_default' => 'wrapper image-wrapper bg-auto no-overlay bg-image text-center bg-map',
       'background_data_default' => '/dist/img/map.png',

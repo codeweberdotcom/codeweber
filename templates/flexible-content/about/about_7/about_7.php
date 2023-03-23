@@ -6,10 +6,11 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Sandbox Brings Awesomeness',
-      'patternTitle' => ' <h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
 
       'subtitle' => 'We have considered our solutions to <span class="underline">support every stage</span> of your growth.',
       'patternSubtitle' => '<p class="lead fs-lg mb-6">%s</p>',
+      'subtitle_lead' => 'true',
 
       'background_class_default' => 'wrapper bg-light',
 

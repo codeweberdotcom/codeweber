@@ -8,11 +8,12 @@ $block = new CW_Settings(
       'title' => 'Join Our Community',
       'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
 
+      'subtitle' => 'We have considered our business solutions to support you on every stage of your growth.',
+      'patternSubtitle' => '<p class="lead fs-lg">>%s</p>',
+      'subtitle_lead' => 'true',
+
       'paragraph' => 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.',
       'patternParagraph' => '<p class="mb-0">%s</p>',
-
-      'subtitle' => 'We have considered our business solutions to support you on every stage of your growth.',
-      'patternSubtitle' => '<div class="lead fs-lg">%s</div>',
 
       'background_class_default' => 'wrapper bg-light',
 
