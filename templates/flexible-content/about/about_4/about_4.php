@@ -10,14 +10,16 @@ $icon = new CW_Icon(NULL, NULL, 'mb-4', NULL, NULL, NULL, NULL, NULL, NULL, NULL
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Who Are We?',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'title' => 'We are a digital and branding company that believes in the power of creative strategy and along with great design.',
+      'patternTitle' => '<p class="lead fs-lg">%s</p>',
+
+      'subtitle' => 'Who Are We?',
+      'patternSubtitle' => '<h2 class="display-4 mb-3">%s</h2>',
 
       'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
       'patternParagraph' => '<p class="mb-6">%s</p>',
 
-      'subtitle' => 'We are a digital and branding company that believes in the power of creative strategy and along with great design.',
-      'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+
 
       'multi_image' => array(
          array('/dist/img/photos/about2.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="rounded shadow"><img src="' . get_template_directory_uri() . '/dist/img/photos/about2.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about2@2x.jpg 2x" alt=""></figure>'),
@@ -64,10 +66,10 @@ $block = new CW_Settings(
          <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
             <?php echo $icon->final_icon; ?>
             <!--/final_icon -->
-            <?php echo $block->title; ?>
-            <!--/title -->
             <?php echo $block->subtitle; ?>
             <!--/subtitle -->
+            <?php echo $block->title; ?>
+            <!--/title -->
             <?php echo $block->paragraph; ?>
             <!--/pargraph -->
             <?php echo $block->list; ?>
