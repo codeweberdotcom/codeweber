@@ -8,7 +8,7 @@
 $block = new CW_Settings(
   $cw_settings = array(
     'title' => 'A few reasons why our valued customers choose us.',
-    'patternTitle' => ' <h2 class="display-5 mb-7">%s</h2>',
+    'patternTitle' => '<h2 class="display-5 mb-7">%s</h2>',
 
     'subtitle' => 'Why Choose Us?',
     'patternSubtitle' => '<p class="fs-15 text-uppercase text-line text-primary mb-3">%s</p>',

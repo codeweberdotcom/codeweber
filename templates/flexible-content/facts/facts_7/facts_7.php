@@ -5,22 +5,20 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Save your time and money by choosing our <span class="underline-3 style-2 yellow">professional</span> team.',
-      'patternTitle' => '<h2 class="display-3 mb-0 pe-xl-10 pe-xxl-15">%s</h2>',
-
       'subtitle' => 'Save Time and Money',
-      'patternSubtitle' => '<div class="fs-16 text-uppercase text-muted mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3">%s</h2>',
+
+      'title' => 'Save your time and money by choosing our <span class="underline-3 style-2 yellow">professional</span> team.',
+      'patternTitle' => '<h3 class="display-3 mb-0 pe-xl-10 pe-xxl-15">%s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
 
       'divider' => true,
 
-
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',
 
       'progress' => '<div class="row gy-6 text-center"><div class="col-md-6"><div class="progressbar semi-circle fuchsia" data-value="95"></div><h4 class="mb-0">Customer Satisfaction</h4></div><!-- /column --></div><!-- /.row -->',
-
       'progress_item_wrappers' => array('<div class="row gy-6 text-center">', '</div>', '<div class="col-6">', '</div>'),
    )
 );

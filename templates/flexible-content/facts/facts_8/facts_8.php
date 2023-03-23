@@ -5,16 +5,15 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Save your time and money by choosing our professional team.',
-      'patternTitle' => '<h2 class="display-4 mb-10 px-lg-20 px-xl-20">%s</h2>',
-
       'subtitle' => 'Company Facts',
-      'patternSubtitle' => '<div class="fs-16 text-uppercase text-muted mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3">%s</h2>',
+
+      'title' => 'Save your time and money by choosing our professional team.',
+      'patternTitle' => '<h3 class="display-4 mb-10 px-lg-20 px-xl-20">%s</h3>',
 
       'background_class_default' => 'wrapper bg-soft-primary',
 
       'divider' => true,
-
 
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',

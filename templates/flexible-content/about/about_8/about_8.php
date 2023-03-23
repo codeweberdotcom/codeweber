@@ -6,13 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'We bring <span class="underline-3 style-2 yellow">solutions</span> to make life easier for our customers.',
-      'patternTitle' => '<h2 class="display-3 mb-10">%s</h2>',
-
-      // 'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-      // 'patternParagraph' => '<p class="mb-6">%s</p>',
+      'patternTitle' => '<h3 class="display-3 mb-10">%s</h3>',
 
       'subtitle' => 'What Makes Us Different?',
-      'patternSubtitle' => '<p class="fs-16 text-uppercase text-muted mb-3">%s</p>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3">%s</h2>',
 
       'background_class_default' => 'wrapper bg-light',
 

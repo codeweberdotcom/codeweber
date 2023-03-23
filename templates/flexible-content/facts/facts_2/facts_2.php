@@ -5,14 +5,11 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'We are proud of our works',
-      'patternTitle' => '<h2 class="display-4 pe-xl-15">%s</h2>',
-
-      // 'paragraph' => 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.',
-      // 'patternParagraph' => '<p class="mb-0">%s</p>',
-
       'subtitle' => 'Company Facts',
-      'patternSubtitle' => '<p class="fs-15 text-uppercase text-primary mb-3">%s</p>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-primary mb-3">%s</h2>',
+
+      'title' => 'We are proud of our works',
+      'patternTitle' => '<h3 class="display-4 pe-xl-15">%s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
 
