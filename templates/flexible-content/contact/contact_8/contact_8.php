@@ -22,6 +22,7 @@ $block = new CW_Settings(
 
       'subtitle' => 'Let\'s make something great together. We are trusted by over 5000+ clients. Join them by using our services and grow your business.',
       'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+      'subtitle_lead' => 'true',
 
       'paragraph' => 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
       'patternParagraph' => '<p>%s</p>',
