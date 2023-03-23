@@ -37,7 +37,7 @@ $block = new CW_Settings(
 
       'background_class_default' => 'wrapper bg-soft-primary',
 
-      // 'divider' => true,
+      'divider' => true,
 
       'features' => '<div class="col-md-4"><div class="counter counter-lg h3" style="visibility: visible;">1000+</div><p>Completed Projects</p></div><!--/column -->',
       'features_pattern' => '<div class="col-md-4 %1$s">%2$s<div class="h3 counter counter-lg" style="visibility: visible;">%3$s</div><p">%4$s</p></div><!--/column -->',
@@ -71,9 +71,13 @@ $block = new CW_Settings(
       <!-- /.row -->
    </div>
    <!-- /.container -->
+   <?php if ($block->divider_wave) {
+      echo $block->divider_wave;
+   } ?>
+   <!-- /divider -->
 </section>
 <!-- /section -->
-<section class="wrapper bg-light angled upper-end">
+<section class="wrapper bg-light">
    <div class="container py-16 py-md-18 position-relative">
       <div class="position-relative mt-n18 mt-md-n23">
          <?php echo $block->shapes; ?>
