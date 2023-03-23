@@ -20,13 +20,20 @@ $block = new CW_Settings(
       'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
       'patternParagraph' => '<p class="mb-6">%s</p>',
 
+      'swiper' => array(
+         'swiper_container_class' => 'overflow-hidden',
+         'image_class' => 'w-auto',
+         'data_thumbs' => NULL,
+         'wrapper_image_class' => '',
+         'image_pattern' => '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>',
+         'image_thumb_size' => 'sandbox_features_6',
+         'image_demo' => '<div class="overlap-grid overlap-grid-2"><div class="item"><figure class="rounded shadow"><img src="' . get_template_directory_uri() . '/dist/img/photos/about2.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about2@2x.jpg 2x" alt=""></figure></div><div class="item"><figure class="rounded shadow"><img src="' . get_template_directory_uri() . '/dist/img/photos/about3.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about3@2x.jpg 2x" alt=""></figure></div></div>',
+         'image_big_size' => 'sandbox_hero_6',
+         'img_link' => '/dist/img/photos/about2.jpg',
 
-
-      'multi_image' => array(
-         array('/dist/img/photos/about2.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="rounded shadow"><img src="' . get_template_directory_uri() . '/dist/img/photos/about2.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about2@2x.jpg 2x" alt=""></figure>'),
-
-         array('/dist/img/photos/about3.jpg', 'sandbox_about_4', 'project_1', '<figure %5$s %9$s>%6$s<img %4$s src="%1$s" srcset="%1$s" %3$s />%7$s %10$s %11$s</figure>', '<figure class="rounded shadow"><img src="' . get_template_directory_uri() . '/dist/img/photos/about3.jpg" srcset="' . get_template_directory_uri() . '/dist/img/photos/about3@2x.jpg 2x" alt=""></figure>'),
       ),
+      'label_demo' => '<div class="card shadow-lg" style="bottom: 5rem; right: 5rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
+      'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
       'list' => 'true',
       'list_demo' => '<div class="row gy-3 gx-xl-8"><div class="col-xl-6"><ul class="icon-list bullet-bg bullet-soft-primary mb-0"><li><span><i class="uil uil-check"></i></span><span>Aenean eu leo quam ornare curabitur blandit tempus.</span></li><li class="mt-3"><span><i class="uil uil-check"></i></span><span>Nullam quis risus eget urna mollis ornare donec elit.</span></li></ul></div><!--/column --><div class="col-xl-6"><ul class="icon-list bullet-bg bullet-soft-primary mb-0"><li><span><i class="uil uil-check"></i></span><span>Etiam porta sem malesuada magna mollis euismod.</span></li><li class="mt-3"><span><i class="uil uil-check"></i></span><span>Fermentum massa vivamus faucibus amet euismod.</span></li></ul></div><!--/column --></div><!--/.row -->',
@@ -50,18 +57,8 @@ $block = new CW_Settings(
          <div class="col-lg-6 position-relative <?php echo $block->column_class_1; ?>">
             <?php echo $block->shapes; ?>
             <!--/shapes -->
-            <div class="overlap-grid overlap-grid-2">
-               <div class="item">
-                  <?php if (isset($block->multi_images[0])) {
-                     echo $block->multi_images[0];
-                  } ?>
-               </div>
-               <div class="item">
-                  <?php if (isset($block->multi_images[1])) {
-                     echo $block->multi_images[1];
-                  } ?>
-               </div>
-            </div>
+            <?php echo $block->swiper_final; ?>
+            <!--/swiper -->
          </div>
          <!--/column -->
          <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
