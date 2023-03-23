@@ -67,7 +67,6 @@ $block = new CW_Settings(
          <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
             <?php echo $icon->final_icon; ?>
             <!--/final_icon -->
-
             <?php echo $block->title; ?>
             <!--/title -->
             <?php echo $block->subtitle; ?>
