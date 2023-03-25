@@ -6,13 +6,13 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Our Solutions',
-      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-primary mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-primary mb-3 %2$s">%1$s</h2>',
 
       'title' => 'Just sit & relax while we take care of your business needs.',
-      'patternTitle' => '<h3 class="display-4 mb-5 pe-xxl-5">%s</h3>',
+      'patternTitle' => '<h3 class="display-4 mb-5 pe-xxl-5 %2$s">%1$s</h3>',
 
       'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus. Maecenas sed diam eget risus varius blandit sit amet non magna. Praesent commodo cursus magna.',
-      'patternParagraph' => '<p class="mb-6">%s</p>',
+      'patternParagraph' => '<p class="mb-6 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -71,7 +71,7 @@ $block = new CW_Settings(
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
-      <div class="row gx-3 gy-10 gy-lg-0 mb-15 mb-md-17 align-items-center">
+      <div class="row gx-3 gy-10 gy-lg-0 mb-15 mb-md-0 align-items-cente">
          <div class="col-lg-5 mx-auto <?php echo $block->column_class_1; ?>">
             <?php echo $block->swiper_final; ?>
             <!--/swiper -->
