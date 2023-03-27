@@ -7,10 +7,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'App Features',
-      'patternSubtitle' => '<div class="h2 fs-15 text-uppercase text-muted mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
 
       'title' => 'Sandbox is the only app you need to track your goals for better health.',
-      'patternTitle' => '<h2 class="display-4 mb-9">%s</h2>',
+      'patternTitle' => '<h3 class="display-4 mb-9 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -18,7 +18,10 @@ $block = new CW_Settings(
 
       'features' => '<div class="col-md-6 col-lg-4"><div class="d-flex flex-row"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/target.svg" class="svg-inject icon-svg icon-svg-sm text-aqua me-4" alt="" /></div><div><h4 class="mb-1">Fitness Goal</h4><p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p></div></div></div><!--/column -->',
 
-      'features_pattern' => '<div class="col-md-6 col-lg-4 %1$s"><div class="d-flex flex-row %6$s lift"><div>%2$s</div><div><h4>%3$s</h4><p class="mb-2">%4$s</p>%5$s</div></div></div><!--/column -->',
+      'features_pattern' => '<div class="col-md-6 col-lg-4 %1$s">
+      <a  class="d-flex flex-row %6$s lift"><div>%2$s</div><div class="align-self-center"><h4 class="mb-0 ">%3$s</h4></div></a>
+      
+      </div><!--/column -->',
       'features_style_icon' => 'me-4',
    )
 );
