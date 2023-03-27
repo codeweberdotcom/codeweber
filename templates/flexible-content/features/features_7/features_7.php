@@ -9,10 +9,10 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'What I Do?',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
-      'paragraph' => 'Duis mollis est commodo luctus nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl.',
-      'patternParagraph' => '<p class="lead fs-20 mb-5">%s</p>',
+      'subtitle' => 'Duis mollis est commodo luctus nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare vel. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl.',
+      'patternSubtitle' => '<p class="lead fs-20 mb-5 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -43,8 +43,8 @@ $block = new CW_Settings(
          <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->paragraph; ?>
-            <!--/pargraph -->
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
          </div>
          <!--/column -->
       </div>

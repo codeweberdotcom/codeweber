@@ -8,10 +8,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Why Choose Sandbox?',
-      'patternSubtitle' => ' <h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
 
       'title' => 'Here are a few reasons why our customers choose Sandbox.',
-      'patternTitle' => '<h3 class="display-4 mb-10 px-xl-10 px-xxl-15">%s</h3>',
+      'patternTitle' => '<h3 class="display-4 mb-10 px-xl-10 px-xxl-15 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
 

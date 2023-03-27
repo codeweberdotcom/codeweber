@@ -5,12 +5,14 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
+      'subtitle' => 'What We Do?',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
+
       'title' => 'The service we offer is specifically designed to meet your needs.',
-      'patternTitle' => '<h2 class="h3 display-4 mb-10 px-xl-10 %2$s">%1$s</h2>',
+      'patternTitle' => '<h3 class="display-4 mb-10 px-xl-10 %2$s">%1$s</h3>',
       // 'paragraph' => 'We help our clients to increase their website traffic, rankings and visibility in search results.',
       // 'patternParagraph' => '<p class="lead fs-lg mb-7 %2$s">%1$s</p>',
-      'subtitle' => 'What We Do?',
-      'patternSubtitle' => '<div class="h2 fs-16 text-uppercase text-muted mb-3 %2$s">%1$s</div>',
+
       // 'buttons' => '<span><a class="btn btn-primary rounded-pill me-2">Try It For Free</a></span>',
       // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
       'background_class_default' => 'wrapper bg-light',
