@@ -54,10 +54,8 @@ $features = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-5 <?php echo $features->column_class_2; ?>">
-            <?php echo $features->subtitle; ?>
-            <?php echo $features->title; ?>
-            <?php echo $features->paragraph; ?>
-            <?php echo $features->list; ?>
+            <?php $dasdas = new CW_Tables(NULL, NULL, NULL); ?>
+            <?php echo $dasdas->final_table; ?>
          </div>
          <!--/column -->
       </div>
