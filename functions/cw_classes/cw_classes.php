@@ -32,3 +32,4 @@ include 'class-progress.php';
 include 'class-tabs.php';
 include 'class-tiles.php';
 include 'class-social.php';
+include 'class-tables.php';

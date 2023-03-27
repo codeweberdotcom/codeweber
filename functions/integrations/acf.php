@@ -1,5 +1,9 @@
 <?php
 
+include 'advanced-custom-fields-table-field/acf-table.php';
+include 'advanced-custom-fields-table-field/class-jh-acf-field-table.php';
+
+
 /**
  * Integration with Advanced Custom Fields
  */
