@@ -10,6 +10,7 @@ $block = new CW_Settings(
 
       'subtitle' => 'I\'m Caitlyn Sandbox, a photographer specializing in food, drink and product photography.',
       'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+      'subtitle_lead' => 'true',
 
       'paragraph' => 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Vestibulum id ligula.<br>
       Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Aenean lacinia bibendum nulla sed consectetur. Curabitur blandit tempus porttitor. Lorem ipsum dolor sit amet, consectetur.',
