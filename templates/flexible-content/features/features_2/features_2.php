@@ -5,12 +5,14 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'The service we offer is specifically designed to meet your needs.',
-      'patternTitle' => '<h3 class="display-4 mb-9 %2$s">%1$s</h3>',
-      // 'paragraph' => 'We help our clients to increase their website traffic, rankings and visibility in search results.',
-      // 'patternParagraph' => '<p class="lead fs-lg mb-7 %2$s">%1$s</p>',
       'subtitle' => 'What We Do?',
       'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
+
+      'title' => 'The service we offer is specifically designed to meet your needs.',
+      'patternTitle' => '<h3 class="display-4 mb-9 %2$s"> %1$s</h3>',
+      // 'paragraph' => 'We help our clients to increase their website traffic, rankings and visibility in search results.',
+      // 'patternParagraph' => '<p class="lead fs-lg mb-7 %2$s">%1$s</p>',
+
       // 'buttons' => '<span><a class="btn btn-primary rounded-pill me-2">Try It For Free</a></span>',
       // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 

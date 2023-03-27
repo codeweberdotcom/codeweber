@@ -9,13 +9,14 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'What We Do?',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
       'subtitle' => 'The full service we are offering is specifically designed to meet your business needs.',
-      'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+      'patternSubtitle' => '<p class="lead fs-lg %2$s">%1$s</p>',
+      'subtitle_lead' => 'true',
 
       'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis elit interdum. Duis mollis, est non commodo luctus, nisi erat ligula.',
-      'patternParagraph' => '<p>%s</p>',
+      'patternParagraph' => '<p class="%2$s">%1$s</p>',
 
       'buttons' => '<a href="#" class="btn btn-purple rounded-pill mt-3">More Details</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',

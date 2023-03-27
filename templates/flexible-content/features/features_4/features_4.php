@@ -8,14 +8,14 @@
 $block = new CW_Settings(
    $cw_settings = array(
 
-      'title' => 'The service we offer is specifically designed to meet your needs.',
-      'patternTitle' => '<h2 class="h3 display-4 mb-5">%s</h2>',
-
       'subtitle' => 'What We Do?',
-      'patternSubtitle' => '<div class="h2 fs-15 text-uppercase text-muted mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
+
+      'title' => 'The service we offer is specifically designed to meet your needs.',
+      'patternTitle' => '<h3 class="display-4 mb-5 %2$s">%1$s</h3>',
 
       'paragraph' => 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-      'patternParagraph' => '<p>%s</p>',
+      'patternParagraph' => '<p class="%2$s">%1$s</p>',
 
       'buttons' => '<a href="#" class="btn btn-navy rounded-pill mt-3">More Details</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',

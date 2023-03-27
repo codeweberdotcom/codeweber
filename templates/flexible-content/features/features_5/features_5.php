@@ -9,10 +9,10 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'We have considered our solutions to support every stage of growth.',
-      'patternTitle' => '<h2 class="display-4 mb-5">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-5 %2$s">%1$s</h2>',
 
       'paragraph' => 'Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus commodo.',
-      'patternParagraph' => '<p class="mb-5">%s</p>',
+      'patternParagraph' => '<p class="mb-5 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 

@@ -9,10 +9,10 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'subtitle' => 'App Features',
-      'patternSubtitle' => '<div class="h2 fs-15 text-uppercase text-muted mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
 
       'title' => 'Sandbox is the only app you need to track your goals for better health.',
-      'patternTitle' => '<h2 class="display-4 mb-9 px-xl-11">%s</h2>',
+      'patternTitle' => '<h3 class="display-4 mb-9 px-xl-11 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
 

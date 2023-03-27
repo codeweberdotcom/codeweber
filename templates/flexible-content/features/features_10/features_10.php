@@ -9,10 +9,11 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'What We Do?',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
-      'paragraph' => 'The full service we are offering is <span class="underline">specifically</span> designed to meet your business needs and projects.',
-      'patternParagraph' => '<p class="lead fs-lg mb-8 pe-xxl-2">%s</p>',
+      'subtitle' => 'The full service we are offering is <span class="underline">specifically</span> designed to meet your business needs and projects.',
+      'patternSubtitle' => '<p class="lead fs-lg mb-8 pe-xxl-2 %2$s">%1$s</p>',
+      'subtitle_lead' => 'true',
 
       // 'subtitle' => 'We are a digital and branding company that believes in the power of creative strategy and along with great design.',
       // 'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
@@ -83,8 +84,8 @@ $block = new CW_Settings(
          <div class="col-lg-6  <?php echo $block->column_class_2; ?>">
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->paragraph; ?>
-            <!--/paragraph -->
+            <?php echo $block->subtitle; ?>
+            <!--/subtitle -->
             <div class="row gx-xl-10 gy-6">
                <?php echo $block->features; ?>
                <!--/features -->

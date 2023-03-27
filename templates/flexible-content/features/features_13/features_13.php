@@ -7,13 +7,11 @@
 
 $block = new CW_Settings(
    $cw_settings = array(
+      'subtitle' => 'What We Do?',
+      'patternSubtitle' => '<h2 class=" fs-16 text-uppercase text-primary mb-3 %2$s">%1$s</h2>',
 
       'title' => 'The service we offer is specifically designed to meet your needs.',
-      'patternTitle' => '<h2 class="display-3 mb-10 px-xxl-10">%s</h2>',
-
-      'subtitle' => 'What We Do?',
-      'patternSubtitle' => '<div class="h2 fs-16 text-uppercase text-primary mb-3">%s</div>',
-
+      'patternTitle' => '<h3 class="display-3 mb-10 px-xxl-10 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
 
