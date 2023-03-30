@@ -242,6 +242,9 @@ ol.breadcrumb {
     padding-left: 0;
     line-height: 2;
   }
+  .menu-item-has-children > ul li ul {
+    margin-top: -53px !important;
+  }
 }
 nav.woocommerce-menu {
   z-index: 1 !important;
