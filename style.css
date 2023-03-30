@@ -246,6 +246,9 @@ ol.breadcrumb {
     margin-top: -53px !important;
   }
 }
+.dropdown-item {
+  padding-right: 2rem;
+}
 nav.woocommerce-menu {
   z-index: 1 !important;
 }
