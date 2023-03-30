@@ -11,12 +11,13 @@ class CW_Feature
    public $features_paragraph;
    public $features_paragraph_class;
    public $features_link;
+   public $feature_blocklink;
    public $features_border_class;
    public $features_pattern;
    public $features_item_final;
    public $features_list_final;
 
-   public function __construct($features_icon, $features_title, $features_paragraph, $features_link, $features_pattern, $demo, $style, $num, $class_icon, $fetures_image_size)
+   public function __construct($features_icon, $features_title, $features_paragraph, $features_link, $features_pattern, $demo, $style, $num, $class_icon, $fetures_image_size, $feature_blocklink)
    {
       $this->features_icon = $this->cw_features_icon($features_icon, $style, $class_icon, $fetures_image_size);
       $this->features_style = $this->cw_features_style($style);
@@ -24,6 +25,7 @@ class CW_Feature
       $this->features_border_class = $this->cw_features_border_class();
       $this->features_paragraph = $this->cw_features_paragraph($features_paragraph);
       $this->features_link = $this->cw_features_link($features_link);
+      $this->feature_blocklink = $this->cw_feature_blocklink($feature_blocklink);
       $this->features_item_final = $this->cw_features_item_final($features_pattern, $features_title, $demo, $style, $num, $class_icon);
    }
 
@@ -56,7 +58,6 @@ class CW_Feature
       } else {
          $features_border_class = NULL;
       }
-
       return $features_border_class;
    }
 
@@ -137,6 +138,27 @@ class CW_Feature
       return $features_link;
    }
 
+
+   //Features_link
+   public function cw_feature_blocklink($feature_blocklink)
+   {
+      if (have_rows('cw_features_item')) {
+         while (have_rows('cw_features_item')) {
+            the_row();
+
+            $link_block = get_sub_field('link_block');
+            if ($link_block) {
+               $feature_blocklink = esc_url($link_block['url']);
+            } else {
+               $feature_blocklink = NULL;
+            };
+         }
+      } else {
+         $feature_blocklink = NULL;
+      }
+      return $feature_blocklink;
+   }
+
    //Features_item
    public function cw_features_item_final($features_pattern, $features_title, $demo, $style, $num, $class_icon)
    {
@@ -148,6 +170,7 @@ class CW_Feature
       $paragraph_class = $this->features_paragraph_class;
       $icon = $this->features_icon;
       $card_class_array = array();
+      $block_link = $this->feature_blocklink;
 
       if (have_rows('cw_features_item')) {
          while (have_rows('cw_features_item')) {
@@ -167,7 +190,7 @@ class CW_Feature
                $features_item = $demo;
             } else {
                $features_item_pattern = $features_pattern;
-               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link, $card_class, $style, $num, $title_class, $paragraph_class);
+               $features_item = sprintf($features_item_pattern, NULL, $icon, $title, $paragraph, $link, $card_class, $style, $num, $title_class, $paragraph_class, $block_link);
             }
          }
       } else {
@@ -211,7 +234,8 @@ class CW_Features
                NULL,
                $num_s,
                $class_icon,
-               $fetures_image_size
+               $fetures_image_size,
+               NULL
             );
             $cw_features_array[] = $features_item->features_item_final;
             $cw_features_list .= $features_item->features_item_final;
