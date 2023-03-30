@@ -124,6 +124,10 @@ function codeweber_register_theme_customizer($wp_customize)
             'sky'        => 'Sky',
             'violet'     => 'Violet',
             'yellow'     => 'Yellow',
+            'pinterest'  => 'Pinterest',
+            'telegram' => 'Telegram',
+            'whatsapp' => 'Whatsapp',
+            'facebook' => 'Facebook',
             'custom'     => 'Custom'
          )
       )

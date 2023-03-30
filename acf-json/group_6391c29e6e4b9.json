@@ -114,7 +114,11 @@
                         "ash": "ash",
                         "navy": "navy",
                         "grape": "grape",
-                        "muted": "muted"
+                        "muted": "muted",
+                        "telegram": "telegram",
+                        "whatsapp": "whatsapp",
+                        "facebook": "facebook",
+                        "pinterest": "pinterest"
                     },
                     "default_value": "primary",
                     "allow_null": 0,
@@ -180,7 +184,11 @@
                         "bg-gradient-reverse-yellow": "bg-gradient-reverse-yellow",
                         "bg-gradient-reverse-fuchsia": "bg-gradient-reverse-fuchsia",
                         "bg-gradient-reverse-sky": "bg-gradient-reverse-sky",
-                        "bg-gradient-reverse-grape": "bg-gradient-reverse-grape"
+                        "bg-gradient-reverse-grape": "bg-gradient-reverse-grape",
+                        "bg-gradient-telegram": "bg-gradient-telegram",
+                        "bg-gradient-whatsapp": "bg-gradient-whatsapp",
+                        "bg-gradient-facebook": "bg-gradient-facebook",
+                        "bg-gradient-pinterest": "bg-gradient-pinterest"
                     },
                     "default_value": "gradient-1",
                     "allow_null": 0,
@@ -211,5 +219,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674056698
+    "modified": 1680170864
 }
