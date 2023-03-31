@@ -47,7 +47,7 @@ class CW_Tables
    public function
    cw_class_table($class_table)
    {
-
+      $class_table_array = array();
       if (have_rows('table')) {
          while (have_rows('table')) {
             the_row();

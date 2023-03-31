@@ -3,6 +3,8 @@
 /**
  * Pricing 5
  */
+
+$tables = new CW_Tables(NULL, NULL, NULL);
 $block = new CW_Settings(
    $cw_settings = array(
 
@@ -56,10 +58,11 @@ $block = new CW_Settings(
 
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',
-      
+
    )
 );
 ?>
+
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
@@ -74,7 +77,6 @@ $block = new CW_Settings(
             <!--/title -->
             <?php echo $block->paragraph; ?>
             <!--/paragraph -->
-            <?php $tables = new CW_Tables(NULL, NULL, NULL); ?>
             <?php echo $tables->final_table; ?>
             <!--/tables -->
          </div>
