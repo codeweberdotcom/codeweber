@@ -20,26 +20,35 @@
 	<div id="content-wrapper" class="content-wrapper">
 		<?php do_action('codeweber_start_content_wrapper'); // Hook start content wrapper 
 
-		if (get_field('cw_transparent_header') == 'default') {
+		if (is_category() || is_tag() || is_tax()) {
+			$taxonomy_prefix = 'term';
+			$term_id = get_queried_object_id();
+			$term_id_prefixed = $taxonomy_prefix . '_' . $term_id;
+		} else {
+			$term_id_prefixed = get_the_ID();
+		}
+
+		if (get_field('cw_transparent_header', $term_id_prefixed) == 'default') {
 			$params = ['style_nav' => get_theme_mod('codeweber_header_style')];
-		} elseif (get_field('cw_transparent_header') == 'transparent') {
+		} elseif (get_field('cw_transparent_header', $term_id_prefixed) == 'transparent') {
 			$params = ['style_nav' => 'transparent'];
-		} elseif ((get_field('cw_transparent_header') == 'solid')) {
+		} elseif ((get_field('cw_transparent_header', $term_id_prefixed) == 'solid')) {
 			$params = ['style_nav' => 'solid'];
 		} else {
 			$params = ['style_nav' => get_theme_mod('codeweber_header_style')];
 		}
 
-		if (get_field('navbar_color') == 'dark') {
+		if (get_field('navbar_color', $term_id_prefixed) == 'dark') {
 			$params['bg_nav'] = 'navbar-dark';
-		} elseif (get_field('navbar_color') == 'light') {
+		} elseif (get_field('navbar_color', $term_id_prefixed) == 'light') {
 			$params['bg_nav'] = 'navbar-light';
 		} else {
 			$params['bg_nav'] = 'navbar-light';
 		}
 
-		if (get_field('header') && get_field('header') !== 'default') {
-			get_template_part('templates/header/header', get_field('header'), $params);
+
+		if (get_field('header', $term_id_prefixed) && get_field('header', $term_id_prefixed) !== 'default') {
+			get_template_part('templates/header/header', get_field('header', $term_id_prefixed), $params);
 		} else {
 			get_template_part('templates/header/header', get_theme_mod('codeweber_header'), $params);
 		}
