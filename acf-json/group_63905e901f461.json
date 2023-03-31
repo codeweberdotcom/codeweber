@@ -231,7 +231,14 @@
             {
                 "param": "post_format",
                 "operator": "!=",
-                "value": "quote"
+                "value": "audio"
+            }
+        ],
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "all"
             }
         ]
     ],
@@ -244,5 +251,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678961523
+    "modified": 1680256186
 }
