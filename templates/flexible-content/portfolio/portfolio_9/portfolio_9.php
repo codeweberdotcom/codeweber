@@ -7,7 +7,7 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'My Selected Shots',
-      'patternSutitle' => '<h2 class="display-5 mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="display-5 mb-3">%s</h2>',
 
       'title' => 'Photography is my passion and I love to turn ideas into beautiful things.',
       'patternTitle' => '<p class="lead fs-lg">%s</p>',
