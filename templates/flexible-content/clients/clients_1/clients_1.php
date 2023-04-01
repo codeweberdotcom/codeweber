@@ -8,6 +8,7 @@ $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Trusted by Over 5000 Clients',
       'patternSubtitle' => '<p class="text-center mb-8">%s</p>',
+      'subtitle_lead' => 'true',
 
       'background_class_default' => 'wrapper bg-light',
 
