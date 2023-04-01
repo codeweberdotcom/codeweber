@@ -1,6 +1,6 @@
 {
     "key": "group_6347f2142b5fb",
-    "title": "Pricing",
+    "title": "CW Pricing",
     "fields": [
         {
             "key": "field_6347f355a2b18",
@@ -937,5 +937,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680283314
+    "modified": 1680341057
 }
