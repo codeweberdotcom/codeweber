@@ -240,7 +240,7 @@ class CW_Icon
                $classes = 'class="' . implode(' ', $classes_icon) . '"';
             }
             if (get_sub_field('cw_lineal_svg')) {
-               $lineal_icon =  '<img ' . $classes . ' src="' . get_stylesheet_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('cw_lineal_svg') . '.svg" ' . $this->id_icon . '/>';
+               $lineal_icon =  '<img ' . $classes . ' src="' . get_template_directory_uri() . '/dist/img/icons/lineal/' . get_sub_field('cw_lineal_svg') . '.svg" ' . $this->id_icon . '/>';
             } else {
                $lineal_icon = '';
             }
