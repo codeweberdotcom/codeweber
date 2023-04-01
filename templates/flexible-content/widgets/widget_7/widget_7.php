@@ -10,7 +10,7 @@
                      'container'         => '',
                      'container_class'   => '',
                      'container_id'      => '',
-                     'menu_class'        => 'navbar-nav flex-column vertival-menu',
+                     'menu_class'        => 'navbar-nav flex-column vertical-menu',
                      'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
                      'walker'            => new WP_Bootstrap_Navwalker(),
                   )
