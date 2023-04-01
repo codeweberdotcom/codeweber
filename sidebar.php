@@ -12,7 +12,6 @@ if (class_exists('WooCommerce')) {
 	}
 }
 
-
 if (is_page() && !dynamic_sidebar()) { ?>
 	<?php if (is_active_sidebar('sidebar-page') || has_action('sidebar_page_start') || has_action('sidebar_page_end')) { ?>
 		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
@@ -48,9 +47,21 @@ if (is_page() && !dynamic_sidebar()) { ?>
 		</aside> <!-- #sidebar-main-wrapper -->
 	<?php };
 } else { ?>
-	<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
-		<?php do_action('sidebar_main_start'); ?>
-		<?php dynamic_sidebar('sidebar-main'); ?>
-		<?php do_action('sidebar_main_end'); ?>
-	</aside> <!-- #sidebar-main-wrapper -->
+	<?php if (class_exists('WooCommerce')) {
+		if (!is_shop() && !is_product_tag() && !is_product_category()) {
+			if (is_active_sidebar('woocommerce_sidebar') || has_action('woocommerce_sidebar_start') || has_action('woocommerce_sidebar_end')) { ?>
+				<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
+					<?php do_action('sidebar_main_start'); ?>
+					<?php dynamic_sidebar('sidebar-main'); ?>
+					<?php do_action('sidebar_main_end'); ?>
+				</aside> <!-- #sidebar-main-wrapper -->
+		<?php }
+		}
+	} else { ?>
+		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
+			<?php do_action('sidebar_main_start'); ?>
+			<?php dynamic_sidebar('sidebar-main'); ?>
+			<?php do_action('sidebar_main_end'); ?>
+		</aside> <!-- #sidebar-main-wrapper -->
+	<?php } ?>
 <?php };
