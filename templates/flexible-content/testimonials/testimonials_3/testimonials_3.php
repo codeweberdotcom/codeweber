@@ -31,7 +31,7 @@ $block = new CW_Settings(
       'patternParagraph' => '<p class="lead fs-lg mb-6">%s</p>',
 
       'buttons' => '<a href="/testimonials/" class="btn btn-primary rounded-pill">All Testimonials</a>',
-      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
       'background_class_default' => 'wrapper bg-light',
 

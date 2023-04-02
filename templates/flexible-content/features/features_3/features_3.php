@@ -14,7 +14,7 @@ $block = new CW_Settings(
       // 'patternParagraph' => '<p class="lead fs-lg mb-7 %2$s">%1$s</p>',
 
       // 'buttons' => '<span><a class="btn btn-primary rounded-pill me-2">Try It For Free</a></span>',
-      // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+      // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,
       // 'image_pattern' => '<figure %5$s title="dsdsds"><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',

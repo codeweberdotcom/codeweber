@@ -12,7 +12,7 @@ $block = new CW_Settings(
     'patternParagraph' => '<p class="lead fs-23 lh-sm mb-7 pe-lg-5 pe-xl-5 pe-xxl-0">%s</p>',
 
     'buttons' => '<div><a href="#" class="btn btn-lg btn-primary rounded">Read More</a></div>',
-    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+    'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
     'background_class_default' => 'wrapper image-wrapper bg-cover bg-image bg-xs-none bg-gray',
     'background_data_default' => '/dist/img/photos/bg37.jpg',

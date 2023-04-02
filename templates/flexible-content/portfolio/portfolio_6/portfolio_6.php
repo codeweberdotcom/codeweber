@@ -42,7 +42,7 @@ $block = new CW_Settings(
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,
       'buttons' => ' <a href="/projects" class="btn btn-primary rounded-pill mb-0">See All Projects</a>',
-      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap flex-wrap">%s</div>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap">%s</div>',
    )
 );
 ?>
