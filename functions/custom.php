@@ -284,7 +284,7 @@ function sandbox_recent_post()
     <?php wp_reset_postdata();
     ?>
     <!-- /.image-list -->
-<?php
+    <?php
 }
 
 
@@ -392,34 +392,39 @@ add_shortcode('price', 'shortcode_priceimage');
 
 function shortcode_priceimage($atts)
 {
-    ob_start(); ?>
+    ob_start();
 
-    <?php if (get_field('type_price', $atts['id']) == 'Image') { ?>
-        <img class="w-100" src="<?php the_field('price_image', $atts['id']); ?>">
-    <?php } elseif (get_field('type_price', $atts['id']) == 'Table') { ?>
+    if (have_rows('price_list', $atts['id'])) { ?>
+        <?php while (have_rows('price_list', $atts['id'])) {
+            the_row();
+        ?>
 
-        <?php if (have_rows('tables', $atts['id'])) { ?>
-    <?php while (have_rows('tables', $atts['id'])) {
-                the_row();
-                $table = new CW_Tables(NULL, NULL, NULL);
-                echo $table->final_table;
+            <?php
+            if (get_sub_field('type_price') == 'Image') { ?>
+                <img class="w-100" src="<?php the_sub_field('price_image'); ?>">
+            <?php } elseif (get_sub_field('type_price') == 'Table') {
+
+                if (have_rows('price_table')) {
+                    while (have_rows('price_table')) {
+                        the_row();
+                        $table = new CW_Tables(NULL, NULL, NULL);
+                        echo $table->final_table;
+                    }
+                }
             }
-        }
+            if (get_sub_field('text_for_price')) { ?>
+                <div class="alert alert-success alert-icon" role="alert"><i class="uil uil-exclamation-circle"></i><?php echo get_sub_field('text_for_price'); ?></div>
+            <?php }
+
+            $buttons = new CW_Buttons('<div class="d-flex justify-content-center flex-wrap">%s</div>', NULL, NULL, NULL);
+            if (isset($buttons->final_buttons)) { ?>
+                <div class="text-center">
+                    <?php echo $buttons->final_buttons; ?>
+                </div>
+<?php
+            }
+        };
     }
-    ?>
-
-    <?php $price_document = get_field('price_document', $atts['id']);
-    if ($price_document) :
-        $post = $price_document;
-        setup_postdata($post);
-        $file = get_field('file', $post->ID);
-        if ($file) : ?>
-            <div class="justify-content-center d-flex mt-8"><a role="button" href="<?php echo esc_url($file['url']); ?>" target="" title="" class="btn rounded-pill btn-lg btn-outline-primary mb-2 me-2" download>Скачать прайс-лист</a></div>
-<?php endif;
-
-        wp_reset_postdata();
-    endif;
-
     return ob_get_clean();
 }
 
