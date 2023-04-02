@@ -88,12 +88,12 @@ class CW_Tab
          $this->tab_content_col_1_bool = false;
       }
 
-      if ($title_content_object->title_text !== NULL || $paragraph_content_object->paragraph_text !== NULL || $list_content !== NULL) {
+
+      if (isset($title_content_object->title_text) || isset($paragraph_content_object->paragraph_text)) {
          $this->tab_content_col_2_bool = true;
       } else {
          $this->tab_content_col_2_bool = false;
       }
-
 
       if ($this->tab_content_col_1_bool == true && $this->tab_content_col_2_bool == true) {
          $this->tab_content_col_bool = true;

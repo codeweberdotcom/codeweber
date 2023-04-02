@@ -227,9 +227,6 @@ function wp_login_form_brk($args = array())
     }
 }
 
-
-
-
 /** Blog loop excerpt more link and 20 symbols */
 add_filter('excerpt_more', 'new_excerpt_more');
 function new_excerpt_more($more)
@@ -396,7 +393,20 @@ add_shortcode('price', 'shortcode_priceimage');
 function shortcode_priceimage($atts)
 {
     ob_start(); ?>
-    <img class="w-100" src="<?php the_field('price_image', $atts['id']); ?>">
+
+    <?php if (get_field('type_price', $atts['id']) == 'Image') { ?>
+        <img class="w-100" src="<?php the_field('price_image', $atts['id']); ?>">
+    <?php } elseif (get_field('type_price', $atts['id']) == 'Table') { ?>
+
+        <?php if (have_rows('tables', $atts['id'])) { ?>
+    <?php while (have_rows('tables', $atts['id'])) {
+                the_row();
+                $table = new CW_Tables(NULL, NULL, NULL);
+                echo $table->final_table;
+            }
+        }
+    }
+    ?>
 
     <?php $price_document = get_field('price_document', $atts['id']);
     if ($price_document) :
@@ -404,11 +414,23 @@ function shortcode_priceimage($atts)
         setup_postdata($post);
         $file = get_field('file', $post->ID);
         if ($file) : ?>
-            <div class="justify-content-center d-flex mt-5"><a role="button" href="<?php echo esc_url($file['url']); ?>" target="" title="" class="btn rounded-pill btn-lg btn-outline-primary mb-2 me-2" download>Скачать прайс-лист</a></div>
+            <div class="justify-content-center d-flex mt-8"><a role="button" href="<?php echo esc_url($file['url']); ?>" target="" title="" class="btn rounded-pill btn-lg btn-outline-primary mb-2 me-2" download>Скачать прайс-лист</a></div>
 <?php endif;
 
         wp_reset_postdata();
     endif;
 
     return ob_get_clean();
+}
+
+
+
+/**
+ * 
+ */
+
+add_action('edit_form_after_title', 'add_content_before_editor');
+function add_content_before_editor()
+{
+    echo '<h2>Add Your Message Here</h2>';
 }
