@@ -166,28 +166,6 @@
                     "layout": "block",
                     "prefix_label": 0,
                     "prefix_name": 0
-                },
-                {
-                    "key": "field_6405fbf750f84",
-                    "label": "Document",
-                    "name": "price_document",
-                    "type": "post_object",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "50",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "documents"
-                    ],
-                    "taxonomy": "",
-                    "allow_null": 1,
-                    "multiple": 0,
-                    "return_format": "id",
-                    "ui": 1
                 }
             ]
         }
@@ -210,5 +188,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680468135
+    "modified": 1680472581
 }

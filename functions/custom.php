@@ -402,13 +402,17 @@ function shortcode_priceimage($atts)
             <?php
             if (get_sub_field('type_price') == 'Image') { ?>
                 <img class="w-100" src="<?php the_sub_field('price_image'); ?>">
-            <?php } elseif (get_sub_field('type_price') == 'Table') {
+                <?php } elseif (get_sub_field('type_price') == 'Table') {
 
                 if (have_rows('price_table')) {
                     while (have_rows('price_table')) {
                         the_row();
-                        $table = new CW_Tables(NULL, NULL, NULL);
-                        echo $table->final_table;
+                        $table = new CW_Tables(NULL, NULL, NULL); ?>
+                        <div class="table-responsive">
+                            <?php
+                            echo $table->final_table; ?>
+                        </div>
+                <?php
                     }
                 }
             }
