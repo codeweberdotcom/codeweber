@@ -10,16 +10,32 @@ class CW_Link
    public $link_url_target;
    public $link_url_title;
    public $link_form;
+   public $utm;
    public $link_data;
 
    public function __construct($link_type, $link_url, $form)
    {
+      $this->utm = $this->cw_utm();
       $this->link_type = $this->cw_link_type($link_type);
       $this->link_data = $this->cw_link_data();
       $this->link_url = $this->cw_link_url($link_url);
       $this->link_form = $this->cw_form($form);
    }
 
+   public function cw_utm()
+   {
+      if (have_rows('cw_links')) {
+         while (have_rows('cw_links')) {
+            the_row();
+            if (get_sub_field('utm')) {
+               $cw_utm = get_sub_field('utm');
+            } else {
+               $cw_utm = NULL;
+            }
+         }
+      }
+      return  $cw_utm;
+   }
    //link_data
    public function  cw_link_data()
    {
@@ -60,19 +76,19 @@ class CW_Link
       if (have_rows('cw_links')) {
          while (have_rows('cw_links')) {
             the_row();
-
+            $cw_utm =  $this->utm;
             $cw_url = get_sub_field('cw_url');
             if ($cw_url && $this->link_type == 'URL') {
-               $cw_link_url =  'href="' . esc_url($cw_url['url']) . '"';
+               $cw_link_url =  'href="' . esc_url($cw_url['url']) . $cw_utm . '"';
                $this->link_url_target = 'target="' . esc_attr($cw_url['target']) . '"';
                $this->link_url_title = 'title="' . esc_html($cw_url['title']) . '"';
             } elseif ($cw_url && $this->link_type == 'Video URL') {
-               $cw_link_url =  'href="' . esc_url($cw_url['url']) . '"';
+               $cw_link_url =  'href="' . esc_url($cw_url['url'])  . $cw_utm .  '"';
                $this->link_glightbox = 'data-glightbox';
             } elseif (get_sub_field('cw_image') && $this->link_type == 'Image') {
                $cw_image = get_sub_field('cw_image');
                if ($cw_image) {
-                  $cw_link_url =  'href="' . esc_url($cw_image['sizes']['brk_big']) . '"';
+                  $cw_link_url =  'href="' . esc_url($cw_image['sizes']['brk_big'])  . $cw_utm .  '"';
                }
                $this->link_glightbox = 'data-glightbox';
             } elseif ($this->link_type == 'Tooltip') {
@@ -85,9 +101,9 @@ class CW_Link
                   $file = get_field('file', $post->ID);
                   if ($file) {
                      if (get_sub_field('docs_click') == 'open') {
-                        $cw_link_url =  'href="' . esc_url($file['url']) . '" target="_blank"';
+                        $cw_link_url =  'href="' . esc_url($file['url'])  . $cw_utm .  '" target="_blank"';
                      } elseif (get_sub_field('docs_click') == 'download') {
-                        $cw_link_url =  'href="' . esc_url($file['url']) . '" download';
+                        $cw_link_url =  'href="' . esc_url($file['url'])  . $cw_utm .  '" download';
                      }
                   }
                   wp_reset_postdata();
