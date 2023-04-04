@@ -1,10 +1,15 @@
- <?php if (get_sub_field('cw_price_package_s')) {
+ <?php
+
+   /**
+    * Pricing 1
+    */
+
+   if (get_sub_field('cw_price_package_s')) {
       $price_package = get_sub_field('cw_price_package_s');
    } else {
       $price_package = NULL;
-   } ?>
+   }
 
- <?php
    /* Add settings */
    $block = new CW_Settings(
       $cw_settings = array(
@@ -12,7 +17,7 @@
          'patternTitle' => '<h2 class="display-4 mt-lg-18 mb-3 %2$s">%1$s</h2>',
 
          'subtitle' => 'We offer <span class="underline">great prices</span>, premium and quality products for your business.',
-         'patternSubtitle' => ' <p class="lead fs-lg %2$s">%1$s</p>',
+         'patternSubtitle' => '<p class="lead fs-lg %2$s">%1$s</p>',
          'subtitle_lead' => 'true',
 
          'paragraph' => 'Enjoy a <a href="#" class="hover">free 30-day trial</a> and experience the full service. No credit card required!',
