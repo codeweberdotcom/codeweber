@@ -4,6 +4,7 @@
 
 class CW_SubTitle
 {
+   public $sub_title_type;
    public $sub_title_color;
    public $sub_title_text;
    public $sub_title_tag;
@@ -14,9 +15,12 @@ class CW_SubTitle
    public $sub_title_id;
    public $sub_title_class;
    public $sub_title_final;
+   public $sub_title_final_first;
+   public $sub_title_final_second;
 
    public function __construct($sub_title_color, $sub_title_text, $sub_title_tag, $sub_title_display, $sub_title_lead, $sub_title_fs, $sub_title_align, $sub_title_id, $sub_title_class, $sub_title_pattern, $lead)
    {
+      $this->sub_title_type = $this->cw_subtitle_type();
       $this->sub_title_color = $this->cw_subtitle_color($sub_title_color);
       $this->sub_title_text = $this->cw_subtitle_text($sub_title_text);
       $this->sub_title_tag = $this->cw_subtitle_tag($sub_title_tag);
@@ -28,6 +32,19 @@ class CW_SubTitle
       $this->sub_title_class = $this->cw_subtitle_class($sub_title_class);
       $this->sub_title_final = $this->cw_subtitle_final($sub_title_pattern, $lead);
    }
+
+   //SubTitle_type
+   public function cw_subtitle_type()
+   {
+      if (have_rows('cw_subtitle')) {
+         while (have_rows('cw_subtitle')) {
+            the_row();
+            $cw_subtitle_type = get_sub_field('type_subtitle');
+         }
+      }
+      return $cw_subtitle_type;
+   }
+
 
    //SubTitle_color
    public function cw_subtitle_color($sub_title_color)
@@ -196,6 +213,8 @@ class CW_SubTitle
    //SubTitle final 
    public function cw_subtitle_final($sub_title_pattern, $lead)
    {
+      $type_subtitle = $this->sub_title_type;
+
       $classes = array();
       if ($this->sub_title_align) {
          $classes[] = $this->sub_title_align;
@@ -234,7 +253,8 @@ class CW_SubTitle
          $tag = NULL;
       }
 
-      if ($lead !== 'true') {
+
+      if ($type_subtitle == 'Type 1') {
          if (get_theme_mod('codeweber_sub_title_color') !== 'default') {
             $sub_title_pattern = '<h2 class="fs-16 text-uppercase ' . get_theme_mod('codeweber_sub_title_color') . ' mb-3">%s</h2>';
          }
@@ -248,6 +268,9 @@ class CW_SubTitle
          }
       }
 
+
+
+
       if ($sub_title_pattern !== NULL) {
          $text = sprintf($sub_title_pattern, $this->sub_title_text, $class_p);
       }
@@ -258,6 +281,18 @@ class CW_SubTitle
       } else {
          $cw_subtitle_final = $text;
       }
+
+      if ($type_subtitle == 'Type 1') {
+         $this->sub_title_final_first = $cw_subtitle_final;
+         $this->sub_title_final_second = NULL;
+      } elseif ($type_subtitle == 'Type 2') {
+         $this->sub_title_final_first = NULL;
+         $this->sub_title_final_second = $cw_subtitle_final;
+      } elseif ($type_subtitle == 'Disable') {
+         $this->sub_title_final_first = NULL;
+         $this->sub_title_final_second = NULL;
+      }
+
       return $cw_subtitle_final;
    }
 }

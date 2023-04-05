@@ -9,6 +9,8 @@ class CW_Settings
    public $root_theme;
    public $title;
    public $subtitle;
+   public $subtitle_first;
+   public $subtitle_second;
    public $paragraph;
    public $typewriter;
    public $tag;
@@ -771,6 +773,7 @@ class CW_Settings
             $pattern = NULL;
          }
 
+         //Lead subtitle
          if (isset($cw_settings['subtitle_lead']) && !$cw_settings['subtitle_lead'] == NULL) {
             if ($cw_settings['subtitle_lead'] == 'true') {
                $lead =  'true';
@@ -780,14 +783,18 @@ class CW_Settings
          } else {
             $lead =  NULL;
          }
+
          if ($cw_settings['subtitle'] !== NULL) {
             $subtitle_text = $cw_settings['subtitle'];
          } else {
             $subtitle_text = NULL;
          }
 
+         //New subtitle class
          $subtitle_object = new CW_SubTitle(NULL, $subtitle_text, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $pattern, $lead);
          $subtitle = $subtitle_object->sub_title_final;
+         $this->subtitle_first = $subtitle_object->sub_title_final_first;
+         $this->subtitle_second = $subtitle_object->sub_title_final_second;
       } else {
          if (isset($cw_settings['subtitle'])) {
             $subtitle = $cw_settings['subtitle'];
