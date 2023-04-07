@@ -39,7 +39,7 @@ function cptui_register_my_cpts_services()
 
 	$args = [
 		"label" => __("Services", "codeweber"),
-		"labels" => $labels,ss
+		"labels" => $labels,
 		"description" => "",
 		"public" => true,
 		"publicly_queryable" => true,
