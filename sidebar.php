@@ -1,7 +1,7 @@
 <?php
 
 if (class_exists('WooCommerce')) {
-	if (is_shop() || is_product_tag() || is_product_category()) {
+	if (is_shop() || is_product_tag() || is_product_category() || is_product_taxonomy()) {
 		if (is_active_sidebar('woocommerce_sidebar') || has_action('woocommerce_sidebar_start') || has_action('woocommerce_sidebar_end')) { ?>
 			<aside class="col-lg-3 sidebar">
 				<?php do_action('woocommerce_sidebar_start');
@@ -48,7 +48,7 @@ if (is_page() && !dynamic_sidebar()) { ?>
 	<?php };
 } else { ?>
 	<?php if (class_exists('WooCommerce')) {
-		if (!is_shop() && !is_product_tag() && !is_product_category()) {
+		if (!is_shop() && !is_product_tag() && !is_product_category() && !is_product_taxonomy()) {
 			if (is_active_sidebar('woocommerce_sidebar') || has_action('woocommerce_sidebar_start') || has_action('woocommerce_sidebar_end')) { ?>
 				<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
 					<?php do_action('sidebar_main_start'); ?>

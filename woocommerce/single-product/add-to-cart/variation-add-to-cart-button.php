@@ -33,7 +33,7 @@ global $product;
 		do_action('woocommerce_after_add_to_cart_quantity');
 		?>
 		<div class="flex-grow-1 mx-2">
-			<button type="submit" class="single_add_to_cart_button button alt btn btn-primary btn-icon btn-icon-start <?php echo GetThemeButton(); ?> w-100 flex-grow-1"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
+			<button type="submit" class="single_add_to_cart_button button alt btn btn-primary btn-icon btn-icon-start rounded w-100 flex-grow-1"><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
 		</div>
 
 		<!-- <div>
