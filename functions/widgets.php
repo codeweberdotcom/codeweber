@@ -46,7 +46,7 @@ function consultant_widget()
                         </nav>
                      <?php }
 
-                     $button = new CW_Buttons('<div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>', '<a href="#" class="btn btn-primary rounded w-100">Ask a question</a>', 'w-100', NULL); ?>
+                     $button = new CW_Buttons('<div class="d-flex justify-content-center">%s</div>', '<a href="#" class="btn btn-primary rounded w-100">Ask a question</a>', 'w-100', NULL); ?>
 
                      <?php
                      echo $button->final_buttons; ?>
