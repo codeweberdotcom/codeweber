@@ -3,7 +3,9 @@
    $class_nav .= $args['bg_nav'];
 } elseif ($args['style_nav'] == 'solid') {
    $class_nav = $args['bg_nav'];
-};
+} else {
+   $class_nav = NULL;
+}
 
 $transparent_style = $args['style_nav'];
 
