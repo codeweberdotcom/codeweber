@@ -47,8 +47,7 @@ img.svg-inject {
 .lineal-stroke {
   fill: #36496d;
 }
-@each $color,
-$value in $colors {
+@each $color, $value in $colors {
   .text-#{$color} .lineal-fill {
     fill: tint-color($value, $icon-fill-level);
   }
@@ -59,8 +58,7 @@ $value in $colors {
     fill: $main-color;
   }
 }
-@each $color,
-$value in $colors {
+@each $color, $value in $colors {
   .solid.text-#{$color} {
     .fill-primary,
     .fill-secondary {
@@ -76,8 +74,7 @@ $value in $colors {
     fill: tint-color($main-color, 60%);
   }
 }
-@each $color,
-$value in $colors {
+@each $color, $value in $colors {
   .solid-mono.text-#{$color} {
     .fill-primary {
       fill: $value;
@@ -198,9 +195,8 @@ $value in $colors {
   &:after,
   &:before {
     display: inline-block;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-style: normal;
     font-weight: normal;
     position: absolute;
@@ -239,20 +235,18 @@ $value in $colors {
 //	FONT ICONS
 //----------------------------------------------------------//
 @font-face {
-  font-family: 'Unicons';
-  src: url('../fonts/unicons/Unicons.woff2') format('woff2'),
-    url('../fonts/unicons/Unicons.woff') format('woff');
+  font-family: "Unicons";
+  src: url("../fonts/unicons/Unicons.woff2") format("woff2"), url("../fonts/unicons/Unicons.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 @font-face {
   font-family: "Custom";
-  src: url('../fonts/custom/Custom.woff2') format('woff2'),
-    url('../fonts/custom/Custom.woff') format('woff');
+  src: url("../fonts/custom/Custom.woff2") format("woff2"), url("../fonts/custom/Custom.woff") format("woff");
   font-weight: normal;
   font-style: normal;
-  font-display: block;
+  font-display: swap;
 }
 [class^="uil-"],
 [class*=" uil-"],
