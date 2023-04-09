@@ -14,10 +14,10 @@
               $block = new CW_Settings(
                 $cw_settings = array(
                   'title' => 'We bring solutions to make life easier.',
-                  'patternTitle' => '<h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s">%s</h2>',
+                  'patternTitle' => '<h2 class="display-1 fs-56 mb-4 text-white animate__animated animate__slideInDown animate__delay-1s %2$s">%1$s</h2>',
 
                   'paragraph' => 'We are a creative company that focuses on long term relationships with customers.',
-                  'patternParagraph' => '<p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s">%s</p>',
+                  'patternParagraph' => '<p class="lead fs-23 lh-sm mb-7 text-white animate__animated animate__slideInRight animate__delay-2s %2$s">%1$s</p>',
 
                   'buttons' => '<div class="animate__animated animate__slideInUp animate__delay-3s"><a href="#" class="btn btn-lg btn-outline-white rounded-pill">Read More</a></div>',
                   'buttons_pattern' => '<div class="animate__animated animate__slideInUp animate__delay-3s">%s</div>',

@@ -231,19 +231,19 @@ ol.breadcrumb {
   } */
 
   .navbar-expand-lg .dropend > .dropdown-menu {
-    margin-top: -53px;
+    margin-top: -20px;
   }
 
   .vertical-menu ul.dropdown-menu {
     margin-left: 100%;
-    margin-top: -54px !important;
+    margin-top: -20px !important;
   }
   #menu-woocommerce .nav-link {
     padding-left: 0;
     line-height: 2;
   }
   .menu-item-has-children > ul li ul {
-    margin-top: -53px !important;
+    margin-top: -20px !important;
   }
 }
 .dropdown-item {

@@ -30,7 +30,7 @@ if (!defined('ABSPATH')) {
 	</div>
 	<!--/column -->
 	<div class="col-md-5 col-xl-4 ms-md-auto text-md-end mt-5 mt-md-0">
-		<form class="woocommerce-ordering form-select-wrapper mb-4" method="get">
+		<form class="woocommerce-ordering form-select-wrapper" method="get">
 			<select name="orderby" class="orderby form-select" aria-label="<?php esc_attr_e('Shop order', 'woocommerce'); ?>">
 				<?php foreach ($catalog_orderby_options as $id => $name) : ?>
 					<option value="<?php echo esc_attr($id); ?>" <?php selected($orderby, $id); ?>><?php echo esc_html($name); ?></option>

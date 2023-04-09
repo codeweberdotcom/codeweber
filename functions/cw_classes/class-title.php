@@ -1,9 +1,11 @@
 <?php
 
-//* ---Title---
+//* --- Title ---
 
 class CW_Title
 {
+
+
    public $title_color;
    public $title_text;
    public $title_pattern;
@@ -31,7 +33,6 @@ class CW_Title
       $this->title_final = $this->cw_title_final($title_pattern, $typewriter);
    }
 
-
    //Title_color
    public function cw_title_pattern($title_pattern)
    {
@@ -47,18 +48,19 @@ class CW_Title
    //Title_color
    public function cw_title_color($title_color)
    {
-      if (have_rows('cw_title')) :
-         while (have_rows('cw_title')) : the_row();
+      if (have_rows('cw_title')) {
+         while (have_rows('cw_title')) {
+            the_row();
             $title_color_object = new CW_Color(NULL, NULL);
             if ($title_color_object->color !== 'none') {
                $cw_title_color = 'text-' . $title_color_object->color;
             } else {
                $cw_title_color = $title_color;
             }
-         endwhile;
-      else :
+         };
+      } else {
          $cw_title_color = NULL;
-      endif;
+      };
 
       return $cw_title_color;
    }
@@ -66,17 +68,18 @@ class CW_Title
    //Title_text
    public function cw_title_text($title_text)
    {
-      if (have_rows('cw_title')) :
-         while (have_rows('cw_title')) : the_row();
+      if (have_rows('cw_title')) {
+         while (have_rows('cw_title')) {
+            the_row();
             if (get_sub_field('cw_title')) {
                $cw_title_text = get_sub_field('cw_title');
             } else {
                $cw_title_text = $title_text;
             }
-         endwhile;
-      else :
+         };
+      } else {
          $cw_title_text = NULL;
-      endif;
+      };
 
       return $cw_title_text;
    }
@@ -84,68 +87,72 @@ class CW_Title
    //Title_tag
    public function cw_title_tag($title_tag)
    {
-      if (have_rows('cw_title')) :
-         while (have_rows('cw_title')) : the_row();
+      if (have_rows('cw_title')) {
+         while (have_rows('cw_title')) {
+            the_row();
             if (get_sub_field('cw_tag')) {
                $cw_title_tag = get_sub_field('cw_tag');
             } else {
                $cw_title_tag = $title_tag;
             }
-         endwhile;
-      else :
+         };
+      } else {
          $cw_title_tag = NULL;
-      endif;
+      };
       return $cw_title_tag;
    }
 
    //Title_display
    public function cw_title_display($title_display)
    {
-      if (have_rows('cw_title')) :
-         while (have_rows('cw_title')) : the_row();
+      if (have_rows('cw_title')) {
+         while (have_rows('cw_title')) {
+            the_row();
             if (get_sub_field('cw_class_display')) {
                $cw_title_display = get_sub_field('cw_class_display');
             } else {
                $cw_title_display = $title_display;
             }
-         endwhile;
-      else :
+         };
+      } else {
          $cw_title_display = NULL;
-      endif;
+      };
       return $cw_title_display;
    }
 
    //Title_lead
    public function cw_title_lead($title_lead)
    {
-      if (have_rows('cw_title')) :
-         while (have_rows('cw_title')) : the_row();
+      if (have_rows('cw_title')) {
+         while (have_rows('cw_title')) {
+            the_row();
             if (get_sub_field('class_lead')) {
                $cw_title_lead = get_sub_field('class_lead');
             } else {
                $cw_title_lead = $title_lead;
             }
-         endwhile;
-      else :
+         };
+      } else {
          $cw_title_lead = NULL;
-      endif;
+      };
       return $cw_title_lead;
    }
 
    //Title_fs
    public function cw_title_fs($title_fs)
    {
-      if (have_rows('cw_title')) :
-         while (have_rows('cw_title')) : the_row();
+      if (have_rows('cw_title')) {
+         while (have_rows('cw_title')) {
+            the_row();
             if (get_sub_field('class_fs')) {
                $cw_title_fs = get_sub_field('class_fs');
             } else {
                $cw_title_fs = $title_fs;
             }
-         endwhile;
-      else :
+         };
+      } else {
          $cw_title_fs = NULL;
-      endif;
+      };
       return $cw_title_fs;
    }
 
@@ -153,51 +160,54 @@ class CW_Title
    public function cw_title_align($title_align)
    {
 
-      if (have_rows('cw_title')) :
-         while (have_rows('cw_title')) : the_row();
+      if (have_rows('cw_title')) {
+         while (have_rows('cw_title')) {
+            the_row();
             if (get_sub_field('text_align')) {
                $cw_title_align = get_sub_field('text_align');
             } else {
                $cw_title_align = $title_align;
             }
-         endwhile;
-      else :
+         };
+      } else {
          $cw_title_align = NULL;
-      endif;
+      };
       return $cw_title_align;
    }
 
    //Title_id
    public function cw_title_id($title_id)
    {
-      if (have_rows('cw_title')) :
-         while (have_rows('cw_title')) : the_row();
+      if (have_rows('cw_title')) {
+         while (have_rows('cw_title')) {
+            the_row();
             if (get_sub_field('cw_id')) {
                $cw_title_id = get_sub_field('cw_id');
             } else {
                $cw_title_id = $title_id;
             }
-         endwhile;
-      else :
+         };
+      } else {
          $cw_title_id = NULL;
-      endif;
+      };
       return $cw_title_id;
    }
 
    //Title_id
    public function cw_title_class($title_class)
    {
-      if (have_rows('cw_title')) :
-         while (have_rows('cw_title')) : the_row();
+      if (have_rows('cw_title')) {
+         while (have_rows('cw_title')) {
+            the_row();
             if (get_sub_field('cw_class')) {
                $cw_title_class = get_sub_field('cw_class');
             } else {
                $cw_title_class = $title_class;
             }
-         endwhile;
-      else :
+         };
+      } else {
          $cw_title_class = NULL;
-      endif;
+      };
       return $cw_title_class;
    }
 

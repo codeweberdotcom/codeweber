@@ -151,6 +151,32 @@
                     "endpoint": 0
                 },
                 {
+                    "key": "field_642d3ca670793",
+                    "label": "Type Subtitle",
+                    "name": "type_subtitle",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Type 1": "Type 1",
+                        "Type 2": "Type 2",
+                        "Disable": "Disable"
+                    },
+                    "default_value": "Type 1",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": ""
+                },
+                {
                     "key": "field_6384afba2c504",
                     "label": "Subtitle",
                     "name": "cw_subtitle",
@@ -389,5 +415,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678526393
+    "modified": 1680689922
 }

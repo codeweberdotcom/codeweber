@@ -14,11 +14,11 @@
    $block = new CW_Settings(
       $cw_settings = array(
          'title' => 'Our Pricing',
-         'patternTitle' => '<h2 class="display-4 mt-lg-18 mb-3 %2$s">%1$s</h2>',
+         'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
          'subtitle' => 'We offer <span class="underline">great prices</span>, premium and quality products for your business.',
          'patternSubtitle' => '<p class="lead fs-lg %2$s">%1$s</p>',
-         'subtitle_lead' => 'true',
+
 
          'paragraph' => 'Enjoy a <a href="#" class="hover">free 30-day trial</a> and experience the full service. No credit card required!',
          'patternParagraph' => '<p class="%2$s">%1$s</p>',
@@ -41,10 +41,12 @@
  <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
     <div class="container py-14 py-md-16">
        <div class="row gy-6">
-          <div class="col-lg-4">
+          <div class="col-lg-4 align-self-center">
+             <?php echo $block->subtitle_first; ?>
+             <!--/subtitle -->
              <?php echo $block->title; ?>
              <!--/title -->
-             <?php echo $block->subtitle; ?>
+             <?php echo $block->subtitle_second; ?>
              <!--/subtitle -->
              <?php echo $block->paragraph; ?>
              <!--/paragraph -->

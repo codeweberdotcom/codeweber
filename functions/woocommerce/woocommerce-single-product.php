@@ -173,7 +173,7 @@ add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_
 function ql_woocommerce_ajax_add_to_cart_js()
 {
    if (function_exists('is_product') && is_product()) {
-      wp_enqueue_script('custom_script', get_bloginfo('stylesheet_directory') . '/woocommerce/ajax_add_to_cart.js', array('jquery'), '1.0');
+      wp_enqueue_script('custom_script', get_template_directory_uri() . '/woocommerce/ajax_add_to_cart.js', array('jquery'), '1.0');
    }
 }
 add_action('wp_enqueue_scripts', 'ql_woocommerce_ajax_add_to_cart_js');
