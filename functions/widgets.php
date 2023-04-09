@@ -249,7 +249,7 @@ function cloud_links_blog_widget()
       <ul class="list-unstyled tag-list mb-0">
          <?php foreach ($post_tags as $post_tag) {
             $tag_link = get_tag_link($post_tag->term_id); ?>
-            <li><a href="<?php echo $tag_link; ?>" title='<?php echo $post_tag->name; ?>' class="btn btn-soft-ash btn-sm rounded-pill mb-0 <?php echo $post_tag->slug; ?>"><?php echo $post_tag->name; ?></a></li>
+            <li><a href="<?php echo $tag_link; ?>" target='_blank' title='<?php echo $post_tag->name; ?>' class="btn btn-soft-ash btn-sm rounded-pill mb-0 <?php echo $post_tag->slug; ?>"><?php echo $post_tag->name; ?></a></li>
          <?php } ?>
       </ul>
    </div>
