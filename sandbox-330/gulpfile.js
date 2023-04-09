@@ -7,7 +7,7 @@ var path = {
     js: "../dev/js/",
     css: "../dev/css/",
     style: "../dev/css/",
-    fontcss: "..//css/fonts/",
+    fontcss: "../css/fonts/",
     colorcss: "../dev/css/colors/",
     img: "../dev/img/",
     fonts: "../dev/fonts/",

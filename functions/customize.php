@@ -629,6 +629,46 @@ function codeweber_cpt_customize_register($wp_customize)
       )
    );
 
+   $wp_customize->add_setting('service_description', array(
+      'default' => '',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options',
+      'transport' => 'refresh',
+
+   ));
+
+   $wp_customize->add_control('service_description', array(
+      'type' => 'textarea',
+      'priority' => 20,
+      'label' => __('Service Archive Description', 'codeweber'),
+      'section' => 'services-section',
+   ));
+
+
+   $wp_customize->add_setting('service_title', array(
+      'default' => '',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options',
+      'transport' => 'refresh',
+
+   ));
+
+   $wp_customize->add_setting('services_title', array(
+      'default' => '',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options',
+      'transport' => 'refresh',
+
+   ));
+
+   $wp_customize->add_control('services_title', array(
+      'type' => 'textarea',
+      'priority' => 15,
+      'label' => __('Service Archive Title', 'codeweber'),
+      'section' => 'services-section',
+   ));
+
+
 
    // Add service section to our panel
    $wp_customize->add_section('testimonial-section', array(
@@ -636,6 +676,8 @@ function codeweber_cpt_customize_register($wp_customize)
       'description' => __('Testimonials settings', 'codeweber'),
       'panel' => 'cpt-panel',
    ));
+
+
 
 
    // Service Control
