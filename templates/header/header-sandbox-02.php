@@ -1,7 +1,9 @@
 <?php if ($args['style_nav'] == 'transparent') {
-  $class_nav = 'position-absolute navbar-dark';
-}
-
+  $class_nav = 'position-absolute ';
+  $class_nav .= $args['bg_nav'];
+} elseif ($args['style_nav'] == 'solid') {
+  $class_nav = $args['bg_nav'];
+};
 $transparent_style = $args['style_nav'];
 
 if ($args['bg_nav'] == 'nav-dark') {
