@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Codeweber\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-09 23:17+0000\n"
+"POT-Creation-Date: 2023-03-19 14:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -50,9 +50,7 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: functions/lib/class-wp-bootstrap-navwalker.php:426
-#: functions/lib/class-wp-bootstrap-navwalker_parent_link_bug.php:426
-#: functions/lib/class-wp-bootstrap-navwalker_parent_link_bug.php:426
+#: functions/lib/class-wp-bootstrap-navwalker.php:392
 msgid "Add a menu"
 msgstr ""
 
@@ -107,12 +105,12 @@ msgstr ""
 #: templates/footer/footer-sandbox-24.php:36
 #: templates/footer/footer-sandbox-26.php:36
 #: templates/footer/footer-sandbox-4.php:30
-#: templates/flexible-content/contact/contact_2/contact_2.php:76
-#: templates/flexible-content/contact/contact_4/contact_4.php:73
-#: templates/flexible-content/contact/contact_5/contact_5.php:162
-#: templates/flexible-content/contact/contact_6/contact_6.php:71
+#: templates/flexible-content/contact/contact_2/contact_2.php:80
+#: templates/flexible-content/contact/contact_4/contact_4.php:77
+#: templates/flexible-content/contact/contact_5/contact_5.php:171
+#: templates/flexible-content/contact/contact_6/contact_6.php:80
 #: templates/flexible-content/contact/contact_6_1/contact_6_1.php:156
-#: templates/flexible-content/contact/contact_8_1/contact_8_1.php:196
+#: templates/flexible-content/contact/contact_8_1/contact_8_1.php:204
 msgid "Address"
 msgstr ""
 
@@ -135,8 +133,7 @@ msgstr ""
 
 #: templates/archive/archive-projects-3.php:33
 #: templates/archive/archive-projects-4.php:33
-#: templates/archive/archive-services-3.php:33
-#: templates/flexible-content/portfolio/portfolio_9/portfolio_9.php:43
+#: templates/flexible-content/portfolio/portfolio_9/portfolio_9.php:38
 msgid "All"
 msgstr ""
 
@@ -191,17 +188,12 @@ msgstr ""
 msgid "All rights reserved."
 msgstr ""
 
-#: templates/flexible-content/services/services_1/services_1.php:36
-msgctxt "Все Услуги"
-msgid "All Services"
-msgstr ""
-
 #: functions/cpt/cpt-staff.php:14
 msgid "All Staff"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:124
-#: templates/header/header-sandbox-08.php:133
+#: templates/header/header-sandbox-05.php:121
+#: templates/header/header-sandbox-08.php:130
 #: templates/header/header-sandbox-09.php:129
 msgid "Already have an account?"
 msgstr ""
@@ -222,11 +214,11 @@ msgstr ""
 msgid "Back to top"
 msgstr ""
 
-#: functions/customize.php:574
+#: functions/customize.php:498
 msgid "Blog"
 msgstr ""
 
-#: functions/customize.php:593
+#: functions/customize.php:517
 msgid "Blog archive template"
 msgstr ""
 
@@ -234,7 +226,7 @@ msgstr ""
 msgid "Blog categories"
 msgstr ""
 
-#: functions/customize.php:575
+#: functions/customize.php:499
 msgid "blog settings"
 msgstr ""
 
@@ -281,8 +273,8 @@ msgid "By using this comment form you agree with our Privacy Policy"
 msgstr ""
 
 #: functions/woocommerce/woocommerce-mobile-bottom-menu.php:24
-#: templates/header/header-sandbox-woo-01.php:85
-#: templates/header/header-sandbox-woo-01.php:85
+#: templates/header/header-sandbox-woo-01.php:79
+#: templates/header/header-sandbox-woo-01.php:79
 msgid "Cart"
 msgstr ""
 
@@ -300,8 +292,8 @@ msgstr ""
 msgid "Category Docs"
 msgstr ""
 
-#: templates/header/header-sandbox-woo-01.php:88
-#: templates/header/header-sandbox-woo-01.php:91
+#: templates/header/header-sandbox-woo-01.php:82
+#: templates/header/header-sandbox-woo-01.php:85
 msgid "Checkout"
 msgstr ""
 
@@ -344,10 +336,6 @@ msgstr ""
 msgid "Color Options"
 msgstr ""
 
-#: functions/customize.php:351 functions/customize.php:473
-msgid "Color Text Header"
-msgstr ""
-
 #: functions/customize.php:111
 msgid "Color Theme"
 msgstr ""
@@ -382,14 +370,14 @@ msgctxt "comments title"
 msgid "One reply on &ldquo;%s&rdquo;"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:119
-#: templates/header/header-sandbox-08.php:128
+#: templates/header/header-sandbox-05.php:116
+#: templates/header/header-sandbox-08.php:125
 #: templates/header/header-sandbox-09.php:124
 msgid "Confirm Password"
 msgstr ""
 
-#: templates/header/header-sandbox-02.php:74
-#: templates/header/header-sandbox-03.php:33
+#: templates/header/header-sandbox-02.php:72
+#: templates/header/header-sandbox-03.php:47
 #: templates/header/header-sandbox-10.php:72
 #: templates/header/header-sandbox-14.php:54
 #: templates/header/header-sandbox-21.php:36
@@ -404,7 +392,7 @@ msgstr ""
 msgid "Contacts"
 msgstr ""
 
-#: functions/customize.php:247
+#: functions/customize.php:243
 msgid "Content Frame?"
 msgstr ""
 
@@ -412,17 +400,9 @@ msgstr ""
 msgid "Customer details"
 msgstr ""
 
-#: functions/customize.php:354 functions/customize.php:476
-msgid "Dark"
-msgstr ""
-
 #: single-projects-1.php:141 single-projects-2.php:103 single-projects-3.php:86
 #: single-projects.php:105
 msgid "Date"
-msgstr ""
-
-#: functions/customize.php:379 functions/customize.php:500
-msgid "Disable"
 msgstr ""
 
 #: functions/cpt/cpt-documents.php:12
@@ -433,19 +413,19 @@ msgstr ""
 msgid "Docs"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:79
-#: templates/header/header-sandbox-08.php:88
+#: templates/header/header-sandbox-05.php:76
+#: templates/header/header-sandbox-08.php:85
 #: templates/header/header-sandbox-09.php:84
 msgid "Don't have an account?"
 msgstr ""
 
 #: templates/footer/footer-sandbox-4.php:47
-#: templates/flexible-content/contact/contact_2/contact_2.php:94
-#: templates/flexible-content/contact/contact_4/contact_4.php:91
-#: templates/flexible-content/contact/contact_5/contact_5.php:180
-#: templates/flexible-content/contact/contact_6/contact_6.php:91
+#: templates/flexible-content/contact/contact_2/contact_2.php:98
+#: templates/flexible-content/contact/contact_4/contact_4.php:95
+#: templates/flexible-content/contact/contact_5/contact_5.php:189
+#: templates/flexible-content/contact/contact_6/contact_6.php:100
 #: templates/flexible-content/contact/contact_6_1/contact_6_1.php:176
-#: templates/flexible-content/contact/contact_8_1/contact_8_1.php:214
+#: templates/flexible-content/contact/contact_8_1/contact_8_1.php:222
 msgid "E-mail"
 msgstr ""
 
@@ -482,9 +462,9 @@ msgstr ""
 msgid "Elsewhere"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:109
-#: templates/header/header-sandbox-08.php:77
-#: templates/header/header-sandbox-08.php:118
+#: templates/header/header-sandbox-05.php:106
+#: templates/header/header-sandbox-08.php:74
+#: templates/header/header-sandbox-08.php:115
 #: templates/header/header-sandbox-09.php:73
 #: templates/header/header-sandbox-09.php:114
 msgid "Email"
@@ -563,8 +543,8 @@ msgstr ""
 msgid "Featured Image for this staff"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:76
-#: templates/header/header-sandbox-08.php:73
+#: templates/header/header-sandbox-05.php:73
+#: templates/header/header-sandbox-08.php:70
 #: templates/header/header-sandbox-09.php:69
 msgid "Fill your email and password to sign in."
 msgstr ""
@@ -575,7 +555,6 @@ msgstr ""
 
 #: templates/archive/archive-projects-3.php:31
 #: templates/archive/archive-projects-4.php:31
-#: templates/archive/archive-services-3.php:31
 msgid "Filter:"
 msgstr ""
 
@@ -583,7 +562,7 @@ msgstr ""
 msgid "Follow Us"
 msgstr ""
 
-#: functions/customize.php:527
+#: functions/customize.php:451
 msgid "Footer"
 msgstr ""
 
@@ -603,12 +582,12 @@ msgstr ""
 msgid "Footer Menu 3"
 msgstr ""
 
-#: functions/customize.php:510
+#: functions/customize.php:434
 msgid "Footer Options"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:78
-#: templates/header/header-sandbox-08.php:87
+#: templates/header/header-sandbox-05.php:75
+#: templates/header/header-sandbox-08.php:84
 #: templates/header/header-sandbox-09.php:83
 msgid "Forgot Password?"
 msgstr ""
@@ -623,7 +602,7 @@ msgstr ""
 
 #: templates/header/header-sandbox-06.php:58
 #: templates/header/header-sandbox-11.php:32
-#: templates/header/header-sandbox-26.php:46
+#: templates/header/header-sandbox-26.php:36
 msgid "Free Trial"
 msgstr ""
 
@@ -699,7 +678,7 @@ msgstr ""
 msgid "Header Menu Two"
 msgstr ""
 
-#: functions/customize.php:229
+#: functions/customize.php:225
 msgid "Header Options"
 msgstr ""
 
@@ -707,7 +686,7 @@ msgstr ""
 msgid "Header right sidebar"
 msgstr ""
 
-#: templates/header/header-sandbox-woo-01.php:63
+#: templates/header/header-sandbox-woo-01.php:60
 msgid "Hello"
 msgstr ""
 
@@ -749,11 +728,11 @@ msgstr ""
 msgid "If you like what you see, let's work together."
 msgstr ""
 
-#: functions/customize.php:214
+#: functions/customize.php:210
 msgid "Image Form"
 msgstr ""
 
-#: functions/customize.php:196
+#: functions/customize.php:192
 msgid "Image Options"
 msgstr ""
 
@@ -843,10 +822,6 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr ""
 
-#: functions/customize.php:355 functions/customize.php:477
-msgid "Light"
-msgstr ""
-
 #: functions/customize.php:31
 msgid "Light Logo"
 msgstr ""
@@ -858,11 +833,11 @@ msgstr ""
 msgid "Likes"
 msgstr ""
 
-#: templates/header/header-sandbox-woo-01.php:75
+#: templates/header/header-sandbox-woo-01.php:69
 msgid "Login / Register"
 msgstr ""
 
-#: templates/header/header-sandbox-woo-01.php:91
+#: templates/header/header-sandbox-woo-01.php:85
 msgid "Logout"
 msgstr ""
 
@@ -901,7 +876,7 @@ msgstr ""
 msgid "Made with"
 msgstr ""
 
-#: functions/customize.php:282
+#: functions/customize.php:278
 msgid "Main Header"
 msgstr ""
 
@@ -913,19 +888,19 @@ msgstr ""
 msgid "Map"
 msgstr ""
 
-#: templates/flexible-content/pricing/pricing_1/pricing_1.php:104
-#: templates/flexible-content/pricing/pricing_2/pricing_2.php:102
-#: templates/flexible-content/pricing/pricing_3/pricing_3.php:95
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:82
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:81
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:73
 msgid "mo"
 msgstr ""
 
-#: templates/flexible-content/pricing/pricing_1/pricing_1.php:74
-#: templates/flexible-content/pricing/pricing_2/pricing_2.php:64
-#: templates/flexible-content/pricing/pricing_3/pricing_3.php:56
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:53
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:43
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:36
 msgid "Monthly"
 msgstr ""
 
-#: templates/header/header-sandbox-woo-01.php:73
+#: templates/header/header-sandbox-woo-01.php:67
 msgid "My Account"
 msgstr ""
 
@@ -933,8 +908,8 @@ msgstr ""
 msgid "My Price lists"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:105
-#: templates/header/header-sandbox-08.php:114
+#: templates/header/header-sandbox-05.php:102
+#: templates/header/header-sandbox-08.php:111
 #: templates/header/header-sandbox-09.php:110
 msgid "Name"
 msgstr ""
@@ -1034,20 +1009,19 @@ msgstr ""
 msgid "Oops! Page Not Found."
 msgstr ""
 
-#: functions/integrations/acf.php:23 functions/integrations/acf.php:24
+#: functions/integrations/acf.php:19 functions/integrations/acf.php:20
 msgid "Options"
 msgstr ""
 
-#: functions/integrations/cf7.php:108
-#: templates/header/header-sandbox-05.php:125
-#: templates/header/header-sandbox-08.php:89
-#: templates/header/header-sandbox-08.php:134
+#: templates/header/header-sandbox-05.php:122
+#: templates/header/header-sandbox-08.php:86
+#: templates/header/header-sandbox-08.php:131
 #: templates/header/header-sandbox-09.php:85
 #: templates/header/header-sandbox-09.php:130
 msgid "or"
 msgstr ""
 
-#: templates/header/header-sandbox-woo-01.php:81
+#: templates/header/header-sandbox-woo-01.php:75
 msgid "Orders"
 msgstr ""
 
@@ -1069,7 +1043,7 @@ msgstr ""
 msgid "Our Newsletter"
 msgstr ""
 
-#: functions/customize.php:264
+#: functions/customize.php:260
 msgid "Page Loader?"
 msgstr ""
 
@@ -1097,21 +1071,21 @@ msgstr ""
 msgid "Parent Staff"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:114
-#: templates/header/header-sandbox-08.php:82
-#: templates/header/header-sandbox-08.php:123
+#: templates/header/header-sandbox-05.php:111
+#: templates/header/header-sandbox-08.php:79
+#: templates/header/header-sandbox-08.php:120
 #: templates/header/header-sandbox-09.php:78
 #: templates/header/header-sandbox-09.php:119
 msgid "Password"
 msgstr ""
 
 #: templates/footer/footer-sandbox-4.php:38
-#: templates/flexible-content/contact/contact_2/contact_2.php:85
-#: templates/flexible-content/contact/contact_4/contact_4.php:82
-#: templates/flexible-content/contact/contact_5/contact_5.php:171
-#: templates/flexible-content/contact/contact_6/contact_6.php:81
+#: templates/flexible-content/contact/contact_2/contact_2.php:89
+#: templates/flexible-content/contact/contact_4/contact_4.php:86
+#: templates/flexible-content/contact/contact_5/contact_5.php:180
+#: templates/flexible-content/contact/contact_6/contact_6.php:90
 #: templates/flexible-content/contact/contact_6_1/contact_6_1.php:166
-#: templates/flexible-content/contact/contact_8_1/contact_8_1.php:205
+#: templates/flexible-content/contact/contact_8_1/contact_8_1.php:213
 msgid "Phone"
 msgstr ""
 
@@ -1134,7 +1108,7 @@ msgstr ""
 msgid "Popular Posts"
 msgstr ""
 
-#: functions/custom.php:369
+#: functions/custom.php:364
 msgid "Post Image"
 msgstr ""
 
@@ -1217,11 +1191,11 @@ msgstr ""
 msgid "Project"
 msgstr ""
 
-#: functions/customize.php:650
+#: functions/customize.php:574
 msgid "Project Archive Description"
 msgstr ""
 
-#: functions/customize.php:666
+#: functions/customize.php:590
 msgid "Project Archive Title"
 msgstr ""
 
@@ -1234,7 +1208,7 @@ msgstr ""
 msgid "Project Category"
 msgstr ""
 
-#: functions/customize.php:606
+#: functions/customize.php:530
 msgid "project settings"
 msgstr ""
 
@@ -1242,7 +1216,7 @@ msgstr ""
 msgid "Project Update"
 msgstr ""
 
-#: functions/customize.php:605 functions/navmenus.php:17
+#: functions/customize.php:529 functions/navmenus.php:17
 #: functions/cpt/cpt-projects.php:9 functions/cpt/cpt-projects.php:11
 #: functions/cpt/cpt-projects.php:23 functions/cpt/cpt-projects.php:29
 msgid "Projects"
@@ -1260,7 +1234,7 @@ msgstr ""
 msgid "Projects 3"
 msgstr ""
 
-#: functions/customize.php:626
+#: functions/customize.php:550
 msgid "Projects archive template"
 msgstr ""
 
@@ -1296,8 +1270,8 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:101
-#: templates/header/header-sandbox-08.php:110
+#: templates/header/header-sandbox-05.php:98
+#: templates/header/header-sandbox-08.php:107
 #: templates/header/header-sandbox-09.php:106
 msgid "Registration takes less than a minute."
 msgstr ""
@@ -1378,7 +1352,7 @@ msgstr ""
 msgid "Search Staff"
 msgstr ""
 
-#: functions/customize.php:372 functions/customize.php:493
+#: functions/customize.php:418
 msgid "Secondary Header"
 msgstr ""
 
@@ -1391,24 +1365,12 @@ msgstr ""
 msgid "See Project"
 msgstr ""
 
-#: templates/archive/archive-services-2.php:73
-msgid "See Services"
-msgstr ""
-
 #: functions/cpt/cpt-services.php:12 functions/cpt/cpt-services.php:31
 msgid "Service"
 msgstr ""
 
 #: functions/cpt/cpt-services.php:29
 msgid "Service archive"
-msgstr ""
-
-#: functions/customize.php:715
-msgid "Service Archive Description"
-msgstr ""
-
-#: functions/customize.php:739
-msgid "Service Archive Title"
 msgstr ""
 
 #: functions/cpt/taxonomy-services.php:11
@@ -1444,7 +1406,7 @@ msgstr ""
 msgid "Service updated"
 msgstr ""
 
-#: functions/customize.php:674 functions/navmenus.php:18
+#: functions/customize.php:598 functions/navmenus.php:18
 #: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:13
 #: functions/cpt/cpt-services.php:14 functions/cpt/cpt-services.php:41
 #: templates/footer/footer-sandbox-25_cw.php:28
@@ -1452,11 +1414,11 @@ msgstr ""
 msgid "Services"
 msgstr ""
 
-#: functions/customize.php:694
+#: functions/customize.php:618
 msgid "Services archive template"
 msgstr ""
 
-#: functions/customize.php:675
+#: functions/customize.php:599
 msgid "Services settings"
 msgstr ""
 
@@ -1476,11 +1438,11 @@ msgstr ""
 msgid "Set featured Image for this staff"
 msgstr ""
 
-#: functions/customize.php:567
+#: functions/customize.php:491
 msgid "Settings CPT"
 msgstr ""
 
-#: functions/customize.php:568
+#: functions/customize.php:492
 msgid "Settings Custom Post Type"
 msgstr ""
 
@@ -1488,39 +1450,39 @@ msgstr ""
 msgid "Shop"
 msgstr ""
 
-#: templates/header/header-sandbox-08.php:50
-#: templates/header/header-sandbox-08.php:84
+#: templates/header/header-sandbox-08.php:47
+#: templates/header/header-sandbox-08.php:81
 #: templates/header/header-sandbox-09.php:46
 #: templates/header/header-sandbox-09.php:80
 msgid "Sign In"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:124
-#: templates/header/header-sandbox-08.php:133
+#: templates/header/header-sandbox-05.php:121
+#: templates/header/header-sandbox-08.php:130
 #: templates/header/header-sandbox-09.php:129
 msgid "Sign in"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:53
-#: templates/header/header-sandbox-05.php:121
-#: templates/header/header-sandbox-08.php:130
+#: templates/header/header-sandbox-05.php:50
+#: templates/header/header-sandbox-05.php:118
+#: templates/header/header-sandbox-08.php:127
 #: templates/header/header-sandbox-09.php:126
 msgid "Sign Up"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:79
-#: templates/header/header-sandbox-08.php:88
+#: templates/header/header-sandbox-05.php:76
+#: templates/header/header-sandbox-08.php:85
 #: templates/header/header-sandbox-09.php:84
 msgid "Sign up"
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:100
-#: templates/header/header-sandbox-08.php:109
+#: templates/header/header-sandbox-05.php:97
+#: templates/header/header-sandbox-08.php:106
 #: templates/header/header-sandbox-09.php:105
 msgid "Sign up to"
 msgstr ""
 
-#: functions/customize.php:333 functions/customize.php:454
+#: functions/customize.php:329 functions/customize.php:399
 msgid "Solid"
 msgstr ""
 
@@ -1564,11 +1526,11 @@ msgstr ""
 msgid "Staff updated"
 msgstr ""
 
-#: functions/customize.php:330
+#: functions/customize.php:326
 msgid "Style Main Header"
 msgstr ""
 
-#: functions/customize.php:451
+#: functions/customize.php:396
 msgid "Style Woocommerce Header"
 msgstr ""
 
@@ -1618,17 +1580,17 @@ msgstr ""
 msgid "Testimonial"
 msgstr ""
 
-#: functions/customize.php:747 functions/navmenus.php:22
+#: functions/customize.php:631 functions/navmenus.php:22
 #: functions/cpt/cpt-testimonials.php:10 functions/cpt/cpt-testimonials.php:12
 #: functions/cpt/cpt-testimonials.php:17
 msgid "Testimonials"
 msgstr ""
 
-#: functions/customize.php:769
+#: functions/customize.php:651
 msgid "Testimonials archive template"
 msgstr ""
 
-#: functions/customize.php:748
+#: functions/customize.php:632
 msgid "Testimonials settings"
 msgstr ""
 
@@ -1654,15 +1616,15 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: functions/customize.php:141
+#: functions/customize.php:137
 msgid "Title Options"
 msgstr ""
 
-#: functions/customize.php:179
+#: functions/customize.php:175
 msgid "Title Theme Color"
 msgstr ""
 
-#: functions/customize.php:158
+#: functions/customize.php:154
 msgid "Title Theme Style"
 msgstr ""
 
@@ -1675,7 +1637,7 @@ msgstr ""
 msgid "Towns"
 msgstr ""
 
-#: functions/customize.php:334 functions/customize.php:455
+#: functions/customize.php:330 functions/customize.php:400
 msgid "Transparent"
 msgstr ""
 
@@ -1694,19 +1656,19 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: functions/customize.php:375 functions/customize.php:496
+#: functions/customize.php:421
 msgid "Type 1"
 msgstr ""
 
-#: functions/customize.php:376 functions/customize.php:497
+#: functions/customize.php:422
 msgid "Type 2"
 msgstr ""
 
-#: functions/customize.php:377 functions/customize.php:498
+#: functions/customize.php:423
 msgid "Type 3"
 msgstr ""
 
-#: functions/customize.php:378 functions/customize.php:499
+#: functions/customize.php:424
 msgid "Type 4"
 msgstr ""
 
@@ -1791,8 +1753,8 @@ msgid ""
 "We are trusted by over 5000+ clients. Join them now and grow your business."
 msgstr ""
 
-#: templates/header/header-sandbox-05.php:75
-#: templates/header/header-sandbox-08.php:72
+#: templates/header/header-sandbox-05.php:72
+#: templates/header/header-sandbox-08.php:69
 #: templates/header/header-sandbox-09.php:68
 msgid "Welcome Back"
 msgstr ""
@@ -1801,7 +1763,7 @@ msgstr ""
 msgid "Woocommerce"
 msgstr ""
 
-#: functions/customize.php:400
+#: functions/customize.php:347
 msgid "Woocommerce Header"
 msgstr ""
 
@@ -1817,9 +1779,9 @@ msgstr ""
 msgid "Writer"
 msgstr ""
 
-#: templates/flexible-content/pricing/pricing_1/pricing_1.php:80
-#: templates/flexible-content/pricing/pricing_2/pricing_2.php:70
-#: templates/flexible-content/pricing/pricing_3/pricing_3.php:62
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:59
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:49
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:42
 msgid "Yearly"
 msgstr ""
 
@@ -1829,7 +1791,7 @@ msgid "You Might Also Like"
 msgstr ""
 
 #: functions/woocommerce/woocommerce-offcanvas-cart.php:53
-#: templates/header/header-sandbox-woo-01.php:136
+#: templates/header/header-sandbox-woo-01.php:130
 msgid "Your cart"
 msgstr ""
 
@@ -1837,8 +1799,8 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: templates/flexible-content/pricing/pricing_1/pricing_1.php:105
-#: templates/flexible-content/pricing/pricing_2/pricing_2.php:107
-#: templates/flexible-content/pricing/pricing_3/pricing_3.php:100
+#: templates/flexible-content/pricing/pricing_1/pricing_1.php:83
+#: templates/flexible-content/pricing/pricing_2/pricing_2.php:86
+#: templates/flexible-content/pricing/pricing_3/pricing_3.php:78
 msgid "yr"
 msgstr ""
