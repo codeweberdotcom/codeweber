@@ -196,9 +196,10 @@
             },
             "choices": {
                 "dark": "dark",
-                "light": "light"
+                "light": "light",
+                "default": "default"
             },
-            "default_value": "light",
+            "default_value": "default",
             "allow_null": 0,
             "multiple": 0,
             "ui": 1,
@@ -251,5 +252,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680604037
+    "modified": 1681038596
 }

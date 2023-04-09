@@ -38,11 +38,16 @@
 			$params = ['style_nav' => get_theme_mod('codeweber_header_style')];
 		}
 
-		if (get_field('navbar_color', $term_id_prefixed) == 'dark') {
+
+		if (get_field('navbar_color', $term_id_prefixed) == 'default' || get_field('navbar_color', $term_id_prefixed) == false) {
+			if (get_theme_mod('codeweber_header_color') == 'dark') {
+				$params['bg_nav'] = 'navbar-dark';
+			} elseif (get_theme_mod('codeweber_header_color') == 'light') {
+				$params['bg_nav'] = 'navbar-light';
+			}
+		} elseif (get_field('navbar_color', $term_id_prefixed) == 'dark') {
 			$params['bg_nav'] = 'navbar-dark';
 		} elseif (get_field('navbar_color', $term_id_prefixed) == 'light') {
-			$params['bg_nav'] = 'navbar-light';
-		} else {
 			$params['bg_nav'] = 'navbar-light';
 		}
 

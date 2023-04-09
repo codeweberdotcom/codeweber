@@ -307,7 +307,15 @@ function codeweber_logo($color, $footer, $transparent)
         $class_logo_dark = ' class="mb-4" ';
         $class_logo_light = ' class="mb-4" ';
     } elseif ($footer == NULL) {
-        $class_logo_dark = ' class="logo-dark" ';
+
+        if ($color == 'dark' && $transparent == 'solid') {
+            $class_logo_dark = ' class="logo-dark-transparent" ';
+        } else {
+            $class_logo_dark = ' class="logo-dark" ';
+        }
+
+
+
         $class_logo_light = ' class="logo-light" ';
     }
 

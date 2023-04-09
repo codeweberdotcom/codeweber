@@ -334,7 +334,6 @@ function woocommerce_page_header()
    }
 
 
-
    if (get_field('pageheader', $term_id_prefixed) !== NULL) {
       if (get_field('pageheader', $term_id_prefixed) !== 'disable' && get_field('pageheader', $term_id_prefixed) !== 'default') {
          if (get_field('pageheader', $term_id_prefixed) == 'type_1' || get_field('pageheader', $term_id_prefixed) == 'type_4') {
@@ -352,42 +351,42 @@ function woocommerce_page_header()
             }
          }
       } elseif (get_field('pageheader', $term_id_prefixed) == 'default' && !is_404() && get_field('pageheader', $term_id_prefixed) !== 'disable') {
-         if (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4') {
+         if (get_theme_mod('codeweber_page_woocommerce_header') == 'type_1' || get_theme_mod('codeweber_page_woocommerce_header') == 'type_4') {
             get_template_part('templates/sections/common', 'breadcrumb');
          }
 
 
-         if (get_theme_mod('codeweber_page_header') == 'type_2') {
+         if (get_theme_mod('codeweber_page_woocommerce_header') == 'type_2') {
             get_template_part('templates/sections/common', 'pageheader');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
+         } elseif (get_theme_mod('codeweber_page_woocommerce_header') == 'type_3') {
             get_template_part('templates/sections/common', 'pageheader_1');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+         } elseif (get_theme_mod('codeweber_page_woocommerce_header') == 'type_1') {
             get_template_part('templates/sections/common', 'pageheader_2');
-         } elseif (get_theme_mod('codeweber_page_header') !== 'type_4') {
+         } elseif (get_theme_mod('codeweber_page_woocommerce_header') !== 'type_4') {
          }
       }
-   } elseif (get_theme_mod('codeweber_page_header') == 'type_1' || get_theme_mod('codeweber_page_header') == 'type_4'  && !is_404()) {
+   } elseif (get_theme_mod('codeweber_page_woocommerce_header') == 'type_1' || get_theme_mod('codeweber_page_woocommerce_header') == 'type_4'  && !is_404()) {
       get_template_part('templates/sections/common', 'breadcrumb');
 
-      if (get_theme_mod('codeweber_page_header') !== 'type_4' && !is_singular('product')) {
-         if (get_theme_mod('codeweber_page_header') == 'type_2') {
+      if (get_theme_mod('codeweber_page_woocommerce_header') !== 'type_4' && !is_singular('product')) {
+         if (get_theme_mod('codeweber_page_woocommerce_header') == 'type_2') {
             get_template_part('templates/sections/common', 'pageheader');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
+         } elseif (get_theme_mod('codeweber_page_woocommerce_header') == 'type_3') {
             get_template_part('templates/sections/common', 'pageheader_1');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+         } elseif (get_theme_mod('codeweber_page_woocommerce_header') == 'type_1') {
             get_template_part('templates/sections/common', 'pageheader_2');
          } else {
             get_template_part('templates/sections/common', 'breadcrumb');
             get_template_part('templates/sections/common', 'pageheader');
          }
       }
-   } elseif (get_theme_mod('codeweber_page_header') == 'type_2' || get_theme_mod('codeweber_page_header') == 'type_3' && !is_404()) {
-      if (get_theme_mod('codeweber_page_header') !== 'type_4') {
-         if (get_theme_mod('codeweber_page_header') == 'type_2') {
+   } elseif (get_theme_mod('codeweber_page_woocommerce_header') == 'type_2' || get_theme_mod('codeweber_page_woocommerce_header') == 'type_3' && !is_404()) {
+      if (get_theme_mod('codeweber_page_woocommerce_header') !== 'type_4') {
+         if (get_theme_mod('codeweber_page_woocommerce_header') == 'type_2') {
             get_template_part('templates/sections/common', 'pageheader');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_3') {
+         } elseif (get_theme_mod('codeweber_page_woocommerce_header') == 'type_3') {
             get_template_part('templates/sections/common', 'pageheader_1');
-         } elseif (get_theme_mod('codeweber_page_header') == 'type_1') {
+         } elseif (get_theme_mod('codeweber_page_woocommerce_header') == 'type_1') {
             get_template_part('templates/sections/common', 'pageheader_2');
          } else {
             get_template_part('templates/sections/common', 'breadcrumb');
@@ -397,10 +396,12 @@ function woocommerce_page_header()
    }
 }
 
+add_action('woocommerce_after_header', 'woocommerce_page_header', 5);
+
+
 ?>
 <?php
 
-add_action('woocommerce_after_header', 'woocommerce_page_header', 20);
 
 
 
