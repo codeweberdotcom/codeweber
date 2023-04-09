@@ -53,6 +53,23 @@ function my_acf_blocks_init()
 
       ));
 
+
+      // Register a Services block.
+      acf_register_block_type(array(
+         'name'              => 'services',
+         'title'             => __('Services'),
+         'description'       => __('Services flexible block.'),
+         'render_template'   => 'templates/flexible-content/services.php',
+         'category'          => 'codeweber',
+         'align'           => 'full',
+         'supports'        => array(
+            'align'        => array('full'),
+            'align'        => true,
+         ),
+         'mode' => 'preview',
+
+      ));
+
       // Register Grid block.
       acf_register_block_type(array(
          'name'              => 'grid',
