@@ -40,11 +40,13 @@ if ($show_downloads) {
 	);
 }
 ?>
-
 <div class="col-lg-8 mb-4">
 	<div class="woocommerce-order-details card">
 		<div class="card-body">
-			<h3 class="woocommerce-order-details__title mb-4"><?php esc_html_e('Order details', 'woocommerce'); ?></h3>
+
+			<h3 class="woocommerce-order-details__title mb-4"><?php esc_html_e('Order details', 'woocommerce'); ?>: №<?php echo $order->get_id() ?>
+			</h3>
+
 			<div class="table-responsive">
 
 				<?php do_action('woocommerce_order_details_before_order_table', $order); ?>

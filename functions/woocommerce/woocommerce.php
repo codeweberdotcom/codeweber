@@ -11,6 +11,16 @@ include 'woocommerce-mobile-bottom-menu.php';
 
 
 /**
+ * Remove Downloads from Account menu
+ */
+function custom_my_account_menu_items($items)
+{
+   unset($items['downloads']);
+   return $items;
+}
+add_filter('woocommerce_account_menu_items', 'custom_my_account_menu_items');
+
+/**
  * Display item meta data.
  *
  * @since  3.0.0
