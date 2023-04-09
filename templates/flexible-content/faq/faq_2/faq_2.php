@@ -8,13 +8,13 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'FAQ',
-      'patternSubtitle' => '<div class="fs-15 text-uppercase text-primary mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-primary mb-3 %2$s">%1$s</h2>',
 
       'title' => 'If you don\'t see an answer to your question, you can send us an email from our contact form.',
-      'patternTitle' => '<h2 class="display-5 mb-4">%s</h2>',
+      'patternTitle' => '<h3 class="display-5 mb-4 %2$s">%1$s</h3>',
 
       'paragraph' => 'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam quis risus eget urna mollis ornare.',
-      'patternParagraph' => '<p class="lead mb-6">%s</p>',
+      'patternParagraph' => '<p class="lead mb-6 %2$s">%1$s</p>',
 
       'buttons' => '<a href="#" class="btn btn-primary rounded-pill">All FAQ</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
