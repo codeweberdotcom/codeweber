@@ -3,16 +3,16 @@
 /* Paths */
 var path = {
   dev: {
-    html: "dev/",
-    js: "dev/js/",
-    css: "dev/css/",
-    style: "dev/css/",
-    fontcss: "dev/css/fonts/",
-    colorcss: "dev/css/colors/",
-    img: "dev/img/",
-    fonts: "dev/fonts/",
-    media: "dev/media/",
-    php: "dev/php/",
+    html: "../dev/",
+    js: "../dev/js/",
+    css: "../dev/css/",
+    style: "../dev/css/",
+    fontcss: "..//css/fonts/",
+    colorcss: "../dev/css/colors/",
+    img: "../dev/img/",
+    fonts: "../dev/fonts/",
+    media: "../dev/media/",
+    php: "../dev/php/",
   },
   dist: {
     html: "../dist/",
