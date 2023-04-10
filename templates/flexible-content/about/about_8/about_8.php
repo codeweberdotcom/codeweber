@@ -5,11 +5,11 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'We bring <span class="underline-3 style-2 yellow">solutions</span> to make life easier for our customers.',
-      'patternTitle' => '<h3 class="display-3 mb-10">%s</h3>',
-
       'subtitle' => 'What Makes Us Different?',
-      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
+
+      'title' => 'We bring <span class="underline-3 style-2 yellow">solutions</span> to make life easier for our customers.',
+      'patternTitle' => '<h3 class="display-3 mb-10 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -85,10 +85,12 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <div class="row gy-8">
                <?php echo $block->features; ?>
                <!--/features -->
