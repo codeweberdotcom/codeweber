@@ -63,8 +63,11 @@ if ($args['bg_nav'] == 'navbar-dark') {
                                     echo '<p class="dropdown-item disabled mb-0">' . __('Hello', 'codeweber') . ', ' . $current_user->display_name . '</p>';
                                     ?>
                                  </li>
+                                 <hr class="my-1" />
                               <?php }; ?>
-                              <hr class="my-1" />
+
+
+
                               <li class="nav-item">
                                  <?php if (is_user_logged_in()) { ?>
                                     <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="dropdown-item" title="<?php _e('My Account', 'codeweber'); ?>"><?php _e('My Account', 'codeweber'); ?></a>
@@ -143,7 +146,7 @@ if ($args['bg_nav'] == 'navbar-dark') {
 
    <div class="offcanvas offcanvas-end text-dark bg-light" id="offcanvas-info" data-bs-scroll="true">
       <div class="offcanvas-header">
-         <?php echo codeweber_logo($color_logo, NULL, NULL); ?>
+         <?php echo codeweber_logo('dark', NULL, NULL); ?>
          <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body pb-6">

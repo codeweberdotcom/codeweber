@@ -1,6 +1,6 @@
 {
     "key": "group_6303aa441023e",
-    "title": "Widgets",
+    "title": "CW Widgets",
     "fields": [
         {
             "key": "field_6303b72d21f26",
@@ -166,5 +166,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675629281
+    "modified": 1681079870
 }
