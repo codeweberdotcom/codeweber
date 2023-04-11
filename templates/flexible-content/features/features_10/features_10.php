@@ -13,16 +13,8 @@ $block = new CW_Settings(
 
       'subtitle' => 'The full service we are offering is <span class="underline">specifically</span> designed to meet your business needs and projects.',
       'patternSubtitle' => '<p class="lead fs-lg mb-8 pe-xxl-2 %2$s">%1$s</p>',
-      'subtitle_lead' => 'true',
-
-      // 'subtitle' => 'We are a digital and branding company that believes in the power of creative strategy and along with great design.',
-      // 'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
 
       'background_class_default' => 'wrapper bg-light',
-      // 'background_data_default' => '/dist/img/map.png',
-      //'background_video_preview' => '/dist/img/photos/movie2.jpg',
-      //'background_video_url' => '/dist/media/movie2.mp4',
-      //'background_pattern_url' => '/dist/img/pattern.png',
 
       'divider' => true,
 
@@ -82,9 +74,11 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-6  <?php echo $block->column_class_2; ?>">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
             <div class="row gx-xl-10 gy-6">
                <?php echo $block->features; ?>

@@ -19,7 +19,6 @@ $block = new CW_Settings(
       'divider' => true,
 
       'features' => '<div class="col-md-6 col-lg-4"><div class="d-flex flex-row"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/target.svg" class="svg-inject icon-svg icon-svg-sm text-aqua me-4" alt="" /></div><div><h4 class="mb-1">Fitness Goal</h4><p class="mb-0">Duis mollis gravida commodo id luctus erat porttitor ligula, eget lacinia odio sem aget elit nullam quis risus eget.</p></div></div></div><!--/column -->',
-
       'features_pattern' => '<div class="col-md-6 col-lg-4 %1$s"><div class="d-flex flex-row %6$s"><div>%2$s</div><div><h4>%3$s</h4><p class="mb-2">%4$s</p>%5$s</div></div></div><!--/column -->',
       'features_style_icon' => 'me-4',
 
@@ -32,10 +31,12 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row text-center">
          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
       </div>

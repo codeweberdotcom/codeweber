@@ -13,7 +13,6 @@ $block = new CW_Settings(
 
       'subtitle' => 'The full service we are offering is specifically designed to meet your business needs.',
       'patternSubtitle' => '<p class="lead fs-lg %2$s">%1$s</p>',
-      'subtitle_lead' => 'true',
 
       'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam quis risus eget urna mollis ornare vel eu leo. Maecenas faucibus mollis elit interdum. Duis mollis, est non commodo luctus, nisi erat ligula.',
       'patternParagraph' => '<p class="%2$s">%1$s</p>',
@@ -117,9 +116,11 @@ $block = new CW_Settings(
          </div>
          <!-- /column -->
          <div class="col-lg-5 offset-lg-1">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/paragraph -->
