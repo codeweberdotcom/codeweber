@@ -6,14 +6,17 @@
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Trusted by over 300+ clients',
-      'patternTitle' => ' <h3 class="display-4 mb-3 pe-xxl-5">%s</h3>',
-
-      'paragraph' => 'We bring solutions to make life easier for our customers.',
-      'patternParagraph' => '<p class="lead fs-lg mb-0 pe-xxl-5">%s</p>',
 
       'subtitle' => 'Our Clients',
-      'patternSubtitle' => '<h2 class="h2 fs-15 text-uppercase text-muted mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
+
+      'title' => 'Trusted by over 300+ clients',
+      'patternTitle' => '<h3 class="display-4 mb-3 pe-xxl-5 %2$s">%1$s</h3>',
+
+      'paragraph' => 'We bring solutions to make life easier for our customers.',
+      'patternParagraph' => '<p class="lead fs-lg mb-0 pe-xxl-5 %2$s">%1$s</p>',
+
+
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -59,10 +62,12 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0">
          <div class="col-lg-4 mt-lg-2">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/pargraph -->
          </div>
