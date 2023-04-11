@@ -29,10 +29,12 @@ $block = new CW_Settings(
    <div class="container py-18">
       <div class="row">
          <div class="col-lg-8">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $block->buttons; ?>
             <!--/buttons group -->
          </div>

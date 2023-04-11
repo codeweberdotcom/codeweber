@@ -62,8 +62,8 @@
                         },
                         {
                             "key": "field_63e176248ceac",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
+                            "label": "Subtitle",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -74,7 +74,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6384b03e2c507"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -539,8 +539,8 @@
                         },
                         {
                             "key": "field_63e21d0fcc771",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
+                            "label": "Subtitle",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -551,7 +551,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6384b03e2c507"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -705,8 +705,8 @@
                         },
                         {
                             "key": "field_63e22357f34ae",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
+                            "label": "Subtitle",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -717,7 +717,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6384b03e2c507"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -850,8 +850,8 @@
                         },
                         {
                             "key": "field_63e227d6c5f98",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
+                            "label": "Subtitle",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -862,7 +862,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6384b03e2c507"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -939,6 +939,23 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_64350d4603894",
+                            "label": "Main settings",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
                             "key": "field_6311ff013ce3a",
                             "label": "Title",
                             "name": "title",
@@ -951,7 +968,9 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "clone": "",
+                            "clone": [
+                                "field_6383ec1d68ff4"
+                            ],
                             "display": "seamless",
                             "layout": "block",
                             "prefix_label": 0,
@@ -960,7 +979,7 @@
                         {
                             "key": "field_6311ff1c3ce3b",
                             "label": "Subtitle",
-                            "name": "subtitle",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -971,7 +990,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62d88a8b234a1"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1031,9 +1050,26 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_64350e99df3d7",
+                            "label": "Buttons",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
                             "key": "field_6312006e7e19e",
                             "label": "Button",
-                            "name": "button",
+                            "name": "cw_buttons",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -1044,12 +1080,29 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62dc6f27dc128"
+                                "group_639307ffa3855"
                             ],
                             "display": "seamless",
                             "layout": "block",
                             "prefix_label": 0,
                             "prefix_name": 0
+                        },
+                        {
+                            "key": "field_64350d5c03895",
+                            "label": "Background",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
                         },
                         {
                             "key": "field_63128c097eb00",
@@ -1065,7 +1118,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_62db0704bdee9"
+                                "group_6398d19d56ee1"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1100,5 +1153,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678118243
+    "modified": 1681199400
 }
