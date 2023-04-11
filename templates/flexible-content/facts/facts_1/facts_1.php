@@ -6,14 +6,13 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Join Our Community',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
       'subtitle' => 'We have considered our business solutions to support you on every stage of your growth.',
-      'patternSubtitle' => '<p class="lead fs-lg">>%s</p>',
-      'subtitle_lead' => 'true',
+      'patternSubtitle' => '<p class="lead fs-lg %2$s">%1$s</p>',
 
       'paragraph' => 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.',
-      'patternParagraph' => '<p class="mb-0">%s</p>',
+      'patternParagraph' => '<p class="mb-0 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -43,9 +42,11 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-5 <?php echo $block->column_class_2; ?>">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/pargraph -->
