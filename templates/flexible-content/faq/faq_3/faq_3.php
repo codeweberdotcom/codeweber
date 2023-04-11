@@ -7,17 +7,11 @@
 
 $block = new CW_Settings(
    $cw_settings = array(
-      // 'subtitle' => 'FAQ',
-      // 'patternSubtitle' => '<div class="fs-15 text-uppercase text-primary mb-3">%s</div>',
-
       'title' => 'Pricing FAQ',
-      'patternTitle' => '<h2 class="display-4 mb-3 text-center">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 text-center %2$s">%1$s</h2>',
 
-      'paragraph' => 'If you don\'t see an answer to your question, you can send us an email from our contact form.',
-      'patternParagraph' => '<p class="lead text-center mb-10 px-md-16 px-lg-0">%s</p>',
-
-      // 'buttons' => '<a href="#" class="btn btn-primary rounded-pill">All FAQ</a>',
-      // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+      'subtitle' => 'If you don\'t see an answer to your question, you can send us an email from our contact form.',
+      'patternSubtitle' => '<p class="lead text-center mb-10 px-md-16 px-lg-0 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -157,10 +151,12 @@ $block = new CW_Settings(
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
+      <?php echo $block->subtitle_first; ?>
+      <!--/subtitle -->
       <?php echo $block->title; ?>
       <!--/title -->
-      <?php echo $block->paragraph; ?>
-      <!--/paragraph -->
+      <?php echo $block->subtitle_second; ?>
+      <!--/subtitle -->
 
       <?php echo $block->accordeon; ?>
       <!--/.accordion -->
