@@ -128,14 +128,13 @@ if (get_field('map_url', 'option')) {
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Let’s Talk',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
       'subtitle' => 'Let\'s make something great together. We are trusted by over 5000+ clients. Join them by using our services and grow your business.',
-      'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
-      'subtitle_lead' => 'true',
+      'patternSubtitle' => '<p class="lead fs-lg %2$s">%1$s</p>',
 
       'paragraph' => 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.',
-      'patternParagraph' => '<p>%s</p>',
+      'patternParagraph' => '<p class=" %2$s">%1$s</p>',
 
       'buttons' => '<a href="#" class="btn btn-primary rounded-pill mt-2">Join Us</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
@@ -158,9 +157,11 @@ $block = new CW_Settings(
                   <!--/column -->
                   <div class="col-lg-6">
                      <div class="p-10 p-md-11 p-lg-13">
+                        <?php echo $block->subtitle_first; ?>
+                        <!--/subtitle -->
                         <?php echo $block->title; ?>
                         <!--/title -->
-                        <?php echo $block->subtitle; ?>
+                        <?php echo $block->subtitle_second; ?>
                         <!--/subtitle -->
                         <?php echo $block->paragraph; ?>
                         <!--/paragraph -->

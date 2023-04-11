@@ -24,11 +24,11 @@ if (get_field('email', 'option')) {
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Get In Touch',
-      'patternTitle' => '<h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3">%s</h2>',
+      'subtitle' => 'Get In Touch',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3 %2$s">%1$s</h2>',
 
-      'subtitle' => 'Got any questions? Don\'t hesitate to get in touch.',
-      'patternSubtitle' => '<h3 class="display-5 mb-7">%s</h3>',
+      'title' => 'Got any questions? Don\'t hesitate to get in touch.',
+      'patternTitle' => '<h3 class="display-5 mb-7 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,
@@ -61,9 +61,11 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-5 <?php echo $block->column_class_2; ?>">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
             <div class="d-flex flex-row">
                <div>

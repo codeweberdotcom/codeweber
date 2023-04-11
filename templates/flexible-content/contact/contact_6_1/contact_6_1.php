@@ -118,10 +118,10 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'Drop Us a Line',
-      'patternTitle' => '<h2 class="display-4 mb-3 text-center">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 text-center %2$s">%1$s</h2>',
 
-      'paragraph' => 'Reach out to us from our contact form and we will get back to you shortly.',
-      'patternParagraph' => '<p class="lead text-center mb-10">%s</p>',
+      'subtitle' => 'Reach out to us from our contact form and we will get back to you shortly.',
+      'patternSubtitle' => '<p class="lead text-center mb-10 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light angled upper-end',
       'divider' => true,
@@ -195,10 +195,12 @@ $block = new CW_Settings(
       <!-- /.row -->
       <div class="row">
          <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->paragraph; ?>
-            <!--/paragraph -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $cf_form; ?>
             <!-- /form -->
          </div>
