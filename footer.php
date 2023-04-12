@@ -18,7 +18,7 @@ do_action('codeweber_footer_start'); ?>
                         <div class="modal-dialog modal-dialog-centered modal-sm">
                         <div class="modal-content text-center">
                         <div class="modal-body">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>';
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>';
 		$form .= do_shortcode("[contact-form-7 id='{$item}']");
 		$form .= '</div></div></div></div>';
 		echo  $form;

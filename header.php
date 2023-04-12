@@ -34,15 +34,21 @@
 			$params = ['style_nav' => 'transparent'];
 		} elseif ((get_field('cw_transparent_header', $term_id_prefixed) == 'solid')) {
 			$params = ['style_nav' => 'solid'];
-		} else {
+		} elseif (get_theme_mod('codeweber_header_style')) {
 			$params = ['style_nav' => get_theme_mod('codeweber_header_style')];
+		} else {
+			$params = ['style_nav' => 'solid'];
 		}
 
 
 		if (get_field('navbar_color', $term_id_prefixed) == 'default' || get_field('navbar_color', $term_id_prefixed) == false) {
-			if (get_theme_mod('codeweber_header_color') == 'dark') {
-				$params['bg_nav'] = 'navbar-dark';
-			} elseif (get_theme_mod('codeweber_header_color') == 'light') {
+			if (get_theme_mod('codeweber_header_color')) {
+				if (get_theme_mod('codeweber_header_color') == 'dark') {
+					$params['bg_nav'] = 'navbar-dark';
+				} elseif (get_theme_mod('codeweber_header_color') == 'light') {
+					$params['bg_nav'] = 'navbar-light';
+				}
+			} else {
 				$params['bg_nav'] = 'navbar-light';
 			}
 		} elseif (get_field('navbar_color', $term_id_prefixed) == 'dark') {

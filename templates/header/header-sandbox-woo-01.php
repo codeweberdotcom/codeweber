@@ -9,6 +9,7 @@ if ($args['style_nav'] == 'transparent') {
    $class_nav = NULL;
 }
 
+
 $transparent_style = $args['style_nav'];
 
 if ($args['bg_nav'] == 'navbar-dark') {

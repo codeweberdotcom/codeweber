@@ -51,10 +51,10 @@ function сf7_modal_after_sent()
             })
             myModal.show();
 
-            function sayHi() {
+            function CloseThankYouModal() {
                 myModal.hide();
             }
-            setTimeout(sayHi, 5000);
+            setTimeout(CloseThankYouModal, 5000);
         }, false);
     </script>
 <?php
@@ -69,7 +69,6 @@ function custom_custom_form_class_attr($class)
     $class .= ' needs-validation';
     return $class;
 }
-
 
 // Filter Form Elements
 // Include in your child theme/theme's functions.php
