@@ -21,17 +21,16 @@ if ($team) {
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Our Team',
-      'patternTitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+      'subtitle' => 'Our Team',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
 
-      'subtitle' => 'Think unique and be innovative. Make a difference with Sandbox.',
-      'patternSubtitle' => '<h3 class="display-4 mb-7 px-lg-19 px-xl-18">%s</h3>',
+      'title' => 'Think unique and be innovative. Make a difference with Sandbox.',
+      'patternTitle' => '<h3 class="display-4 mb-7 px-lg-19 px-xl-18 %2$s">%1$s</h3>',
 
       // 'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
       // 'patternParagraph' => '<p class="mb-6">%s</p>',
 
       'background_class_default' => 'wrapper bg-light',
-
       'divider' => true,
 
       //'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),
@@ -43,9 +42,11 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row mb-3">
          <div class="col-md-10 col-lg-12 col-xl-10 col-xxl-9 mx-auto text-center">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
          </div>
          <!--/column -->

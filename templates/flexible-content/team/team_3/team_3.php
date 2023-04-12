@@ -21,17 +21,14 @@ if ($team) {
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Save your time and money by choosing our professional team.',
-      'patternTitle' => ' <h3 class="display-5 mb-5">%s</h3>',
-
       'subtitle' => 'Meet the Team',
-      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3">%s</h2>',
-
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3 %2$s">%1$s</h2>',
+      'title' => 'Save your time and money by choosing our professional team.',
+      'patternTitle' => ' <h3 class="display-5 mb-5 %2$s">%1$s</h3>',
       'paragraph' => 'Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros tempus porttitor.',
-      'patternParagraph' => '<p>%s</p>',
+      'patternParagraph' => '<p class="%2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
-
       'divider' => true,
 
       'buttons' => '<a href="#" class="btn btn-primary rounded-pill mt-3">See All Members</a>',
@@ -44,10 +41,12 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
          <div class="col-lg-4">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/paragraph -->
             <?php echo $block->buttons; ?>
