@@ -6,10 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Get in Touch',
-      'patternTitle' => '<h1 class="display-1 text-white mb-3">%s</h1>',
+      'patternTitle' => '<h1 class="display-1 text-white mb-3 %2$s">%1$s</h1>',
 
       'paragraph' => 'Have any questions? Reach out to us from our contact form and we will get back to you shortly.',
-      'patternParagraph' => '<p class="lead px-xl-10 px-xxl-10">%s</p>',
+      'patternParagraph' => '<p class="lead px-xl-10 px-xxl-10 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-dark text-white',
 
