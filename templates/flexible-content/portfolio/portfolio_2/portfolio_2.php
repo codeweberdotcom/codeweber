@@ -36,24 +36,25 @@ if ($categories) {
 }
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Download the app, create your profile and <span class="text-gradient gradient-7">voilà</span>, you\'re all set!',
-      'patternTitle' => '<h2 class="h3 display-3 mb-8 px-xl-6">%s</h2>',
       'subtitle' => 'Latest Projects',
-      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
+      'title' => 'Download the app, create your profile and <span class="text-gradient gradient-7">voilà</span>, you\'re all set!',
+      'patternTitle' => '<h3 class="display-3 mb-8 px-xl-6 %2$s">%1$s</h3>',
       'background_class_default' => 'wrapper',
       'divider' => true,
    )
 );
 ?>
-
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-lg-9 col-xl-8 col-xxl-7 mx-auto text-center">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
       </div>
