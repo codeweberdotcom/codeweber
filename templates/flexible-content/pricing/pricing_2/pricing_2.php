@@ -38,10 +38,12 @@
     <div class="container py-14 py-md-16">
        <div class="row">
           <div class="col-lg-10 col-xl-9 col-xxl-8 mx-auto text-center">
-             <?php echo $block->subtitle; ?>
+             <?php echo $block->subtitle_first; ?>
              <!--/subtitle -->
              <?php echo $block->title; ?>
              <!--/title -->
+             <?php echo $block->subtitle_second; ?>
+             <!--/subtitle -->
           </div>
           <!--/column -->
        </div>
