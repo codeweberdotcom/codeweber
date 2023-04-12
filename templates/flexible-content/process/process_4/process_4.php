@@ -1,19 +1,17 @@
 <?php
 
 /**
- * Process 3
+ * Process 4
  */
 $block = new CW_Settings(
    $cw_settings = array(
+      'subtitle' => 'Our Process',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 mt-12 %2$s">%1$s</h2>',
       'title' => 'Find out everything you need to know about creating a business process model',
-      'patternTitle' => ' <h3 class="display-4 mb-0 text-center px-xl-10 px-xxl-15">%s</h3>',
+      'patternTitle' => ' <h3 class="display-4 mb-0 text-center px-xl-10 px-xxl-15 %2$s">%1$s</h3>',
 
       // 'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo.',
-      // 'patternParagraph' => '<p class="mb-8">%s</p>',
-
-      'subtitle' => 'Our Process',
-      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 mt-12">%s</h2>',
-
+      // 'patternParagraph' => '<p class="mb-8 %2$s">%1$s</p>',
       'background_class_default' => 'wrapper bg-light',
       //'background_data_default' => '/dist/img/photos/bg16.png',
       //'background_video_preview' => '/dist/img/photos/movie2.jpg',
@@ -73,9 +71,7 @@ $block = new CW_Settings(
       'column_class_2' => 'order-lg-2',
 
       'features' => '<div class="col-md-4"> <img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/light-bulb.svg" class="svg-inject icon-svg icon-svg-md text-primary mb-3" alt="" /><h4 class="mb-1">1. Concept</h4><p class="mb-0">Nulla vitae elit libero elit non porta gravida eget metus cras.</p></div><!--/column -->',
-
       'features_pattern' => '<div class="col-md-4">%2$s<h4 class="mb-1">%3$s</h4><p class="mb-0">%4$s</p></div><!--/column -->',
-
       'features_style_icon' => 'mb-3',
 
       'video_poster' => '<?php echo get_template_directory_uri(); ?>/dist/img/photos/movie.jpg',
@@ -89,9 +85,6 @@ $demo_video = '<video poster="' . get_template_directory_uri() . '/dist/img/phot
           </video>';
 $video = new CW_Video(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $demo_video);
 ?>
-
-
-
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <?php if ($block->background_video_bool == true) { ?>
@@ -114,10 +107,12 @@ $video = new CW_Video(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, $demo_vide
          <!--/.row -->
          <div class="row text-center">
             <div class="col-lg-9 mx-auto">
-               <?php echo $block->subtitle; ?>
+               <?php echo $block->subtitle_first; ?>
                <!--/subtitle -->
                <?php echo $block->title; ?>
                <!--/title -->
+               <?php echo $block->subtitle_second; ?>
+               <!--/subtitle -->
                <div class="row gx-lg-8 gx-xl-12 process-wrapper text-center mt-10">
                   <?php echo $block->features; ?>
                </div>

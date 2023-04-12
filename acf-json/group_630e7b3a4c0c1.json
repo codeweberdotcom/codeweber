@@ -100,8 +100,8 @@
                         },
                         {
                             "key": "field_63a4128d44463",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
+                            "label": "Subtitle",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -112,7 +112,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6384b03e2c507"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -325,8 +325,8 @@
                         },
                         {
                             "key": "field_63d5985c4376d",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
+                            "label": "Subtitle",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -337,7 +337,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6384b03e2c507"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -528,6 +528,27 @@
                             "endpoint": 0
                         },
                         {
+                            "key": "field_63d6a735fc0a5",
+                            "label": "Subtitle",
+                            "name": "cw_subtitle",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6384afba2c502"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_63d6a715fc09b",
                             "label": "Заголовок",
                             "name": "cw_title",
@@ -563,27 +584,6 @@
                             },
                             "clone": [
                                 "field_6384b03e2c507"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
-                            "key": "field_63d6a735fc0a5",
-                            "label": "Subtitle",
-                            "name": "cw_subtitle",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -774,27 +774,6 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63d6af2d24078",
-                            "label": "Заголовок",
-                            "name": "cw_title",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_6383ec1d68ff4"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_63d6af2d2407a",
                             "label": "Subtitle",
                             "name": "cw_subtitle",
@@ -809,6 +788,27 @@
                             },
                             "clone": [
                                 "field_6384afba2c502"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d6af2d24078",
+                            "label": "Заголовок",
+                            "name": "cw_title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6383ec1d68ff4"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1319,27 +1319,6 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63d7d5ab2d463",
-                            "label": "Заголовок",
-                            "name": "cw_title",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_6383ec1d68ff4"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_63d7d5ab2d465",
                             "label": "Subtitle",
                             "name": "cw_subtitle",
@@ -1354,6 +1333,27 @@
                             },
                             "clone": [
                                 "field_6384afba2c502"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d7d5ab2d463",
+                            "label": "Заголовок",
+                            "name": "cw_title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6383ec1d68ff4"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1544,27 +1544,6 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63d7df86b9ead",
-                            "label": "Заголовок",
-                            "name": "cw_title",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_6383ec1d68ff4"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_63d7df86b9eae",
                             "label": "Subtitle",
                             "name": "cw_subtitle",
@@ -1579,6 +1558,27 @@
                             },
                             "clone": [
                                 "field_6384afba2c502"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63d7df86b9ead",
+                            "label": "Заголовок",
+                            "name": "cw_title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6383ec1d68ff4"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1769,27 +1769,6 @@
                             "endpoint": 0
                         },
                         {
-                            "key": "field_63e77ab684074",
-                            "label": "Заголовок",
-                            "name": "cw_title",
-                            "type": "clone",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "clone": [
-                                "field_6383ec1d68ff4"
-                            ],
-                            "display": "seamless",
-                            "layout": "block",
-                            "prefix_label": 0,
-                            "prefix_name": 0
-                        },
-                        {
                             "key": "field_63e77ab684075",
                             "label": "Subtitle",
                             "name": "cw_subtitle",
@@ -1804,6 +1783,27 @@
                             },
                             "clone": [
                                 "field_6384afba2c502"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_63e77ab684074",
+                            "label": "Заголовок",
+                            "name": "cw_title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6383ec1d68ff4"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1973,5 +1973,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676120751
+    "modified": 1681297817
 }
