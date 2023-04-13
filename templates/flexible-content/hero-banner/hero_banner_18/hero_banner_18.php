@@ -6,10 +6,10 @@
 $block = new CW_Settings(
   $cw_settings = array(
     'title' => 'Networking <span class="text-gradient gradient-1">solutions</span> for worldwide communication',
-    'patternTitle' => '<h1 class="display-2 mb-4 me-xl-5 me-xxl-0">%s</h1>',
+    'patternTitle' => '<h1 class="display-2 mb-4 me-xl-5 me-xxl-0 %2$s">%1$s</h1>',
 
     'paragraph' => 'We\'re a company that focuses on establishing long-term relationships with customers.',
-    'patternParagraph' => '<p class="lead fs-23 lh-sm mb-7 pe-xxl-15">%s</p>',
+    'patternParagraph' => '<p class="lead fs-23 lh-sm mb-7 pe-xxl-15 %2$s">%1$s</p>',
 
     // 'subtitle' => 'Grow Your Business with Our Solutions.',
     // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',

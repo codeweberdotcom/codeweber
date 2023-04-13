@@ -68,10 +68,10 @@ if ($contact_form) {
 $block = new CW_Settings(
   $cw_settings = array(
     'title' => 'Request Photography Pricing',
-    'patternTitle' => '<h2 class="display-5 mb-3 text-center">%s</h2>',
+    'patternTitle' => '<h2 class="display-5 mb-3 text-center %2$s">%1$s</h2>',
 
-    'paragraph' => 'For more information please get in touch using the form below:',
-    'patternParagraph' => '<p class="lead fs-lg text-center mb-10">%s</p>',
+    'subtitle' => 'For more information please get in touch using the form below:',
+    'patternSubtitle' => '<p class="lead fs-lg text-center mb-10 %2$s">%1$s</p>',
 
     'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay',
     'background_data_default' => '/dist/img/photos/bg36.jpg',
@@ -87,10 +87,12 @@ $block = new CW_Settings(
         <div class="col-xl-9 mx-auto">
           <div class="card border-0 bg-white-900">
             <div class="card-body py-lg-13 px-lg-16">
+              <?php echo $block->subtitle_first; ?>
+              <!--/subtitle -->
               <?php echo $block->title; ?>
               <!--/title -->
-              <?php echo $block->paragraph; ?>
-              <!--/paragraph -->
+              <?php echo $block->subtitle_second; ?>
+              <!--/subtitle -->
               <?php echo $cf_form; ?>
               <!-- /form -->
             </div>

@@ -6,10 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Staying on top of your bills never been this easy',
-      'patternTitle' => '<h1 class="display-1 mb-4">%s</h1>',
+      'patternTitle' => '<h1 class="display-1 mb-4 %2$s">%1$s</h1>',
 
       'paragraph' => 'Easily achieve your saving goals. Have all your recurring and one time expenses and incomes in one place.',
-      'patternParagraph' => '<p class="lead fs-lg px-xl-12 px-xxl-6 mb-7">%s</p>',
+      'patternParagraph' => '<p class="lead fs-lg px-xl-12 px-xxl-6 mb-7 %2$s">%1$s</p>',
 
       // 'subtitle' => 'Grow Your Business with Our Solutions.',
       // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',

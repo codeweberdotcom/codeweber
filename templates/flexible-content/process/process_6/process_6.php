@@ -5,14 +5,12 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Everything you need on creating a business process.',
-      'patternTitle' => ' <h2 class="display-5 mb-7 pe-xxl-5">%s</h2>',
-
       'subtitle' => 'How It Works',
-      'patternSubtitle' => '<div class="fs-15 text-uppercase text-line text-primary mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-line text-primary mb-3 %2$s">%1$s</h2>',
+      'title' => 'Everything you need on creating a business process.',
+      'patternTitle' => '<h3 class="display-5 mb-7 pe-xxl-5 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
-
       'divider' => true,
 
       'swiper' => array(
@@ -51,16 +49,13 @@ $block = new CW_Settings(
       ),
 
       'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; right: 2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
-
       'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',
 
       'features' => '<div class="d-flex flex-row mb-4"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/light-bulb.svg" class="svg-inject icon-svg icon-svg-sm text-primary me-4" alt="" /></div><div><h4 class="mb-1">Collect Ideas</h4><p class="mb-1">Nulla vitae elit libero pharetra augue dapibus.</p></div></div>',
-
       'features_pattern' => '<div class="d-flex flex-row mb-4"><div>%2$s</div><div><h4 class="mb-1">%3$s</h4><p class="mb-1">%4$s</p></div></div>',
-
       'features_style_icon' => 'me-4'
    )
 );
@@ -80,10 +75,12 @@ $block = new CW_Settings(
             </div>
             <!--/column -->
             <div class="col-lg-5 <?php echo $block->column_class_2; ?>">
-               <?php echo $block->subtitle; ?>
+               <?php echo $block->subtitle_first; ?>
                <!--/subtitle -->
                <?php echo $block->title; ?>
                <!--/title -->
+               <?php echo $block->subtitle_second; ?>
+               <!--/subtitle -->
                <?php echo $block->features; ?>
                <!--/features -->
             </div>

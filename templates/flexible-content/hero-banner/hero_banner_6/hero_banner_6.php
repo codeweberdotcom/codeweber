@@ -6,10 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Get all of your steps, exercise, sleep and meds in one place.',
-      'patternTitle' => '<h1 class="display-2 mb-4 mx-sm-n2 mx-md-0">%s</h1>',
+      'patternTitle' => '<h1 class="display-2 mb-4 mx-sm-n2 mx-md-0 %2$s">%1$s</h1>',
 
       'paragraph' => 'Sandbox is now available to download from both the App Store and Google Play Store.',
-      'patternParagraph' => '<p class="lead fs-lg mb-7 px-md-10 px-lg-0">%s</p>',
+      'patternParagraph' => '<p class="lead fs-lg mb-7 px-md-10 px-lg-0 %2$s">%1$s</p>',
 
       // 'subtitle' => 'Grow Your Business with Our Solutions.',
       // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',

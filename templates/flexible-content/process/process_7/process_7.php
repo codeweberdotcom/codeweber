@@ -5,14 +5,12 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Find out everything about creating a business model.',
-      'patternTitle' => '<h2 class="display-4 mb-6">%s</h2>',
-
       'subtitle' => 'How It Works?',
-      'patternSubtitle' => '<h3 class="fs-16 text-uppercase text-muted mb-3">%s</h3>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
+      'title' => 'Find out everything about creating a business model.',
+      'patternTitle' => '<h3 class="display-4 mb-6 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
-
       'divider' => true,
 
       'swiper' => array(
@@ -51,19 +49,16 @@ $block = new CW_Settings(
       ),
 
       'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; right: 2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
-
       'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',
 
       'features' => ' <div class="col-md-6"><h4><span class="text-primary">1.</span> Creative Ideas</h4><p class="mb-0">Nulla vitae elit libero a augue donec id elit non mi porta.</p></div>',
-
       'features_pattern' => '<div class="col-md-6"><h4><span class="text-primary">%8$s</span> %3$s</h4><p class="mb-0">%4$s</p></div>'
    )
 );
 ?>
-
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <?php if ($block->background_video_bool == true) { ?>
@@ -79,10 +74,12 @@ $block = new CW_Settings(
             </div>
             <!--/column -->
             <div class="col-lg-5 <?php echo $block->column_class_2; ?>">
-               <?php echo $block->subtitle; ?>
+               <?php echo $block->subtitle_first; ?>
                <!--/subtitle -->
                <?php echo $block->title; ?>
                <!--/title -->
+               <?php echo $block->subtitle_second; ?>
+               <!--/subtitle -->
                <div class="row gy-4">
                   <?php echo $block->features; ?>
                   <!--/features -->

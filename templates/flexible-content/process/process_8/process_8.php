@@ -5,14 +5,12 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Download the app, create your profile and <span class="text-gradient gradient-7">voilà</span>, you\'re all set!',
-      'patternTitle' => '<h2 class="h3 display-3 mb-8 px-xl-6">%s</h2>',
-
       'subtitle' => 'How It Works',
-      'patternSubtitle' => '<div class="h2 fs-16 text-uppercase text-muted mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
+      'title' => 'Download the app, create your profile and <span class="text-gradient gradient-7">voilà</span>, you\'re all set!',
+      'patternTitle' => '<h3 class="display-3 mb-8 px-xl-6 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper',
-
       'divider' => true,
 
       'shapes' => array(
@@ -59,7 +57,6 @@ $block = new CW_Settings(
       // 'column_class_2' => 'order-lg-2',
 
       'features' => '<span class="fs-60 lh-1 mb-3 fw-normal text-gradient gradient-7">01</span><h4 class="fs-20">Download Application</h4><p class="mb-0 px-xl-7">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus.</p>',
-
       'features_pattern' => '%2$s<h3 class="fs-20">%3$s</h3><p class="mb-3 px-xl-7">%4$s</p>%5$s'
    )
 );
@@ -74,10 +71,12 @@ $block = new CW_Settings(
          <div class="col-md-10 col-lg-7 mx-auto position-relative">
             <?php echo $block->shapes; ?>
             <!--/shapes -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
       </div>

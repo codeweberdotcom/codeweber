@@ -6,10 +6,10 @@
 $block = new CW_Settings(
   $cw_settings = array(
     'title' => 'Grow Your Business with <br class="d-none d-md-block d-lg-none" /><span class="text-primary">Our Marketing Solutions</span>',
-    'patternTitle' => '<h1 class="display-1 mb-4 me-xl-5 mt-lg-n10">%s</h1>',
+    'patternTitle' => '<h1 class="display-1 mb-4 me-xl-5 mt-lg-n10 %2$s">%1$s</h1>',
 
     'paragraph' => 'We help our clients to increase their website <br class="d-none d-md-block d-lg-none" /> traffic, rankings and visibility in search results.',
-    'patternParagraph' => '<p class="lead fs-24 lh-sm mb-7 pe-xxl-15">%s</p>',
+    'patternParagraph' => '<p class="lead fs-24 lh-sm mb-7 pe-xxl-15 %2$s">%1$s</p>',
 
     // 'subtitle' => 'Grow Your Business with Our Solutions.',
     // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',

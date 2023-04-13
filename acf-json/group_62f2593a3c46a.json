@@ -533,8 +533,8 @@
                         },
                         {
                             "key": "field_63e0de87f3a08",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
+                            "label": "Subtitle",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -545,7 +545,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6384b03e2c507"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -699,8 +699,8 @@
                         },
                         {
                             "key": "field_63e0ee5f54219",
-                            "label": "Paragraph",
-                            "name": "cw_paragraph",
+                            "label": "Subtitle",
+                            "name": "cw_subtitle",
                             "type": "clone",
                             "instructions": "",
                             "required": 0,
@@ -711,7 +711,7 @@
                                 "id": ""
                             },
                             "clone": [
-                                "field_6384b03e2c507"
+                                "field_6384afba2c502"
                             ],
                             "display": "seamless",
                             "layout": "block",
@@ -1011,5 +1011,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1675687277
+    "modified": 1681250771
 }

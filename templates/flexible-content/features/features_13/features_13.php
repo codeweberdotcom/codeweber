@@ -38,10 +38,12 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row text-center">
          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
       </div>

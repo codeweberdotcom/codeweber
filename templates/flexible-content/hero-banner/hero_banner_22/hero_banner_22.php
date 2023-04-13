@@ -6,13 +6,13 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Grow your business with our marketing solutions',
-      'patternTitle' => '<h1 class="h3 display-1 fs-54 text-white mb-7">%s</h1>',
+      'patternTitle' => '<h1 class="h3 display-1 fs-54 text-white mb-7 %2$s">%1$s</h1>',
 
       // 'paragraph' => 'We carefully consider our solutions to support each and every stage of your growth.',
       // 'patternParagraph' => '<p class="lead fs-24 lh-sm text-white mb-7 pe-md-18 pe-lg-0 pe-xxl-15">%s</p>',
 
       'subtitle' => 'Hello! We are Sandbox',
-      'patternSubtitle' => '<p class="h6 text-uppercase ls-xl text-white mb-5">%s</p>',
+      'patternSubtitle' => '<p class="h6 text-uppercase ls-xl text-white mb-5 %2$s">%1$s</p>',
 
       'buttons_pattern' => '<div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
       'buttons' => ' <a href="' . get_template_directory_uri() . '/dist/media/movie.mp4" class="btn btn-circle btn-white btn-play ripple mx-auto" data-glightbox><i class="icn-caret-right"></i></a>',
@@ -41,10 +41,12 @@ $block = new CW_Settings(
          <div class="container pt-18 pt-lg-21 pb-17 pb-lg-19 text-center">
             <div class="row">
                <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-6 mx-auto" data-cues="zoomIn" data-group="page-title" data-interval="-200" data-delay="500">
-                  <?php echo $block->subtitle; ?>
+                  <?php echo $block->subtitle_first; ?>
                   <!--/subtitle -->
                   <?php echo $block->title; ?>
                   <!--/title -->
+                  <?php echo $block->subtitle_second; ?>
+                  <!--/subtitle -->
                   <?php echo $block->buttons; ?>
                   <!--/buttons group -->
                </div>

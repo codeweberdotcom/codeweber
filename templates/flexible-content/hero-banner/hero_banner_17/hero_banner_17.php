@@ -6,13 +6,13 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'We bring rapid solutions for your business.',
-      'patternTitle' => '<h1 class="display-1 fs-58 mb-7">%s</h1>',
+      'patternTitle' => '<h1 class="display-1 fs-58 mb-7 %2$s">%1$s</h1>',
 
       //'paragraph' => 'Hello! This is Sandbox',
       //'patternParagraph' => '<p class="h2 fs-16 text-uppercase ls-xl text-dark mb-4">%s</p>',
 
       'subtitle' => 'Hello! This is Sandbox',
-      'patternSubtitle' => '<p class="h2 fs-16 text-uppercase ls-xl text-dark mb-4">%s</p>',
+      'patternSubtitle' => '<p class="h2 fs-16 text-uppercase ls-xl text-dark mb-4 %2$s">%1$s</p>',
 
       'buttons' => '<div class="d-flex justify-content-center" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
                <span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">Explore Now</a></span>
@@ -78,10 +78,12 @@ $block = new CW_Settings(
    <div class="container pt-12 pt-md-16 text-center">
       <div class="row">
          <div class="col-lg-8 col-xxl-7 mx-auto text-center" data-cues="slideInDown" data-group="page-title" data-delay="600">
-            <?php echo $block->subtitle; ?>
-            <!--/pargraph -->
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $block->buttons; ?>
             <!--/buttons group -->
          </div>

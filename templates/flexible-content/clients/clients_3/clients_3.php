@@ -6,14 +6,14 @@
 
 $block = new CW_Settings(
    $cw_settings = array(
+      'subtitle' => 'Our Clients',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
+
       'title' => 'We are trusted by over 300+ clients. Join them by using our services and grow your business.',
-      'patternTitle' => ' <h3 class="display-5 mb-0">%s</h3>',
+      'patternTitle' => ' <h3 class="display-5 mb-0 %2$s">%1$s</h3>',
 
       'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante. Maecenas faucibus mollis interdum. Cras justo odio mollis.',
-      'patternParagraph' => '<p class="lead mb-0">%s</p>',
-
-      'subtitle' => 'Our Clients',
-      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+      'patternParagraph' => '<p class="lead mb-0 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -55,11 +55,14 @@ $block = new CW_Settings(
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
-      <?php echo $block->subtitle; ?>
+      <?php echo $block->subtitle_first; ?>
+      <!--/subtitle -->
       <div class="row gx-lg-8 mb-10 gy-5">
          <div class="col-lg-6">
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
          <div class="col-lg-6">

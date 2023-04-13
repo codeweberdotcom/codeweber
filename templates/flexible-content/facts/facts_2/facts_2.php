@@ -6,10 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Company Facts',
-      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-primary mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-primary mb-3 %2$s">%1$s</h2>',
 
       'title' => 'We are proud of our works',
-      'patternTitle' => '<h3 class="display-4 pe-xl-15">%s</h3>',
+      'patternTitle' => '<h3 class="display-4 pe-xl-15 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -29,10 +29,12 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-lg-4 <?php echo $block->column_class_1; ?>">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
          <div class="col-lg-8 <?php echo $block->column_class_2; ?>">

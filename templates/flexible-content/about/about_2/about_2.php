@@ -28,10 +28,10 @@ if (have_rows('icon_text_count')) {
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'We are a creative company that focuses on establishing long-term relationships with customers.',
-      'patternTitle' => '<h3 class="display-5 mb-5">%s</h3>',
+      'patternTitle' => '<h3 class="display-5 mb-5 %2$s">%1$s</h3>',
 
       'paragraph' => 'Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Vestibulum id ligula porta felis euismod semper. Vestibulum id ligula.',
-      'patternParagraph' => '<p class="mb-7">%s</p>',
+      'patternParagraph' => '<p class="mb-7 %2$s">%1$s</p>',
 
       'multi_image' => array(
          array(

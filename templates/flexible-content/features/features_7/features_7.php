@@ -41,9 +41,11 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
          </div>
          <!--/column -->

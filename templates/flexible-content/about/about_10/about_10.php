@@ -6,10 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Hi, I\'m Julia, a documentary wedding and couples photographer currently working from and based in London.',
-      'patternTitle' => '<h2 class="display-5 mb-5">%s</h2>',
+      'patternTitle' => '<h2 class="display-5 mb-5 %2$s">%1$s</h2>',
 
       'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio. Sed posuere consectetur est at lobortis facilisis in.',
-      'patternParagraph' => '<p class="mb-6">%s</p>',
+      'patternParagraph' => '<p class="mb-6 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 

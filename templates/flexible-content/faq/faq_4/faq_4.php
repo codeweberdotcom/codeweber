@@ -7,22 +7,16 @@
 
 $block = new CW_Settings(
    $cw_settings = array(
-      // 'subtitle' => 'FAQ',
-      // 'patternSubtitle' => '<div class="fs-15 text-uppercase text-primary mb-3">%s</div>',
 
       'title' => 'Frequently Asked Questions',
-      'patternTitle' => '<h2 class="display-4 mb-4">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-4 %2$s">%1$s</h2>',
 
-      'paragraph' => 'If you don\'t see an answer to your question, you can send us an email from our contact form.',
-      'patternParagraph' => '<p class="lead fs-lg mb-0">%s</p>',
-
-      // 'buttons' => '<a href="#" class="btn btn-primary rounded-pill">All FAQ</a>',
-      // 'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+      'subtitle' => 'If you don\'t see an answer to your question, you can send us an email from our contact form.',
+      'patternSubtitle' => '<p class="lead fs-lg mb-0 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
       'divider' => true,
-
 
       'column_class_1' => '',
       'column_class_2' => 'order-lg-2',
@@ -98,10 +92,12 @@ $block = new CW_Settings(
          <div class="card-body p-md-10 p-xl-11">
             <div class="row gx-lg-8 gx-xl-12 gy-10">
                <div class="col-lg-6 <?php echo $block->column_class_1; ?>">
+                  <?php echo $block->subtitle_first; ?>
+                  <!--/subtitle -->
                   <?php echo $block->title; ?>
                   <!--/title -->
-                  <?php echo $block->paragraph; ?>
-                  <!--/paragraph -->
+                  <?php echo $block->subtitle_second; ?>
+                  <!--/subtitle -->
                </div>
                <!--/column -->
                <div class="col-lg-6 <?php echo $block->column_class_2; ?>">

@@ -27,7 +27,7 @@ if (get_field('email', 'option')) {
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Convinced yet? Let\'s make something great together.',
-      'patternTitle' => '<h2 class="display-4 mb-8">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-8 %2$s">%1$s</h2>',
 
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,

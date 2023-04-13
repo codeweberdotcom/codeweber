@@ -25,11 +25,11 @@ $type_field = get_sub_field('select_type');
 $block = new CW_Settings(
    $cw_settings = array(
 
-      'title' => 'Happy Customers',
-      'patternTitle' => '<h2 class="fs-16 text-uppercase text-primary mb-3">%s</h2>',
+      'subtitle' => 'Happy Customers',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-primary mb-3 %2$s">%1$s</h2>',
 
-      'subtitle' => 'Don\'t take our word for it. See what customers are saying about us.',
-      'patternSubtitle' => '<h3 class="display-4 mb-10 px-xxl-10">%s</h3>',
+      'title' => 'Don\'t take our word for it. See what customers are saying about us.',
+      'patternTitle' => '<h3 class="display-4 mb-10 px-xxl-10 %2$s">%1$s</h3>',
 
       'swiper' => array(
          'swiper_container_class' => '',
@@ -55,9 +55,11 @@ $block = new CW_Settings(
          <div class="card-body py-14 px-lg-0">
             <div class="row text-center">
                <div class="col-lg-8 offset-lg-2">
+                  <?php echo $block->subtitle_first; ?>
+                  <!--/subtitle -->
                   <?php echo $block->title; ?>
                   <!--/title -->
-                  <?php echo $block->subtitle; ?>
+                  <?php echo $block->subtitle_second; ?>
                   <!--/subtitle -->
                </div>
                <!-- /column -->

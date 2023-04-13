@@ -1,41 +1,42 @@
 <?php
-/* Add settings */
-$settings = new Settings();
 
-$settings->title = "Get Consultation";
-$settings->subtitle = "Call Now";
-//$settings->paragraph = 'We help our clients to increase their website traffic, rankings and visibility in search results.';
-$settings->imageurl = get_template_directory_uri() . '/dist/img/photos/bg3.jpg';
-$settings->backgroundurl = get_template_directory_uri() . '/dist/img/photos/bg3.jpg';
-$settings->videourl = get_template_directory_uri() . '/dist/media/movie.mp4';
-$settings->typewriter = 'customer satisfaction,business needs,creative ideas';
-$settings->backgroundcolor = 'dark';
-$settings->backgroundcolor_light = 'light';
-$settings->textcolor = 'white';
-$settings->GetDataACF();
-
-/* Add buttons */
-$button = new Buttons();
-$button->form_button = "rounded-pill";
-$button->button_size = 'btn-lg';
-$button->class_button_wrapper = "d-flex justify-content-center flex-wrap justify-content-lg-start";
-$button->data_cues = "slideInDown";
-$button->data_group = "page-title-buttons";
-$button->data_delay = "900";
-$button->default_button = '<span><a class="btn btn-lg btn-white rounded-pill mb-0 text-nowrap">CallBack</a></span>';
+/**
+ *  Call to Action 100
+ */
 
 /** Phone */
 $phone = get_field('phone', 'option');
+
+
+$block = new CW_Settings(
+   $cw_settings = array(
+      'title' => 'Get Consultation',
+      'patternTitle' => '<h2 class="display-6 text-white mb-4 mb-lg-0 %2$s">%1$s</h2>',
+
+      'subtitle' => 'Call Now',
+      'patternSubtitle' => '<p class="text-white mb-0 %2$s">%1$s</p>',
+
+      'buttons' => '<span><a class="btn btn-lg btn-white rounded-pill mb-0 text-nowrap">Call Back</a></span>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center flex-wrap justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+
+      'background_class_default' => 'card image-wrapper bg-full bg-image bg-overlay bg-overlay-400',
+      'background_data_default' => '/dist/img/photos/bg3.jpg',
+
+   )
+);
 ?>
 
-<section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?> wrapper">
+<section id="<?php echo esc_html($args['block_id']); ?>" class="wrapper bg-light">
    <div class="container">
       <div class="row">
          <div class="col-xl-12 mx-auto">
-            <div class="card image-wrapper bg-full bg-image bg-overlay bg-overlay-400" data-image-src="<?php echo $settings->backgroundurl; ?>">
+            <div class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
                <div class="card-body p-6 p-md-11 d-lg-flex flex-row align-items-lg-center justify-content-md-between text-left text-lg-start">
                   <div class="col-lg-6 col-xl-6 col-xxl-7">
-                     <h3 class="display-6 text-white mb-4 mb-lg-0"><?php echo $settings->title; ?></h3>
+                     <?php echo $block->subtitle_first; ?>
+                     <!--/subtitle -->
+                     <?php echo $block->title; ?>
+                     <!--/title -->
                   </div>
                   <div class="col">
                      <div class="d-flex mb-4 mb-lg-0">
@@ -48,13 +49,13 @@ $phone = get_field('phone', 'option');
                            <?php elseif (get_sub_field('phone') == 'Custom') : ?>
                               <a class="text-white fs-22 fw-bold" href="tel:<?php the_sub_field('custom_phone'); ?>"><?php the_sub_field('custom_phone'); ?></a>
                            <?php endif; ?>
-                           <p class="text-white mb-0"><?php echo $settings->subtitle; ?></p>
+                           <?php echo $block->subtitle_second; ?>
+                           <!--/subtitle -->
                         </div>
                      </div>
                   </div>
                   <div class="col-lg-2">
-                     <!--  buttons group -->
-                     <?php $button->showbuttons(); ?>
+                     <?php echo $block->buttons; ?>
                      <!--/buttons group -->
                   </div>
                </div>

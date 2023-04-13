@@ -7,8 +7,7 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Trusted by Over 5000 Clients',
-      'patternSubtitle' => '<p class="text-center mb-8">%s</p>',
-      'subtitle_lead' => 'true',
+      'patternSubtitle' => '<p class="text-center mb-8 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -52,10 +51,13 @@ $block = new CW_Settings(
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
-      <?php echo $block->subtitle; ?>
+      <?php echo $block->subtitle_first; ?>
+      <!--/subtitle -->
+      <?php echo $block->subtitle_second; ?>
       <!--/subtitle -->
       <div data-cues="fadeIn" data-group="page-title-buttons" data-delay="100">
-         <?php echo $block->swiper_final; ?> <!--/swiper -->
+         <?php echo $block->swiper_final; ?>
+         <!--/swiper -->
       </div>
       <!--/swiper -->
    </div>

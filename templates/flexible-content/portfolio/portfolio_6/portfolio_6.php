@@ -36,9 +36,9 @@ if ($categories) {
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Latest Projects',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
       'subtitle' => 'Check out some of my latest projects with creative ideas.',
-      'patternSubtitle' => '<p class="lead fs-20 mb-0">%s</p>',
+      'patternSubtitle' => '<p class="lead fs-20 mb-0 %2$s">%1$s</p>',
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,
       'buttons' => ' <a href="/projects" class="btn btn-primary rounded-pill mb-0">See All Projects</a>',
@@ -51,8 +51,9 @@ $block = new CW_Settings(
    <div class="container py-14 pt-md-16">
       <div class="row align-items-center mb-10">
          <div class="col-md-8 col-lg-9 col-xl-8 col-xxl-7 pe-xl-20">
+            <?php echo $block->subtitle_first; ?>
             <?php echo $block->title; ?>
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
          </div>
          <!--/column -->
          <div class="col-md-4 col-lg-3 ms-md-auto text-md-end mt-5 mt-md-0">

@@ -24,17 +24,17 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'Happy Customers',
-      'patternTitle' => '<h2 class="display-4 mb-3 text-center">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 text-center %2$s">%1$s</h2>',
 
       'subtitle' => 'Customer satisfaction is our major goal. See what our customers are saying about us.',
-      'patternSubtitle' => '<p class="lead text-center mb-6 px-md-16 px-lg-0">%s</p>',
+      'patternSubtitle' => '<p class="lead text-center mb-6 px-md-16 px-lg-0 %2$s">%1$s</p>',
 
       'buttons' => '<a href="#" class="btn btn-primary rounded-pill">All Testimonials</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
 
       'background_class_default' => 'wrapper bg-light',
 
-      // 'divider' => true,
+      'divider' => true,
 
       'shapes' => array('<div class="shape rounded-circle bg-soft-yellow rellax w-16 h-16" data-rellax-speed="1" style="bottom: 0.5rem; right: -1.7rem;"></div>', '<div class="shape bg-dot primary rellax w-16 h-16" data-rellax-speed="1" style="top: -1rem; left: -1.7rem;"></div>'),
 
@@ -44,9 +44,11 @@ $block = new CW_Settings(
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
+      <?php echo $block->subtitle_first; ?>
+      <!--/subtitle -->
       <?php echo $block->title; ?>
       <!--/title -->
-      <?php echo $block->subtitle; ?>
+      <?php echo $block->subtitle_second; ?>
       <!--/subtitle -->
       <div class="position-relative">
          <?php echo $block->shapes; ?>

@@ -7,10 +7,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Package Design',
-      'patternTitle' => '<h2 class="h3 display-4 mb-4">%s</h2>',
+      'patternTitle' => '<h2 class="h3 display-4 mb-4 %2$s">%1$s</h2>',
 
       'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum. Maecenas sed diam eget risus varius.',
-      'patternParagraph' => '<p class="mb-5">%s</p>',
+      'patternParagraph' => '<p class="mb-5 %2$s">%1$s</p>',
 
       'buttons' => '<a href="#" class="btn btn-soft-leaf rounded-pill mt-6 mb-0">More Details</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',

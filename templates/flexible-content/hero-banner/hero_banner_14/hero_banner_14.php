@@ -6,13 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'We bring rapid solutions for your business.',
-      'patternTitle' => '<h1 class="display-1 fs-66 lh-xxs mb-0">%s</h1>',
+      'patternTitle' => '<h1 class="display-1 fs-66 lh-xxs mb-0 %2$s">%1$s</h1>',
 
       'paragraph' => 'We are an award winning branding design agency that strongly believes in the power of creative ideas.',
-      'patternParagraph' => '<p class="lead fs-25 my-3">%s</p>',
-
-      // 'subtitle' => 'Grow Your Business with Our Solutions.',
-      // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+      'patternParagraph' => '<p class="lead fs-25 my-3 %2$s">%1$s</p>',
 
       'buttons' => '<a href="#" class="more hover">Learn More</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
@@ -24,13 +21,7 @@ $block = new CW_Settings(
       'background_pattern_url' => '/dist/img/pattern.png',
 
       'divider' => true,
-      //'divider_angles' => 'upper-start',
-      //'divider_wave' => '<!-- Wave 2 --><div class="overflow-hidden"><div class="divider text-white mx-n2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60"><path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z"/></svg></div></div><!-- /.overflow-hidden -->',
 
-      // 'image_pattern' => '<figure %5$s><img class="w-auto" src="%1$s" srcset="%2$s" alt="%3$s" /></figure>',
-      // 'image_link' => '/dist/img/illustrations/i6.png',
-      // 'image_thumb_size' => 'sandbox_hero_1',
-      // 'image_big_size' => 'project_1',
       'shapes' => array('<div class="shape bg-dot primary rellax w-17 h-21" data-rellax-speed="1" style="top: -2.5rem; right: -2.7rem;"></div>'),
 
       'swiper' => array(
@@ -64,8 +55,6 @@ $block = new CW_Settings(
          'image_shape' => 'rounded'
       ),
 
-      //'column_class_1' => 'order-2 order-lg-0',
-      //'column_class_2' => '',
 
    )
 );
@@ -76,7 +65,6 @@ $block = new CW_Settings(
    <div class="container pt-10 pt-md-14 pb-14 pb-md-0">
       <div class="row gx-md-8 gx-lg-12 gy-3 gy-lg-0 mb-13">
          <div class="col-lg-6">
-            <h1 class=""></h1>
             <?php echo $block->title; ?>
             <!--/title -->
          </div>

@@ -22,7 +22,7 @@ if ($team) {
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Save your time and money by choosing our professional team.',
-      'patternTitle' => '<h2 class="display-4 mb-3 px-lg-14">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 px-lg-14 %2$s">%1$s</h2>',
 
       // 'subtitle' => 'Think unique and be innovative. Make a difference with Sandbox.',
       // 'patternSubtitle' => '<h3 class="display-4 mb-7 px-lg-19 px-xl-18">%s</h3>',
