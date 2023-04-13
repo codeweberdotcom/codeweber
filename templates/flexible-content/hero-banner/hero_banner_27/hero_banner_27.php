@@ -6,10 +6,10 @@
 $block = new CW_Settings(
   $cw_settings = array(
     'title' => 'We bring solutions to make life <span class="underline-3 style-3 yellow">easier</span>',
-    'patternTitle' => '<h1 class="display-1 fs-56 mb-4 mt-0 mt-lg-5 ls-xs pe-xl-5 pe-xxl-0">%s</h1>',
+    'patternTitle' => '<h1 class="display-1 fs-56 mb-4 mt-0 mt-lg-5 ls-xs pe-xl-5 pe-xxl-0 %2$s">%1$s</h1>',
 
     'paragraph' => 'We are a creative company that focuses on long term relationships with customers.',
-    'patternParagraph' => '<p class="lead fs-23 lh-sm mb-7 pe-lg-5 pe-xl-5 pe-xxl-0">%s</p>',
+    'patternParagraph' => '<p class="lead fs-23 lh-sm mb-7 pe-lg-5 pe-xl-5 pe-xxl-0 %2$s">%1$s</p>',
 
     'buttons' => '<div><a href="#" class="btn btn-lg btn-primary rounded">Read More</a></div>',
     'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',

@@ -6,10 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Creative. Smart. Awesome.',
-      'patternTitle' => '<h1 class="h2 display-1 mb-4">%s</h1>',
+      'patternTitle' => '<h1 class="h2 display-1 mb-4 %2$s">%1$s</h1>',
 
       'paragraph' => 'We are an award winning web & mobile design agency that strongly believes in the power of creative ideas.',
-      'patternParagraph' => '<p class="lead fs-24 lh-sm px-md-5 px-xl-15 px-xxl-10 mb-7">%s</p>',
+      'patternParagraph' => '<p class="lead fs-24 lh-sm px-md-5 px-xl-15 px-xxl-10 mb-7 %2$s">%1$s</p>',
 
       // 'subtitle' => 'Grow Your Business with Our Solutions.',
       // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',

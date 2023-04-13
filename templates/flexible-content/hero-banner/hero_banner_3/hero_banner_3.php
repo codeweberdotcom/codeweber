@@ -6,10 +6,10 @@
 $block = new CW_Settings(
   $cw_settings = array(
     'title' => 'Sandbox focuses on',
-    'patternTitle' => '<h1 class="display-1 text-white mb-4">%s</h1>',
+    'patternTitle' => '<h1 class="display-1 text-white mb-4 %2$s">%1$s</h1>',
 
     'paragraph' => 'We carefully consider our solutions to support each and every stage of your growth.',
-    'patternParagraph' => '<p class="lead fs-24 lh-sm text-white mb-7 pe-md-18 pe-lg-0 pe-xxl-15">%s</p>',
+    'patternParagraph' => '<p class="lead fs-24 lh-sm text-white mb-7 pe-md-18 pe-lg-0 pe-xxl-15 %2$s">%1$s</p>',
 
     // 'subtitle' => 'Grow Your Business with Our Solutions.',
     // 'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
