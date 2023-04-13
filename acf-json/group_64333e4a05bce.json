@@ -1,6 +1,6 @@
 {
     "key": "group_64333e4a05bce",
-    "title": "CW Services",
+    "title": "CW Services Template",
     "fields": [
         {
             "key": "field_64333e4a0cd9d",
@@ -116,6 +116,8 @@
                             ],
                             "taxonomy": "",
                             "filters": [
+                                "search",
+                                "post_type",
                                 "taxonomy"
                             ],
                             "elements": "",
@@ -210,5 +212,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681081395
+    "modified": 1681385546
 }
