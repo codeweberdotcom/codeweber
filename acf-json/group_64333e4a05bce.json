@@ -111,9 +111,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "post_type": [
-                                "services"
-                            ],
+                            "post_type": "",
                             "taxonomy": "",
                             "filters": [
                                 "search",
@@ -212,5 +210,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681385546
+    "modified": 1681386029
 }
