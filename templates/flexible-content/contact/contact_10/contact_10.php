@@ -53,10 +53,10 @@ if ($contact_form) {
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Get In Touch',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
-      'paragraph' => 'Have any questions? Reach out to us from our contact form and we will get back to you shortly.',
-      'patternParagraph' => '<p class="lead mb-8 pe-xl-10">%s</p>',
+      'subtitle' => 'Have any questions? Reach out to us from our contact form and we will get back to you shortly.',
+      'patternSubtitle' => '<p class="lead mb-8 pe-xl-10 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,
@@ -93,10 +93,12 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-6 col-xl-5 <?php echo $block->column_class_2; ?>">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->paragraph; ?>
-            <!--/paragraph -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $cf_form; ?>
             <!-- /form -->
          </div>

@@ -8,10 +8,10 @@
 $block = new CW_Settings(
   $cw_settings = array(
     'title' => 'A few reasons why our valued customers choose us.',
-    'patternTitle' => '<h2 class="display-5 mb-7">%s</h2>',
+    'patternTitle' => '<h2 class="display-5 mb-7 %2$s">%1$s</h2>',
 
     'subtitle' => 'Why Choose Us?',
-    'patternSubtitle' => '<p class="fs-15 text-uppercase text-line text-primary mb-3">%s</p>',
+    'patternSubtitle' => '<p class="fs-15 text-uppercase text-line text-primary mb-3 %2$s">%1$s</p>',
 
     'background_class_default' => 'wrapper bg-light',
 
@@ -116,10 +116,12 @@ $block = new CW_Settings(
       </div>
       <!--/column -->
       <div class="col-lg-5 <?php echo $block->column_class_2; ?>">
-        <?php echo $block->subtitle; ?>
+        <?php echo $block->subtitle_first; ?>
         <!--/subtitle -->
         <?php echo $block->title; ?>
         <!--/title -->
+        <?php echo $block->subtitle_second; ?>
+        <!--/subtitle -->
         <?php echo $block->accordeon; ?>
         <!--/.accordion -->
       </div>

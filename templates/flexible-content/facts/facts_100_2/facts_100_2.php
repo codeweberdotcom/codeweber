@@ -29,11 +29,11 @@ $type_field = get_sub_field('select_type');
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'We are proud of our works',
-      'patternTitle' => '<h3 class="display-4 mb-0 pe-xxl-15">%s</h3>',
-
       'subtitle' => 'Company Facts',
-      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-line text-primary mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-line text-primary mb-3 %2$s">%1$s</h2>',
+
+      'title' => 'We are proud of our works',
+      'patternTitle' => '<h3 class="display-4 mb-0 pe-xxl-15 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-soft-primary',
 
@@ -53,10 +53,12 @@ $block = new CW_Settings(
    <div class="container py-14 pt-md-17 pb-md-21">
       <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0 mb-2 align-items-end">
          <div class="col-lg-4">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
          <div class="col-lg-8 mt-lg-2">

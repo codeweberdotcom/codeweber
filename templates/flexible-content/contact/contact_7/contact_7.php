@@ -10,10 +10,10 @@ $icon = new CW_Icon(NULL, NULL, 'mb-4', NULL, NULL, NULL, NULL, NULL, NULL, NULL
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Join Our Community',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
       'subtitle' => 'We are trusted by over 5000+ clients. Join them by using our services and grow your business.',
-      'patternSubtitle' => '<p class="lead fs-lg mb-6 px-xl-10 px-xxl-15">%s</p>',
+      'patternSubtitle' => '<p class="lead fs-lg mb-6 px-xl-10 px-xxl-15 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,
@@ -29,9 +29,11 @@ $block = new CW_Settings(
          <div class="col-md-9 col-lg-7 col-xl-7 mx-auto text-center">
             <?php echo $icon->final_icon; ?>
             <!--/final_icon -->
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
          </div>
          <!-- /column -->

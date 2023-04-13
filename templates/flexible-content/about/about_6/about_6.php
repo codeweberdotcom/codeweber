@@ -6,7 +6,7 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'We bring rapid solutions to make the life of our customers easier.',
-      'patternTitle' => ' <h2 class="display-4 mb-6 pe-xxl-6">%s</h2>',
+      'patternTitle' => ' <h2 class="display-4 mb-6 pe-xxl-6 %2$s">%1$s</h2>',
 
       'background_class_default' => 'wrapper bg-light',
 

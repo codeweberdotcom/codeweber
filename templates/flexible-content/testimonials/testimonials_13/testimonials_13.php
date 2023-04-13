@@ -25,11 +25,10 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'We are proud of our works',
-      'patternTitle' => '<h2 class="h3 display-4 mb-3 pe-xxl-15">%s</h2>',
+      'patternTitle' => '<h2 class="h3 display-4 mb-3 pe-xxl-15 %2$s">%1$s</h2>',
 
       'subtitle' => 'We bring solutions to make life easier for our customers.',
-      'patternSubtitle' => '<p class="lead fs-lg mb-0 pe-xxl-10">%s</p>',
-      'subtitle_lead' => 'true',
+      'patternSubtitle' => '<p class="lead fs-lg mb-0 pe-xxl-10 %2$s">%1$s</p>',
 
       'features' => '<div class="col-md-4"><img src="' . get_template_directory_uri() . '/dist/img/icons/solid/target.svg" class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia mb-3" alt="" /><h3 class="counter">1000+</h3><p class="mb-0">Completed Projects</p></div><!-- /column -->',
       'features_pattern' => '<div class="col-md-4 %1$s">%2$s<h3 class="counter">%3$s</h3><p class="mb-0">%4$s</p>%5$s</div><!--/column -->',
@@ -51,9 +50,11 @@ $block = new CW_Settings(
             <div class="container">
                <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0">
                   <div class="col-lg-4 text-center text-lg-start">
+                     <?php echo $block->subtitle_first; ?>
+                     <!--/subtitle -->
                      <?php echo $block->title; ?>
                      <!--/title -->
-                     <?php echo $block->subtitle; ?>
+                     <?php echo $block->subtitle_second; ?>
                      <!--/subtitle -->
                   </div>
                   <!-- /column -->

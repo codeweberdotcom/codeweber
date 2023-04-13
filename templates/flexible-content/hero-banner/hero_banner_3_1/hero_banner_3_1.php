@@ -6,7 +6,7 @@
 $block = new CW_Settings(
   $cw_settings = array(
     'title' => 'I\'m User Interface Designer & Developer.',
-    'patternTitle' => '<h1 class="display-1 mb-5">%s</h1>',
+    'patternTitle' => '<h1 class="display-1 mb-5 %2$s">%1$s</h1>',
 
     'buttons' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900"><span><a href="#" class="btn btn-lg btn-primary rounded-pill me-2">See My Works</a></span><span><a href="#" class="btn btn-lg btn-outline-primary rounded-pill">Contact Me</a></span></div>',
     'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',

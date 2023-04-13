@@ -109,10 +109,12 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-5">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/paragraph -->
             <?php echo $block->buttons; ?>

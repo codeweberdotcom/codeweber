@@ -37,10 +37,10 @@ if ($categories) {
 
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Check out some of our awesome projects with creative ideas and great design.',
-      'patternTitle' => '<h3 class="display-3 mb-10">%s</h3>',
       'subtitle' => 'Latest Projects',
-      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-primary mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-primary mb-3 %2$s">%1$s</h2>',
+      'title' => 'Check out some of our awesome projects with creative ideas and great design.',
+      'patternTitle' => '<h3 class="display-3 mb-10 %2$s">%1$s</h3>',
       'background_class_default' => 'wrapper bg-light',
       'divider' => true,
    )
@@ -52,8 +52,9 @@ $block = new CW_Settings(
       <div class="container py-14 py-md-16">
          <div class="row">
             <div class="col-lg-10 col-xl-9 col-xxl-8 mx-auto text-center">
-               <?php echo $block->subtitle; ?>
+               <?php echo $block->subtitle_first; ?>
                <?php echo $block->title; ?>
+               <?php echo $block->subtitle_second; ?>
             </div>
             <!-- /column -->
          </div>

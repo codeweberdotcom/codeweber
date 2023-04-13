@@ -1,27 +1,19 @@
 <?php
 
 /**
- * Facts 2
+ * Facts 3
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'We are proud of our works',
-      'patternTitle' => '<h2 class="display-4 pe-xl-15">%s</h2>',
-
-      // 'paragraph' => 'Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur.',
-      // 'patternParagraph' => '<p class="mb-0">%s</p>',
-
-      'subtitle' => 'Company Facts',
-      'patternSubtitle' => '<div class="fs-15 text-uppercase text-primary mb-3">%s</div>',
 
       'background_class_default' => 'card image-wrapper bg-full bg-image bg-overlay',
       'background_data_default' => '/dist/img/photos/bg2.jpg',
 
-      // 'divider' => true,
-
       'features' => '<div class="col-6 col-lg-3"><h3 class="counter counter-lg text-white">7518</h3><p>Completed Projects</p></div><!--/column -->',
       'features_pattern' => '<div class="col-6 col-lg-3 %1$s"><div class="h3 counter counter-lg text-white">%3$s</div><p>%4$s</p></div><!--/column -->',
       // 'features_style_icon' => 'mb-3'
+
+      // 'divider' => true,
    )
 );
 ?>

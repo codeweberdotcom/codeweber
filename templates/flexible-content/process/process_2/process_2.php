@@ -6,10 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'How We Do It?',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
-      'paragraph' => 'We make your spending <span class="underline">stress-free</span> for you to have the perfect control.',
-      'patternParagraph' => '<p class="lead fs-lg mb-8">%s</p>',
+      'subtitle' => 'We make your spending <span class="underline">stress-free</span> for you to have the perfect control.',
+      'patternSubtitle' => '<p class="lead fs-lg mb-8 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -31,10 +31,12 @@ $block = new CW_Settings(
       <?php } ?>
       <!-- /video background -->
       <div class="container py-14 py-md-16">
+         <?php echo $block->subtitle_first; ?>
+         <!--/subtitle -->
          <?php echo $block->title; ?>
          <!--/title -->
-         <?php echo $block->paragraph; ?>
-         <!--/pargraph -->
+         <?php echo $block->subtitle_second; ?>
+         <!--/subtitle -->
          <div class="row gx-lg-8 gx-xl-12 gy-6 process-wrapper line">
             <?php echo $block->features; ?>
             <!--/features -->

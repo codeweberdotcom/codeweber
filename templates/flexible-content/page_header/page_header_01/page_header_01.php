@@ -6,7 +6,7 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Get in Touch',
-      'patternTitle' => '<h1 class="display-1 mb-3 text-white">%s</h1>',
+      'patternTitle' => '<h1 class="display-1 mb-3 text-white %2$s">%1$s</h1>',
 
       'background_class_default' => 'wrapper image-wrapper bg-image bg-overlay bg-overlay-400 text-white',
       'background_data_default' => '/dist/img/photos/bg3.jpg',

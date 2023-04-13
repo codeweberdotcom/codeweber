@@ -34,8 +34,9 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mx-auto text-center">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <?php echo $block->title; ?>
+            <?php echo $block->subtitle_second; ?>
          </div>
          <!-- /column -->
       </div>

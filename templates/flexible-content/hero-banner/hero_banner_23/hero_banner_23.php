@@ -7,10 +7,10 @@
 $block1 = new CW_Settings(
    $cw_settings = array(
       'title' => 'couples & wedding photographer',
-      'patternTitle' => ' <h1 class="display-1 fs-60 text-white  animate__animated animate__zoomIn animate__delay-2s">%s</h1>',
+      'patternTitle' => '<h1 class="display-1 fs-60 text-white  animate__animated animate__zoomIn animate__delay-2s %2$s">%1$s</h1>',
 
       'subtitle' => 'I\'m Julia Sandbox',
-      'patternSubtitle' => '<div class="fs-19 text-uppercase ls-xl text-white mb-3 animate__animated animate__zoomIn animate__delay-1s">%s</div>',
+      'patternSubtitle' => '<div class="fs-19 text-uppercase ls-xl text-white mb-3 animate__animated animate__zoomIn animate__delay-1s %2$s">%1$s</div>',
 
       'buttons_pattern' => '<div class="d-flex justify-content-center mt-5 animate__animated animate__zoomIn animate__delay-3s">%s</div>',
       'buttons' => ' <a href="' . get_template_directory_uri() . '/dist/media/movie.mp4" class="btn btn-circle btn-white btn-play ripple mx-auto mt-5 animate__animated animate__zoomIn animate__delay-3s" data-glightbox><i class="icn-caret-right"></i></a>',
@@ -22,7 +22,7 @@ $block = new CW_Settings(
    $cw_settings = array(
       'background_class_default' => 'wrapper bg-dark',
       'swiper' => array(
-         'swiper_first_slide' => 'true', // нету
+         'swiper_first_slide' => 'true', // нет
          'swiper_container_class' => 'swiper-thumbs-container swiper-fullscreen nav-dark',
          'swiper_container_data' => '',
          'swiper_container_content' => '<div class="swiper-static"><div class="container h-100 d-flex align-items-center justify-content-center"><div class="row"><div class="col-lg-8 mx-auto mt-n10 text-center">' . $block1->subtitle . $block1->title . $block1->buttons . '</div><!-- /column --></div><!-- /.row --></div><!-- /.container --></div><!-- /.swiper-static -->',

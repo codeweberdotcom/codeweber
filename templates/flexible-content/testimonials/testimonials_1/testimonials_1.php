@@ -25,13 +25,13 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'Our Community',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
       'subtitle' => 'Customer satisfaction is our major goal. See what our customers are saying about us.',
-      'patternSubtitle' => '<p class="lead fs-lg">%s</p>',
+      'patternSubtitle' => '<p class="lead fs-lg %2$s">%1$s</p>',
 
       'paragraph' => 'Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Vestibulum id ligula porta felis euismod semper.',
-      'patternParagraph' => '<p>%s</p>',
+      'patternParagraph' => '<p class="%2$s">%1$s</p>',
 
       'buttons' => '<a href="/testimonials/" class="btn btn-navy rounded-pill mt-3">All Testimonials</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
@@ -204,9 +204,11 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-5">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/paragraph -->

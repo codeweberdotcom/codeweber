@@ -6,10 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Save Time and Money',
-      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
 
       'title' => 'Save your time and money by choosing our <span class="underline-3 style-2 yellow">professional</span> team.',
-      'patternTitle' => '<h3 class="display-3 mb-0 pe-xl-10 pe-xxl-15">%s</h3>',
+      'patternTitle' => '<h3 class="display-3 mb-0 pe-xl-10 pe-xxl-15 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -24,16 +24,16 @@ $block = new CW_Settings(
 );
 ?>
 
-
-
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16">
       <div class="row align-items-center gy-8">
          <div class="col-lg-7 text-center text-lg-start <?php echo $block->column_class_1; ?>">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
          </div>
          <!-- /column -->
          <div class="col-lg-5 <?php echo $block->column_class_2; ?>">

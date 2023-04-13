@@ -51,7 +51,6 @@ $block = new CW_Settings(
       ),
 
       'label_demo' => '<div class="card shadow-lg" style="bottom: 5rem; right: 5rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
-
       'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
       'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),
@@ -60,9 +59,7 @@ $block = new CW_Settings(
       'column_class_2' => '',
 
       'features' => '<div class="col-md-6"><h3 class="counter counter-lg mb-1">99.7%</h3><h6 class="fs-17 mb-1">Customer Satisfaction</h6><span class="ratings five"></span></div><!--/column -->',
-
       'features_pattern' => '<div class="col-md-6"><div class="d-flex flex-row %6$s"><div>%2$s</div><div><div class="h3 counter counter-lg mb-1">%3$s</div><div class="h6 fs-17 mb-1">%4$s</div><span class="ratings five"></span></div></div></div><!--/column -->',
-
       'features_style_icon' => 'me-4'
    )
 );
@@ -78,10 +75,12 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-5 me-auto <?php echo $block->column_class_2; ?>">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/pargraph -->
             <div class="row align-items-center counter-wrapper gy-6">

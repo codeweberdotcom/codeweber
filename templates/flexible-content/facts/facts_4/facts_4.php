@@ -6,10 +6,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Join Our Community',
-      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
 
       'title' => 'We are trusted by over 5000+ clients. Join them now and grow your business.',
-      'patternTitle' => '<h3 class="display-4 mb-8 px-lg-12">%s</h3>',
+      'patternTitle' => '<h3 class="display-4 mb-8 px-lg-12 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper image-wrapper bg-auto no-overlay bg-image text-center bg-map',
       'background_data_default' => '/dist/img/map.png',
@@ -27,10 +27,12 @@ $block = new CW_Settings(
    <div class="container py-14 pt-md-16 pb-md-18">
       <div class="row pt-md-12">
          <div class="col-lg-10 col-xl-9 col-xxl-8 mx-auto">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
          </div>
          <!-- /.row -->
       </div>

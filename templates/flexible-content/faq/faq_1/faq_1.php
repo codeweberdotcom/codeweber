@@ -8,13 +8,10 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Common Questions',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
-
-      // 'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
-      // 'patternParagraph' => '<p class="mb-6">%s</p>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
       'subtitle' => 'If you don\'t see an <span class="underline">answer to your question</span>, you can send us an email from our contact form.',
-      'patternSubtitle' => '<p class="lead fs-lg mb-6 pe-xxl-10">%s</p>',
+      'patternSubtitle' => '<p class="lead fs-lg mb-6 pe-xxl-10 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -119,9 +116,11 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
             <?php echo $block->accordeon; ?>
             <!--/.accordion -->

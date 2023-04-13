@@ -25,10 +25,10 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'Our Community',
-      'patternTitle' => '<h2 class="display-4 mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="display-4 mb-3 %2$s">%1$s</h2>',
 
-      'paragraph' => 'Customer satisfaction is our major goal. See what our clients are saying about our services.',
-      'patternParagraph' => '<p class="lead fs-lg mb-6">%s</p>',
+      'subtitle' => 'Customer satisfaction is our major goal. See what our clients are saying about our services.',
+      'patternSubtitle' => '<p class="lead fs-lg mb-6 %2$s">%1$s</p>',
 
       'buttons' => '<a href="/testimonials/" class="btn btn-primary rounded-pill">All Testimonials</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
@@ -47,9 +47,11 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row gx-xl-12 gy-10">
          <div class="col-xl-4">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->paragraph; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
             <?php echo $block->buttons; ?>
             <!--/buttons group -->

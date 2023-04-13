@@ -6,13 +6,13 @@
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'What Makes Us Different?',
-      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-gradient gradient-1 mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-gradient gradient-1 mb-3 %2$s">%1$s</h2>',
 
       'title' => 'We make spending stress free so you have the perfect control.',
-      'patternTitle' => '<h3 class="display-4 mb-4 me-lg-n5">%s</h3>',
+      'patternTitle' => '<h3 class="display-4 mb-4 me-lg-n5 %2$s">%1$s</h3>',
 
       'paragraph' => 'Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus. Integer posuere erat a ante venenatis dapibus posuere velit.',
-      'patternParagraph' => '<p class="mb-6">%s</p>',
+      'patternParagraph' => '<p class="mb-6 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
 
@@ -84,10 +84,12 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-lg-5 <?php echo $block->column_class_2; ?>">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/pargraph -->
             <?php echo $block->list; ?>

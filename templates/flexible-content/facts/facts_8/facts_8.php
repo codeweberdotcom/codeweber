@@ -1,15 +1,15 @@
 <?php
 
 /**
- * Facts 7
+ * Facts 8
  */
 $block = new CW_Settings(
    $cw_settings = array(
       'subtitle' => 'Company Facts',
-      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3">%s</h2>',
+      'patternSubtitle' => '<h2 class="fs-16 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
 
       'title' => 'Save your time and money by choosing our professional team.',
-      'patternTitle' => '<h3 class="display-4 mb-10 px-lg-20 px-xl-20">%s</h3>',
+      'patternTitle' => '<h3 class="display-4 mb-10 px-lg-20 px-xl-20 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-soft-primary',
 
@@ -31,10 +31,12 @@ $block = new CW_Settings(
    <div class="container py-17">
       <div class="row text-center">
          <div class="col-xl-11 col-xxl-10 mx-auto">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $block->progress; ?>
             <!-- /.progress-list -->
             <!-- /.row -->

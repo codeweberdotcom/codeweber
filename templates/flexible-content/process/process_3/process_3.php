@@ -5,14 +5,12 @@
  */
 $block = new CW_Settings(
    $cw_settings = array(
-      'title' => 'Download the app, create your profile and voilà, you\'re all set!',
-      'patternTitle' => '<h2 class="display-4 mb-5">%s</h2>',
-
-      'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo.',
-      'patternParagraph' => '<p class="mb-8">%s</p>',
-
       'subtitle' => 'How It Works',
-      'patternSubtitle' => '<div class="fs-15 text-uppercase text-muted mb-3">%s</div>',
+      'patternSubtitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</div>',
+      'title' => 'Download the app, create your profile and voilà, you\'re all set!',
+      'patternTitle' => '<h3 class="display-4 mb-5 %2$s">%1$s</h2>',
+      'paragraph' => 'Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nulla vitae elit libero. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo.',
+      'patternParagraph' => '<p class="mb-8 %2$s">%1$s</p>',
 
       'background_class_default' => 'wrapper bg-light',
       //'background_data_default' => '/dist/img/photos/bg16.png',
@@ -90,10 +88,12 @@ $block = new CW_Settings(
             </div>
             <!-- /column -->
             <div class="col-lg-6 <?php echo $block->column_class_2; ?>">
-               <?php echo $block->subtitle; ?>
+               <?php echo $block->subtitle_first; ?>
                <!--/subtitle -->
                <?php echo $block->title; ?>
                <!--/title -->
+               <?php echo $block->subtitle_second; ?>
+               <!--/subtitle -->
                <?php echo $block->paragraph; ?>
                <!--/pargraph -->
                <div class="row gy-6 gx-xxl-8 process-wrapper">

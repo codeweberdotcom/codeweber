@@ -25,13 +25,13 @@ $block = new CW_Settings(
    $cw_settings = array(
 
       'title' => 'Happy Customers',
-      'patternTitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3">%s</h2>',
+      'patternTitle' => '<h2 class="fs-15 text-uppercase text-muted mb-3 %2$s">%1$s</h2>',
 
       'subtitle' => 'Don\'t take our word for it. See what customers are saying about us.',
-      'patternSubtitle' => '<h3 class="display-4 mb-10 px-xl-10 px-xxl-15">%s</h3>',
+      'patternSubtitle' => '<h3 class="display-4 mb-10 px-xl-10 px-xxl-15 %2$s">%1$s</h3>',
 
       'background_class_default' => 'wrapper bg-light',
-      // 'divider' => 'true', // не работает
+      'divider' => 'true',
    )
 );
 ?>
@@ -40,9 +40,11 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 mx-auto text-center">
+            <?php echo $block->subtitle_first; ?>
+            <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_second; ?>
             <!--/subtitle -->
          </div>
          <!-- /column -->

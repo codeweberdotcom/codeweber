@@ -96,10 +96,12 @@ $block = new CW_Settings(
    <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10">
          <div class="col-lg-6 mb-0 <?php echo $block->column_class_1; ?>">
-            <?php echo $block->subtitle; ?>
+            <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
             <!--/title -->
+            <?php echo $block->subtitle_second; ?>
+            <!--/subtitle -->
             <?php echo $block->paragraph; ?>
             <!--/paragraph -->
             <?php echo $block->buttons; ?>

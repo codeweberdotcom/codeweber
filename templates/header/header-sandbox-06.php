@@ -1,15 +1,20 @@
-<?php if ($args['style_nav'] == 'transparent') {
-   $class_nav = 'position-absolute navbar-dark';
+<?php
+if ($args['style_nav'] == 'transparent') {
+   $class_nav = 'position-absolute transparent ';
+   $class_nav .= $args['bg_nav'];
+} elseif ($args['style_nav'] == 'solid') {
+   $class_nav = $args['bg_nav'];
+} else {
+   $class_nav = NULL;
 }
 
 $transparent_style = $args['style_nav'];
 
-if ($args['bg_nav'] == 'nav-dark') {
+if ($args['bg_nav'] == 'navbar-dark') {
    $color_logo = 'light';
-} elseif ($args['bg_nav'] == 'nav-light') {
+} elseif ($args['bg_nav'] == 'navbar-light') {
    $color_logo = 'dark';
-} else {
-   $color_logo = NULL;
+   $transparent_style = 'solid';
 }
 ?>
 <header class="wrapper bg-soft-primary">
@@ -24,7 +29,7 @@ if ($args['bg_nav'] == 'nav-dark') {
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
    </div>
    <!-- /.alert -->
-   <nav class="navbar navbar-expand-lg classic transparent navbar-light <?php echo $class_nav; ?>">
+   <nav class="navbar navbar-expand-lg classic <?php echo $class_nav; ?>">
       <div class="container flex-lg-row flex-nowrap align-items-center">
          <div class="navbar-brand w-100 pe-3">
             <?php echo codeweber_logo($color_logo, NULL, $transparent_style); ?>
