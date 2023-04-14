@@ -2,7 +2,12 @@
          <div class="container pt-10 pt-md-14">
             <div class="row">
                <div class="col-md-8 col-lg-7 col-xl-6 col-xxl-5">
-                  <h1 class="display-1 mb-3"><?php codeweber_page_title(); ?></h1>
+                  <h1 class="display-1 mb-3">
+                     <?php if (get_theme_mod('project_title')) {
+                        echo get_theme_mod('project_title');
+                     } else {
+                        codeweber_page_title();
+                     } ?></h1>
                   <?php if (get_theme_mod('project_description')) { ?>
                      <p class="lead fs-lg pe-lg-15 pe-xxl-12"><?php echo get_theme_mod('project_description'); ?></p>
                   <?php } else { ?>

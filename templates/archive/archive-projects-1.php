@@ -3,7 +3,13 @@
       <div class="container py-13 py-md-17 text-center">
          <div class="row">
             <div class="col-lg-10 col-xxl-8 mx-auto">
-               <h1 class="display-1 mb-3"><?php codeweber_page_title(); ?></h1>
+               <h1 class="display-1 mb-3">
+                  <?php if (get_theme_mod('project_title')) {
+                     echo get_theme_mod('project_title');
+                  } else {
+                     codeweber_page_title();
+                  } ?>
+               </h1>
                <?php codeweber_breadcrumbs(NULL, NULL); ?>
             </div>
             <!-- /column -->
