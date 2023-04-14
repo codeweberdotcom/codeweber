@@ -189,10 +189,11 @@ class CW_SubTitle
       } else {
          $cw_subtitle_id = NULL;
       }
+
       return $cw_subtitle_id;
    }
 
-   //SubTitle_id
+   //SubTitle_class
    public function cw_subtitle_class($sub_title_class)
    {
       if (have_rows('cw_subtitle')) {
@@ -256,20 +257,17 @@ class CW_SubTitle
 
       if ($type_subtitle == 'Type 1') {
          if (get_theme_mod('codeweber_sub_title_color') !== 'default') {
-            $sub_title_pattern = '<h2 class="fs-16 text-uppercase ' . get_theme_mod('codeweber_sub_title_color') . ' mb-3">%s</h2>';
+            $sub_title_pattern = '<h2 class="fs-16 text-uppercase ' . get_theme_mod('codeweber_sub_title_color') . ' mb-3 ' . $class_p . '">%s</h2>';
          }
 
          if (get_theme_mod('codeweber_sub_title') !== 'default') {
-            $sub_title_pattern = '<h2 class="fs-16 text-uppercase text-line mb-3">%s</h2>';
+            $sub_title_pattern = '<h2 class="fs-16 text-uppercase text-line mb-3 ' . $class_p . '">%s</h2>';
          }
 
          if (get_theme_mod('codeweber_sub_title_color') !== 'default' && get_theme_mod('codeweber_sub_title') !== 'default') {
-            $sub_title_pattern = '<h2 class="fs-16 text-uppercase text-line mb-3 ' . get_theme_mod('codeweber_sub_title_color') . '">%s</h2>';
+            $sub_title_pattern = '<h2 class="fs-16 text-uppercase text-line mb-3 ' . get_theme_mod('codeweber_sub_title_color') . ' ' . $class_p . '">%s</h2>';
          }
       }
-
-
-
 
       if ($sub_title_pattern !== NULL) {
          $text = sprintf($sub_title_pattern, $this->sub_title_text, $class_p);
