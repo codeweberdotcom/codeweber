@@ -383,7 +383,7 @@ function codeweber_register_theme_customizer($wp_customize)
 
 
 
-// Woocommerce Header
+   // Woocommerce Header
    if (class_exists('WooCommerce')) {
       // Header Control
       $wp_customize->add_setting(
@@ -725,15 +725,8 @@ function codeweber_cpt_customize_register($wp_customize)
 
    ));
 
-   $wp_customize->add_setting('services_title', array(
-      'default' => '',
-      'type' => 'theme_mod',
-      'capability' => 'edit_theme_options',
-      'transport' => 'refresh',
 
-   ));
-
-   $wp_customize->add_control('services_title', array(
+   $wp_customize->add_control('service_title', array(
       'type' => 'textarea',
       'priority' => 15,
       'label' => __('Service Archive Title', 'codeweber'),
