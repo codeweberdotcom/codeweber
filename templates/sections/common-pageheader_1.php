@@ -12,12 +12,12 @@ if (get_the_post_thumbnail_url($post_id, 'full', null) && is_singular('services'
 			<div class="container pt-10 pb-12 pt-md-14 pb-md-14 text-center">
 				<div class="row">
 					<div class="col-md-7 col-lg-6 col-xl-6 mx-auto">
-						<h1 class="display-1 mb-3 text-white"><?php codeweber_page_title(); ?></h1>
+						<h1 class="display-1 mb-3 text-white"><?php echo codeweber_page_title(); ?></h1>
 					<?php } else { ?>
 						<div class="container pt-10 pb-12 pt-md-14 pb-md-14 text-center">
 							<div class="row">
 								<div class="col-md-7 col-lg-6 col-xl-5 mx-auto">
-									<h1 class="display-1 mb-3"><?php codeweber_page_title(); ?></h1>
+									<h1 class="display-1 mb-3"><?php echo codeweber_page_title(); ?></h1>
 								<?php }
 							codeweber_meta_blog(); // Blog Meta Data
 							codeweber_breadcrumbs('center', NULL); // Breadcrumbs

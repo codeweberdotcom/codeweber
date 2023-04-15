@@ -581,7 +581,7 @@ function codeweber_cpt_customize_register($wp_customize)
       'blog_template',
       array(
          'choices'  => array(
-            'default'   => 'Template 1',
+            'default'   => 'template_1',
          )
       )
    );
@@ -614,7 +614,7 @@ function codeweber_cpt_customize_register($wp_customize)
          'type' => 'theme_mod',
          'capability' => 'edit_theme_options',
          'choices'  => array(
-            'default'   => 'Template 1',
+            'default'   => 'template_1',
          )
       )
    );
@@ -677,12 +677,12 @@ function codeweber_cpt_customize_register($wp_customize)
    ));
 
 
-   // Service Control
+   // Service Archive Template
    $wp_customize->add_setting(
       'service_template',
       array(
          'choices'  => array(
-            'default'   => 'Template 1',
+            'default'   => 'template_1',
          )
       )
    );
@@ -697,10 +697,14 @@ function codeweber_cpt_customize_register($wp_customize)
             'template_1'   => 'Template 1',
             'template_2'   => 'Template 2',
             'template_3'   => 'Template 3',
+            'template_4'   => 'Template 4',
+            'template_5'   => 'Template 5',
          )
       )
    );
 
+
+   // Service Archive Description
    $wp_customize->add_setting('service_description', array(
       'default' => '',
       'type' => 'theme_mod',
@@ -717,6 +721,7 @@ function codeweber_cpt_customize_register($wp_customize)
    ));
 
 
+   //Service Archive Title
    $wp_customize->add_setting('service_title', array(
       'default' => '',
       'type' => 'theme_mod',
@@ -732,6 +737,78 @@ function codeweber_cpt_customize_register($wp_customize)
       'label' => __('Service Archive Title', 'codeweber'),
       'section' => 'services-section',
    ));
+
+
+   //
+
+   $wp_customize->add_setting(
+      'codeweber_header_service_style',
+      array(
+         'default' => 'solid',
+      )
+   );
+
+
+   $wp_customize->add_control(
+      'codeweber_header_service_style',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Style Service Header', 'codeweber'),
+         'section' => 'services-section',
+         'choices' => array(
+            'solid' => esc_html__('Solid', 'codeweber'),
+            'transparent' => esc_html__('Transparent', 'codeweber'),
+         ),
+      )
+   );
+
+
+   $wp_customize->add_setting(
+      'codeweber_header_service_color',
+      array(
+         'default' => 'dark',
+      )
+   );
+
+
+   $wp_customize->add_control(
+      'codeweber_header_service_color',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Color Text Header', 'codeweber'),
+         'section' => 'services-section',
+         'choices' => array(
+            'dark' => esc_html__('Dark', 'codeweber'),
+            'light' => esc_html__('Light', 'codeweber'),
+         ),
+      )
+   );
+
+   $wp_customize->add_setting(
+      'codeweber_page_service_header',
+      array(
+         'default' => 'type_1',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_page_service_header',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Secondary Header', 'codeweber'),
+         'section' => 'services-section',
+         'choices' => array(
+            'type_1' => esc_html__('Type 1', 'codeweber'),
+            'type_2' => esc_html__('Type 2', 'codeweber'),
+            'type_3' => esc_html__('Type 3', 'codeweber'),
+            'type_4' => esc_html__('Type 4', 'codeweber'),
+            'type_5' => esc_html__('Type 5', 'codeweber'),
+            'disable' => esc_html__('Disable', 'codeweber'),
+         ),
+      )
+   );
+
+   //
 
 
 
@@ -750,7 +827,7 @@ function codeweber_cpt_customize_register($wp_customize)
       'testimonial_template',
       array(
          'choices'  => array(
-            'default'   => 'Template 1',
+            'default'   => 'template_1',
          )
       )
    );

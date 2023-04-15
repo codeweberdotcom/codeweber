@@ -6,7 +6,7 @@
                      <?php if (get_theme_mod('project_title')) {
                         echo get_theme_mod('project_title');
                      } else {
-                        codeweber_page_title();
+                        echo codeweber_page_title();
                      } ?></h1>
                   <?php if (get_theme_mod('project_description')) { ?>
                      <p class="lead fs-lg pe-lg-15 pe-xxl-12"><?php echo get_theme_mod('project_description'); ?></p>

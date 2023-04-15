@@ -7,7 +7,7 @@
                   <?php if (get_theme_mod('project_title')) {
                      echo get_theme_mod('project_title');
                   } else {
-                     codeweber_page_title();
+                     echo codeweber_page_title();
                   } ?>
                </h1>
                <?php codeweber_breadcrumbs(NULL, NULL); ?>

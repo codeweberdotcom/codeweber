@@ -68,7 +68,7 @@ endif; ?>
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-lg-10 mx-auto">
-            <h1 class="display-4 mb-4"><?php codeweber_page_title(); ?></h1>
+            <h1 class="display-4 mb-4"><?php echo codeweber_page_title(); ?></h1>
             <div class="row gx-0 mb-12">
                <div class="col-md-9 text-justify">
                   <?php if (isset($project_description)) { ?>
