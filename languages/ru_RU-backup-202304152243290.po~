@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-04-17 10:43+0000\n"
+"PO-Revision-Date: 2023-04-15 22:36+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -214,10 +214,6 @@ msgstr "Все Сотрудники"
 msgid "Already have an account?"
 msgstr "Уже есть аккаунт?"
 
-#: functions/customize.php:896
-msgid "Angle Page Header"
-msgstr ""
-
 #: templates/content/single-faq.php:15
 msgid "Answer to the question:"
 msgstr "Ответ на вопрос:"
@@ -234,15 +230,11 @@ msgstr "Статьи по месяцам"
 msgid "Back to top"
 msgstr "Вернуться наверх"
 
-#: functions/customize.php:966
-msgid "Background Color"
-msgstr ""
-
-#: functions/customize.php:583
+#: functions/customize.php:582
 msgid "Blog"
 msgstr "Блог"
 
-#: functions/customize.php:602
+#: functions/customize.php:601
 msgid "Blog archive template"
 msgstr "Шаблон главной страницы Блога"
 
@@ -250,11 +242,11 @@ msgstr "Шаблон главной страницы Блога"
 msgid "Blog categories"
 msgstr "Категории Блога"
 
-#: functions/customize.php:584
+#: functions/customize.php:583
 msgid "blog settings"
 msgstr "Настройки блога"
 
-#: functions/customize.php:875
+#: functions/customize.php:808
 msgid "Breadcrumbs"
 msgstr "Хлебные крошки"
 
@@ -362,11 +354,11 @@ msgstr "Платформа"
 msgid "Codeweber"
 msgstr "Codeweber"
 
-#: functions/customize.php:574
+#: functions/customize.php:573
 msgid "Codeweber CPT Settings"
 msgstr "Codeweber CPT Настройки"
 
-#: functions/customize.php:691
+#: functions/customize.php:864
 msgid "Codeweber Theme Options"
 msgstr "Codeweber Настройки Темы"
 
@@ -375,7 +367,7 @@ msgid "Color Options"
 msgstr "Настройки Цветов"
 
 #: functions/customize.php:356 functions/customize.php:478
-#: functions/customize.php:852
+#: functions/customize.php:786
 msgid "Color Text Header"
 msgstr "Цвет текста Хедер"
 
@@ -447,7 +439,7 @@ msgid "Customer details"
 msgstr "Информация о покупателе"
 
 #: functions/customize.php:359 functions/customize.php:481
-#: functions/customize.php:855 functions/customize.php:922
+#: functions/customize.php:789
 msgid "Dark"
 msgstr "Темный"
 
@@ -456,12 +448,8 @@ msgstr "Темный"
 msgid "Date"
 msgstr "Дата"
 
-#: functions/customize.php:834 functions/customize.php:857
-msgid "Default"
-msgstr "По умолчанию"
-
 #: functions/customize.php:384 functions/customize.php:505
-#: functions/customize.php:948
+#: functions/customize.php:836
 msgid "Disable"
 msgstr "Отключено"
 
@@ -736,7 +724,7 @@ msgstr "Начать сейчас"
 msgid "Go to Homepage"
 msgstr "Перейти на Главную"
 
-#: templates/archive/archive-services-1.php:72
+#: templates/archive/archive-services-1.php:62
 msgid "Go to service"
 msgstr "Перейти к услуге"
 
@@ -906,7 +894,7 @@ msgid "Let’s Talk"
 msgstr "Обсудим ваш проект?"
 
 #: functions/customize.php:360 functions/customize.php:482
-#: functions/customize.php:856 functions/customize.php:921
+#: functions/customize.php:790
 msgid "Light"
 msgstr "Светлый"
 
@@ -1071,7 +1059,7 @@ msgstr "Нет Прайс-листов в корзине"
 msgid "No Thumbnail For Post"
 msgstr "Нет превью"
 
-#: functions/customize.php:879 functions/customize.php:900
+#: functions/customize.php:812
 msgid "Off"
 msgstr "Выключить"
 
@@ -1097,7 +1085,7 @@ msgstr "Адрес Офиса"
 msgid "Office addresses"
 msgstr "Адреса Офисов"
 
-#: functions/customize.php:878 functions/customize.php:899
+#: functions/customize.php:811
 msgid "On"
 msgstr "Включить"
 
@@ -1140,7 +1128,7 @@ msgstr "Заказы"
 msgid "Our Newsletter"
 msgstr "Наши новости"
 
-#: functions/customize.php:1002
+#: functions/customize.php:849
 msgid "Page Header Service Background"
 msgstr "Бэкграунд Хедера Страницы"
 
@@ -1292,11 +1280,11 @@ msgstr "Конфиденциальность"
 msgid "Project"
 msgstr "Проект"
 
-#: functions/customize.php:659
+#: functions/customize.php:658
 msgid "Project Archive Description"
 msgstr "Описание главной страницы Проектов"
 
-#: functions/customize.php:675
+#: functions/customize.php:674
 msgid "Project Archive Title"
 msgstr "Заголовок главной страницы Проектов"
 
@@ -1311,7 +1299,7 @@ msgstr "Категории Проекта"
 msgid "Project Category"
 msgstr "Категория Проекта"
 
-#: functions/customize.php:615
+#: functions/customize.php:614
 msgid "project settings"
 msgstr "Настройки проектов"
 
@@ -1319,7 +1307,7 @@ msgstr "Настройки проектов"
 msgid "Project Update"
 msgstr "Проект Обновлен"
 
-#: functions/customize.php:614 functions/navmenus.php:17
+#: functions/customize.php:613 functions/navmenus.php:17
 #: functions/cpt/cpt-projects.php:9 functions/cpt/cpt-projects.php:11
 #: functions/cpt/cpt-projects.php:23 functions/cpt/cpt-projects.php:29
 msgid "Projects"
@@ -1337,7 +1325,7 @@ msgstr "Проекты 2"
 msgid "Projects 3"
 msgstr "Проекты 3"
 
-#: functions/customize.php:635
+#: functions/customize.php:634
 msgid "Projects archive template"
 msgstr "Шаблон основной страницы Проектов"
 
@@ -1391,7 +1379,7 @@ msgstr "Удалить изображение из услуги"
 msgid "Remove featured Image for this staff"
 msgstr "Удалить фото сотрудника"
 
-#: functions/global.php:282 functions/global.php:297
+#: functions/global.php:279 functions/global.php:294
 msgid "Results for: "
 msgstr "Результаты для:"
 
@@ -1456,7 +1444,7 @@ msgid "Search Staff"
 msgstr "Поиск Сотрудника"
 
 #: functions/customize.php:377 functions/customize.php:498
-#: functions/customize.php:938
+#: functions/customize.php:828
 msgid "Secondary Header"
 msgstr "Вторичный Хедер"
 
@@ -1481,11 +1469,11 @@ msgstr "Услуга"
 msgid "Service archive"
 msgstr "Архив Услуг"
 
-#: functions/customize.php:792
+#: functions/customize.php:727
 msgid "Service Archive Description"
 msgstr "Подзаголовок Архива Услуг"
 
-#: functions/customize.php:810
+#: functions/customize.php:745
 msgid "Service Archive Title"
 msgstr "Заголовок Страницы Услуг"
 
@@ -1522,7 +1510,7 @@ msgstr "Услуга Запланирована"
 msgid "Service updated"
 msgstr "Услуга обновлена"
 
-#: functions/customize.php:748 functions/navmenus.php:18
+#: functions/customize.php:682 functions/navmenus.php:18
 #: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:13
 #: functions/cpt/cpt-services.php:14 functions/cpt/cpt-services.php:41
 #: templates/footer/footer-sandbox-25_cw.php:28
@@ -1530,11 +1518,11 @@ msgstr "Услуга обновлена"
 msgid "Services"
 msgstr "Услуги"
 
-#: functions/customize.php:767
+#: functions/customize.php:702
 msgid "Services archive template"
 msgstr "Шаблон основной страницы Услуг"
 
-#: functions/customize.php:749
+#: functions/customize.php:683
 msgid "Services settings"
 msgstr "Настройки услуг"
 
@@ -1554,7 +1542,7 @@ msgstr "Установить фото для этой услуги"
 msgid "Set featured Image for this staff"
 msgstr "Назначить фото для сотрудника"
 
-#: functions/customize.php:575
+#: functions/customize.php:574
 msgid "Settings Custom Post Type"
 msgstr "Настройки архивных страниц"
 
@@ -1595,7 +1583,7 @@ msgid "Sign up to"
 msgstr "Войти в "
 
 #: functions/customize.php:338 functions/customize.php:459
-#: functions/customize.php:832
+#: functions/customize.php:767
 msgid "Solid"
 msgstr "Заливка"
 
@@ -1645,7 +1633,7 @@ msgstr "Сотрудник Обновлен"
 msgid "Style Main Header"
 msgstr "Стиль Основного Хедера"
 
-#: functions/customize.php:829
+#: functions/customize.php:764
 msgid "Style Service Header"
 msgstr "Стиль Хедера Услуг"
 
@@ -1703,27 +1691,23 @@ msgstr "Метки"
 msgid "Testimonial"
 msgstr "Отзыв"
 
-#: functions/customize.php:703 functions/navmenus.php:22
+#: functions/customize.php:876 functions/navmenus.php:22
 #: functions/cpt/cpt-testimonials.php:10 functions/cpt/cpt-testimonials.php:12
 #: functions/cpt/cpt-testimonials.php:17
 msgid "Testimonials"
 msgstr "Отзывы"
 
-#: functions/customize.php:725
+#: functions/customize.php:898
 msgid "Testimonials archive template"
 msgstr "Шаблон основной страницы Отзывов"
 
-#: functions/customize.php:704
+#: functions/customize.php:877
 msgid "Testimonials settings"
 msgstr "Настройки отзывов"
 
 #: functions/sidebars.php:50 functions/sidebars.php:52
 msgid "Testimonials Sidebar"
 msgstr "Сайдбар Отзывов"
-
-#: functions/customize.php:918
-msgid "Text Page Header color"
-msgstr "Цвет текста Заголовка Архива"
 
 #: 404.php:12
 msgid ""
@@ -1733,7 +1717,7 @@ msgstr ""
 "Страница, которую вы ищете, недоступна или была перемещена. Перейдите на "
 "главную страницу с помощью кнопки ниже."
 
-#: functions/customize.php:692
+#: functions/customize.php:865
 msgid ""
 "Theme Modifications like color scheme, theme texts and layout preferences "
 "can be done here"
@@ -1775,7 +1759,7 @@ msgid "Towns"
 msgstr "Города"
 
 #: functions/customize.php:339 functions/customize.php:460
-#: functions/customize.php:833
+#: functions/customize.php:768
 msgid "Transparent"
 msgstr "Прозрачный"
 
@@ -1795,35 +1779,27 @@ msgid "Type"
 msgstr "Тип"
 
 #: functions/customize.php:380 functions/customize.php:501
-#: functions/customize.php:941
+#: functions/customize.php:831
 msgid "Type 1"
 msgstr "Тип 1"
 
 #: functions/customize.php:381 functions/customize.php:502
-#: functions/customize.php:942
+#: functions/customize.php:832
 msgid "Type 2"
 msgstr "Тип 2"
 
 #: functions/customize.php:382 functions/customize.php:503
-#: functions/customize.php:943
+#: functions/customize.php:833
 msgid "Type 3"
 msgstr "Тип 3"
 
 #: functions/customize.php:383 functions/customize.php:504
-#: functions/customize.php:944
+#: functions/customize.php:834
 msgid "Type 4"
 msgstr "Тип 4"
 
-#: functions/customize.php:945
+#: functions/customize.php:835
 msgid "Type 5"
-msgstr ""
-
-#: functions/customize.php:946
-msgid "Type 6"
-msgstr ""
-
-#: functions/customize.php:947
-msgid "Type 7"
 msgstr ""
 
 #: functions/cpt/taxonomy-services.php:51
