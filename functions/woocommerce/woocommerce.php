@@ -8,6 +8,7 @@ include 'woocommerce-checkout.php';
 include 'woocommerce-offcanvas-cart.php';
 include 'woocommerce-mobile-bottom-menu.php';
 //include 'woocommerce-category-banner.php';
+include 'woocommerce_customizer.php';
 
 
 /**

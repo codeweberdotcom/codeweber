@@ -27,19 +27,27 @@
 		} else {
 			$term_id_prefixed = get_the_ID();
 		}
+		$params = array();
 
 		if (get_field('cw_transparent_header', $term_id_prefixed) == 'default') {
-			$params = ['style_nav' => get_theme_mod('codeweber_header_style')];
+			$params['style_nav'] = get_theme_mod('codeweber_header_style');
 		} elseif (get_field('cw_transparent_header', $term_id_prefixed) == 'transparent') {
-			$params = ['style_nav' => 'transparent'];
+			$params['style_nav'] =  'transparent';
 		} elseif ((get_field('cw_transparent_header', $term_id_prefixed) == 'solid')) {
-			$params = ['style_nav' => 'solid'];
+			$params['style_nav'] =  'solid';
 		} elseif (get_theme_mod('codeweber_header_style')) {
-			$params = ['style_nav' => get_theme_mod('codeweber_header_style')];
+			$params['style_nav'] = get_theme_mod('codeweber_header_style');
 		} else {
-			$params = ['style_nav' => 'solid'];
+			$params['style_nav'] =  'solid';
 		}
 
+		if (get_field('header_background_color', $term_id_prefixed) !== 'default') {
+			$params['header_bg_color'] = get_field('header_background_color', $term_id_prefixed);
+		} elseif (get_field('header_background_color', $term_id_prefixed) == 'default') {
+			$params['header_bg_color'] = NULL;
+		} else {
+			$params['header_bg_color'] = get_theme_mod('codeweber_header_bg');
+		}
 
 		if (get_field('navbar_color', $term_id_prefixed) == 'default' || get_field('navbar_color', $term_id_prefixed) == false) {
 			if (get_theme_mod('codeweber_header_color')) {
@@ -57,9 +65,44 @@
 			$params['bg_nav'] = 'navbar-light';
 		}
 
-
 		if (get_field('header', $term_id_prefixed) && get_field('header', $term_id_prefixed) !== 'default') {
 			get_template_part('templates/header/header', get_field('header', $term_id_prefixed), $params);
+		} elseif (is_post_type_archive('services')) { // Services
+
+			if (get_theme_mod('codeweber_header_service_style') !== 'default') {
+				$params['style_nav'] = get_theme_mod('codeweber_header_service_style');
+			} else {
+				$params['style_nav'] = get_theme_mod('codeweber_header_style');
+			}
+
+			if (get_theme_mod('codeweber_header_service_bg') == 'default' && get_theme_mod('codeweber_header_style') !== 'transparent') {
+				$params['header_bg_color'] = get_theme_mod('codeweber_header_bg');
+			} elseif (get_theme_mod('codeweber_header_service_style') !== 'transparent') {
+				$params['header_bg_color'] = get_theme_mod('codeweber_header_service_bg');
+			} else {
+				$params['header_bg_color'] == NULL;
+			}
+
+
+			if (get_theme_mod('codeweber_header_service_color') == 'default') {
+				if (get_theme_mod('codeweber_header_color')) {
+					if (get_theme_mod('codeweber_header_color') == 'dark') {
+						$params['bg_nav'] = 'navbar-dark';
+					} elseif (get_theme_mod('codeweber_header_color') == 'light') {
+						$params['bg_nav'] = 'navbar-light';
+					}
+				} else {
+					$params['bg_nav'] = 'navbar-light';
+				}
+			} else {
+				if (get_theme_mod('codeweber_header_service_color') == 'dark') {
+					$params['bg_nav'] = 'navbar-dark';
+				} elseif (get_theme_mod('codeweber_header_service_color') == 'light') {
+					$params['bg_nav'] = 'navbar-light';
+				}
+			}
+
+			get_template_part('templates/header/header', get_theme_mod('codeweber_header'), $params);
 		} else {
 			get_template_part('templates/header/header', get_theme_mod('codeweber_header'), $params);
 		}

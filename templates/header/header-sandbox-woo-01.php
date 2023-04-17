@@ -9,8 +9,8 @@ if ($args['style_nav'] == 'transparent') {
    $class_nav = NULL;
 }
 
-
 $transparent_style = $args['style_nav'];
+
 
 if ($args['bg_nav'] == 'navbar-dark') {
    $color_logo = 'light';
@@ -18,9 +18,16 @@ if ($args['bg_nav'] == 'navbar-dark') {
    $color_logo = 'dark';
    $transparent_style = 'solid';
 }
+
+if ($args['header_bg_color'] !== 'default') {
+   $class_header = $args['header_bg_color'];
+} else {
+   $class_header = NULL;
+}
+
 ?>
 
-<header class="wrapper">
+<header class="wrapper<?php echo $class_header; ?>">
    <nav class="navbar navbar-expand-lg classic <?php echo $class_nav; ?>">
       <div class="container flex-lg-row flex-nowrap align-items-center">
          <div class="navbar-brand w-100 pe-3">

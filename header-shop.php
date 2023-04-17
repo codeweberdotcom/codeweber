@@ -22,13 +22,21 @@
       <?php do_action('codeweber_start_content_wrapper'); // Hook start content wrapper
 
       if (get_field('cw_transparent_header') == false || get_field('cw_transparent_header') == 'default') {
-         $params = ['style_nav' => get_theme_mod('codeweber_header_woocomerce_style')];
+         $params['style_nav'] = get_theme_mod('codeweber_header_woocomerce_style');
       } elseif (get_field('cw_transparent_header') == 'transparent') {
-         $params = ['style_nav' => 'transparent'];
+         $params['style_nav'] = 'transparent';
       } elseif ((get_field('cw_transparent_header') == 'solid')) {
-         $params = ['style_nav' => 'solid'];
+         $params['style_nav'] = 'solid';
       } else {
-         $params = ['style_nav' => 'solid'];
+         $params['style_nav'] = 'solid';
+      }
+
+      if (get_field('header_background_color') !== 'default') {
+         $params['header_bg_color'] = get_field('header_background_color');
+      } elseif (get_field('header_background_color') == 'default') {
+         $params['header_bg_color'] = NULL;
+      } else {
+         $params['header_bg_color'] = get_theme_mod('codeweber_woo_header_bg');
       }
 
 

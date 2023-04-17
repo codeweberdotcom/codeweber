@@ -85,7 +85,8 @@ function codeweber_breadcrumbs($align, $color)
 						'delimiter'   => '',
 						'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0 justify-content-center">',
 						'wrap_after'  => '</ol></nav>',
-						'before'      => '<li class="breadcrumb-item text-muted">',
+						'before'      =>
+						'<li class="breadcrumb-item text-muted">',
 						'after'       => '</li>',
 					);
 					return $args;
@@ -100,7 +101,8 @@ function codeweber_breadcrumbs($align, $color)
 						'delimiter'   => '',
 						'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0 justify-content-end">',
 						'wrap_after'  => '</ol></nav>',
-						'before'      => '<li class="breadcrumb-item text-muted">',
+						'before'      =>
+						'<li class="breadcrumb-item text-muted">',
 						'after'       => '</li>',
 					);
 					return $args;
@@ -115,7 +117,8 @@ function codeweber_breadcrumbs($align, $color)
 						'delimiter'   => '',
 						'wrap_before' => '<nav class="d-inline-block" aria-label="breadcrumb"><ol class="breadcrumb mb-0">',
 						'wrap_after'  => '</ol></nav>',
-						'before'      => '<li class="breadcrumb-item text-muted">',
+						'before'      =>
+						'<li class="breadcrumb-item text-muted">',
 						'after'       => '</li>',
 					);
 					return $args;

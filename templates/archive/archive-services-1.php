@@ -8,19 +8,35 @@ $subtitle = get_theme_mod('service_description');
 $type = get_theme_mod('codeweber_page_service_header');
 $bg_color = 'dark';
 $theme_color = 'dark';
-$header_style = get_theme_mod('codeweber_header_service_style');
-if ($type == 'type_5') {
-   $bottom_padding = ' pb-0';
+if (get_theme_mod('codeweber_header_service_style') == 'default') {
+   $header_style = get_theme_mod('codeweber_header_style');
 } else {
-   $bottom_padding = NULL;
+   $header_style = get_theme_mod('codeweber_header_service_style');
 }
-echo codeweber_pageheader_generator($title, $subtitle, $type, NULL, $bg_color, NULL, true, $theme_color, $header_style);
+
+if ($type == 'type_5' || $type == 'Disable') {
+   $container_class = ' pb-23 pb-md-25';
+   $class_content = ' mt-n18 mt-md-n20 mt-lg-n21 position-relative';
+} elseif ($type == 'type_7' || $type == 'Disable') {
+   $container_class = ' pb-14 pb-md-16';
+   $class_content = ' mt-n20';
+} else {
+   $container_class = 'pt-14 pb-12 pt-md-16 pb-md-14';
+   $class_content = NULL;
+}
+
+if (get_theme_mod('codeweber_header_service_angle') == 'on') {
+   $angle_class = ' angled upper-end';
+} else {
+   $angle_class = NULL;
+}
+echo codeweber_pageheader_generator($title, $subtitle, $type, NULL, $bg_color, NULL, NULL, $theme_color, $header_style);
 ?>
 
-<section class="wrapper bg-light">
-   <div class="container py-14 pt-md-16<?php echo $bottom_padding; ?>">
+<section class="wrapper bg-light<?php echo $angle_class; ?>">
+   <div class="container <?php echo $container_class; ?>">
       <div class="row mb-14">
-         <div class="col-12 mt-n18 mt-md-n20 mt-lg-n23 position-relative">
+         <div class="col-12 <?php echo $class_content; ?>">
             <?php
             $row = 0;
             while (have_posts()) {
