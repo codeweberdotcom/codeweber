@@ -42,7 +42,6 @@
 		}
 
 		if (is_post_type_archive('services') || is_tax('service_category')) {
-			echo 'services';
 			if (get_theme_mod('codeweber_header_service_style') !== 'default') {
 				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_service_style');
 			} else {
