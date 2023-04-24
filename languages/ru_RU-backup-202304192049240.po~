@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-04-15 22:36+0000\n"
+"PO-Revision-Date: 2023-04-19 20:09+0000\n"
 "Last-Translator: Денис\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -214,6 +214,10 @@ msgstr "Все Сотрудники"
 msgid "Already have an account?"
 msgstr "Уже есть аккаунт?"
 
+#: functions/global_function/services_functions.php:221
+msgid "Angle Page Header"
+msgstr ""
+
 #: templates/content/single-faq.php:15
 msgid "Answer to the question:"
 msgstr "Ответ на вопрос:"
@@ -230,11 +234,18 @@ msgstr "Статьи по месяцам"
 msgid "Back to top"
 msgstr "Вернуться наверх"
 
-#: functions/customize.php:582
+#: functions/customize.php:350
+#: functions/global_function/services_functions.php:136
+#: functions/global_function/services_functions.php:292
+#: functions/woocommerce/woocommerce_customizer.php:70
+msgid "Background Color"
+msgstr "Цвет Бэкграунда"
+
+#: functions/customize.php:542
 msgid "Blog"
 msgstr "Блог"
 
-#: functions/customize.php:601
+#: functions/customize.php:561
 msgid "Blog archive template"
 msgstr "Шаблон главной страницы Блога"
 
@@ -242,35 +253,35 @@ msgstr "Шаблон главной страницы Блога"
 msgid "Blog categories"
 msgstr "Категории Блога"
 
-#: functions/customize.php:583
+#: functions/customize.php:543
 msgid "blog settings"
 msgstr "Настройки блога"
 
-#: functions/customize.php:808
+#: functions/global_function/services_functions.php:200
 msgid "Breadcrumbs"
 msgstr "Хлебные крошки"
 
-#: functions/customize.php:84
+#: functions/customize.php:79
 msgid "Button Big"
 msgstr "Кнопка Большая"
 
-#: functions/customize.php:85
+#: functions/customize.php:80
 msgid "Button Middle"
 msgstr "Кнопка Средняя"
 
-#: functions/customize.php:48
+#: functions/customize.php:43
 msgid "Button Options"
 msgstr "Настройки Кнопок"
 
-#: functions/customize.php:81
+#: functions/customize.php:76
 msgid "Button Size"
 msgstr "Размер Кнопки"
 
-#: functions/customize.php:86
+#: functions/customize.php:81
 msgid "Button Small"
 msgstr "Кнопка Маленькая"
 
-#: functions/customize.php:63
+#: functions/customize.php:58
 msgid "Button style"
 msgstr "Стиль кнопки"
 
@@ -295,8 +306,8 @@ msgstr ""
 "конфиденциальности"
 
 #: functions/woocommerce/woocommerce-mobile-bottom-menu.php:24
-#: templates/header/header-sandbox-woo-01.php:86
-#: templates/header/header-sandbox-woo-01.php:86
+#: templates/header/header-sandbox-woo-01.php:94
+#: templates/header/header-sandbox-woo-01.php:94
 msgid "Cart"
 msgstr "Корзина"
 
@@ -314,8 +325,8 @@ msgstr "Категория Документа"
 msgid "Category Docs"
 msgstr "Категория Документов"
 
-#: templates/header/header-sandbox-woo-01.php:89
-#: templates/header/header-sandbox-woo-01.php:92
+#: templates/header/header-sandbox-woo-01.php:97
+#: templates/header/header-sandbox-woo-01.php:100
 msgid "Checkout"
 msgstr "Оформить заказ"
 
@@ -354,24 +365,25 @@ msgstr "Платформа"
 msgid "Codeweber"
 msgstr "Codeweber"
 
-#: functions/customize.php:573
+#: functions/customize.php:533
 msgid "Codeweber CPT Settings"
 msgstr "Codeweber CPT Настройки"
 
-#: functions/customize.php:864
+#: functions/customize.php:650
 msgid "Codeweber Theme Options"
 msgstr "Codeweber Настройки Темы"
 
-#: functions/customize.php:95
+#: functions/customize.php:90
 msgid "Color Options"
 msgstr "Настройки Цветов"
 
-#: functions/customize.php:356 functions/customize.php:478
-#: functions/customize.php:786
+#: functions/customize.php:435
+#: functions/global_function/services_functions.php:113
+#: functions/woocommerce/woocommerce_customizer.php:156
 msgid "Color Text Header"
 msgstr "Цвет текста Хедер"
 
-#: functions/customize.php:113
+#: functions/customize.php:108
 msgid "Color Theme"
 msgstr "Цвет Темы"
 
@@ -430,7 +442,7 @@ msgstr "Связаться с нами"
 msgid "Contacts"
 msgstr "Контакты"
 
-#: functions/customize.php:252
+#: functions/customize.php:268
 msgid "Content Frame?"
 msgstr "Контент с отступом?"
 
@@ -438,8 +450,10 @@ msgstr "Контент с отступом?"
 msgid "Customer details"
 msgstr "Информация о покупателе"
 
-#: functions/customize.php:359 functions/customize.php:481
-#: functions/customize.php:789
+#: functions/customize.php:438
+#: functions/global_function/services_functions.php:116
+#: functions/global_function/services_functions.php:247
+#: functions/woocommerce/woocommerce_customizer.php:159
 msgid "Dark"
 msgstr "Темный"
 
@@ -448,8 +462,14 @@ msgstr "Темный"
 msgid "Date"
 msgstr "Дата"
 
-#: functions/customize.php:384 functions/customize.php:505
-#: functions/customize.php:836
+#: functions/global_function/services_functions.php:95
+#: functions/global_function/services_functions.php:118
+msgid "Default"
+msgstr "По умолчанию"
+
+#: functions/customize.php:464
+#: functions/global_function/services_functions.php:274
+#: functions/woocommerce/woocommerce_customizer.php:183
 msgid "Disable"
 msgstr "Отключено"
 
@@ -611,7 +631,7 @@ msgstr "Фильтр:"
 msgid "Follow Us"
 msgstr "Или здесь"
 
-#: functions/customize.php:533
+#: functions/customize.php:492
 msgid "Footer"
 msgstr "Футер"
 
@@ -631,7 +651,7 @@ msgstr "Меню Футера 2"
 msgid "Footer Menu 3"
 msgstr "Меню Футера 3"
 
-#: functions/customize.php:515
+#: functions/customize.php:474
 msgid "Footer Options"
 msgstr "Настройки Футера"
 
@@ -724,7 +744,7 @@ msgstr "Начать сейчас"
 msgid "Go to Homepage"
 msgstr "Перейти на Главную"
 
-#: templates/archive/archive-services-1.php:62
+#: templates/archive/archive-services-1.php:83
 msgid "Go to service"
 msgstr "Перейти к услуге"
 
@@ -742,7 +762,7 @@ msgstr "Меню Хедера 1"
 msgid "Header Menu Two"
 msgstr "Меню Хедера 2"
 
-#: functions/customize.php:233
+#: functions/customize.php:249
 msgid "Header Options"
 msgstr "Настройки Хедера"
 
@@ -750,7 +770,7 @@ msgstr "Настройки Хедера"
 msgid "Header right sidebar"
 msgstr "Хедер правый сайдбар"
 
-#: templates/header/header-sandbox-woo-01.php:64
+#: templates/header/header-sandbox-woo-01.php:72
 msgid "Hello"
 msgstr "Привет"
 
@@ -797,11 +817,11 @@ msgstr ""
 msgid "If you like what you see, let's work together."
 msgstr ""
 
-#: functions/customize.php:218
+#: functions/customize.php:234
 msgid "Image Form"
 msgstr "Форма Изображения"
 
-#: functions/customize.php:199
+#: functions/customize.php:215
 msgid "Image Options"
 msgstr "Настройки Изображений"
 
@@ -893,8 +913,10 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr "Обсудим ваш проект?"
 
-#: functions/customize.php:360 functions/customize.php:482
-#: functions/customize.php:790
+#: functions/customize.php:439
+#: functions/global_function/services_functions.php:117
+#: functions/global_function/services_functions.php:246
+#: functions/woocommerce/woocommerce_customizer.php:160
 msgid "Light"
 msgstr "Светлый"
 
@@ -909,11 +931,11 @@ msgstr "Светлый Логотип"
 msgid "Likes"
 msgstr "Спасибо"
 
-#: templates/header/header-sandbox-woo-01.php:76
+#: templates/header/header-sandbox-woo-01.php:84
 msgid "Login / Register"
 msgstr "Войти / Регистрация"
 
-#: templates/header/header-sandbox-woo-01.php:92
+#: templates/header/header-sandbox-woo-01.php:100
 msgid "Logout"
 msgstr "Выйти"
 
@@ -952,7 +974,7 @@ msgstr "Отлично!"
 msgid "Made with"
 msgstr "Разработано"
 
-#: functions/customize.php:287
+#: functions/customize.php:303
 msgid "Main Header"
 msgstr "Главный Хедер"
 
@@ -976,7 +998,7 @@ msgstr "месяц"
 msgid "Monthly"
 msgstr "Месяц"
 
-#: templates/header/header-sandbox-woo-01.php:74
+#: templates/header/header-sandbox-woo-01.php:82
 msgid "My Account"
 msgstr "Личный кабинет"
 
@@ -1059,9 +1081,10 @@ msgstr "Нет Прайс-листов в корзине"
 msgid "No Thumbnail For Post"
 msgstr "Нет превью"
 
-#: functions/customize.php:812
+#: functions/global_function/services_functions.php:204
+#: functions/global_function/services_functions.php:225
 msgid "Off"
-msgstr ""
+msgstr "Выключить"
 
 #: functions/navmenus.php:19
 msgid "Offcanvas Menu Left"
@@ -1085,9 +1108,10 @@ msgstr "Адрес Офиса"
 msgid "Office addresses"
 msgstr "Адреса Офисов"
 
-#: functions/customize.php:811
+#: functions/global_function/services_functions.php:203
+#: functions/global_function/services_functions.php:224
 msgid "On"
-msgstr ""
+msgstr "Включить"
 
 #: 404.php:11
 msgid "Oops! Page Not Found."
@@ -1106,7 +1130,7 @@ msgstr "Опции Темы"
 msgid "or"
 msgstr "или"
 
-#: templates/header/header-sandbox-woo-01.php:82
+#: templates/header/header-sandbox-woo-01.php:90
 msgid "Orders"
 msgstr "Заказы"
 
@@ -1128,11 +1152,11 @@ msgstr "Заказы"
 msgid "Our Newsletter"
 msgstr "Наши новости"
 
-#: functions/customize.php:849
+#: functions/global_function/services_functions.php:348
 msgid "Page Header Service Background"
 msgstr "Бэкграунд Хедера Страницы"
 
-#: functions/customize.php:269
+#: functions/customize.php:285
 msgid "Page Loader?"
 msgstr "Показать загрузчик?"
 
@@ -1280,11 +1304,11 @@ msgstr "Конфиденциальность"
 msgid "Project"
 msgstr "Проект"
 
-#: functions/customize.php:658
+#: functions/customize.php:618
 msgid "Project Archive Description"
 msgstr "Описание главной страницы Проектов"
 
-#: functions/customize.php:674
+#: functions/customize.php:634
 msgid "Project Archive Title"
 msgstr "Заголовок главной страницы Проектов"
 
@@ -1299,7 +1323,7 @@ msgstr "Категории Проекта"
 msgid "Project Category"
 msgstr "Категория Проекта"
 
-#: functions/customize.php:614
+#: functions/customize.php:574
 msgid "project settings"
 msgstr "Настройки проектов"
 
@@ -1307,7 +1331,7 @@ msgstr "Настройки проектов"
 msgid "Project Update"
 msgstr "Проект Обновлен"
 
-#: functions/customize.php:613 functions/navmenus.php:17
+#: functions/customize.php:573 functions/navmenus.php:17
 #: functions/cpt/cpt-projects.php:9 functions/cpt/cpt-projects.php:11
 #: functions/cpt/cpt-projects.php:23 functions/cpt/cpt-projects.php:29
 msgid "Projects"
@@ -1325,7 +1349,7 @@ msgstr "Проекты 2"
 msgid "Projects 3"
 msgstr "Проекты 3"
 
-#: functions/customize.php:634
+#: functions/customize.php:594
 msgid "Projects archive template"
 msgstr "Шаблон основной страницы Проектов"
 
@@ -1379,7 +1403,7 @@ msgstr "Удалить изображение из услуги"
 msgid "Remove featured Image for this staff"
 msgstr "Удалить фото сотрудника"
 
-#: functions/global.php:279 functions/global.php:294
+#: functions/global.php:282 functions/global.php:297
 msgid "Results for: "
 msgstr "Результаты для:"
 
@@ -1392,11 +1416,11 @@ msgstr "Настройки Отзывов"
 msgid "Review this product"
 msgstr "Оставить отзыв к товару"
 
-#: functions/customize.php:67
+#: functions/customize.php:62
 msgid "Rounded"
 msgstr "Скругление"
 
-#: functions/customize.php:66
+#: functions/customize.php:61
 msgid "Rounded-pill"
 msgstr "Скругление 50%"
 
@@ -1443,8 +1467,9 @@ msgstr "Найти Услугу"
 msgid "Search Staff"
 msgstr "Поиск Сотрудника"
 
-#: functions/customize.php:377 functions/customize.php:498
-#: functions/customize.php:828
+#: functions/customize.php:457
+#: functions/global_function/services_functions.php:263
+#: functions/woocommerce/woocommerce_customizer.php:176
 msgid "Secondary Header"
 msgstr "Вторичный Хедер"
 
@@ -1469,11 +1494,11 @@ msgstr "Услуга"
 msgid "Service archive"
 msgstr "Архив Услуг"
 
-#: functions/customize.php:727
+#: functions/global_function/services_functions.php:53
 msgid "Service Archive Description"
 msgstr "Подзаголовок Архива Услуг"
 
-#: functions/customize.php:745
+#: functions/global_function/services_functions.php:71
 msgid "Service Archive Title"
 msgstr "Заголовок Страницы Услуг"
 
@@ -1510,19 +1535,20 @@ msgstr "Услуга Запланирована"
 msgid "Service updated"
 msgstr "Услуга обновлена"
 
-#: functions/customize.php:682 functions/navmenus.php:18
-#: functions/cpt/cpt-services.php:11 functions/cpt/cpt-services.php:13
-#: functions/cpt/cpt-services.php:14 functions/cpt/cpt-services.php:41
+#: functions/navmenus.php:18 functions/cpt/cpt-services.php:11
+#: functions/cpt/cpt-services.php:13 functions/cpt/cpt-services.php:14
+#: functions/cpt/cpt-services.php:41
+#: functions/global_function/services_functions.php:10
 #: templates/footer/footer-sandbox-25_cw.php:28
 #: templates/sections/home-services.php:5
 msgid "Services"
 msgstr "Услуги"
 
-#: functions/customize.php:702
+#: functions/global_function/services_functions.php:29
 msgid "Services archive template"
 msgstr "Шаблон основной страницы Услуг"
 
-#: functions/customize.php:683
+#: functions/global_function/services_functions.php:11
 msgid "Services settings"
 msgstr "Настройки услуг"
 
@@ -1542,7 +1568,7 @@ msgstr "Установить фото для этой услуги"
 msgid "Set featured Image for this staff"
 msgstr "Назначить фото для сотрудника"
 
-#: functions/customize.php:574
+#: functions/customize.php:534
 msgid "Settings Custom Post Type"
 msgstr "Настройки архивных страниц"
 
@@ -1582,8 +1608,9 @@ msgstr "Регистрация"
 msgid "Sign up to"
 msgstr "Войти в "
 
-#: functions/customize.php:338 functions/customize.php:459
-#: functions/customize.php:767
+#: functions/customize.php:417
+#: functions/global_function/services_functions.php:93
+#: functions/woocommerce/woocommerce_customizer.php:138
 msgid "Solid"
 msgstr "Заливка"
 
@@ -1595,7 +1622,7 @@ msgstr ""
 "Извините, но ничто не соответствовало вашим поисковым запросам. Пожалуйста, "
 "попробуйте еще раз с другими ключевыми словами."
 
-#: functions/customize.php:68
+#: functions/customize.php:63
 msgid "Squared"
 msgstr "Без Скругления"
 
@@ -1629,15 +1656,15 @@ msgstr "Сотрудник Запланирован"
 msgid "Staff updated"
 msgstr "Сотрудник Обновлен"
 
-#: functions/customize.php:335
+#: functions/customize.php:414
 msgid "Style Main Header"
 msgstr "Стиль Основного Хедера"
 
-#: functions/customize.php:764
+#: functions/global_function/services_functions.php:90
 msgid "Style Service Header"
 msgstr "Стиль Хедера Услуг"
 
-#: functions/customize.php:456
+#: functions/woocommerce/woocommerce_customizer.php:135
 msgid "Style Woocommerce Header"
 msgstr "Стиль Woocommerce Хедера"
 
@@ -1691,23 +1718,27 @@ msgstr "Метки"
 msgid "Testimonial"
 msgstr "Отзыв"
 
-#: functions/customize.php:876 functions/navmenus.php:22
+#: functions/customize.php:657 functions/navmenus.php:22
 #: functions/cpt/cpt-testimonials.php:10 functions/cpt/cpt-testimonials.php:12
 #: functions/cpt/cpt-testimonials.php:17
 msgid "Testimonials"
 msgstr "Отзывы"
 
-#: functions/customize.php:898
+#: functions/customize.php:679
 msgid "Testimonials archive template"
 msgstr "Шаблон основной страницы Отзывов"
 
-#: functions/customize.php:877
+#: functions/customize.php:658
 msgid "Testimonials settings"
 msgstr "Настройки отзывов"
 
 #: functions/sidebars.php:50 functions/sidebars.php:52
 msgid "Testimonials Sidebar"
 msgstr "Сайдбар Отзывов"
+
+#: functions/global_function/services_functions.php:243
+msgid "Text Page Header color"
+msgstr "Цвет текста Заголовка Архива"
 
 #: 404.php:12
 msgid ""
@@ -1717,7 +1748,7 @@ msgstr ""
 "Страница, которую вы ищете, недоступна или была перемещена. Перейдите на "
 "главную страницу с помощью кнопки ниже."
 
-#: functions/customize.php:865
+#: functions/customize.php:651
 msgid ""
 "Theme Modifications like color scheme, theme texts and layout preferences "
 "can be done here"
@@ -1737,15 +1768,15 @@ msgstr ""
 msgid "Title"
 msgstr "Заголовок"
 
-#: functions/customize.php:143
+#: functions/customize.php:159
 msgid "Title Options"
 msgstr "Настройки Подзаголовка"
 
-#: functions/customize.php:182
+#: functions/customize.php:198
 msgid "Title Theme Color"
 msgstr "Цвет Подзаголовка"
 
-#: functions/customize.php:161
+#: functions/customize.php:177
 msgid "Title Theme Style"
 msgstr "Стиль Подзаголовка"
 
@@ -1758,8 +1789,9 @@ msgstr "Город"
 msgid "Towns"
 msgstr "Города"
 
-#: functions/customize.php:339 functions/customize.php:460
-#: functions/customize.php:768
+#: functions/customize.php:418
+#: functions/global_function/services_functions.php:94
+#: functions/woocommerce/woocommerce_customizer.php:139
 msgid "Transparent"
 msgstr "Прозрачный"
 
@@ -1778,28 +1810,44 @@ msgstr "Использовать Бесплатно"
 msgid "Type"
 msgstr "Тип"
 
-#: functions/customize.php:380 functions/customize.php:501
-#: functions/customize.php:831
+#: functions/customize.php:460
+#: functions/global_function/services_functions.php:266
+#: functions/woocommerce/woocommerce_customizer.php:179
 msgid "Type 1"
 msgstr "Тип 1"
 
-#: functions/customize.php:381 functions/customize.php:502
-#: functions/customize.php:832
+#: functions/customize.php:461
+#: functions/global_function/services_functions.php:267
+#: functions/woocommerce/woocommerce_customizer.php:180
 msgid "Type 2"
 msgstr "Тип 2"
 
-#: functions/customize.php:382 functions/customize.php:503
-#: functions/customize.php:833
+#: functions/customize.php:462
+#: functions/global_function/services_functions.php:268
+#: functions/woocommerce/woocommerce_customizer.php:181
 msgid "Type 3"
 msgstr "Тип 3"
 
-#: functions/customize.php:383 functions/customize.php:504
-#: functions/customize.php:834
+#: functions/customize.php:463
+#: functions/global_function/services_functions.php:269
+#: functions/woocommerce/woocommerce_customizer.php:182
 msgid "Type 4"
 msgstr "Тип 4"
 
-#: functions/customize.php:835
+#: functions/global_function/services_functions.php:270
 msgid "Type 5"
+msgstr ""
+
+#: functions/global_function/services_functions.php:271
+msgid "Type 6"
+msgstr ""
+
+#: functions/global_function/services_functions.php:272
+msgid "Type 7"
+msgstr ""
+
+#: functions/global_function/services_functions.php:273
+msgid "Type 8"
 msgstr ""
 
 #: functions/cpt/taxonomy-services.php:51
@@ -1893,7 +1941,7 @@ msgstr "Добро пожаловать"
 msgid "Woocommerce"
 msgstr "Woocommerce"
 
-#: functions/customize.php:405
+#: functions/woocommerce/woocommerce_customizer.php:22
 msgid "Woocommerce Header"
 msgstr "Woocommerce Хедер"
 
@@ -1921,7 +1969,7 @@ msgid "You Might Also Like"
 msgstr "Вам также может понравится"
 
 #: functions/woocommerce/woocommerce-offcanvas-cart.php:53
-#: templates/header/header-sandbox-woo-01.php:137
+#: templates/header/header-sandbox-woo-01.php:145
 msgid "Your cart"
 msgstr "Ваша корзина"
 
