@@ -1,42 +1,12 @@
-<?php if (get_theme_mod('service_title')) {
-   $title = get_theme_mod('service_title');
-} else {
-   $title = codeweber_page_title();
-}
+<?php
+global $codeweber;
 
-$subtitle = get_theme_mod('service_description');
-$type = get_theme_mod('codeweber_page_service_header');
-$bg_color = 'dark';
-$theme_color = 'dark';
-if (get_theme_mod('codeweber_header_service_style') == 'default') {
-   $header_style = get_theme_mod('codeweber_header_style');
-} else {
-   $header_style = get_theme_mod('codeweber_header_service_style');
-}
-
-if ($type == 'type_5' || $type == 'Disable') {
-   $container_class = ' pb-23 pb-md-25';
-   $class_content = ' mt-n18 mt-md-n20 mt-lg-n21 position-relative';
-} elseif ($type == 'type_7' || $type == 'Disable') {
-   $container_class = ' pb-14 pb-md-16';
-   $class_content = ' mt-n20';
-} else {
-   $container_class = 'pt-14 pb-12 pt-md-16 pb-md-14';
-   $class_content = NULL;
-}
-
-if (get_theme_mod('codeweber_header_service_angle') == 'on') {
-   $angle_class = ' angled upper-end';
-} else {
-   $angle_class = NULL;
-}
-echo codeweber_pageheader_generator($title, $subtitle, $type, NULL, $bg_color, NULL, NULL, $theme_color, $header_style);
 ?>
 
-<section class="wrapper bg-light<?php echo $angle_class; ?>">
-   <div class="container <?php echo $container_class; ?>">
+<section class="wrapper bg-light<?php echo $codeweber['page_settings']['angle_class']; ?>">
+   <div class="container <?php echo $codeweber['page_settings']['container_class']; ?>">
       <div class="row mb-14">
-         <div class="col-12 <?php echo $class_content; ?>">
+         <div class="col-12 <?php echo $codeweber['page_settings']['content_class']; ?>">
             <?php
             $row = 0;
             while (have_posts()) {
@@ -54,12 +24,12 @@ echo codeweber_pageheader_generator($title, $subtitle, $type, NULL, $bg_color, N
                   $row_class = 'row gy-10 align-items-center';
                }
                if ($row == 0 || $row == 2 || $row == 3 || $row == 4 || $row == 5) {
-                  $bg_color = 'bg-soft-primary';
+                  $bg_card_color = 'bg-soft-primary';
                } elseif ($row == 1 || $row == 3 || $row == 4 || $row == 5 || $row == 6) {
-                  $bg_color = 'bg-soft-violet';
+                  $bg_card_color  = 'bg-soft-violet';
                }
             ?>
-               <div class="card <?php echo $bg_color; ?> mb-10">
+               <div class="card <?php echo $bg_card_color; ?> mb-10">
                   <div class="<?php echo $card_body_class; ?>">
                      <div class="<?php echo $row_class; ?>">
                         <div class="<?php echo $col_class_1; ?>">

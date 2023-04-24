@@ -4,41 +4,44 @@
  * Blog Pageheader Generator
  */
 
-function codeweber_pageheader_generator($title, $subtitle, $type, $background_url, $color, $paralax, $breadcrumb, $theme_color, $header_style)
+
+function codeweber_pageheader_generator($title, $subtitle, $type, $background_url, $bg_color, $paralax, $breadcrumbs, $text_color, $class_container, $class_content, $angle_class)
 {
-   if (get_theme_mod('codeweber_page_service_header_bg')) {
-      $bg_color = ' bg-' . get_theme_mod('codeweber_page_service_header_bg');
-   } else {
-      $bg_color = ' bg-light';
+   global $codeweber;
+   if ($title == NULL) {
+      $title =  codeweber_page_title();
    }
-
-
-   if (get_theme_mod('codeweber_header_service_bread_color')) {
-      $text_color = 'text-' . get_theme_mod('codeweber_header_service_bread_color');
+   if ($type == 'type_5' || $type == 'Disable') {
+      $codeweber['page_settings']['container_class'] = ' pb-23 pb-md-25';
+      $codeweber['page_settings']['content_class'] = ' mt-n18 mt-md-n20 mt-lg-n21 position-relative';
+   } elseif ($type == 'type_7' || $type == 'Disable') {
+      $codeweber['page_settings']['container_class'] = ' pb-14 pb-md-16';
+      $codeweber['page_settings']['content_class'] = ' mt-n20';
    } else {
-      $text_color = NULL;
+      $codeweber['page_settings']['container_class'] = ' pt-14 pb-12 pt-md-14 pb-md-14';
+      $codeweber['page_settings']['content_class'] = NULL;
    }
-
-   if (get_theme_mod('image_control_one')) {
-      $img_url = get_theme_mod('image_control_one');
-      $section_open = '<section class="wrapper image-wrapper bg-image bg-overlay bg-overlay overflow-hidden" data-image-src="' . $img_url . '">';
+   if ($background_url) {
+      $section_open = '<section class="wrapper image-wrapper bg-image bg-overlay bg-overlay overflow-hidden" data-image-src="' . $background_url . '">';
    } else {
       $section_open = '<section class="wrapper ' . $bg_color . '">';
    }
 
+   $header_style = $codeweber['page_settings']['header_style'];
 
    if ($type == 'type_1') { ?>
       <?php echo $section_open; ?>
       <div class="container py-10 py-md-14">
          <div class="row">
-            <div class="col-md-8 col-lg-7 col-xl-6 col-xxl-5">
+            <div class="col-md-8 col-lg-7 col-xl-8 col-xxl-8">
                <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
                <p class="lead fs-lg pe-lg-15 pe-xxl-12 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
-
                <?php
-               if (get_theme_mod('codeweber_header_service_bread') == 'on' || $breadcrumb == true) {
+               if ($breadcrumbs == 'true') {
                   codeweber_breadcrumbs(NULL, $text_color);
-               } ?>
+               }
+               codeweber_meta_blog(); // Blog Meta Data
+               ?>
             </div>
             <!-- /column -->
          </div>
@@ -54,9 +57,11 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
             <div class="col-lg-10 col-xxl-8 mx-auto">
                <h1 class="display-1 mb-1  <?php echo $text_color; ?>"><?php echo $title; ?></h1>
                <?php
-               if (get_theme_mod('codeweber_header_service_bread') == 'on' || $breadcrumb == true) {
+               if ($breadcrumbs == 'true') {
                   codeweber_breadcrumbs(NULL, $text_color);
-               } ?>
+               }
+               codeweber_meta_blog(); // Blog Meta Data
+               ?>
             </div>
             <!-- /column -->
          </div>
@@ -69,13 +74,15 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       <?php echo $section_open; ?>
       <div class="container py-10 py-md-14 text-center">
          <div class="row">
-            <div class="col-md-8 col-lg-7 col-xl-6 col-xxl-5 mx-auto">
+            <div class="col-md-8 col-lg-7 col-xl-7 col-xxl-8 mx-auto">
                <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
                <p class="lead fs-lg px-lg-10 px-xxl-8 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
                <?php
-               if (get_theme_mod('codeweber_header_service_bread') == 'on' || $breadcrumb == true) {
+               if ($breadcrumbs == 'true') {
                   codeweber_breadcrumbs(NULL, $text_color);
-               } ?>
+               }
+               codeweber_meta_blog(); // Blog Meta Data
+               ?>
             </div>
             <!-- /column -->
          </div>
@@ -91,9 +98,11 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
             <div class="col-lg-10 col-xxl-8">
                <h1 class="display-1 mb-0 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
                <?php
-               if (get_theme_mod('codeweber_header_service_bread') == 'on' || $breadcrumb == true) {
+               if ($breadcrumbs == 'true') {
                   codeweber_breadcrumbs(NULL, $text_color);
-               } ?>
+               }
+               codeweber_meta_blog(); // Blog Meta Data
+               ?>
             </div>
             <!-- /column -->
          </div>
@@ -115,9 +124,11 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
                   <div class="h1 fs-15 text-uppercase mb-3 <?php echo $text_color; ?>"><?php echo $subtitle; ?></div>
                   <h1 class="display-1 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
                   <?php
-                  if (get_theme_mod('codeweber_header_service_bread') == 'on' || $breadcrumb == true) {
+                  if ($breadcrumbs == 'true') {
                      codeweber_breadcrumbs(NULL, $text_color);
-                  } ?>
+                  }
+                  codeweber_meta_blog(); // Blog Meta Data
+                  ?>
                </div>
                <!-- /column -->
             </div>
@@ -135,9 +146,11 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
                      <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
                      <p class="lead fs-lg px-md-3 px-lg-7 px-xl-9 px-xxl-10 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
                      <?php
-                     if (get_theme_mod('codeweber_header_service_bread') == 'on' || $breadcrumb == true) {
+                     if ($breadcrumbs == 'true') {
                         codeweber_breadcrumbs(NULL, $text_color);
-                     } ?>
+                     }
+                     codeweber_meta_blog(); // Blog Meta Data 
+                     ?>
                   </div>
                   <!-- /column -->
                </div>
@@ -154,9 +167,11 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
                      <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
                      <p class="lead px-lg-7 px-xl-7 px-xxl-6 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
                      <?php
-                     if (get_theme_mod('codeweber_header_service_bread') == 'on' || $breadcrumb == true) {
+                     if ($breadcrumbs == 'true') {
                         codeweber_breadcrumbs(NULL, $text_color);
-                     } ?>
+                     }
+                     codeweber_meta_blog(); // Blog Meta Data
+                     ?>
                   </div>
                   <!-- /column -->
                </div>
@@ -168,7 +183,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       } elseif ($type == 'type_8') { ?>
             <section class="wrapper bg-gray">
                <div class="container py-3 py-md-5">
-                  <?php codeweber_breadcrumbs(NULL, 'dark'); ?>
+                  <?php codeweber_breadcrumbs(NULL, $text_color); ?>
                </div>
                <!-- /.container -->
             </section>

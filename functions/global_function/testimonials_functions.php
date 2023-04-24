@@ -1,20 +1,26 @@
 <?php
 
-//CPT Function Customizer Services Settings
+//CPT Function Customizer Testimonials Settings
 
-function CPT_Services_Settings($wp_customize)
+function CPT_Testimonials_Settings($wp_customize)
 {
-
-   // Add service section to our panel
-   $wp_customize->add_section('services-section', array(
-      'title' => __('Services', 'codeweber'),
-      'description' => __('Services settings', 'codeweber'),
+   // Add Testimonial section to our panel
+   $wp_customize->add_section('testimonials-section', array(
+      'title' => __('Testimonials', 'codeweber'),
+      'description' => __('Testimonials settings', 'codeweber'),
       'panel' => 'cpt-panel',
    ));
 
-   // Service Archive Template
+   // Add Testimonials section to our panel
+   $wp_customize->add_section('testimonials-section', array(
+      'title' => __('Testimonials', 'codeweber'),
+      'description' => __('Testimonials settings', 'codeweber'),
+      'panel' => 'cpt-panel',
+   ));
+
+   // Testimonials Archive Template
    $wp_customize->add_setting(
-      'service_template',
+      'testimonials_template',
       array(
          'choices'  => array(
             'default'   => 'template_1',
@@ -23,10 +29,10 @@ function CPT_Services_Settings($wp_customize)
    );
 
    $wp_customize->add_control(
-      'service_template',
+      'testimonials_template',
       array(
-         'section' => 'services-section',
-         'label'    => __('Services archive template', 'codeweber'),
+         'section' => 'testimonials-section',
+         'label'    => __('Testimonials archive template', 'codeweber'),
          'type'     => 'select',
          'choices'  => array(
             'template_1'   => 'Template 1',
@@ -38,8 +44,8 @@ function CPT_Services_Settings($wp_customize)
       )
    );
 
-   // Service Archive Description
-   $wp_customize->add_setting('service_description', array(
+   // Testimonials Archive Description
+   $wp_customize->add_setting('testimonial_description', array(
       'default' => '',
       'type' => 'theme_mod',
       'capability' => 'edit_theme_options',
@@ -47,16 +53,16 @@ function CPT_Services_Settings($wp_customize)
 
    ));
 
-   $wp_customize->add_control('service_description', array(
+   $wp_customize->add_control('testimonial_description', array(
       'type' => 'textarea',
       'priority' => 20,
-      'label' => __('Service Archive Description', 'codeweber'),
-      'section' => 'services-section',
+      'label' => __('Testimonials Archive Description', 'codeweber'),
+      'section' => 'testimonials-section',
    ));
 
 
-   //Service Archive Title
-   $wp_customize->add_setting('service_title', array(
+   //Testimonials Archive Title
+   $wp_customize->add_setting('testimonial_title', array(
       'default' => '',
       'type' => 'theme_mod',
       'capability' => 'edit_theme_options',
@@ -65,18 +71,18 @@ function CPT_Services_Settings($wp_customize)
    ));
 
 
-   $wp_customize->add_control('service_title', array(
+   $wp_customize->add_control('testimonial_title', array(
       'type' => 'textarea',
       'priority' => 15,
-      'label' => __('Service Archive Title', 'codeweber'),
-      'section' => 'services-section',
+      'label' => __('Testimonials Archive Title', 'codeweber'),
+      'section' => 'testimonials-section',
    ));
 
 
    //
 
    $wp_customize->add_setting(
-      'codeweber_header_service_style',
+      'codeweber_header_testimonial_style',
       array(
          'default' => 'default',
       )
@@ -84,11 +90,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_style',
+      'codeweber_header_testimonial_style',
       array(
          'type' => 'radio',
-         'label' => esc_html__('Style Service Header', 'codeweber'),
-         'section' => 'services-section',
+         'label' => esc_html__('Style Testimonial Header', 'codeweber'),
+         'section' => 'testimonials-section',
          'choices' => array(
             'solid' => esc_html__('Solid', 'codeweber'),
             'transparent' => esc_html__('Transparent', 'codeweber'),
@@ -99,7 +105,7 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_setting(
-      'codeweber_header_service_color',
+      'codeweber_header_testimonial_color',
       array(
          'default' => 'default',
       )
@@ -107,11 +113,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_color',
+      'codeweber_header_testimonial_color',
       array(
          'type' => 'radio',
          'label' => esc_html__('Color Text Header', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'testimonials-section',
          'choices' => array(
             'navbar-dark' => esc_html__('Dark', 'codeweber'),
             'navbar-light' => esc_html__('Light', 'codeweber'),
@@ -123,16 +129,16 @@ function CPT_Services_Settings($wp_customize)
 
    // Header Color Background
    $wp_customize->add_setting(
-      'codeweber_header_service_bg',
+      'codeweber_header_testimonial_bg',
       array(
          'default'   => 'default',
       )
    );
 
    $wp_customize->add_control(
-      'codeweber_header_service_bg',
+      'codeweber_header_testimonial_bg',
       array(
-         'section'  => 'services-section',
+         'section'  => 'testimonials-section',
          'label'    => __(
             'Background Color',
             'codeweber'
@@ -186,7 +192,7 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_setting(
-      'codeweber_header_service_bread',
+      'codeweber_header_testimonial_bread',
       array(
          'default' => 'default',
       )
@@ -194,11 +200,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_bread',
+      'codeweber_header_testimonial_bread',
       array(
          'type' => 'radio',
          'label' => esc_html__('Breadcrumbs', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'testimonials-section',
          'choices' => array(
             'true' => esc_html__('On', 'codeweber'),
             'false' => esc_html__('Off', 'codeweber'),
@@ -208,7 +214,7 @@ function CPT_Services_Settings($wp_customize)
    );
 
    $wp_customize->add_setting(
-      'codeweber_header_service_angle',
+      'codeweber_header_testimonial_angle',
       array(
          'default' => 'default',
       )
@@ -216,11 +222,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_angle',
+      'codeweber_header_testimonial_angle',
       array(
          'type' => 'radio',
          'label' => esc_html__('Angle Page Header', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'testimonials-section',
          'choices' => array(
             'true' => esc_html__('On', 'codeweber'),
             'false' => esc_html__('Off', 'codeweber'),
@@ -231,7 +237,7 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_setting(
-      'codeweber_header_service_bread_color',
+      'codeweber_header_testimonial_bread_color',
       array(
          'default' => 'default',
       )
@@ -239,11 +245,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_bread_color',
+      'codeweber_header_testimonial_bread_color',
       array(
          'type' => 'radio',
          'label' => esc_html__('Text Page Header color', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'testimonials-section',
          'choices' => array(
             'white' => esc_html__('Light', 'codeweber'),
             'dark' => esc_html__('Dark', 'codeweber'),
@@ -253,18 +259,18 @@ function CPT_Services_Settings($wp_customize)
    );
 
    $wp_customize->add_setting(
-      'codeweber_page_service_header',
+      'codeweber_page_testimonial_header',
       array(
          'default' => 'default',
       )
    );
 
    $wp_customize->add_control(
-      'codeweber_page_service_header',
+      'codeweber_page_testimonial_header',
       array(
          'type' => 'radio',
          'label' => esc_html__('Secondary Header', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'testimonials-section',
          'choices' => array(
             'type_1' => esc_html__('Type 1', 'codeweber'),
             'type_2' => esc_html__('Type 2', 'codeweber'),
@@ -283,16 +289,16 @@ function CPT_Services_Settings($wp_customize)
 
    // Color Control Page Background
    $wp_customize->add_setting(
-      'codeweber_page_service_header_bg',
+      'codeweber_page_testimonial_header_bg',
       array(
          'default'   => 'light',
       )
    );
 
    $wp_customize->add_control(
-      'codeweber_page_service_header_bg',
+      'codeweber_page_testimonial_header_bg',
       array(
-         'section'  => 'services-section',
+         'section'  => 'testimonials-section',
          'label'    => __('Background Color', 'codeweber'),
          'type'     => 'select',
          'choices'  => array(
@@ -342,19 +348,68 @@ function CPT_Services_Settings($wp_customize)
    );
 
 
-   // Image Background Service Page Header
-   $wp_customize->add_setting('image_control_one', array(
+   // Image Background Testimonial Page Header
+   $wp_customize->add_setting('image_control_two', array(
       'default' => '',
       'type' => 'theme_mod',
       'capability' => 'edit_theme_options',
    ));
    $wp_customize->add_control(
-      new WP_Customize_Image_Control($wp_customize, 'image_control_one', array(
-         'label' => __('Page Header Service Background', 'codeweber'),
-         'section' => 'services-section',
-         'settings' => 'image_control_one',
+      new WP_Customize_Image_Control($wp_customize, 'image_control_two', array(
+         'label' => __('Page Header Testimonials Background', 'codeweber'),
+         'section' => 'testimonials-section',
+         'settings' => 'image_control_two',
       ))
    );
 }
 
-add_action('customize_register', 'CPT_Services_Settings');
+add_action('customize_register', 'CPT_Testimonials_Settings');
+
+
+
+/**
+ * Testimonial autotitle
+ */
+
+function auto_generate_post_title($title)
+{
+   global $post;
+   /** Проверка на Post Type */
+   if (isset($post->post_type)) {
+      $post_type = $post->post_type;
+   }
+   /** Проверка на Post Type Testimonials*/
+   if (isset($post->ID) && $post_type == 'testimonials') {
+      if (have_rows('testimonials_post_field')) {
+         while (have_rows('testimonials_post_field')) {
+            the_row();
+            $post_id = get_the_ID();
+            $name = get_sub_field('name', $post_id);
+            $date = get_the_date();
+         }
+      }
+      /** Формирование Title*/
+      $title = 'Отзыв_' . $name . '_ID' . $post_id . '_' . $date;
+   }
+   return $title;
+}
+
+add_filter('title_save_pre', 'auto_generate_post_title');
+
+
+
+function ReadMore($string, $link, $quantity_symbol)
+{
+   $string = strip_tags($string);
+   if (strlen($string) > $quantity_symbol) {
+
+      // truncate string
+      $stringCut = substr($string, 0, $quantity_symbol);
+      $endPoint = strrpos($stringCut, ' ');
+
+      //if the string doesn't contain any space then it will cut without word basis.
+      $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+      $string .= '... <a href="' . $link . '" class="text-nowrap">' . esc_html__('Read More', 'codeweber') . '</a>';
+   }
+   return $string;
+}

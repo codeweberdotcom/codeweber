@@ -1,20 +1,21 @@
 <?php
 
-//CPT Function Customizer Services Settings
+//CPT Function Customizer Projects Settings
 
-function CPT_Services_Settings($wp_customize)
+function CPT_Blog_Settings($wp_customize)
 {
 
-   // Add service section to our panel
-   $wp_customize->add_section('services-section', array(
-      'title' => __('Services', 'codeweber'),
-      'description' => __('Services settings', 'codeweber'),
+
+   // Add blog section to our panel
+   $wp_customize->add_section('blog-section', array(
+      'title' => __('Blog', 'codeweber'),
+      'description' => __('blog settings', 'codeweber'),
       'panel' => 'cpt-panel',
    ));
 
-   // Service Archive Template
+   // blog Control
    $wp_customize->add_setting(
-      'service_template',
+      'blog_template',
       array(
          'choices'  => array(
             'default'   => 'template_1',
@@ -23,23 +24,22 @@ function CPT_Services_Settings($wp_customize)
    );
 
    $wp_customize->add_control(
-      'service_template',
+      'blog_template',
       array(
-         'section' => 'services-section',
-         'label'    => __('Services archive template', 'codeweber'),
+         'section' => 'blog-section',
+         'label'    => __('Blog archive template', 'codeweber'),
          'type'     => 'select',
+         'priority' => 1,
          'choices'  => array(
             'template_1'   => 'Template 1',
             'template_2'   => 'Template 2',
             'template_3'   => 'Template 3',
-            'template_4'   => 'Template 4',
-            'template_5'   => 'Template 5',
          )
       )
    );
 
-   // Service Archive Description
-   $wp_customize->add_setting('service_description', array(
+
+   $wp_customize->add_setting('blog_description', array(
       'default' => '',
       'type' => 'theme_mod',
       'capability' => 'edit_theme_options',
@@ -47,16 +47,15 @@ function CPT_Services_Settings($wp_customize)
 
    ));
 
-   $wp_customize->add_control('service_description', array(
+   $wp_customize->add_control('blog_description', array(
       'type' => 'textarea',
-      'priority' => 20,
-      'label' => __('Service Archive Description', 'codeweber'),
-      'section' => 'services-section',
+      'priority' => 3,
+      'label' => __('Blog_Archive Description', 'codeweber'),
+      'section' => 'blog-section',
    ));
 
 
-   //Service Archive Title
-   $wp_customize->add_setting('service_title', array(
+   $wp_customize->add_setting('blog_title', array(
       'default' => '',
       'type' => 'theme_mod',
       'capability' => 'edit_theme_options',
@@ -64,19 +63,18 @@ function CPT_Services_Settings($wp_customize)
 
    ));
 
-
-   $wp_customize->add_control('service_title', array(
+   $wp_customize->add_control('blog_title', array(
       'type' => 'textarea',
-      'priority' => 15,
-      'label' => __('Service Archive Title', 'codeweber'),
-      'section' => 'services-section',
+      'priority' => 2,
+      'label' => __('Blog_Archive Title', 'codeweber'),
+      'section' => 'blog-section',
    ));
 
 
    //
 
    $wp_customize->add_setting(
-      'codeweber_header_service_style',
+      'codeweber_header_blog_style',
       array(
          'default' => 'default',
       )
@@ -84,11 +82,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_style',
+      'codeweber_header_blog_style',
       array(
          'type' => 'radio',
-         'label' => esc_html__('Style Service Header', 'codeweber'),
-         'section' => 'services-section',
+         'label' => esc_html__('Style Blog_Header', 'codeweber'),
+         'section' => 'blog-section',
          'choices' => array(
             'solid' => esc_html__('Solid', 'codeweber'),
             'transparent' => esc_html__('Transparent', 'codeweber'),
@@ -99,7 +97,7 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_setting(
-      'codeweber_header_service_color',
+      'codeweber_header_blog_color',
       array(
          'default' => 'default',
       )
@@ -107,11 +105,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_color',
+      'codeweber_header_blog_color',
       array(
          'type' => 'radio',
          'label' => esc_html__('Color Text Header', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'blog-section',
          'choices' => array(
             'navbar-dark' => esc_html__('Dark', 'codeweber'),
             'navbar-light' => esc_html__('Light', 'codeweber'),
@@ -123,16 +121,16 @@ function CPT_Services_Settings($wp_customize)
 
    // Header Color Background
    $wp_customize->add_setting(
-      'codeweber_header_service_bg',
+      'codeweber_header_blog_bg',
       array(
          'default'   => 'default',
       )
    );
 
    $wp_customize->add_control(
-      'codeweber_header_service_bg',
+      'codeweber_header_blog_bg',
       array(
-         'section'  => 'services-section',
+         'section'  => 'blog-section',
          'label'    => __(
             'Background Color',
             'codeweber'
@@ -186,7 +184,7 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_setting(
-      'codeweber_header_service_bread',
+      'codeweber_header_blog_bread',
       array(
          'default' => 'default',
       )
@@ -194,11 +192,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_bread',
+      'codeweber_header_blog_bread',
       array(
          'type' => 'radio',
          'label' => esc_html__('Breadcrumbs', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'blog-section',
          'choices' => array(
             'true' => esc_html__('On', 'codeweber'),
             'false' => esc_html__('Off', 'codeweber'),
@@ -208,7 +206,7 @@ function CPT_Services_Settings($wp_customize)
    );
 
    $wp_customize->add_setting(
-      'codeweber_header_service_angle',
+      'codeweber_header_blog_angle',
       array(
          'default' => 'default',
       )
@@ -216,11 +214,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_angle',
+      'codeweber_header_blog_angle',
       array(
          'type' => 'radio',
          'label' => esc_html__('Angle Page Header', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'blog-section',
          'choices' => array(
             'true' => esc_html__('On', 'codeweber'),
             'false' => esc_html__('Off', 'codeweber'),
@@ -231,7 +229,7 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_setting(
-      'codeweber_header_service_bread_color',
+      'codeweber_header_blog_bread_color',
       array(
          'default' => 'default',
       )
@@ -239,11 +237,11 @@ function CPT_Services_Settings($wp_customize)
 
 
    $wp_customize->add_control(
-      'codeweber_header_service_bread_color',
+      'codeweber_header_blog_bread_color',
       array(
          'type' => 'radio',
          'label' => esc_html__('Text Page Header color', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'blog-section',
          'choices' => array(
             'white' => esc_html__('Light', 'codeweber'),
             'dark' => esc_html__('Dark', 'codeweber'),
@@ -253,18 +251,18 @@ function CPT_Services_Settings($wp_customize)
    );
 
    $wp_customize->add_setting(
-      'codeweber_page_service_header',
+      'codeweber_page_blog_header',
       array(
          'default' => 'default',
       )
    );
 
    $wp_customize->add_control(
-      'codeweber_page_service_header',
+      'codeweber_page_blog_header',
       array(
          'type' => 'radio',
          'label' => esc_html__('Secondary Header', 'codeweber'),
-         'section' => 'services-section',
+         'section' => 'blog-section',
          'choices' => array(
             'type_1' => esc_html__('Type 1', 'codeweber'),
             'type_2' => esc_html__('Type 2', 'codeweber'),
@@ -283,16 +281,16 @@ function CPT_Services_Settings($wp_customize)
 
    // Color Control Page Background
    $wp_customize->add_setting(
-      'codeweber_page_service_header_bg',
+      'codeweber_page_blog_header_bg',
       array(
          'default'   => 'light',
       )
    );
 
    $wp_customize->add_control(
-      'codeweber_page_service_header_bg',
+      'codeweber_page_blog_header_bg',
       array(
-         'section'  => 'services-section',
+         'section'  => 'blog-section',
          'label'    => __('Background Color', 'codeweber'),
          'type'     => 'select',
          'choices'  => array(
@@ -342,19 +340,20 @@ function CPT_Services_Settings($wp_customize)
    );
 
 
-   // Image Background Service Page Header
-   $wp_customize->add_setting('image_control_one', array(
+   // Image Background Blog Page Header
+   $wp_customize->add_setting('image_control_four', array(
       'default' => '',
       'type' => 'theme_mod',
       'capability' => 'edit_theme_options',
    ));
+
    $wp_customize->add_control(
-      new WP_Customize_Image_Control($wp_customize, 'image_control_one', array(
-         'label' => __('Page Header Service Background', 'codeweber'),
-         'section' => 'services-section',
-         'settings' => 'image_control_one',
+      new WP_Customize_Image_Control($wp_customize, 'image_control_four', array(
+         'label' => __('Page Header Blog Background', 'codeweber'),
+         'section' => 'blog-section',
+         'settings' => 'image_control_four',
       ))
    );
 }
 
-add_action('customize_register', 'CPT_Services_Settings');
+add_action('customize_register', 'CPT_Blog_Settings');

@@ -1,6 +1,11 @@
 <?php get_header(); ?>
-<section class="wrapper bg-light">
-	<div class="container py-14 py-md-16">
+<?php global $codeweber; ?>
+<?php $section_class = $codeweber['page_settings']['angle_class']; ?>
+<?php $container_class = $codeweber['page_settings']['container_class']; ?>
+<?php $content_class = $codeweber['page_settings']['content_class']; ?>
+
+<section class="wrapper bg-light<?php echo $section_class; ?>">
+	<div class="container<?php echo $container_class; ?>">
 		<div class="row gx-lg-8 gx-xl-12">
 			<?php
 			/** Faq Content */ ?>
@@ -62,8 +67,12 @@
 					$class_content = 'col-lg-8';
 				} else {
 					$class_content = 'col';
+				}
+
+				if ($codeweber['page_settings']['page_header_type'] == 'type_5' || $codeweber['page_settings']['page_header_type'] == 'type_7') {
+					$class_content = 'col-lg-10 mx-auto';
 				} ?>
-				<div class="<?php echo $class_content; ?>">
+				<div class="<?php echo $class_content; ?> <?php echo $content_class; ?>">
 					<div class="blog classic-view">
 						<?php while (have_posts()) :
 							the_post();
@@ -73,7 +82,12 @@
 						<!-- /post pagination -->
 					</div>
 				</div>
-			<?php get_sidebar();
+				<?php if ($codeweber['page_settings']['page_header_type'] !== 'type_5' && $codeweber['page_settings']['page_header_type'] !== 'type_7') {
+					get_sidebar();
+				}
+
+				?>
+			<?php
 			else :
 				if (is_active_sidebar('sidebar-main') || has_action('sidebar_main_start') || has_action('sidebar_main_end')) {
 					$class_content = 'col-lg-8';

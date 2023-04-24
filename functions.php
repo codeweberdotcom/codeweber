@@ -58,12 +58,10 @@ require_once get_template_directory() . '/functions/customize.php'; // --- Custo
 // --- Widgets ---//
 require_once get_template_directory() . '/functions/widgets.php'; // --- Custom Widgets ---
 
-
 // --- Classes --- //
 require_once get_template_directory() . '/functions/cw_classes/cw_classes.php'; // --- Classes CW ---
 
 require_once get_template_directory() . '/functions/classes/classes.php'; // --- Classes OLD ---
-
 
 if (class_exists('WooCommerce')) {
 	// --- Woocommerce ---//

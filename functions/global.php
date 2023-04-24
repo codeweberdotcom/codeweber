@@ -3,7 +3,8 @@ include 'global_function/faq_functions.php';
 include 'global_function/page_functions.php';
 include 'global_function/services_functions.php';
 include 'global_function/project_functions.php';
-include 'global_function/testimonial_functions.php';
+include 'global_function/blog_functions.php';
+include 'global_function/testimonials_functions.php';
 include 'global_function/header_functions.php';
 include 'global_function/footer_functions.php';
 include 'global_function/page_header_generator.php';
@@ -130,7 +131,7 @@ function codeweber_breadcrumbs($align, $color)
 				'rank_math/frontend/breadcrumb/html',
 				function ($html, $crumbs, $class) {
 					$html = str_replace('<li class="breadcrumb-item text-muted">', '<li class="breadcrumb-item text-white">', $html);
-					$html = str_replace('<span class="text-muted">dasas</span>', '<span class="text-white">dasas</span>', $html);
+					$html = str_replace('<span class="text-muted">', '<span class="text-white">', $html);
 					return $html;
 				},
 				10,

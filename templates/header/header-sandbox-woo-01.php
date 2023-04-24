@@ -1,26 +1,29 @@
 <?php
 
-if ($args['style_nav'] == 'transparent') {
+global $codeweber;
+
+$nav_color = $codeweber['page_settings']['nav_color'];
+$logo_style = $codeweber['page_settings']['header_style'];
+
+if ($logo_style == 'transparent') {
    $class_nav = 'position-absolute transparent ';
-   $class_nav .= $args['bg_nav'];
-} elseif ($args['style_nav'] == 'solid') {
-   $class_nav = $args['bg_nav'];
+   $class_nav .= $nav_color;
+} elseif ($logo_style == 'solid') {
+   $class_nav = $nav_color;
 } else {
    $class_nav = NULL;
 }
 
-$transparent_style = $args['style_nav'];
-
-
-if ($args['bg_nav'] == 'navbar-dark') {
+if ($codeweber['page_settings']['nav_color'] == 'navbar-dark') {
    $color_logo = 'light';
-} elseif ($args['bg_nav'] == 'navbar-light') {
+} elseif ($codeweber['page_settings']['nav_color'] == 'navbar-light') {
    $color_logo = 'dark';
-   $transparent_style = 'solid';
+} else {
+   $color_logo = 'dark';
 }
 
-if ($args['header_bg_color'] !== 'default') {
-   $class_header = $args['header_bg_color'];
+if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
+   $class_header = ' ' . $codeweber['page_settings']['header_bg_color'];
 } else {
    $class_header = NULL;
 }
@@ -31,7 +34,7 @@ if ($args['header_bg_color'] !== 'default') {
    <nav class="navbar navbar-expand-lg classic <?php echo $class_nav; ?>">
       <div class="container flex-lg-row flex-nowrap align-items-center">
          <div class="navbar-brand w-100 pe-3">
-            <?php echo codeweber_logo($color_logo, NULL, $transparent_style); ?>
+            <?php echo codeweber_logo($color_logo, NULL, $logo_style); ?>
          </div>
          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">
@@ -73,8 +76,6 @@ if ($args['header_bg_color'] !== 'default') {
                                  </li>
                                  <hr class="my-1" />
                               <?php }; ?>
-
-
 
                               <li class="nav-item">
                                  <?php if (is_user_logged_in()) { ?>

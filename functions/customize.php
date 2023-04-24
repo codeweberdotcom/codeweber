@@ -9,6 +9,7 @@ function codeweber_register_theme_customizer($wp_customize)
    $wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
    $wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
 
+
    if (isset($wp_customize->selective_refresh)) {
       $wp_customize->selective_refresh->add_partial(
          'blogname',
@@ -36,12 +37,33 @@ function codeweber_register_theme_customizer($wp_customize)
    )));
 
 
+   // add a panel
+   $wp_customize->add_panel('cpt-panel', array(
+      'title'       => __(
+         'Codeweber CPT Settings',
+         'codeweber'
+      ),
+      'description' => __('Settings Custom Post Type', 'codeweber'),
+      'priority'    => 1,
+
+   ));
+
+   // Theme Options Panel
+   $wp_customize->add_panel(
+      'codeweber_theme_options',
+      array(
+         'priority'       => 0,
+         'title'            => __('Codeweber Theme Options', 'codeweber'),
+         'description'      => __('Theme Modifications like color scheme, theme texts and layout preferences can be done here', 'codeweber'),
+      )
+   );
+
    // Button Section
    $wp_customize->add_section(
       'codeweber_button_options',
       array(
          'title'     => __('Button Options', 'codeweber'),
-         'priority'  => 3,
+         'priority'  => 50,
          'panel'         => 'codeweber_theme_options'
       )
    );
@@ -88,7 +110,7 @@ function codeweber_register_theme_customizer($wp_customize)
       'codeweber_color_options',
       array(
          'title'     => __('Color Options', 'codeweber'),
-         'priority'  => 2,
+         'priority'  => 40,
          'panel'         => 'codeweber_theme_options'
       )
    );
@@ -97,7 +119,7 @@ function codeweber_register_theme_customizer($wp_customize)
    $wp_customize->add_setting(
       'codeweber_color',
       array(
-         'default'   => 'green',
+         'default'   => 'bg-green',
       )
    );
 
@@ -127,26 +149,6 @@ function codeweber_register_theme_customizer($wp_customize)
             'dark'     => 'Dark',
             'light'     => 'Light',
             'primary'     => 'Primary',
-            'soft-primary' => 'Soft primary',
-            'soft-light' => 'Soft light',
-            'soft-white' => 'Soft white',
-            'soft-fuchsia' => 'Soft fuchsia',
-            'soft-green' => 'Soft green',
-            'soft-orange' => 'Soft orange',
-            'soft-pink' => 'Soft pink',
-            'soft-purple' => 'Soft purple',
-            'soft-red' => 'Soft red',
-            'soft-sky' => 'Soft sky',
-            'soft-violet' => 'Soft violet',
-            'soft-yellow' => 'Soft-yellow',
-            'soft-ash' => 'Soft ash',
-            'soft-navy' => 'Soft navy',
-            'soft-grape' => 'Soft grape',
-            'soft-muted' => 'Soft muted',
-            'soft-telegram' => 'Soft telegram',
-            'soft-whatsapp' => 'Soft whatsapp',
-            'soft-facebook' => 'Soft facebook',
-            'soft-pinterest' => 'Soft pinterest'
          )
       )
    );
@@ -157,7 +159,7 @@ function codeweber_register_theme_customizer($wp_customize)
       'codeweber_sub_title_options',
       array(
          'title'     => __('Title Options', 'codeweber'),
-         'priority'  => 2,
+         'priority'  => 30,
          'panel'         => 'codeweber_theme_options'
       )
    );
@@ -213,7 +215,7 @@ function codeweber_register_theme_customizer($wp_customize)
       'codeweber_image_options',
       array(
          'title'     => __('Image Options', 'codeweber'),
-         'priority'  => 2,
+         'priority'  => 20,
          'panel'         => 'codeweber_theme_options'
       )
    );
@@ -242,12 +244,34 @@ function codeweber_register_theme_customizer($wp_customize)
    );
 
 
+   // Page Header Section
+   $wp_customize->add_section(
+      'codeweber_page_header_options',
+      array(
+         'title'     => __('Page Header Options', 'codeweber'),
+         'priority'  => 10,
+         'panel'         => 'codeweber_theme_options'
+      )
+   );
+
+
+   // Global Settings Section
+   $wp_customize->add_section(
+      'codeweber_global_options',
+      array(
+         'title'     => __('Global Options', 'codeweber'),
+         'priority'  => 5,
+         'panel'         => 'codeweber_theme_options'
+      )
+   );
+
+
    // Header Section
    $wp_customize->add_section(
       'codeweber_header_options',
       array(
          'title'     => __('Header Options', 'codeweber'),
-         'priority'  => 1,
+         'priority'  => 15,
          'panel'         => 'codeweber_theme_options'
       )
    );
@@ -264,7 +288,7 @@ function codeweber_register_theme_customizer($wp_customize)
    $wp_customize->add_control(
       'codeweber_frame_content',
       array(
-         'section'   => 'codeweber_header_options',
+         'section'   => 'codeweber_global_options',
          'label'     => __('Content Frame?', 'codeweber'),
          'type'      => 'checkbox',
       )
@@ -281,7 +305,7 @@ function codeweber_register_theme_customizer($wp_customize)
    $wp_customize->add_control(
       'codeweber_page_loader',
       array(
-         'section'   => 'codeweber_header_options',
+         'section'   => 'codeweber_global_options',
          'label'     => __('Page Loader?', 'codeweber'),
          'type'      => 'checkbox',
       )
@@ -423,7 +447,7 @@ function codeweber_register_theme_customizer($wp_customize)
    $wp_customize->add_setting(
       'codeweber_header_color',
       array(
-         'default' => 'dark',
+         'default' => 'navbar-dark',
       )
    );
 
@@ -435,8 +459,8 @@ function codeweber_register_theme_customizer($wp_customize)
          'label' => esc_html__('Color Text Header', 'codeweber'),
          'section' => 'codeweber_header_options',
          'choices' => array(
-            'dark' => esc_html__('Dark', 'codeweber'),
-            'light' => esc_html__('Light', 'codeweber'),
+            'navbar-dark' => esc_html__('Dark', 'codeweber'),
+            'navbar-light' => esc_html__('Light', 'codeweber'),
          ),
       )
    );
@@ -446,33 +470,175 @@ function codeweber_register_theme_customizer($wp_customize)
       'codeweber_page_header',
       array(
          'default' => 'type_1',
+         'priority'  => 25,
       )
    );
-
 
    $wp_customize->add_control(
       'codeweber_page_header',
       array(
          'type' => 'radio',
          'label' => esc_html__('Secondary Header', 'codeweber'),
-         'section' => 'codeweber_header_options',
+         'section' => 'codeweber_page_header_options',
          'choices' => array(
+            'disable' => esc_html__('Disable', 'codeweber'),
             'type_1' => esc_html__('Type 1', 'codeweber'),
             'type_2' => esc_html__('Type 2', 'codeweber'),
             'type_3' => esc_html__('Type 3', 'codeweber'),
             'type_4' => esc_html__('Type 4', 'codeweber'),
-            'type_5' => esc_html__('Disable', 'codeweber'),
+            'type_5' => esc_html__('Type 5', 'codeweber'),
+            'type_6' => esc_html__('Type 6', 'codeweber'),
+            'type_7' => esc_html__('Type 7', 'codeweber'),
+            'type_8' => esc_html__('Type 8', 'codeweber'),
          ),
       )
    );
 
+
+   // Color Control Page Background
+   $wp_customize->add_setting(
+      'codeweber_page_header_bg',
+      array(
+         'default'   => 'bg-light',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_page_header_bg',
+      array(
+         'section'  => 'codeweber_page_header_options',
+         'label'    => __('Background Color', 'codeweber'),
+         'type'     => 'select',
+         'choices'  => array(
+            'bg-aqua'       => 'Aqua',
+            'bg-fuchsia'    => 'Fuchsia',
+            'bg-grape'      => 'Grape',
+            'bg-green'      => 'Green',
+            'bg-leaf'       => 'Leaf',
+            'bg-navy'       => 'Navy',
+            'bg-orange'     => 'Orange',
+            'bg-pink'       => 'Pink',
+            'bg-purple'     => 'Purple',
+            'bg-red'        => 'Red',
+            'bg-sky'        => 'Sky',
+            'bg-violet'     => 'Violet',
+            'bg-yellow'     => 'Yellow',
+            'bg-pinterest'  => 'Pinterest',
+            'bg-telegram' => 'Telegram',
+            'bg-whatsapp' => 'Whatsapp',
+            'bg-facebook' => 'Facebook',
+            'bg-dark'     => 'Dark',
+            'bg-light'     => 'Light',
+            'bg-primary'     => 'Primary',
+            'bg-soft-primary' => 'Soft Primary',
+            'bg-soft-light' => 'Soft Light',
+            'bg-soft-white' => 'Soft White',
+            'bg-soft-fuchsia' => 'Soft Fuchsia',
+            'bg-soft-green' => 'Soft Green',
+            'bg-soft-orange' => 'Soft Orange',
+            'bg-soft-pink' => 'Soft Pink',
+            'bg-soft-purple' => 'Soft Purple',
+            'bg-soft-red' => 'Soft Red',
+            'bg-soft-sky' => 'Soft Sky',
+            'bg-soft-violet' => 'Soft Violet',
+            'bg-soft-yellow' => 'Soft Yellow',
+            'bg-soft-ash' => 'Soft Ash',
+            'bg-soft-navy' => 'Soft Navy',
+            'bg-soft-grape' => 'Soft Grape',
+            'bg-soft-muted' => 'Soft Muted',
+            'bg-soft-telegram' => 'Soft Telegram',
+            'bg-soft-whatsapp' => 'Soft Whatsapp',
+            'bg-soft-facebook' => 'Soft Facebook',
+            'bg-soft-pinterest' => 'Soft Pinterest'
+         )
+      )
+   );
+
+   $wp_customize->add_setting(
+      'codeweber_page_header_bread',
+      array(
+         'default' => 'true',
+      )
+   );
+
+
+   $wp_customize->add_control(
+      'codeweber_page_header_bread',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Breadcrumbs', 'codeweber'),
+         'section' => 'codeweber_page_header_options',
+         'choices' => array(
+            'true' => esc_html__('On', 'codeweber'),
+            'false' => esc_html__('Off', 'codeweber'),
+         ),
+      )
+   );
+
+   $wp_customize->add_setting(
+      'codeweber_page_header_angle',
+      array(
+         'default' => 'true',
+      )
+   );
+
+
+   $wp_customize->add_control(
+      'codeweber_page_header_angle',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Angle Page Header', 'codeweber'),
+         'section' => 'codeweber_page_header_options',
+         'choices' => array(
+            'true' => esc_html__('On', 'codeweber'),
+            'false' => esc_html__('Off', 'codeweber'),
+         ),
+      )
+   );
+
+
+   $wp_customize->add_setting(
+      'codeweber_page_header_bread_color',
+      array(
+         'default' => 'dark',
+      )
+   );
+
+
+   $wp_customize->add_control(
+      'codeweber_page_header_bread_color',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Text Page Header color', 'codeweber'),
+         'section' => 'codeweber_page_header_options',
+         'choices' => array(
+            'white' => esc_html__('Light', 'codeweber'),
+            'dark' => esc_html__('Dark', 'codeweber'),
+         ),
+      )
+   );
+
+   // Image Background  Page Header
+   $wp_customize->add_setting('image_control_page', array(
+      'default' => '',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options',
+   ));
+
+   $wp_customize->add_control(
+      new WP_Customize_Image_Control($wp_customize, 'image_control_page', array(
+         'label' => __('Page Header Service Background', 'codeweber'),
+         'section' => 'codeweber_page_header_options',
+         'settings' => 'image_control_page',
+      ))
+   );
 
    // Header Section
    $wp_customize->add_section(
       'codeweber_footer_options',
       array(
          'title'     => __('Footer Options', 'codeweber'),
-         'priority'  => 1,
+         'priority'  => 30,
          'panel'         => 'codeweber_theme_options'
       )
    );
@@ -521,170 +687,3 @@ function codeweber_register_theme_customizer($wp_customize)
    );
 }
 add_action('customize_register', 'codeweber_register_theme_customizer');
-
-
-
-function codeweber_cpt_customize_register($wp_customize)
-{
-
-
-   // add a panel
-   $wp_customize->add_panel('cpt-panel', array(
-      'title'       => __('Codeweber CPT Settings', 'codeweber'),
-      'description' => __('Settings Custom Post Type', 'codeweber'),
-      'priority'    => 1,
-
-   ));
-
-
-   // Add blog section to our panel
-   $wp_customize->add_section('blog-section', array(
-      'title' => __('Blog', 'codeweber'),
-      'description' => __('blog settings', 'codeweber'),
-      'panel' => 'cpt-panel',
-   ));
-
-   // blog Control
-   $wp_customize->add_setting(
-      'blog_template',
-      array(
-         'choices'  => array(
-            'default'   => 'template_1',
-         )
-      )
-   );
-
-   $wp_customize->add_control(
-      'blog_template',
-      array(
-         'section' => 'blog-section',
-         'label'    => __('Blog archive template', 'codeweber'),
-         'type'     => 'select',
-         'choices'  => array(
-            'template_1'   => 'Template 1',
-            'template_2'   => 'Template 2',
-            'template_3'   => 'Template 3',
-         )
-      )
-   );
-
-   // Add project section to our panel
-   $wp_customize->add_section('project-section', array(
-      'title' => __('Projects', 'codeweber'),
-      'description' => __('project settings', 'codeweber'),
-      'panel' => 'cpt-panel',
-   ));
-
-   // Project Control
-   $wp_customize->add_setting(
-      'project_template',
-      array(
-         'type' => 'theme_mod',
-         'capability' => 'edit_theme_options',
-         'choices'  => array(
-            'default'   => 'template_1',
-         )
-      )
-   );
-
-   $wp_customize->add_control(
-      'project_template',
-      array(
-         'section' => 'project-section',
-         'label'    => __('Projects archive template', 'codeweber'),
-         'type'     => 'select',
-         'choices'  => array(
-            'template_1'   => 'Template 1',
-            'template_2'   => 'Template 2',
-            'template_3'   => 'Template 3',
-            'template_4'   => 'Template 4',
-            'template_5'   => 'Template 5',
-         )
-      )
-   );
-
-
-   $wp_customize->add_setting('project_description', array(
-      'default' => '',
-      'type' => 'theme_mod',
-      'capability' => 'edit_theme_options',
-      'transport' => 'refresh',
-
-   ));
-
-   $wp_customize->add_control('project_description', array(
-      'type' => 'textarea',
-      'priority' => 20,
-      'label' => __('Project Archive Description', 'codeweber'),
-      'section' => 'project-section',
-   ));
-
-
-   $wp_customize->add_setting('project_title', array(
-      'default' => '',
-      'type' => 'theme_mod',
-      'capability' => 'edit_theme_options',
-      'transport' => 'refresh',
-
-   ));
-
-   $wp_customize->add_control('project_title', array(
-      'type' => 'textarea',
-      'priority' => 15,
-      'label' => __('Project Archive Title', 'codeweber'),
-      'section' => 'project-section',
-   ));
-
-
-
-
-
-
-
-
-   // Theme Options Panel
-   $wp_customize->add_panel(
-      'codeweber_theme_options',
-      array(
-         'priority'       => 0,
-         'title'            => __('Codeweber Theme Options', 'codeweber'),
-         'description'      => __('Theme Modifications like color scheme, theme texts and layout preferences can be done here', 'codeweber'),
-      )
-   );
-
-   // Add Testimonial section to our panel
-   $wp_customize->add_section('testimonial-section', array(
-      'title' => __('Testimonials', 'codeweber'),
-      'description' => __('Testimonials settings', 'codeweber'),
-      'panel' => 'cpt-panel',
-   ));
-
-
-
-
-   // Testimonial Control
-   $wp_customize->add_setting(
-      'testimonial_template',
-      array(
-         'choices'  => array(
-            'default'   => 'template_1',
-         )
-      )
-   );
-
-   $wp_customize->add_control(
-      'testimonial_template',
-      array(
-         'section' => 'testimonial-section',
-         'label'    => __('Testimonials archive template', 'codeweber'),
-         'type'     => 'select',
-         'choices'  => array(
-            'template_1'   => 'Template 1',
-            'template_2'   => 'Template 2',
-            'template_3'   => 'Template 3',
-         )
-      )
-   );
-}
-
-add_action('customize_register', 'codeweber_cpt_customize_register');

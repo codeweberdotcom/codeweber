@@ -1,4 +1,15 @@
-<div class="col-lg-8">
+<?php global $codeweber; ?>
+<?php $content_class = $codeweber['page_settings']['content_class']; ?>
+
+
+<?php if ($codeweber['page_settings']['page_header_type'] == 'type_5' || $codeweber['page_settings']['page_header_type'] == 'type_7') {
+	$class_content = 'col-lg-10 mx-auto';
+} else {
+	$class_content = 'col-8';
+} ?>
+
+
+<div class="<?php echo $class_content; ?> <?php echo $content_class; ?>">
 	<div class="blog single">
 		<div class="card">
 			<figure class="card-img-top">
