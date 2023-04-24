@@ -99,7 +99,7 @@ function woo_header()
       } else {
          $codeweber['page_settings']['angle_class'] = NULL;
       }
-   } elseif (is_product()) {
+   } elseif (is_woocommerce() && is_product()) {
       $codeweber['page_settings']['page_header_title'] = codeweber_page_title();
       $codeweber['page_settings']['page_header_sub_title'] = NULL;
 

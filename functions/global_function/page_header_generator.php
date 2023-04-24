@@ -220,7 +220,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          <!-- /.container -->
       </section>
    <?php
-   } else { ?>
+   } elseif ($type !== NULL) { ?>
       <section class="wrapper bg-gray">
          <div class="container py-3 py-md-5">
             <?php codeweber_breadcrumbs(NULL, $text_color); ?>
