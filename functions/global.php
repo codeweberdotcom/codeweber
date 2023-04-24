@@ -272,7 +272,7 @@ function codeweber_page_title()
 	if (!is_front_page() || !is_home()) {
 		if (class_exists('WooCommerce')) {
 			if (is_shop()) {
-				$title =  woocommerce_page_title() . $page_num;
+				$title =  woocommerce_page_title(false) . $page_num;
 			} elseif (is_post_type_archive('projects') && get_theme_mod('project_title')) {
 				$title = get_theme_mod('project_title');
 			} elseif (is_tag() || is_category() || is_archive() || is_author()) {
@@ -306,6 +306,7 @@ function codeweber_page_title()
 	} elseif (is_front_page() || is_home()) {
 		$title = esc_html(get_the_title(get_option('page_for_posts', true)));
 	}
+
 	return $title;
 }
 

@@ -21,7 +21,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       } elseif ($header_style == 'solid') {
          $codeweber['page_settings']['container_class'] = ' pt-10 pb-20 pb-md-20 pt-md-14 pb-lg-20 text-center';
          $codeweber['page_settings']['content_class'] = ' mt-n18 mt-md-n20 mt-lg-n21 position-relative';
-         $codeweber['page_settings']['col_class'] = '  col-lg-8 mx-auto mb-11';
+         $codeweber['page_settings']['col_class'] = ' col-lg-8 mx-auto mb-11';
       }
    } elseif ($type == 'type_7' || $type == 'Disable') {
       if ($header_style == 'transparent') {
@@ -30,7 +30,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          $codeweber['page_settings']['content_class'] = ' mt-n21';
       } elseif ($header_style == 'solid') {
          $codeweber['page_settings']['container_class'] = ' pt-10 pb-20 pb-md-20 pt-md-14 pb-lg-20 text-center';
-         $codeweber['page_settings']['col_class'] = '  col-lg-8 mx-auto mb-11';
+         $codeweber['page_settings']['col_class'] = ' col-lg-8 mx-auto mb-11';
          $codeweber['page_settings']['content_class'] = ' mt-n21';
       }
    } else {
