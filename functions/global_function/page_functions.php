@@ -144,6 +144,8 @@ function page_header()
       } else {
          $codeweber['page_settings']['angle_class'] = NULL;
       }
+
+      printr($codeweber);
    } elseif (is_post_type_archive('testimonials')) {
 
       if (get_theme_mod('testimonial_title')) {
