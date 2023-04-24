@@ -41,14 +41,18 @@
 			$blog =  false;
 		}
 
-		if (is_post_type_archive('services') || is_tax('service_category')) {
-			if (get_theme_mod('codeweber_header_service_style') !== 'default') {
-				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_service_style');
-			} else {
+		if (is_post_type_archive('services') || is_tax('service_category') || is_singular('services')) {
+			if (get_field('cw_transparent_header') && get_field('cw_transparent_header') !== 'default') {
+				$codeweber['page_settings']['header_style'] = get_field('cw_transparent_header');
+			} elseif (get_theme_mod('codeweber_header_service_style') == 'default') {
 				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_style');
+			} else {
+				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_service_style');
 			}
 
-			if (get_theme_mod('codeweber_header_service_bg') == 'default' && get_theme_mod('codeweber_header_style') !== 'transparent') {
+			if (get_field('header_background_color') !== 'default' && get_field('cw_transparent_header') !== 'transparent' && get_theme_mod('codeweber_header_style') !== 'transparent') {
+				$codeweber['page_settings']['header_bg_color'] = get_field('header_background_color');
+			} elseif (get_theme_mod('codeweber_header_service_bg') == 'default' && get_theme_mod('codeweber_header_style') !== 'transparent') {
 				$codeweber['page_settings']['header_bg_color'] = get_theme_mod('codeweber_header_bg');
 			} elseif (get_theme_mod('codeweber_header_service_style') !== 'transparent') {
 				$codeweber['page_settings']['header_bg_color'] = get_theme_mod('codeweber_header_service_bg');
@@ -56,9 +60,11 @@
 				$codeweber['page_settings']['header_bg_color'] = NULL;
 			}
 
-			if (get_theme_mod('codeweber_header_service_color') !== 'default') {
+			if (get_field('navbar_color') !== 'default') {
+				$codeweber['page_settings']['nav_color'] = get_field('navbar_color');
+			} elseif (get_theme_mod('codeweber_header_service_color') && get_theme_mod('codeweber_header_service_color') !== 'default') {
 				$codeweber['page_settings']['nav_color'] = get_theme_mod('codeweber_header_service_color');
-			} elseif (get_theme_mod('codeweber_header_color')) {
+			} elseif (get_theme_mod('codeweber_header_color') && get_theme_mod('codeweber_header_color') !== 'default') {
 				$codeweber['page_settings']['nav_color'] = get_theme_mod('codeweber_header_color');
 			} else {
 				$codeweber['page_settings']['nav_color'] = 'navbar-light';
