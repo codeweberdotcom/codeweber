@@ -9,6 +9,7 @@ include 'woocommerce-offcanvas-cart.php';
 include 'woocommerce-mobile-bottom-menu.php';
 //include 'woocommerce-category-banner.php';
 include 'woocommerce_customizer.php';
+include 'woocommerce-page_header.php';
 
 
 /**
@@ -460,3 +461,11 @@ function add_on_hover_shop_loop_image()
       }
    }
 }
+
+
+add_filter('rank_math/frontend/breadcrumb/items', function ($crumbs, $class) {
+   if (is_single()) {
+      array_pop($crumbs);
+   }
+   return $crumbs;
+}, 10, 2);
