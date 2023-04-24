@@ -123,7 +123,7 @@ $block = new CW_Settings(
       'subtitle' => 'Reach out to us from our contact form and we will get back to you shortly.',
       'patternSubtitle' => '<p class="lead text-center mb-10 %2$s">%1$s</p>',
 
-      'background_class_default' => 'wrapper bg-light angled upper-end',
+      'background_class_default' => 'wrapper bg-light',
       'divider' => true,
 
       'features' => '<div class="col-md-4 text-center"><h3 class="counter counter-lg text-primary">7518</h3><p>Completed Projects</p></div><!--/column -->',
