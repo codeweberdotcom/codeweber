@@ -19,7 +19,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          $codeweber['page_settings']['content_class'] = ' mt-n18 mt-md-n20 mt-lg-n22 position-relative';
          $codeweber['page_settings']['col_class'] = ' col-lg-8 mx-auto mb-11';
       } elseif ($header_style == 'solid') {
-         $codeweber['page_settings']['container_class'] = ' pt-10 pb-20 pb-md-20 pt-md-14 pb-lg-20';
+         $codeweber['page_settings']['container_class'] = ' pt-10 pb-20 pb-md-20 pt-md-14 pb-lg-20 text-center';
          $codeweber['page_settings']['content_class'] = ' mt-n18 mt-md-n20 mt-lg-n21 position-relative';
          $codeweber['page_settings']['col_class'] = ' col-lg-8 mx-auto mb-11';
       }
@@ -131,7 +131,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       <?php echo $section_open; ?>
       <div class=" container <?php echo $codeweber['page_settings']['container_class']; ?>">
          <div class="row">
-            <div class="<?php echo $codeweber['page_settings']['col_class']; ?>">
+            <div class="<?php echo $codeweber['page_settings']['col_class']; ?> text-center">
                <div class="h1 fs-15 text-uppercase mb-3 <?php echo $text_color; ?>"><?php echo $subtitle; ?></div>
                <h1 class="display-1 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
                <?php
@@ -174,7 +174,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       <?php echo $section_open; ?>
       <div class="container<?php echo $codeweber['page_settings']['container_class']; ?>">
          <div class="row">
-            <div class="<?php echo $codeweber['page_settings']['col_class']; ?>">
+            <div class="<?php echo $codeweber['page_settings']['col_class']; ?> text-center">
                <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
                <p class="lead px-lg-7 px-xl-7 px-xxl-6 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
                <?php
