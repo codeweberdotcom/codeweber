@@ -161,7 +161,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          <?php
       } elseif ($type == 'type_7') { ?>
             <?php echo $section_open; ?>
-            <div class="container pt-10 pb-19 pt-md-14 pb-md-20 text-center">
+            <div class="container pt-16 pb-19 pt-md-18 pb-md-20 text-center">
                <div class="row">
                   <div class="col-md-8 col-lg-7 col-xl-6 col-xxl-5 mx-auto mb-11">
                      <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
