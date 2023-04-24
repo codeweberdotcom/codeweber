@@ -60,7 +60,7 @@
 				$codeweber['page_settings']['header_bg_color'] = NULL;
 			}
 
-			if (get_field('navbar_color') !== 'default') {
+			if (!is_post_type_archive('services') && get_field('navbar_color') !== 'default') {
 				$codeweber['page_settings']['nav_color'] = get_field('navbar_color');
 			} elseif (get_theme_mod('codeweber_header_service_color') && get_theme_mod('codeweber_header_service_color') !== 'default') {
 				$codeweber['page_settings']['nav_color'] = get_theme_mod('codeweber_header_service_color');
