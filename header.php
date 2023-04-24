@@ -69,6 +69,7 @@
 			} else {
 				$codeweber['page_settings']['nav_color'] = 'navbar-light';
 			}
+			printr($codeweber);
 		} elseif (is_post_type_archive('testimonials')) {
 			echo 'testimonials';
 			if (get_theme_mod('codeweber_header_testimonial_style') !== 'default') {
