@@ -8,6 +8,14 @@ function Customizer_Woocommerce_Settings($wp_customize)
    // Woocommerce Header
    if (class_exists('WooCommerce')) {
 
+      // Add woocommerce section to our panel
+      $wp_customize->add_section('woocommerce-section', array(
+         'title' => __('Woocommerce', 'codeweber'),
+         'description' => __('woocommerce settings', 'codeweber'),
+         'panel' => 'cpt-panel',
+      ));
+
+
       $wp_customize->add_setting('woo_description', array(
          'default' => '',
          'type' => 'theme_mod',
@@ -38,15 +46,6 @@ function Customizer_Woocommerce_Settings($wp_customize)
          'label' => __('Woo Archive Title', 'codeweber'),
          'section' => 'woocommerce-section',
       ));
-
-
-      // Add woocommerce section to our panel
-      $wp_customize->add_section('woocommerce-section', array(
-         'title' => __('Woocommerce', 'codeweber'),
-         'description' => __('woocommerce settings', 'codeweber'),
-         'panel' => 'cpt-panel',
-      ));
-
 
 
       // Header Control
@@ -343,7 +342,7 @@ function Customizer_Woocommerce_Settings($wp_customize)
          'codeweber_page_woo_header',
          array(
             'type' => 'radio',
-            'label' => esc_html__('Secondary Header', 'codeweber'),
+            'label' => esc_html__('Secondary Header Archive', 'codeweber'),
             'section' => 'woocommerce-section',
             'choices' => array(
                'type_1' => esc_html__('Type 1', 'codeweber'),
@@ -359,6 +358,37 @@ function Customizer_Woocommerce_Settings($wp_customize)
             ),
          )
       );
+
+
+      $wp_customize->add_setting(
+         'codeweber_page_woo_product_header',
+         array(
+            'default' => 'type_9',
+         )
+      );
+
+      $wp_customize->add_control(
+         'codeweber_page_woo_product_header',
+         array(
+            'type' => 'radio',
+            'label' => esc_html__('Secondary Header Product', 'codeweber'),
+            'section' => 'woocommerce-section',
+            'choices' => array(
+               'type_1' => esc_html__('Type 1', 'codeweber'),
+               'type_2' => esc_html__('Type 2', 'codeweber'),
+               'type_3' => esc_html__('Type 3', 'codeweber'),
+               'type_4' => esc_html__('Type 4', 'codeweber'),
+               'type_5' => esc_html__('Type 5', 'codeweber'),
+               'type_6' => esc_html__('Type 6', 'codeweber'),
+               'type_7' => esc_html__('Type 7', 'codeweber'),
+               'type_8' => esc_html__('Type 8', 'codeweber'),
+               'type_9' => esc_html__('Recomended', 'codeweber'),
+               'disable' => esc_html__('Disable', 'codeweber'),
+               'default' => esc_html__('Default', 'codeweber'),
+            ),
+         )
+      );
+
 
 
       // Color Control Woo Background

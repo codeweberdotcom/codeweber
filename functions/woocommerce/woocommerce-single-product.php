@@ -15,9 +15,16 @@ function filter_woocommerce_post_class($classes, $product)
    // is_product() - Returns true on a single product page
    // NOT single product page, so return
    if (!is_product()) return $classes;
-
+   global $codeweber;
    // Add wrapper product class
    $classes[] = 'row gx-md-8 gx-xl-12 gy-8';
+   if ($codeweber['page_settings']['page_header_type'] == 'type_7' || $codeweber['page_settings']['page_header_type'] == 'type_5') {
+      if ($codeweber['page_settings']['header_style'] == 'transparent') {
+         $classes[] = 'mt-n20 rounded shadow bg-light';
+      } elseif ($codeweber['page_settings']['header_style'] == 'solid') {
+         $classes[] = 'mt-n22 rounded shadow bg-light';
+      }
+   }
    return $classes;
 }
 
@@ -29,11 +36,17 @@ add_filter('woocommerce_post_class', 'filter_woocommerce_post_class', 10, 2);
  */
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 function woocommerce_add_custom_text_after_product_title()
-{ ?>
-   <div class="post-header mb-5">
-      <h2 class="post-title display-5"><?php the_title(); ?></h2>
-   </div>
-<?php }
+{
+   global $codeweber;
+   if ($codeweber['page_settings']['page_header_type'] == 'type_9') { ?>
+      <div class="post-header mb-5">
+         <h2 class="post-title display-5"><?php the_title(); ?></h2>
+      </div>
+<?php
+   }
+}
+
+
 
 add_action('woocommerce_single_product_summary', 'woocommerce_add_custom_text_after_product_title', 5);
 

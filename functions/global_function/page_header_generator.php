@@ -211,6 +211,34 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          </div>
          <!-- /.container -->
       </section>
-<?php
-   }
+   <?php
+   } elseif ($type == 'type_9') { ?>
+      <section class="wrapper bg-gray">
+         <div class="container py-3 py-md-5">
+            <?php codeweber_breadcrumbs(NULL, $text_color); ?>
+         </div>
+         <!-- /.container -->
+      </section>
+   <?php
+   } else { ?>
+      <section class="wrapper bg-gray">
+         <div class="container py-3 py-md-5">
+            <?php codeweber_breadcrumbs(NULL, $text_color); ?>
+         </div>
+         <!-- /.container -->
+      </section>
+      <section class="wrapper">
+         <div class="container text-left pt-9 pb-0">
+            <div class="row">
+               <div class="col-md-7 col-lg-6 col-xl-6">
+                  <h1 class="display-3 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
+                  <p class="lead <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
+               </div>
+               <!-- /column -->
+            </div>
+            <!-- /.row -->
+         </div>
+         <!-- /.container -->
+      </section>
+<?php }
 }
