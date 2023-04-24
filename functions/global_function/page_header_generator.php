@@ -8,15 +8,31 @@
 function codeweber_pageheader_generator($title, $subtitle, $type, $background_url, $bg_color, $paralax, $breadcrumbs, $text_color, $class_container, $class_content, $angle_class)
 {
    global $codeweber;
+   $header_style = $codeweber['page_settings']['header_style'];
+
    if ($title == NULL) {
       $title =  codeweber_page_title();
    }
    if ($type == 'type_5' || $type == 'Disable') {
-      $codeweber['page_settings']['container_class'] = ' pb-23 pb-md-25';
-      $codeweber['page_settings']['content_class'] = ' mt-n18 mt-md-n20 mt-lg-n21 position-relative';
+      if ($header_style == 'transparent') {
+         $codeweber['page_settings']['container_class'] = ' pt-17 pb-16 pt-md-19 pb-md-18 text-center';
+         $codeweber['page_settings']['content_class'] = ' mt-n18 mt-md-n20 mt-lg-n22 position-relative';
+         $codeweber['page_settings']['col_class'] = ' col-lg-8 mx-auto mb-11';
+      } elseif ($header_style == 'solid') {
+         $codeweber['page_settings']['container_class'] = ' pt-10 pb-20 pb-md-20 pt-md-14 pb-lg-20 text-center';
+         $codeweber['page_settings']['content_class'] = ' mt-n18 mt-md-n20 mt-lg-n21 position-relative';
+         $codeweber['page_settings']['col_class'] = '  col-lg-8 mx-auto mb-11';
+      }
    } elseif ($type == 'type_7' || $type == 'Disable') {
-      $codeweber['page_settings']['container_class'] = ' pb-14 pb-md-16';
-      $codeweber['page_settings']['content_class'] = ' mt-n20';
+      if ($header_style == 'transparent') {
+         $codeweber['page_settings']['container_class'] = ' pt-17 pb-14 pt-md-19 pb-md-14 text-center';
+         $codeweber['page_settings']['col_class'] = ' col-lg-8 mx-auto mb-11';
+         $codeweber['page_settings']['content_class'] = ' mt-n21';
+      } elseif ($header_style == 'solid') {
+         $codeweber['page_settings']['container_class'] = ' pt-10 pb-20 pb-md-20 pt-md-14 pb-lg-20 text-center';
+         $codeweber['page_settings']['col_class'] = '  col-lg-8 mx-auto mb-11';
+         $codeweber['page_settings']['content_class'] = ' mt-n21';
+      }
    } else {
       $codeweber['page_settings']['container_class'] = ' pt-14 pb-12 pt-md-14 pb-md-14';
       $codeweber['page_settings']['content_class'] = NULL;
@@ -27,7 +43,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       $section_open = '<section class="wrapper ' . $bg_color . '">';
    }
 
-   $header_style = $codeweber['page_settings']['header_style'];
+
 
    if ($type == 'type_1') { ?>
       <?php echo $section_open; ?>
@@ -113,93 +129,88 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
    <?php
    } elseif ($type == 'type_5') { ?>
       <?php echo $section_open; ?>
-      <?php if ($header_style == 'transparent') { ?>
-         <div class=" container pt-18 pt-md-20 pb-21 pb-md-21 text-center">
-         <?php
-      } else { ?>
-            <div class="container pt-10 pb-18 pb-md-20 pt-md-14 pb-lg-21 text-center">
-            <?php } ?>
+      <div class=" container <?php echo $codeweber['page_settings']['container_class']; ?>">
+         <div class="row">
+            <div class="<?php echo $codeweber['page_settings']['col_class']; ?>">
+               <div class="h1 fs-15 text-uppercase mb-3 <?php echo $text_color; ?>"><?php echo $subtitle; ?></div>
+               <h1 class="display-1 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
+               <?php
+               if ($breadcrumbs == 'true') {
+                  codeweber_breadcrumbs(NULL, $text_color);
+               }
+               codeweber_meta_blog(); // Blog Meta Data
+               ?>
+            </div>
+            <!-- /column -->
+         </div>
+         <!-- /.row -->
+      </div>
+      <!-- /.container -->
+      </section>
+   <?php
+   } elseif ($type == 'type_6') {
+   ?>
+      <?php echo $section_open; ?>
+      <div class="container pt-19 pt-md-21 pb-18 pb-md-20 text-center">
+         <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mx-auto">
+               <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
+               <p class="lead fs-lg px-md-3 px-lg-7 px-xl-9 px-xxl-10 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
+               <?php
+               if ($breadcrumbs == 'true') {
+                  codeweber_breadcrumbs(NULL, $text_color);
+               }
+               codeweber_meta_blog(); // Blog Meta Data 
+               ?>
+            </div>
+            <!-- /column -->
+         </div>
+         <!-- /.row -->
+      </div>
+      <!-- /.container -->
+      </section>
+   <?php
+   } elseif ($type == 'type_7') { ?>
+      <?php echo $section_open; ?>
+      <div class="container<?php echo $codeweber['page_settings']['container_class']; ?>">
+         <div class="row">
+            <div class="<?php echo $codeweber['page_settings']['col_class']; ?>">
+               <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
+               <p class="lead px-lg-7 px-xl-7 px-xxl-6 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
+               <?php
+               if ($breadcrumbs == 'true') {
+                  codeweber_breadcrumbs(NULL, $text_color);
+               }
+               codeweber_meta_blog(); // Blog Meta Data
+               ?>
+            </div>
+            <!-- /column -->
+         </div>
+         <!-- /.row -->
+      </div>
+      <!-- /.container -->
+      </section>
+   <?php
+   } elseif ($type == 'type_8') { ?>
+      <section class="wrapper bg-gray">
+         <div class="container py-3 py-md-5">
+            <?php codeweber_breadcrumbs(NULL, $text_color); ?>
+         </div>
+         <!-- /.container -->
+      </section>
+      <section class="wrapper">
+         <div class="container text-left pt-9 pb-0">
             <div class="row">
-               <div class="col-lg-8 mx-auto mb-11">
-                  <div class="h1 fs-15 text-uppercase mb-3 <?php echo $text_color; ?>"><?php echo $subtitle; ?></div>
-                  <h1 class="display-1 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
-                  <?php
-                  if ($breadcrumbs == 'true') {
-                     codeweber_breadcrumbs(NULL, $text_color);
-                  }
-                  codeweber_meta_blog(); // Blog Meta Data
-                  ?>
+               <div class="col-md-7 col-lg-6 col-xl-6">
+                  <h1 class="display-3 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
+                  <p class="lead <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
                </div>
                <!-- /column -->
             </div>
             <!-- /.row -->
-            </div>
-            <!-- /.container -->
-            </section>
-         <?php
-      } elseif ($type == 'type_6') {
-         ?>
-            <?php echo $section_open; ?>
-            <div class="container pt-19 pt-md-21 pb-18 pb-md-20 text-center">
-               <div class="row">
-                  <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mx-auto">
-                     <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
-                     <p class="lead fs-lg px-md-3 px-lg-7 px-xl-9 px-xxl-10 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
-                     <?php
-                     if ($breadcrumbs == 'true') {
-                        codeweber_breadcrumbs(NULL, $text_color);
-                     }
-                     codeweber_meta_blog(); // Blog Meta Data 
-                     ?>
-                  </div>
-                  <!-- /column -->
-               </div>
-               <!-- /.row -->
-            </div>
-            <!-- /.container -->
-            </section>
-         <?php
-      } elseif ($type == 'type_7') { ?>
-            <?php echo $section_open; ?>
-            <div class="container pt-16 pb-19 pt-md-18 pb-md-20 text-center">
-               <div class="row">
-                  <div class="col-md-8 col-lg-7 col-xl-6 col-xxl-5 mx-auto mb-11">
-                     <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
-                     <p class="lead px-lg-7 px-xl-7 px-xxl-6 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
-                     <?php
-                     if ($breadcrumbs == 'true') {
-                        codeweber_breadcrumbs(NULL, $text_color);
-                     }
-                     codeweber_meta_blog(); // Blog Meta Data
-                     ?>
-                  </div>
-                  <!-- /column -->
-               </div>
-               <!-- /.row -->
-            </div>
-            <!-- /.container -->
-            </section>
-         <?php
-      } elseif ($type == 'type_8') { ?>
-            <section class="wrapper bg-gray">
-               <div class="container py-3 py-md-5">
-                  <?php codeweber_breadcrumbs(NULL, $text_color); ?>
-               </div>
-               <!-- /.container -->
-            </section>
-            <section class="wrapper">
-               <div class="container text-left pt-9 pb-0">
-                  <div class="row">
-                     <div class="col-md-7 col-lg-6 col-xl-6">
-                        <h1 class="display-3 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
-                        <p class="lead <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
-                     </div>
-                     <!-- /column -->
-                  </div>
-                  <!-- /.row -->
-               </div>
-               <!-- /.container -->
-            </section>
-      <?php
-      }
+         </div>
+         <!-- /.container -->
+      </section>
+<?php
    }
+}
