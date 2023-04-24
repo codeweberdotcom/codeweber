@@ -527,7 +527,6 @@ function page_header()
          $codeweber['page_settings']['page_header_url'] = NULL;
       }
    }
-   printr($codeweber);
    codeweber_pageheader_generator(
       $codeweber['page_settings']['page_header_title'],
       $codeweber['page_settings']['page_header_sub_title'],
