@@ -1,38 +1,14 @@
-    <section class="wrapper bg-light">
-       <div class="container pt-10 pt-md-14">
-          <div class="row">
-             <div class="col-md-8 col-lg-7 col-xl-6 col-xxl-5">
-                <h1 class="display-1 mb-3">
-                   <?php if (get_theme_mod('project_title')) {
-                        echo get_theme_mod('project_title');
-                     } else {
-                        echo codeweber_page_title();
-                     } ?>
-                </h1>
-                <?php if (get_theme_mod('project_description')) { ?>
-                   <p class="lead fs-lg pe-lg-15 pe-xxl-12"><?php echo get_theme_mod('project_description'); ?></p>
-                <?php } else { ?>
-                   <p class="lead fs-lg pe-lg-15 pe-xxl-12">Check out some of our awesome projects with creative ideas and great design.</p>
-                <?php }; ?>
-                <?php codeweber_breadcrumbs(NULL, NULL); ?>
-             </div>
-             <!-- /column -->
-          </div>
-          <!-- /.row -->
-       </div>
-       <!-- /.container -->
-    </section>
-    <!-- /section -->
-
-    <?php $terms = get_terms([
+    <?php
+      global $codeweber;
+      $terms = get_terms([
          'taxonomy' => 'projects_category',
          'hide_empty' => true,
       ]);
       ?>
 
-    <section class="wrapper bg-light">
-       <div class="container py-14 py-md-16">
-          <div class="grid grid-view projects-masonry pb-14 pb-md-16">
+    <section class="wrapper bg-light<?php echo $codeweber['page_settings']['angle_class']; ?>">
+       <div class="container py-14 py-md-16<?php echo $codeweber['page_settings']['container_class']; ?>">
+          <div class="grid grid-view projects-masonry pb-14 pb-md-16<?php echo $codeweber['page_settings']['content_class']; ?>">
              <div class="isotope-filter filter mb-10">
                 <p><?php esc_html_e('Filter:', 'codeweber') ?></p>
                 <ul>

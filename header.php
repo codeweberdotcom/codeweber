@@ -116,7 +116,6 @@
 				$codeweber['page_settings']['nav_color'] = 'navbar-light';
 			}
 		} elseif (is_post_type_archive('projects')) {
-			echo 'projects';
 			if (get_theme_mod('codeweber_header_project_style') !== 'default') {
 				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_project_style');
 			} else {
