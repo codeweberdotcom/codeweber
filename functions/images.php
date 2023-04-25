@@ -37,7 +37,7 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('sandbox_hero_17', 1920, 890, true);
 		add_image_size('sandbox_hero_18', 800, 800, true);
 		add_image_size('sandbox_hero_26', 800, 1080, true);
-		
+
 
 		add_image_size('sandbox_about_4', 450, 450, true);
 
@@ -48,7 +48,7 @@ if (!function_exists('brk_image_settings')) {
 		add_image_size('sandbox_features_1', 595, 507, true);
 		add_image_size('sandbox_features_6', 800, 621, true);
 		add_image_size('sandbox_features_10', 350, 338, true);
-		
+
 		add_image_size('sandbox_slider_1', 560, 350, true);
 		add_image_size('sandbox_slider_2', 460, 307, true);
 
@@ -100,7 +100,8 @@ add_action('after_setup_theme', 'brk_image_settings');
 // --- Set image compression value ---
 // https://developer.wordpress.org/reference/hooks/jpeg_quality/
 
-// function brk_image_quality() {
-// 	return 80;
-// }
-// add_filter( 'jpeg_quality', 'brk_image_quality' );
+function brk_image_quality()
+{
+	return 80;
+}
+add_filter('jpeg_quality', 'brk_image_quality');

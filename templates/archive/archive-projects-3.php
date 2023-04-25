@@ -43,7 +43,7 @@ $terms = get_terms([
 
                      <?php
                      if (get_theme_mod('codeweber_page_project_click') == 'popup') { ?>
-                        <a href="<?php echo get_the_post_thumbnail_url($post->ID, 'project_1'); ?>" data-glightbox data-gallery="projects">
+                        <a href="<?php echo get_the_post_thumbnail_url($post->ID, 'sandbox_hero_6'); ?>" data-glightbox data-gallery="projects">
                            <?php echo get_the_post_thumbnail($post->ID, $size_img[$size_finish]); ?>
                         </a>
                      <?php } else { ?>
