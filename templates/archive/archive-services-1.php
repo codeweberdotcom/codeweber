@@ -44,7 +44,10 @@ global $codeweber;
                            } ?>
                            <h3 class="h1 post-title mb-3"> <?php the_title(); ?></h3>
                            <p><?php the_excerpt(); ?></p>
-                           <a href="<?php the_permalink(); ?>" class="more hover link-violet"><?php esc_html_e('Go to service', 'codeweber') ?></a>
+                           <a href="<?php the_permalink(); ?>" class="btn btn-expand btn-primary rounded-pill">
+                              <i class="uil uil-arrow-right"></i>
+                              <span><?php esc_html_e('Go to service', 'codeweber') ?></span>
+                           </a>
                         </div>
                         <!-- /column -->
                         <div class="<?php echo $col_class_2; ?>">
