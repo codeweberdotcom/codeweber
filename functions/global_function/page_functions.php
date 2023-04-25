@@ -157,6 +157,93 @@ function page_header()
       } else {
          $codeweber['page_settings']['angle_class'] = NULL;
       }
+   } elseif (is_post_type_archive('projects') || is_tax('projects_category') || is_singular('projects')) {
+
+      if (get_theme_mod('project_title') && !is_singular('projects') && !is_tax('projects_category')) {
+         $codeweber['page_settings']['page_header_title'] = get_theme_mod('project_title');
+      } else {
+         $codeweber['page_settings']['page_header_title'] = codeweber_page_title();
+      }
+
+      if (is_post_type_archive('projects') && get_theme_mod('project_description') && !is_singular('projects') && !is_tax('projects_category')) {
+         $codeweber['page_settings']['page_header_sub_title'] = get_theme_mod('project_description');
+      } else {
+         $codeweber['page_settings']['page_header_sub_title'] = NULL;
+      }
+
+
+      //ready
+      if (!is_post_type_archive('projects') && get_field('select_background_image', $term_id_prefixed)) {
+         $codeweber['page_settings']['page_header_url'] = get_field('select_background_image', $term_id_prefixed);
+      } elseif (get_theme_mod('image_control_three' && !is_post_type_archive('projects'))) {
+         $codeweber['page_settings']['page_header_url'] = get_theme_mod('image_control_three');
+      } elseif (is_post_type_archive('projects') && get_theme_mod('image_control_three')) {
+         $codeweber['page_settings']['page_header_url'] = get_theme_mod('image_control_three');
+      } else {
+         $codeweber['page_settings']['page_header_url'] = NULL;
+      }
+
+      if (!is_post_type_archive('projects') && get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) !== 'default' && get_field('page_header_type', $term_id_prefixed) !== 'disable' && get_theme_mod('codeweber_page_project_header') !== 'disable') {
+         $codeweber['page_settings']['page_header_type'] = get_field('page_header_type', $term_id_prefixed);
+      } elseif (is_post_type_archive('projects') || is_tax('projects_category')) {
+         if (get_theme_mod('codeweber_page_project_header') !== 'default' && get_theme_mod('codeweber_page_project_header') !== 'disable') {
+            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_project_header');
+         } elseif (get_theme_mod('codeweber_page_project_header') == 'default' && get_theme_mod('codeweber_page_header') !== 'disable') {
+            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_header');
+         } else {
+            $codeweber['page_settings']['page_header_type'] = NULL;
+         }
+      } else {
+         $codeweber['page_settings']['page_header_type'] = NULL;
+      }
+
+      //ready
+      if (!is_post_type_archive('projects') && get_field('breadcrumbs', $term_id_prefixed) && get_field('breadcrumbs', $term_id_prefixed) !== 'default') {
+         $codeweber['page_settings']['breadcrumbs'] = get_field('breadcrumbs', $term_id_prefixed);
+      } elseif (get_theme_mod('codeweber_header_project_bread') == 'default') {
+         $codeweber['page_settings']['breadcrumbs'] = get_theme_mod('codeweber_page_header_bread');
+      } else {
+         $codeweber['page_settings']['breadcrumbs'] = get_theme_mod('codeweber_header_project_bread');
+      }
+
+      //ready
+      if (!is_post_type_archive('projects') && get_field('color_breadcrumbs', $term_id_prefixed) && get_field('color_breadcrumbs', $term_id_prefixed) !== 'default') {
+         $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_field('color_breadcrumbs', $term_id_prefixed);
+      } elseif (get_theme_mod('codeweber_header_project_bread_color') == 'default') {
+         $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_page_header_bread_color');
+      } else {
+         $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_header_project_bread_color');
+      }
+
+      //ready
+      if (!is_post_type_archive('projects') && get_field('color_page_header', $term_id_prefixed) && get_field('color_page_header', $term_id_prefixed) !== 'default') {
+         $codeweber['page_settings']['page_header_color'] = get_field('color_page_header', $term_id_prefixed);
+      } elseif (get_theme_mod('codeweber_page_project_header_bg') !== 'default') {
+         $codeweber['page_settings']['page_header_color'] = get_theme_mod('codeweber_page_project_header_bg');
+      } elseif (get_theme_mod('codeweber_page_project_header_bg') == 'default') {
+         $codeweber['page_settings']['page_header_color'] = get_theme_mod('codeweber_page_header_bg');
+      } else {
+         $codeweber['page_settings']['page_header_color'] = ' bg-light';
+      }
+
+      //ready
+      if (!is_post_type_archive('projects') && get_field('page_header_angle', $term_id_prefixed) && get_field('page_header_angle', $term_id_prefixed) !== 'default') {
+         if (get_field('page_header_angle', $term_id_prefixed) == 'true') {
+            $codeweber['page_settings']['angle_class'] = ' angled upper-end';
+         } else {
+            $codeweber['page_settings']['angle_class'] = NULL;
+         }
+      } elseif (get_theme_mod('codeweber_header_project_angle') == 'default') {
+         if (get_theme_mod('codeweber_page_header_angle') == 'true') {
+            $codeweber['page_settings']['angle_class'] = ' angled upper-end';
+         } else {
+            $codeweber['page_settings']['angle_class'] = NULL;
+         }
+      } elseif (get_theme_mod('codeweber_header_project_angle') == 'true') {
+         $codeweber['page_settings']['angle_class'] = ' angled upper-end';
+      } else {
+         $codeweber['page_settings']['angle_class'] = NULL;
+      }
    } elseif (is_post_type_archive('testimonials')) {
 
       if (get_theme_mod('testimonial_title')) {
@@ -286,108 +373,6 @@ function page_header()
             $codeweber['page_settings']['angle_class'] = NULL;
          }
       } elseif (get_theme_mod('codeweber_header_faq_angle') == 'true') {
-         $codeweber['page_settings']['angle_class'] = ' angled upper-end';
-      } else {
-         $codeweber['page_settings']['angle_class'] = NULL;
-      }
-   } elseif (is_post_type_archive('projects') || is_tax('projects_category') || is_singular('projects')) {
-
-      if (get_theme_mod('project_title') && !is_singular('projects')) {
-         $codeweber['page_settings']['page_header_title'] = get_theme_mod('project_title');
-      } else {
-         $codeweber['page_settings']['page_header_title'] = codeweber_page_title();
-      }
-
-      if (get_theme_mod('project_description') && !is_singular('projects') && !is_tax('projects_category')) {
-         $codeweber['page_settings']['page_header_sub_title'] = get_theme_mod('project_description');
-      } else {
-         $codeweber['page_settings']['page_header_sub_title'] = NULL;
-      }
-
-
-      if (!is_post_type_archive('projects') && get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) !== 'default' && get_field('page_header_type', $term_id_prefixed) !== 'disable' && get_theme_mod('codeweber_page_header') !== 'disable' && get_theme_mod('codeweber_page_service_header') !== 'disable') {
-         $codeweber['page_settings']['page_header_type'] = get_field('page_header_type', $term_id_prefixed);
-      } elseif (get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) == 'default') {
-         if (get_theme_mod('codeweber_page_service_header') !== 'default' && get_theme_mod('codeweber_page_service_header') !== 'disable') {
-            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_service_header');
-         } elseif (get_theme_mod('codeweber_page_service_header') == 'default' && get_theme_mod('codeweber_page_header') !== 'disable') {
-            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_header');
-         }
-      } elseif (is_post_type_archive('projects')) {
-         if (get_theme_mod('codeweber_page_project_header') !== 'default' && get_theme_mod('codeweber_page_project_header') !== 'disable') {
-            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_project_header');
-         } elseif (get_theme_mod('codeweber_page_project_header') == 'default' && get_theme_mod('codeweber_page_header') !== 'disable') {
-            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_header');
-         } else {
-            $codeweber['page_settings']['page_header_type'] = NULL;
-         }
-      } else {
-         $codeweber['page_settings']['page_header_type'] = NULL;
-      }
-
-
-
-      //ready
-      if (!is_post_type_archive('projects') && get_field('select_background_image', $term_id_prefixed)) {
-         $codeweber['page_settings']['page_header_url'] = get_field('select_background_image', $term_id_prefixed);
-      } elseif (get_theme_mod('image_control_three')) {
-         $codeweber['page_settings']['page_header_url'] = get_theme_mod('image_control_three');
-      } else {
-         $codeweber['page_settings']['page_header_url'] = NULL;
-      }
-
-      //ready
-      if (!is_post_type_archive('services') && get_field('select_background_image', $term_id_prefixed)) {
-         $codeweber['page_settings']['page_header_url'] = get_field('select_background_image', $term_id_prefixed);
-      } elseif (get_theme_mod('image_control_one')) {
-         $codeweber['page_settings']['page_header_url'] = get_theme_mod('image_control_one');
-      } else {
-         $codeweber['page_settings']['page_header_url'] = NULL;
-      }
-
-      //ready
-      if (!is_post_type_archive('projects') && get_field('breadcrumbs', $term_id_prefixed) && get_field('breadcrumbs', $term_id_prefixed) !== 'default') {
-         $codeweber['page_settings']['breadcrumbs'] = get_field('breadcrumbs', $term_id_prefixed);
-      } elseif (get_theme_mod('codeweber_header_project_bread') == 'default') {
-         $codeweber['page_settings']['breadcrumbs'] = get_theme_mod('codeweber_page_header_bread');
-      } else {
-         $codeweber['page_settings']['breadcrumbs'] = get_theme_mod('codeweber_header_project_bread');
-      }
-
-      //ready
-      if (!is_post_type_archive('projects') && get_field('color_breadcrumbs', $term_id_prefixed) && get_field('color_breadcrumbs', $term_id_prefixed) !== 'default') {
-         $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_field('color_breadcrumbs', $term_id_prefixed);
-      } elseif (get_theme_mod('codeweber_header_project_bread_color') == 'default') {
-         $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_page_header_bread_color');
-      } else {
-         $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_header_project_bread_color');
-      }
-
-      //ready
-      if (!is_post_type_archive('projects') && get_field('color_page_header', $term_id_prefixed) && get_field('color_page_header', $term_id_prefixed) !== 'default') {
-         $codeweber['page_settings']['page_header_color'] = get_field('color_page_header', $term_id_prefixed);
-      } elseif (get_theme_mod('codeweber_page_project_header_bg') !== 'default') {
-         $codeweber['page_settings']['page_header_color'] = get_theme_mod('codeweber_page_project_header_bg');
-      } elseif (get_theme_mod('codeweber_page_project_header_bg') == 'default') {
-         $codeweber['page_settings']['page_header_color'] = get_theme_mod('codeweber_page_header_bg');
-      } else {
-         $codeweber['page_settings']['page_header_color'] = ' bg-light';
-      }
-
-      //ready
-      if (!is_post_type_archive('projects') && get_field('page_header_angle', $term_id_prefixed) && get_field('page_header_angle', $term_id_prefixed) !== 'default') {
-         if (get_field('page_header_angle', $term_id_prefixed) == 'true') {
-            $codeweber['page_settings']['angle_class'] = ' angled upper-end';
-         } else {
-            $codeweber['page_settings']['angle_class'] = NULL;
-         }
-      } elseif (get_theme_mod('codeweber_header_project_angle') == 'default') {
-         if (get_theme_mod('codeweber_page_header_angle') == 'true') {
-            $codeweber['page_settings']['angle_class'] = ' angled upper-end';
-         } else {
-            $codeweber['page_settings']['angle_class'] = NULL;
-         }
-      } elseif (get_theme_mod('codeweber_header_project_angle') == 'true') {
          $codeweber['page_settings']['angle_class'] = ' angled upper-end';
       } else {
          $codeweber['page_settings']['angle_class'] = NULL;

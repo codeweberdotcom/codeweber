@@ -5,7 +5,6 @@ Template Post Type: projects
 */
 
 get_header('transparent');
-
 global $post;
 if (have_rows('main_information')) :
    while (have_rows('main_information')) : the_row();
@@ -49,33 +48,35 @@ if (have_rows('main_information')) :
       }
    endwhile;
 endif; ?>
-
-<section class="wrapper image-wrapper bg-image bg-overlay text-white" data-image-src="<?php echo get_the_post_thumbnail_url($post, 'project_1'); ?>">
-   <div class="container pt-17 pb-12 pt-md-19 pb-md-16 text-center">
-      <div class="row">
-         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <div class="post-header">
-               <?php if (wp_get_post_terms(get_the_ID(), 'projects_category')) { ?>
-                  <div class="post-category text-line text-white">
-                     <a href="<?php echo get_term_link(wp_get_post_terms(get_the_ID(), 'projects_category')[0]->term_id);  ?>" class="hover text-white" rel="category"><?php echo wp_get_post_terms(get_the_ID(), 'projects_category')[0]->name; ?></a>
-                  </div>
-               <?php }; ?>
-               <!-- /.post-category -->
-               <h1 class="display-1 mb-3 text-white"><?php echo codeweber_page_title(); ?></h1>
-               <?php if (isset($project_short_description)) { ?>
-                  <p class="lead px-md-12 px-lg-12 px-xl-15 px-xxl-18"><?php echo $project_short_description;  ?></p>
-               <?php } ?>
-               <?php codeweber_breadcrumbs(NULL, NULL); ?>
+<?php if ($codeweber['page_settings']['page_header_type'] == 'default' || $codeweber['page_settings']['page_header_type'] == NULL) { ?>
+   <section class="wrapper image-wrapper bg-image bg-overlay text-white" data-image-src="<?php echo get_the_post_thumbnail_url($post, 'project_1'); ?>">
+      <div class="container pt-17 pb-12 pt-md-19 pb-md-16 text-center">
+         <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+               <div class="post-header">
+                  <?php if (wp_get_post_terms(get_the_ID(), 'projects_category')) { ?>
+                     <div class="post-category text-line text-white">
+                        <a href="<?php echo get_term_link(wp_get_post_terms(get_the_ID(), 'projects_category')[0]->term_id);  ?>" class="hover text-white" rel="category"><?php echo wp_get_post_terms(get_the_ID(), 'projects_category')[0]->name; ?></a>
+                     </div>
+                  <?php }; ?>
+                  <!-- /.post-category -->
+                  <h1 class="display-1 mb-3 text-white"><?php echo codeweber_page_title(); ?></h1>
+                  <?php if (isset($project_short_description)) { ?>
+                     <p class="lead px-md-12 px-lg-12 px-xl-15 px-xxl-18"><?php echo $project_short_description;  ?></p>
+                  <?php } ?>
+                  <?php codeweber_breadcrumbs(NULL, 'text-white'); ?>
+               </div>
+               <!-- /.post-header -->
             </div>
-            <!-- /.post-header -->
+            <!-- /column -->
          </div>
-         <!-- /column -->
+         <!-- /.row -->
       </div>
-      <!-- /.row -->
-   </div>
-   <!-- /.container -->
-</section>
-<!-- /section -->
+      <!-- /.container -->
+   </section>
+   <!-- /section -->
+<?php } ?>
+
 <section class="wrapper bg-light wrapper-border">
    <div class="container pt-14 pt-md-16 pb-13 pb-md-15">
       <div class="row">

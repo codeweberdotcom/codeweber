@@ -44,7 +44,6 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
    }
 
 
-
    if ($type == 'type_1') { ?>
       <?php echo $section_open; ?>
       <div class="container py-10 py-md-14">
@@ -189,7 +188,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
    } elseif ($type == 'type_6') {
    ?>
       <?php echo $section_open; ?>
-      <div class="container pt-19 pt-md-21 pb-18 pb-md-20 text-center">
+      <div class="container pt-19 pt-md-20 pb-18 pb-md-20 text-center">
          <div class="row">
             <div class="col-md-10 col-lg-8 col-xl-7 col-xxl-6 mx-auto">
                <?php

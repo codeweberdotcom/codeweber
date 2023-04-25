@@ -5,7 +5,6 @@ Template Post Type: projects
 */
 
 get_header();
-
 global $post;
 if (have_rows('main_information')) :
    while (have_rows('main_information')) : the_row();

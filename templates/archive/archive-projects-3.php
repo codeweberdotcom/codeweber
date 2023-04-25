@@ -39,7 +39,19 @@ $terms = get_terms([
                $taxonomy_list = wp_get_post_terms($post->ID, 'projects_category', array('fields' => 'names')); ?>
                <?php $taxonomy_list_slug = wp_get_post_terms($post->ID, 'projects_category', array('fields' => 'slugs')); ?>
                <div class="project item col-md-6 <?php echo implode(' ', $taxonomy_list_slug); ?>">
-                  <figure class="lift rounded mb-6"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail($post->ID, $size_img[$size_finish]); ?></a></figure>
+                  <figure class="lift rounded mb-6">
+
+                     <?php
+                     if (get_theme_mod('codeweber_page_project_click') == 'popup') { ?>
+                        <a href="<?php echo get_the_post_thumbnail_url($post->ID, 'project_1'); ?>" data-glightbox data-gallery="projects">
+                           <?php echo get_the_post_thumbnail($post->ID, $size_img[$size_finish]); ?>
+                        </a>
+                     <?php } else { ?>
+                        <a href="<?php echo get_permalink(); ?>"><?php echo get_the_post_thumbnail($post->ID, $size_img[$size_finish]); ?></a>
+                     <?php }
+                     ?>
+
+                  </figure>
                   <div class="project-details d-flex justify-content-center flex-column">
                      <div class="post-header">
                         <div class="post-category text-line mb-3 text-purple"><?php echo implode(', ', $taxonomy_list); ?></div>

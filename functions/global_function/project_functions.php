@@ -241,6 +241,29 @@ function CPT_Projects_Settings($wp_customize)
       )
    );
 
+
+   $wp_customize->add_setting(
+      'codeweber_page_project_click',
+      array(
+         'default' => 'page',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_page_project_click',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Secondary Header', 'codeweber'),
+         'section' => 'project-section',
+         'choices' => array(
+            'popup' => esc_html__('Popup', 'codeweber'),
+            'page' => esc_html__('Page', 'codeweber'),
+         ),
+      )
+   );
+
+
+
    $wp_customize->add_setting(
       'codeweber_page_project_header',
       array(
