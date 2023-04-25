@@ -66,7 +66,7 @@ function page_header()
 
    if (is_post_type_archive('services') || is_tax('service_category') || is_singular('services')) {
 
-      if (get_theme_mod('service_title') && !is_singular('services')) {
+      if (get_theme_mod('service_title') && !is_singular('services') && !is_tax('service_category')) {
          $codeweber['page_settings']['page_header_title'] = get_theme_mod('service_title');
       } else {
          $codeweber['page_settings']['page_header_title'] = codeweber_page_title();
@@ -78,12 +78,14 @@ function page_header()
          $codeweber['page_settings']['page_header_sub_title'] = NULL;
       }
 
-      if (!is_post_type_archive('services') && get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) !== 'default' && get_field('page_header_type', $term_id_prefixed) !== 'disable') {
+      if (!is_post_type_archive('services') && get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) !== 'default' && get_field('page_header_type', $term_id_prefixed) !== 'disable' && get_theme_mod('codeweber_page_header') !== 'disable' && get_theme_mod('codeweber_page_service_header') !== 'disable') {
          $codeweber['page_settings']['page_header_type'] = get_field('page_header_type', $term_id_prefixed);
-      } elseif (get_theme_mod('codeweber_page_service_header') == 'default' && get_theme_mod('codeweber_page_header') !== 'disable') {
-         $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_header');
-      } elseif (get_theme_mod('codeweber_page_service_header') !== 'default' && get_theme_mod('codeweber_page_service_header') !== 'disable') {
-         $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_service_header');
+      } elseif (get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) == 'default' && !is_post_type_archive('services')) {
+         if (get_theme_mod('codeweber_page_service_header') !== 'default' && get_theme_mod('codeweber_page_service_header') !== 'disable') {
+            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_service_header');
+         } elseif (get_theme_mod('codeweber_page_service_header') == 'default' && get_theme_mod('codeweber_page_header') !== 'disable') {
+            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_header');
+         }
       } else {
          $codeweber['page_settings']['page_header_type'] = NULL;
       }
