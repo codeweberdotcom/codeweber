@@ -126,10 +126,10 @@ function page_header()
          $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_field('color_breadcrumbs', $term_id_prefixed);
       } elseif (get_theme_mod('codeweber_header_service_bread_color') == 'default') {
          $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_page_header_bread_color');
-      } elseif(get_theme_mod('codeweber_header_service_bread_color')) {
+      } elseif (get_theme_mod('codeweber_header_service_bread_color')) {
          $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_header_service_bread_color');
-      }else{
-         $codeweber['page_settings']['color_breadcrumbs'] = 'text-dark'
+      } else {
+         $codeweber['page_settings']['color_breadcrumbs'] = 'text-dark';
       }
 
       //Page Header Color Background
