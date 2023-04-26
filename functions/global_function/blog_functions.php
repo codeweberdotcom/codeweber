@@ -261,7 +261,7 @@ function CPT_Blog_Settings($wp_customize)
       'codeweber_page_blog_header',
       array(
          'type' => 'radio',
-         'label' => esc_html__('Secondary Header', 'codeweber'),
+         'label' => esc_html__('Archive Secondary Header', 'codeweber'),
          'section' => 'blog-section',
          'choices' => array(
             'type_1' => esc_html__('Type 1', 'codeweber'),
@@ -272,6 +272,60 @@ function CPT_Blog_Settings($wp_customize)
             'type_6' => esc_html__('Type 6', 'codeweber'),
             'type_7' => esc_html__('Type 7', 'codeweber'),
             'type_8' => esc_html__('Type 8', 'codeweber'),
+            'disable' => esc_html__('Disable', 'codeweber'),
+            'default' => esc_html__('Default', 'codeweber'),
+         ),
+      )
+   );
+
+
+
+   $wp_customize->add_setting(
+      'codeweber_page_blog_single_header',
+      array(
+         'default' => 'default',
+      )
+   );
+
+   $wp_customize->add_control(
+      'codeweber_page_blog_single_header',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Single Secondary Header', 'codeweber'),
+         'section' => 'blog-section',
+         'choices' => array(
+            'type_1' => esc_html__(
+               'Type 1',
+               'codeweber'
+            ),
+            'type_2' => esc_html__(
+               'Type 2',
+               'codeweber'
+            ),
+            'type_3' => esc_html__(
+               'Type 3',
+               'codeweber'
+            ),
+            'type_4' => esc_html__(
+               'Type 4',
+               'codeweber'
+            ),
+            'type_5' => esc_html__(
+               'Type 5',
+               'codeweber'
+            ),
+            'type_6' => esc_html__(
+               'Type 6',
+               'codeweber'
+            ),
+            'type_7' => esc_html__(
+               'Type 7',
+               'codeweber'
+            ),
+            'type_8' => esc_html__(
+               'Type 8',
+               'codeweber'
+            ),
             'disable' => esc_html__('Disable', 'codeweber'),
             'default' => esc_html__('Default', 'codeweber'),
          ),

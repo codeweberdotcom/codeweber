@@ -208,8 +208,10 @@ function page_header()
          $codeweber['page_settings']['breadcrumbs'] = get_field('breadcrumbs', $term_id_prefixed);
       } elseif (get_theme_mod('codeweber_header_project_bread') == 'default') {
          $codeweber['page_settings']['breadcrumbs'] = get_theme_mod('codeweber_page_header_bread');
-      } else {
+      } elseif (get_theme_mod('codeweber_header_project_bread')) {
          $codeweber['page_settings']['breadcrumbs'] = get_theme_mod('codeweber_header_project_bread');
+      } else {
+         $codeweber['page_settings']['breadcrumbs'] = 'true';
       }
 
       //Color Breadcrumbs Page Header
@@ -217,8 +219,10 @@ function page_header()
          $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_field('color_breadcrumbs', $term_id_prefixed);
       } elseif (get_theme_mod('codeweber_header_project_bread_color') == 'default') {
          $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_page_header_bread_color');
-      } else {
+      } elseif (get_theme_mod('codeweber_header_project_bread_color')) {
          $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_header_project_bread_color');
+      } else {
+         $codeweber['page_settings']['color_breadcrumbs'] = 'text-dark';
       }
 
       //Color Background Page Header
@@ -297,8 +301,10 @@ function page_header()
          $codeweber['page_settings']['breadcrumbs'] = get_field('breadcrumbs', $term_id_prefixed);
       } elseif (get_theme_mod('codeweber_header_testimonial_bread') == 'default') {
          $codeweber['page_settings']['breadcrumbs'] = get_theme_mod('codeweber_page_header_bread');
-      } else {
+      } elseif (get_theme_mod('codeweber_header_testimonial_bread')) {
          $codeweber['page_settings']['breadcrumbs'] = get_theme_mod('codeweber_header_testimonial_bread');
+      } else {
+         $codeweber['page_settings']['breadcrumbs'] = 'true';
       }
 
       //Color Breadcrumbs Page Header
@@ -306,8 +312,10 @@ function page_header()
          $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_field('color_breadcrumbs', $term_id_prefixed);
       } elseif (get_theme_mod('codeweber_header_testimonial_bread_color') == 'default') {
          $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_page_header_bread_color');
-      } else {
+      } elseif (get_theme_mod('codeweber_header_testimonial_bread_color')) {
          $codeweber['page_settings']['color_breadcrumbs'] = 'text-' . get_theme_mod('codeweber_header_testimonial_bread_color');
+      } else {
+         $codeweber['page_settings']['color_breadcrumbs'] = 'text-dark';
       }
 
       //Color Background Page Header
