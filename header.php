@@ -169,11 +169,16 @@
 			}
 		} elseif ($codeweber['global']['blog'] == true || is_single() || is_category() || is_tag() || is_author()) {
 
-			if (get_field('cw_transparent_header', $term_id_prefixed) == 'default' && is_home()) {
+
+			//Header Style
+			if (!is_home() && get_field('cw_transparent_header') && get_field('cw_transparent_header') !== 'default') {
+				$codeweber['page_settings']['header_style'] = get_field('cw_transparent_header');
+			} elseif (get_theme_mod('codeweber_header_blog_style') == 'default') {
 				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_blog_style');
 			} else {
-				$codeweber['page_settings']['header_style'] = get_field('cw_transparent_header', $term_id_prefixed);
+				$codeweber['page_settings']['header_style'] = NULL;
 			}
+
 
 			if (get_field('header_background_color', $term_id_prefixed) !== 'default' && get_field('cw_transparent_header', $term_id_prefixed) !== 'transparent' && get_theme_mod('codeweber_header_style') !== 'transparent') {
 				$codeweber['page_settings']['header_bg_color'] = get_field('header_background_color', $term_id_prefixed);
