@@ -8,6 +8,7 @@ include 'global_function/testimonials_functions.php';
 include 'global_function/header_functions.php';
 include 'global_function/footer_functions.php';
 include 'global_function/page_header_generator.php';
+include 'global_function/404_functions.php';
 
 
 /**
