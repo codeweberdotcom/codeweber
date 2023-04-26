@@ -38,7 +38,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       $codeweber['page_settings']['content_class'] = NULL;
    }
    if ($background_url) {
-      $section_open = '<section class="wrapper image-wrapper bg-image bg-full bg-overlay bg-overlay overflow-hidden" data-image-src="' . $background_url . '">';
+      $section_open = '<section class="wrapper image-wrapper bg-image bg-overlay bg-overlay overflow-hidden" data-image-src="' . $background_url . '">';
    } else {
       $section_open = '<section class="wrapper ' . $bg_color . '">';
    }
