@@ -240,7 +240,7 @@ function CPT_Blog_Settings($wp_customize)
       'codeweber_header_blog_bread_color',
       array(
          'type' => 'radio',
-         'label' => esc_html__('Text Page Header color', 'codeweber'),
+         'label' => esc_html__('Text Blog Archive Header color', 'codeweber'),
          'section' => 'blog-section',
          'choices' => array(
             'white' => esc_html__('Light', 'codeweber'),
@@ -273,6 +273,29 @@ function CPT_Blog_Settings($wp_customize)
             'type_7' => esc_html__('Type 7', 'codeweber'),
             'type_8' => esc_html__('Type 8', 'codeweber'),
             'disable' => esc_html__('Disable', 'codeweber'),
+            'default' => esc_html__('Default', 'codeweber'),
+         ),
+      )
+   );
+
+
+   $wp_customize->add_setting(
+      'codeweber_header_blog_single_bread_color',
+      array(
+         'default' => 'default',
+      )
+   );
+
+
+   $wp_customize->add_control(
+      'codeweber_header_blog_single_bread_color',
+      array(
+         'type' => 'radio',
+         'label' => esc_html__('Text Blog Single Header Color', 'codeweber'),
+         'section' => 'blog-section',
+         'choices' => array(
+            'white' => esc_html__('Light', 'codeweber'),
+            'dark' => esc_html__('Dark', 'codeweber'),
             'default' => esc_html__('Default', 'codeweber'),
          ),
       )
