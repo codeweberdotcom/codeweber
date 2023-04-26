@@ -523,6 +523,15 @@ function page_header()
       } else {
          $codeweber['page_settings']['angle_class'] = NULL;
       }
+   } elseif (is_404()) {
+      $codeweber['page_settings']['page_header_type'] = NULL;
+      $codeweber['page_settings']['page_header_title'] = NULL;
+      $codeweber['page_settings']['page_header_sub_title'] = NULL;
+      $codeweber['page_settings']['angle_class'] = NULL;
+      $codeweber['page_settings']['page_header_color'] = NULL;
+      $codeweber['page_settings']['breadcrumbs'] = NULL;
+      $codeweber['page_settings']['color_breadcrumbs'] = NULL;
+      $codeweber['page_settings']['page_header_url'] = NULL;
    } else {
       if (get_field('page_header_type', $term_id_prefixed) !== 'default') {
          $codeweber['page_settings']['page_header_type'] = get_field('page_header_type', $term_id_prefixed);
