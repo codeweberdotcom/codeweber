@@ -483,8 +483,6 @@ function page_header()
          $codeweber['page_settings']['page_header_url'] = get_field('select_background_image', $term_id_prefixed);
       } elseif (get_theme_mod('image_control_four')) {
          $codeweber['page_settings']['page_header_url'] = get_theme_mod('image_control_four');
-      } elseif (get_theme_mod('image_control_page')) {
-         $codeweber['page_settings']['page_header_url'] = get_theme_mod('image_control_page');
       } else {
          $codeweber['page_settings']['page_header_url'] = NULL;
       }
