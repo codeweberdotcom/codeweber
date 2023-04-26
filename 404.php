@@ -8,7 +8,7 @@
 				<?php if (get_theme_mod('image_control_six')) {
 					$image_404_url = get_theme_mod('image_control_six');
 				} else {
-					$image_404_url = get_template_directory_uri() . '/dist/img/illustrations/404.png';
+					$image_404_url = get_template_directory_uri() . '/templates/images/404.png';
 				}
 				?>
 				<figure class="mb-10"><img class="img-fluid" src="<?php echo $image_404_url; ?>" srcset="<?php echo $image_404_url; ?>" alt=""></figure>
