@@ -445,14 +445,14 @@ function page_header()
    } elseif (is_blog()) {
 
       //ready
-      if (get_theme_mod('blog_title')) {
+      if (is_archive() && get_theme_mod('blog_title')) {
          $codeweber['page_settings']['page_header_title'] = get_theme_mod('blog_title');
       } else {
          $codeweber['page_settings']['page_header_title'] = codeweber_page_title();
       }
 
       //ready
-      if (get_theme_mod('blog_description') && is_home()) {
+      if (is_archive() && get_theme_mod('blog_description') && is_home()) {
          $codeweber['page_settings']['page_header_sub_title'] = get_theme_mod('blog_description');
       } else {
          $codeweber['page_settings']['page_header_sub_title'] = NULL;
