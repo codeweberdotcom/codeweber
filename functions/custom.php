@@ -439,15 +439,3 @@ function shortcode_priceimage($atts)
     }
     return ob_get_clean();
 }
-
-
-
-/**
- * 
- */
-
-add_action('edit_form_after_title', 'add_content_before_editor');
-function add_content_before_editor()
-{
-    echo '<h2>Add Your Message Here</h2>';
-}
