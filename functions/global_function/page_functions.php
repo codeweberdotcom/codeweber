@@ -442,7 +442,7 @@ function page_header()
       } else {
          $codeweber['page_settings']['angle_class'] = NULL;
       }
-   } elseif ($codeweber['global']['blog'] = 'true') {
+   } elseif (is_blog()) {
 
       //ready
       if (get_theme_mod('blog_title')) {

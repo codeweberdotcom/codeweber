@@ -168,7 +168,6 @@
 				$codeweber['page_settings']['nav_color'] = 'navbar-light';
 			}
 		} elseif (is_blog() || is_single() || is_category() || is_tag() || is_author()) {
-			echo 'blog';
 
 			//Header Style
 			if (!is_archive() && get_field('cw_transparent_header') && get_field('cw_transparent_header') !== 'default') {
