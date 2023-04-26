@@ -349,16 +349,16 @@ function CPT_Testimonials_Settings($wp_customize)
 
 
    // Image Background Testimonial Page Header
-   $wp_customize->add_setting('image_control_two', array(
+   $wp_customize->add_setting('image_control_seven', array(
       'default' => '',
       'type' => 'theme_mod',
       'capability' => 'edit_theme_options',
    ));
    $wp_customize->add_control(
-      new WP_Customize_Image_Control($wp_customize, 'image_control_two', array(
+      new WP_Customize_Image_Control($wp_customize, 'image_control_seven', array(
          'label' => __('Page Header Testimonials Background', 'codeweber'),
          'section' => 'testimonials-section',
-         'settings' => 'image_control_two',
+         'settings' => 'image_control_seven',
       ))
    );
 }
