@@ -167,11 +167,11 @@
 			} else {
 				$codeweber['page_settings']['nav_color'] = 'navbar-light';
 			}
-		} elseif ($codeweber['global']['blog'] == true || is_single() || is_category() || is_tag() || is_author()) {
-
+		} elseif (is_blog() || is_single() || is_category() || is_tag() || is_author()) {
+			echo 'blog';
 
 			//Header Style
-			if (!is_home() && get_field('cw_transparent_header') && get_field('cw_transparent_header') !== 'default') {
+			if (!is_archive() && get_field('cw_transparent_header') && get_field('cw_transparent_header') !== 'default') {
 				$codeweber['page_settings']['header_style'] = get_field('cw_transparent_header');
 			} elseif (get_theme_mod('codeweber_header_blog_style') == 'default') {
 				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_blog_style');
@@ -180,7 +180,7 @@
 			}
 
 
-			if (get_field('header_background_color', $term_id_prefixed) !== 'default' && get_field('cw_transparent_header', $term_id_prefixed) !== 'transparent' && get_theme_mod('codeweber_header_style') !== 'transparent') {
+			if (get_field('header_background_color', $term_id_prefixed) !== 'default' && get_field('cw_transparent_header', $term_id_prefixed) !== 'transparent' && get_theme_mod('codeweber_header_style') !== 'transparent' && !is_archive()) {
 				$codeweber['page_settings']['header_bg_color'] = get_field('header_background_color', $term_id_prefixed);
 			} elseif (get_theme_mod('codeweber_header_blog_bg') && get_field('cw_transparent_header', $term_id_prefixed) !== 'transparent' && get_theme_mod('codeweber_header_style') !== 'transparent') {
 				$codeweber['page_settings']['header_bg_color'] = get_theme_mod('codeweber_header_blog_bg');
@@ -188,7 +188,7 @@
 				$codeweber['page_settings']['header_bg_color'] = NULL;
 			}
 
-			if (get_field('navbar_color', $term_id_prefixed) == 'default') {
+			if (get_field('navbar_color', $term_id_prefixed) == 'default' && !is_archive()) {
 				$codeweber['page_settings']['nav_color'] = get_theme_mod('codeweber_header_blog_color');
 			} elseif (get_field('navbar_color') !== 'default') {
 				$codeweber['page_settings']['nav_color'] = get_field('navbar_color', $term_id_prefixed);

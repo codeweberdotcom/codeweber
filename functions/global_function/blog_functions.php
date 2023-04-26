@@ -357,3 +357,10 @@ function CPT_Blog_Settings($wp_customize)
 }
 
 add_action('customize_register', 'CPT_Blog_Settings');
+
+
+
+function is_blog()
+{
+   return ((is_archive()) || (is_author()) || (is_category()) || (is_home()) || (is_single()) || (is_tag())) ? true : false;
+}
