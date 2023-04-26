@@ -50,7 +50,7 @@ function CPT_Blog_Settings($wp_customize)
    $wp_customize->add_control('blog_description', array(
       'type' => 'textarea',
       'priority' => 3,
-      'label' => __('Blog_Archive Description', 'codeweber'),
+      'label' => __('Blog Archive Description', 'codeweber'),
       'section' => 'blog-section',
    ));
 
@@ -66,7 +66,7 @@ function CPT_Blog_Settings($wp_customize)
    $wp_customize->add_control('blog_title', array(
       'type' => 'textarea',
       'priority' => 2,
-      'label' => __('Blog_Archive Title', 'codeweber'),
+      'label' => __('Blog Archive Title', 'codeweber'),
       'section' => 'blog-section',
    ));
 
