@@ -73,10 +73,12 @@
 			//Header Style
 			if (!is_post_type_archive('projects') && get_field('cw_transparent_header') && get_field('cw_transparent_header') !== 'default') {
 				$codeweber['page_settings']['header_style'] = get_field('cw_transparent_header');
-			} elseif (get_theme_mod('codeweber_header_project_style') == 'default') {
+			} elseif (get_theme_mod('codeweber_header_project_style') !== 'default') {
 				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_project_style');
+			} elseif (get_theme_mod('codeweber_header_style')) {
+				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_style');
 			} else {
-				$codeweber['page_settings']['header_style'] = NULL;
+				$codeweber['page_settings']['header_style'] = 'solid';
 			}
 
 			if (!is_post_type_archive('projects') && get_field('header_background_color') !== 'default' && get_field('cw_transparent_header') !== 'transparent' && get_theme_mod('codeweber_header_style') !== 'transparent') {
@@ -216,7 +218,6 @@
 				$codeweber['page_settings']['header_bg_color'] = 'bg-light';
 			}
 		} else {
-
 			if (get_field('header_background_color', $term_id_prefixed) !== 'default' && get_field('cw_transparent_header', $term_id_prefixed) !== 'transparent' && get_theme_mod('codeweber_header_style') !== 'transparent') {
 				$codeweber['page_settings']['header_bg_color'] = get_field('header_background_color', $term_id_prefixed);
 			} elseif (get_theme_mod('codeweber_header_bg') && get_field('cw_transparent_header', $term_id_prefixed) !== 'transparent' && get_theme_mod('codeweber_header_style') !== 'transparent') {

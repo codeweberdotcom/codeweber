@@ -253,7 +253,7 @@ function CPT_Projects_Settings($wp_customize)
       'codeweber_page_project_click',
       array(
          'type' => 'radio',
-         'label' => esc_html__('Secondary Header', 'codeweber'),
+         'label' => esc_html__('Type of Click Project', 'codeweber'),
          'section' => 'project-section',
          'choices' => array(
             'popup' => esc_html__('Popup', 'codeweber'),
