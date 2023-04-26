@@ -34,11 +34,11 @@
 		global $wp_query;
 		if (isset($wp_query->query['pagename'])) {
 			if ($wp_query->query['pagename'] == 'blog') {
-				$blog =  true;
+				$blog = true;
 				$codeweber['global']['blog'] = true;
 			}
 		} else {
-			$blog =  false;
+			$codeweber['global']['blog'] =  false;
 		}
 
 		if (is_post_type_archive('services') || is_tax('service_category') || is_singular('services')) {
@@ -167,9 +167,9 @@
 			} else {
 				$codeweber['page_settings']['nav_color'] = 'navbar-light';
 			}
-		} elseif ($blog == true || is_single() || is_category() || is_tag() || is_author()) {
+		} elseif ($codeweber['global']['blog'] == true || is_single() || is_category() || is_tag() || is_author()) {
 
-			if (get_field('cw_transparent_header', $term_id_prefixed) == 'default') {
+			if (get_field('cw_transparent_header', $term_id_prefixed) == 'default' && is_home()) {
 				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_blog_style');
 			} else {
 				$codeweber['page_settings']['header_style'] = get_field('cw_transparent_header', $term_id_prefixed);
