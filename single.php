@@ -18,8 +18,6 @@
 				the_post();
 				get_template_part('templates/content/single', get_post_type()); ?>
 				<?php
-
-
 				if ($codeweber['page_settings']['page_header_type'] !== 'type_5' && $codeweber['page_settings']['page_header_type'] !== 'type_7') {
 					get_sidebar();
 				} ?>

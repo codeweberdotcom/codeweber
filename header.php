@@ -124,7 +124,6 @@
 				$codeweber['page_settings']['nav_color'] = 'navbar-light';
 			}
 		} elseif (is_post_type_archive('faq')) {
-			echo 'faq';
 			if (get_theme_mod('codeweber_header_faq_style') !== 'default') {
 				$codeweber['page_settings']['header_style'] = get_theme_mod('codeweber_header_faq_style');
 			} else {
@@ -236,13 +235,10 @@
 			}
 		}
 
-
 		if (get_field('header', $term_id_prefixed) && get_field('header', $term_id_prefixed) !== 'default') {
 			get_template_part('templates/header/header', get_field('header', $term_id_prefixed));
 		} else {
 			get_template_part('templates/header/header', get_theme_mod('codeweber_header'));
 		}
-
-
 
 		do_action('codeweber_after_header'); // Hook after header

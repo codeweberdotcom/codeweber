@@ -6,10 +6,10 @@
 
 <section class="wrapper bg-light<?php echo $section_class; ?>">
 	<div class="container<?php echo $container_class; ?>">
-		<div class="row gx-lg-8 gx-xl-12">
+		<div class="row gx-lg-8 gx-xl-12 <?php echo $content_class; ?>">
 			<?php
 			/** Faq Content */ ?>
-			<?php if (is_post_type_archive('faq')  || is_tax('faq_categories') || is_tax('faq_tag')) :
+			<?php if (is_post_type_archive('faq')  || is_tax('faq_categories') || is_tax('faq_tag')) {
 				if (is_active_sidebar('sidebar-faq') || has_action('sidebar_faq_start') || has_action('sidebar_faq_end')) {
 					$class_faq_content = 'col-lg-8';
 				} else {
@@ -27,7 +27,7 @@
 				</div>
 				<?php get_sidebar(); ?>
 				<?php /** Services Content */ ?>
-			<?php elseif (is_post_type_archive('services')  || is_tax('service_category')  || is_tax('types_of_services')) :
+			<?php } elseif (is_post_type_archive('services')  || is_tax('service_category')  || is_tax('types_of_services')) {
 				if (is_active_sidebar('sidebar-testimonials')) {
 					$class_service_content = 'col-lg-8';
 				} else {
@@ -44,13 +44,13 @@
 					</div>
 				</div>
 				<?php get_sidebar(); ?>
-			<?php elseif (is_post_type_archive('testimonials')) :
+			<?php } elseif (is_post_type_archive('testimonials')) {
 				if (is_active_sidebar('sidebar-testimonials')) {
-					$class_service_content = 'col-lg-8';
+					$class_testimonials_content = 'col-lg-8';
 				} else {
-					$class_service_content = 'col';
+					$class_testimonials_content = 'col';
 				} ?>
-				<div class="<?php echo $class_service_content; ?>">
+				<div class="<?php echo $class_testimonials_content; ?>">
 					<div class="blog classic-view">
 						<?php while (have_posts()) :
 							the_post();
@@ -62,7 +62,7 @@
 				</div>
 				<?php get_sidebar(); ?>
 
-			<?php elseif (have_posts()) :
+			<?php } elseif (have_posts()) {
 				if (is_active_sidebar('sidebar-main') || has_action('sidebar_main_start') || has_action('sidebar_main_end')) {
 					$class_content = 'col-lg-8';
 				} else {
@@ -72,7 +72,7 @@
 				if ($codeweber['page_settings']['page_header_type'] == 'type_5' || $codeweber['page_settings']['page_header_type'] == 'type_7') {
 					$class_content = 'col-lg-10 mx-auto';
 				} ?>
-				<div class="<?php echo $class_content; ?> <?php echo $content_class; ?>">
+				<div class="<?php echo $class_content; ?>">
 					<div class="blog classic-view">
 						<?php while (have_posts()) :
 							the_post();
@@ -88,7 +88,7 @@
 
 				?>
 			<?php
-			else :
+			} else {
 				if (is_active_sidebar('sidebar-main') || has_action('sidebar_main_start') || has_action('sidebar_main_end')) {
 					$class_content = 'col-lg-8';
 				} else {
@@ -100,7 +100,7 @@
 					</div>
 				</div>
 			<?php get_sidebar();
-			endif;
+			}
 			?>
 		</div>
 	</div>
