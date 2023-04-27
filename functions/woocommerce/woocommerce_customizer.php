@@ -321,7 +321,7 @@ function Customizer_Woocommerce_Settings($wp_customize)
          'codeweber_header_woo_bread_color',
          array(
             'type' => 'radio',
-            'label' => esc_html__('Text Page Header color', 'codeweber'),
+            'label' => esc_html__('Text Color Page Woo Header Archive', 'codeweber'),
             'section' => 'woocommerce-section',
             'choices' => array(
                'white' => esc_html__('Light', 'codeweber'),
@@ -342,7 +342,7 @@ function Customizer_Woocommerce_Settings($wp_customize)
          'codeweber_page_woo_header',
          array(
             'type' => 'radio',
-            'label' => esc_html__('Secondary Header Archive', 'codeweber'),
+            'label' => esc_html__('Secondary Header Woo Archive', 'codeweber'),
             'section' => 'woocommerce-section',
             'choices' => array(
                'type_1' => esc_html__('Type 1', 'codeweber'),
@@ -359,6 +359,28 @@ function Customizer_Woocommerce_Settings($wp_customize)
          )
       );
 
+
+      $wp_customize->add_setting(
+         'codeweber_header_woo_single_bread_color',
+         array(
+            'default' => 'default',
+         )
+      );
+
+
+      $wp_customize->add_control(
+         'codeweber_header_woo_single_bread_color',
+         array(
+            'type' => 'radio',
+            'label' => esc_html__('Text Color Page Woo Header Single', 'codeweber'),
+            'section' => 'woocommerce-section',
+            'choices' => array(
+               'white' => esc_html__('Light', 'codeweber'),
+               'dark' => esc_html__('Dark', 'codeweber'),
+               'default' => esc_html__('Default', 'codeweber'),
+            ),
+         )
+      );
 
       $wp_customize->add_setting(
          'codeweber_page_woo_product_header',
