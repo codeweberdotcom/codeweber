@@ -9,7 +9,7 @@ function consultant_widget()
       if (have_rows('consultant_widget', 'option')) {
          while (have_rows('consultant_widget', 'option')) {
             the_row(); ?>
-            <div class="widget mb-md-0">
+            <div class="widget mb-md-0 sticky-top">
                <div class="card">
                   <div class="card-body">
                      <?php $photo_consultant = get_sub_field('photo_consultant');

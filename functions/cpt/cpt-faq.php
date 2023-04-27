@@ -35,7 +35,7 @@ function cptui_register_my_cpts_faq()
 		"can_export" => true,
 		"rewrite" => ["slug" => "faq", "with_front" => true],
 		"query_var" => true,
-		"supports" => ["title", "editor", "comments", "revisions", "author", "thumbnail"],
+		"supports" => ["title",  "comments", "revisions", "author"],
 		"show_in_graphql" => false,
 	];
 

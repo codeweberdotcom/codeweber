@@ -5,6 +5,7 @@ global $codeweber;
 
 <section class="wrapper bg-light<?php echo $codeweber['page_settings']['angle_class']; ?>">
    <div class="container<?php echo $codeweber['page_settings']['container_class']; ?>">
+
       <div class="row gx-5 gy-5 <?php echo $codeweber['page_settings']['content_class']; ?>">
          <aside class="col-xl-3 sidebar mt-md-0 d-none d-xl-block">
             <div class="widget sticky-top">

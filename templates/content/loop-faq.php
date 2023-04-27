@@ -1,19 +1,5 @@
 <article id="post-<?php the_ID(); ?>" class="post">
    <div class="card">
-      <figure class="card-img-top overlay overlay-1 hover-scale"><a href="<?php the_permalink(); ?>">
-            <?php
-            the_post_thumbnail(
-               'sandbox_hero_5',
-               array(
-                  'class' => '',
-                  'alt' => get_the_title(),
-               )
-            );
-            ?><span class="bg"></span></a>
-         <figcaption>
-            <div class="from-top h5 mb-0"><?php esc_html_e('Read More', 'codeweber'); ?></div>
-         </figcaption>
-      </figure>
       <div class="card-body">
          <div class="post-header">
             <div class="post-category text-line">
