@@ -9,7 +9,7 @@ function consultant_widget()
       if (have_rows('consultant_widget', 'option')) {
          while (have_rows('consultant_widget', 'option')) {
             the_row(); ?>
-            <div class="widget sticky-top mb-md-0">
+            <div class="widget mb-md-0">
                <div class="card">
                   <div class="card-body">
                      <?php $photo_consultant = get_sub_field('photo_consultant');
@@ -30,7 +30,6 @@ function consultant_widget()
                      <?php } else { ?>
                         <div class="meta mb-2"><?php echo esc_html_e('Consultant'); ?></div>
                      <?php }
-
 
 
                      if (get_sub_field('description')) { ?>
@@ -66,6 +65,7 @@ function consultant_widget()
 add_action('sidebar_faq_end', 'consultant_widget', 100);
 add_action('sidebar_main_end', 'consultant_widget', 100);
 add_action('sidebar_testimonials_end', 'consultant_widget', 100);
+add_action('sidebar_faq_end', 'consultant_widget', 100);
 
 
 /**

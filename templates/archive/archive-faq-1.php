@@ -6,8 +6,9 @@ global $codeweber;
 <section class="wrapper bg-light<?php echo $codeweber['page_settings']['angle_class']; ?>">
    <div class="container<?php echo $codeweber['page_settings']['container_class']; ?>">
       <div class="row gx-5 gy-5 <?php echo $codeweber['page_settings']['content_class']; ?>">
-         <aside class="col-xl-3 sidebar mt-md-0 d-none d-xl-block ">
+         <aside class="col-xl-3 sidebar mt-md-0 d-none d-xl-block">
             <div class="widget sticky-top">
+               <h4 class="widget-title mb-3"><?php esc_html_e('Categories', 'codeweber'); ?></h4>
                <nav id="sidebar-nav">
                   <?php
                   $args = [
@@ -25,6 +26,7 @@ global $codeweber;
                <!-- /nav -->
             </div>
             <!-- /.widget -->
+            <?php do_action('sidebar_faq_end_type_1'); ?>
          </aside>
          <!-- /column -->
          <div class="col-xl-9 mt-md-0">
