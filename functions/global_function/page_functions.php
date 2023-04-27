@@ -88,6 +88,8 @@ function page_header()
             $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_service_header');
          } elseif (get_theme_mod('codeweber_page_service_header') == 'default' && get_theme_mod('codeweber_page_header') !== 'disable') {
             $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_header');
+         } else {
+            $codeweber['page_settings']['page_header_type'] = NULL;
          }
       } elseif (is_post_type_archive('services')) {
          if (get_theme_mod('codeweber_page_service_header') !== 'default' && get_theme_mod('codeweber_page_service_header') !== 'disable') {
@@ -359,6 +361,31 @@ function page_header()
       } else {
          $codeweber['page_settings']['page_header_sub_title'] = NULL;
       }
+
+      //Page Header Type
+      if (!is_post_type_archive('faq') && get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) !== 'default' && get_field('page_header_type', $term_id_prefixed) !== 'disable' && get_theme_mod('codeweber_page_header') !== 'disable' && get_theme_mod('codeweber_page_faq_header') !== 'disable') {
+         $codeweber['page_settings']['page_header_type'] = get_field('page_header_type', $term_id_prefixed);
+      } elseif (get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) == 'default') {
+         if (get_theme_mod('codeweber_page_faq_header') !== 'default' && get_theme_mod('codeweber_page_faq_header') !== 'disable') {
+            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_faq_header');
+         } elseif (get_theme_mod('codeweber_page_faq_header') == 'default' && get_theme_mod('codeweber_page_header') !== 'disable') {
+            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_header');
+         } else {
+            $codeweber['page_settings']['page_header_type'] = NULL;
+         }
+      } elseif (is_post_type_archive('faq')) {
+
+         if (get_theme_mod('codeweber_page_faq_header') !== 'default' && get_theme_mod('codeweber_page_faq_header') !== 'disable') {
+            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_faq_header');
+         } elseif (get_theme_mod('codeweber_page_faq_header') == 'default' && get_theme_mod('codeweber_page_header') !== 'disable') {
+            $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_header');
+         } else {
+            $codeweber['page_settings']['page_header_type'] = NULL;
+         }
+      } else {
+         $codeweber['page_settings']['page_header_type'] = NULL;
+      }
+
 
       if (get_theme_mod('codeweber_page_faq_header')) {
          $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_faq_header');
