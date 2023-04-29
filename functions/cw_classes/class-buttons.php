@@ -71,6 +71,8 @@ class CW_Button
             the_row();
             $button_type = get_sub_field('cw_button_type');
          }
+      } else {
+         $button_type = NULL;
       }
       return $button_type;
    }
