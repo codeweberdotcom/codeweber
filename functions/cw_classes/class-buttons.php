@@ -274,13 +274,7 @@ class CW_Button
          while (have_rows('cw_buttons')) {
             the_row();
             $cw_link_object = new CW_Link(NULL, NULL, NULL);
-            $link_url = $cw_link_object->link_url;
-            if ($link_url) {
-               $button_url = $link_url;
-            } else {
-               $button_url = NULL;
-            }
-
+            $button_url = $cw_link_object->link_url;
 
             if ($cw_link_object->link_type == 'Tooltip' || $cw_link_object->link_type == 'Popover') {
                $button_data = $cw_link_object->link_data;
