@@ -36,16 +36,14 @@ $wrapper_classes   = apply_filters(
       'images',
    )
 );
-
-
-
-
 ?>
 
 <div class="col-lg-6">
    <div class="swiper-container swiper-thumbs-container " data-margin="10" data-dots="false" data-nav="true" data-thumbs="true">
+      <?php do_action('codeweber_woo_product_image_start'); ?>
       <div class="swiper <?php echo esc_attr(implode(' ', array_map('sanitize_html_class', $wrapper_classes))); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
          <div class="woocommerce-product-gallery__wrapper swiper-wrapper">
+            <?php do_action('codeweber_woo_product_main_image_start'); ?>
             <?php
             if ($post_thumbnail_id) {
                $html = my_custom_img_function($post_thumbnail_id, true, 'full');
@@ -63,24 +61,24 @@ $wrapper_classes   = apply_filters(
                }
             }
             ?>
+            <?php do_action('codeweber_woo_product_main_image_finish'); ?>
          </div>
       </div>
 
       <div class="swiper swiper-thumbs">
          <div class="swiper-wrapper">
+            <?php do_action('codeweber_woo_product_thumb_image_start'); ?>
             <?php
-
             $html_thumb = my_custom_img_function($post_thumbnail_id, true, 'thumbnail');
-
             echo apply_filters('woocommerce_single_product_image_thumbnail_html', $html_thumb, $post_thumbnail_id); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-
             do_action('woocommerce_product_thumbnails');
             ?>
+            <?php do_action('codeweber_woo_product_thumb_image_finish'); ?>
          </div>
          <!--/.swiper-wrapper -->
       </div>
       <!-- /.swiper -->
 
-
+      <?php do_action('codeweber_woo_product_image_finish'); ?>
    </div>
 </div>
