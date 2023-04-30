@@ -11,8 +11,6 @@ include 'woocommerce-mobile-bottom-menu.php';
 include 'woocommerce_customizer.php';
 include 'woocommerce-page_header.php';
 
-wp_enqueue_script('theme-scripts', get_template_directory_uri() . '/functions/woocommerce/js/qtyinput.js', false, $theme_version, true);
-
 /**
  * Remove Downloads from Account menu
  */
