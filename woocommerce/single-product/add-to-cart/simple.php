@@ -30,8 +30,17 @@ if ($product->is_in_stock()) : ?>
 
    <?php do_action('woocommerce_before_add_to_cart_form'); ?>
 
+
+   <div class="qty-input rounded border-qty overflow-auto flex-nowrap">
+      <button class="qty-count qty-count--minus bg-light border-0" data-action="minus" type="button"><i class="uil uil-minus"></i></button>
+      <input class="product-qty border-0 bg-light text-ash text-center  border-0" type="number" name="product-qty" min="1" max="300" value="1">
+      <button class="qty-count qty-count--add  bg-light border-0" data-action="add" type="button"><i class="uil uil-plus"></i></button>
+   </div>
+
+
+
    <form class="cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
-      <div class="col-lg-9 d-flex flex-row pt-2">
+      <div class="col-lg-9 d-flex flex-row pt-2 flex-wrap">
          <?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
          <?php
