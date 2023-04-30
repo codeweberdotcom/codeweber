@@ -42,7 +42,7 @@ function woocommerce_add_custom_text_after_product_title()
       <div class="post-header mb-5">
          <h2 class="post-title display-5"><?php the_title(); ?></h2>
       </div>
-   <?php
+<?php
    }
 }
 
@@ -214,36 +214,3 @@ function ql_woocommerce_ajax_add_to_cart()
    }
    wp_die();
 }
-
-
-// Бланковые модели
-
-function price_block()
-{
-   if (is_object_in_term(get_the_ID(), 'product_cat', 'bazovye-modeli')) {
-   ?>
-      <div class="alert alert-dark alert-icon mt-5" role="alert"><i class="uil uil-map-marker-info"></i> При заказе от 11 шт индивидуальный расчет.</div>
-
-
-<?php
-      /**
-       * Remove product page tabs
-       */
-      add_filter('woocommerce_product_tabs', 'my_remove_all_product_tabs', 98);
-
-      function my_remove_all_product_tabs($tabs)
-      {
-         unset($tabs['description']);        // Remove the description tab
-         unset($tabs['reviews']);       // Remove the reviews tab
-         unset($tabs['additional_information']);    // Remove the additional information tab
-         return $tabs;
-      }
-
-      $video_base_product = new CW_Video(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-      echo $video_base_product->final_video;
-      $button_video = new CW_Buttons(NULL, NULL, NULL, NULL);
-      echo $button_video->final_buttons;
-   };
-}
-
-add_action('woocommerce_single_product_summary', 'price_block', 100);
