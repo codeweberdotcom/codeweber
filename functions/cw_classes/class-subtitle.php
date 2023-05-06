@@ -41,6 +41,8 @@ class CW_SubTitle
             the_row();
             $cw_subtitle_type = get_sub_field('type_subtitle');
          }
+      } else {
+         $cw_subtitle_type = 'type_1';
       }
       return $cw_subtitle_type;
    }

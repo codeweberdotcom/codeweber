@@ -85,6 +85,8 @@ class CW_Tables
                $cw_responsive_table = 'false';
             }
          }
+      } else {
+         $cw_responsive_table = 'true';
       }
       return $cw_responsive_table;
    }
@@ -98,14 +100,17 @@ class CW_Tables
       } else {
          $class_table = $this->class_table;
          $color_table = $this->color_table;
-         if (have_rows('table')) :
-            while (have_rows('table')) : the_row();
+         if (have_rows('table')) {
+            while (have_rows('table')) {
+               the_row();
                $table = get_sub_field('table');
                if ($table) {
 
                   $cw_final_table = '';
                   if ($this->responsive_table == 'true') {
                      $cw_final_table .= '<div class="table-responsive">';
+                  } else {
+                     $cw_final_table .= NULL;
                   }
 
                   $cw_final_table = '<table class="table ' . $class_table . ' ' . $color_table . '">';
@@ -133,11 +138,16 @@ class CW_Tables
                   $cw_final_table .= '</table>';
                   if ($this->responsive_table == 'true') {
                      $cw_final_table .= '</div>';
+                  } else {
+                     $cw_final_table .= NULL;
                   }
+               } else {
+                  $cw_final_table = NULL;
                }
-
-            endwhile;
-         endif;
+            }
+         } else {
+            $cw_final_table = NULL;
+         }
       }
 
       return $cw_final_table;
