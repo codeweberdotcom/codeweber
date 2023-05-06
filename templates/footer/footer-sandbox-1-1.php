@@ -11,7 +11,7 @@
               <div class="widget">
                  <?php echo codeweber_logo('light', true, NULL); ?>
                  <p class="mb-4"><a class="text-white-50" href="<?php echo esc_attr(wp_get_theme()->get('ThemeURI')); ?>" target="_blank">
-                       © <?php echo date("Y"); ?> <?php esc_html_e('Made with', 'codeweber'); ?> Codeweber</a>
+                       © <?php echo date("Y"); ?> <?php the_field('company', 'option'); ?></a>
                     <br class="d-none d-lg-block" /><?php esc_html_e('All rights reserved.', 'codeweber'); ?>
                  </p>
                  <nav class="nav social social-white">
@@ -53,6 +53,8 @@
            <!-- /column -->
         </div>
         <!--/.row -->
+        <p class="mt-6 mb-0 text-center"><a class="text-white-50 mt-6 mb-0" href="<?php echo esc_attr(wp_get_theme()->get('ThemeURI')); ?>" target="_blank">
+              © <?php esc_html_e('Made with', 'codeweber'); ?> Codeweber</a></p>
      </div>
      <!-- /.container -->
   </footer>
