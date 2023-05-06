@@ -2,11 +2,15 @@
 // get_template_part( 'templates/footer/footer', 'columns' );
 do_action('codeweber_footer_start'); ?>
 
-<?php if (get_field('footer') && get_field('footer') !== 'default') { ?>
-	<?php get_template_part('templates/footer/footer', get_field('footer')); ?>
-<?php } else { ?>
-	<?php get_template_part('templates/footer/footer', get_theme_mod('codeweber_footer')); ?>
-<?php } ?>
+<?php if (get_field('footer') && get_field('footer') !== 'default') {
+	get_template_part('templates/footer/footer', get_field('footer'));
+} elseif (get_theme_mod('codeweber_footer')) {
+	get_template_part('templates/footer/footer', get_theme_mod('codeweber_footer'));
+} else {
+	get_template_part('templates/footer/footer', 'sandbox-25_cw');
+}
+
+?>
 
 
 <!--  generate forms start -->

@@ -86,10 +86,12 @@
 
       if (get_field('header', $term_id_prefixed) && get_field('header', $term_id_prefixed) !== 'default') {
          get_template_part('templates/header/header', get_field('header', $term_id_prefixed));
-      } elseif (get_theme_mod('woocommerce_header') !== 'default') {
+      } elseif (get_theme_mod('woocommerce_header') !== 'default' && get_theme_mod('woocommerce_header')) {
          get_template_part('templates/header/header', get_theme_mod('woocommerce_header'));
-      } else {
+      } elseif (get_theme_mod('codeweber_header')) {
          get_template_part('templates/header/header', get_theme_mod('codeweber_header'));
+      } else {
+         get_template_part('templates/header/header', 'sandbox-woo-01');
       }
 
       do_action('codeweber_woo_after_header'); // Hook after header
