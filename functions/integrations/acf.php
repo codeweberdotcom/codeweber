@@ -1,6 +1,6 @@
 <?php
 
-if (!class_exists('ACF')) {
+if (class_exists('ACF')) {
 	include 'advanced-custom-fields-table-field/acf-table.php';
 	include 'advanced-custom-fields-table-field/class-jh-acf-field-table.php';
 }

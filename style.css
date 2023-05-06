@@ -14,7 +14,28 @@ Text Domain: codeweber
     line-height: 1;
 }*/
 
-/* Woo */
+/*
+*Theme
+*/
+
+/*navbar*/
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--bs-nav-link-hover-color) !important;
+}
+
+.navbar-dark
+  .container
+  .navbar-collapse
+  .offcanvas-body:first-child()
+  a.dropdown-toggle:after {
+  color: var(--bs-navbar-color) !important;
+  background-color: red !important;
+}
+
+/*
+* Woocommerce 
+*/
 .select2-container .select2-selection--single {
   height: 52px;
 }
@@ -482,4 +503,121 @@ input.product-qty::-webkit-inner-spin-button {
 /* Firefox */
 input.product-qty[type="number"] {
   -moz-appearance: textfield;
+}
+
+/*Wishlist*/
+
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus:before,
+.woocommerce
+  ul.products
+  li.product
+  a.tinvwl-button.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus:before,
+.woocommerce-page
+  ul.products
+  li.product
+  a.tinvwl-button.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus:before,
+a.wishlist_products_counter.top_wishlist-heart-plus:before,
+span.wishlist_products_counter.top_wishlist-heart-plus:before,
+a.sidr-class-wishlist_products_counter.sidr-class-top_wishlist-heart-plus:before,
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
+.woocommerce
+  ul.products
+  li.product
+  a.tinvwl-button.tinvwl_add_to_wishlist_button.tinvwl-icon-heart:before,
+.woocommerce-page
+  ul.products
+  li.product
+  a.tinvwl-button.tinvwl-icon-heart.tinvwl_add_to_wishlist_button:before,
+a.wishlist_products_counter.top_wishlist-heart:before,
+span.wishlist_products_counter.top_wishlist-heart:before,
+a.sidr-class-wishlist_products_counter.sidr-class-top_wishlist-heart:before {
+  font-size: 25px;
+}
+
+a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt.tinvwl-position-shortcode.inited-add-wishlist {
+  color: #e2626b !important;
+}
+
+a.tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt.tinvwl-position-shortcode,
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt,
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt {
+  color: #e2626b !important;
+  border: 2px solid #e2626b !important;
+  display: block !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+}
+
+.tinv-wishlist
+  .tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt:before,
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt:before,
+.tinv-wishlist
+  .tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt:before,
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt:before {
+  top: 46% !important;
+  left: 46% !important;
+  margin-right: 0 !important;
+}
+
+.tinv-wraper.tinv-wishlist {
+  margin-left: 5px;
+}
+
+button.button.tinvwl_button_view.tinvwl-btn-onclick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(0);
+  letter-spacing: -0.01rem;
+  position: relative;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x) !important;
+  font-family: var(--bs-btn-font-family) !important;
+  font-size: var(--bs-btn-font-size) !important;
+  font-weight: var(--bs-btn-font-weight) !important;
+  line-height: var(--bs-btn-line-height) !important;
+  color: var(--bs-btn-color) !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color) !important;
+  border-radius: var(--bs-btn-border-radius) !important;
+  background-color: var(--bs-btn-bg) !important;
+  box-shadow: var(--bs-btn-box-shadow) !important;
+  transition: all 0.2s ease-in-out !important;
+  color: var(--bs-btn-color) !important;
+  background-color: var(--bs-btn-bg) !important;
+  border-color: var(--bs-btn-border-color) !important;
+}
+
+span.tinvwl-product-stats {
+  background-color: var(--bs-grape) !important;
+  border-radius: 100%;
+  width: 0.9rem;
+  height: 0.9rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.55rem;
+  font-weight: 700 !important;
+  color: var(--bs-white);
+  right: -9px;
+}
+
+span.wishlist_products_counter_number {
+  position: absolute;
+  background-color: var(--bs-grape) !important;
+  border-radius: 100%;
+  width: 0.9rem;
+  height: 0.9rem;
+  padding: 0;
+  text-align: center;
+  font-size: 0.55rem;
+  font-weight: 700 !important;
+  color: var(--bs-white);
 }

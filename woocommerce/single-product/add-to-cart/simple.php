@@ -38,7 +38,6 @@ if ($product->is_in_stock()) : ?>
    </div> -->
 
 
-
    <form class="cart" action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>" method="post" enctype='multipart/form-data'>
       <div class="col-lg-9 d-flex flex-row pt-2 flex-wrap">
          <?php do_action('woocommerce_before_add_to_cart_button'); ?>
@@ -60,12 +59,14 @@ if ($product->is_in_stock()) : ?>
             <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="single_add_to_cart_button button alt btn btn-primary btn-icon btn-icon-start rounded w-100 flex-grow-1"><i class="uil uil-shopping-bag"></i><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
          </div>
 
-         <div>
-            <button class="btn btn-block btn-outline-red btn-icon <?php echo GetThemeButton(); ?> px-3 w-100 h-100"><i class="uil uil-heart"></i></button>
-         </div>
+         <!-- <div>
+            <button class="btn btn-block btn-outline-red wishlist_button btn-icon <?php echo GetThemeButton(); ?> px-3 w-100 h-100"><i class="uil uil-heart"></i></button>
+         </div> -->
          <div class="ps-1">
             <button class="btn btn-block btn-outline-red btn-icon <?php echo GetThemeButton(); ?> px-3 w-100 h-100"><i class="uil uil-exchange"></i></i></button>
          </div>
+
+         <?php echo do_shortcode('[ti_wishlists_addtowishlist]'); ?>
 
          <?php do_action('woocommerce_after_add_to_cart_button'); ?>
       </div>
