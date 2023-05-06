@@ -621,3 +621,7 @@ span.wishlist_products_counter_number {
   font-weight: 700 !important;
   color: var(--bs-white);
 }
+
+.tinvwl-input-group .form-control {
+  height: auto;
+}

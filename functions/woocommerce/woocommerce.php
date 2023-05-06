@@ -468,3 +468,49 @@ add_filter('sanitize_taxonomy_name', function ($urldecode, $taxonomy) {
    $urldecode = mb_substr($urldecode, 0, 27, 'utf-8');
    return $urldecode;
 }, 10, 2);
+
+
+
+/**
+ *Plugin Name: Ti_wishlist_script
+ */
+add_action('wp_footer', 'ti_wishlist_script');
+
+function ti_wishlist_script()
+{
+   if (function_exists('tinv_get_option_defaults')) {
+?>
+
+      <script>
+         document.querySelector('.tinvwl-input-group-btn .button').setAttribute("class", "btn btn-primary");
+         document.querySelector('.tinvwl-to-right .button').setAttribute("class", "btn btn-primary");
+         document.querySelector('.tinvwl-to-right .button').setAttribute("class", "btn btn-primary");
+      </script>
+      <?php
+   }
+}
+
+
+/**
+ * Header woo nav elements
+ */
+add_action('before_header_nav_woo', 'header_nav_woo');
+
+function header_nav_woo()
+{
+
+   if (class_exists('WooCommerce')) {
+      if (function_exists('tinv_get_option_defaults')) { ?>
+         <li class="nav-item d-none d-lg-block"><?php echo do_shortcode('[ti_wishlist_products_counter]'); ?>
+         <?php
+      }
+         ?>
+         <li class="nav-item d-none d-lg-block">
+            <a href="#" class="nav-link position-relative d-flex flex-row align-items-center" id="header-cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart">
+               <i class="uil uil-shopping-cart"></i>
+               <span class="badge badge-cart bg-primary"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+            </a>
+         </li>
+   <?php
+   }
+}

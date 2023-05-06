@@ -110,15 +110,8 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
             </li>
             <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
 
-            <?php if (class_exists('WooCommerce')) { ?>
-               <li class="nav-item d-none d-lg-block"><?php echo do_shortcode('[ti_wishlist_products_counter]'); ?>
-               <li class="nav-item d-none d-lg-block">
-                  <a href="#" class="nav-link position-relative d-flex flex-row align-items-center" id="header-cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart">
-                     <i class="uil uil-shopping-cart"></i>
-                     <span class="badge badge-cart bg-primary"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-                  </a>
-               </li>
-            <?php } ?>
+            <?php do_action('before_header_nav_woo'); ?>
+            <?php do_action('after_header_nav_woo'); ?>
 
             <li class="nav-item">
                <?php if (is_active_sidebar('header_right')) : ?>

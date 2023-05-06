@@ -65,9 +65,6 @@ if ($product->is_in_stock()) : ?>
          <div class="ps-1">
             <button class="btn btn-block btn-outline-red btn-icon <?php echo GetThemeButton(); ?> px-3 w-100 h-100"><i class="uil uil-exchange"></i></i></button>
          </div>
-
-         <?php echo do_shortcode('[ti_wishlists_addtowishlist]'); ?>
-
          <?php do_action('woocommerce_after_add_to_cart_button'); ?>
       </div>
    </form>
