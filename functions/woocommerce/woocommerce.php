@@ -462,3 +462,9 @@ add_filter('rank_math/frontend/breadcrumb/items', function ($crumbs, $class) {
    }
    return $crumbs;
 }, 10, 2);
+
+//https://habr.com/ru/articles/579670/#habracut
+add_filter('sanitize_taxonomy_name', function ($urldecode, $taxonomy) {
+   $urldecode = mb_substr($urldecode, 0, 27, 'utf-8');
+   return $urldecode;
+}, 10, 2);
