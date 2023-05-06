@@ -27,7 +27,9 @@ function codeweber_meta_blog()
          </p>
       <?php };
    } else {
-      if (is_blog() && is_singular() || is_singular('faq')) { ?>
+      if ((get_post_type() == 'post' && is_singular()) || is_singular('faq')) {
+         $post_id = get_the_ID();
+         $author_id = get_post_field('post_author', $post_id); ?>
          <p class="lead px-lg-5 px-xxl-8">
          <ul class="post-meta">
             <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d M Y'); ?></span></li>
