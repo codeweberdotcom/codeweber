@@ -504,7 +504,6 @@ function page_header()
          $codeweber['page_settings']['angle_class'] = NULL;
       }
    } elseif (is_blog()) {
-
       //ready
       if (is_home() && get_theme_mod('blog_title') && !is_category() && !is_tag() && !is_author() && !is_singular()) {
          $codeweber['page_settings']['page_header_title'] = get_theme_mod('blog_title');
@@ -522,6 +521,7 @@ function page_header()
       //Page Header Type
       if (is_home() || is_author()) {
          //Archive Page Header
+
          if (get_theme_mod('codeweber_page_blog_header') && get_theme_mod('codeweber_page_blog_header') !== 'disable' && get_theme_mod('codeweber_page_blog_header') !== 'default') {
             $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_blog_header');
          } elseif (get_theme_mod('codeweber_page_header') && get_theme_mod('codeweber_page_header') !== 'disable') {
@@ -539,9 +539,10 @@ function page_header()
             get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) == 'default' && get_field('page_header_type', $term_id_prefixed) !== 'disable' && get_theme_mod('codeweber_page_blog_single_header') && get_theme_mod('codeweber_page_blog_single_header') !== 'disable' && get_theme_mod('codeweber_page_blog_single_header') !== 'default' && !is_home() && !is_author()
          ) {
             $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_blog_single_header');
-         } elseif (get_theme_mod('codeweber_page_blog_single_header') && get_theme_mod('codeweber_page_blog_single_header') !== 'disable' && get_theme_mod('codeweber_page_blog_single_header') == 'default' && get_theme_mod('codeweber_page_blog_header') && get_theme_mod('codeweber_page_blog_header') !== 'disable' && get_theme_mod('codeweber_page_blog_header') !== 'default' && !is_home() && !is_author() && get_theme_mod('codeweber_page_blog_single_header') !== 'disable') {
+         } elseif (get_theme_mod('codeweber_page_blog_single_header') && get_theme_mod('codeweber_page_blog_single_header') !== 'disable' && get_theme_mod('codeweber_page_blog_single_header') == 'default' && get_theme_mod('codeweber_page_blog_header') && get_theme_mod('codeweber_page_blog_header') !== 'disable' && get_theme_mod('codeweber_page_blog_header') !== 'default' && !is_home() && !is_author() && get_theme_mod('codeweber_page_blog_single_header') !== 'disable' && get_field('page_header_type', $term_id_prefixed) && get_field('page_header_type', $term_id_prefixed) !== 'disable') {
             $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_blog_header');
          } elseif (get_theme_mod('codeweber_page_header') && get_theme_mod('codeweber_page_header') !== 'disable' && !is_home() && !is_author() && get_theme_mod('codeweber_page_blog_single_header') !== 'disable') {
+
             $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_header');
          } elseif (get_theme_mod('codeweber_page_header') == 'disable' && !is_home() && !is_author() && get_theme_mod('codeweber_page_blog_single_header') !== 'disable') {
             $codeweber['page_settings']['page_header_type'] = NULL;
