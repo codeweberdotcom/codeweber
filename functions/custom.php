@@ -37,12 +37,16 @@ function printr($data)
 
 function GetThemeButton()
 {
-    if (get_theme_mod('codeweber_button_form')) :
+    if (get_theme_mod('codeweber_button_form')) {
         $button_form = get_theme_mod('codeweber_button_form');
-    endif;
-    if (get_theme_mod('codeweber_button_size')) :
+    } else {
+        $button_form = 'rounded-0';
+    }
+    if (get_theme_mod('codeweber_button_size')) {
         $button_size = get_theme_mod('codeweber_button_size');
-    endif;
+    } else {
+        $button_size = 'btn-sm';
+    }
     $button_style = $button_form . ' ' . $button_size;
     return $button_style;
 }

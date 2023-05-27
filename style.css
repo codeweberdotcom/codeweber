@@ -36,6 +36,7 @@ Text Domain: codeweber
 /*
 * Woocommerce 
 */
+
 .select2-container .select2-selection--single {
   height: 52px;
 }
@@ -624,4 +625,8 @@ span.wishlist_products_counter_number {
 
 .tinvwl-input-group .form-control {
   height: auto;
+}
+
+.product .item-like {
+  z-index: 100 !important;
 }

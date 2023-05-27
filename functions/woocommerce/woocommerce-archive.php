@@ -118,6 +118,26 @@ function postheaderblockafter()
 }
 
 
+add_action('woocommerce_before_shop_loop_item', 'wishlist_button_loop', 25);
+function wishlist_button_loop()
+{
+   echo do_shortcode("[ti_wishlists_addtowishlist loop=yes]");
+}
+
+function replace_btn_text($more_dtls_link)
+{
+   if (is_archive()) {
+      $link = $more_dtls_link;
+      $str = str_replace('tabindex="0"', 'tabindex="0" data-bs-toggle="white-tooltip" aria-label="Add to wishlist" data-bs-original-title="' . esc_html__('Add to Wishlist', 'codeweber') . '"', $link);
+      $new_link = htmlspecialchars_decode($str);
+   } else {
+      $new_link = $more_dtls_link;
+   }
+
+   return $new_link;
+}
+add_filter('tinvwl_wishlist_button', 'replace_btn_text', 10, 2);
+
 /**
  * Insert the opening anchor tag for products in the loop.
  */

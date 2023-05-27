@@ -192,6 +192,4 @@ function woo_header()
    );
 }
 
-
-
 add_action('codeweber_woo_after_header', 'woo_header', 20);
