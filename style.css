@@ -630,3 +630,14 @@ span.wishlist_products_counter_number {
 .product .item-like {
   z-index: 100 !important;
 }
+
+/*portfolio 9_1 */
+.portfolio_tab .nav {
+  flex-direction: row !important;
+}
+
+.portfolio_tab .nav .nav-link {
+  padding: 0 12px !important;
+  margin: 2px;
+  border-bottom: 0 !important;
+}

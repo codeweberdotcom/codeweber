@@ -41,7 +41,7 @@
                         },
                         {
                             "key": "field_63ecd35517f37",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -159,7 +159,7 @@
                         },
                         {
                             "key": "field_63ee1996f825a",
-                            "label": "Categories",
+                            "label": "Категории",
                             "name": "categories",
                             "type": "taxonomy",
                             "instructions": "",
@@ -275,7 +275,7 @@
                         },
                         {
                             "key": "field_63ee3ba219ba2",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -393,7 +393,7 @@
                         },
                         {
                             "key": "field_63ee3ba219ba7",
-                            "label": "Categories",
+                            "label": "Категории",
                             "name": "categories",
                             "type": "taxonomy",
                             "instructions": "",
@@ -509,7 +509,7 @@
                         },
                         {
                             "key": "field_63ee3bee63ebd",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -627,7 +627,7 @@
                         },
                         {
                             "key": "field_63ee3bee63ec2",
-                            "label": "Categories",
+                            "label": "Категории",
                             "name": "categories",
                             "type": "taxonomy",
                             "instructions": "",
@@ -743,7 +743,7 @@
                         },
                         {
                             "key": "field_63ee3bf463ec8",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -861,7 +861,7 @@
                         },
                         {
                             "key": "field_63ee3bf463ecd",
-                            "label": "Categories",
+                            "label": "Категории",
                             "name": "categories",
                             "type": "taxonomy",
                             "instructions": "",
@@ -977,7 +977,7 @@
                         },
                         {
                             "key": "field_63ee4379cedb7",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1095,7 +1095,7 @@
                         },
                         {
                             "key": "field_63ee4379cedbc",
-                            "label": "Categories",
+                            "label": "Категории",
                             "name": "categories",
                             "type": "taxonomy",
                             "instructions": "",
@@ -1211,7 +1211,7 @@
                         },
                         {
                             "key": "field_63ee7251d30dc",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1329,7 +1329,7 @@
                         },
                         {
                             "key": "field_63ee7251d30e1",
-                            "label": "Categories",
+                            "label": "Категории",
                             "name": "categories",
                             "type": "taxonomy",
                             "instructions": "",
@@ -1483,7 +1483,7 @@
                         },
                         {
                             "key": "field_63eea0c097936",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1601,7 +1601,7 @@
                         },
                         {
                             "key": "field_63eea0c09793b",
-                            "label": "Categories",
+                            "label": "Категории",
                             "name": "categories",
                             "type": "taxonomy",
                             "instructions": "",
@@ -1717,7 +1717,7 @@
                         },
                         {
                             "key": "field_63eea526fcfd5",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1835,7 +1835,7 @@
                         },
                         {
                             "key": "field_63eea526fcfda",
-                            "label": "Categories",
+                            "label": "Категории",
                             "name": "categories",
                             "type": "taxonomy",
                             "instructions": "",
@@ -1989,7 +1989,7 @@
                         },
                         {
                             "key": "field_63eeac4fbcb41",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -2107,7 +2107,7 @@
                         },
                         {
                             "key": "field_63eeac4fbcb46",
-                            "label": "Categories",
+                            "label": "Категории",
                             "name": "categories",
                             "type": "taxonomy",
                             "instructions": "",
@@ -2235,6 +2235,278 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_6479e2cc4dcb3": {
+                    "key": "layout_6479e2cc4dcb3",
+                    "name": "portfolio_9_1",
+                    "label": "Portfolio 9_1",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_6479e2cc4dcb4",
+                            "label": "Main Settings",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_6479e2cc4dcb5",
+                            "label": "Заголовок",
+                            "name": "cw_title",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6383ec1d68ff4"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6479e2cc4dcb6",
+                            "label": "SubTitle",
+                            "name": "cw_subtitle",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_6384afba2c502"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6479e2cc4dcb7",
+                            "label": "Posts",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_6479e2cc4dcb8",
+                            "label": "Select type",
+                            "name": "select_type",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "post": "post",
+                                "category": "category"
+                            },
+                            "default_value": "post",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "return_format": "value",
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_6479e2cc4dcb9",
+                            "label": "Posts",
+                            "name": "posts",
+                            "type": "relationship",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6479e2cc4dcb8",
+                                        "operator": "==",
+                                        "value": "post"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "projects"
+                            ],
+                            "taxonomy": "",
+                            "filters": [
+                                "search",
+                                "taxonomy"
+                            ],
+                            "elements": "",
+                            "min": "",
+                            "max": "",
+                            "return_format": "id"
+                        },
+                        {
+                            "key": "field_6479e2cc4dcba",
+                            "label": "Категории",
+                            "name": "categories",
+                            "type": "taxonomy",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_6479e2cc4dcb8",
+                                        "operator": "==",
+                                        "value": "category"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "taxonomy": "projects_category",
+                            "field_type": "multi_select",
+                            "allow_null": 0,
+                            "add_term": 1,
+                            "save_terms": 0,
+                            "load_terms": 0,
+                            "return_format": "id",
+                            "multiple": 0
+                        },
+                        {
+                            "key": "field_6479e2cc4dcbb",
+                            "label": "Background",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_6479e2cc4dcbc",
+                            "label": "Background",
+                            "name": "cw_background",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_6398d19d56ee1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6479e2cc4dcbd",
+                            "label": "Divider",
+                            "name": "divider",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_63a18f728079f"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
+                            "key": "field_6479e2cc4dcbe",
+                            "label": "Buttons",
+                            "name": "",
+                            "type": "accordion",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "open": 0,
+                            "multi_expand": 0,
+                            "endpoint": 0
+                        },
+                        {
+                            "key": "field_6479e2cc4dcbf",
+                            "label": "Buttons",
+                            "name": "buttons_копия",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_639307ffa3855"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Добавить",
@@ -2260,5 +2532,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676586071
+    "modified": 1685727396
 }
