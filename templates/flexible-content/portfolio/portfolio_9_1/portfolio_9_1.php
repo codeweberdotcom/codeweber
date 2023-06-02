@@ -68,7 +68,7 @@ $terms = get_terms([
             <div class="tab-pane fade show <?php echo $active_tab; ?>" id="tab3-<?php echo $term_tab; ?>">
                <div class="container text-center ">
 
-                  <div class="row row-cols-2 row-cols-md-4 gx-8 gy-8">
+                  <div class="row row-cols-2 row-cols-md-4 gx-8 gy-8 py-6">
                      <?php
 
                      $query = new WP_Query([
