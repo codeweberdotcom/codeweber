@@ -48,7 +48,7 @@ $terms = get_terms([
                $active_tab = NULL;
             }
          ?>
-            <li class="nav-item text-uppercase"> <a class="fs-14 nav-link<?php echo $active_tab; ?>" data-bs-toggle="tab" href="#tab3-<?php echo $term->term_id; ?>"><?php echo $term->name; ?></a> </li>
+            <li class="nav-item text-uppercase mb-0"> <a class="fs-14 nav-link<?php echo $active_tab; ?>" data-bs-toggle="tab" href="#tab3-<?php echo $term->term_id; ?>"><?php echo $term->name; ?></a> </li>
          <?php $counter++;
          }
          ?>
