@@ -24,7 +24,7 @@ $terms = get_terms([
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 py-md-16 text-center portfolio_tab">
       <div class="row">
-         <div class="col-lg-10 col-xl-8 col-xxl-9 mx-auto mb-8">
+         <div class="col-lg-10 col-xl-8 col-xxl-8 mx-auto mb-8">
             <?php echo $block->subtitle_first; ?>
             <?php echo $block->title; ?>
             <!--/title -->
@@ -68,7 +68,7 @@ $terms = get_terms([
             <div class="tab-pane fade show <?php echo $active_tab; ?>" id="tab3-<?php echo $term_tab; ?>">
                <div class="container text-center ">
 
-                  <div class="row row-cols-2 row-cols-md-4 gx-8 gy-8 py-6">
+                  <div class="row row-cols-2 row-cols-md-4 gx-4 gy-4 py-6">
                      <?php
 
                      $query = new WP_Query([
