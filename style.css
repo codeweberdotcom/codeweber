@@ -641,3 +641,19 @@ span.wishlist_products_counter_number {
   margin: 2px;
   border-bottom: 0 !important;
 }
+
+.portfolio_tab li.nav-item + li:before {
+  content: "";
+  display: inline-block;
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 100%;
+  margin: 0 0.8rem 0 0.5rem;
+  vertical-align: 0.15rem;
+  background: rgba(30, 34, 40, 0.2);
+}
+
+.portfolio_tab .nav-link {
+  display: inline !important;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+}
