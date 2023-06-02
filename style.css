@@ -655,5 +655,6 @@ span.wishlist_products_counter_number {
 
 .portfolio_tab .nav-link {
   display: inline !important;
-  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  padding: 0 !important;
+  color: #aab0bc;
 }
