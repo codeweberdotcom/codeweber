@@ -480,7 +480,6 @@ function ti_wishlist_script()
 {
    if (function_exists('tinv_get_option_defaults')) {
 ?>
-
       <script>
          document.querySelector('.tinvwl-input-group-btn .button').setAttribute("class", "btn btn-primary");
          document.querySelector('.tinvwl-to-right .button').setAttribute("class", "btn btn-primary");

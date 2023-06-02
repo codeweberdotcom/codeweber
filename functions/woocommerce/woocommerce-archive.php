@@ -121,7 +121,9 @@ function postheaderblockafter()
 add_action('woocommerce_before_shop_loop_item', 'wishlist_button_loop', 25);
 function wishlist_button_loop()
 {
-   echo do_shortcode("[ti_wishlists_addtowishlist loop=yes]");
+   if (function_exists('tinv_get_option')) {
+      echo do_shortcode("[ti_wishlists_addtowishlist loop=yes]");
+   }
 }
 
 function replace_btn_text($more_dtls_link)
