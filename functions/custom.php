@@ -292,7 +292,14 @@ function sandbox_recent_post()
 }
 
 
-// --- Logo Dark && Light ---
+/* --- Logo Dark && Light ---
+* Get logo
+* codeweber_logo($color, $footer, $transparent)
+* $color = dark or light;
+* $footer = bool;
+* $transparent = solid or transparent
+*/
+
 function codeweber_logo($color, $footer, $transparent)
 
 {
@@ -314,12 +321,11 @@ function codeweber_logo($color, $footer, $transparent)
 
         if ($color == 'dark' && $transparent == 'solid') {
             $class_logo_dark = ' class="logo-dark-transparent" ';
+        } elseif ($color == 'dark' && $transparent == 'transparent') {
+            $class_logo_dark = ' class="logo-dark" ';
         } else {
             $class_logo_dark = ' class="logo-dark" ';
         }
-
-
-
         $class_logo_light = ' class="logo-light" ';
     }
 

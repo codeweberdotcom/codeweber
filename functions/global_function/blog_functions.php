@@ -155,6 +155,8 @@ function CPT_Blog_Settings($wp_customize)
             ' bg-telegram' => 'Telegram',
             ' bg-whatsapp' => 'Whatsapp',
             ' bg-facebook' => 'Facebook',
+            ' bg-dewalt' => 'Dewalt',
+            ' bg-bitbucket' => 'Bitbucket',
             ' bg-dark'     => 'Dark',
             ' bg-light'     => 'Light',
             ' bg-primary'     => 'Primary',
@@ -177,6 +179,8 @@ function CPT_Blog_Settings($wp_customize)
             ' bg-soft-telegram' => 'Soft Telegram',
             ' bg-soft-whatsapp' => 'Soft Whatsapp',
             ' bg-soft-facebook' => 'Soft Facebook',
+            'bg-soft-bitbucket' => 'Soft Bitbucket',
+            'bg-soft-pinterest' => 'Soft Pinterest',
             ' bg-soft-pinterest' => 'Soft Pinterest'
          )
       )
@@ -389,6 +393,8 @@ function CPT_Blog_Settings($wp_customize)
             'bg-telegram' => 'Telegram',
             'bg-whatsapp' => 'Whatsapp',
             'bg-facebook' => 'Facebook',
+            'bg-bitbucket' => 'Bitbucket',
+            'bg-dewalt' => 'Dewalt',
             'bg-dark'     => 'Dark',
             'bg-light'     => 'Light',
             'bg-primary'     => 'Primary',
@@ -411,7 +417,9 @@ function CPT_Blog_Settings($wp_customize)
             'bg-soft-telegram' => 'Soft Telegram',
             'bg-soft-whatsapp' => 'Soft Whatsapp',
             'bg-soft-facebook' => 'Soft Facebook',
-            'bg-soft-pinterest' => 'Soft Pinterest'
+            'bg-soft-bitbucket' => 'Soft Bitbucket',
+            'bg-soft-dewalt' => 'Soft Dewalt',
+            'bg-soft-pinterest' => 'Soft Pinterest',
          )
       )
    );

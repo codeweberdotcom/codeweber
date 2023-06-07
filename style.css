@@ -17,6 +17,17 @@ Text Domain: codeweber
 /*
 *Theme
 */
+/*
+* header transparent fix logo bug color
+*
+*/
+.navbar-light.navbar.transparent .logo-dark {
+  display: block !important;
+}
+
+.navbar-light.navbar.transparent .logo-light {
+  display: none !important;
+}
 
 /*navbar*/
 .nav-link:focus,
