@@ -161,10 +161,25 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       </section>
    <?php
    } elseif ($type == 'type_5') { ?>
-      <?php echo $section_open; ?>
-      <div class="container <?php echo $codeweber['page_settings']['container_class']; ?>">
+      <?php echo $section_open;
+
+      if (isset($codeweber['page_settings']['container_class'])) {
+         $container_class = $codeweber['page_settings']['container_class'];
+      } else {
+         $container_class = NULL;
+      }
+
+      if (isset($codeweber['page_settings']['col_class'])) {
+         $container_col_class = $codeweber['page_settings']['col_class'];
+      } else {
+         $container_col_class  = NULL;
+      }
+      ?>
+
+
+      <div class="container <?php echo $container_class; ?>">
          <div class="row">
-            <div class="<?php echo $codeweber['page_settings']['col_class']; ?> text-center">
+            <div class="<?php echo $container_col_class; ?> text-center">
                <?php if ($subtitle !== NULL) { ?>
                   <div class="h1 fs-15 text-uppercase mb-3 <?php echo $text_color; ?>"><?php echo $subtitle; ?></div>
                <?php
@@ -218,10 +233,24 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       </section>
    <?php
    } elseif ($type == 'type_7') { ?>
-      <?php echo $section_open; ?>
-      <div class="container <?php echo $codeweber['page_settings']['container_class']; ?>">
+      <?php echo $section_open;
+
+      if (isset($codeweber['page_settings']['container_class'])) {
+         $container_class = $codeweber['page_settings']['container_class'];
+      } else {
+         $container_class = NULL;
+      }
+
+      if (isset($codeweber['page_settings']['col_class'])) {
+         $container_col_class = $codeweber['page_settings']['col_class'];
+      } else {
+         $container_col_class  = NULL;
+      }
+
+      ?>
+      <div class="container <?php echo $container_class; ?>">
          <div class="row">
-            <div class="<?php echo $codeweber['page_settings']['col_class']; ?> text-center">
+            <div class="<?php echo $container_col_class; ?> text-center">
                <?php
                if ($title !== NULL) { ?>
                   <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
