@@ -41,7 +41,7 @@ $calculator_text          = '';
 					} else {
 						printf('<input type="radio" name="shipping_method[%1$d]" data-index="%1$d" id="shipping_method_%1$d_%2$s" value="%3$s" class="shipping_method form-check-input" / checked>', $index, esc_attr(sanitize_title($method->id)), esc_attr($method->id)); // WPCS: XSS ok.
 					}
-					printf('<label for="shipping_method_%1$s_%2$s">%3$s</label><small class="text-muted d-block">Shipment may take 2-3 business days</small>', $index, esc_attr(sanitize_title($method->id)), wc_cart_totals_shipping_method_label($method)); // WPCS: XSS ok.
+					printf('<label for="shipping_method_%1$s_%2$s">%3$s</label>', $index, esc_attr(sanitize_title($method->id)), wc_cart_totals_shipping_method_label($method)); // WPCS: XSS ok.
 					do_action('woocommerce_after_shipping_rate', $method, $index);
 
 					?>
