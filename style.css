@@ -658,3 +658,8 @@ span.wishlist_products_counter_number {
   padding: 0 !important;
   color: #aab0bc;
 }
+
+/*Show Always radio button pay*/
+li.wc_payment_method.payment_method_all .form-check .form-check-input {
+  display: block !important;
+}
