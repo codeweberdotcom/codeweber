@@ -550,3 +550,17 @@ function page_frame_banner()
 		echo 'mt-0';
 	}
 }
+
+
+
+/* Metrics Yandex Google */
+add_action('wp_head', 'metrics');
+function metrics()
+{
+	if (get_field('counter_yandex', 'option')) {
+		the_field('counter_yandex', 'option');
+	}
+	if (get_field('counter_google', 'option')) {
+		the_field('counter_google', 'option');
+	}
+};
