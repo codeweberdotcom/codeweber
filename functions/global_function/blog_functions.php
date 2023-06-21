@@ -181,7 +181,7 @@ function CPT_Blog_Settings($wp_customize)
             ' bg-soft-facebook' => 'Soft Facebook',
             'bg-soft-bitbucket' => 'Soft Bitbucket',
             'bg-soft-pinterest' => 'Soft Pinterest',
-            ' bg-soft-pinterest' => 'Soft Pinterest'
+            ' bg-soft-dewalt' => 'Soft Dewalt'
          )
       )
    );
