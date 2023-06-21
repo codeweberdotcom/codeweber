@@ -47,76 +47,77 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
    }
 
 
-   if ($type == 'type_1') { ?>
-      <?php echo $section_open; ?>
-      <div class="container py-10 py-md-14">
-         <div class="row">
-            <div class="col-md-8 col-lg-7 col-xl-8 col-xxl-8">
-               <?php
-               if ($title !== NULL) { ?>
-                  <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
-               <?php
-               } ?>
-               <?php if ($subtitle !== NULL) { ?>
-                  <p class="lead fs-lg pe-lg-15 pe-xxl-12 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
-               <?php
-               } ?>
-               <?php
-               if ($breadcrumbs == 'true') {
-                  codeweber_breadcrumbs(NULL, $text_color);
-               }
-               codeweber_meta_blog(); // Blog Meta Data
-               ?>
+   if ($type !== 'disable') {
+      if ($type == 'type_1') { ?>
+         <?php echo $section_open; ?>
+         <div class="container py-10 py-md-14">
+            <div class="row">
+               <div class="col-md-8 col-lg-7 col-xl-8 col-xxl-8">
+                  <?php
+                  if ($title !== NULL) { ?>
+                     <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
+                  <?php
+                  } ?>
+                  <?php if ($subtitle !== NULL) { ?>
+                     <p class="lead fs-lg pe-lg-15 pe-xxl-12 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
+                  <?php
+                  } ?>
+                  <?php
+                  if ($breadcrumbs == 'true') {
+                     codeweber_breadcrumbs(NULL, $text_color);
+                  }
+                  codeweber_meta_blog(); // Blog Meta Data
+                  ?>
+               </div>
+               <!-- /column -->
             </div>
-            <!-- /column -->
+            <!-- /.row -->
          </div>
-         <!-- /.row -->
-      </div>
-      <!-- /.container -->
-      </section>
-   <?php
-   } elseif ($type == 'type_2') { ?>
-      <?php echo $section_open; ?>
-      <div class="container py-13 py-md-17 text-center">
-         <div class="row">
-            <div class="col-lg-10 col-xxl-8 mx-auto">
-               <?php
-               if ($title !== NULL) { ?>
-                  <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
-               <?php
-               } ?>
-               <?php if ($subtitle !== NULL) { ?>
-                  <p class="lead fs-lg px-lg-10 px-xxl-8 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
-               <?php
-               } ?>
-               <?php
-               if ($breadcrumbs !== 'true') {
-                  codeweber_breadcrumbs(NULL, $text_color);
-               }
-               codeweber_meta_blog(); // Blog Meta Data
-               ?>
+         <!-- /.container -->
+         </section>
+      <?php
+      } elseif ($type == 'type_2') { ?>
+         <?php echo $section_open; ?>
+         <div class="container py-13 py-md-17 text-center">
+            <div class="row">
+               <div class="col-lg-10 col-xxl-8 mx-auto">
+                  <?php
+                  if ($title !== NULL) { ?>
+                     <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
+                  <?php
+                  } ?>
+                  <?php if ($subtitle !== NULL) { ?>
+                     <p class="lead fs-lg px-lg-10 px-xxl-8 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
+                  <?php
+                  } ?>
+                  <?php
+                  if ($breadcrumbs !== 'true') {
+                     codeweber_breadcrumbs(NULL, $text_color);
+                  }
+                  codeweber_meta_blog(); // Blog Meta Data
+                  ?>
+               </div>
+               <!-- /column -->
             </div>
-            <!-- /column -->
+            <!-- /.row -->
          </div>
-         <!-- /.row -->
-      </div>
-      <!-- /.container -->
-      </section>
-   <?php
-   } elseif ($type == 'type_3') { ?>
-      <?php echo $section_open; ?>
-      <div class="container py-10 py-md-14 text-center">
-         <div class="row">
-            <div class="col-md-8 col-lg-7 col-xl-7 col-xxl-8 mx-auto">
-               <?php
-               if ($title !== NULL) { ?>
-                  <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
-               <?php
-               } ?>
-               <?php if ($subtitle !== NULL) { ?>
-                  <p class="lead fs-lg px-lg-10 px-xxl-8 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
-               <?php
-               } ?>
+         <!-- /.container -->
+         </section>
+      <?php
+      } elseif ($type == 'type_3') { ?>
+         <?php echo $section_open; ?>
+         <div class="container py-10 py-md-14 text-center">
+            <div class="row">
+               <div class="col-md-8 col-lg-7 col-xl-7 col-xxl-8 mx-auto">
+                  <?php
+                  if ($title !== NULL) { ?>
+                     <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
+                  <?php
+                  } ?>
+                  <?php if ($subtitle !== NULL) { ?>
+                     <p class="lead fs-lg px-lg-10 px-xxl-8 <?php echo $text_color; ?>"><?php echo $subtitle; ?></p>
+                  <?php
+                  } ?>
 
                <?php
                if ($breadcrumbs == 'true') {
@@ -161,25 +162,10 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       </section>
    <?php
    } elseif ($type == 'type_5') { ?>
-      <?php echo $section_open;
-
-      if (isset($codeweber['page_settings']['container_class'])) {
-         $container_class = $codeweber['page_settings']['container_class'];
-      } else {
-         $container_class = NULL;
-      }
-
-      if (isset($codeweber['page_settings']['col_class'])) {
-         $container_col_class = $codeweber['page_settings']['col_class'];
-      } else {
-         $container_col_class  = NULL;
-      }
-      ?>
-
-
-      <div class="container <?php echo $container_class; ?>">
+      <?php echo $section_open; ?>
+      <div class="container <?php echo $codeweber['page_settings']['container_class']; ?>">
          <div class="row">
-            <div class="<?php echo $container_col_class; ?> text-center">
+            <div class="<?php echo $codeweber['page_settings']['col_class']; ?> text-center">
                <?php if ($subtitle !== NULL) { ?>
                   <div class="h1 fs-15 text-uppercase mb-3 <?php echo $text_color; ?>"><?php echo $subtitle; ?></div>
                <?php
@@ -233,24 +219,10 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       </section>
    <?php
    } elseif ($type == 'type_7') { ?>
-      <?php echo $section_open;
-
-      if (isset($codeweber['page_settings']['container_class'])) {
-         $container_class = $codeweber['page_settings']['container_class'];
-      } else {
-         $container_class = NULL;
-      }
-
-      if (isset($codeweber['page_settings']['col_class'])) {
-         $container_col_class = $codeweber['page_settings']['col_class'];
-      } else {
-         $container_col_class  = NULL;
-      }
-
-      ?>
-      <div class="container <?php echo $container_class; ?>">
+      <?php echo $section_open; ?>
+      <div class="container <?php echo $codeweber['page_settings']['container_class']; ?>">
          <div class="row">
-            <div class="<?php echo $container_col_class; ?> text-center">
+            <div class="<?php echo $codeweber['page_settings']['col_class']; ?> text-center">
                <?php
                if ($title !== NULL) { ?>
                   <h1 class="display-1 mb-3 <?php echo $text_color; ?>"><?php echo $title; ?></h1>
@@ -338,4 +310,5 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
          <!-- /.container -->
       </section>
 <?php }
+   }
 }
