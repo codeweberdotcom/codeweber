@@ -230,6 +230,18 @@ class CW_Settings
    //Features
    public function cw_features($cw_settings)
    {
+      if ($this->cw_settings['feature_pattern_title']) {
+         $features_title_pattern = $this->cw_settings['feature_pattern_title'];
+      } else {
+         $features_title_pattern = NULL;
+      }
+
+      if ($this->cw_settings['feature_pattern_paragraph']) {
+         $features_paragraph_pattern = $this->cw_settings['feature_pattern_paragraph'];
+      } else {
+         $features_paragraph_pattern = NULL;
+      }
+
       if (isset($this->cw_settings['features']) && !$this->cw_settings['features'] == NULL) {
          $features_pattern = $this->cw_settings['features_pattern'];
          $demo = $this->cw_settings['features'];
@@ -247,7 +259,7 @@ class CW_Settings
          }
 
 
-         $features_object = new CW_Features($features_pattern, $demo, $class_icon, $fetures_image_size);
+         $features_object = new CW_Features($features_pattern, $demo, $class_icon, $fetures_image_size, $features_title_pattern, $features_paragraph_pattern);
          $cw_features = $features_object->features_list_final;
          $this->features_array =  $features_object->features_array_final;
          if ($cw_features == NULL) {
