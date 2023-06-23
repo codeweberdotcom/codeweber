@@ -230,13 +230,13 @@ class CW_Settings
    //Features
    public function cw_features($cw_settings)
    {
-      if ($this->cw_settings['feature_pattern_title']) {
+      if (isset($this->cw_settings['feature_pattern_title'])) {
          $features_title_pattern = $this->cw_settings['feature_pattern_title'];
       } else {
          $features_title_pattern = NULL;
       }
 
-      if ($this->cw_settings['feature_pattern_paragraph']) {
+      if (isset($this->cw_settings['feature_pattern_paragraph'])) {
          $features_paragraph_pattern = $this->cw_settings['feature_pattern_paragraph'];
       } else {
          $features_paragraph_pattern = NULL;
