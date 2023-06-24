@@ -685,6 +685,7 @@ function codeweber_register_theme_customizer($wp_customize)
             'sandbox-15'   => 'Footer 15',
             'sandbox-16'   => 'Footer 16',
             'sandbox-17'   => 'Footer 17',
+            'sandbox-17-1'   => 'Footer 17-1',
             'sandbox-18'   => 'Footer 18',
             'sandbox-19'   => 'Footer 19',
             'sandbox-20'   => 'Footer 20',
