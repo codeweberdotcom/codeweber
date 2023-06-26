@@ -132,6 +132,10 @@ class CW_Social
          $cw_social_final = $social_final;
       }
 
+      if ($this->type_social == 'Disable') {
+         $cw_social_final = NULL;
+      }
+
       return $cw_social_final;
    }
 }

@@ -33,7 +33,8 @@
                     "choices": {
                         "Type 1": "Type 1",
                         "Type 2": "Type 2",
-                        "Type 3": "Type 3"
+                        "Type 3": "Type 3",
+                        "Disable": "Disable"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -55,6 +56,11 @@
                                 "field": "field_63f3ef0af3fcc",
                                 "operator": "==",
                                 "value": "Type 1"
+                            },
+                            {
+                                "field": "field_63f3ef0af3fcc",
+                                "operator": "!=",
+                                "value": "Disable"
                             }
                         ]
                     ],
@@ -80,6 +86,11 @@
                                 "field": "field_63f3ef0af3fcc",
                                 "operator": "==",
                                 "value": "Type 2"
+                            },
+                            {
+                                "field": "field_63f3ef0af3fcc",
+                                "operator": "!=",
+                                "value": "Disable"
                             }
                         ]
                     ],
@@ -105,6 +116,11 @@
                                 "field": "field_63f3ef0af3fcc",
                                 "operator": "==",
                                 "value": "Type 3"
+                            },
+                            {
+                                "field": "field_63f3ef0af3fcc",
+                                "operator": "!=",
+                                "value": "Disable"
                             }
                         ]
                     ],
@@ -124,7 +140,15 @@
                     "type": "group",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_63f3ef0af3fcc",
+                                "operator": "!=",
+                                "value": "Disable"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
@@ -383,5 +407,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677615727
+    "modified": 1687807235
 }
