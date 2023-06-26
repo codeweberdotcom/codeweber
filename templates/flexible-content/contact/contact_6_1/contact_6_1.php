@@ -114,6 +114,9 @@ if (get_sub_field('block_title')) {
    $block_title = 'Here are 3 working steps to organize our business projects.';
 }
 
+
+
+
 $block = new CW_Settings(
    $cw_settings = array(
 
@@ -131,6 +134,8 @@ $block = new CW_Settings(
 
    )
 );
+
+
 ?>
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
@@ -141,7 +146,7 @@ $block = new CW_Settings(
                <div class="row gx-0">
                   <div class="col-lg-6 align-self-stretch">
                      <div class="map map-full rounded-top rounded-lg-start">
-                        <iframe src="<?php echo $map_url; ?>" style="width:100%; height: 480px; border:0" allowfullscreen></iframe>
+                        <iframe src="<?php echo $map_url; ?>" style="width: 100%; height: 100%; min-height: 480px; border:0" allowfullscreen></iframe>
                      </div>
                      <!-- /.map -->
                   </div>
@@ -158,6 +163,59 @@ $block = new CW_Settings(
                            </div>
                         </div>
                         <!--/div -->
+
+                        <?php if (have_rows('time_working', 'option')) { ?>
+                           <div class="d-flex flex-row">
+                              <div>
+                                 <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-clock"></i> </div>
+                              </div>
+                              <div>
+                                 <h5 class="mb-1"><?php esc_html_e('Time working', 'codeweber'); ?></h5>
+                                 <table class="table table-borderless table-sm">
+                                    <tbody>
+                                       <?php
+                                       while (have_rows('time_working', 'option')) {
+                                          the_row();
+                                          $day_start = get_sub_field('day_start');
+                                          $day_end = get_sub_field('day_end');
+                                          $time_start = get_sub_field('time_start');
+                                          $time_end = get_sub_field('time_end');
+
+                                          if ($day_start && $day_end) {
+                                             $days_string = '<span>' . $day_start . '</span> - <span>' . $day_end . '</span>';
+                                          } else {
+                                             $days_string = '<span>' . $day_start . '</span>';
+                                          }
+
+                                          if ($time_start && $time_end) {
+                                             $time_string = '<span>' . $time_start . '</span> - <span>' . $time_end . '</span>';
+                                          }
+
+                                          $weekend = get_sub_field('weekend');
+                                          if ($weekend == true) {
+                                             $times = 'Выходной';
+                                             $color_style = 'class="text-pinterest"';
+                                          } else {
+                                             $times = $time_string;
+                                             $color_style = '';
+                                          }
+
+
+                                       ?>
+                                          <tr <?php echo $color_style; ?>>
+                                             <td class="pt-0"><?php echo $days_string; ?></td>
+                                             <td class="pt-0"><?php echo $times; ?></td>
+                                          </tr>
+                                       <?php
+                                       }
+                                       ?>
+                                    </tbody>
+                                 </table>
+                              </div>
+
+                           </div>
+                           <!--/div --> <?php } ?>
+
                         <div class="d-flex flex-row">
                            <div>
                               <div class="icon text-primary fs-28 me-4 mt-n1"> <i class="uil uil-phone-volume"></i> </div>
@@ -181,6 +239,9 @@ $block = new CW_Settings(
                            </div>
                         </div>
                         <!--/div -->
+
+
+
                      </div>
                      <!--/div -->
                   </div>
