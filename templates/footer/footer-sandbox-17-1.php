@@ -1,5 +1,5 @@
   <footer class="bg-dark text-inverse">
-     <div class="container pt-20 pt-lg-21 pb-7">
+     <div class="container pt-13 pb-7">
         <div class="row gy-6 gy-lg-0">
            <div class="col-lg-4">
               <div class="widget">
@@ -36,7 +36,7 @@
            <!-- /column -->
         </div>
         <!--/.row -->
-        <hr class="mt-13 mt-md-15 mb-7" />
+        <hr class="mt-11 mt-md-12 mb-7" />
         <div class="d-md-flex align-items-center justify-content-between">
            <p class="mb-2 mb-lg-0"><a class="text-white-50" href="<?php echo esc_attr(wp_get_theme()->get('ThemeURI')); ?>" target="_blank">
                  © <?php echo date("Y"); ?> <?php esc_html_e('Made with', 'codeweber'); ?> Codeweber</a>
