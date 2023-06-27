@@ -186,6 +186,142 @@
             "maxlength": ""
         },
         {
+            "key": "field_64998a4b24699",
+            "label": "Time Working",
+            "name": "time_working",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_6499902a254b0",
+                    "label": "Day of week start",
+                    "name": "day_start",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Пн": "Пн",
+                        "Вт": "Вт",
+                        "Ср": "Ср",
+                        "Чт": "Чт",
+                        "Пт": "Пт",
+                        "Сб": "Сб",
+                        "Вс": "Вс"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6499904dc3890",
+                    "label": "Day of week end",
+                    "name": "day_end",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "21",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Пн": "Пн",
+                        "Вт": "Вт",
+                        "Ср": "Ср",
+                        "Чт": "Чт",
+                        "Пт": "Пт",
+                        "Сб": "Сб",
+                        "Вс": "Вс"
+                    },
+                    "default_value": false,
+                    "allow_null": 1,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_6499921e34b5d",
+                    "label": "Time start",
+                    "name": "time_start",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_6499925134b5e",
+                    "label": "Time end",
+                    "name": "time_end",
+                    "type": "time_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "H:i",
+                    "return_format": "H:i"
+                },
+                {
+                    "key": "field_64999280b859f",
+                    "label": "Weekend",
+                    "name": "weekend",
+                    "type": "checkbox",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "bul": "Weekend"
+                    },
+                    "allow_custom": 0,
+                    "default_value": [],
+                    "layout": "vertical",
+                    "toggle": 0,
+                    "return_format": "value",
+                    "save_custom": 0
+                }
+            ]
+        },
+        {
             "key": "field_632ee270673ee",
             "label": "Header",
             "name": "",
@@ -1004,6 +1140,60 @@
             "message": "<img style=\" width: 100%;\" src=\"\/wp-content\/themes\/codeweber\/templates\/images\/2023-03-01_13-59-27.jpg\"\/>",
             "new_lines": "wpautop",
             "esc_html": 0
+        },
+        {
+            "key": "field_64242b328b127",
+            "label": "Button",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_64242b9e8b128",
+            "label": "Buttons",
+            "name": "banner_buttons",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_642431fed18ce",
+                    "label": "Buttons",
+                    "name": "cw_buttons",
+                    "type": "clone",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "clone": [
+                        "group_639307ffa3855"
+                    ],
+                    "display": "seamless",
+                    "layout": "block",
+                    "prefix_label": 0,
+                    "prefix_name": 0
+                }
+            ]
         }
     ],
     "location": [
@@ -1024,5 +1214,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679232587
+    "modified": 1687790294
 }
