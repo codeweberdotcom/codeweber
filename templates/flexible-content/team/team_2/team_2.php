@@ -17,6 +17,7 @@ if ($team) {
    }
    $cw_post_idsd = implode(',', $cw_post_ids);
    $argss['post__in'] = $cw_post_ids;
+   $argss['orderby'] = 'post__in';
 }
 
 $block = new CW_Settings(
