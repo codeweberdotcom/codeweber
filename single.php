@@ -5,12 +5,17 @@
 <?php $content_class = $codeweber['page_settings']['content_class']; ?>
 <?php if (is_singular('services')) {
 	while (have_posts()) :
-		the_post();
-		get_template_part('templates/content/single', get_post_type());
+		the_post(); ?>
+		<div class="container<?php echo $container_class; ?> <?php echo $section_class; ?>">
+			<?php
+			get_template_part('templates/content/single', get_post_type());
+			?>
+		</div>
+	<?php
 		get_sidebar();
 	endwhile;
 } else {
-?>
+	?>
 	<div class="container<?php echo $container_class; ?> <?php echo $section_class; ?>">
 		<div class="row gx-lg-8 gx-xl-12">
 			<?php

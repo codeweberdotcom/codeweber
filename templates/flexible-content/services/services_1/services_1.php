@@ -8,13 +8,12 @@ $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'Latest Projects',
       'patternTitle' => ' <h2 class="display-4 mb-3 %2$s">%1$s</h2>',
-
       'subtitle' => 'Check out some of my latest projects with creative ideas.',
       'patternSubtitle' => ' <p class="lead fs-20 mb-0 %2$s">%1$s</p>',
-
       'background_class_default' => 'wrapper bg-light',
-
-      'divider' => true
+      'divider' => true,
+      'buttons' => '<a href="/services/" class="btn btn-primary rounded-pill mb-0">Все Услуги</a>',
+      'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
    )
 );
 ?>
@@ -32,7 +31,8 @@ $block = new CW_Settings(
          </div>
          <!--/column -->
          <div class="col-md-4 col-lg-3 ms-md-auto text-md-end mt-5 mt-md-0">
-            <a href="/services/" class="btn btn-primary rounded-pill mb-0"><?php esc_html_e('All Services', 'codeweber') ?></a>
+            <?php echo $block->buttons; ?>
+            <!--/buttons group -->
          </div>
          <!--/column -->
       </div>
