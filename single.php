@@ -6,11 +6,11 @@
 <?php if (is_singular('services')) {
 	while (have_posts()) :
 		the_post(); ?>
-		<div class="container<?php echo $container_class; ?> <?php echo $section_class; ?>">
-			<?php
-			get_template_part('templates/content/single', get_post_type());
-			?>
-		</div>
+
+		<?php
+		get_template_part('templates/content/single', get_post_type());
+		?>
+
 	<?php
 		get_sidebar();
 	endwhile;
