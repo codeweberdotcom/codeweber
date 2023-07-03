@@ -15,11 +15,16 @@ $block = new CW_Settings(
    )
 );
 
-if ($codeweber['page_settings']['header_style'] == 'transparent') {
-   $ph_top_padding = 'pt-18 pt-md-20';
+if (isset($codeweber['page_settings']['header_style'])) {
+   if ($codeweber['page_settings']['header_style'] == 'transparent') {
+      $ph_top_padding = 'pt-18 pt-md-20';
+   } else {
+      $ph_top_padding = 'pt-16 pt-md-16';
+   }
 } else {
-   $ph_top_padding = 'pt-16 pt-md-16';
+   $ph_top_padding = 'pt-18 pt-md-20';
 }
+
 ?>
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?> overflow-hidden" <?php echo $block->background_data; ?>>
