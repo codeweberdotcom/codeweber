@@ -60,6 +60,8 @@ class CW_Settings
    public $column_class_2;
    public $column_class_two;
 
+   public $responsive_classes;
+
    public function __construct($cw_settings)
    {
       $this->root_theme = get_template_directory_uri();
@@ -91,7 +93,31 @@ class CW_Settings
       $this->divider_wave = $this->cw_divider_wave($cw_settings);
 
       $this->section_class = $this->cw_section_class($cw_settings);
+
+      $this->responsive_classes = $this->cw_responsive($cw_settings);
    }
+
+   //Responsive Class
+   public function cw_responsive($cw_settings)
+   {
+
+      if (have_rows('responsive_settings')) {
+         while (have_rows('responsive_settings')) {
+            the_row();
+            $responsive_obj = new CW_Responsive_col(NULL, NULL, NULL, NULL, NULL, NULL);
+            $responsive_class = $responsive_obj->responsive_class_final;
+         }
+      } else {
+         $responsive_class = 'test';
+      }
+
+
+
+      return $responsive_class;
+   }
+
+
+
 
    //Tabs Class
    public function cw_tabs($cw_settings)

@@ -13,13 +13,13 @@ global $codeweber;
                the_post();
                $post_id = get_the_ID();
                if ($row % 2 === 0) {
-                  $col_class_1 = 'col-lg-4 pb-12 align-self-center';
-                  $col_class_2 = 'col-lg-7 offset-lg-1 align-self-end';
+                  $col_class_1 = 'col-lg-6 pb-12 pb-md-0 align-self-center';
+                  $col_class_2 = 'col-lg-5 offset-lg-1 align-self-end';
                   $card_body_class = 'card-body p-12';
                   $row_class = 'row';
                } else {
-                  $col_class_1 = 'col-lg-4 order-lg-2 offset-lg-1';
-                  $col_class_2 = 'col-lg-7';
+                  $col_class_1 = 'col-lg-6 order-lg-2 offset-lg-1';
+                  $col_class_2 = 'col-lg-5';
                   $card_body_class = 'card-body p-12';
                   $row_class = 'row gy-10 align-items-center';
                }
@@ -43,7 +43,9 @@ global $codeweber;
                            <?php
                            } ?>
                            <h3 class="h1 post-title mb-3"> <?php the_title(); ?></h3>
-                           <p><?php the_excerpt(); ?></p>
+                           <p><?php the_field('short_description'); ?></p>
+
+
                            <a href="<?php the_permalink(); ?>" class="btn btn-expand btn-primary rounded-pill">
                               <i class="uil uil-arrow-right"></i>
                               <span><?php esc_html_e('Go to service', 'codeweber') ?></span>

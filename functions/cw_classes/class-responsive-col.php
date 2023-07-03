@@ -24,6 +24,7 @@ class CW_Responsive_col
       $this->responsive_class_final = $this->cw_responsive_class_final();
    }
 
+
    //Responsive_class_base
    public function cw_responsive_class_base($responsive_class_base)
    {

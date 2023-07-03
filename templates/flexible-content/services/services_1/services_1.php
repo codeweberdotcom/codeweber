@@ -1,5 +1,18 @@
 <?php
 
+if (have_rows('responsive_settings')) {
+   while (have_rows('responsive_settings')) {
+      the_row();
+      $responsive_obj = new CW_Responsive_col(NULL, NULL, NULL, NULL, NULL, NULL);
+      $responsive_col = $responsive_obj->responsive_class_final;
+   }
+}
+
+?>
+
+
+<?php
+
 /**
  * About 1
  */
@@ -14,6 +27,8 @@ $block = new CW_Settings(
       'divider' => true,
       'buttons' => '<a href="/services/" class="btn btn-primary rounded-pill mb-0">Все Услуги</a>',
       'buttons_pattern' => '<div class="d-flex justify-content-center justify-content-lg-start flex-wrap" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
+      'responsive' => '',
+
    )
 );
 ?>
@@ -41,8 +56,9 @@ $block = new CW_Settings(
          <?php if ($services_post) : ?>
             <?php foreach ($services_post as $post) : ?>
                <?php setup_postdata($post);
-               $post_id = $post->post_ID; ?>
-               <div class="col-12 col-md-4 col-lg-3">
+               $post_id = $post->post_ID;
+               ?>
+               <div class="<?php echo $responsive_col; ?>">
                   <div class="position-relative">
                      <div class="shape rounded bg-soft-blue rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index:0"></div>
                      <a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>" class="card lift service_card">
