@@ -907,6 +907,31 @@
             ]
         },
         {
+            "key": "field_64a2cee632ca0",
+            "label": "Footer CF7 forms",
+            "name": "footer_cf7_forms",
+            "type": "relationship",
+            "instructions": "Show footer social in CF7",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "wpcf7_contact_form"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
             "key": "field_63f642fee7b56",
             "label": "PHP Mail",
             "name": "php_mail",
@@ -1214,5 +1239,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687790294
+    "modified": 1688391515
 }

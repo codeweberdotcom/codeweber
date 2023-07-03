@@ -24,7 +24,6 @@ if (isset($codeweber['page_settings']['header_style'])) {
 } else {
    $ph_top_padding = 'pt-18 pt-md-20';
 }
-
 ?>
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?> overflow-hidden" <?php echo $block->background_data; ?>>

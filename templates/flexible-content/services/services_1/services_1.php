@@ -58,7 +58,7 @@ $block = new CW_Settings(
                <?php setup_postdata($post);
                $post_id = $post->post_ID;
                ?>
-               <div class="<?php echo $responsive_col; ?>">
+               <div class="col-md-6 col-lg-4">
                   <div class="position-relative">
                      <div class="shape rounded bg-soft-blue rellax d-md-block" data-rellax-speed="0" style="bottom: -0.75rem; right: -0.75rem; width: 98%; height: 98%; z-index:0"></div>
                      <a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>" class="card lift service_card">

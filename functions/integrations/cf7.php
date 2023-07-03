@@ -101,11 +101,24 @@ function social_icons()
 
 add_filter('wpcf7_form_elements', function ($html) {
 
+
+    $wpcf7 = WPCF7_ContactForm::get_current();
+    $form_id = $wpcf7->id;
+
+    $footer_cf7_forms = get_field('footer_cf7_forms', 'option');
+    $cf7_array = array();
+    if ($footer_cf7_forms) {
+        foreach ($footer_cf7_forms as $post_ids) {
+            $cf7_array[] = $post_ids;
+        }
+    }
     if (!empty(social_icons())) {
         $html = $html;
-        $icons_cf7 = social_icons();
-        $html .= '<div class="divider-icon my-4 text-center">' . esc_html__('or', 'codeweber') . '</div>';
-        $html .= '<nav class="nav social justify-content-center text-center">' . $icons_cf7 . '</nav>';
+        if (in_array($form_id, $cf7_array)) {
+            $icons_cf7 = social_icons();
+            $html .= '<div class="divider-icon my-4 text-center">' . esc_html__('or', 'codeweber') . '</div>';
+            $html .= '<nav class="nav social justify-content-center text-center">' . $icons_cf7 . '</nav>';
+        }
     } else {
         $html = $html;
     }
