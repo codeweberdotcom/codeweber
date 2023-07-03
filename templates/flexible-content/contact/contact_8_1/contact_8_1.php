@@ -94,7 +94,7 @@ if ($contact_form) {
 } else {
    $cf_form = $demo_form;
 }
-
+$title_contact_form = get_sub_field('title_contact_form');
 
 if (get_field('address_1', 'option')) {
    $address_line_1 = get_field('address_1', 'option');
@@ -180,12 +180,16 @@ $block = new CW_Settings(
       </div>
       <!-- /.row -->
       <div class="row">
-         <div class="col-xl-10 mx-auto">
+
+         <div class="col-xl-12 mx-auto">
+            <?php if ($title_contact_form) { ?>
+               <div class="display-5 mb-4"><?php echo $title_contact_form; ?></div>
+            <?php } ?>
+
             <div class="row gy-10 gx-lg-8 gx-xl-12">
                <div class="col-lg-8">
                   <?php echo $cf_form; ?>
                   <!-- /form -->
-
                </div>
                <!--/column -->
                <div class="col-lg-4">
