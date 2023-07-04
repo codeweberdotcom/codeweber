@@ -103,7 +103,7 @@ add_filter('wpcf7_form_elements', function ($html) {
 
 
     $wpcf7 = WPCF7_ContactForm::get_current();
-    $form_id = $wpcf7->id;
+    $form_id = $wpcf7->id();
 
     $footer_cf7_forms = get_field('footer_cf7_forms', 'option');
     $cf7_array = array();
