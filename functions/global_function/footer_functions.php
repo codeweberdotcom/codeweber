@@ -20,3 +20,16 @@ function cta_footer_text()
       }
    }
 }
+
+/**
+ * About company widget offcanvas
+ */
+function footer_about_company_option()
+{
+   if (get_field('about_company', 'option')) {
+      $about_company_option = '<p class="lead mb-0">' . get_field('about_company', 'option') . '</p>';
+   } else {
+      $about_company_option = NULL;
+   }
+   return $about_company_option;
+}
