@@ -20,7 +20,7 @@ do_action('codeweber_footer_start'); ?>
 	foreach ($forms as $item) {
 		$form = '<div class="modal fade" id="modal-form-' . $item . '" tabindex="-1">
                         <div class="modal-dialog modal-dialog-centered modal-sm">
-                        <div class="modal-content text-center">
+                        <div class="modal-content">
                         <div class="modal-body">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>';
 		$form .= do_shortcode("[contact-form-7 id='{$item}']");
