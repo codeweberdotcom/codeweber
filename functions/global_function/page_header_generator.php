@@ -17,7 +17,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
    }
    if ($type == 'type_5' && $header_style !== 'disable') {
       if ($header_style == 'transparent') {
-         $codeweber['page_settings']['container_class'] = ' pt-16 pb-16 pt-md-18 pb-md-18';
+         $codeweber['page_settings']['container_class'] = ' pt-16 pb-16 pt-md-18 pb-md-18 mt-0';
          $codeweber['page_settings']['content_class'] = ' mt-n18 mt-md-n20 mt-lg-n22 position-relative';
          $codeweber['page_settings']['col_class'] = ' col-lg-8 mx-auto mb-11';
       } elseif ($header_style == 'solid' || $header_style == 'default') {
@@ -27,7 +27,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       }
    } elseif ($type == 'type_7' && $header_style !== 'disable') {
       if ($header_style == 'transparent') {
-         $codeweber['page_settings']['container_class'] = ' pt-16 pb-14 pt-md-18 pb-md-14';
+         $codeweber['page_settings']['container_class'] = ' pt-16 pb-14 pt-md-18 pb-md-14 mt-0';
          $codeweber['page_settings']['col_class'] = ' col-lg-8 mx-auto mb-11';
          $codeweber['page_settings']['content_class'] = ' mt-n21';
       } elseif ($header_style == 'solid' || $header_style == 'default') {
@@ -41,7 +41,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
    }
 
    if ($background_url) {
-      $section_open = '<section class="wrapper image-wrapper bg-image bg-overlay bg-overlay overflow-hidden" data-image-src="' . $background_url . '">';
+      $section_open = '<section class="wrapper image-wrapper bg-image bg-overlay bg-overlay overflow-hidden mt-0" data-image-src="' . $background_url . '">';
    } else {
       $section_open = '<section class="wrapper ' . $bg_color . '">';
    }
