@@ -207,7 +207,7 @@
                 },
                 {
                     "key": "field_6404dc8268764",
-                    "label": "Docs",
+                    "label": "Документы",
                     "name": "docs",
                     "type": "post_object",
                     "instructions": "",
@@ -411,5 +411,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678108203
+    "modified": 1690292054
 }

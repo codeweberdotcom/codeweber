@@ -41,7 +41,7 @@
                         },
                         {
                             "key": "field_63dd2398dd536",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -249,7 +249,7 @@
                         },
                         {
                             "key": "field_63dd612961514",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -543,7 +543,7 @@
                         },
                         {
                             "key": "field_63dd8271805b5",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -923,7 +923,7 @@
                         },
                         {
                             "key": "field_63de4b9ac3745",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1110,7 +1110,7 @@
                         },
                         {
                             "key": "field_63de59eb17976",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1335,7 +1335,7 @@
                         },
                         {
                             "key": "field_63df7ccdeab6b",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1526,7 +1526,7 @@
                     "sub_fields": [
                         {
                             "key": "field_631b12f4f0ad3",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -1679,7 +1679,7 @@
                         },
                         {
                             "key": "field_63ff6783af518",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -2004,7 +2004,7 @@
                     "sub_fields": [
                         {
                             "key": "field_631b39f25d128",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -2137,5 +2137,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677742306
+    "modified": 1690292051
 }

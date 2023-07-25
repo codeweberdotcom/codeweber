@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_632c4c7aa5b22",
-            "label": "Testimonials",
+            "label": "Отзывы",
             "name": "testimonials_post_field",
             "type": "group",
             "instructions": "",
@@ -80,7 +80,7 @@
                 },
                 {
                     "key": "field_632c4ca1a5b23",
-                    "label": "Name",
+                    "label": "Ваше имя",
                     "name": "name",
                     "type": "text",
                     "instructions": "",
@@ -118,7 +118,7 @@
                 },
                 {
                     "key": "field_6347e5876d0a4",
-                    "label": "Town",
+                    "label": "Город",
                     "name": "town",
                     "type": "text",
                     "instructions": "",
@@ -156,7 +156,7 @@
                 },
                 {
                     "key": "field_6347e5ee6d0a6",
-                    "label": "Phone",
+                    "label": "Телефон",
                     "name": "phone",
                     "type": "text",
                     "instructions": "",
@@ -194,7 +194,7 @@
                 },
                 {
                     "key": "field_632c4cb7a5b24",
-                    "label": "Testimonial",
+                    "label": "Отзыв",
                     "name": "testimonial",
                     "type": "textarea",
                     "instructions": "",
@@ -232,5 +232,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676729507
+    "modified": 1690292048
 }

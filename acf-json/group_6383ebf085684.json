@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6383ec1d68ff4",
-            "label": "Title",
+            "label": "Заголовок",
             "name": "cw_title",
             "type": "group",
             "instructions": "",
@@ -35,7 +35,7 @@
                 },
                 {
                     "key": "field_6383ecaa68ff7",
-                    "label": "Title",
+                    "label": "Заголовок",
                     "name": "cw_title",
                     "type": "clone",
                     "instructions": "",
@@ -415,5 +415,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687522845
+    "modified": 1690292058
 }

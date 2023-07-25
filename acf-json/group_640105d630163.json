@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6429df1665bdf",
-            "label": "Price list",
+            "label": "Прайс-лист",
             "name": "price_list",
             "type": "group",
             "instructions": "",
@@ -205,5 +205,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680604607
+    "modified": 1690292059
 }

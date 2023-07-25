@@ -19,7 +19,7 @@
             "sub_fields": [
                 {
                     "key": "field_63f3ef0af3fcc",
-                    "label": "Type",
+                    "label": "Тип",
                     "name": "type",
                     "type": "radio",
                     "instructions": "",
@@ -45,7 +45,7 @@
                 },
                 {
                     "key": "field_63f3fb68db560",
-                    "label": "Type 1",
+                    "label": "Тип 1",
                     "name": "",
                     "type": "message",
                     "instructions": "",
@@ -75,7 +75,7 @@
                 },
                 {
                     "key": "field_63f3fbb3e8e83",
-                    "label": "Type 2",
+                    "label": "Тип 2",
                     "name": "",
                     "type": "message",
                     "instructions": "",
@@ -105,7 +105,7 @@
                 },
                 {
                     "key": "field_63f3fbd7e8e84",
-                    "label": "Type 3",
+                    "label": "Тип 3",
                     "name": "",
                     "type": "message",
                     "instructions": "",
@@ -407,5 +407,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687807235
+    "modified": 1690292060
 }

@@ -19,7 +19,7 @@
             "sub_fields": [
                 {
                     "key": "field_638537154c37d",
-                    "label": "Date",
+                    "label": "Дата",
                     "name": "date",
                     "type": "date_picker",
                     "instructions": "",
@@ -52,7 +52,7 @@
                 },
                 {
                     "key": "field_638537574c37f",
-                    "label": "CMS",
+                    "label": "Платформа",
                     "name": "cms",
                     "type": "text",
                     "instructions": "",
@@ -202,7 +202,7 @@
                     "sub_fields": [
                         {
                             "key": "field_6387e23fbef49",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "text",
                             "instructions": "",
@@ -266,5 +266,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676899530
+    "modified": 1690292048
 }

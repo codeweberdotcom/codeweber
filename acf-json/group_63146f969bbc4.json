@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_63146f9fd9af8",
-            "label": "Clients",
+            "label": "Клиенты",
             "name": "clients",
             "type": "flexible_content",
             "instructions": "",
@@ -186,7 +186,7 @@
                         },
                         {
                             "key": "field_63d2fffc18438",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -249,7 +249,7 @@
                         },
                         {
                             "key": "field_63d300f098b8c",
-                            "label": "Clients",
+                            "label": "Клиенты",
                             "name": "",
                             "type": "accordion",
                             "instructions": "",
@@ -461,7 +461,7 @@
                         },
                         {
                             "key": "field_63d3bdce949ab",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -524,7 +524,7 @@
                         },
                         {
                             "key": "field_63d3bdce949ae",
-                            "label": "Clients",
+                            "label": "Клиенты",
                             "name": "",
                             "type": "accordion",
                             "instructions": "",
@@ -735,5 +735,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1679474042
+    "modified": 1690292050
 }

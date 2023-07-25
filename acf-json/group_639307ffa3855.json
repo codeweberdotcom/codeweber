@@ -1503,7 +1503,7 @@
                         },
                         {
                             "key": "field_63933913ca89e",
-                            "label": "Button Size",
+                            "label": "Размер Кнопки",
                             "name": "button_size",
                             "type": "select",
                             "instructions": "",
@@ -1666,5 +1666,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677615863
+    "modified": 1690292049
 }

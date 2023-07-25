@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_63ef7e65d0b5e",
-            "label": "Testimonials",
+            "label": "Отзывы",
             "name": "testimonials_template",
             "type": "flexible_content",
             "instructions": "",
@@ -41,7 +41,7 @@
                         },
                         {
                             "key": "field_63ef7e75d0b5f",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -557,7 +557,7 @@
                         },
                         {
                             "key": "field_63ef9a4922fb2",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1043,7 +1043,7 @@
                         },
                         {
                             "key": "field_63efb552ccd71",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1264,7 +1264,7 @@
                                 },
                                 {
                                     "key": "field_63f4e9bf7c77a",
-                                    "label": "Title",
+                                    "label": "Заголовок",
                                     "name": "counter_title",
                                     "type": "text",
                                     "instructions": "",
@@ -1507,7 +1507,7 @@
                         },
                         {
                             "key": "field_63f391fb0cf92",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -2706,7 +2706,7 @@
                         },
                         {
                             "key": "field_63f3652f4a50a",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -3018,7 +3018,7 @@
                         },
                         {
                             "key": "field_63f385f929a6a",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -3240,7 +3240,7 @@
                         },
                         {
                             "key": "field_63f389a70aea1",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -3444,5 +3444,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681326639
+    "modified": 1690292058
 }

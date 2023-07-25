@@ -102,7 +102,7 @@
                         },
                         {
                             "key": "field_63ea15250aefc",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "text",
                             "instructions": "",
@@ -178,7 +178,7 @@
                         },
                         {
                             "key": "field_63ea52efe4b8d",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -300,5 +300,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677616561
+    "modified": 1690292057
 }

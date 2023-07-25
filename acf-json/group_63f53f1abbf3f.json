@@ -79,7 +79,7 @@
             "sub_fields": [
                 {
                     "key": "field_63f53f41be763",
-                    "label": "Title",
+                    "label": "Заголовок",
                     "name": "cw_title",
                     "type": "clone",
                     "instructions": "",
@@ -185,5 +185,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677616061
+    "modified": 1690292054
 }

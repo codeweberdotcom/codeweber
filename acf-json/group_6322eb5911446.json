@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6322eb849e666",
-            "label": "Contact",
+            "label": "Контакт",
             "name": "contact",
             "type": "flexible_content",
             "instructions": "",
@@ -41,7 +41,7 @@
                         },
                         {
                             "key": "field_63f63e66022a5",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -308,7 +308,7 @@
                         },
                         {
                             "key": "field_63f86c85475fb",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -567,7 +567,7 @@
                                 },
                                 {
                                     "key": "field_63f8b287b0549",
-                                    "label": "Title",
+                                    "label": "Заголовок",
                                     "name": "counter_title",
                                     "type": "text",
                                     "instructions": "",
@@ -664,7 +664,7 @@
                         },
                         {
                             "key": "field_63f8b1b2b053b",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -872,7 +872,7 @@
                         },
                         {
                             "key": "field_63f8bc9d2b09f",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1391,7 +1391,7 @@
                         },
                         {
                             "key": "field_640c3b5249316",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1597,7 +1597,7 @@
                         },
                         {
                             "key": "field_63f91dec6fc49",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1766,7 +1766,7 @@
                         },
                         {
                             "key": "field_63f934be54cd5",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -2030,7 +2030,7 @@
                         },
                         {
                             "key": "field_640c41fda4bd4",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -2145,25 +2145,6 @@
                             "open": 0,
                             "multi_expand": 0,
                             "endpoint": 0
-                        },
-                        {
-                            "key": "field_64a3034877867",
-                            "label": "Title contact form",
-                            "name": "title_contact_form",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
                         },
                         {
                             "key": "field_640c426aa4bdf",
@@ -2335,7 +2316,7 @@
                         },
                         {
                             "key": "field_63f93ccfdd3b4",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -2526,7 +2507,7 @@
                         },
                         {
                             "key": "field_63f93d8ddd3c1",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -2793,7 +2774,7 @@
                         },
                         {
                             "key": "field_63fa329e135c9",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -2946,7 +2927,7 @@
                     "sub_fields": [
                         {
                             "key": "field_63f6090f6d227",
-                            "label": "Towns",
+                            "label": "Города",
                             "name": "towns",
                             "type": "taxonomy",
                             "instructions": "",
@@ -2978,7 +2959,7 @@
                     "sub_fields": [
                         {
                             "key": "field_6325bf72595a3",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -3062,7 +3043,7 @@
                         },
                         {
                             "key": "field_63263e2eb309b",
-                            "label": "Towns",
+                            "label": "Города",
                             "name": "towns",
                             "type": "taxonomy",
                             "instructions": "",
@@ -3094,7 +3075,7 @@
                     "sub_fields": [
                         {
                             "key": "field_63281afc4a397",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -3178,7 +3159,7 @@
                         },
                         {
                             "key": "field_63281afc4a39b",
-                            "label": "Towns",
+                            "label": "Города",
                             "name": "towns",
                             "type": "taxonomy",
                             "instructions": "",
@@ -3226,5 +3207,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688405372
+    "modified": 1690292051
 }

@@ -1,12 +1,12 @@
 {
-    "key": "group_641db5a6b2dd6",
-    "title": "CW Button",
+    "key": "group_649eb1730b785",
+    "title": "CPT Services Fields",
     "fields": [
         {
-            "key": "field_641db5af47542",
-            "label": "Button",
-            "name": "cw_button",
-            "type": "clone",
+            "key": "field_649eb175912fa",
+            "label": "Short Description",
+            "name": "short_description",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,26 +15,24 @@
                 "class": "",
                 "id": ""
             },
-            "clone": [
-                "field_6393081221dc6"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
         [
             {
-                "param": "post_format",
+                "param": "post_type",
                 "operator": "==",
-                "value": "audio"
+                "value": "services"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -42,5 +40,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690292049
+    "modified": 1690292048
 }

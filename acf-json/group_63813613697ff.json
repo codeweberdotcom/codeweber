@@ -20,7 +20,7 @@
         },
         {
             "key": "field_6381368e4a898",
-            "label": "Title",
+            "label": "Заголовок",
             "name": "cw_title",
             "type": "text",
             "instructions": "",
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677615574
+    "modified": 1690292057
 }

@@ -3,46 +3,8 @@
     "title": "Template fields",
     "fields": [
         {
-            "key": "field_62d93856d15e2",
-            "label": "Light or Dark?",
-            "name": "light_or_dark",
-            "type": "true_false",
-            "instructions": "Светлая или Темная тема",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "Light",
-            "ui_off_text": "Dark"
-        },
-        {
-            "key": "field_62d88a70234a0",
-            "label": "Title",
-            "name": "title",
-            "type": "text",
-            "instructions": "Заголовок блока",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "We bring solutions to make life <span class=\"underline-3 style-3 primary\">easier.<\/span>",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_6308a6fa1dd03",
-            "label": "Responsive setttings",
+            "label": "CW Responsive setttings",
             "name": "responsive_setttings",
             "type": "group",
             "instructions": "",
@@ -178,6 +140,44 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_62d93856d15e2",
+            "label": "Light or Dark?",
+            "name": "light_or_dark",
+            "type": "true_false",
+            "instructions": "Светлая или Темная тема",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Light",
+            "ui_off_text": "Dark"
+        },
+        {
+            "key": "field_62d88a70234a0",
+            "label": "Заголовок",
+            "name": "title",
+            "type": "text",
+            "instructions": "Заголовок блока",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "We bring solutions to make life <span class=\"underline-3 style-3 primary\">easier.<\/span>",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_62d88a8b234a1",
@@ -2041,7 +2041,7 @@
                 },
                 {
                     "key": "field_62e5a62243bb3",
-                    "label": "Title",
+                    "label": "Заголовок",
                     "name": "title",
                     "type": "text",
                     "instructions": "",
@@ -3032,7 +3032,7 @@
                 },
                 {
                     "key": "field_62ef9765fb10a",
-                    "label": "Title",
+                    "label": "Заголовок",
                     "name": "title",
                     "type": "clone",
                     "instructions": "",
@@ -3454,7 +3454,7 @@
                 },
                 {
                     "key": "field_62ee5f31f2542",
-                    "label": "Title",
+                    "label": "Заголовок",
                     "name": "title",
                     "type": "text",
                     "instructions": "",
@@ -3700,7 +3700,7 @@
                     "sub_fields": [
                         {
                             "key": "field_62f277d8b6923",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "text",
                             "instructions": "",
@@ -5173,5 +5173,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1670459129
+    "modified": 1690292060
 }

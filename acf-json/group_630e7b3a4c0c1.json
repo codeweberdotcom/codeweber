@@ -979,7 +979,7 @@
                         },
                         {
                             "key": "field_63d7b7a9acee0",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "text",
                             "instructions": "",
@@ -2219,5 +2219,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1687598747
+    "modified": 1690292056
 }

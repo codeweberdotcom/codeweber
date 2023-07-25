@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_62f2593a432c7",
-            "label": "Faq",
+            "label": "Вопросы и ответы",
             "name": "faq",
             "type": "flexible_content",
             "instructions": "",
@@ -79,7 +79,7 @@
                         },
                         {
                             "key": "field_62f2593a4a87b",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -287,7 +287,7 @@
                         },
                         {
                             "key": "field_63e0cf0a3b256",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -512,7 +512,7 @@
                         },
                         {
                             "key": "field_63e0de41f39fe",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -678,7 +678,7 @@
                         },
                         {
                             "key": "field_63e0ee5f54218",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -930,7 +930,7 @@
                                 },
                                 {
                                     "key": "field_62f3e91d45fcc",
-                                    "label": "Title",
+                                    "label": "Заголовок",
                                     "name": "title",
                                     "type": "clone",
                                     "instructions": "",
@@ -1011,5 +1011,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681250771
+    "modified": 1690292052
 }

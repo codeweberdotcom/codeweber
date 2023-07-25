@@ -353,7 +353,7 @@
         },
         {
             "key": "field_644046af51356",
-            "label": "Breadcrumbs",
+            "label": "Хлебные крошки",
             "name": "breadcrumbs",
             "type": "select",
             "instructions": "",
@@ -422,7 +422,7 @@
         },
         {
             "key": "field_639072e9c6909",
-            "label": "Footer",
+            "label": "Футер",
             "name": "footer",
             "type": "select",
             "instructions": "",
@@ -554,5 +554,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682163075
+    "modified": 1690292060
 }

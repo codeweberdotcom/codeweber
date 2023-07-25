@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6384be9fc05c8",
-            "label": "Title",
+            "label": "Заголовок",
             "name": "cw_title",
             "type": "text",
             "instructions": "",
@@ -118,5 +118,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671916824
+    "modified": 1690292057
 }

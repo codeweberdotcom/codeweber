@@ -118,7 +118,9 @@
                         "telegram": "telegram",
                         "whatsapp": "whatsapp",
                         "facebook": "facebook",
-                        "pinterest": "pinterest"
+                        "pinterest": "pinterest",
+                        "dewalt": "dewalt",
+                        "bitbucket": "bitbucket"
                     },
                     "default_value": "primary",
                     "allow_null": 0,
@@ -185,10 +187,14 @@
                         "bg-gradient-reverse-fuchsia": "bg-gradient-reverse-fuchsia",
                         "bg-gradient-reverse-sky": "bg-gradient-reverse-sky",
                         "bg-gradient-reverse-grape": "bg-gradient-reverse-grape",
+                        "bg-gradient-reverse-dewalt": "bg-gradient-reverse-dewalt",
+                        "bg-gradient-reverse-bitbucket": "bg-gradient-reverse-bitbucket",
                         "bg-gradient-telegram": "bg-gradient-telegram",
                         "bg-gradient-whatsapp": "bg-gradient-whatsapp",
                         "bg-gradient-facebook": "bg-gradient-facebook",
-                        "bg-gradient-pinterest": "bg-gradient-pinterest"
+                        "bg-gradient-pinterest": "bg-gradient-pinterest",
+                        "bg-gradient-bitbucket": "bg-gradient-bitbucket",
+                        "bg-gradient-dewalt": "bg-gradient-dewalt"
                     },
                     "default_value": "gradient-1",
                     "allow_null": 0,
@@ -219,5 +225,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680170864
+    "modified": 1690292050
 }

@@ -41,7 +41,7 @@
                         },
                         {
                             "key": "field_634875e3890b2",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -239,7 +239,7 @@
                         },
                         {
                             "key": "field_6348830799c77",
-                            "label": "Price Package",
+                            "label": "Ценовой Пакет",
                             "name": "",
                             "type": "accordion",
                             "instructions": "",
@@ -256,7 +256,7 @@
                         },
                         {
                             "key": "field_642ae7d8dc26b",
-                            "label": "Price Package",
+                            "label": "Ценовой Пакет",
                             "name": "cw_price_package_s",
                             "type": "post_object",
                             "instructions": "",
@@ -305,7 +305,7 @@
                         },
                         {
                             "key": "field_642b504e944c2",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -503,7 +503,7 @@
                         },
                         {
                             "key": "field_642b504e944cc",
-                            "label": "Price Package",
+                            "label": "Ценовой Пакет",
                             "name": "",
                             "type": "accordion",
                             "instructions": "",
@@ -520,7 +520,7 @@
                         },
                         {
                             "key": "field_642b504e944cd",
-                            "label": "Price Package",
+                            "label": "Ценовой Пакет",
                             "name": "cw_price_package_s",
                             "type": "post_object",
                             "instructions": "",
@@ -569,7 +569,7 @@
                         },
                         {
                             "key": "field_642bdbf7ba528",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -729,7 +729,7 @@
                         },
                         {
                             "key": "field_642bdbf7ba532",
-                            "label": "Price Package",
+                            "label": "Ценовой Пакет",
                             "name": "",
                             "type": "accordion",
                             "instructions": "",
@@ -746,7 +746,7 @@
                         },
                         {
                             "key": "field_642bdbf7ba533",
-                            "label": "Price Package",
+                            "label": "Ценовой Пакет",
                             "name": "cw_price_package_s",
                             "type": "post_object",
                             "instructions": "",
@@ -795,7 +795,7 @@
                         },
                         {
                             "key": "field_6353ff1bfc99b",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -896,7 +896,7 @@
                         },
                         {
                             "key": "field_6353ff1bfc9a0",
-                            "label": "Price Package",
+                            "label": "Ценовой Пакет",
                             "name": "",
                             "type": "accordion",
                             "instructions": "",
@@ -913,7 +913,7 @@
                         },
                         {
                             "key": "field_6353ff1bfc9a1",
-                            "label": "Price Package",
+                            "label": "Ценовой Пакет",
                             "name": "price_package",
                             "type": "post_object",
                             "instructions": "",
@@ -983,7 +983,7 @@
                         },
                         {
                             "key": "field_64296b53d3b39",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1191,7 +1191,7 @@
                         },
                         {
                             "key": "field_64270408a223a",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -1398,5 +1398,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680602153
+    "modified": 1690292055
 }

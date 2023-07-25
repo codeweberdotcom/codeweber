@@ -176,7 +176,7 @@
                         },
                         {
                             "key": "field_63488ec7541ab",
-                            "label": "Service list",
+                            "label": "Список услуг",
                             "name": "service_list",
                             "type": "repeater",
                             "instructions": "Список услуг",
@@ -380,5 +380,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680525307
+    "modified": 1690292059
 }

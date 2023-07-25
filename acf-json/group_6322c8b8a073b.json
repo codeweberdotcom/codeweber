@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_6322c973b5171",
-            "label": "Office addresses",
+            "label": "Адреса Офисов",
             "name": "office_addresses",
             "type": "group",
             "instructions": "",
@@ -19,7 +19,7 @@
             "sub_fields": [
                 {
                     "key": "field_6326d56157dd2",
-                    "label": "Town",
+                    "label": "Город",
                     "name": "town_s",
                     "type": "taxonomy",
                     "instructions": "",
@@ -194,5 +194,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666694351
+    "modified": 1690292058
 }

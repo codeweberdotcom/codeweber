@@ -1,10 +1,10 @@
 {
     "key": "group_630fa7d99c697",
-    "title": "Blog",
+    "title": "Блог",
     "fields": [
         {
             "key": "field_630fa7e36b6cb",
-            "label": "Blog",
+            "label": "Блог",
             "name": "blog",
             "type": "flexible_content",
             "instructions": "",
@@ -24,7 +24,7 @@
                     "sub_fields": [
                         {
                             "key": "field_630fba4b8a025",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -76,7 +76,7 @@
                     "sub_fields": [
                         {
                             "key": "field_630fa9b3b2286",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -149,7 +149,7 @@
                     "sub_fields": [
                         {
                             "key": "field_630fbaebaadd1",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "clone",
                             "instructions": "",
@@ -217,5 +217,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1661975287
+    "modified": 1690292047
 }

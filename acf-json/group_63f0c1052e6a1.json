@@ -41,7 +41,7 @@
                         },
                         {
                             "key": "field_63f0c1053cb24",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -208,7 +208,7 @@
                         },
                         {
                             "key": "field_63f3eb67813ce",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -392,7 +392,7 @@
                         },
                         {
                             "key": "field_63f4b416a6fd0",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "cw_title",
                             "type": "clone",
                             "instructions": "",
@@ -600,5 +600,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1676988670
+    "modified": 1690292057
 }

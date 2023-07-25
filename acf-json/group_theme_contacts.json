@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_635c0555816b1",
-            "label": "Contacts",
+            "label": "Контакты",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -377,7 +377,7 @@
         },
         {
             "key": "field_6414dc379b742",
-            "label": "Footer",
+            "label": "Футер",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -1008,7 +1008,7 @@
         },
         {
             "key": "field_63f2a8daaf7b9",
-            "label": "Shop",
+            "label": "Магазин",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -1116,7 +1116,7 @@
         },
         {
             "key": "field_63ff2f4151df3",
-            "label": "Testimonials",
+            "label": "Отзывы",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -1239,5 +1239,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688391515
+    "modified": 1690292048
 }

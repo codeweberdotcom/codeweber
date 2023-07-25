@@ -63,7 +63,7 @@
                     "sub_fields": [
                         {
                             "key": "field_63db9700402e3",
-                            "label": "Title",
+                            "label": "Заголовок",
                             "name": "title",
                             "type": "text",
                             "instructions": "",
@@ -172,5 +172,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677616480
+    "modified": 1690292056
 }
