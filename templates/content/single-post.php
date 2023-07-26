@@ -5,7 +5,7 @@
 <?php if ($codeweber['page_settings']['page_header_type'] == 'type_5' || $codeweber['page_settings']['page_header_type'] == 'type_7') {
 	$class_content = 'col-lg-10 mx-auto';
 } else {
-	$class_content = 'col-8';
+	$class_content = 'col-lg-8';
 } ?>
 
 
