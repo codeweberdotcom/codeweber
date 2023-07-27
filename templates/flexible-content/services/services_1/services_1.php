@@ -8,11 +8,6 @@ if (have_rows('responsive_settings')) {
    }
 }
 
-?>
-
-
-<?php
-
 /**
  * About 1
  */
@@ -52,7 +47,7 @@ $block = new CW_Settings(
          <!--/column -->
       </div>
       <!--/.row -->
-      <div class="row grid-view gx-8 gy-8">
+      <div class="row grid-view gx-md-8 gy-8">
          <?php if ($services_post) : ?>
             <?php foreach ($services_post as $post) : ?>
                <?php setup_postdata($post);
