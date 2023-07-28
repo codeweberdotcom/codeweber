@@ -3,6 +3,20 @@
 /**
  * Hero 1
  */
+
+if (have_rows('breadcrumbs')) {
+  while (have_rows('breadcrumbs')) {
+    the_row();
+    if (get_sub_field('cw_breadcrumbs_bool') == 1) {
+      $br_color = get_sub_field('cw_breadcrumbs_color');
+      $br_show = true;
+    } else {
+      $br_color = 'text-dark';
+      $br_show = NULL;
+    }
+  }
+}
+
 $block = new CW_Settings(
   $cw_settings = array(
     'title' => 'Grow Your Business with Our Solutions.',
@@ -63,7 +77,6 @@ $block = new CW_Settings(
       'image_shape' => 'rounded',
     ),
 
-
     'label_demo' => '<div class="card shadow-lg position-absolute zindex-1" style="bottom: 2rem; right: 2rem;"><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/check.svg" class="svg-inject icon-svg icon-svg-sm text-primary mx-auto me-3" alt="" /></div><div><h3 class="counter mb-0 text-nowrap">250+</h3><p class="fs-14 lh-sm mb-0 text-nowrap">Projects Done</p></div></div></div><!--/.card-body --></div><!--/.card -->',
 
     'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
@@ -74,11 +87,7 @@ $block = new CW_Settings(
 );
 ?>
 
-
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
-
-
-
   <?php if ($block->background_video_bool == true) { ?>
     <video poster="<?php echo $block->background_video_preview; ?>" src="<?php echo $block->background_video_url; ?>" autoplay loop playsinline muted></video>
     <div class="video-content">
@@ -92,6 +101,8 @@ $block = new CW_Settings(
         </div>
         <!-- /column -->
         <div class="col-md-10 col-lg-5 offset-md-1 offset-lg-0 text-center text-lg-start <?php echo $block->column_class_2; ?>">
+          <?php codeweber_breadcrumbs(NULL, $br_color, $br_show); ?>
+          <!--/breadcrumb -->
           <?php echo $block->title; ?>
           <!--/title -->
           <?php echo $block->paragraph; ?>

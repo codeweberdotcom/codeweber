@@ -26,7 +26,7 @@ $block = new CW_Settings(
          <div class="col-lg-8 mx-auto">
             <?php echo $block->title; ?>
             <!--/title -->
-            <?php codeweber_breadcrumbs(NULL, 'text-white'); ?>
+            <?php codeweber_breadcrumbs(NULL, 'text-white', NULL); ?>
          </div>
          <!-- /column -->
       </div>

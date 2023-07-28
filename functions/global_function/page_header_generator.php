@@ -66,7 +66,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
                   } ?>
                   <?php
                   if ($breadcrumbs == 'true') {
-                     codeweber_breadcrumbs(NULL, $text_color);
+                     codeweber_breadcrumbs(NULL, $text_color, NULL);
                   }
                   codeweber_meta_blog(); // Blog Meta Data
                   ?>
@@ -96,7 +96,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
                   } ?>
                   <?php
                   if ($breadcrumbs !== 'true') {
-                     codeweber_breadcrumbs(NULL, $text_color);
+                     codeweber_breadcrumbs(NULL, $text_color, NULL);
                   }
                   codeweber_meta_blog(); // Blog Meta Data
                   ?>
@@ -127,7 +127,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
 
                   <?php
                   if ($breadcrumbs == 'true') {
-                     codeweber_breadcrumbs(NULL, $text_color);
+                     codeweber_breadcrumbs(NULL, $text_color, NULL);
                   }
                   codeweber_meta_blog(); // Blog Meta Data
                   ?>
@@ -157,7 +157,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
                   } ?>
                   <?php
                   if ($breadcrumbs == 'true') {
-                     codeweber_breadcrumbs(NULL, $text_color);
+                     codeweber_breadcrumbs(NULL, $text_color, NULL);
                   }
                   codeweber_meta_blog(); // Blog Meta Data
                   ?>
@@ -187,7 +187,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
                   } ?>
                   <?php
                   if ($breadcrumbs == 'true') {
-                     codeweber_breadcrumbs(NULL, $text_color);
+                     codeweber_breadcrumbs(NULL, $text_color, NULL);
                   }
                   codeweber_meta_blog(); // Blog Meta Data
                   ?>
@@ -218,7 +218,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
                   } ?>
                   <?php
                   if ($breadcrumbs == 'true') {
-                     codeweber_breadcrumbs(NULL, $text_color);
+                     codeweber_breadcrumbs(NULL, $text_color, NULL);
                   }
                   codeweber_meta_blog(); // Blog Meta Data 
                   ?>
@@ -248,7 +248,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
                   } ?>
                   <?php
                   if ($breadcrumbs == 'true') {
-                     codeweber_breadcrumbs(NULL, $text_color);
+                     codeweber_breadcrumbs(NULL, $text_color, NULL);
                   }
                   codeweber_meta_blog(); // Blog Meta Data
                   ?>
@@ -263,7 +263,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       } elseif ($type == 'type_8') { ?>
          <section class="wrapper bg-gray">
             <div class="container py-3 py-md-5">
-               <?php codeweber_breadcrumbs(NULL, $text_color); ?>
+               <?php codeweber_breadcrumbs(NULL, $text_color, NULL); ?>
             </div>
             <!-- /.container -->
          </section>
@@ -293,7 +293,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       } elseif ($type == 'type_9') { ?>
          <section class="wrapper bg-gray">
             <div class="container py-3 py-md-5">
-               <?php codeweber_breadcrumbs(NULL, $text_color); ?>
+               <?php codeweber_breadcrumbs(NULL, $text_color, NULL); ?>
             </div>
             <!-- /.container -->
          </section>
@@ -301,7 +301,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       } elseif ($type !== NULL) { ?>
          <section class="wrapper bg-gray">
             <div class="container py-3 py-md-5">
-               <?php codeweber_breadcrumbs(NULL, $text_color); ?>
+               <?php codeweber_breadcrumbs(NULL, $text_color, NULL); ?>
             </div>
             <!-- /.container -->
          </section>

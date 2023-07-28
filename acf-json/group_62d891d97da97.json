@@ -151,6 +151,27 @@
                             "prefix_name": 0
                         },
                         {
+                            "key": "field_64c38fa2ca92f",
+                            "label": "Breadcrumbs",
+                            "name": "cw_breadcrumbs",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_64c39061574e7"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        },
+                        {
                             "key": "field_63a5b758bf60c",
                             "label": "Buttons",
                             "name": "",
@@ -5304,5 +5325,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690292054
+    "modified": 1690538177
 }

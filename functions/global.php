@@ -71,13 +71,13 @@ function brk_thumbnail_alt()
  * 
  */
 
-function codeweber_breadcrumbs($align, $color)
+function codeweber_breadcrumbs($align, $color, $show)
 {
-	if (function_exists('yoast_breadcrumb')) {
+	if (function_exists('yoast_breadcrumb') && $show == true) {
 
 		// http://yoast/breadcrumbs
 		yoast_breadcrumb('<nav class="breadcrumb d-flex justify-content-center mt-3">', '</nav>');
-	} elseif (function_exists('rank_math_the_breadcrumbs')) {
+	} elseif (function_exists('rank_math_the_breadcrumbs') && $show == true) {
 
 		if ($align == 'center') {
 			add_filter(
@@ -141,7 +141,7 @@ function codeweber_breadcrumbs($align, $color)
 		}
 
 		rank_math_the_breadcrumbs();
-	} elseif (function_exists("seopress_display_breadcrumbs")) {
+	} elseif (function_exists("seopress_display_breadcrumbs") && $show == true) {
 		seopress_display_breadcrumbs();
 	}
 }
