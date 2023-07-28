@@ -1,7 +1,7 @@
   <footer class="bg-navy text-inverse">
      <div class="container pt-15 pt-md-17 pb-13 pb-md-15">
         <div class="d-lg-flex flex-row align-items-lg-center">
-           <h3 class="display-4 mb-6 mb-lg-0 pe-lg-20 pe-xl-22 pe-xxl-25 text-white"><?php cta_footer_text(); ?></h3>
+           <h3 class="display-4 mb-6 mb-lg-0 w-100 text-white"><?php cta_footer_text(); ?></h3>
            <?php cta_footer_button(); ?>
         </div>
         <!--/div -->
