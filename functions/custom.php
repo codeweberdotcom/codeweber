@@ -419,7 +419,12 @@ function shortcode_priceimage($atts)
 
             <?php
             if (get_sub_field('type_price') == 'Image') { ?>
-                <img class="w-100" src="<?php the_sub_field('price_image'); ?>">
+
+                <a href="<?php the_sub_field('price_image'); ?>" data-glightbox="" data-gallery="gallery-image">
+                    <img class="w-100" src="<?php the_sub_field('price_image'); ?>" alt="">
+                </a>
+
+
                 <?php } elseif (get_sub_field('type_price') == 'Table') {
 
                 if (have_rows('price_table')) {
