@@ -440,7 +440,7 @@ function shortcode_priceimage($atts)
                 }
             }
             if (get_sub_field('text_for_price')) { ?>
-                <div class="alert alert-success alert-icon mt-4" role="alert"><i class="uil uil-exclamation-circle"></i><?php echo get_sub_field('text_for_price'); ?></div>
+                <div class="alert alert-danger alert-icon mt-4" role="alert"><i class="uil uil-exclamation-circle"></i><?php echo get_sub_field('text_for_price'); ?></div>
             <?php }
 
             $buttons = new CW_Buttons('<div class="d-flex justify-content-center flex-wrap">%s</div>', NULL, NULL, NULL);
