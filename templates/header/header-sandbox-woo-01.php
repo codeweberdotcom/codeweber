@@ -131,6 +131,9 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
    </nav>
    <!-- /.navbar -->
 
+   <?php do_action('codeweber_offcanvas_start'); ?>
+
+
    <?php if (class_exists('WooCommerce')) { ?>
       <div class="offcanvas offcanvas-end bg-light" id="offcanvas-cart" data-bs-scroll="true" aria-modal="true" role="dialog">
          <div class="offcanvas_cart_wrapper">
@@ -165,6 +168,11 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
       <!-- /.offcanvas-body -->
    </div>
    <!-- /.offcanvas -->
+
+   <?php do_action('codeweber_offcanvas_end'); ?>
+
+
+
    <div class="offcanvas offcanvas-top bg-light" id="offcanvas-search" data-bs-scroll="true">
       <div class="container d-flex flex-row py-6">
          <?php get_search_form(); ?>
