@@ -4,6 +4,29 @@
  * Portfolio 9
  */
 
+$type_view = get_sub_field('select_type');
+if ($type_view == 'category') {
+   $categories = get_sub_field('categories');
+   $category_array = array();
+   $term_ids = array();
+
+   if ($categories) :
+      $get_terms_args = array(
+         'taxonomy' => 'projects_category',
+         'hide_empty' => 0,
+         'include' => $categories,
+      );
+
+   endif;
+} else {
+   $category_array = '';
+   $terms = get_terms([
+      'taxonomy' => 'projects_category',
+      'hide_empty' => true,
+   ]);
+}
+
+
 $block = new CW_Settings(
    $cw_settings = array(
       'title' => 'My Selected Shots',
@@ -14,14 +37,11 @@ $block = new CW_Settings(
       'divider' => true,
    )
 );
-
-$terms = get_terms([
-   'taxonomy' => 'projects_category',
-   'hide_empty' => true,
-]);
 ?>
 
+
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
+
    <div class="container py-14 py-md-16 text-center">
       <div class="row">
          <div class="col-lg-10 col-xl-8 col-xxl-7 mx-auto mb-8">
@@ -39,25 +59,42 @@ $terms = get_terms([
          <div class="isotope-filter filter mb-10">
             <ul>
                <li><a class="filter-item active" data-filter="*"><?php esc_html_e('All', 'codeweber') ?></a></li>
-               <?php foreach ($terms as $term) { ?>
-                  <li><a class="filter-item" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>
-               <?php } ?>
+               <?php if (is_array($category_array)) {
+                  foreach ($categories as $terms) {
+                     $term = get_term($terms); ?>
+                     <li><a class="filter-item" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>
+                  <?php
+                  }
+               } else { ?>
+                  <?php foreach ($terms as $term) { ?>
+                     <li><a class="filter-item" data-filter=".<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>
+               <?php  }
+               } ?>
             </ul>
          </div>
          <div class="row gx-md-6 gy-6 isotope">
-            <?php $my_posts = new WP_Query;
-            $myposts = $my_posts->query([
-               'post_type' => 'projects',
-               'hide_empty' => true,
-               'posts_per_page' => 9
-            ]);
+            <?php
+            if (is_array($category_array)) {
+               $query = new WP_Query([
+                  'post_type' => 'projects',
+                  'hide_empty' => true,
+                  'posts_per_page' => 9,
+                  'tax_query' => array(
+                     array(
+                        'taxonomy' => 'projects_category',
+                        'field'    => 'id',
+                        'terms'    => $categories
+                     )
+                  )
+               ]);
+            } else {
+               $query = new WP_Query([
+                  'post_type' => 'projects',
+                  'hide_empty' => true,
+                  'posts_per_page' => 9,
 
-
-            $query = new WP_Query([
-               'post_type' => 'projects',
-               'hide_empty' => true,
-               'posts_per_page' => 9
-            ]);
+               ]);
+            }
 
             while ($query->have_posts()) {
                $query->the_post();
