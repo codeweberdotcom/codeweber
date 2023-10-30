@@ -1,9 +1,7 @@
 <?php
 
-
-
 /**
- * CW
+ * CW Buttons
  */
 $hero = new CW_Settings(
    $cw_settings = array(

@@ -14,7 +14,7 @@ require_once get_template_directory() . '/functions/lib/class-wp-bootstrap-navwa
 
 // --- Register Custom Post Types & Taxonomies --- //
 foreach (glob(get_template_directory() . '/functions/cpt/*.php') as $cpt) {
-	require_once $cpt;
+  require_once $cpt;
 };
 
 // --- Add Theme Functions --- //
@@ -45,11 +45,11 @@ require_once get_template_directory() . '/functions/lib/like_dislike.php'; // --
 
 // --- Check ACF ---//
 if (!function_exists('get_field')) {
-	add_action('template_redirect', 'template_redirect_warning_missing_acf', 0);
-	function template_redirect_warning_missing_acf()
-	{
-		wp_die(sprintf(__('This theme can\'t work without ACF PRO plugin. <a href="%s">Please login to admin</a>, and activate it !', 'codeweber'), wp_login_url()));
-	}
+  add_action('template_redirect', 'template_redirect_warning_missing_acf', 0);
+  function template_redirect_warning_missing_acf()
+  {
+    wp_die(sprintf(__('This theme can\'t work without ACF PRO plugin. <a href="%s">Please login to admin</a>, and activate it !', 'codeweber'), wp_login_url()));
+  }
 }
 
 // --- Customizer --- //
@@ -64,36 +64,39 @@ require_once get_template_directory() . '/functions/cw_classes/cw_classes.php'; 
 require_once get_template_directory() . '/functions/classes/classes.php'; // --- Classes OLD ---
 
 if (class_exists('WooCommerce')) {
-	// --- Woocommerce ---//
-	require_once get_template_directory() . '/functions/woocommerce/woocommerce.php'; // --- Woocommerce Functions ---
+  // --- Woocommerce ---//
+  require_once get_template_directory() . '/functions/woocommerce/woocommerce.php'; // --- Woocommerce Functions ---
 }
 
 
 
 
+
+
+/* HTML Block */
 add_shortcode('html_block', 'html_block_shortcode');
 function html_block_shortcode($atts)
 {
-	$atts = shortcode_atts([
-		'post_id'  => NULL,
-	], $atts);
+  $atts = shortcode_atts([
+    'post_id'  => NULL,
+  ], $atts);
 
-	$post = get_post($atts['post_id']); // specific post
-	$the_content = apply_filters('the_content', $post->post_content);
-	if (!empty($the_content)) {
-		$test =  $the_content;
-	}
+  $post = get_post($atts['post_id']); // specific post
+  $the_content = apply_filters('the_content', $post->post_content);
+  if (!empty($the_content)) {
+    $test =  $the_content;
+  }
 
 
-	return $test;
+  return $test;
 }
 
 add_filter('manage_edit-html_blocks_columns', 'my_columns');
 function my_columns($columns)
 {
-	$columns['views'] = 'Views';
+  $columns['views'] = 'Views';
 
-	return $columns;
+  return $columns;
 }
 
 
@@ -104,15 +107,15 @@ add_action('manage_posts_custom_column', 'posts_custom_id_columns', 5, 2);
 
 function posts_columns_id($defaults)
 {
-	$defaults['wps_post_id'] = __('Shortcode');
-	return $defaults;
+  $defaults['wps_post_id'] = __('Shortcode');
+  return $defaults;
 }
 
 function posts_custom_id_columns($column_name, $id)
 {
-	if ($column_name === 'wps_post_id') {
-		echo "[html_block post_id='";
-		echo $id;
-		echo "']";
-	}
+  if ($column_name === 'wps_post_id') {
+    echo "[html_block post_id='";
+    echo $id;
+    echo "']";
+  }
 }
