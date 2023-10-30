@@ -29,10 +29,11 @@ if (!empty($block['align'])) {
 
 <?php
 /**
- * CW
+ * CW Section
  */
 $section = new CW_Settings(
    $cw_settings = array(
+      'background_class_default' => 'wrapper bg-light',
       'divider' => true
    )
 );
