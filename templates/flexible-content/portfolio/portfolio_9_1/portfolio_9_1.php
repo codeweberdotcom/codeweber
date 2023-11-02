@@ -86,12 +86,9 @@ $block = new CW_Settings(
             }
          }
          ?>
-
       </ul>
       <!-- /.nav-tabs -->
       <div class="tab-content mt-0 mt-md-5">
-
-
          <?php $counter = 0;
          foreach ($term_array as $term_tab) {
             if ($counter == 0) {
@@ -104,49 +101,20 @@ $block = new CW_Settings(
                <div class="container text-center ">
                   <div class="row row-cols-2 row-cols-md-4 gx-4 gy-4 py-6">
                      <?php
-                     $query = new WP_Query([
-                        'post_type' => 'projects',
-                        'hide_empty' => true,
-                        'posts_per_page' => 8,
-                        'tax_query' => array(
-                           array(
-                              'taxonomy' => 'projects_category',
-                              'field'    => 'id',
-                              'terms'    => $term_tab
-                           )
-                        )
-                     ]);
 
-                     while ($query->have_posts()) {
-                        $query->the_post();
-                        $size_finish = 'archive_4';
+
+
+                     echo do_shortcode('[projects_ajax category_id="' . $term_tab . '"]');
+
+
                      ?>
-                        <div class="project item col-md-6 col-xl-3">
-                           <figure class="overlay overlay-1 <?php echo get_theme_mod('codeweber_image'); ?>"><a href="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID), 'sandbox_hero_6'); ?>" data-glightbox data-gallery="shots-group"> <?php echo get_the_post_thumbnail($post->ID, $size_finish); ?></a>
-                              <figcaption>
-                                 <h3 class="h5 from-top mb-0"><?php echo esc_html($post->post_title); ?></h3>
-                              </figcaption>
-                           </figure>
-                        </div>
-                        <!-- /.project -->
-                     <?php } ?>
-                     <?php wp_reset_postdata(); ?>
-
                   </div>
                </div>
             </div>
          <?php $counter++;
          } ?>
-
       </div>
-
    </div>
-
-
-
-
-
-
    <?php if ($block->divider_wave) {
       echo $block->divider_wave;
    } ?>

@@ -27,6 +27,9 @@ require_once get_template_directory() . '/functions/cleanup.php'; // --- Cleanup
 require_once get_template_directory() . '/functions/custom.php'; // --- Custom user functions ---
 require_once get_template_directory() . '/functions/admin.php'; // --- Custom user functions ---
 
+require_once get_template_directory() . '/functions/global_function/html_block.php'; // --- Html Block functions ---
+
+
 // --- Contact Mail PHP --- //
 //require_once get_template_directory() . '/dist/assets/php/contact.php'; // --- Custom user functions ---
 
@@ -43,6 +46,12 @@ require_once get_template_directory() . '/functions/comments-reply.php'; // --- 
 require_once get_template_directory() . '/functions/lib/like_dislike.php'; // --- Like Dislike Functions ---
 
 
+
+// --- Add like dislike function --- // 
+require_once get_template_directory() . '/functions/lib/loadmore/loadmore.php'; // --- Load More Ajax Projects Functions ---
+
+
+
 // --- Check ACF ---//
 if (!function_exists('get_field')) {
   add_action('template_redirect', 'template_redirect_warning_missing_acf', 0);
@@ -52,70 +61,25 @@ if (!function_exists('get_field')) {
   }
 }
 
+
+
+
+
+
 // --- Customizer --- //
 require_once get_template_directory() . '/functions/customize.php'; // --- Customizer ---
+
 
 // --- Widgets ---//
 require_once get_template_directory() . '/functions/widgets.php'; // --- Custom Widgets ---
 
+
 // --- Classes --- //
 require_once get_template_directory() . '/functions/cw_classes/cw_classes.php'; // --- Classes CW ---
-
 require_once get_template_directory() . '/functions/classes/classes.php'; // --- Classes OLD ---
 
+
+// --- Woocommerce ---//
 if (class_exists('WooCommerce')) {
-  // --- Woocommerce ---//
   require_once get_template_directory() . '/functions/woocommerce/woocommerce.php'; // --- Woocommerce Functions ---
-}
-
-
-
-
-
-
-/* HTML Block */
-add_shortcode('html_block', 'html_block_shortcode');
-function html_block_shortcode($atts)
-{
-  $atts = shortcode_atts([
-    'post_id'  => NULL,
-  ], $atts);
-
-  $post = get_post($atts['post_id']); // specific post
-  $the_content = apply_filters('the_content', $post->post_content);
-  if (!empty($the_content)) {
-    $test =  $the_content;
-  }
-
-
-  return $test;
-}
-
-add_filter('manage_edit-html_blocks_columns', 'my_columns');
-function my_columns($columns)
-{
-  $columns['views'] = 'Views';
-
-  return $columns;
-}
-
-
-add_filter('manage_edit-html_blocks_columns', 'posts_columns_id', 5);
-add_action('manage_posts_custom_column', 'posts_custom_id_columns', 5, 2);
-
-
-
-function posts_columns_id($defaults)
-{
-  $defaults['wps_post_id'] = __('Shortcode');
-  return $defaults;
-}
-
-function posts_custom_id_columns($column_name, $id)
-{
-  if ($column_name === 'wps_post_id') {
-    echo "[html_block post_id='";
-    echo $id;
-    echo "']";
-  }
 }
