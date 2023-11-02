@@ -9,7 +9,7 @@
 function projects_load_more_scripts()
 {
    wp_enqueue_script('jquery');
-   wp_register_script('loadmore_script', get_stylesheet_directory_uri() . '/functions/lib/loadmore/ajax.js', array('jquery'));
+   wp_register_script('loadmore_script', get_template_directory_uri() . '/functions/lib/loadmore/ajax.js', array('jquery'));
    wp_localize_script('loadmore_script', 'loadmore_params', array(
       'ajaxurl' => admin_url('admin-ajax.php'),
    ));
