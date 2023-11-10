@@ -254,6 +254,10 @@ ol.breadcrumb {
   background: #ddd !important;
 }
 
+.tooltip-inner {
+  color: #000 !important;
+}
+
 /**
 * Navbar Bootstrap
 */
