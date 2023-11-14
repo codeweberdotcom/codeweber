@@ -158,6 +158,8 @@ class CW_Icon
    public function cw_image_icon($image_icon, $class_icon, $fetures_image_size)
    {
 
+
+
       if (have_rows('cw_icons')) {
          while (have_rows('cw_icons')) {
             the_row();
@@ -177,7 +179,8 @@ class CW_Icon
                   }
                }
 
-               $classes_icon[] = $class_icon;
+               $classes_icon[] = $this->class_icon;
+
                if ($size !== 'none') {
                   if ($size == 'sm') {
                      $size = 'cw_icon_sm';
@@ -188,6 +191,9 @@ class CW_Icon
                   } elseif ($size == 'lg') {
                      $size = 'cw_icon_lg';
                      $classes_icon[] = 'w-15';
+                  } elseif ($size == 'image') {
+                     $size = 'cw_icon_image';
+                     $classes_icon[] = 'w-100';
                   }
                } elseif ($size == 'none' && $fetures_image_size !== NULL) {
                   $size = $fetures_image_size;
@@ -271,12 +277,12 @@ class CW_Icon
             if ($this->type_icon !== 'None') {
                if ($this->type_icon == 'Unicons') {
                   if ($this->form_icon !== 'none') {
-                     $cw_final_icon = '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '>' . $this->unicons_icon . '</div>';
+                     $cw_final_icon = '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $class_icon . '" ' . $this->id_icon . '>' . $this->unicons_icon . '</div>';
                   } else {
                      $cw_unicons_icon = $this->unicons_icon;
                      $string = $cw_unicons_icon;
                      $patterns = '/">/';
-                     $replacements = ' ' . $this->class_icon . '">';
+                     $replacements = ' ' . $class_icon . '">';
                      $str =  preg_replace($patterns, $replacements, $string);
                      $cw_final_icon = $str;
                   }
@@ -284,9 +290,9 @@ class CW_Icon
                   $cw_final_icon =  $this->lineal_icon;
                } elseif ($this->type_icon == 'Number') {
                   if ($this->form_icon !== 'none') {
-                     $cw_final_icon =  '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '><span class="number">' . $this->number_icon . '</span></div>';
+                     $cw_final_icon =  '<div class="icon btn ' . $this->form_icon . ' btn-' . $this->size_icon . ' btn-' . $this->color_icon . ' ' . $class_icon . '" ' . $this->id_icon . '><span class="number">' . $this->number_icon . '</span></div>';
                   } else {
-                     $cw_final_icon =  '<span class="fs-60 lh-1 mb-3 d-block fw-normal ' . $this->color_icon . ' ' . $this->class_icon . '" ' . $this->id_icon . '>' . $this->number_icon . '</span>';
+                     $cw_final_icon =  '<span class="fs-60 lh-1 mb-3 d-block fw-normal ' . $this->color_icon . ' ' . $class_icon . '" ' . $this->id_icon . '>' . $this->number_icon . '</span>';
                   }
                } elseif ($this->type_icon == 'Image') {
                   $cw_final_icon =  $this->image_icon;

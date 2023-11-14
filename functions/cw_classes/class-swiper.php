@@ -901,7 +901,7 @@ class CW_Swiper
                }
             }
 
-            $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL);
+            $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL, NULL);
 
             $final_slider = $tiles_object->final_tiles;
          } elseif ($type_gallery == 'Tiles 2') {
@@ -927,7 +927,7 @@ class CW_Swiper
                   }
                }
             }
-            $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL);
+            $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL, NULL);
             $final_slider = $tiles_object->final_tiles;
          } elseif ($type_gallery == 'Tiles 1') {
             if (have_rows('cw_images')) {
@@ -950,7 +950,30 @@ class CW_Swiper
                   }
                }
             }
-            $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL);
+            $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL, NULL);
+            $final_slider = $tiles_object->final_tiles;
+         } elseif ($type_gallery == 'Responsive') {
+
+
+            if (have_rows('responsive_settings')) :
+               while (have_rows('responsive_settings')) : the_row();
+                  $object_responsive_col = new CW_Responsive_col(NULL, NULL, NULL, NULL, NULL, NULL);
+                  $responsive_col = $object_responsive_col->responsive_class_final;
+               endwhile;
+            endif;
+
+
+            if (have_rows('cw_images')) {
+               $objects_array = array();
+               while (have_rows('cw_images')) {
+                  the_row();
+                  $image_thumb_size = 'team-1';
+                  $image_big_size = 'project_1';
+                  $objects_image = new CW_Image($image_thumb_size, $image_big_size, NULL, NULL, NULL, $image_shape, NULL, 'shadow', NULL, NULL, NULL);
+                  $objects_array[] = $objects_image->final_image;
+               }
+            }
+            $tiles_object = new CW_Tiles($type_gallery, $objects_array, NULL, $responsive_col);
             $final_slider = $tiles_object->final_tiles;
          }
       } elseif ($count_image == 1) {

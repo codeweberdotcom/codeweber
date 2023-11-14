@@ -8,14 +8,21 @@ class CW_Tiles
    public $type_tiles;
    public $tiles_object_array;
    public $final_tiles;
+   public $responsive_tiles;
 
-   public function __construct($type_tiles, $tiles_object_array, $final_tiles)
+   public function __construct($type_tiles, $tiles_object_array, $final_tiles, $cw_responsive_tiles)
    {
       $this->root_theme = get_template_directory_uri();
-
+      $this->responsive_tiles = $this->cw_responsive_tiles($cw_responsive_tiles);
       $this->type_tiles = $this->cw_type_tiles($type_tiles);
       $this->tiles_object_array = $this->cw_tiles_object_array($tiles_object_array);
       $this->final_tiles = $this->cw_final_tiles($final_tiles);
+   }
+
+   public function cw_responsive_tiles($cw_responsive_tiles)
+   {
+      $responsive_col = $cw_responsive_tiles;
+      return $responsive_col;
    }
 
    public function cw_type_tiles($type_tiles)
@@ -82,16 +89,22 @@ class CW_Tiles
                $cw_final_tiles .= '</div>';
             }
 
-
-
-
             if ($num_row == 2) {
                $cw_final_tiles .= '<div class="col-md-6">' . $tiles_object;
                $cw_final_tiles .= '</div>';
             }
-
-
             $num_row++;
+         }
+
+         $cw_final_tiles .= '</div><!--/.row -->';
+      } elseif ($this->type_tiles == 'Responsive') {
+
+         $cw_final_tiles = '<div class="row gx-md-5 gy-5 align-items-start">';
+         foreach ($this->tiles_object_array as $tiles_object) {
+
+
+            $cw_final_tiles .= '<div data-cue="fadeIn"  class="project item ' . $this->responsive_tiles . '">' . $tiles_object;
+            $cw_final_tiles .= '</div><!--/column -->';
          }
 
          $cw_final_tiles .= '</div><!--/.row -->';
