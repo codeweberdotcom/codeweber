@@ -297,7 +297,7 @@
                         "swiper-caption": "swiper-caption",
                         "image-caption": "image-caption"
                     },
-                    "default_value": "image-caption",
+                    "default_value": "none",
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -574,5 +574,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699883675
+    "modified": 1699988934
 }
