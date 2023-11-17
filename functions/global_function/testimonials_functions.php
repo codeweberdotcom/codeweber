@@ -282,6 +282,7 @@ function CPT_Testimonials_Settings($wp_customize)
             'type_6' => esc_html__('Type 6', 'codeweber'),
             'type_7' => esc_html__('Type 7', 'codeweber'),
             'type_8' => esc_html__('Type 8', 'codeweber'),
+            'type_10' => esc_html__('Type 10', 'codeweber'),
             'disable' => esc_html__('Disable', 'codeweber'),
             'default' => esc_html__('Default', 'codeweber'),
          ),
