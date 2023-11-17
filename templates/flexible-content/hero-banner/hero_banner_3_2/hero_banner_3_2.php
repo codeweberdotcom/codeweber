@@ -75,7 +75,7 @@ $block = new CW_Settings(
     'label_pattern' => '<div class="card shadow-lg position-absolute zindex-1 %6$s" %7$s><div class="card-body py-4 px-5"><div class="d-flex flex-row align-items-center"><div>%2$s</div><div><h3 class="counter mb-0 text-nowrap">%3$s</h3><p class="fs-14 lh-sm mb-0 text-nowrap">%4$s</p>%5$s</div></div></div><!--/.card-body --></div><!--/.card -->',
 
     'column_class_1' => '',
-    'column_class_2' => 'project-item',
+    'column_class_2' => 'project item',
   )
 );
 
@@ -99,7 +99,7 @@ $block = new CW_Settings(
           <!--/buttons group -->
         </div>
         <!-- /column -->
-        <div class="col-lg-6  mb-n14 <?php echo $block->column_class_2; ?>" data-cues="slideInDown">
+        <div class="col-lg-5 offset-lg-1  mb-n15 <?php echo $block->column_class_2; ?>" data-cues="slideInDown">
           <div class="position-relative">
             <?php echo $block->swiper_final; ?>
             <!--/swiper -->
