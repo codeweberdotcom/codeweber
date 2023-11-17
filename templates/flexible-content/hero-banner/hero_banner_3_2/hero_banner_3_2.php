@@ -99,7 +99,7 @@ $block = new CW_Settings(
           <!--/buttons group -->
         </div>
         <!-- /column -->
-        <div class="col-lg-6  mb-n18 <?php echo $block->column_class_2; ?>" data-cues="slideInDown">
+        <div class="col-lg-6  mb-n14 <?php echo $block->column_class_2; ?>" data-cues="slideInDown">
           <div class="position-relative">
             <?php echo $block->swiper_final; ?>
             <!--/swiper -->
