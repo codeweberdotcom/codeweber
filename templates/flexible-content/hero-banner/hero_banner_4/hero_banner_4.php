@@ -49,7 +49,7 @@ $block = new CW_Settings(
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
-        <div class="mt-10 mt-md-11 mt-lg-n10 px-10 px-md-11 ps-lg-0 pe-lg-13 text-center text-lg-start" data-cues="slideInDown" data-group="page-title" data-delay="600">
+        <div class="mt-10 mt-md-11 mt-lg-n10 px-10 px-md-11 ps-lg-0 pe-lg-13 text-center text-lg-start" data-group="page-title" data-delay="600">
           <?php echo $block->title; ?>
           <!--/title -->
           <?php echo $block->paragraph; ?>

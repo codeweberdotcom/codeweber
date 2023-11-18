@@ -96,7 +96,7 @@ $block = new CW_Settings(
           <!--/swiper -->
         </div>
         <!--/column -->
-        <div class="col-lg-5 mt-lg-n10 text-center text-lg-start <?php echo $block->column_class_2; ?>" data-cues="slideInDown" data-group="page-title" data-delay="600">
+        <div class="col-lg-5 mt-lg-n10 text-center text-lg-start <?php echo $block->column_class_2; ?>" data-group="page-title" data-delay="600">
           <?php echo $block->title; ?>
           <!--/title -->
           <?php echo $block->paragraph; ?>

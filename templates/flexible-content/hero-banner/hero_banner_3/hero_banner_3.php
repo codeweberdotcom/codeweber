@@ -90,7 +90,7 @@ $block = new CW_Settings(
     <!-- /video background -->
     <div class="container pt-7 pt-md-11 pb-8">
       <div class="row gx-0 gy-10 align-items-center">
-        <div class="col-lg-6 <?php echo $block->column_class_1; ?>" data-cues="slideInDown" data-group="page-title" data-delay="600">
+        <div class="col-lg-6 <?php echo $block->column_class_1; ?>" data-group="page-title" data-delay="600">
           <?php echo $block->title; ?>
           <!--/title -->
           <?php echo $block->paragraph; ?>
@@ -99,7 +99,7 @@ $block = new CW_Settings(
           <!--/buttons group -->
         </div>
         <!-- /column -->
-        <div class="col-lg-5  mb-n18 <?php echo $block->column_class_2; ?>" data-cues="slideInDown">
+        <div class="col-lg-5  mb-n18 <?php echo $block->column_class_2; ?>">
           <div class="position-relative">
             <?php echo $block->swiper_final; ?>
             <!--/swiper -->

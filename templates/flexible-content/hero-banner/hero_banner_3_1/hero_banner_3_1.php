@@ -63,12 +63,12 @@ $block = new CW_Settings(
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php page_frame_banner(); ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
   <div class="container pt-12 pt-md-14 pb-14 pb-md-16">
     <div class="row gy-10 gy-md-13 gy-lg-0 align-items-center">
-      <div class="col-md-8 col-lg-5 d-flex position-relative mx-auto <?php echo $block->column_class_1; ?>" data-cues="slideInDown" data-group="header">
+      <div class="col-md-8 col-lg-5 d-flex position-relative mx-auto <?php echo $block->column_class_1; ?>" data-group="header">
         <?php echo $block->swiper_final; ?>
         <!--/swiper -->
       </div>
       <!--/column -->
-      <div class="col-lg-5 text-center text-lg-start <?php echo $block->column_class_2; ?>" data-cues="slideInDown" data-group="page-title" data-delay="600">
+      <div class="col-lg-5 text-center text-lg-start <?php echo $block->column_class_2; ?>" data-group="page-title" data-delay="600">
         <?php echo $block->title; ?>
         <!--/title -->
         <?php // echo $block->paragraph; 

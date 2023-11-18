@@ -77,7 +77,7 @@ $block = new CW_Settings(
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?> px-0 overflow-hidden" <?php echo $block->background_data; ?>>
    <div class="container pt-12 pt-md-16 text-center">
       <div class="row">
-         <div class="col-lg-8 col-xxl-7 mx-auto text-center" data-cues="slideInDown" data-group="page-title" data-delay="600">
+         <div class="col-lg-8 col-xxl-7 mx-auto text-center" data-group="page-title" data-delay="600">
             <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>

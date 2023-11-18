@@ -25,7 +25,7 @@ $block = new CW_Settings(
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
   <div class="container pt-17 pb-15 py-sm-17 py-xxl-20">
     <div class="row">
-      <div class="col-sm-6 col-xxl-5 text-center text-sm-start" data-cues="slideInDown" data-group="page-title" data-interval="-200" data-delay="500">
+      <div class="col-sm-6 col-xxl-5 text-center text-sm-start" data-group="page-title" data-interval="-200" data-delay="500">
         <?php echo $block->title; ?>
         <!--/title -->
         <?php echo $block->paragraph; ?>

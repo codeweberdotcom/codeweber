@@ -83,7 +83,7 @@ $block = new CW_Settings(
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
   <div class="container pt-10 pt-lg-12 pt-xl-12 pt-xxl-10 pb-lg-10 pb-xl-10 pb-xxl-0">
     <div class="row gx-md-8 gx-xl-12 gy-10 align-items-center text-center text-lg-start">
-      <div class="col-lg-6" <?php echo $block->column_class_1; ?> data-cues="slideInDown" data-group="page-title" data-delay="900">
+      <div class="col-lg-6" <?php echo $block->column_class_1; ?> data-group="page-title" data-delay="900">
         <?php echo $block->title; ?>
         <!--/title -->
         <?php echo $block->paragraph; ?>

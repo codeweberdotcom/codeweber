@@ -85,7 +85,7 @@ $block = new CW_Settings(
       <div class="card-body py-14 px-0">
         <div class="container">
           <div class="row gx-md-8 gx-xl-12 gy-10 align-items-center text-center text-lg-start">
-            <div class="col-lg-5 <?php echo $block->column_class_1; ?>" data-cues="slideInDown" data-group="page-title" data-delay="900">
+            <div class="col-lg-5 <?php echo $block->column_class_1; ?>" data-group="page-title" data-delay="900">
               <?php echo $block->title; ?>
               <!--/title -->
               <?php echo $block->paragraph; ?>

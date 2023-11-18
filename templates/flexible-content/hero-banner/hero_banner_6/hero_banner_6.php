@@ -55,7 +55,7 @@ $block = new CW_Settings(
       <?php echo $block->images; ?>
       <!--/swiper -->
       <div class="row gx-0 align-items-center">
-         <div class="col-md-10 offset-md-1 col-lg-5 offset-lg-7 offset-xxl-6 ps-xxl-12 mt-md-n9 text-center text-lg-start" data-cues="slideInDown" data-group="page-title" data-delay="600">
+         <div class="col-md-10 offset-md-1 col-lg-5 offset-lg-7 offset-xxl-6 ps-xxl-12 mt-md-n9 text-center text-lg-start" data-group="page-title" data-delay="600">
 
             <?php echo $block->title; ?>
             <!--/title -->

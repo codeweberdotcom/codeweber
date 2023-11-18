@@ -111,7 +111,7 @@ $color = new CW_Color(NULL, 'bg-soft-primary');
             <!--/images -->
           </div>
           <!--/column -->
-          <div class="col-lg-6 text-center text-lg-start <?php echo $block->column_class_2; ?>" data-cues="slideInDown" data-group="page-title" data-delay="600">
+          <div class="col-lg-6 text-center text-lg-start <?php echo $block->column_class_2; ?>" data-group="page-title" data-delay="600">
             <?php echo $block->title; ?>
             <!--/title -->
             <?php echo $block->paragraph; ?>
