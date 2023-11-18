@@ -14,7 +14,7 @@ $block = new CW_Settings(
       'patternTitle' => '<h2 class="display-6 text-white mb-4 mb-lg-0 %2$s">%1$s</h2>',
 
       'subtitle' => 'Call Now',
-      'patternSubtitle' => '<p class="text-white mb-0 %2$s">%1$s</p>',
+      'patternSubtitle' => '<p class="text-white lead fs-lg mb-0 %2$s">%1$s</p>',
 
       'buttons' => '<span><a class="btn btn-lg btn-white rounded-pill mb-0 text-nowrap">Call Back</a></span>',
       'buttons_pattern' => '<div class="d-flex justify-content-center flex-wrap justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
@@ -37,20 +37,18 @@ $block = new CW_Settings(
                      <!--/subtitle -->
                      <?php echo $block->title; ?>
                      <!--/title -->
+                     <?php echo $block->subtitle_second; ?>
+                     <!--/subtitle -->
                   </div>
                   <div class="col">
                      <div class="d-flex mb-4 mb-lg-0">
                         <div>
-                           <a href="tel:<?php echo esc_html($phone); ?>" class="btn btn-circle btn-outline-white btn-lg me-3"><i class="uil uil-phone"></i></a>
-                        </div>
-                        <div>
                            <?php if (get_sub_field('phone') == 'Option page') : ?>
-                              <a class="text-white fs-22 fw-bold" href="tel:<?php echo esc_attr($phone); ?>"><?php echo esc_html($phone); ?></a>
+                              <a class="text-white fs-22 hover link-body d-flex" href="tel:<?php echo esc_attr($phone); ?>"><i class="uil uil-phone-volume me-2"></i><?php echo esc_html($phone); ?></a>
                            <?php elseif (get_sub_field('phone') == 'Custom') : ?>
-                              <a class="text-white fs-22 fw-bold" href="tel:<?php the_sub_field('custom_phone'); ?>"><?php the_sub_field('custom_phone'); ?></a>
+                              <a class="text-white fs-22 hover link-body d-flex" href="tel:<?php the_sub_field('custom_phone'); ?>"><i class="uil uil-phone-volume me-2"></i><?php the_sub_field('custom_phone'); ?></a>
                            <?php endif; ?>
-                           <?php echo $block->subtitle_second; ?>
-                           <!--/subtitle -->
+
                         </div>
                      </div>
                   </div>
