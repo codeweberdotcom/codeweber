@@ -468,7 +468,7 @@ function add_modal_to_footer()
 						$paragraph_object = new CW_Parargraph(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 						$paragraph = $paragraph_object->paragraph_text;
 
-						$button_pattern = '<div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>';
+						$button_pattern = '<div class="d-flex justify-content-center justify-content-lg-start" data-group="page-title-buttons" data-delay="900">%s</div>';
 						$button_demo = '<a href="#" class="btn btn-primary rounded-pill" data-bs-dismiss="modal" aria-label="Close">I Understand</a>';
 						$button_object = new CW_Buttons($button_pattern, $button_demo, 'cookie_accept', 'data-bs-dismiss="modal"');
 						$button = $button_object->final_buttons;

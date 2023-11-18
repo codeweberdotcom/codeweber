@@ -103,7 +103,7 @@ class CW_Tiles
          foreach ($this->tiles_object_array as $tiles_object) {
 
 
-            $cw_final_tiles .= '<div data-cue="fadeIn"  class="project item ' . $this->responsive_tiles . '">' . $tiles_object;
+            $cw_final_tiles .= '<div class="project item ' . $this->responsive_tiles . '">' . $tiles_object;
             $cw_final_tiles .= '</div><!--/column -->';
          }
 
