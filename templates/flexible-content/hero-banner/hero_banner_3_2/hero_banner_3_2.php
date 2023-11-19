@@ -88,7 +88,7 @@ $block = new CW_Settings(
     <div class="video-content">
     <?php } ?>
     <!-- /video background -->
-    <div class="container pt-7 pt-md-11 pb-8">
+    <div class="container pt-11 pb-11">
       <div class="row gx-0 gy-10 align-items-center">
         <div class="col-lg-6 pe-lg-10 <?php echo $block->column_class_1; ?>" data-group="page-title" data-delay="600">
           <?php echo $block->title; ?>
