@@ -60,7 +60,7 @@ $block = new CW_Settings(
       //'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),
 
       'column_class_1' => '',
-      'column_class_2' => ' order-lg-2',
+      'column_class_2' => ' order-lg-2 offset-lg-1',
 
       //'features' => '<div class="col-md-6"><div class="d-flex flex-row"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/target.svg" class="svg-inject icon-svg icon-svg-sm me-4" alt="" /></div><div><h4 class="mb-1">Our Mission</h4><p class="mb-0">Dapibus eu leo quam ornare curabitur blandit tempus.</p></div></div></div><!--/column -->',
 
@@ -80,8 +80,8 @@ $block = new CW_Settings(
             <!--/swiper -->
          </div>
          <!--/column -->
-         <div class="col-lg-8 <?php echo $block->column_class_2; ?>">
-            <div class="p-10">
+         <div class="col-lg-7 <?php echo $block->column_class_2; ?>">
+            <div class="py-10">
                <?php echo $block->subtitle_first; ?>
                <!--/subtitle -->
                <?php echo $block->title; ?>
