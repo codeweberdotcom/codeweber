@@ -59,8 +59,8 @@ $block = new CW_Settings(
 
       //'shapes' => array('<div class="shape bg-soft-primary rounded-circle rellax w-20 h-20" data-rellax-speed="1" style="top: -2rem; right: -1.9rem;"></div>'),
 
-      'column_class_1' => 'col-md-8 col-lg-4',
-      'column_class_2' => 'col-lg-8',
+      'column_class_1' => '',
+      'column_class_2' => ' order-lg-2',
 
       //'features' => '<div class="col-md-6"><div class="d-flex flex-row"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/target.svg" class="svg-inject icon-svg icon-svg-sm me-4" alt="" /></div><div><h4 class="mb-1">Our Mission</h4><p class="mb-0">Dapibus eu leo quam ornare curabitur blandit tempus.</p></div></div></div><!--/column -->',
 
@@ -73,14 +73,14 @@ $block = new CW_Settings(
 
 
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
-   <div class="container py-14 py-md-16">
+   <div class="container">
       <div class="row g-0 overflow-hidden align-items-center <?php echo $block->section_class; ?>">
-         <div class="<?php echo $block->column_class_1; ?>">
+         <div class="col-lg-4 <?php echo $block->column_class_1; ?>">
             <?php echo $block->swiper_final; ?>
             <!--/swiper -->
          </div>
          <!--/column -->
-         <div class="<?php echo $block->column_class_2; ?>">
+         <div class="col-lg-8 <?php echo $block->column_class_2; ?>">
             <div class="p-10">
                <?php echo $block->subtitle_first; ?>
                <!--/subtitle -->
