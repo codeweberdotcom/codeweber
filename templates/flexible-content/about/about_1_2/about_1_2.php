@@ -14,7 +14,7 @@ $block = new CW_Settings(
       'paragraph' => 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.',
       'patternParagraph' => '<p class="mb-6 %2$s">%1$s</p>',
 
-      'background_class_default' => 'wrapper bg-light',
+      'background_class_default' => 'wrapper',
 
       'buttons_pattern' => '<div class="d-flex flex-wrap justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">%s</div>',
       'buttons' => '<div><a class="btn btn-lg btn-primary rounded">Get Started</a></div>',
