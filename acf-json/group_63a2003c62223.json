@@ -3,6 +3,108 @@
     "title": "CW Slider",
     "fields": [
         {
+            "key": "field_655a6662fa166",
+            "label": "Custom image size",
+            "name": "cw_custom_image_size",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_655a664bfa165",
+            "label": "Image size",
+            "name": "cw_image_size",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_655a6662fa166",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "brk_big": "brk_big",
+                "brk_single": "brk_single",
+                "brk_post_sm": "brk_post_sm",
+                "cw_icon_sm": "cw_icon_sm",
+                "cw_icon_md": "cw_icon_md",
+                "cw_icon_lg": "cw_icon_lg",
+                "sandbox_hero_1": "sandbox_hero_1",
+                "sandbox_hero_2": "sandbox_hero_2",
+                "sandbox_hero_3": "sandbox_hero_3",
+                "sandbox_hero_4": "sandbox_hero_4",
+                "sandbox_hero_8": "sandbox_hero_8",
+                "sandbox_hero_5": "sandbox_hero_5",
+                "sandbox_hero_6": "sandbox_hero_6",
+                "sandbox_hero_9": "sandbox_hero_9",
+                "sandbox_hero_10": "sandbox_hero_10",
+                "sandbox_hero_11": "sandbox_hero_11",
+                "sandbox_hero_14": "sandbox_hero_14",
+                "sandbox_hero_15": "sandbox_hero_15",
+                "sandbox_hero_16": "sandbox_hero_16",
+                "sandbox_hero_17": "sandbox_hero_17",
+                "sandbox_hero_18": "sandbox_hero_18",
+                "sandbox_hero_26": "sandbox_hero_26",
+                "sandbox_about_4": "sandbox_about_4",
+                "sandbox_faq_1": "sandbox_faq_1",
+                "sandbox_process_8": "sandbox_process_8",
+                "sandbox_features_1": "sandbox_features_1",
+                "sandbox_features_6": "sandbox_features_6",
+                "sandbox_features_10": "sandbox_features_10",
+                "sandbox_slider_1": "sandbox_slider_1",
+                "sandbox_slider_2": "sandbox_slider_2",
+                "sandbox_youtube_mq": "sandbox_youtube_mq",
+                "sandbox_clients_logo_1": "sandbox_clients_logo_1",
+                "sandbox_clients_logo_1-1": "sandbox_clients_logo_1-1",
+                "sandbox_clients_logo_2": "sandbox_clients_logo_2",
+                "contact_2": "contact_2",
+                "testimonial_2": "testimonial_2",
+                "testimonial_8": "testimonial_8",
+                "testimonial_16": "testimonial_16",
+                "cart_checkout": "cart_checkout",
+                "project_1": "project_1",
+                "project_1_1": "project_1_1",
+                "project_4_banner": "project_4_banner",
+                "project_4": "project_4",
+                "project_4_1": "project_4_1",
+                "process_3": "process_3",
+                "team-1": "team-1",
+                "archive_4": "archive_4",
+                "archive_4_2": "archive_4_2",
+                "archive_4_1": "archive_4_1",
+                "woocommerce_thumbnail": "woocommerce_thumbnail",
+                "woocommerce_single": "woocommerce_single",
+                "woocommerce_gallery_thumbnail": "woocommerce_gallery_thumbnail"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_63a21c1110373",
             "label": "Gallery",
             "name": "cw_images",
@@ -86,6 +188,35 @@
             "return_format": "value",
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_655217485cf24",
+            "label": "Responsive Tile",
+            "name": "responsive_tile",
+            "type": "clone",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_63eb64125475c",
+                        "operator": "==",
+                        "value": "Responsive"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "clone": [
+                "group_63bfdaa511cea"
+            ],
+            "display": "seamless",
+            "layout": "block",
+            "prefix_label": 0,
+            "prefix_name": 0
         },
         {
             "key": "field_63cb22c99c62e",
@@ -813,35 +944,6 @@
                     "step": ""
                 }
             ]
-        },
-        {
-            "key": "field_655217485cf24",
-            "label": "Responsive Tile",
-            "name": "responsive_tile",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_63eb64125475c",
-                        "operator": "==",
-                        "value": "Responsive"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_63bfdaa511cea"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
         }
     ],
     "location": [
@@ -862,5 +964,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1699883274
+    "modified": 1700426098
 }
