@@ -1,10 +1,10 @@
 {
-    "key": "group_639f86cc57a49",
-    "title": "CW Section",
+    "key": "group_63cd456990266",
+    "title": "CW Label Item",
     "fields": [
         {
-            "key": "field_653f9cfa4b32c",
-            "label": "Background",
+            "key": "field_63cd461124e61",
+            "label": "Label",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -20,9 +20,28 @@
             "endpoint": 0
         },
         {
-            "key": "field_653f9b3fba1f4",
-            "label": "Background",
-            "name": "cw_section_background",
+            "key": "field_63d10d9c4c775",
+            "label": "Hide",
+            "name": "cw_show",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_63cd457124e5f",
+            "label": "Label",
+            "name": "cw_label",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -33,7 +52,7 @@
                 "id": ""
             },
             "clone": [
-                "field_6398ec3fd72d0"
+                "group_63a5b42b67999"
             ],
             "display": "seamless",
             "layout": "block",
@@ -41,9 +60,9 @@
             "prefix_name": 0
         },
         {
-            "key": "field_653f9c6dac3e1",
-            "label": "Dividers",
-            "name": "cw_dividers",
+            "key": "field_63cd45ee24e60",
+            "label": "Position",
+            "name": "cw_position",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -54,7 +73,7 @@
                 "id": ""
             },
             "clone": [
-                "group_63a18f728079f"
+                "group_63cd431d76d37"
             ],
             "display": "seamless",
             "layout": "block",
@@ -65,9 +84,9 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_format",
                 "operator": "==",
-                "value": "acf\/section"
+                "value": "audio"
             }
         ]
     ],
@@ -80,5 +99,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700514269
+    "modified": 1700514098
 }

@@ -1,10 +1,29 @@
 {
-    "key": "group_639f86cc57a49",
-    "title": "CW Section",
+    "key": "group_63f0943e3c583",
+    "title": "CPT Staff Post Field",
     "fields": [
         {
-            "key": "field_653f9cfa4b32c",
-            "label": "Background",
+            "key": "field_63f0944782eb3",
+            "label": "Job title",
+            "name": "job_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_63f3fb2740745",
+            "label": "Social",
             "name": "",
             "type": "accordion",
             "instructions": "",
@@ -20,9 +39,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_653f9b3fba1f4",
-            "label": "Background",
-            "name": "cw_section_background",
+            "key": "field_63f09fc463250",
+            "label": "Social",
+            "name": "social",
             "type": "clone",
             "instructions": "",
             "required": 0,
@@ -33,28 +52,7 @@
                 "id": ""
             },
             "clone": [
-                "field_6398ec3fd72d0"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_653f9c6dac3e1",
-            "label": "Dividers",
-            "name": "cw_dividers",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_63a18f728079f"
+                "group_theme_social"
             ],
             "display": "seamless",
             "layout": "block",
@@ -65,9 +63,9 @@
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_type",
                 "operator": "==",
-                "value": "acf\/section"
+                "value": "staff"
             }
         ]
     ],
@@ -80,5 +78,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700514269
+    "modified": 1700514023
 }
