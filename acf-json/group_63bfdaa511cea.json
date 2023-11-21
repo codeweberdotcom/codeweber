@@ -3,23 +3,6 @@
     "title": "CW Responsive",
     "fields": [
         {
-            "key": "field_649d761f30883",
-            "label": "Responsive Settings",
-            "name": "",
-            "type": "accordion",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "open": 0,
-            "multi_expand": 0,
-            "endpoint": 0
-        },
-        {
             "key": "field_649d75b41e31a",
             "label": "Responsive Settings",
             "name": "responsive_settings",
@@ -265,5 +248,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700514267
+    "modified": 1700585656
 }

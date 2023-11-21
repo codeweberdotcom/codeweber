@@ -135,7 +135,11 @@ class CW_ListCol
       if (have_rows('cw_list')) {
          while (have_rows('cw_list')) {
             the_row();
-            $cw_responsive_object = new CW_Responsive_col(NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+            if (have_rows('responsive_settings')) :
+               while (have_rows('responsive_settings')) : the_row();
+                  $cw_responsive_object = new CW_Responsive_col(NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+               endwhile;
+            endif;
          }
       }
       $cw_responsive_class = $cw_responsive_object->responsive_class_final;
