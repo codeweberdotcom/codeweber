@@ -131,7 +131,6 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
    </nav>
    <!-- /.navbar -->
 
-   <?php do_action('codeweber_offcanvas_start'); ?>
 
 
    <?php if (class_exists('WooCommerce')) { ?>
@@ -155,7 +154,10 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
          <?php echo codeweber_logo('dark', NULL, NULL); ?>
          <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
+
+
       <div class="offcanvas-body pb-6">
+         <?php do_action('codeweber_offcanvas_start'); ?>
          <?php echo about_company_option(); ?>
          <!-- /.widget -->
          <?php offcanvas_contact_option(); ?>
@@ -164,12 +166,14 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
          <!-- /.widget -->
          <?php social_icons_option(); ?>
          <!-- /.widget -->
+         <?php do_action('codeweber_offcanvas_end'); ?>
       </div>
       <!-- /.offcanvas-body -->
+
+
    </div>
    <!-- /.offcanvas -->
 
-   <?php do_action('codeweber_offcanvas_end'); ?>
 
 
 
