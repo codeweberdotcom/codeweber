@@ -107,6 +107,7 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
             <?php } ?>
             </ul>
             <!-- /.navbar-nav -->
+            <?php do_action('before_header_three'); ?>
             </li>
             <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
 
