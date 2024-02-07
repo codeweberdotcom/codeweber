@@ -124,8 +124,9 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
             </li>
             </ul>
             <!-- /.navbar-nav -->
-            <?php do_action('before_header_three'); ?>
+
          </div>
+         <?php do_action('before_header_three'); ?>
          <!-- /.navbar-other -->
 
       </div>
