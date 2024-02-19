@@ -218,7 +218,6 @@
 				$codeweber['page_settings']['nav_color'] = get_theme_mod('codeweber_header_color');
 			}
 		} elseif (is_404()) {
-			echo '404';
 
 			if (get_theme_mod('codeweber_header_blog_color')) {
 				$codeweber['page_settings']['nav_color'] = get_theme_mod('codeweber_header_blog_color');
