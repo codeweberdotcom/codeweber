@@ -62,8 +62,8 @@ endif; ?>
 <?php endif; ?>
 
 
-<section class="wrapper image-wrapper bg-image bg-cover bg-height" data-image-src="<?php echo $image_project_array[0]['sizes']['project_4_banner']; ?>"></section>
-<section class="wrapper bg-light wrapper-border">
+<section class="wrapper image-wrapper bg-image overflow-hidden mt-0 bg-cover bg-height bg-overlay text-white" data-image-src="<?php echo $image_project_array[0]['sizes']['project_4_banner']; ?>"></section>
+<section class="wrapper  bg-light wrapper-border">
    <div class="container py-14 py-md-16">
       <div class="row">
          <div class="col-lg-10 mx-auto">
