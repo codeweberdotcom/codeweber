@@ -49,7 +49,7 @@ if (have_rows('main_information')) :
    endwhile;
 endif; ?>
 <?php if ($codeweber['page_settings']['page_header_type'] == 'default' || $codeweber['page_settings']['page_header_type'] == NULL) { ?>
-   <section class="wrapper image-wrapper bg-image bg-overlay text-white" data-image-src="<?php echo get_the_post_thumbnail_url($post, 'project_1'); ?>">
+   <section class="wrapper image-wrapper bg-image mt-0 overflow-hidden bg-overlay text-white" data-image-src="<?php echo get_the_post_thumbnail_url($post, 'project_1'); ?>">
       <div class="container pt-17 pb-12 pt-md-19 pb-md-16 text-center">
          <div class="row">
             <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
