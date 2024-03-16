@@ -88,7 +88,16 @@ endif; ?>
                   <h2 class="display-6 mb-4"><?php esc_html_e('Title', 'codeweber'); ?></h2>
                <?php } ?>
                <div class="row gx-0">
-                  <div class="col-md-9 text-justify">
+
+                  <?php if (isset($project_date) && isset($project_cms) && isset($project_link)) {
+
+                     $class_col_one = "col-md-12";
+                  } else {
+
+                     $class_col_one = "col-md-9";
+                  } ?>
+
+                  <div class="<?php echo $class_col_one; ?> text-justify">
                      <?php if (isset($project_description)) { ?>
                         <?php echo $project_description; ?>
                      <?php } else { ?>
@@ -97,26 +106,30 @@ endif; ?>
                      <?php } ?>
                   </div>
                   <!--/column -->
-                  <div class="col-md-2 ms-auto">
-                     <ul class="list-unstyled">
-                        <?php if (isset($project_date)) { ?>
-                           <li>
-                              <div class="h5 mb-1"><?php echo __('Date', 'codeweber'); ?></div>
-                              <p><?php echo $project_date; ?></p>
-                           </li>
+                  <?php if (isset($project_date) && isset($project_cms) && isset($project_link)) { ?>
+                     <div class="col-md-2 ms-auto">
+
+                        <ul class="list-unstyled">
+                           <?php if (isset($project_date)) { ?>
+                              <li>
+                                 <div class="h5 mb-1"><?php echo __('Date', 'codeweber'); ?></div>
+                                 <p><?php echo $project_date; ?></p>
+                              </li>
+                           <?php }; ?>
+                           <?php if (isset($project_cms)) { ?>
+                              <li>
+                                 <div class="h5 mb-1"><?php echo __('CMS', 'codeweber'); ?></div>
+                                 <p><?php echo $project_cms; ?></p>
+                              </li>
+                           <?php }; ?>
+                        </ul>
+
+                        <?php if (isset($project_link)) { ?>
+                           <a href="<?php echo $project_link; ?>" class="more hover"><?php echo __('Go to the website', 'codeweber'); ?></a>
                         <?php }; ?>
-                        <?php if (isset($project_cms)) { ?>
-                           <li>
-                              <div class="h5 mb-1"><?php echo __('CMS', 'codeweber'); ?></div>
-                              <p><?php echo $project_cms; ?></p>
-                           </li>
-                        <?php }; ?>
-                     </ul>
-                     <?php if (isset($project_link)) { ?>
-                        <a href="<?php echo $project_link; ?>" class="more hover"><?php echo __('Go to the website', 'codeweber'); ?></a>
-                     <?php }; ?>
-                  </div>
-                  <!--/column -->
+                     </div>
+                     <!--/column -->
+                  <?php }; ?>
                </div>
                <!--/.row -->
             </article>
