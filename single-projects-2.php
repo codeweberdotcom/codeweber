@@ -90,11 +90,9 @@ endif; ?>
                <div class="row gx-0">
 
                   <?php if (isset($project_date) && isset($project_cms) && isset($project_link)) {
-
-                     $class_col_one = "col-md-12";
-                  } else {
-
                      $class_col_one = "col-md-9";
+                  } else {
+                     $class_col_one = "col-md-12";
                   } ?>
 
                   <div class="<?php echo $class_col_one; ?> text-justify">
