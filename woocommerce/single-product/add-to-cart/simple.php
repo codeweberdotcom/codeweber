@@ -61,10 +61,10 @@ if ($product->is_in_stock()) : ?>
 
          <!-- <div>
             <button class="btn btn-block btn-outline-red wishlist_button btn-icon <?php echo GetThemeButton(); ?> px-3 w-100 h-100"><i class="uil uil-heart"></i></button>
-         </div> -->
+         </div> 
          <div class="ps-1">
             <button class="btn btn-block btn-outline-red btn-icon <?php echo GetThemeButton(); ?> px-3 w-100 h-100"><i class="uil uil-exchange"></i></i></button>
-         </div>
+         </div> -->
          <?php do_action('woocommerce_after_add_to_cart_button'); ?>
       </div>
    </form>
