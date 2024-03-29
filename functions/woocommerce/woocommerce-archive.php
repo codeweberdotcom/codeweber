@@ -37,20 +37,35 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add
 add_action('woocommerce_before_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 20);
 
 
-function postheaderblockbefore()
-{
-   global $woocommerce, $product;
-   $product_id = $product->get_id();
+if (!function_exists('postheaderblockbefore')) {
+   function postheaderblockbefore()
+   {
+      global $woocommerce, $product;
+      $product_id = $product->get_id();
 
-   echo '<div ee class="post-header"><div class="d-flex flex-row align-items-center justify-content-between mb-2">';
-   if (class_exists('RankMath')) {
-      $primary_tax =  (get_post_meta($product_id, 'rank_math_primary_product_cat', true));
-      if (!empty($primary_tax)) {
-         $category_primary = get_term_by('id', $primary_tax, 'product_cat');
-         if (!empty($category_primary->name)) {
-            $link_category = get_category_link($primary_tax);
-            $category_primary_col = '<div class="post-category text-ash mb-0">' . $category_primary->name . '</div>';
-            //$category_primary_col = '<div class="post-category text-ash mb-0"><a href="' . $link_category . '" rel="tag">' . $category_primary->name . '</a></div>';
+      echo '<div ee class="post-header"><div class="d-flex flex-row align-items-center justify-content-between mb-2">';
+      if (class_exists('RankMath')) {
+         $primary_tax =  (get_post_meta($product_id, 'rank_math_primary_product_cat', true));
+         if (!empty($primary_tax)) {
+            $category_primary = get_term_by('id', $primary_tax, 'product_cat');
+            if (!empty($category_primary->name)) {
+               $link_category = get_category_link($primary_tax);
+               $category_primary_col = '<div class="post-category text-ash mb-0">' . $category_primary->name . '</div>';
+               //$category_primary_col = '<div class="post-category text-ash mb-0"><a href="' . $link_category . '" rel="tag">' . $category_primary->name . '</a></div>';
+            } else {
+
+               $terms = get_the_terms($product_id, 'product_cat');
+               if ($terms) {
+                  $names = array();
+                  foreach ($terms as $term) {
+                     $names[] = $term->name;
+                  }
+                  $category_primary_col = '<div class="post-category text-ash mb-0">' . join(', ', $names) . '</div>' . PHP_EOL;;
+               }
+
+
+               // $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
+            }
          } else {
 
             $terms = get_the_terms($product_id, 'product_cat');
@@ -66,7 +81,6 @@ function postheaderblockbefore()
             // $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
          }
       } else {
-
          $terms = get_the_terms($product_id, 'product_cat');
          if ($terms) {
             $names = array();
@@ -76,43 +90,30 @@ function postheaderblockbefore()
             $category_primary_col = '<div class="post-category text-ash mb-0">' . join(', ', $names) . '</div>' . PHP_EOL;;
          }
 
-
          // $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
+      };
+      echo $category_primary_col;
+
+
+      // Remove the product rating display on product loops
+      remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+
+      $average = $product->get_average_rating();
+      if ($average == 0) {
+      } elseif ($average == 1) {
+         echo '<span class="ratings one"></span>';
+      } elseif ($average == 2) {
+         echo '<span class="ratings two"></span>';
+      } elseif ($average == 3) {
+         echo '<span class="ratings three"></span>';
+      } elseif ($average == 4) {
+         echo '<span class="ratings four"></span>';
+      } elseif ($average == 5) {
+         echo '<span class="ratings five"></span>';
       }
-   } else {
-      $terms = get_the_terms($product_id, 'product_cat');
-      if ($terms) {
-         $names = array();
-         foreach ($terms as $term) {
-            $names[] = $term->name;
-         }
-         $category_primary_col = '<div class="post-category text-ash mb-0">' . join(', ', $names) . '</div>' . PHP_EOL;;
-      }
-
-      // $category_primary_col = wc_get_product_category_list($product->get_id(), ', ', '<div class="post-category text-ash mb-0">' . _n('', '', count($product->get_category_ids()), 'woocommerce') . ' ', '</div>');
-   };
-   echo $category_primary_col;
-
-
-   // Remove the product rating display on product loops
-   remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
-
-   $average = $product->get_average_rating();
-   if ($average == 0) {
-   } elseif ($average == 1) {
-      echo '<span class="ratings one"></span>';
-   } elseif ($average == 2) {
-      echo '<span class="ratings two"></span>';
-   } elseif ($average == 3) {
-      echo '<span class="ratings three"></span>';
-   } elseif ($average == 4) {
-      echo '<span class="ratings four"></span>';
-   } elseif ($average == 5) {
-      echo '<span class="ratings five"></span>';
+      echo '</div>';
    }
-   echo '</div>';
 }
-
 
 add_action('woocommerce_after_shop_loop_item', 'postheaderblockafter', 25);
 function postheaderblockafter()
@@ -129,17 +130,20 @@ function wishlist_button_loop()
    }
 }
 
-function replace_btn_text($more_dtls_link)
-{
-   if (is_archive()) {
-      $link = $more_dtls_link;
-      $str = str_replace('tabindex="0"', 'tabindex="0" data-bs-toggle="white-tooltip" aria-label="Add to wishlist" data-bs-original-title="' . esc_html__('Add to Wishlist', 'codeweber') . '"', $link);
-      $new_link = htmlspecialchars_decode($str);
-   } else {
-      $new_link = $more_dtls_link;
-   }
 
-   return $new_link;
+if (!function_exists('replace_btn_text')) {
+   function replace_btn_text($more_dtls_link)
+   {
+      if (is_archive()) {
+         $link = $more_dtls_link;
+         $str = str_replace('tabindex="0"', 'tabindex="0" data-bs-toggle="white-tooltip" aria-label="Add to wishlist" data-bs-original-title="' . esc_html__('Add to Wishlist', 'codeweber') . '"', $link);
+         $new_link = htmlspecialchars_decode($str);
+      } else {
+         $new_link = $more_dtls_link;
+      }
+
+      return $new_link;
+   }
 }
 add_filter('tinvwl_wishlist_button', 'replace_btn_text', 10, 2);
 
@@ -155,9 +159,11 @@ function woocommerce_template_loop_product_link_open()
 /**
  * Insert the closing anchor tag for products in the loop.
  */
-function woocommerce_template_loop_product_link_close()
-{
-   echo '</figure>';
+if (!function_exists('woocommerce_template_loop_product_link_close')) {
+   function woocommerce_template_loop_product_link_close()
+   {
+      echo '</figure>';
+   }
 }
 
 
@@ -180,8 +186,10 @@ add_action('codeweber_result_count', 'woocommerce_result_count', 20);
  */
 add_action('wp_logout', 'codeweber_homepage_logout_redirect');
 
-function codeweber_homepage_logout_redirect()
-{
-   wp_redirect(home_url());
-   exit;
+if (!function_exists('codeweber_homepage_logout_redirect')) {
+   function codeweber_homepage_logout_redirect()
+   {
+      wp_redirect(home_url());
+      exit;
+   }
 }
