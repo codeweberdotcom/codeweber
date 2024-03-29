@@ -3,14 +3,17 @@
 /**
  * Show the product title in the product loop. By default this is an H2.
  */
-function woocommerce_template_loop_product_title()
-{
 
-   global $product;
+if (!function_exists('woocommerce_template_loop_product_title')) {
+   function woocommerce_template_loop_product_title()
+   {
 
-   $link = apply_filters('woocommerce_loop_product_link', get_the_permalink(), $product);
+      global $product;
 
-   echo '<h2 class="post-title h3 fs-18 link-dark ' . esc_attr(apply_filters('woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title')) . '"><a href="' . esc_url($link) . '" class="link-dark">' . get_the_title() . '</a></h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+      $link = apply_filters('woocommerce_loop_product_link', get_the_permalink(), $product);
+
+      echo '<h2 class="post-title h3 fs-18 link-dark ' . esc_attr(apply_filters('woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title')) . '"><a href="' . esc_url($link) . '" class="link-dark">' . get_the_title() . '</a></h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+   }
 }
 
 
