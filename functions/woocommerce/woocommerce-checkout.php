@@ -379,7 +379,7 @@ function country_class_change($address_fields)
  * @author        Artem Abramovich
  * @see           https://ru.wordpress.org/plugins/wc-city-select/
  */
-add_filter('woocommerce_states', 'awrr_states_russia');
+/*add_filter('woocommerce_states', 'awrr_states_russia');
 function awrr_states_russia($states)
 {
    $states['RU'] = array(
@@ -472,7 +472,7 @@ function awrr_states_russia($states)
       '94' => 'Луганская Народная Республика',
    );
    return $states;
-}
+}*/
 
 /**
  * Shows the product price on sale (if any) in the checkout table
