@@ -474,6 +474,7 @@ function awrr_states_russia($states)
    return $states;
 }*/
 
+
 /**
  * Shows the product price on sale (if any) in the checkout table
  */

@@ -20,7 +20,7 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-if ($related_products) : ?>
+if (!is_archive() && $related_products) : ?>
 	<section class="wrapper bg-gray related products">
 		<div class="container py-14 py-md-16">
 			<h3 class="h2 mb-6 text-center"><?php echo esc_html__('You Might Also Like', 'codeweber'); ?></h3>
