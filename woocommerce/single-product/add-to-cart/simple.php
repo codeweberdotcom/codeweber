@@ -56,7 +56,7 @@ if ($product->is_in_stock()) : ?>
          do_action('woocommerce_after_add_to_cart_quantity');
          ?>
          <div class="flex-grow-1 mx-2">
-            <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="single_add_to_cart_button button alt btn btn-primary btn-icon btn-icon-start rounded w-100 flex-grow-1"><i class="uil uil-shopping-bag"></i><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
+            <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="single_add_to_cart_button button alt btn btn-primary btn-icon btn-icon-start <?php echo get_theme_mod('codeweber_button_form'); ?> w-100 flex-grow-1"><i class="uil uil-shopping-bag"></i><?php echo esc_html($product->single_add_to_cart_text()); ?></button>
          </div>
 
          <!-- <div>
