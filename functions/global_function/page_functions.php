@@ -674,6 +674,19 @@ if (!function_exists('page_header')) {
             $codeweber['page_settings']['page_header_url'] = NULL;
          }
       }
+
+      if (is_search() && isset($_GET['s'])) {
+         $codeweber['page_settings']['page_header_type'] = get_theme_mod('codeweber_page_blog_header');
+         $codeweber['page_settings']['page_header_title'] = get_theme_mod('blog_title');
+         $codeweber['page_settings']['breadcrumbs'] = 'true';
+
+         $codeweber['page_settings']['page_header_sub_title'] = NULL;
+         $codeweber['page_settings']['angle_class'] = NULL;
+         $codeweber['page_settings']['page_header_color'] = NULL;
+
+         $codeweber['page_settings']['color_breadcrumbs'] = NULL;
+         $codeweber['page_settings']['page_header_url'] = NULL;
+      }
       codeweber_pageheader_generator(
          $codeweber['page_settings']['page_header_title'],
          $codeweber['page_settings']['page_header_sub_title'],
