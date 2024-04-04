@@ -44,7 +44,7 @@ function woocommerce_add_custom_text_after_product_title()
    if (isset($codeweber['page_settings']['page_header_type'])) {
       if ($codeweber['page_settings']['page_header_type'] == 'type_9') { ?>
          <div class="post-header mb-5">
-            <h2 class="post-title display-5"><?php the_title(); ?></h2>
+            <h1 class="post-title display-5"><?php the_title(); ?></h1>
          </div>
 <?php
       }
