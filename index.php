@@ -62,46 +62,35 @@
 					</div>
 				</div>
 				<?php get_sidebar(); ?>
-
 			<?php } elseif (is_search() && isset($_GET['s'])) {
 			?>
-
 				<div class="shop mb-13 col">
-					<ul class="products list-unstyled row gx-md-8 gy-5">
 
-						<?php while (have_posts()) :
-							the_post();
-							get_template_part('templates/content/loop', 'search');
-						endwhile;
-						codeweber_pagination(); ?>
-						<!-- /post pagination -->
-					</ul>
+					<?php if (have_posts()) : ?>
 
+						<ul class="products list-unstyled row gx-md-8 gy-5">
+							<?php while (have_posts()) :
+								the_post();
+								get_template_part('templates/content/loop', 'search');
+							endwhile;
+							codeweber_pagination(); ?>
+							<!-- /post pagination -->
+						</ul>
 
+					<?php else : ?>
+						<p><?php _e('No Search Results found', 'codeweber'); ?></p>
+						<?php get_search_form(); ?>
+
+					<?php endif; ?>
 
 				</div>
-
-
-
 				<?php get_sidebar(); ?>
-
-
-
-
-
-
-
-
-
-
-
 			<?php } elseif (have_posts()) {
 				if (is_active_sidebar('sidebar-main') || has_action('sidebar_main_start') || has_action('sidebar_main_end')) {
 					$class_content = 'col-lg-8';
 				} else {
 					$class_content = 'col';
 				}
-
 				if ($codeweber['page_settings']['page_header_type'] == 'type_5' || $codeweber['page_settings']['page_header_type'] == 'type_7') {
 					$class_content = 'col-lg-10 mx-auto';
 				} ?>
@@ -118,7 +107,6 @@
 				<?php if ($codeweber['page_settings']['page_header_type'] !== 'type_5' && $codeweber['page_settings']['page_header_type'] !== 'type_7') {
 					get_sidebar();
 				}
-
 				?>
 			<?php
 			} else {

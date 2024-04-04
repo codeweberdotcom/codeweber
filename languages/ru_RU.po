@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2023-10-18 10:40+0000\n"
+"PO-Revision-Date: 2024-04-04 12:09+0000\n"
 "Last-Translator: Korablev Denis\n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -133,7 +133,7 @@ msgstr "Добавить Услугу"
 msgid "Add Staff"
 msgstr "Добавить Сотрудника"
 
-#: functions/woocommerce/woocommerce-archive.php:133
+#: functions/woocommerce/woocommerce-archive.php:139
 msgid "Add to Wishlist"
 msgstr "В Закладки"
 
@@ -232,11 +232,11 @@ msgstr "Все Сотрудники"
 
 #: templates/header/header-sandbox-05.php:126
 #: templates/header/header-sandbox-08.php:136
-#: templates/header/header-sandbox-09.php:136
+#: templates/header/header-sandbox-09.php:147
 msgid "Already have an account?"
 msgstr "Уже есть аккаунт?"
 
-#: functions/customize.php:600 functions/global_function/404_functions.php:224
+#: functions/customize.php:601 functions/global_function/404_functions.php:224
 #: functions/global_function/blog_functions.php:224
 #: functions/global_function/faq_functions.php:222
 #: functions/global_function/project_functions.php:217
@@ -266,21 +266,21 @@ msgstr ""
 msgid "Back to top"
 msgstr "Вернуться наверх"
 
-#: functions/customize.php:376 functions/customize.php:516
+#: functions/customize.php:376 functions/customize.php:517
 #: functions/global_function/404_functions.php:134
-#: functions/global_function/404_functions.php:298
+#: functions/global_function/404_functions.php:299
 #: functions/global_function/blog_functions.php:134
-#: functions/global_function/blog_functions.php:375
+#: functions/global_function/blog_functions.php:376
 #: functions/global_function/faq_functions.php:134
-#: functions/global_function/faq_functions.php:296
+#: functions/global_function/faq_functions.php:297
 #: functions/global_function/project_functions.php:130
-#: functions/global_function/project_functions.php:312
+#: functions/global_function/project_functions.php:313
 #: functions/global_function/services_functions.php:136
-#: functions/global_function/services_functions.php:300
+#: functions/global_function/services_functions.php:301
 #: functions/global_function/testimonials_functions.php:140
-#: functions/global_function/testimonials_functions.php:304
+#: functions/global_function/testimonials_functions.php:305
 #: functions/woocommerce/woocommerce_customizer.php:111
-#: functions/woocommerce/woocommerce_customizer.php:432
+#: functions/woocommerce/woocommerce_customizer.php:434
 msgid "Background Color"
 msgstr "Цвет Бэкграунда"
 
@@ -308,7 +308,7 @@ msgstr "Категории Блога"
 msgid "blog settings"
 msgstr "Настройки блога"
 
-#: functions/customize.php:579 functions/global_function/404_functions.php:202
+#: functions/customize.php:580 functions/global_function/404_functions.php:202
 #: functions/global_function/blog_functions.php:202
 #: functions/global_function/faq_functions.php:200
 #: functions/global_function/project_functions.php:196
@@ -415,7 +415,7 @@ msgstr "Клиенты"
 msgid "Clients list"
 msgstr "Список Клиентов"
 
-#: single-projects-1.php:147 single-projects-2.php:110 single-projects-3.php:91
+#: single-projects-1.php:147 single-projects-2.php:119 single-projects-3.php:91
 #: single-projects.php:114
 msgid "CMS"
 msgstr "Платформа"
@@ -489,7 +489,7 @@ msgstr "Один комментарий  от &ldquo;%s&rdquo;"
 
 #: templates/header/header-sandbox-05.php:121
 #: templates/header/header-sandbox-08.php:131
-#: templates/header/header-sandbox-09.php:131
+#: templates/header/header-sandbox-09.php:142
 msgid "Confirm Password"
 msgstr "Подтвердить пароль"
 
@@ -517,12 +517,12 @@ msgstr "Контент с отступом?"
 msgid "Customer details"
 msgstr "Информация о покупателе"
 
-#: functions/customize.php:468 functions/customize.php:626
+#: functions/customize.php:468 functions/customize.php:627
 #: functions/global_function/404_functions.php:114
 #: functions/global_function/404_functions.php:251
 #: functions/global_function/blog_functions.php:114
 #: functions/global_function/blog_functions.php:251
-#: functions/global_function/blog_functions.php:302
+#: functions/global_function/blog_functions.php:303
 #: functions/global_function/faq_functions.php:114
 #: functions/global_function/faq_functions.php:249
 #: functions/global_function/project_functions.php:111
@@ -533,11 +533,11 @@ msgstr "Информация о покупателе"
 #: functions/global_function/testimonials_functions.php:257
 #: functions/woocommerce/woocommerce_customizer.php:212
 #: functions/woocommerce/woocommerce_customizer.php:332
-#: functions/woocommerce/woocommerce_customizer.php:383
+#: functions/woocommerce/woocommerce_customizer.php:384
 msgid "Dark"
 msgstr "Темный"
 
-#: single-projects-1.php:141 single-projects-2.php:104 single-projects-3.php:85
+#: single-projects-1.php:141 single-projects-2.php:113 single-projects-3.php:85
 #: single-projects.php:108
 msgid "Date"
 msgstr "Дата"
@@ -547,59 +547,59 @@ msgstr "Дата"
 #: functions/global_function/404_functions.php:207
 #: functions/global_function/404_functions.php:229
 #: functions/global_function/404_functions.php:252
-#: functions/global_function/404_functions.php:280
+#: functions/global_function/404_functions.php:281
 #: functions/global_function/blog_functions.php:93
 #: functions/global_function/blog_functions.php:116
 #: functions/global_function/blog_functions.php:207
 #: functions/global_function/blog_functions.php:229
 #: functions/global_function/blog_functions.php:252
-#: functions/global_function/blog_functions.php:280
-#: functions/global_function/blog_functions.php:303
-#: functions/global_function/blog_functions.php:357
+#: functions/global_function/blog_functions.php:281
+#: functions/global_function/blog_functions.php:304
+#: functions/global_function/blog_functions.php:358
 #: functions/global_function/faq_functions.php:93
 #: functions/global_function/faq_functions.php:116
 #: functions/global_function/faq_functions.php:205
 #: functions/global_function/faq_functions.php:227
 #: functions/global_function/faq_functions.php:250
-#: functions/global_function/faq_functions.php:278
+#: functions/global_function/faq_functions.php:279
 #: functions/global_function/project_functions.php:92
 #: functions/global_function/project_functions.php:113
 #: functions/global_function/project_functions.php:201
 #: functions/global_function/project_functions.php:222
 #: functions/global_function/project_functions.php:243
-#: functions/global_function/project_functions.php:294
+#: functions/global_function/project_functions.php:295
 #: functions/global_function/services_functions.php:95
 #: functions/global_function/services_functions.php:118
 #: functions/global_function/services_functions.php:209
 #: functions/global_function/services_functions.php:231
 #: functions/global_function/services_functions.php:254
-#: functions/global_function/services_functions.php:282
+#: functions/global_function/services_functions.php:283
 #: functions/global_function/testimonials_functions.php:99
 #: functions/global_function/testimonials_functions.php:122
 #: functions/global_function/testimonials_functions.php:213
 #: functions/global_function/testimonials_functions.php:235
 #: functions/global_function/testimonials_functions.php:258
-#: functions/global_function/testimonials_functions.php:286
+#: functions/global_function/testimonials_functions.php:287
 #: functions/woocommerce/woocommerce_customizer.php:191
 #: functions/woocommerce/woocommerce_customizer.php:214
 #: functions/woocommerce/woocommerce_customizer.php:288
 #: functions/woocommerce/woocommerce_customizer.php:310
 #: functions/woocommerce/woocommerce_customizer.php:333
-#: functions/woocommerce/woocommerce_customizer.php:361
-#: functions/woocommerce/woocommerce_customizer.php:384
-#: functions/woocommerce/woocommerce_customizer.php:413
+#: functions/woocommerce/woocommerce_customizer.php:362
+#: functions/woocommerce/woocommerce_customizer.php:385
+#: functions/woocommerce/woocommerce_customizer.php:415
 msgid "Default"
 msgstr "По умолчанию"
 
-#: functions/customize.php:490 functions/global_function/404_functions.php:279
-#: functions/global_function/blog_functions.php:279
-#: functions/global_function/blog_functions.php:356
-#: functions/global_function/faq_functions.php:277
-#: functions/global_function/project_functions.php:293
-#: functions/global_function/services_functions.php:281
-#: functions/global_function/testimonials_functions.php:285
-#: functions/woocommerce/woocommerce_customizer.php:360
-#: functions/woocommerce/woocommerce_customizer.php:412
+#: functions/customize.php:490 functions/global_function/404_functions.php:280
+#: functions/global_function/blog_functions.php:280
+#: functions/global_function/blog_functions.php:357
+#: functions/global_function/faq_functions.php:278
+#: functions/global_function/project_functions.php:294
+#: functions/global_function/services_functions.php:282
+#: functions/global_function/testimonials_functions.php:286
+#: functions/woocommerce/woocommerce_customizer.php:361
+#: functions/woocommerce/woocommerce_customizer.php:414
 msgid "Disable"
 msgstr "Отключено"
 
@@ -613,7 +613,7 @@ msgstr "Документы"
 
 #: templates/header/header-sandbox-05.php:81
 #: templates/header/header-sandbox-08.php:91
-#: templates/header/header-sandbox-09.php:91
+#: templates/header/header-sandbox-09.php:102
 msgid "Don't have an account?"
 msgstr "Еще нет аккаунта?"
 
@@ -663,8 +663,8 @@ msgstr "Или здесь"
 #: templates/header/header-sandbox-05.php:111
 #: templates/header/header-sandbox-08.php:80
 #: templates/header/header-sandbox-08.php:121
-#: templates/header/header-sandbox-09.php:80
-#: templates/header/header-sandbox-09.php:121
+#: templates/header/header-sandbox-09.php:91
+#: templates/header/header-sandbox-09.php:132
 msgid "Email"
 msgstr "Email"
 
@@ -760,7 +760,7 @@ msgstr "Основное изображение для сотрудника"
 
 #: templates/header/header-sandbox-05.php:78
 #: templates/header/header-sandbox-08.php:76
-#: templates/header/header-sandbox-09.php:76
+#: templates/header/header-sandbox-09.php:87
 msgid "Fill your email and password to sign in."
 msgstr "Заполните E-mail и пароль для входа"
 
@@ -778,7 +778,7 @@ msgstr "Фильтр:"
 msgid "Follow Us"
 msgstr "Или здесь"
 
-#: functions/customize.php:668
+#: functions/customize.php:669
 msgid "Footer"
 msgstr "Футер"
 
@@ -798,13 +798,13 @@ msgstr "Меню Футера 2"
 msgid "Footer Menu 3"
 msgstr "Меню Футера 3"
 
-#: functions/customize.php:650
+#: functions/customize.php:651
 msgid "Footer Options"
 msgstr "Настройки Футера"
 
 #: templates/header/header-sandbox-05.php:80
 #: templates/header/header-sandbox-08.php:90
-#: templates/header/header-sandbox-09.php:90
+#: templates/header/header-sandbox-09.php:101
 msgid "Forgot Password?"
 msgstr "Забыли пароль?"
 
@@ -899,7 +899,7 @@ msgstr "Перейти на Главную"
 msgid "Go to service"
 msgstr "Перейти к услуге"
 
-#: single-projects-1.php:153 single-projects-2.php:116 single-projects-3.php:97
+#: single-projects-1.php:153 single-projects-2.php:126 single-projects-3.php:97
 #: single-projects.php:120
 msgid "Go to the website"
 msgstr "Перейти на сайт"
@@ -1069,12 +1069,12 @@ msgstr ""
 msgid "Let’s Talk"
 msgstr "Обсудим ваш проект?"
 
-#: functions/customize.php:469 functions/customize.php:625
+#: functions/customize.php:469 functions/customize.php:626
 #: functions/global_function/404_functions.php:115
 #: functions/global_function/404_functions.php:250
 #: functions/global_function/blog_functions.php:115
 #: functions/global_function/blog_functions.php:250
-#: functions/global_function/blog_functions.php:301
+#: functions/global_function/blog_functions.php:302
 #: functions/global_function/faq_functions.php:115
 #: functions/global_function/faq_functions.php:248
 #: functions/global_function/project_functions.php:112
@@ -1085,7 +1085,7 @@ msgstr "Обсудим ваш проект?"
 #: functions/global_function/testimonials_functions.php:256
 #: functions/woocommerce/woocommerce_customizer.php:213
 #: functions/woocommerce/woocommerce_customizer.php:331
-#: functions/woocommerce/woocommerce_customizer.php:382
+#: functions/woocommerce/woocommerce_customizer.php:383
 msgid "Light"
 msgstr "Светлый"
 
@@ -1178,7 +1178,7 @@ msgstr "Прайс-листы"
 
 #: templates/header/header-sandbox-05.php:107
 #: templates/header/header-sandbox-08.php:117
-#: templates/header/header-sandbox-09.php:117
+#: templates/header/header-sandbox-09.php:128
 msgid "Name"
 msgstr "Ваше имя"
 
@@ -1247,11 +1247,15 @@ msgstr "Нет Прайс-листов"
 msgid "No Price lists found in trash"
 msgstr "Нет Прайс-листов в корзине"
 
+#: index.php:81
+msgid "No Search Results found"
+msgstr "Нет результатов поиска"
+
 #: functions/admin.php:159
 msgid "No Thumbnail For Post"
 msgstr "Нет превью"
 
-#: functions/customize.php:583 functions/customize.php:604
+#: functions/customize.php:584 functions/customize.php:605
 #: functions/global_function/404_functions.php:206
 #: functions/global_function/404_functions.php:228
 #: functions/global_function/blog_functions.php:206
@@ -1291,7 +1295,7 @@ msgstr "Адрес Офиса"
 msgid "Office addresses"
 msgstr "Адреса Офисов"
 
-#: functions/customize.php:582 functions/customize.php:603
+#: functions/customize.php:583 functions/customize.php:604
 #: functions/global_function/404_functions.php:205
 #: functions/global_function/404_functions.php:227
 #: functions/global_function/blog_functions.php:205
@@ -1321,8 +1325,8 @@ msgstr "Опции Темы"
 #: templates/header/header-sandbox-05.php:127
 #: templates/header/header-sandbox-08.php:92
 #: templates/header/header-sandbox-08.php:137
-#: templates/header/header-sandbox-09.php:92
-#: templates/header/header-sandbox-09.php:137
+#: templates/header/header-sandbox-09.php:103
+#: templates/header/header-sandbox-09.php:148
 msgid "or"
 msgstr "или"
 
@@ -1352,15 +1356,15 @@ msgstr "Наши новости"
 msgid "Page"
 msgstr ""
 
-#: functions/global_function/404_functions.php:360
+#: functions/global_function/404_functions.php:361
 msgid "Page Header 404 Background"
 msgstr ""
 
-#: functions/global_function/blog_functions.php:437
+#: functions/global_function/blog_functions.php:438
 msgid "Page Header Blog Background"
 msgstr ""
 
-#: functions/global_function/faq_functions.php:358
+#: functions/global_function/faq_functions.php:359
 msgid "Page Header Faq Background"
 msgstr ""
 
@@ -1368,16 +1372,16 @@ msgstr ""
 msgid "Page Header Options"
 msgstr "Настройки Заголовка Страницы"
 
-#: functions/global_function/project_functions.php:374
+#: functions/global_function/project_functions.php:375
 msgid "Page Header Projects Background"
 msgstr ""
 
-#: functions/customize.php:640
-#: functions/global_function/services_functions.php:361
+#: functions/customize.php:641
+#: functions/global_function/services_functions.php:362
 msgid "Page Header Service Background"
 msgstr "Бэкграунд Хедера Страницы"
 
-#: functions/global_function/testimonials_functions.php:365
+#: functions/global_function/testimonials_functions.php:366
 msgid "Page Header Testimonials Background"
 msgstr ""
 
@@ -1412,8 +1416,8 @@ msgstr "Родительский Сотрудник"
 #: templates/header/header-sandbox-05.php:116
 #: templates/header/header-sandbox-08.php:85
 #: templates/header/header-sandbox-08.php:126
-#: templates/header/header-sandbox-09.php:85
-#: templates/header/header-sandbox-09.php:126
+#: templates/header/header-sandbox-09.php:96
+#: templates/header/header-sandbox-09.php:137
 msgid "Password"
 msgstr "Пароль"
 
@@ -1600,7 +1604,7 @@ msgstr "Нет Проектов в Корзине"
 msgid "Quantity"
 msgstr "Кол-во"
 
-#: functions/global_function/testimonials_functions.php:418
+#: functions/global_function/testimonials_functions.php:419
 #: templates/content/loop.php:14
 #: templates/flexible-content/sliders/slider_1/slider_1.php:28
 #: templates/flexible-content/sliders/slider_2/slider_2.php:26
@@ -1620,13 +1624,13 @@ msgstr "Читать еще"
 msgid "Recent Posts"
 msgstr "Свежие статьи"
 
-#: functions/woocommerce/woocommerce_customizer.php:411
+#: functions/woocommerce/woocommerce_customizer.php:413
 msgid "Recomended"
 msgstr ""
 
 #: templates/header/header-sandbox-05.php:103
 #: templates/header/header-sandbox-08.php:113
-#: templates/header/header-sandbox-09.php:113
+#: templates/header/header-sandbox-09.php:124
 msgid "Registration takes less than a minute."
 msgstr "Регистрация занимает менее минуты."
 
@@ -1714,7 +1718,7 @@ msgstr "Поиск Сотрудника"
 msgid "Secondary Header"
 msgstr "Вторичный Хедер"
 
-#: functions/woocommerce/woocommerce_customizer.php:400
+#: functions/woocommerce/woocommerce_customizer.php:401
 msgid "Secondary Header Product"
 msgstr ""
 
@@ -1828,37 +1832,37 @@ msgstr "Магазин"
 
 #: templates/header/header-sandbox-08.php:53
 #: templates/header/header-sandbox-08.php:87
-#: templates/header/header-sandbox-09.php:53
-#: templates/header/header-sandbox-09.php:87
+#: templates/header/header-sandbox-09.php:64
+#: templates/header/header-sandbox-09.php:98
 msgid "Sign In"
 msgstr "Войти"
 
 #: templates/header/header-sandbox-05.php:126
 #: templates/header/header-sandbox-08.php:136
-#: templates/header/header-sandbox-09.php:136
+#: templates/header/header-sandbox-09.php:147
 msgid "Sign in"
 msgstr "Войти"
 
 #: templates/header/header-sandbox-05.php:55
 #: templates/header/header-sandbox-05.php:123
 #: templates/header/header-sandbox-08.php:133
-#: templates/header/header-sandbox-09.php:133
+#: templates/header/header-sandbox-09.php:144
 msgid "Sign Up"
 msgstr "Регистрация"
 
 #: templates/header/header-sandbox-05.php:81
 #: templates/header/header-sandbox-08.php:91
-#: templates/header/header-sandbox-09.php:91
+#: templates/header/header-sandbox-09.php:102
 msgid "Sign up"
 msgstr "Регистрация"
 
 #: templates/header/header-sandbox-05.php:102
 #: templates/header/header-sandbox-08.php:112
-#: templates/header/header-sandbox-09.php:112
+#: templates/header/header-sandbox-09.php:123
 msgid "Sign up to"
 msgstr "Войти в "
 
-#: functions/global_function/blog_functions.php:321
+#: functions/global_function/blog_functions.php:322
 msgid "Single Secondary Header"
 msgstr ""
 
@@ -2028,7 +2032,7 @@ msgstr "Сайдбар Отзывов"
 msgid "Text Blog Archive Header color"
 msgstr ""
 
-#: functions/global_function/blog_functions.php:298
+#: functions/global_function/blog_functions.php:299
 msgid "Text Blog Single Header Color"
 msgstr ""
 
@@ -2036,11 +2040,11 @@ msgstr ""
 msgid "Text Color Page Woo Header Archive"
 msgstr ""
 
-#: functions/woocommerce/woocommerce_customizer.php:379
+#: functions/woocommerce/woocommerce_customizer.php:380
 msgid "Text Color Page Woo Header Single"
 msgstr ""
 
-#: functions/customize.php:622 functions/global_function/404_functions.php:247
+#: functions/customize.php:623 functions/global_function/404_functions.php:247
 #: functions/global_function/faq_functions.php:245
 #: functions/global_function/project_functions.php:238
 #: functions/global_function/services_functions.php:249
@@ -2062,7 +2066,7 @@ msgid ""
 "can be done here"
 msgstr ""
 
-#: functions.php:51
+#: functions.php:60
 #, php-format
 msgid ""
 "This theme can't work without ACF PRO plugin. <a href=\"%s\">Please login to "
@@ -2073,7 +2077,7 @@ msgstr ""
 
 #: templates/flexible-content/contact/contact_6_1/contact_6_1.php:173
 msgid "Time working"
-msgstr ""
+msgstr "Режим работы"
 
 #: single-projects-1.php:125 single-projects-2.php:88 single-projects-3.php:172
 #: single-projects.php:92 single-projects.php:163
@@ -2128,97 +2132,108 @@ msgstr "Тип"
 
 #: functions/customize.php:491 functions/global_function/404_functions.php:271
 #: functions/global_function/blog_functions.php:271
-#: functions/global_function/blog_functions.php:324
+#: functions/global_function/blog_functions.php:325
 #: functions/global_function/faq_functions.php:269
 #: functions/global_function/project_functions.php:285
 #: functions/global_function/services_functions.php:273
 #: functions/global_function/testimonials_functions.php:277
 #: functions/woocommerce/woocommerce_customizer.php:352
-#: functions/woocommerce/woocommerce_customizer.php:403
+#: functions/woocommerce/woocommerce_customizer.php:404
 msgid "Type 1"
 msgstr "Тип 1"
 
+#: functions/customize.php:499 functions/global_function/404_functions.php:279
+#: functions/global_function/blog_functions.php:279
+#: functions/global_function/faq_functions.php:277
+#: functions/global_function/project_functions.php:293
+#: functions/global_function/services_functions.php:281
+#: functions/global_function/testimonials_functions.php:285
+#: functions/woocommerce/woocommerce_customizer.php:360
+#: functions/woocommerce/woocommerce_customizer.php:412
+msgid "Type 10"
+msgstr ""
+
 #: functions/customize.php:492 functions/global_function/404_functions.php:272
 #: functions/global_function/blog_functions.php:272
-#: functions/global_function/blog_functions.php:328
+#: functions/global_function/blog_functions.php:329
 #: functions/global_function/faq_functions.php:270
 #: functions/global_function/project_functions.php:286
 #: functions/global_function/services_functions.php:274
 #: functions/global_function/testimonials_functions.php:278
 #: functions/woocommerce/woocommerce_customizer.php:353
-#: functions/woocommerce/woocommerce_customizer.php:404
+#: functions/woocommerce/woocommerce_customizer.php:405
 msgid "Type 2"
 msgstr "Тип 2"
 
 #: functions/customize.php:493 functions/global_function/404_functions.php:273
 #: functions/global_function/blog_functions.php:273
-#: functions/global_function/blog_functions.php:332
+#: functions/global_function/blog_functions.php:333
 #: functions/global_function/faq_functions.php:271
 #: functions/global_function/project_functions.php:287
 #: functions/global_function/services_functions.php:275
 #: functions/global_function/testimonials_functions.php:279
 #: functions/woocommerce/woocommerce_customizer.php:354
-#: functions/woocommerce/woocommerce_customizer.php:405
+#: functions/woocommerce/woocommerce_customizer.php:406
 msgid "Type 3"
 msgstr "Тип 3"
 
 #: functions/customize.php:494 functions/global_function/404_functions.php:274
 #: functions/global_function/blog_functions.php:274
-#: functions/global_function/blog_functions.php:336
+#: functions/global_function/blog_functions.php:337
 #: functions/global_function/faq_functions.php:272
 #: functions/global_function/project_functions.php:288
 #: functions/global_function/services_functions.php:276
 #: functions/global_function/testimonials_functions.php:280
 #: functions/woocommerce/woocommerce_customizer.php:355
-#: functions/woocommerce/woocommerce_customizer.php:406
+#: functions/woocommerce/woocommerce_customizer.php:407
 msgid "Type 4"
 msgstr "Тип 4"
 
 #: functions/customize.php:495 functions/global_function/404_functions.php:275
 #: functions/global_function/blog_functions.php:275
-#: functions/global_function/blog_functions.php:340
+#: functions/global_function/blog_functions.php:341
 #: functions/global_function/faq_functions.php:273
 #: functions/global_function/project_functions.php:289
 #: functions/global_function/services_functions.php:277
 #: functions/global_function/testimonials_functions.php:281
 #: functions/woocommerce/woocommerce_customizer.php:356
-#: functions/woocommerce/woocommerce_customizer.php:407
+#: functions/woocommerce/woocommerce_customizer.php:408
 msgid "Type 5"
 msgstr ""
 
 #: functions/customize.php:496 functions/global_function/404_functions.php:276
 #: functions/global_function/blog_functions.php:276
-#: functions/global_function/blog_functions.php:344
+#: functions/global_function/blog_functions.php:345
 #: functions/global_function/faq_functions.php:274
 #: functions/global_function/project_functions.php:290
 #: functions/global_function/services_functions.php:278
 #: functions/global_function/testimonials_functions.php:282
 #: functions/woocommerce/woocommerce_customizer.php:357
-#: functions/woocommerce/woocommerce_customizer.php:408
+#: functions/woocommerce/woocommerce_customizer.php:409
 msgid "Type 6"
 msgstr ""
 
 #: functions/customize.php:497 functions/global_function/404_functions.php:277
 #: functions/global_function/blog_functions.php:277
-#: functions/global_function/blog_functions.php:348
+#: functions/global_function/blog_functions.php:349
 #: functions/global_function/faq_functions.php:275
 #: functions/global_function/project_functions.php:291
 #: functions/global_function/services_functions.php:279
 #: functions/global_function/testimonials_functions.php:283
 #: functions/woocommerce/woocommerce_customizer.php:358
-#: functions/woocommerce/woocommerce_customizer.php:409
+#: functions/woocommerce/woocommerce_customizer.php:410
 msgid "Type 7"
 msgstr ""
 
 #: functions/customize.php:498 functions/global_function/404_functions.php:278
 #: functions/global_function/blog_functions.php:278
-#: functions/global_function/blog_functions.php:352
+#: functions/global_function/blog_functions.php:353
 #: functions/global_function/faq_functions.php:276
 #: functions/global_function/project_functions.php:292
 #: functions/global_function/services_functions.php:280
 #: functions/global_function/testimonials_functions.php:284
 #: functions/woocommerce/woocommerce_customizer.php:359
-#: functions/woocommerce/woocommerce_customizer.php:410
+#: functions/woocommerce/woocommerce_customizer.php:411
 msgid "Type 8"
 msgstr ""
 
@@ -2309,7 +2324,7 @@ msgstr ""
 
 #: templates/header/header-sandbox-05.php:77
 #: templates/header/header-sandbox-08.php:75
-#: templates/header/header-sandbox-09.php:75
+#: templates/header/header-sandbox-09.php:86
 msgid "Welcome Back"
 msgstr "Добро пожаловать"
 
@@ -2321,7 +2336,7 @@ msgstr ""
 msgid "Woo Archive Title"
 msgstr ""
 
-#: functions/woocommerce/woocommerce_customizer.php:494
+#: functions/woocommerce/woocommerce_customizer.php:496
 msgid "Woo Header Blog Background"
 msgstr ""
 
@@ -2370,7 +2385,7 @@ msgid "You Might Also Like"
 msgstr "Вам также может понравится"
 
 #: functions/woocommerce/woocommerce-offcanvas-cart.php:53
-#: templates/header/header-sandbox-woo-01.php:142
+#: templates/header/header-sandbox-woo-01.php:144
 msgid "Your cart"
 msgstr "Ваша корзина"
 
