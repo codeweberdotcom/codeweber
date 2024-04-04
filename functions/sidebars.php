@@ -93,6 +93,15 @@ if (!function_exists('codeweber_sidebars')) {
 			'before_title'  => '<h2 class="rounded">',
 			'after_title'   => '</h2>',
 		));
+
+		register_sidebar(array(
+			'name' => 'Search Sidebar',
+			'id' => 'search_sidebar',
+			'before_widget' => '<div class="wpc-filters-widget-wrapper" id="search-widget">',
+			'after_widget' => '</div>',
+			'before_title' => '<div class="widget-title">',
+			'after_title' => '</div>',
+		));
 	}
 }
 

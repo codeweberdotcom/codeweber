@@ -8,6 +8,7 @@
 	<div class="container<?php echo $container_class; ?>">
 		<div class="row gx-lg-8 gx-xl-12 <?php echo $content_class; ?>">
 			<?php
+
 			/** Faq Content */ ?>
 			<?php if (is_post_type_archive('faq')  || is_tax('faq_categories') || is_tax('faq_tag')) {
 				if (is_active_sidebar('sidebar-faq') || has_action('sidebar_faq_start') || has_action('sidebar_faq_end')) {
@@ -61,6 +62,38 @@
 					</div>
 				</div>
 				<?php get_sidebar(); ?>
+
+			<?php } elseif (is_search() && isset($_GET['s'])) {
+			?>
+
+				<div class="shop mb-13 col">
+					<ul class="products list-unstyled row gx-md-8 gy-5">
+
+						<?php while (have_posts()) :
+							the_post();
+							get_template_part('templates/content/loop', 'search');
+						endwhile;
+						codeweber_pagination(); ?>
+						<!-- /post pagination -->
+					</ul>
+
+
+
+				</div>
+
+
+
+				<?php get_sidebar(); ?>
+
+
+
+
+
+
+
+
+
+
 
 			<?php } elseif (have_posts()) {
 				if (is_active_sidebar('sidebar-main') || has_action('sidebar_main_start') || has_action('sidebar_main_end')) {

@@ -30,6 +30,17 @@ if (is_page() && !dynamic_sidebar()) { ?>
 		</aside> <!-- #sidebar-main-wrapper -->
 	<?php }; ?>
 
+
+<?php } elseif (is_search() && isset($_GET['s'])) { ?>
+	<?php if (is_active_sidebar('search_sidebar') || has_action('sidebar_search_start') || has_action('sidebar_search_end')) { ?>
+		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
+			<?php do_action('sidebar_search_start'); ?>
+			<?php dynamic_sidebar('search_sidebar'); ?>
+			<?php do_action('sidebar_search_end'); ?>
+		</aside> <!-- #sidebar-main-wrapper -->
+	<?php }; ?>
+
+
 <?php } elseif (is_post_type_archive('faq') || is_singular('faq') || is_tax('faq_tag') || is_tax('faq_categories')) { ?>
 	<?php if (is_active_sidebar('sidebar_faq') || has_action('sidebar_faq_start') || has_action('sidebar_faq_end')) { ?>
 		<aside class="col-sm-4 mt-5 mt-md-0 ps-md-5">
