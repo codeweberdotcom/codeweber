@@ -45,7 +45,7 @@ if (!function_exists('codeweber_meta_blog')) {
                </li>
             </ul>
             </p>
-<?php };
+   <?php };
       }
    }
 }
@@ -710,8 +710,13 @@ add_action('codeweber_after_header', 'page_header', 20);
 
 function search_widget()
 {
+   ?>
+   <div class="mb-5"> <?php
+                        get_search_form();
 
-   get_search_form();
+                        ?>
+   </div>
+<?php
 }
 
 add_action('sidebar_search_end', 'search_widget', 90);
