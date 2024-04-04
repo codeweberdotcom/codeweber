@@ -706,3 +706,12 @@ if (!function_exists('page_header')) {
 }
 
 add_action('codeweber_after_header', 'page_header', 20);
+
+
+function search_widget()
+{
+
+   get_search_form();
+}
+
+add_action('sidebar_search_end', 'search_widget', 90);
