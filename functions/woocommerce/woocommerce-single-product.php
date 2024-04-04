@@ -105,7 +105,7 @@ function woocommerce_quantity_input($args = array(), $product = null, $echo = tr
       }
       $options .= '<option value="' . $count . '"' . $selected . '>' . $count . '</option>';
    }
-   $html = '<div><div class="quantity form-select-wrapper"><select class="form-select" name="' . $args['input_name'] . '">' . $options . '</select></div><!--/.form-select-wrapper --></div>';
+   $html = '<div><div class="quantity form-select-wrapper"><select class="form-select ' . get_theme_mod('codeweber_button_form') . ' " name="' . $args['input_name'] . '">' . $options . '</select></div><!--/.form-select-wrapper --></div>';
    if ($echo) {
       echo $html;
    } else {
