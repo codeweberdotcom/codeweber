@@ -156,6 +156,7 @@ function CPT_Blog_Settings($wp_customize)
             ' bg-whatsapp' => 'Whatsapp',
             ' bg-facebook' => 'Facebook',
             ' bg-dewalt' => 'Dewalt',
+            ' bg-atv' => 'ATV',
             ' bg-bitbucket' => 'Bitbucket',
             ' bg-dark'     => 'Dark',
             ' bg-light'     => 'Light',
@@ -179,9 +180,10 @@ function CPT_Blog_Settings($wp_customize)
             ' bg-soft-telegram' => 'Soft Telegram',
             ' bg-soft-whatsapp' => 'Soft Whatsapp',
             ' bg-soft-facebook' => 'Soft Facebook',
-            'bg-soft-bitbucket' => 'Soft Bitbucket',
-            'bg-soft-pinterest' => 'Soft Pinterest',
-            ' bg-soft-dewalt' => 'Soft Dewalt'
+            ' bg-soft-bitbucket' => 'Soft Bitbucket',
+            ' bg-soft-pinterest' => 'Soft Pinterest',
+            ' bg-soft-dewalt' => 'Soft Dewalt',
+            ' bg-soft-atv' => 'ATV',
          )
       )
    );
@@ -396,6 +398,7 @@ function CPT_Blog_Settings($wp_customize)
             'bg-facebook' => 'Facebook',
             'bg-bitbucket' => 'Bitbucket',
             'bg-dewalt' => 'Dewalt',
+            'bg-atv' => 'ATV',
             'bg-dark'     => 'Dark',
             'bg-light'     => 'Light',
             'bg-primary'     => 'Primary',
@@ -420,6 +423,7 @@ function CPT_Blog_Settings($wp_customize)
             'bg-soft-facebook' => 'Soft Facebook',
             'bg-soft-bitbucket' => 'Soft Bitbucket',
             'bg-soft-dewalt' => 'Soft Dewalt',
+            'bg-soft-atv' => 'Soft ATV',
             'bg-soft-pinterest' => 'Soft Pinterest',
          )
       )

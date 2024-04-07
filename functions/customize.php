@@ -147,6 +147,7 @@ function codeweber_register_theme_customizer($wp_customize)
             'whatsapp' => 'Whatsapp',
             'facebook' => 'Facebook',
             'dewalt' => 'Dewalt',
+            'atv' => 'ATV',
             'bitbucket' => 'Bitbucket',
             'dark'     => 'Dark',
             'light'     => 'Light',
@@ -399,6 +400,7 @@ function codeweber_register_theme_customizer($wp_customize)
             ' bg-facebook' => 'Facebook',
             ' bg-bitbucket' => 'Bitbucket',
             ' bg-dewalt' => 'Dewalt',
+            ' bg-atv' => 'ATV',
             ' bg-dark'     => 'Dark',
             ' bg-light'     => 'Light',
             ' bg-primary'     => 'Primary',
@@ -423,6 +425,7 @@ function codeweber_register_theme_customizer($wp_customize)
             ' bg-soft-facebook' => 'Soft Facebook',
             ' bg-soft-bitbucket' => 'Soft Bitbucket',
             ' bg-soft-dewalt' => 'Soft Dewalt',
+            ' bg-soft-atv' => 'Soft ATV',
             ' bg-soft-pinterest' => 'Soft Pinterest'
          )
       )
@@ -535,6 +538,7 @@ function codeweber_register_theme_customizer($wp_customize)
             'bg-whatsapp' => 'Whatsapp',
             'bg-facebook' => 'Facebook',
             'bg-dewalt' => 'Dewalt',
+            'bg-atv' => 'ATV',
             'bg-bitbucket' => 'Bitbucket',
             'bg-dark'     => 'Dark',
             'bg-light'     => 'Light',
@@ -559,6 +563,7 @@ function codeweber_register_theme_customizer($wp_customize)
             'bg-soft-whatsapp' => 'Soft Whatsapp',
             'bg-soft-facebook' => 'Soft Facebook',
             'bg-soft-dewalt' => 'Soft Dewalt',
+            'bg-soft-atv' => 'Soft ATV',
             'bg-soft-bitbucket' => 'Soft Bitbucket',
             'bg-soft-pinterest' => 'Soft Pinterest'
          )

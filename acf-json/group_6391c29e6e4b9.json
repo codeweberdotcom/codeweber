@@ -6,6 +6,7 @@
             "key": "field_6391f013c33b6",
             "label": "Color",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -22,6 +23,7 @@
             "key": "field_6391c2c0d2d69",
             "label": "Color",
             "name": "color",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -37,6 +39,7 @@
                     "key": "field_6391c325d2d6a",
                     "label": "Select Type Color",
                     "name": "select_type_color",
+                    "aria-label": "",
                     "type": "select",
                     "instructions": "Выбрать тип цвета",
                     "required": 0,
@@ -65,6 +68,7 @@
                     "key": "field_6391c370d2d6b",
                     "label": "Select Solid Color",
                     "name": "select_solid_color",
+                    "aria-label": "",
                     "type": "select",
                     "instructions": "Выбрать Однотонный Цвет",
                     "required": 0,
@@ -120,13 +124,14 @@
                         "facebook": "facebook",
                         "pinterest": "pinterest",
                         "dewalt": "dewalt",
-                        "bitbucket": "bitbucket"
+                        "bitbucket": "bitbucket",
+                        "atv": "atv"
                     },
                     "default_value": "primary",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
                     "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
                     "ajax": 0,
                     "placeholder": ""
                 },
@@ -134,6 +139,7 @@
                     "key": "field_6391c3d8d2d6c",
                     "label": "Gradient Color",
                     "name": "gradient_color",
+                    "aria-label": "",
                     "type": "select",
                     "instructions": "Выбрать Градиентный Цвет",
                     "required": 0,
@@ -183,6 +189,7 @@
                         "bg-gradient-reverse-purple": "bg-gradient-reverse-purple",
                         "bg-gradient-reverse-red": "bg-gradient-reverse-red",
                         "bg-gradient-reverse-violet": "bg-gradient-reverse-violet",
+                        "bg-gradient-reverse-atv": "bg-gradient-reverse-atv",
                         "bg-gradient-reverse-yellow": "bg-gradient-reverse-yellow",
                         "bg-gradient-reverse-fuchsia": "bg-gradient-reverse-fuchsia",
                         "bg-gradient-reverse-sky": "bg-gradient-reverse-sky",
@@ -194,14 +201,15 @@
                         "bg-gradient-facebook": "bg-gradient-facebook",
                         "bg-gradient-pinterest": "bg-gradient-pinterest",
                         "bg-gradient-bitbucket": "bg-gradient-bitbucket",
-                        "bg-gradient-dewalt": "bg-gradient-dewalt"
+                        "bg-gradient-dewalt": "bg-gradient-dewalt",
+                        "bg-gradient-atv": "bg-gradient-atv"
                     },
                     "default_value": "gradient-1",
-                    "allow_null": 0,
+                    "return_format": "value",
                     "multiple": 0,
+                    "allow_null": 0,
                     "ui": 1,
                     "ajax": 0,
-                    "return_format": "value",
                     "placeholder": ""
                 }
             ]
@@ -225,5 +233,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1700514046
+    "modified": 1712522279
 }

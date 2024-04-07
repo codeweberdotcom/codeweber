@@ -156,6 +156,7 @@ function CPT_404_Settings($wp_customize)
             ' bg-whatsapp' => 'Whatsapp',
             ' bg-facebook' => 'Facebook',
             ' bg-dewalt' => 'Dewalt',
+            ' bg-atv' => 'ATV',
             ' bg-bitbucket' => 'Bitbucket',
             ' bg-dark'     => 'Dark',
             ' bg-light'     => 'Light',
@@ -181,6 +182,7 @@ function CPT_404_Settings($wp_customize)
             ' bg-soft-facebook' => 'Soft Facebook',
             ' bg-soft-bitbucket' => 'Soft Bitbucket',
             ' bg-soft-dewalt' => 'Soft Dewalt',
+            ' bg-soft-atv' => 'Soft ATV',
             ' bg-soft-pinterest' => 'Soft Pinterest'
          )
       )
@@ -318,6 +320,7 @@ function CPT_404_Settings($wp_customize)
             'bg-whatsapp' => 'Whatsapp',
             'bg-facebook' => 'Facebook',
             'bg-dewalt' => 'Dewalt',
+            'bg-atv' => 'ATV',
             'bg-bitbucket' => 'Bitbucket',
             'bg-dark'     => 'Dark',
             'bg-light'     => 'Light',
@@ -342,6 +345,7 @@ function CPT_404_Settings($wp_customize)
             'bg-soft-whatsapp' => 'Soft Whatsapp',
             'bg-soft-facebook' => 'Soft Facebook',
             'bg-soft-dewalt' => 'Soft Dewalt',
+            'bg-soft-atv' => 'Soft ATV',
             'bg-soft-bitbucket' => 'Soft Bitbucket',
             'bg-soft-pinterest' => 'Soft Pinterest'
          )
