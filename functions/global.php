@@ -564,3 +564,15 @@ function metrics()
 		the_field('counter_google', 'option');
 	}
 };
+
+
+/* Footer Year */
+function year_of_birth_company()
+{
+	if (get_field('year_of_birth_of_the_company', 'option')) {
+		$year_of_bth_comp = '© ' . get_field('year_of_birth_of_the_company', 'option') . '-' . date("Y") . ' ' . esc_html__('Made with', 'codeweber') . ' ' . esc_attr(wp_get_theme()->get('Author'));
+	} else {
+		$year_of_bth_comp = '© ' . date("Y") . ' ' . esc_html__('Made with', 'codeweber') . ' ' . esc_attr(wp_get_theme()->get('Author'));
+	}
+	return $year_of_bth_comp;
+}

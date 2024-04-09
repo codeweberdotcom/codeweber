@@ -39,8 +39,8 @@
         <hr class="mt-11 mt-md-12 mb-7" />
         <div class="d-md-flex align-items-center justify-content-between">
            <p class="mb-2 mb-lg-0"><a class="text-white-50" href="<?php echo esc_attr(wp_get_theme()->get('ThemeURI')); ?>" target="_blank">
-                 © <?php echo date("Y"); ?> <?php esc_html_e('Made with', 'codeweber'); ?> Codeweber</a>
-              <br class="d-block d-lg-none" /><?php esc_html_e('All rights reserved.', 'codeweber'); ?>
+                 <?php echo year_of_birth_company(); ?></a>
+              <br class="d-block d-lg-none" /><?php echo esc_html__('All rights reserved.', 'codeweber'); ?>
            </p>
            <nav class="nav social social-white text-md-end">
               <?php if (class_exists('ACF')) {
