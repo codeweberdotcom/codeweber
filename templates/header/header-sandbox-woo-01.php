@@ -63,28 +63,25 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
                </li>
             </ul>
             <!-- /.navbar-nav -->
-
             </li>
             <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-info"><i class="uil uil-info-circle"></i></a></li>
-
             <?php do_action('before_header_nav_woo'); ?>
             <?php do_action('after_header_nav_woo'); ?>
 
-            <li class="nav-item">
-               <?php if (is_active_sidebar('header_right')) : ?>
+            <?php if (is_active_sidebar('header_right')) : ?>
+               <li class="nav-item">
                   <?php dynamic_sidebar('header_right'); ?>
-               <?php endif; ?>
-            </li>
+               </li>
+            <?php endif; ?>
+
             <li class="nav-item d-lg-none ms-0">
                <button class="hamburger offcanvas-nav-btn"><span></span></button>
             </li>
             </ul>
             <!-- /.navbar-nav -->
-
          </div>
          <?php do_action('before_header_three'); ?>
          <!-- /.navbar-other -->
-
       </div>
       <!-- /.container -->
    </nav>

@@ -566,6 +566,24 @@ if (!function_exists('header_nav_account_woo')) {
 
                </ul>
             </li>
-   <?php }
+            <?php }
+      }
    }
-}
+
+
+   add_action('before_header_three', 'header_nav_button_right', 110);
+
+   if (!function_exists('header_nav_button_right')) {
+      function header_nav_button_right()
+      {
+         if (have_rows('cw_buttons', 'option')) {
+            while (have_rows('cw_buttons', 'option')) {
+               the_row();
+               $buttons_object = new CW_Buttons(NULL, NULL, NULL, NULL); ?>
+               <li class="nav-item d-none d-md-block">
+                  <?php echo $buttons_object->final_buttons; ?>
+               </li>
+            <?php } ?>
+   <?php }
+      }
+   }

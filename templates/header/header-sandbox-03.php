@@ -27,15 +27,6 @@
       <div class="navbar-other w-100 d-flex ms-auto">
         <ul class="navbar-nav flex-row align-items-center ms-auto">
           <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search"><i class="uil uil-search"></i></a></li>
-          <?php if (have_rows('cw_buttons', 'option')) {
-            while (have_rows('cw_buttons', 'option')) {
-              the_row();
-              $buttons_object = new CW_Buttons('<div class="d-flex justify-content-center">%s</div>', '<a href="#" class="btn btn-sm btn-primary rounded">' . esc_html__('Contact', 'codeweber') . '</a>', NULL, NULL); ?>
-              <li class="nav-item d-none d-md-block">
-                <?php echo $buttons_object->final_buttons; ?>
-              </li>
-            <?php } ?>
-          <?php } ?>
           <li class="nav-item d-lg-none">
             <button class="hamburger offcanvas-nav-btn"><span></span></button>
           </li>
