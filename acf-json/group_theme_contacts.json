@@ -213,7 +213,7 @@
             "min": 0,
             "max": 0,
             "layout": "table",
-            "button_label": "Add Row",
+            "button_label": "Добавить",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -1108,6 +1108,26 @@
             "endpoint": 0
         },
         {
+            "key": "field_66153bd3561fb",
+            "label": "Woocommerce mobile menu",
+            "name": "woocommerce_mobile_menu",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Включить нижнее мобильное меню",
+            "default_value": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
             "key": "field_63f2a8e5af7ba",
             "label": "Sidepanel text Delivery",
             "name": "sidepanel_text_delivery",
@@ -1335,5 +1355,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712660463
+    "modified": 1712667709
 }

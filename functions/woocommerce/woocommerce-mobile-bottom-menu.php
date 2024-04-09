@@ -27,4 +27,7 @@ function add_mobile_bottom_menu()
    </nav>
 <?php
 }
-add_action('codeweber_end_body', 'add_mobile_bottom_menu', 5);
+
+if (get_field('woocommerce_mobile_menu', 'option') == 1) {
+   add_action('codeweber_end_body', 'add_mobile_bottom_menu', 5);
+}
