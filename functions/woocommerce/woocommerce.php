@@ -491,25 +491,81 @@ function ti_wishlist_script()
 
 
 /**
- * Header woo nav elements
+ * Header woo nav cart element
  */
-add_action('before_header_nav_woo', 'header_nav_woo');
+add_action('before_header_nav_woo', 'header_nav_cart_woo', 100);
 
-function header_nav_woo()
-{
+if (!function_exists('header_nav_cart_woo')) {
+   function header_nav_cart_woo()
+   {
 
-   if (class_exists('WooCommerce')) {
-      if (function_exists('tinv_get_option_defaults')) { ?>
-         <li class="nav-item d-none d-lg-block"><?php echo do_shortcode('[ti_wishlist_products_counter]'); ?>
+      if (class_exists('WooCommerce')) {
+         if (function_exists('tinv_get_option_defaults')) { ?>
+            <li class="nav-item d-none d-lg-block"><?php echo do_shortcode('[ti_wishlist_products_counter]'); ?>
+            <?php
+         }
+            ?>
+            <li class="nav-item d-none d-lg-block">
+               <a href="#" class="nav-link position-relative d-flex flex-row align-items-center" id="header-cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart">
+                  <i class="uil uil-shopping-cart"></i>
+                  <span class="badge badge-cart bg-primary"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+               </a>
+            </li>
          <?php
       }
-         ?>
-         <li class="nav-item d-none d-lg-block">
-            <a href="#" class="nav-link position-relative d-flex flex-row align-items-center" id="header-cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-cart">
-               <i class="uil uil-shopping-cart"></i>
-               <span class="badge badge-cart bg-primary"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
-            </a>
-         </li>
-   <?php
+   }
+}
+
+
+
+add_action('before_header_nav_woo', 'header_nav_account_woo', 90);
+
+if (!function_exists('header_nav_account_woo')) {
+
+   function header_nav_account_woo()
+   {
+      if (class_exists('WooCommerce')) { ?>
+            <li class="nav-item dropdown language-select">
+               <a class="nav-link dropdown-item dropdown-toggle dropdown-toggle-split" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="uil uil-user-circle"></i></a>
+               <ul class="dropdown-menu">
+                  <?php if (is_user_logged_in()) { ?>
+                     <li class="nav-item">
+                        <?php
+                        global $current_user;
+                        $current_user = wp_get_current_user();
+                        echo '<p class="dropdown-item disabled mb-0">' . __('Hello', 'codeweber') . ', ' . $current_user->display_name . '</p>';
+                        ?>
+                     </li>
+                     <hr class="my-1" />
+                  <?php }; ?>
+
+                  <li class="nav-item">
+                     <?php if (is_user_logged_in()) { ?>
+                        <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="dropdown-item" title="<?php _e('My Account', 'codeweber'); ?>"><?php _e('My Account', 'codeweber'); ?></a>
+                     <?php } else { ?>
+                        <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="dropdown-item" title="<?php _e('Login / Register', 'codeweber'); ?>"><?php _e('Login / Register', 'codeweber'); ?></a>
+                     <?php } ?>
+                  </li>
+
+                  <?php if (class_exists('WooCommerce')) {
+                     if (is_user_logged_in()) { ?>
+                        <li class="nav-item"><a class="dropdown-item" href="<?php echo wc_get_account_endpoint_url('orders'); ?>" title="<?php _e('Orders', 'codeweber'); ?>"><?php _e('Orders', 'codeweber'); ?></a></li>
+                     <?php }; ?>
+
+                     <li class="nav-item">
+                        <a class="dropdown-item" href="<?php echo wc_get_cart_url() ?>" title="<?php _e('Cart', 'codeweber'); ?>"><?php _e('Cart', 'codeweber'); ?></a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="dropdown-item" href="<?php echo wc_get_checkout_url() ?>" title="<?php _e('Checkout', 'codeweber'); ?>"><?php _e('Checkout', 'codeweber'); ?></a>
+                     </li>
+                  <?php if (is_user_logged_in()) {
+                        echo '<li class="nav-item"><a class="dropdown-item" href="' . wp_logout_url(get_permalink(wc_get_page_id(' myaccount'))) . '" title="' . __('Checkout', 'codeweber') . '">' . __('Logout', 'codeweber') . '</a></li>';
+                     }
+                  }
+                  ?>
+
+               </ul>
+            </li>
+   <?php }
    }
 }

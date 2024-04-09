@@ -60,51 +60,7 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
                <li class="nav-item d-none d-lg-block">
                   <ul class="navbar-nav flex-row align-items-center ms-auto">
                      <li class="nav-item"><a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search"><i class="uil uil-search"></i></a></li>
-
-                     <?php if (class_exists('WooCommerce')) { ?>
                </li>
-               <li class="nav-item dropdown language-select">
-                  <a class="nav-link dropdown-item dropdown-toggle dropdown-toggle-split" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="uil uil-user-circle"></i></a>
-                  <ul class="dropdown-menu">
-                     <?php if (is_user_logged_in()) { ?>
-                        <li class="nav-item">
-                           <?php
-                           global $current_user;
-                           $current_user = wp_get_current_user();
-                           echo '<p class="dropdown-item disabled mb-0">' . __('Hello', 'codeweber') . ', ' . $current_user->display_name . '</p>';
-                           ?>
-                        </li>
-                        <hr class="my-1" />
-                     <?php }; ?>
-
-                     <li class="nav-item">
-                        <?php if (is_user_logged_in()) { ?>
-                           <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="dropdown-item" title="<?php _e('My Account', 'codeweber'); ?>"><?php _e('My Account', 'codeweber'); ?></a>
-                        <?php } else { ?>
-                           <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="dropdown-item" title="<?php _e('Login / Register', 'codeweber'); ?>"><?php _e('Login / Register', 'codeweber'); ?></a>
-                        <?php } ?>
-                     </li>
-
-                     <?php if (class_exists('WooCommerce')) {
-                           if (is_user_logged_in()) { ?>
-                           <li class="nav-item"><a class="dropdown-item" href="<?php echo wc_get_account_endpoint_url('orders'); ?>" title="<?php _e('Orders', 'codeweber'); ?>"><?php _e('Orders', 'codeweber'); ?></a></li>
-                        <?php }; ?>
-
-                        <li class="nav-item">
-                           <a class="dropdown-item" href="<?php echo wc_get_cart_url() ?>" title="<?php _e('Cart', 'codeweber'); ?>"><?php _e('Cart', 'codeweber'); ?></a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="dropdown-item" href="<?php echo wc_get_checkout_url() ?>" title="<?php _e('Checkout', 'codeweber'); ?>"><?php _e('Checkout', 'codeweber'); ?></a>
-                        </li>
-                     <?php if (is_user_logged_in()) {
-                              echo '<li class="nav-item"><a class="dropdown-item" href="' . wp_logout_url(get_permalink(wc_get_page_id(' myaccount'))) . '" title="' . __('Checkout', 'codeweber') . '">' . __('Logout', 'codeweber') . '</a></li>';
-                           }
-                        }
-                     ?>
-
-                  </ul>
-               </li>
-            <?php } ?>
             </ul>
             <!-- /.navbar-nav -->
 
