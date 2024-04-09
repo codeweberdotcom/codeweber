@@ -167,6 +167,19 @@ function brk_adress()
 };
 
 
+function brk_phone_one_link()
+{
+
+
+	if (get_field('phone', 'option')) :
+		$phone_acf_1 = get_field('phone', 'option');
+		$brk_phone_one = $phone_acf_1;
+	else :
+		$brk_phone_one = NULL;
+	endif;
+	return $brk_phone_one;
+};
+
 
 
 

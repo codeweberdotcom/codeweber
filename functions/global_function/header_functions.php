@@ -153,7 +153,7 @@ function sm_social_icons_option()
 
       if ($social_icons !== NULL) { ?>
 
-         <nav class="nav social social-white">
+         <nav class="nav social social-white ms-lg-2">
             <?php if (class_exists('ACF')) {
                echo $social_icons;
             }; ?>

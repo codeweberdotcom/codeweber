@@ -80,6 +80,26 @@
             "maxlength": ""
         },
         {
+            "key": "field_66155d6c88a87",
+            "label": "Link Route Yandex",
+            "name": "link_route",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Ссылка на проложить маршрут в yandex",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6013fcab912d8",
             "label": "Map URL",
             "name": "map_url",
@@ -1355,5 +1375,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712667709
+    "modified": 1712676288
 }

@@ -33,19 +33,35 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
 
 <header class="wrapper<?php echo $class_header; ?>">
   <div class="bg-primary text-white fw-bold fs-15">
-    <div class="container d-md-flex flex-md-row">
-      <div class="d-flex flex-row align-items-center">
-        <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-location-pin-alt"></i></div>
-        <address class="mb-0"><?php echo brk_adress(); ?></address>
-      </div>
+    <div class="container d-flex flex-md-row">
+
+      <?php if (get_field('link_route', 'option')) { ?>
+
+        <div class="d-flex flex-row align-items-center">
+
+          <div class="icon text-white fs-22 mt-1 me-2"> <a class="text-white" href="<?php the_field('link_route', 'option'); ?>"><i class="uil uil-location-pin-alt"></i></div>
+          <address class="mb-0 d-none d-md-block"><?php echo brk_adress(); ?></address>
+          </a>
+
+        </div>
+
+
+      <?php
+      } else {
+      ?>
+        <div class="d-flex flex-row align-items-center">
+          <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-location-pin-alt"></i></div>
+          <address class="mb-0 d-none d-md-block"><?php echo brk_adress(); ?></address>
+        </div>
+      <?php
+      }
+      ?>
+
       <div class="d-flex flex-row align-items-center me-6 ms-auto">
-        <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-phone"></i></div>
-        <p class="mb-0"> <?php echo brk_phone_one('light'); ?></p>
+        <div class="icon text-white fs-22 mt-1 me-2"> <a class="text-white" href="tel:<?php echo brk_phone_one_link(); ?>"><i class="uil uil-phone"></i></div>
+        <p class="mb-0"><span class="d-none d-md-block text-white"><?php echo brk_phone_one_link(); ?></span></p></a>
       </div>
-      <div class="d-flex flex-row align-items-center">
-        <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-envelope"></i></div>
-        <p class="mb-0"><a href="mailto:<?php echo brk_email(); ?>" class="link-white hover"><?php echo brk_email(); ?></a></p>
-      </div>
+
 
       <div class="d-flex flex-row align-items-center">
         <?php sm_social_icons_option(); ?>
