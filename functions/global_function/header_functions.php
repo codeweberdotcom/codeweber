@@ -129,6 +129,37 @@ function md_social_icons_option()
          </nav>
          <!-- /.social -->
 
+      <?php
+      }
+   }
+}
+
+
+/**
+ * Socials widget md_offcanvas
+ */
+
+function sm_social_icons_option()
+{
+   if (class_exists('ACF')) {
+      $social_icons = NULL;
+      foreach (codeweber_socialicons() as $key => $value) {
+         if (get_field('social_' . $key, 'option')) {
+            $social_icons .= '<a href="' . esc_attr(get_field('social_' . $key, 'option')) . '" title="' . esc_attr($value['social-name']) . '" target="_blank">
+            <i class="fs-25 ' . esc_attr($value['icon-style']) . ' ' . esc_attr($value['icon-name']) . '"></i>
+         </a>';
+         };
+      };
+
+      if ($social_icons !== NULL) { ?>
+
+         <nav class="nav social social-white">
+            <?php if (class_exists('ACF')) {
+               echo $social_icons;
+            }; ?>
+         </nav>
+         <!-- /.social -->
+
 <?php
       }
    }
