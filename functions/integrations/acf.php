@@ -171,7 +171,7 @@ function brk_adress_only()
 	if (get_field('address_1', 'option')) {
 		$brk_adress = get_field('address_1', 'option');
 	} else {
-		$brk_adress = 'Moonshine St. 14/05 Light City, London, United Kingdom';
+		return;
 	};
 	return $brk_adress;
 };

@@ -47,13 +47,7 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
 
 
       <?php
-      } else {
-      ?>
-        <div class="d-flex flex-row align-items-center">
-          <div class="icon text-white fs-22 mt-1 me-2"> <i class="uil uil-location-pin-alt"></i></div>
-          <address class="mb-0 d-none d-md-block"><?php echo brk_adress(); ?></address>
-        </div>
-      <?php
+
       }
       ?>
 
