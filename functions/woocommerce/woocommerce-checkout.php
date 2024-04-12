@@ -342,7 +342,7 @@ function custom_override_default_locale_fields($fields)
 {
    $fields['state']['priority'] = 50;
    $fields['city']['priority'] = 55;
-   $fields['address_1']['priority'] = 60;
+   $fields['address_1']['priority'] = 52;
    $fields['address_2']['priority'] = 70;
    return $fields;
 }
