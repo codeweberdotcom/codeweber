@@ -40,7 +40,7 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
         <div class="d-flex flex-row align-items-center">
 
           <div class="icon text-white fs-22 mt-1 me-2"> <a class="text-white" href="<?php the_field('link_route', 'option'); ?>"><i class="uil uil-location-pin-alt"></i></div>
-          <address class="mb-0 d-none d-md-block"><?php echo brk_adress_only(); ?></address>
+          <address class="mb-0 d-none d-lg-block"><?php echo brk_adress_only(); ?></address>
           </a>
 
         </div>
