@@ -69,7 +69,7 @@ $block = new CW_Settings(
          <!-- /.swiper-container -->
       <?php
       }; ?>
-
+      <?php do_action('button_after_flexible_content_woo_1_'); ?>
    </div>
    <!-- /.container -->
 </section>
