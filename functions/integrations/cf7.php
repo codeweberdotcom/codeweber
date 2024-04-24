@@ -126,18 +126,7 @@ add_filter('wpcf7_form_elements', function ($html) {
 });
 
 
-add_action('wp_footer', 'mycustom_wp_footer');
-function mycustom_wp_footer()
-{
-?>
-    <script type="text/javascript">
-        document.addEventListener('wpcf7mailsent', function(event) {
-            if ('7' == event.detail.contactFormId) { // Change 34 to the ID of the form 
-                jQuery('.modal-body .btn-close').click(); //this is the bootstrap modal popup id
-            }
-        }, false);
-    </script>
-<?php  } ?>
+
 
 
 
