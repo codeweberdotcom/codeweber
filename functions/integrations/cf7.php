@@ -126,24 +126,38 @@ add_filter('wpcf7_form_elements', function ($html) {
 });
 
 
+add_action('wp_footer', 'mycustom_wp_footer');
+function mycustom_wp_footer()
+{
+?>
+    <script type="text/javascript">
+        document.addEventListener('wpcf7mailsent', function(event) {
+            if ('7' == event.detail.contactFormId) { // Change 34 to the ID of the form 
+                jQuery('.modal-body .btn-close').click(); //this is the bootstrap modal popup id
+            }
+        }, false);
+    </script>
+<?php  } ?>
 
-/* --- Contact form 7  Demo Template Floating Plaeholder
+
+
+/* --- Contact form 7 Demo Template Floating Plaeholder
 
 <h2 class="mb-3 text-start">Заказ звонка</h2>
 <p class="lead mb-6 text-start">Перезвоним в течение 15 минут</p>
 
-<div class="form-floating mb-3"> 
-[text* text-name id:floatingName class:form-control placeholder "Ваше Имя"]
-<label for="floatingName">Ваше Имя</label>
+<div class="form-floating mb-3">
+    [text* text-name id:floatingName class:form-control placeholder "Ваше Имя"]
+    <label for="floatingName">Ваше Имя</label>
 </div>
 
-<div class="form-floating mb-3"> 
-[tel* tel-463 id:floatingTel class:form-control placeholder "+7(000) 123 45 67"]
-<label for="floatingTel">+7(000) 123 45 67</label>
+<div class="form-floating mb-3">
+    [tel* tel-463 id:floatingTel class:form-control placeholder "+7(000) 123 45 67"]
+    <label for="floatingTel">+7(000) 123 45 67</label>
 </div>
 
 <div class="text-start mb-3 fs-13">
-Этот сайт защищен reCAPTCHA, и к нему применяется 
+    Этот сайт защищен reCAPTCHA, и к нему применяется
     <a href="https://policies.google.com/privacy">Политика конфиденциальности</a> Google и
     <a href="https://policies.google.com/terms">Условия предоставления услуг</a>.
 </div>
@@ -151,10 +165,10 @@ add_filter('wpcf7_form_elements', function ($html) {
 
 
 
-/*  Function floating CF7
+/* Function floating CF7
 
 add_filter('wpcf7_form_elements', function($content) {
-    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-    $content = str_replace('<br />', '', $content);
-    return $content;
-}); */
+$content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\ /\1>/i', '\2', $content);
+        $content = str_replace('<br />', '', $content);
+        return $content;
+        }); */
