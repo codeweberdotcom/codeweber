@@ -61,7 +61,10 @@ $block = new CW_Settings(
 
       'features' => '<div class="col-12"><div class="d-flex flex-row"><div><img src="' . get_template_directory_uri() . '/dist/img/icons/lineal/target.svg" class="svg-inject icon-svg icon-svg-sm me-4" alt="" /></div><div><h4 class="mb-1">Our Mission</h4><p class="mb-0">Dapibus eu leo quam ornare curabitur blandit tempus.</p></div></div></div><!--/column -->',
 
-      'features_pattern' => '<div class="col-md-12"><div class="d-flex flex-row %6$s"><div>%2$s</div><div><h4 class="mb-1">%3$s</h4><p class="mb-0">%4$s</p></div></div></div><!--/column -->',
+      'features_pattern' => '<div class="col-md-12"><div class="d-flex flex-row %6$s"><div>%2$s</div><div>%3$s %4$s %5$s</div></div></div><!--/column -->',
+
+      'feature_pattern_title' => '<h4 class="mb-1 %2$s">%1$s</h4>',
+      'feature_pattern_paragraph' => '<p class="mb-0 %2$s">%1$s</p>',
 
       'features_style_icon' => 'me-4'
    )
