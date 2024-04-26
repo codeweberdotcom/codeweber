@@ -1,97 +1,79 @@
-    <section class="wrapper bg-light">
-       <div class="container pt-10 pt-md-14 text-center">
-          <div class="row">
-             <div class="col-md-8 col-lg-7 col-xl-6 col-xxl-5 mx-auto">
-                <h1 class="display-1 mb-3"><?php echo codeweber_page_title(); ?></h1>
-                <?php if (get_theme_mod('service_description')) { ?>
-                   <p class="lead fs-lg px-lg-10 px-xxl-8"><?php echo get_theme_mod('service_description'); ?></p>
-                <?php } else { ?>
-                   <p class="lead fs-lg px-lg-10 px-xxl-8">Check out some of our awesome projects with creative ideas and great design.</p>
-                <?php }; ?>
-             </div>
-             <!-- /column -->
-          </div>
-          <!-- /.row -->
-       </div>
-       <!-- /.container -->
-    </section>
-    <!-- /section -->
+<?php
+global $codeweber;
 
-    <section class="wrapper bg-light">
-       <div class="container pt-9 pt-md-11 pb-14 pb-md-16">
-          <div class="projects-overflow mt-md-10 mb-10 mb-lg-15">
-             <?php $item_num = 0; ?>
-             <?php while (have_posts()) :
+?>
+
+<section class="wrapper bg-light<?php echo $codeweber['page_settings']['angle_class']; ?>">
+   <div class="container <?php echo $codeweber['page_settings']['container_class']; ?>">
+      <div class="row">
+         <div class="col-12 <?php echo $codeweber['page_settings']['content_class']; ?>">
+            <div class="row">
+               <?php
+               $row = 0;
+               while (have_posts()) {
                   the_post();
-                  global $post;
-               ?>
-                <?php if ($item_num == 0) {
-                     $class_responsive = 'col-lg-8 col-xl-7 offset-xl-1';
-                     $style_responsive = 'right: 10%; bottom: 25%;';
-                  } elseif ($item_num == 1) {
-                     $class_responsive = 'col-lg-7 offset-lg-5 col-xl-6 offset-xl-5';
-                     $style_responsive = 'left: 18%; bottom: 25%;';
-                  } elseif ($item_num == 2) {
-                     $class_responsive = 'col-lg-9 col-xl-7 offset-xl-2';
-                     $style_responsive = 'right: 3%; bottom: 25%;';
-                  } elseif ($item_num == 3) {
-                     $class_responsive = 'col-lg-9 offset-lg-3 col-xl-7 offset-xl-4';
-                     $style_responsive = 'left: 12%; bottom: 25%;';
-                  } elseif ($item_num == 4) {
-                     $class_responsive = 'col-lg-8 col-xl-6 offset-xl-1';
-                     $style_responsive = 'right: 15%; bottom: 25%;';
-                  } elseif ($item_num == 5) {
-                     $class_responsive = 'col-lg-9 offset-lg-3 col-xl-7';
-                     $style_responsive = 'left: 18%; bottom: 25%;';
-                  } elseif ($item_num == 6) {
-                     $class_responsive = 'col-lg-8 col-xl-6 offset-xl-1';
-                     $style_responsive = 'right: 15%; bottom: 25%;';
-                  } elseif ($item_num == 7) {
-                     $item_num = 0;
-                     $class_responsive = 'col-lg-8 col-xl-7 offset-xl-1';
-                     $style_responsive = 'right: 10%; bottom: 25%;';
+                  $post_id = get_the_ID();
+                  if ($row % 2 === 0) {
+                     $col_class_1 = 'col-lg-6 pb-12 pb-md-0 ';
+                     $col_class_2 = 'col-lg-6 pb-12 pb-md-0 ';
+                     $card_body_class = 'card card-body';
+                     $row_class = 'row gy-10 align-items-center';
+                  } else {
+                     $col_class_1 = 'col-lg-6 pb-12 pb-md-0';
+                     $col_class_2 = 'col-lg-6 pb-12 pb-md-0';
+                     $card_body_class = 'card card-body';
+                     $row_class = 'row gy-10 align-items-center';
                   }
-                  ?>
-                <div class="project item">
-                   <div class="row">
-                      <figure class="<?php echo $class_responsive; ?> rounded"><?php echo get_the_post_thumbnail($post->ID, 'sandbox_hero_18'); ?></figure>
-                      <div class="project-details d-flex justify-content-center flex-column" style="<?php echo $style_responsive; ?>">
-                         <div class="card shadow rellax" data-rellax-xs-speed="0" data-rellax-mobile-speed="0">
-                            <div class="card-body">
-                               <div class="post-header">
+                  if ($row == 0 || $row == 2 || $row == 3 || $row == 4 || $row == 5) {
+                     $bg_card_color = 'bg-soft-primary';
+                  } elseif ($row == 1 || $row == 3 || $row == 4 || $row == 5 || $row == 6) {
+                     $bg_card_color  = 'bg-soft-violet';
+                  }
+               ?>
+                  <div class="col-lg-6 mb-10">
+                     <div class="<?php echo $card_body_class; ?> h-100">
+                        <div class="<?php echo $row_class; ?>">
+                           <div class="<?php echo $col_class_1; ?>">
+                              <?php $category_service = wp_get_post_terms(get_the_ID(), 'service_category'); ?>
+                              <?php if (isset($category_service[0])) { ?>
+                                 <div class="post-category mb-3 text-violet">
+                                    <?php
+                                    echo $category_service[0]->name;
+                                    ?>
+                                 </div>
+                              <?php
+                              } ?>
+                              <h2 class="h3 post-title mb-3"> <?php the_title(); ?></h2>
+                              <p><?php the_field('short_description'); ?></p>
 
-                             <?php if(){ ?>
-<div class="post-category text-line text-purple mb-3"><?php echo wp_get_post_terms(get_the_ID(), 'service_category')[0]->name; ?></div>
-                             <?php   }
-                               ?>
-                                  
-                                  <h2 class="post-title mb-3"><?php the_title(); ?></h2>
-                               </div>
-                               <!-- /.post-header -->
-                               <div class="post-content">
-                                  <p><?php the_excerpt(); ?></p>
-                                  <a href="<?php the_permalink(); ?>" class="more hover link-purple"><?php esc_html_e('See Services', 'codeweber') ?></a>
-                               </div>
-                               <!-- /.post-content -->
-                            </div>
-                            <!-- /.card-body -->
-                         </div>
-                         <!-- /.card -->
-                      </div>
-                      <!-- /.project-details -->
-                   </div>
-                   <!-- /.row -->
-                </div>
-                <!-- /.project -->
-                <?php $item_num++; ?>
-             <?php endwhile; ?>
-          </div>
-          <!-- /.projects-overflow -->
 
-          <?php codeweber_pagination(); ?>
-          <!-- /post pagination -->
+                              <a href="<?php the_permalink(); ?>" class="btn btn-expand btn-primary rounded-pill">
+                                 <i class="uil uil-arrow-right"></i>
+                                 <span><?php esc_html_e('Go to service', 'codeweber') ?></span>
+                              </a>
+                           </div>
+                           <!-- /column -->
+                           <div class="<?php echo $col_class_2; ?>">
+                              <figure><img class="img-fluid rounded" src="<?php echo get_the_post_thumbnail_url($post_id, 'project_1_1'); ?>" srcset="<?php echo get_the_post_thumbnail_url($post_id, 'project_1_1'); ?>" alt="" /></figure>
+                           </div>
+                           <!-- /column -->
+                        </div>
+                        <!-- /.row -->
+                     </div>
+                     <!--/.card-body -->
+                  </div>
+                  <!--/.card -->
 
-       </div>
-       <!-- /.container -->
-    </section>
-    <!-- /section -->
+               <?php $row++;
+               }; ?>
+
+               <?php codeweber_pagination(); ?>
+               <!-- /post pagination -->
+            </div>
+         </div>
+         <!-- /.container -->
+
+      </div>
+   </div>
+</section>
+<!-- /section -->

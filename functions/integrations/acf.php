@@ -156,8 +156,12 @@ function brk_adress()
 {
 	$adress_1 = get_field('address_1', 'option');
 	$adress_2 = get_field('address_2', 'option');
-	if ($adress_2 && $adress_1) :
-		$brk_adress = $adress_1 . ' ' . $adress_2;
+	$adress_3 = get_field('address_3', 'option');
+
+
+
+	if ($adress_2 && $adress_1 && $adress_3) :
+		$brk_adress = $adress_1 . ' ' . $adress_3 . ' ' . $adress_2;
 	elseif ($adress_1) :
 		$brk_adress = $adress_1;
 	else :
@@ -170,6 +174,16 @@ function brk_adress_only()
 {
 	if (get_field('address_1', 'option')) {
 		$brk_adress = get_field('address_1', 'option');
+	} else {
+		return;
+	};
+	return $brk_adress;
+};
+
+function brk_adress_shot()
+{
+	if (get_field('address_1', 'option')) {
+		$brk_adress = get_field('address_2', 'option') . ' ' . get_field('address_1', 'option');
 	} else {
 		return;
 	};
