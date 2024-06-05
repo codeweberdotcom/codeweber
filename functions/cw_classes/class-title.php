@@ -4,8 +4,6 @@
 
 class CW_Title
 {
-
-
    public $title_color;
    public $title_text;
    public $title_pattern;
