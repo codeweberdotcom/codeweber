@@ -27,7 +27,7 @@ $block = new CW_Settings(
     </div>
     </div><!--/column -->',
 
-    'features_pattern' => '<div class="col-lg-4 %1$s"><div class="d-flex flex-col card card-body h-100"><div class="d-flex align-items-center mb-3">%2$s<h4 class="mb-0">%3$s</h4></div><div><p class="mb-2">%4$s</p>%5$s</div></div></div><!--/column -->',
+    'features_pattern' => '<div class="col-lg-4 %1$s"><div class="d-flex flex-col card card-body h-100"><div class="d-flex align-items-center mb-3">%2$s %3$s</div><div><p class="mb-2">%4$s</p>%5$s</div></div></div><!--/column -->',
     'features_style_icon' => 'me-4',
 
     'title' => 'Who Are We?',
@@ -57,6 +57,17 @@ $block = new CW_Settings(
     <!-- /row -->
     <div class="row gx-lg-6 gx-xl-6 gy-6">
       <?php echo $block->features; ?>
+      <div class="col-lg-4 ">
+        <div class="d-flex flex-col card card-body h-100">
+          <div class="d-flex align-items-center mb-3"><img decoding="async" class="rounded-pill me-4 w-12" src="https://donbassstrahovanie.z-webstore.ru/wp-content/uploads/2024/06/turist.svg" alt="Главная" title="Главная">
+            <h4 class="mb-0">Туристическое Страхование</h4>
+          </div>
+          <div>
+            <p class="mb-2">Это гарантия получения медицинской помощи во время путешествия по всему миру или по своей стране Россия и Беларусь.</p>
+            <div><a role="button" href="#" class="hover more link-primary">Перейти</a></div>
+          </div>
+        </div>
+      </div>
       <!--/features -->
     </div>
     <!--/.row -->
