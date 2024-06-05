@@ -157,6 +157,8 @@ function CPT_Projects_Settings($wp_customize)
             ' bg-dark'     => 'Dark',
             ' bg-light'     => 'Light',
             ' bg-primary'     => 'Primary',
+            ' bg-red_one' => 'Red One',
+            ' bg-blue_one' => 'Blue One',
             ' bg-soft-primary' => 'Soft Primary',
             ' bg-soft-light' => 'Soft Light',
             ' bg-soft-white' => 'Soft White',
@@ -179,7 +181,9 @@ function CPT_Projects_Settings($wp_customize)
             ' bg-soft-bitbucket' => 'Soft Bitbucket',
             ' bg-soft-dewalt' => 'Soft Dewalt',
             ' bg-soft-atv' => 'Soft ATV',
-            ' bg-soft-pinterest' => 'Soft Pinterest'
+            ' bg-soft-pinterest' => 'Soft Pinterest',
+            ' bg-soft-red_one' => 'Soft Red One',
+            ' bg-soft-blue_one' => 'Soft Blue One',
          )
       )
    );
@@ -339,6 +343,8 @@ function CPT_Projects_Settings($wp_customize)
             'bg-dark'     => 'Dark',
             'bg-light'     => 'Light',
             'bg-primary'     => 'Primary',
+            'bg-red_one' => 'Red One',
+            'bg-blue_one' => 'Blue One',
             'bg-soft-primary' => 'Soft Primary',
             'bg-soft-light' => 'Soft Light',
             'bg-soft-white' => 'Soft White',
@@ -361,7 +367,9 @@ function CPT_Projects_Settings($wp_customize)
             'bg-soft-bitbucket' => 'Soft Bitbucket',
             'bg-soft-dewalt' => 'Soft Dewalt',
             'bg-soft-atv' => 'Soft ATV',
-            'bg-soft-pinterest' => 'Soft Pinterest'
+            'bg-soft-pinterest' => 'Soft Pinterest',
+            'bg-soft-red_one' => 'Soft Red One',
+            'bg-soft-blue_one' => 'Soft Blue One',
          )
       )
    );

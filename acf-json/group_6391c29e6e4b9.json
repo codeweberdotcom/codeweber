@@ -125,7 +125,9 @@
                         "pinterest": "pinterest",
                         "dewalt": "dewalt",
                         "bitbucket": "bitbucket",
-                        "atv": "atv"
+                        "atv": "atv",
+                        "red_one": "red_one",
+                        "blue_one": "blue_one"
                     },
                     "default_value": "primary",
                     "return_format": "value",
@@ -202,7 +204,9 @@
                         "bg-gradient-pinterest": "bg-gradient-pinterest",
                         "bg-gradient-bitbucket": "bg-gradient-bitbucket",
                         "bg-gradient-dewalt": "bg-gradient-dewalt",
-                        "bg-gradient-atv": "bg-gradient-atv"
+                        "bg-gradient-atv": "bg-gradient-atv",
+                        "bg-gradient-red_one": "bg-gradient-red_one",
+                        "bg-gradient-blue_one": "bg-gradient-blue_one"
                     },
                     "default_value": "gradient-1",
                     "return_format": "value",
@@ -233,5 +237,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712522279
+    "modified": 1717523381
 }
