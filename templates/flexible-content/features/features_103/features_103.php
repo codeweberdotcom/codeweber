@@ -14,7 +14,7 @@ $block = new CW_Settings(
 
     'features' => '
     <div class="col-lg-4">
-    <div class="d-flex flex-col card card-body">
+    <div class="d-flex flex-col card card-body h-100">
     <div class="d-flex align-items-center mb-3">
     <div class="icon btn btn-circle disabled btn-primary me-4"> <i class="uil uil-phone-volume"></i> 
     </div>
@@ -27,7 +27,7 @@ $block = new CW_Settings(
     </div>
     </div><!--/column -->',
 
-    'features_pattern' => '<div class="col-lg-4 %1$s"><div class="d-flex flex-col card card-body"><div class="d-flex align-items-center mb-3">%2$s<h4 class="mb-0">%3$s</h4></div><div><p class="mb-2">%4$s</p>%5$s</div></div></div><!--/column -->',
+    'features_pattern' => '<div class="col-lg-4 %1$s"><div class="d-flex flex-col card card-body h-100"><div class="d-flex align-items-center mb-3">%2$s<h4 class="mb-0">%3$s</h4></div><div><p class="mb-2">%4$s</p>%5$s</div></div></div><!--/column -->',
     'features_style_icon' => 'me-4',
 
     'title' => 'Who Are We?',
