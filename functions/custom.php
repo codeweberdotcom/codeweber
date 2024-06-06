@@ -259,37 +259,49 @@ function sandbox_recent_post()
         'post_type' => 'post',
         'post_status' => 'publish',
         'suppress_filters' => true,
-    ], OBJECT); ?>
-    <ul class="image-list">
-        <?php
-        $i = 0;
-        foreach ($result as $post) {
-            setup_postdata($post);
-            $id = $post->ID;
-            $title = $post->post_title;
-            if (get_theme_mod('codeweber_image')) {
-                $theme_form_image = get_theme_mod('codeweber_image');
-            } else {
-                $theme_form_image = NULL;
-            }
-        ?>
-            <li>
-                <figure class="<?php echo $theme_form_image; ?>"><a href="<?php the_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
-                <div class="post-content">
-                    <h5 class="h6 mb-2"> <a class="link-dark" href="<?php the_permalink($id); ?>"><?php echo $title; ?></a> </h6>
+    ], OBJECT);
+
+    if ($result && is_array($result)) { ?>
+        <ul class="image-list">
+            <?php
+            foreach ($result as $post) {
+                setup_postdata($post);
+                $id = $post->ID;
+                $title = $post->post_title;
+                $theme_form_image = get_theme_mod('codeweber_image') ?: NULL;
+            ?>
+                <li>
+                    <figure class="<?php echo esc_attr($theme_form_image); ?>">
+                        <a href="<?php echo get_permalink($id); ?>">
+                            <?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?>
+                        </a>
+                    </figure>
+                    <div class="post-content">
+                        <h5 class="h6 mb-2">
+                            <a class="link-dark" href="<?php echo get_permalink($id); ?>">
+                                <?php echo esc_html($title); ?>
+                            </a>
+                        </h5>
                         <ul class="post-meta">
-                            <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d F Y', $post); ?></span></li>
+                            <li class="post-date">
+                                <i class="uil uil-calendar-alt"></i>
+                                <span><?php echo get_the_date('d F Y', $post); ?></span>
+                            </li>
                         </ul>
                         <!-- /.post-meta -->
-                </div>
-            </li>
-        <?php } ?>
-    </ul>
+                    </div>
+                </li>
+            <?php } ?>
+        </ul>
     <?php wp_reset_postdata();
+    } else {
+        echo '<p>No recent posts available.</p>';
+    }
     ?>
     <!-- /.image-list -->
     <?php
 }
+
 
 
 /* --- Logo Dark && Light ---

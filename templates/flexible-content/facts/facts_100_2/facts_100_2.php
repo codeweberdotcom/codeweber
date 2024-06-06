@@ -84,7 +84,7 @@ $block = new CW_Settings(
       <div class="position-relative mt-n18 mt-md-n23">
          <?php echo $block->shapes; ?>
          <!--/shape -->
-         <div class="card shadow-lg">
+         <div data-cue="slideInDown" class="card shadow-lg">
             <div class="row gx-0">
                <div class="col-lg-6 image-wrapper bg-image bg-cover rounded-top rounded-lg-start" data-image-src="<?php echo $bg_image; ?>">
                </div>
