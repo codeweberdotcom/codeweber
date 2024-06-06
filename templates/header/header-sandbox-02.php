@@ -95,7 +95,7 @@ if ($codeweber['page_settings']['header_bg_color'] !== 'default') {
           <!-- /.navbar-nav -->
           <div class="offcanvas-footer d-lg-none">
             <div>
-              <?php md_offcanvas_contact_option(); ?>
+              <?php echo brk_adress(); ?>
               <?php md_social_icons_option(); ?>
               <!-- /.social -->
             </div>
