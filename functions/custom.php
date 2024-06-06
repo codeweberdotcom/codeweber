@@ -295,12 +295,13 @@ function sandbox_recent_post()
         </ul>
     <?php wp_reset_postdata();
     } else {
-        echo '<p>No recent posts available.</p>';
+        echo '<p>' . __('No recent posts available.', 'codeweber') . '</p>';
     }
     ?>
     <!-- /.image-list -->
     <?php
 }
+
 
 
 
