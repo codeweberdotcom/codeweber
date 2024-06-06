@@ -14,14 +14,14 @@ global $codeweber;
                   the_post();
                   $post_id = get_the_ID();
                   if ($row % 2 === 0) {
-                     $col_class_1 = 'col-lg-6 pb-12 pb-md-0 ';
-                     $col_class_2 = 'col-lg-6 pb-12 pb-md-0 ';
-                     $card_body_class = 'card card-body';
+                     $col_class_1 = 'col-lg-6 p-10 ';
+                     $col_class_2 = 'col-lg-6';
+                     $card_body_class = 'card lift';
                      $row_class = 'row gy-10 align-items-center';
                   } else {
-                     $col_class_1 = 'col-lg-6 pb-12 pb-md-0';
-                     $col_class_2 = 'col-lg-6 pb-12 pb-md-0';
-                     $card_body_class = 'card card-body';
+                     $col_class_1 = 'col-lg-6 p-10';
+                     $col_class_2 = 'col-lg-6';
+                     $card_body_class = 'card lift';
                      $row_class = 'row gy-10 align-items-center';
                   }
                   if ($row == 0 || $row == 2 || $row == 3 || $row == 4 || $row == 5) {
@@ -36,7 +36,7 @@ global $codeweber;
                            <div class="<?php echo $col_class_1; ?>">
                               <?php $category_service = wp_get_post_terms(get_the_ID(), 'service_category'); ?>
                               <?php if (isset($category_service[0])) { ?>
-                                 <div class="post-category mb-3 text-violet">
+                                 <div class="post-category mb-3 text-muted">
                                     <?php
                                     echo $category_service[0]->name;
                                     ?>
@@ -44,7 +44,6 @@ global $codeweber;
                               <?php
                               } ?>
                               <h2 class="h3 post-title mb-3"> <?php the_title(); ?></h2>
-                              <p><?php the_field('short_description'); ?></p>
 
 
                               <a href="<?php the_permalink(); ?>" class="btn btn-expand btn-primary rounded-pill">
@@ -54,7 +53,7 @@ global $codeweber;
                            </div>
                            <!-- /column -->
                            <div class="<?php echo $col_class_2; ?>">
-                              <figure><img class="img-fluid rounded" src="<?php echo get_the_post_thumbnail_url($post_id, 'project_1_1'); ?>" srcset="<?php echo get_the_post_thumbnail_url($post_id, 'project_1_1'); ?>" alt="" /></figure>
+                              <figure><img class="img-fluid rounded" src="<?php echo get_the_post_thumbnail_url($post_id, 'sandbox_about_4'); ?>" srcset="<?php echo get_the_post_thumbnail_url($post_id, 'sandbox_about_4'); ?>" alt="" /></figure>
                            </div>
                            <!-- /column -->
                         </div>
