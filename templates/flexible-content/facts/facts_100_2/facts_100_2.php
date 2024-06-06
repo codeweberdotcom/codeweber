@@ -52,7 +52,7 @@ $block = new CW_Settings(
 <section id="<?php echo esc_html($args['block_id']); ?>" class="<?php echo $block->section_class; ?> <?php echo esc_html($args['block_class']); ?>" <?php echo $block->background_data; ?>>
    <div class="container py-14 pt-md-17 pb-md-21">
       <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0 mb-2 align-items-end">
-         <div class="col-lg-4">
+         <div class="col-lg-5">
             <?php echo $block->subtitle_first; ?>
             <!--/subtitle -->
             <?php echo $block->title; ?>
@@ -61,7 +61,7 @@ $block = new CW_Settings(
             <!--/subtitle -->
          </div>
          <!-- /column -->
-         <div class="col-lg-8 mt-lg-2">
+         <div class="col-lg-7 mt-lg-2">
             <div class="row align-items-center counter-wrapper gy-6 text-center">
                <?php echo $block->features; ?>
                <!--/features -->
