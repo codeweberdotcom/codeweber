@@ -65,8 +65,9 @@ function consultant_widget()
 add_action('sidebar_faq_end', 'consultant_widget', 100);
 add_action('sidebar_main_end', 'consultant_widget', 100);
 add_action('sidebar_testimonials_end', 'consultant_widget', 100);
-add_action('sidebar_faq_end', 'consultant_widget', 100);
 add_action('sidebar_search_end', 'consultant_widget', 100);
+add_action('sidebar_faq_end_type_1', 'consultant_widget', 100);
+
 
 
 
