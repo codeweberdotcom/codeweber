@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: undefined\n"
 "POT-Creation-Date: 2022-07-21 23:44+0000\n"
-"PO-Revision-Date: 2024-06-07 11:56+0000\n"
+"PO-Revision-Date: 2024-06-07 11:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: Русский\n"
 "Language: ru_RU\n"
@@ -894,7 +894,7 @@ msgid "Go to Homepage"
 msgstr "Перейти на Главную"
 
 #: templates/archive/archive-services-1.php:51
-#: templates/archive/archive-services-2.php:52
+#: templates/archive/archive-services-2.php:51
 msgid "Go to service"
 msgstr "Перейти к услуге"
 
@@ -1251,6 +1251,10 @@ msgstr "Нет Прайс-листов в корзине"
 msgid "No recent posts available."
 msgstr "Нет статей."
 
+#: functions/widgets.php:235
+msgid "No recent posts found."
+msgstr "Нет статей"
+
 #: index.php:81
 msgid "No Search Results found"
 msgstr "Нет результатов поиска"
@@ -1463,7 +1467,7 @@ msgstr ""
 msgid "Post Image"
 msgstr "Фото записи"
 
-#: functions/widgets.php:250
+#: functions/widgets.php:259
 msgid "Post tags"
 msgstr "Облако меток"
 
@@ -1623,7 +1627,7 @@ msgstr "Читать далее"
 msgid "Read more"
 msgstr "Читать еще"
 
-#: functions/widgets.php:203
+#: functions/widgets.php:205 functions/widgets.php:234
 #: templates/flexible-content/widgets/widget_1/widget_1.php:17
 msgid "Recent Posts"
 msgstr "Свежие статьи"
