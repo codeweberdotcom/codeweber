@@ -300,7 +300,7 @@ function codeweber_pageheader_generator($title, $subtitle, $type, $background_ur
       <?php
       } elseif ($type == 'type_10') { ?>
          <section class="wrapper bg-gray">
-            <div class="container py-3 py-md-5">
+            <div class="container py-3">
                <?php codeweber_breadcrumbs(NULL, $text_color, true); ?>
             </div>
             <!-- /.container -->
