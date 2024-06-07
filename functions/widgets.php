@@ -172,7 +172,7 @@ function categories_menu_blog_widget()
    </div>
    <!-- /.widget -->
 
-<?php }
+   <?php }
 
 add_action('sidebar_main_end', 'categories_menu_blog_widget', 5);
 
@@ -184,7 +184,6 @@ add_action('sidebar_main_end', 'categories_menu_blog_widget', 5);
 
 function recent_post_blog_widget()
 {
-   $user_id = get_the_author_meta('ID');
    $result = wp_get_recent_posts([
       'numberposts' => 3,
       'offset' => 0,
@@ -198,37 +197,47 @@ function recent_post_blog_widget()
       'post_type' => 'post',
       'post_status' => 'publish',
       'suppress_filters' => true,
-   ], OBJECT); ?>
-   <div class="widget">
-      <h3 class="h4 widget-title mb-3"><?php esc_html_e('Recent Posts', 'codeweber'); ?></h3>
-      <ul class="image-list">
-         <?php
-         $i = 0;
-         foreach ($result as $post) {
-            setup_postdata($post);
-            $id = $post->ID;
-            $title = $post->post_title;
-         ?>
-            <li>
-               <figure class="rounded"><a href="<?php the_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
-               <div class="post-content">
-                  <h4 class="h6 mb-2"> <a class="link-dark" href="<?php the_permalink($id); ?>"><?php echo $title; ?></a> </h4>
-                  <ul class="post-meta">
-                     <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d F Y', $post); ?></span></li>
-                     <li class="post-comments"><a href="<?php echo get_permalink($id); ?>/#comments"><i class="uil uil-comment"></i><?php echo get_comments_number($id); ?></a></li>
-                  </ul>
-                  <!-- /.post-meta -->
-               </div>
-            </li>
-         <?php } ?>
-      </ul>
-   </div>
-   <?php wp_reset_postdata();
-   ?>
-   <!-- /.image-list -->
-<?php  }
+   ], OBJECT);
 
+   if (!empty($result)) { // Check if $result is not empty
+   ?>
+      <div class="widget">
+         <h3 class="h4 widget-title mb-3"><?php esc_html_e('Recent Posts', 'codeweber'); ?></h3>
+         <ul class="image-list">
+            <?php
+            foreach ($result as $post) {
+               setup_postdata($post);
+               $id = $post->ID;
+               $title = $post->post_title;
+            ?>
+               <li>
+                  <figure class="rounded"><a href="<?php the_permalink($id); ?>"><?php echo get_the_post_thumbnail($id, 'brk_post_sm', array('class' => 'alignleft')); ?></a></figure>
+                  <div class="post-content">
+                     <h4 class="h6 mb-2"> <a class="link-dark" href="<?php the_permalink($id); ?>"><?php echo $title; ?></a> </h4>
+                     <ul class="post-meta">
+                        <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php echo get_the_date('d F Y', $post); ?></span></li>
+                        <li class="post-comments"><a href="<?php echo get_permalink($id); ?>/#comments"><i class="uil uil-comment"></i><?php echo get_comments_number($id); ?></a></li>
+                     </ul>
+                     <!-- /.post-meta -->
+                  </div>
+               </li>
+            <?php
+            }
+            ?>
+         </ul>
+      </div>
+   <?php
+      wp_reset_postdata();
+   } else {
+      // Handle the case where no posts are found
+      echo '<div class="widget">';
+      echo '<h3 class="h4 widget-title mb-3">' . esc_html__('Recent Posts', 'codeweber') . '</h3>';
+      echo '<p>' . esc_html__('No recent posts found.', 'codeweber') . '</p>';
+      echo '</div>';
+   }
+}
 add_action('sidebar_main_end', 'recent_post_blog_widget', 10);
+
 
 
 
