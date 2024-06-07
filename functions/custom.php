@@ -278,7 +278,7 @@ function sandbox_recent_post()
                     </figure>
                     <div class="post-content">
                         <h5 class="h6 mb-2">
-                            <a class="link-dark" href="<?php echo get_permalink($id); ?>">
+                            <a href="<?php echo get_permalink($id); ?>">
                                 <?php echo esc_html($title); ?>
                             </a>
                         </h5>
