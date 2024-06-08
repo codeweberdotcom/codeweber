@@ -44,9 +44,7 @@
 									<button class="btn btn-sm btn-red <?php echo GetThemeButton(); ?> btn-icon btn-icon-start dropdown-toggle mb-0 me-0" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										<i class="uil uil-share-alt"></i> Поделиться </button>
 									<div class="dropdown-menu">
-										<button class="dropdown-item" data-sharer="twitter" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-twitter"></i>Twitter</button>
 										<button class="dropdown-item" data-sharer="vk" data-title="<?php the_title(); ?>" data-hashtag="hashtag" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-vk"></i>Вконтакте</button>
-										<button class="dropdown-item button" data-sharer="facebook" data-hashtag="" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-facebook"></i>Facebook</button>
 										<button class="dropdown-item button" data-sharer="email" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>" data-subject="Hey! Check out that URL" data-to="inf0@codeweber.com"><i class="uil uil-envelope-share"></i>Email</button>
 										<button class="dropdown-item button" data-sharer="whatsapp" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-whatsapp"></i>Whatsapp</button>
 										<button class="dropdown-item button" data-sharer="telegram" data-title="<?php the_title(); ?>" data-url="<?php echo get_permalink(); ?>"><i class="uil uil-telegram"></i>Telegram</button>
