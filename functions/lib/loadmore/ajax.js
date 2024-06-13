@@ -16,6 +16,8 @@ jQuery(function ($) {
 
     var append = button.closest(".posts_ajax").find(".latest_posts_wrapper");
 
+  
+	  
     $.ajax({
       url: loadmore_params.ajaxurl,
       data: data,
@@ -27,6 +29,8 @@ jQuery(function ($) {
         if (data) {
           append.append(data);
           page++;
+			theme.lightbox.reload();
+			theme.imageHoverOverlay();
           button.text("Загрузить еще");
           if (page == max_pages_latest) button.remove(); // if last page, remove the button
         } else {
@@ -34,5 +38,6 @@ jQuery(function ($) {
         }
       },
     });
+	  
   });
 });
